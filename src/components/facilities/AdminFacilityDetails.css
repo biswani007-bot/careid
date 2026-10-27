@@ -1,0 +1,1223 @@
+/* ==========================================================================
+   CareID Admin Portal — Facility Details Styles
+   Authentic Figma Alignment: Node 20:10359 (Admin Portal - Facility Details)
+   Standard Shell, Fluid 2-Column Responsive Layout, Zero Overflow
+   ========================================================================== */
+
+/* Main Scrollable Canvas */
+.facility-details-canvas {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  padding: 24px clamp(16px, 2.5vw, 32px) 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: #f8f9fb;
+  box-sizing: border-box;
+}
+
+.facility-details-canvas::-webkit-scrollbar {
+  width: 6px;
+}
+.facility-details-canvas::-webkit-scrollbar-track {
+  background: transparent;
+}
+.facility-details-canvas::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+.facility-details-canvas::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* ==========================================================================
+   BACK NAV & BREADCRUMBS TRAIL
+   ========================================================================== */
+.facility-nav-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.facility-back-and-crumbs {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.facility-btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: #ffffff;
+  border: 1px solid #e1e2e4;
+  border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #494552;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.facility-btn-back:hover {
+  background-color: #f2f4f6;
+  color: #28006d;
+  border-color: #cbc4d4;
+  transform: translateX(-2px);
+}
+
+.facility-crumbs-trail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  color: #7a7583;
+}
+
+.facility-crumb-link {
+  color: #494552;
+  font-weight: 500;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.facility-crumb-link:hover {
+  color: #28006d;
+}
+
+.facility-crumb-current {
+  color: #28006d;
+  font-weight: 700;
+  max-width: 320px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Quick Status Strip (Accredited + FHIR pills) */
+.facility-status-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.facility-status-pill-lg {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: rgba(0, 106, 96, 0.1);
+  color: #006a60;
+  border: 1px solid rgba(0, 106, 96, 0.25);
+}
+
+.facility-status-dot-lg {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #006a60;
+}
+
+.facility-fhir-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #eff4ff;
+  color: #28006d;
+  border: 1px solid #d3e4fe;
+}
+
+/* ==========================================================================
+   MASTER HEADER CARD
+   ========================================================================== */
+.facility-master-card {
+  background-color: #ffffff;
+  border: 1px solid #e1e2e4;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.facility-master-top {
+  padding: 28px 32px 24px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.facility-master-identity {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  min-width: 0;
+  flex: 1 1 400px;
+}
+
+.facility-master-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background-color: #28006d;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(40, 0, 109, 0.2);
+}
+
+.facility-master-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.facility-master-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.facility-master-title {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: -0.5px;
+  color: #0b1c30;
+  margin: 0;
+}
+
+.facility-tier-badge {
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  background-color: #f5eaff;
+  color: #6c2bd9;
+  border: 1px solid #e4caff;
+  white-space: nowrap;
+}
+
+.facility-master-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: #494552;
+  flex-wrap: wrap;
+}
+
+.facility-master-facid {
+  font-family: 'JetBrains Mono', monospace, ui-monospace, sans-serif;
+  font-weight: 700;
+  color: #28006d;
+  background-color: #eff4ff;
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1px solid #d3e4fe;
+}
+
+.facility-master-type {
+  font-weight: 600;
+  color: #191c1e;
+}
+
+.facility-master-bullets {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #7a7583;
+}
+
+.facility-meta-bullet {
+  color: #7a7583;
+  font-weight: 500;
+}
+.facility-meta-bullet strong {
+  color: #0b1c30;
+}
+
+/* Master Actions Buttons (Top Right) */
+.facility-master-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.facility-btn-action-edit {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 38px;
+  padding: 0 16px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #1f2937;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+.facility-btn-action-edit:hover {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
+  color: #111827;
+}
+
+.facility-btn-action-mapdoc {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 38px;
+  padding: 0 18px;
+  background-color: #28006d;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(40, 0, 109, 0.2);
+}
+.facility-btn-action-mapdoc:hover {
+  background-color: #3f1d8b;
+  transform: translateY(-1px);
+}
+
+.facility-btn-action-mapstaff {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 38px;
+  padding: 0 18px;
+  background-color: #006a60;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(0, 106, 96, 0.2);
+}
+.facility-btn-action-mapstaff:hover {
+  background-color: #005048;
+  transform: translateY(-1px);
+}
+
+.facility-btn-action-assignadmin {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 38px;
+  padding: 0 16px;
+  background-color: #ffffff;
+  border: 1px solid #e1e2e4;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #494552;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.facility-btn-action-assignadmin:hover {
+  background-color: #f2f4f6;
+  color: #28006d;
+}
+
+/* Master Quick Metrics Strip (Bottom of Header Card) */
+.facility-quick-metrics-strip {
+  background-color: #f8f9ff;
+  border-top: 1px solid #edf0ff;
+  padding: 16px 32px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.facility-quick-metric-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.facility-quick-metric-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.facility-quick-metric-icon-wrap.purple {
+  background-color: rgba(40, 0, 109, 0.1);
+  color: #28006d;
+}
+.facility-quick-metric-icon-wrap.teal {
+  background-color: rgba(0, 106, 96, 0.1);
+  color: #006a60;
+}
+.facility-quick-metric-icon-wrap.blue {
+  background-color: rgba(30, 64, 175, 0.1);
+  color: #1e40af;
+}
+.facility-quick-metric-icon-wrap.cyan {
+  background-color: rgba(8, 145, 178, 0.1);
+  color: #0e7490;
+}
+
+.facility-quick-metric-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.facility-quick-metric-val {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #0b1c30;
+}
+
+.facility-quick-metric-lbl {
+  font-size: 12px;
+  color: #7a7583;
+}
+
+/* ==========================================================================
+   TAB NAVIGATION COMPONENT
+   ========================================================================== */
+.facility-tabs-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.facility-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #494552;
+  background-color: #ffffff;
+  border: 1px solid #e1e2e4;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.facility-tab-btn:hover {
+  background-color: #f8f9fb;
+  border-color: #cbc4d4;
+  color: #28006d;
+}
+
+.facility-tab-btn.active {
+  background-color: #28006d;
+  color: #ffffff;
+  border-color: #28006d;
+  box-shadow: 0 2px 6px rgba(40, 0, 109, 0.2);
+}
+
+.facility-tab-count-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 9999px;
+  background-color: #eff4ff;
+  color: #28006d;
+}
+.facility-tab-btn.active .facility-tab-count-pill {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   2-COLUMN CONTENT CANVAS (Left 8 cols, Right 4 cols)
+   ========================================================================== */
+.facility-details-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.85fr) minmax(0, 1fr);
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.facility-details-col-left,
+.facility-details-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+/* Standard Card Surfaces */
+.facility-detail-card {
+  background-color: #ffffff;
+  border: 1px solid #e1e2e4;
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.facility-card-header-bar {
+  padding: 20px 24px;
+  border-bottom: 1px solid #f0f1f3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.facility-card-heading-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.facility-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.facility-card-title {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0b1c30;
+  margin: 0;
+}
+
+.facility-card-subtitle {
+  font-size: 13px;
+  color: #7a7583;
+  margin: 0;
+}
+
+.facility-badge-cyan {
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  background-color: #5af8fb;
+  color: #004d4f;
+  white-space: nowrap;
+}
+
+.facility-badge-count {
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  background-color: #eff4ff;
+  color: #28006d;
+}
+
+/* Header Action Links */
+.facility-card-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.facility-link-viewall {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #28006d;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.facility-link-viewall:hover {
+  color: #3f1d8b;
+}
+
+/* ==========================================================================
+   CARD 1: FACILITY INFORMATION & CONTACT NEXUS
+   ========================================================================== */
+.facility-nexus-grid {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.facility-nexus-subcol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.facility-nexus-field-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.facility-nexus-icon-wrap {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: #f2f4f6;
+  color: #494552;
+}
+.facility-nexus-icon-wrap.purple {
+  background-color: rgba(40, 0, 109, 0.08);
+  color: #28006d;
+}
+.facility-nexus-icon-wrap.red {
+  background-color: rgba(186, 26, 26, 0.1);
+  color: #ba1a1a;
+}
+.facility-nexus-icon-wrap.teal {
+  background-color: rgba(0, 106, 96, 0.1);
+  color: #006a60;
+}
+
+.facility-nexus-field-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.facility-nexus-field-lbl {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #7a7583;
+}
+
+.facility-nexus-field-val {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #0b1c30;
+  line-height: 18px;
+}
+
+.facility-nexus-field-sub {
+  font-size: 12px;
+  color: #7a7583;
+}
+
+/* ==========================================================================
+   CARD 2 & 3: DOCTORS & STAFF TABLES
+   ========================================================================== */
+.facility-card-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.facility-sub-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  min-width: 680px;
+}
+
+.facility-sub-table thead tr {
+  background-color: #f8f9fb;
+  border-bottom: 1px solid #e1e2e4;
+}
+
+.facility-sub-table th {
+  padding: 12px 18px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #494552;
+  white-space: nowrap;
+}
+
+.facility-sub-table tbody tr {
+  border-bottom: 1px solid #f0f1f3;
+  transition: background-color 0.15s ease;
+}
+
+.facility-sub-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.facility-sub-table tbody tr:hover {
+  background-color: #f8f9ff;
+}
+
+.facility-sub-table td {
+  padding: 14px 18px;
+  vertical-align: middle;
+  font-size: 13px;
+  color: #191c1e;
+}
+
+.facility-doc-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.facility-doc-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.facility-doc-text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.facility-doc-name {
+  font-weight: 700;
+  color: #0b1c30;
+  font-size: 13.5px;
+}
+
+.facility-doc-npi {
+  font-size: 11.5px;
+  color: #7a7583;
+}
+
+.facility-role-chip {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  background-color: #f0f4ff;
+  color: #1e40af;
+  border: 1px solid #dbeafe;
+  white-space: nowrap;
+}
+
+.facility-status-pill-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  font-size: 11.5px;
+  font-weight: 600;
+  background-color: rgba(0, 106, 96, 0.1);
+  color: #006a60;
+  white-space: nowrap;
+}
+
+.facility-btn-row-action {
+  background: none;
+  border: none;
+  padding: 6px;
+  color: #7a7583;
+  cursor: pointer;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+.facility-btn-row-action:hover {
+  background-color: #f2f4f6;
+  color: #28006d;
+}
+
+/* ==========================================================================
+   RIGHT COLUMN CARDS
+   ========================================================================== */
+/* CARD 1: FACILITY ADMINISTRATOR (ID-Card Depth) */
+.facility-admin-card {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #e1e2e4;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.facility-admin-accent-bar {
+  height: 8px;
+  background: linear-gradient(90deg, #28006d 0%, #6c2bd9 100%);
+  width: 100%;
+}
+
+.facility-admin-card-inner {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.facility-admin-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.facility-admin-card-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #494552;
+}
+
+.facility-admin-auth-badge {
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+  background-color: rgba(0, 106, 96, 0.1);
+  color: #006a60;
+}
+
+.facility-admin-profile-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.facility-admin-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background-color: #28006d;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(40, 0, 109, 0.2);
+  flex-shrink: 0;
+}
+
+.facility-admin-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.facility-admin-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0b1c30;
+}
+
+.facility-admin-role {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #006a60;
+}
+
+.facility-admin-date {
+  font-size: 11.5px;
+  color: #7a7583;
+}
+
+.facility-admin-contacts {
+  padding: 12px 14px;
+  background-color: #f8f9fb;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #494552;
+}
+
+.facility-admin-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.facility-btn-reassign {
+  width: 100%;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #eff4ff;
+  border: 1px solid #d3e4fe;
+  border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #28006d;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.facility-btn-reassign:hover {
+  background-color: #e0ecff;
+  border-color: #b9d5fd;
+}
+
+/* CARD 2: CAPACITY & TELEMETRY */
+.facility-capacity-inner {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.facility-progress-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.facility-progress-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #494552;
+}
+
+.facility-progress-track {
+  width: 100%;
+  height: 8px;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.facility-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #006a60 0%, #28006d 100%);
+  border-radius: 9999px;
+  transition: width 0.4s ease;
+}
+
+.facility-telemetry-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 6px;
+  border-top: 1px solid #f0f1f3;
+}
+
+.facility-telemetry-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+}
+
+.facility-telemetry-key {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #494552;
+}
+
+.facility-telemetry-val {
+  font-weight: 700;
+  color: #0b1c30;
+}
+
+.facility-telemetry-badge {
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  background-color: #eff4ff;
+  color: #1e40af;
+}
+
+/* CARD 3: ACTIVITY & AUDIT */
+.facility-audit-inner {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.facility-audit-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.facility-audit-timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background-color: #e5e7eb;
+}
+
+.facility-audit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.facility-audit-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background-color: #28006d;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.facility-audit-dot.green {
+  background-color: #006a60;
+}
+.facility-audit-dot.blue {
+  background-color: #1e40af;
+}
+
+.facility-audit-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.facility-audit-timestamp {
+  font-size: 11px;
+  font-weight: 700;
+  color: #7a7583;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.facility-audit-desc {
+  font-size: 12.5px;
+  color: #191c1e;
+  line-height: 17px;
+}
+
+.facility-audit-link {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #28006d;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+.facility-audit-link:hover {
+  color: #3f1d8b;
+}
+
+/* ==========================================================================
+   MODAL OVERLAYS (Edit Facility & Map Doctor)
+   ========================================================================== */
+.facility-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background-color: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  animation: facilityModalFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes facilityModalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.facility-modal-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.facility-modal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #f0f1f3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.facility-modal-title {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0b1c30;
+  margin: 0 0 4px 0;
+}
+
+.facility-modal-subtitle {
+  font-size: 13px;
+  color: #7a7583;
+  margin: 0;
+}
+
+.facility-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.facility-modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #f0f1f3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  background-color: #f8f9fb;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .facility-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .facility-master-top {
+    padding: 20px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .facility-master-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .facility-btn-action-edit,
+  .facility-btn-action-mapdoc,
+  .facility-btn-action-mapstaff,
+  .facility-btn-action-assignadmin {
+    flex: 1 1 calc(50% - 6px);
+    justify-content: center;
+  }
+
+  .facility-quick-metrics-strip {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 16px 20px;
+  }
+
+  .facility-nexus-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .facility-details-canvas {
+    padding: 16px 12px 48px;
+    gap: 18px;
+  }
+
+  .facility-quick-metrics-strip {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .facility-master-title {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .facility-btn-action-edit,
+  .facility-btn-action-mapdoc,
+  .facility-btn-action-mapstaff,
+  .facility-btn-action-assignadmin {
+    flex: 1 1 100%;
+  }
+}

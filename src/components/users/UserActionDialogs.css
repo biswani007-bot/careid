@@ -1,0 +1,481 @@
+/* ==========================================================================
+   CareID Admin Portal — User Action Dialogs & Snackbar Styles
+   Figma Reference: Node 20:1284 (Admin Portal - User Action Dialogs)
+   - Deactivate User Dialog (Node 20:1327)
+   - Reset Password Dialog (Node 20:1343)
+   - Success Snackbar (Node 20:1359)
+   ========================================================================== */
+
+/* Scrim / Backdrop Overlay */
+.user-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 16px;
+  animation: userDialogFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes userDialogFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Card Container */
+.user-dialog-card {
+  background-color: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0px 20px 45px -8px rgba(0, 0, 0, 0.2), 0px 4px 16px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 400px;
+  padding: 28px 24px 24px 24px;
+  text-align: center;
+  position: relative;
+  outline: none;
+  animation: userDialogPopIn 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes userDialogPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Centered Icon Badge */
+.user-dialog-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin: 0 auto 16px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.user-dialog-badge.deactivate {
+  background-color: #fce8e8;
+  color: #b91c1c;
+}
+
+.user-dialog-badge.activate {
+  background-color: #e0f8f2;
+  color: #0d9488;
+}
+
+.user-dialog-badge.reset {
+  background-color: #cbf7f0;
+  color: #047857;
+}
+
+.user-dialog-badge-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Dialog Headings & Text */
+.user-dialog-title {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  color: #111827;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.01em;
+}
+
+.user-dialog-desc {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4b5563;
+  margin: 0 0 24px 0;
+  padding: 0 6px;
+}
+
+.user-dialog-desc strong,
+.user-dialog-desc .user-dialog-highlight {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Action Button Row */
+.user-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+/* Cancel Button */
+.user-dialog-btn-cancel {
+  background: transparent;
+  border: none;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #350873;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  line-height: 20px;
+}
+
+.user-dialog-btn-cancel:hover:not(:disabled) {
+  background-color: rgba(53, 8, 115, 0.06);
+  color: #250352;
+}
+
+.user-dialog-btn-cancel:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Deactivate Primary Button (Red/Crimson Pill) */
+.user-dialog-btn-deactivate {
+  background-color: #b91c1c;
+  color: #ffffff;
+  border: none;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 22px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(185, 28, 28, 0.25);
+  transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+  line-height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.user-dialog-btn-deactivate:hover:not(:disabled) {
+  background-color: #991b1b;
+  box-shadow: 0 3px 8px rgba(153, 27, 27, 0.35);
+}
+
+.user-dialog-btn-deactivate:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Activate Primary Button (Teal/Emerald Pill) */
+.user-dialog-btn-activate {
+  background-color: #0d9488;
+  color: #ffffff;
+  border: none;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 22px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(13, 148, 136, 0.25);
+  transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+  line-height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.user-dialog-btn-activate:hover:not(:disabled) {
+  background-color: #0f766e;
+  box-shadow: 0 3px 8px rgba(15, 118, 110, 0.35);
+}
+
+.user-dialog-btn-activate:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Reset Password Primary Button (Deep Purple Pill) */
+.user-dialog-btn-reset {
+  background-color: #250352;
+  color: #ffffff;
+  border: none;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 22px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(37, 3, 82, 0.25);
+  transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+  line-height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.user-dialog-btn-reset:hover:not(:disabled) {
+  background-color: #1a023a;
+  box-shadow: 0 3px 8px rgba(26, 2, 58, 0.35);
+}
+
+.user-dialog-btn-reset:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Success Snackbar (Node 20:1359)
+   Floating Dark Charcoal Pill with Green Check & DISMISS Button
+   ========================================================================== */
+.user-action-snackbar {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background-color: #23272e;
+  color: #ffffff;
+  border-radius: 22px;
+  min-width: 380px;
+  max-width: 90vw;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px 0 14px;
+  box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.35), 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: snackbarSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes snackbarSlideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 14px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.user-action-snackbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.user-action-snackbar-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-action-snackbar-icon img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.user-action-snackbar-text {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.005em;
+}
+
+.user-action-snackbar-btn {
+  background: transparent;
+  border: none;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #b39dff;
+  letter-spacing: 0.05em;
+  padding: 4px 6px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+.user-action-snackbar-btn:hover {
+  color: #d1c4ff;
+  background-color: rgba(179, 157, 255, 0.12);
+}
+
+/* ==========================================================================
+   Admin Portal - User Action Dialogs Screen Layout (Node 20:1284)
+   Displays the authentic blurred context and side-by-side dialog showcase
+   ========================================================================== */
+.user-dialogs-screen-canvas {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-dialogs-screen-header {
+  margin-bottom: 28px;
+}
+
+.user-dialogs-screen-title {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px 0;
+}
+
+.user-dialogs-screen-subtitle {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Showcase Container matching Node 20:1284 */
+.user-dialogs-showcase {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  padding: 48px 32px 64px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 520px;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+/* The Blurred Mock Table in Background */
+.user-dialogs-blurred-bg {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(243, 244, 246, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+/* Side-by-Side Dialog Grid */
+.user-dialogs-grid {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Interactive Triggers Toolbar */
+.user-dialogs-toolbar {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.user-dialogs-toolbar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1px solid #e0e2e6;
+  background-color: #ffffff;
+  color: #374151;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.user-dialogs-toolbar-btn:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+  color: #111827;
+}
+
+.user-dialogs-toolbar-btn.primary {
+  background: linear-gradient(180deg, #a44cff 0%, #5b14b8 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 2px 6px rgba(91, 20, 184, 0.25);
+}
+
+.user-dialogs-toolbar-btn.primary:hover {
+  filter: brightness(1.08);
+}
+
+.user-dialogs-toolbar-btn.danger {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border-color: #fca5a5;
+}
+
+.user-dialogs-toolbar-btn.danger:hover {
+  background-color: #fecaca;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .user-dialogs-screen-canvas {
+    padding: 20px 16px;
+  }
+
+  .user-dialogs-showcase {
+    padding: 32px 16px 48px 16px;
+  }
+
+  .user-dialog-card {
+    max-width: 100%;
+    padding: 24px 20px 20px 20px;
+  }
+
+  .user-action-snackbar {
+    min-width: 320px;
+    bottom: 20px;
+    padding: 0 12px;
+  }
+
+  .user-action-snackbar-text {
+    font-size: 12.5px;
+  }
+}

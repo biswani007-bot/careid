@@ -1,0 +1,994 @@
+/* ==========================================================================
+   CareID Admin Portal — Patient Directory Styles
+   Figma Reference: Node 20:1643 (Admin Portal - Patient Directory)
+   1280px x 1111px Canvas
+   ========================================================================== */
+
+/* Main Scrollable Canvas */
+.patients-main-canvas {
+  flex: 1 1 auto;
+  min-height: 0; /* CRITICAL: allows flex child to scroll */
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  padding: 32px 32px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  background-color: #f8f9fb;
+  box-sizing: border-box;
+}
+
+.patients-main-canvas::-webkit-scrollbar {
+  width: 6px;
+}
+.patients-main-canvas::-webkit-scrollbar-track {
+  background: transparent;
+}
+.patients-main-canvas::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+.patients-main-canvas::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+
+/* Sidebar New Record Pill Button (Node 20:1984) */
+.patients-sidebar-record-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 38px;
+  background-color: #006a60;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.15s ease;
+  margin-bottom: 8px;
+}
+
+.patients-sidebar-record-btn:hover {
+  background-color: #00534b;
+  transform: translateY(-1px);
+}
+
+/* Header Left: Breadcrumbs */
+.patients-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  color: #494552;
+}
+
+.patients-breadcrumb-root {
+  color: #494552;
+  font-weight: 500;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.patients-breadcrumb-root:hover {
+  color: #28006d;
+}
+
+.patients-breadcrumb-sep {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+}
+
+.patients-breadcrumb-sep img {
+  width: 6px;
+  height: 10px;
+}
+
+.patients-breadcrumb-current {
+  color: #28006d;
+  font-weight: 600;
+}
+
+/* Header Search Button / Active Input */
+.patients-header-search-wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.patients-header-search-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #edeef0;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.patients-header-search-btn:hover {
+  background-color: #e2e4e8;
+}
+
+.patients-header-search-input {
+  height: 36px;
+  padding: 0 14px 0 36px;
+  border-radius: 18px;
+  border: 1px solid #cbc4d4;
+  background-color: #ffffff;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  color: #191c1e;
+  outline: none;
+  width: 240px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.patients-header-search-input:focus {
+  border-color: #5b14b8;
+  box-shadow: 0 0 0 3px rgba(91, 20, 184, 0.12);
+}
+
+.patients-header-search-input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #7a7583;
+}
+
+/* ==========================================================================
+   PAGE HEADER (Title, Subtitle & Action Buttons)
+   Figma Node: 20:1679
+   ========================================================================== */
+.patients-page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.patients-header-title-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.patients-title {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.64px;
+  color: #191c1e;
+  margin: 0;
+}
+
+.patients-subtitle {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #494552;
+  margin: 0;
+}
+
+.patients-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.patients-btn-export {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 38px;
+  padding: 0 18px;
+  border-radius: 9999px;
+  border: 1px solid #7a7583;
+  background-color: #ffffff;
+  color: #191c1e;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.patients-btn-export:hover {
+  background-color: #f3f4f6;
+  border-color: #494552;
+}
+
+.patients-btn-add {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 38px;
+  padding: 0 20px;
+  border-radius: 9999px;
+  border: none;
+  background-color: #28006d;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.15s ease;
+}
+
+.patients-btn-add:hover {
+  background-color: #1f0054;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(40, 0, 109, 0.25);
+}
+
+/* ==========================================================================
+   BENTO KPI SUMMARY CARDS (Row of 4)
+   Figma Node: 20:1694
+   ========================================================================== */
+.patients-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.patients-kpi-card {
+  position: relative;
+  height: 140px;
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 20px;
+  padding: 24px 24px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.patients-kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+/* Subtle corner decorative circle overlay matching Figma */
+.patients-kpi-overlay {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 96px;
+  height: 96px;
+  border-bottom-left-radius: 100px;
+  pointer-events: none;
+}
+
+.patients-kpi-overlay.total {
+  background-color: rgba(40, 0, 109, 0.05);
+}
+
+.patients-kpi-overlay.verified {
+  background-color: rgba(0, 106, 96, 0.05);
+}
+
+.patients-kpi-overlay.pending {
+  background-color: rgba(250, 189, 0, 0.1);
+}
+
+.patients-kpi-overlay.inactive {
+  background-color: rgba(186, 26, 26, 0.05);
+}
+
+.patients-kpi-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.patients-kpi-label {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.6px;
+  color: #494552;
+  margin: 0;
+}
+
+.patients-kpi-icon-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.patients-kpi-icon-circle.total {
+  background-color: #edeef0;
+}
+
+.patients-kpi-icon-circle.verified {
+  background-color: rgba(0, 106, 96, 0.1);
+}
+
+.patients-kpi-icon-circle.pending {
+  background-color: rgba(250, 189, 0, 0.2);
+}
+
+.patients-kpi-icon-circle.inactive {
+  background-color: rgba(186, 26, 26, 0.1);
+}
+
+.patients-kpi-icon-circle img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.patients-kpi-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.patients-kpi-value {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.64px;
+  color: #191c1e;
+  margin: 0;
+}
+
+.patients-kpi-footer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.patients-kpi-footer-trend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #006a60;
+}
+
+.patients-kpi-footer-text {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #494552;
+}
+
+/* ==========================================================================
+   FILTERS & SORT TOOLBAR
+   Figma Node: 20:1749
+   ========================================================================== */
+.patients-toolbar {
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 12px;
+  padding: 14px 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.patients-toolbar-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.patients-filter-pill {
+  height: 32px;
+  padding: 0 16px;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  background-color: #edeef0;
+  color: #494552;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.patients-filter-pill:hover {
+  background-color: #e2e4e8;
+  color: #191c1e;
+}
+
+.patients-filter-pill.active {
+  background-color: rgba(40, 0, 109, 0.1);
+  border-color: rgba(40, 0, 109, 0.2);
+  color: #28006d;
+  font-weight: 600;
+}
+
+.patients-pill-chevron {
+  display: flex;
+  align-items: center;
+  width: 8px;
+  height: 5px;
+}
+
+/* Filter Dropdown Popover Menu */
+.patients-filter-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 50;
+  min-width: 160px;
+  padding: 6px 0;
+  animation: filterMenuFadeIn 0.15s ease-out;
+}
+
+@keyframes filterMenuFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.patients-filter-menu-item {
+  width: 100%;
+  text-align: left;
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  color: #191c1e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.1s ease;
+}
+
+.patients-filter-menu-item:hover {
+  background-color: #f3f4f6;
+  color: #28006d;
+}
+
+.patients-filter-menu-item.selected {
+  font-weight: 600;
+  color: #28006d;
+  background-color: rgba(40, 0, 109, 0.06);
+}
+
+.patients-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.patients-sort-label {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #494552;
+}
+
+.patients-sort-btn {
+  background: none;
+  border: none;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #191c1e;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background-color 0.15s ease;
+  position: relative;
+}
+
+.patients-sort-btn:hover {
+  background-color: #edeef0;
+}
+
+/* ==========================================================================
+   DATA TABLE CONTAINER & HIGH-DENSITY ROWS
+   Figma Node: 20:1770
+   ========================================================================== */
+.patients-table-container {
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.patients-table-scroll {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.patients-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+/* Table Header */
+.patients-table-header th {
+  background-color: #f2f4f6;
+  border-bottom: 1px solid #cbc4d4;
+  padding: 12px 16px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #494552;
+  white-space: nowrap;
+}
+
+.patients-table-header th.align-right {
+  text-align: right;
+}
+
+/* Table Body Rows */
+.patients-table-row {
+  border-bottom: 1px solid #cbc4d4;
+  transition: background-color 0.15s ease;
+  cursor: pointer;
+}
+
+.patients-table-row:last-child {
+  border-bottom: none;
+}
+
+.patients-table-row:hover {
+  background-color: #f8f9fc;
+}
+
+.patients-table-row.inactive {
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 0.75;
+}
+
+.patients-table-row td {
+  padding: 18px 16px;
+  vertical-align: middle;
+}
+
+/* Patient Cell (Avatar + Name + Phone) */
+.patients-cell-patient {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.patients-avatar-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #cbc4d4;
+  background-color: #edeef0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.patients-avatar-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.patients-avatar-initials {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.patients-name-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.patients-name {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #191c1e;
+  line-height: 16px;
+}
+
+.patients-phone {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: #494552;
+  line-height: 16px;
+}
+
+/* Vault ID Monospace */
+.patients-vault-id {
+  font-family: 'Liberation Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  color: #494552;
+  letter-spacing: -0.01em;
+}
+
+/* Demographics & Registered Date */
+.patients-text-demographics {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  color: #191c1e;
+}
+
+.patients-text-date {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  color: #494552;
+}
+
+/* Verification Badges */
+.patients-badge-verification {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 11px;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.patients-badge-verification.verified {
+  background-color: rgba(0, 106, 96, 0.1);
+  border: 1px solid rgba(0, 106, 96, 0.2);
+  color: #006a60;
+}
+
+.patients-badge-verification.pending {
+  background-color: rgba(250, 189, 0, 0.2);
+  border: 1px solid rgba(250, 189, 0, 0.3);
+  color: #2d2000;
+}
+
+.patients-badge-icon {
+  width: 11px;
+  height: 11px;
+  object-fit: contain;
+}
+
+/* Status Indicator Dot */
+.patients-status-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.patients-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.patients-status-dot.active {
+  background-color: #006a60;
+}
+
+.patients-status-dot.inactive {
+  background-color: #ba1a1a;
+}
+
+.patients-status-text.active {
+  color: #191c1e;
+}
+
+.patients-status-text.inactive {
+  color: #ba1a1a;
+}
+
+/* Links Cell (Family & Records) */
+.patients-links-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.patients-link-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  color: #494552;
+}
+
+.patients-link-item.muted {
+  opacity: 0.35;
+}
+
+.patients-link-icon {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+}
+
+/* Kebab Action Menu */
+.patients-action-btn {
+  background: none;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #494552;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  position: relative;
+}
+
+.patients-action-btn:hover {
+  background-color: #edeef0;
+  color: #191c1e;
+}
+
+/* Action Dropdown Menu */
+.patients-row-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 4px);
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  z-index: 60;
+  min-width: 180px;
+  padding: 6px 0;
+  animation: filterMenuFadeIn 0.15s ease-out;
+}
+
+.patients-row-menu-item {
+  width: 100%;
+  text-align: left;
+  padding: 9px 16px;
+  background: none;
+  border: none;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  color: #191c1e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.1s ease;
+}
+
+.patients-row-menu-item:hover {
+  background-color: #f3f4f6;
+  color: #28006d;
+}
+
+.patients-row-menu-item.danger {
+  color: #b91c1c;
+}
+
+.patients-row-menu-item.danger:hover {
+  background-color: #fef2f2;
+}
+
+/* ==========================================================================
+   PAGINATION FOOTER
+   Figma Node: 20:1901
+   ========================================================================== */
+.patients-pagination {
+  background-color: #ffffff;
+  border-top: 1px solid #cbc4d4;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.patients-pagination-text {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  color: #494552;
+  margin: 0;
+}
+
+.patients-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.patients-page-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid #cbc4d4;
+  background-color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #494552;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.patients-page-btn:hover:not(:disabled) {
+  background-color: #f3f4f6;
+  border-color: #7a7583;
+}
+
+.patients-page-btn.active {
+  background-color: #28006d;
+  border-color: #28006d;
+  color: #ffffff;
+}
+
+.patients-page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.patients-page-ellipsis {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  color: #494552;
+  padding: 0 4px;
+}
+
+/* Empty State & Loading Table Cell */
+.patients-table-empty {
+  text-align: center;
+  padding: 48px 16px;
+  color: #494552;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.patients-empty-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px 20px;
+}
+
+.patients-empty-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #191c1e;
+  margin: 0;
+}
+
+.patients-empty-desc {
+  font-size: 13.5px;
+  color: #6b7280;
+  max-width: 380px;
+  margin: 0;
+}
+
+.patients-empty-reset-btn {
+  margin-top: 8px;
+  height: 34px;
+  padding: 0 16px;
+  border-radius: 17px;
+  border: 1px solid #28006d;
+  background-color: transparent;
+  color: #28006d;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.patients-empty-reset-btn:hover {
+  background-color: rgba(40, 0, 109, 0.05);
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .patients-kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .patients-main-canvas {
+    padding: 20px 16px;
+    gap: 24px;
+  }
+
+  .patients-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .patients-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .patients-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .patients-toolbar-right {
+    justify-content: flex-end;
+  }
+}

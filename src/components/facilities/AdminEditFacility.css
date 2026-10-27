@@ -1,0 +1,1022 @@
+/* ==========================================================================
+   CareID Admin Portal — Edit Facility Screen Styles
+   Authentic Figma Alignment: Node 20:11053 (Admin Portal - Edit Facility)
+   Fluid 2-Column Responsive Layout, Zero Horizontal Overflow
+   ========================================================================== */
+
+.facility-edit-shell {
+  min-height: 100vh;
+  display: flex;
+  background-color: #f8f9ff;
+  width: 100%;
+  position: relative;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: #191c1e;
+  box-sizing: border-box;
+}
+
+.facility-edit-content {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #eff4ff;
+  box-sizing: border-box;
+}
+
+/* Scrollable Canvas */
+.facility-edit-canvas {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 24px clamp(16px, 2.5vw, 32px) 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+.facility-edit-canvas::-webkit-scrollbar {
+  width: 6px;
+}
+.facility-edit-canvas::-webkit-scrollbar-track {
+  background: transparent;
+}
+.facility-edit-canvas::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+.facility-edit-canvas::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* ==========================================================================
+   TOP ACTION BREADCRUMB & BACK STRIP
+   ========================================================================== */
+.facility-edit-top-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.facility-edit-crumbs-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.facility-edit-btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: #ffffff;
+  border: 1px solid #e1e2e4;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #494552;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+.facility-edit-btn-back:hover {
+  background-color: #f2f4f6;
+  color: #28006d;
+  transform: translateX(-2px);
+}
+
+.facility-edit-crumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #7a7583;
+}
+
+.facility-edit-crumb-link {
+  color: #494552;
+  font-weight: 500;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+.facility-edit-crumb-link:hover {
+  color: #28006d;
+}
+
+.facility-edit-crumb-current {
+  color: #28006d;
+  font-weight: 700;
+  max-width: 260px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.facility-edit-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.facility-edit-btn-cancel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #494552;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.facility-edit-btn-cancel:hover {
+  background-color: #f9fafb;
+  color: #111827;
+  border-color: #9ca3af;
+}
+
+.facility-edit-btn-save {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 22px;
+  background-color: #28006d;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(40, 0, 109, 0.25);
+}
+.facility-edit-btn-save:hover:not(:disabled) {
+  background-color: #3f1d8b;
+  transform: translateY(-1px);
+}
+.facility-edit-btn-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   INSTITUTIONAL MASTER HEADER BANNER (Hero Card)
+   ========================================================================== */
+.facility-edit-hero-banner {
+  background: linear-gradient(135deg, #ffffff 0%, #fbf9ff 100%);
+  border: 1px solid #e1e2e4;
+  border-radius: 16px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.facility-edit-hero-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  min-width: 0;
+  flex: 1 1 500px;
+}
+
+.facility-edit-hero-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background-color: #28006d;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(40, 0, 109, 0.2);
+}
+
+.facility-edit-hero-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.facility-edit-hero-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0b1c30;
+  line-height: 32px;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.facility-edit-hero-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.facility-edit-code-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  background-color: #5af8fb;
+  color: #004d4f;
+  border-radius: 9999px;
+  font-family: 'JetBrains Mono', monospace, sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.facility-edit-code-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: #004d4f;
+}
+
+.facility-edit-hero-desc {
+  font-size: 13px;
+  color: #7a7583;
+  margin: 0;
+  line-height: 18px;
+}
+
+.facility-edit-accred-card {
+  background-color: #f0f7ff;
+  border: 1px solid #d0e4ff;
+  border-radius: 12px;
+  padding: 14px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 240px;
+  flex-shrink: 0;
+}
+
+.facility-edit-accred-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #1e40af;
+}
+
+.facility-edit-accred-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0b1c30;
+}
+
+.facility-edit-accred-sub {
+  font-size: 11.5px;
+  color: #006a60;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   MAIN 2-COLUMN RESPONSIVE GRID (8 Cols Left, 4 Cols Right)
+   ========================================================================== */
+.facility-edit-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.85fr) minmax(0, 1fr);
+  gap: 24px;
+  width: 100%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.facility-edit-col-left,
+.facility-edit-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+/* Standard Section Cards */
+.facility-edit-card {
+  background-color: #ffffff;
+  border: 1px solid #e1e2e4;
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.facility-edit-card-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #f0f1f3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.facility-edit-card-heading-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.facility-edit-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.facility-edit-card-icon-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: #eff4ff;
+  color: #28006d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.facility-edit-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0b1c30;
+  margin: 0;
+}
+
+.facility-edit-card-subtitle {
+  font-size: 12.5px;
+  color: #7a7583;
+  margin: 0;
+}
+
+.facility-edit-step-pill {
+  padding: 3px 10px;
+  border-radius: 9999px;
+  background-color: #eff4ff;
+  color: #28006d;
+  font-size: 11px;
+  font-weight: 700;
+  border: 1px solid #d3e4fe;
+}
+
+.facility-edit-gis-pill {
+  padding: 3px 10px;
+  border-radius: 9999px;
+  background-color: rgba(0, 106, 96, 0.1);
+  color: #006a60;
+  font-size: 11px;
+  font-weight: 700;
+  border: 1px solid rgba(0, 106, 96, 0.25);
+}
+
+.facility-edit-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form Controls & Layout */
+.facility-edit-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.facility-edit-field-label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #0b1c30;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.facility-edit-required {
+  color: #ba1a1a;
+}
+
+.facility-edit-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.facility-edit-input-icon {
+  position: absolute;
+  left: 12px;
+  color: #7a7583;
+  pointer-events: none;
+}
+
+.facility-edit-input {
+  width: 100%;
+  height: 42px;
+  padding: 0 14px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: #0b1c30;
+  outline: none;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+}
+
+.facility-edit-input.has-icon {
+  padding-left: 38px;
+}
+
+.facility-edit-input:focus {
+  border-color: #28006d;
+  box-shadow: 0 0 0 3px rgba(40, 0, 109, 0.1);
+}
+
+.facility-edit-input.is-readonly {
+  background-color: #f8f9fb;
+  color: #494552;
+  cursor: not-allowed;
+  border-color: #e1e2e4;
+  font-family: 'JetBrains Mono', monospace, sans-serif;
+  font-weight: 600;
+}
+
+.facility-edit-input.is-error {
+  border-color: #ba1a1a;
+  background-color: #fff8f8;
+}
+
+.facility-edit-field-hint {
+  font-size: 11.5px;
+  color: #7a7583;
+  line-height: 15px;
+}
+
+.facility-edit-field-error {
+  font-size: 11.5px;
+  color: #ba1a1a;
+  font-weight: 600;
+}
+
+.facility-edit-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+.facility-edit-row-3col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Static Map Preview Widget */
+.facility-edit-map-box {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #e1e2e4;
+}
+
+.facility-edit-map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.facility-edit-map-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #006a60;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(0, 106, 96, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Campus Imagery Photos Reel */
+.facility-edit-photos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  width: 100%;
+}
+
+.facility-edit-photo-card {
+  position: relative;
+  height: 130px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e1e2e4;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  background-color: #f2f4f6;
+}
+
+.facility-edit-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.facility-edit-photo-card:hover .facility-edit-photo-img {
+  transform: scale(1.05);
+}
+
+.facility-edit-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(11, 28, 48, 0.85) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 8px 10px;
+}
+
+.facility-edit-photo-caption {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+}
+
+/* ==========================================================================
+   RIGHT COLUMN CARDS (Care ID Twin, Operating Status, Danger Zone)
+   ========================================================================== */
+
+/* CARD 1: Physical Care ID Digital Twin Card */
+.facility-edit-twin-card {
+  background: linear-gradient(135deg, #28006d 0%, #16003e 100%);
+  border-radius: 14px;
+  padding: 22px;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(40, 0, 109, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.facility-edit-twin-watermark {
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  opacity: 0.12;
+  pointer-events: none;
+  width: 160px;
+  height: 160px;
+}
+
+.facility-edit-twin-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.facility-edit-twin-label-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.facility-edit-twin-node-badge {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #5af8fb;
+}
+
+.facility-edit-twin-active-pill {
+  padding: 2px 7px;
+  border-radius: 9999px;
+  background-color: rgba(90, 248, 251, 0.2);
+  color: #5af8fb;
+  font-size: 10px;
+  font-weight: 700;
+  border: 1px solid rgba(90, 248, 251, 0.4);
+}
+
+.facility-edit-twin-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.facility-edit-twin-hlabel {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #cbc4d4;
+}
+
+.facility-edit-twin-facility-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 20px;
+}
+
+.facility-edit-twin-meta {
+  font-size: 11.5px;
+  color: #d3e4fe;
+  font-family: 'JetBrains Mono', monospace, sans-serif;
+}
+
+.facility-edit-twin-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 11px;
+  color: #cbc4d4;
+  position: relative;
+  z-index: 1;
+}
+
+.facility-edit-twin-vault {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #5af8fb;
+  font-weight: 600;
+}
+
+/* CARD 2: Operating Status Radio Options */
+.facility-edit-status-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.facility-edit-status-card-opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid #e1e2e4;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  background-color: #ffffff;
+}
+
+.facility-edit-status-card-opt:hover {
+  background-color: #f8f9ff;
+  border-color: #cbc4d4;
+}
+
+.facility-edit-status-card-opt.is-selected {
+  border-color: #28006d;
+  background-color: #f8f9ff;
+  box-shadow: 0 0 0 2px rgba(40, 0, 109, 0.12);
+}
+
+.facility-edit-radio-circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  border: 2px solid #cbc4d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.facility-edit-status-card-opt.is-selected .facility-edit-radio-circle {
+  border-color: #28006d;
+}
+
+.facility-edit-radio-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #28006d;
+}
+
+.facility-edit-status-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.facility-edit-status-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0b1c30;
+}
+
+.facility-edit-status-desc {
+  font-size: 11.5px;
+  color: #7a7583;
+  line-height: 15px;
+}
+
+/* Department Capabilities Checklist */
+.facility-edit-caps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.facility-edit-cap-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background-color: #f8f9fb;
+  border: 1px solid #e1e2e4;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #0b1c30;
+}
+
+.facility-edit-cap-item:hover {
+  background-color: #eff4ff;
+  border-color: #d3e4fe;
+}
+
+.facility-edit-cap-item.is-checked {
+  background-color: #f0fdf4;
+  border-color: #bbf7d0;
+  color: #166534;
+}
+
+.facility-edit-cap-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  transition: all 0.15s ease;
+}
+
+.facility-edit-cap-item.is-checked .facility-edit-cap-checkbox {
+  background-color: #006a60;
+  border-color: #006a60;
+  color: #ffffff;
+}
+
+/* CARD 3: Danger Zone / Facility Lifecycle */
+.facility-edit-danger-card {
+  background-color: #fff9f9;
+  border: 1px solid #fecaca;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.facility-edit-danger-header {
+  padding: 18px 22px;
+  background-color: #fee2e2;
+  border-bottom: 1px solid #fecaca;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.facility-edit-danger-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #991b1b;
+  margin: 0;
+}
+
+.facility-edit-danger-subtitle {
+  font-size: 12px;
+  color: #b91c1c;
+  margin: 0;
+}
+
+.facility-edit-danger-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.facility-edit-danger-action {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.facility-edit-danger-act-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0b1c30;
+  margin: 0;
+}
+
+.facility-edit-danger-act-desc {
+  font-size: 12px;
+  color: #7a7583;
+  line-height: 16px;
+  margin: 0;
+}
+
+.facility-edit-btn-deactivate {
+  padding: 8px 16px;
+  background-color: #ffffff;
+  border: 1px solid #f87171;
+  color: #dc2626;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  align-self: flex-start;
+}
+.facility-edit-btn-deactivate:hover {
+  background-color: #fef2f2;
+  border-color: #ef4444;
+}
+
+.facility-edit-btn-delete {
+  padding: 8px 16px;
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #9ca3af;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: not-allowed;
+  align-self: flex-start;
+}
+
+/* ==========================================================================
+   BOTTOM STICKY ACTION BAR / AUDIT FOOTER
+   ========================================================================== */
+.facility-edit-bottom-bar {
+  background-color: #ffffff;
+  border: 1px solid #e1e2e4;
+  border-radius: 14px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.facility-edit-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.facility-edit-btn-discard {
+  background: none;
+  border: none;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #7a7583;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+.facility-edit-btn-discard:hover {
+  background-color: #f2f4f6;
+  color: #0b1c30;
+}
+
+.facility-edit-audit-meta {
+  font-size: 12px;
+  color: #7a7583;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.facility-edit-btn-save-return {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 24px;
+  background-color: #28006d;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(40, 0, 109, 0.25);
+}
+.facility-edit-btn-save-return:hover:not(:disabled) {
+  background-color: #3f1d8b;
+  transform: translateY(-1px);
+}
+.facility-edit-btn-save-return:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .facility-edit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .facility-edit-hero-banner {
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .facility-edit-row-2col,
+  .facility-edit-row-3col {
+    grid-template-columns: 1fr;
+  }
+
+  .facility-edit-photos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .facility-edit-bottom-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .facility-edit-btn-save-return {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .facility-edit-canvas {
+    padding: 16px 12px 64px;
+    gap: 16px;
+  }
+
+  .facility-edit-hero-title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}

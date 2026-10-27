@@ -1,0 +1,546 @@
+/* CareID Admin Portal — Patient Action Dialogs Styles */
+/* Matching Figma Node 20:2149 (Admin Portal - Patient Account Actions) */
+/* - Dialog 1: Deactivate Patient Record (Destructive, Node 20:2151) */
+/* - Dialog 2: Reset Patient Password (Node 20:2170) */
+/* - Dialog 3: Edit Patient Profile (Inline style, Node 20:2203) */
+
+/* Scrim / Backdrop Overlay */
+.patient-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+  animation: patientDialogFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  box-sizing: border-box;
+}
+
+@keyframes patientDialogFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Card Base (Shared 20px rounded card with border #e1e2e4) */
+.patient-dialog-card {
+  background-color: #ffffff;
+  border: 1px solid #e1e2e4;
+  border-radius: 20px;
+  box-shadow: 0px 4px 12px 0px rgba(40, 0, 109, 0.05), 0px 20px 40px -8px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  outline: none;
+  animation: patientDialogPopIn 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  box-sizing: border-box;
+}
+
+@keyframes patientDialogPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Specific Card Widths per Figma */
+.patient-dialog-card.deactivate,
+.patient-dialog-card.reset {
+  max-width: 448px;
+}
+
+.patient-dialog-card.edit-profile {
+  max-width: 672px;
+}
+
+/* Content Area */
+.patient-dialog-body {
+  padding: 24px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+/* Header Cluster */
+.patient-dialog-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.patient-dialog-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.patient-dialog-icon-wrap.danger {
+  color: #ba1a1a;
+}
+
+.patient-dialog-icon-wrap.purple {
+  color: #28006d;
+}
+
+.patient-dialog-title {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  color: #191c1e;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Description Text */
+.patient-dialog-desc {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #494552;
+  margin: 0;
+}
+
+.patient-dialog-desc strong {
+  color: #191c1e;
+  font-weight: 700;
+}
+
+/* Form Groups in Dialogs */
+.patient-dialog-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.patient-dialog-field-label {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #494552;
+  margin: 0;
+}
+
+.patient-dialog-input-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.patient-dialog-input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7a7583;
+  pointer-events: none;
+}
+
+.patient-dialog-input-readonly {
+  width: 100%;
+  height: 48px;
+  background-color: #f2f4f6;
+  border: 1px solid #cbc4d4;
+  border-radius: 8px;
+  padding: 12px 16px 12px 40px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #191c1e;
+  opacity: 0.85;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* Checkbox Row */
+.patient-dialog-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 4px;
+  cursor: pointer;
+}
+
+.patient-dialog-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  accent-color: #28006d;
+  cursor: pointer;
+}
+
+.patient-dialog-checkbox-label {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  color: #494552;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Edit Patient Profile Header Bar (Figma Node 20:2204) */
+.patient-edit-dialog-header {
+  background-color: rgba(242, 244, 246, 0.3);
+  border-bottom: 1px solid #e1e2e4;
+  padding: 16px 24px 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.patient-edit-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.patient-edit-header-title {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #191c1e;
+  margin: 0;
+}
+
+.patient-edit-header-close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  color: #494552;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.patient-edit-header-close:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+  color: #191c1e;
+}
+
+/* Edit Dialog Scrollable Content */
+.patient-edit-dialog-scroll {
+  max-height: 615px;
+  overflow-y: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+.patient-edit-dialog-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.patient-edit-dialog-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+
+/* Avatar Section in Edit Dialog (Figma Node 20:2214) */
+.patient-edit-avatar-section {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.patient-edit-avatar-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 9999px;
+  background-color: #e1e2e4;
+  border: 1px solid #cbc4d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.patient-edit-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 9999px;
+}
+
+.patient-edit-avatar-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.patient-edit-btn-change-photo {
+  border: 1px solid #28006d;
+  background: transparent;
+  color: #28006d;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  padding: 9px 36px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 16px;
+  display: inline-block;
+  text-align: center;
+}
+
+.patient-edit-btn-change-photo:hover {
+  background-color: rgba(40, 0, 109, 0.05);
+}
+
+.patient-edit-avatar-hint {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  color: #494552;
+  margin: 0;
+}
+
+/* Form Grid in Edit Dialog (Figma Node 20:2223) */
+.patient-edit-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .patient-edit-form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.patient-edit-field-full {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.patient-edit-input {
+  width: 100%;
+  height: 46px;
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 8px;
+  padding: 10px 17px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #191c1e;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.patient-edit-input:focus {
+  border-color: #28006d;
+  box-shadow: 0 0 0 3px rgba(40, 0, 109, 0.12);
+  outline: none;
+}
+
+.patient-edit-input.has-error {
+  border-color: #ba1a1a;
+  background-color: #fffbfa;
+}
+
+.patient-edit-error-text {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  color: #ba1a1a;
+  margin-top: 4px;
+  line-height: 14px;
+}
+
+/* Dialog Footer Bar (Figma Node 20:2165, 20:2196, 20:2265) */
+.patient-dialog-footer {
+  background-color: rgba(242, 244, 246, 0.5);
+  border-top: 1px solid #e1e2e4;
+  padding: 18px 24px 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.patient-dialog-btn-cancel {
+  background: transparent;
+  border: none;
+  color: #28006d;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  line-height: 16px;
+}
+
+.patient-dialog-btn-cancel:hover {
+  background-color: rgba(40, 0, 109, 0.06);
+}
+
+.patient-dialog-btn-destructive {
+  background-color: #ba1a1a;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  padding: 10px 24px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+  line-height: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.patient-dialog-btn-destructive:hover:not(:disabled) {
+  background-color: #930006;
+  box-shadow: 0 4px 12px rgba(186, 26, 26, 0.25);
+}
+
+.patient-dialog-btn-destructive:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.patient-dialog-btn-primary {
+  background-color: #28006d;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  padding: 10px 24px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+  line-height: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.patient-dialog-btn-primary:hover:not(:disabled) {
+  background-color: #3c00a0;
+  box-shadow: 0 4px 12px rgba(40, 0, 109, 0.25);
+}
+
+.patient-dialog-btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Showcase Page Styling (for /admin/patients/dialogs) */
+.patient-dialogs-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.patient-dialogs-showcase-card {
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.patient-dialogs-showcase-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -6px rgba(40, 0, 109, 0.08);
+}
+
+.patient-dialogs-showcase-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.patient-dialogs-showcase-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.patient-dialogs-showcase-title {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #191c1e;
+  margin: 0;
+}
+
+.patient-dialogs-showcase-desc {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #494552;
+  margin: 0;
+}
+
+.patient-dialogs-showcase-btn {
+  background-color: #28006d;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  padding: 10px 20px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  margin-top: auto;
+  align-self: flex-start;
+  transition: background-color 0.15s ease;
+}
+
+.patient-dialogs-showcase-btn:hover {
+  background-color: #3c00a0;
+}

@@ -1,0 +1,584 @@
+/* CareID Admin Portal - Patient Registration Styles */
+/* Matching Figma Node 20:1988 (Admin Portal - Patient Registration & Empty States) */
+
+.patient-registration-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  height: 100dvh;
+  max-height: 100dvh;
+  background-color: #f2f4f6;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Page Canvas with smooth scrolling */
+.patient-registration-canvas {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 32px 32px 64px;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.patient-registration-canvas::-webkit-scrollbar {
+  width: 6px;
+}
+.patient-registration-canvas::-webkit-scrollbar-track {
+  background: transparent;
+}
+.patient-registration-canvas::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+.patient-registration-canvas::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Form Wrapper (Figma Node 20:2006, width 800px) */
+.patient-reg-form-wrapper {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+/* Header Section (Figma Node 20:2007) */
+.patient-reg-heading-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.patient-reg-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #191c1e;
+  line-height: 40px;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.patient-reg-subtitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  color: #494552;
+  line-height: 20px;
+  margin: 0;
+}
+
+/* Form Container */
+.patient-reg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Cards (Figma Node 20:2013 and 20:2059) */
+.patient-reg-card {
+  background: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 20px;
+  padding: 33px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.patient-reg-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.patient-reg-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #191c1e;
+  flex-shrink: 0;
+}
+
+.patient-reg-card-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #191c1e;
+  line-height: 24px;
+  margin: 0;
+}
+
+/* Patient Photo Row (Figma Node 20:2020) */
+.patient-photo-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: 8px;
+  width: 100%;
+}
+
+.patient-photo-circle {
+  width: 96px;
+  height: 96px;
+  border-radius: 9999px;
+  background: #e7e8ea;
+  border: 1px solid #cbc4d4;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.patient-photo-circle:hover {
+  border-color: #28006d;
+  box-shadow: 0 0 0 3px rgba(40, 0, 109, 0.1);
+}
+
+.patient-photo-empty-icon {
+  color: #7a7583;
+}
+
+.patient-photo-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 9999px;
+}
+
+.patient-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  border-radius: 9999px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.patient-photo-circle:hover .patient-photo-overlay {
+  opacity: 1;
+}
+
+.patient-photo-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.patient-photo-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #191c1e;
+  line-height: 24px;
+}
+
+.patient-photo-help {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  color: #494552;
+  line-height: 16px;
+}
+
+.patient-photo-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.patient-photo-action-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #006a60;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.patient-photo-action-btn:hover {
+  color: #004d40;
+}
+
+.patient-photo-action-btn.remove {
+  color: #ba1a1a;
+}
+
+.patient-photo-action-btn.remove:hover {
+  color: #930006;
+}
+
+/* Form Grid */
+.patient-reg-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .patient-reg-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.patient-reg-field-full {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.patient-reg-field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.patient-reg-input-wrap {
+  position: relative;
+  width: 100%;
+  height: 58px;
+  display: flex;
+  align-items: center;
+}
+
+.patient-reg-input {
+  width: 100%;
+  height: 58px;
+  border: 1px solid #7a7583;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 0 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  color: #191c1e;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.patient-reg-input:focus {
+  border-color: #28006d;
+  box-shadow: 0 0 0 3px rgba(40, 0, 109, 0.12);
+  outline: none;
+}
+
+.patient-reg-input.has-error {
+  border-color: #ba1a1a;
+  background-color: #fffbfa;
+}
+
+.patient-reg-input::placeholder {
+  color: #494552;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* Labeled inputs (Date of Birth, Gender) */
+.patient-reg-input-labeled {
+  padding-top: 20px;
+  padding-bottom: 4px;
+}
+
+.patient-reg-inner-label {
+  position: absolute;
+  left: 16px;
+  top: 7px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #494552;
+  pointer-events: none;
+  line-height: 16px;
+  z-index: 1;
+}
+
+.patient-reg-icon-right {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7a7583;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Select element */
+.patient-reg-select {
+  width: 100%;
+  height: 58px;
+  border: 1px solid #7a7583;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 20px 40px 4px 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  color: #191c1e;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.patient-reg-select:focus {
+  border-color: #28006d;
+  box-shadow: 0 0 0 3px rgba(40, 0, 109, 0.12);
+  outline: none;
+}
+
+.patient-reg-select.has-error {
+  border-color: #ba1a1a;
+  background-color: #fffbfa;
+}
+
+/* Validation error text */
+.patient-reg-error-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  color: #ba1a1a;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  line-height: 16px;
+}
+
+/* Form Actions Footer (Figma Node 20:2077) */
+.patient-reg-actions {
+  border-top: 1px solid #cbc4d4;
+  padding-top: 17px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  margin-top: 8px;
+  box-sizing: border-box;
+}
+
+.patient-reg-btn-cancel {
+  border: 1px solid #006a60;
+  background: transparent;
+  color: #006a60;
+  border-radius: 9999px;
+  padding: 11px 25px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 16px;
+}
+
+.patient-reg-btn-cancel:hover {
+  background: rgba(0, 106, 96, 0.08);
+  border-color: #004d40;
+  color: #004d40;
+}
+
+.patient-reg-btn-submit {
+  border: none;
+  background: #28006d;
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 11px 32px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 16px;
+}
+
+.patient-reg-btn-submit:hover:not(:disabled) {
+  background: #3c00a0;
+  box-shadow: 0 4px 12px rgba(40, 0, 109, 0.25);
+}
+
+.patient-reg-btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Success Modal */
+.patient-reg-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: regFadeIn 0.2s ease;
+}
+
+.patient-reg-modal-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #cbc4d4;
+  padding: 32px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  animation: regScaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.patient-reg-modal-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #e6f5f3;
+  color: #006a60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.patient-reg-modal-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #191c1e;
+  margin: 0;
+}
+
+.patient-reg-modal-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  color: #494552;
+  line-height: 20px;
+  margin: 0;
+}
+
+.patient-reg-modal-badge {
+  background: #f2f4f6;
+  border: 1px solid #cbc4d4;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-family: monospace;
+  font-size: 15px;
+  font-weight: 600;
+  color: #28006d;
+  margin: 4px 0 8px;
+  display: inline-block;
+}
+
+.patient-reg-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.patient-reg-modal-btn-primary {
+  width: 100%;
+  border: none;
+  background: #28006d;
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 12px 24px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.patient-reg-modal-btn-primary:hover {
+  background: #3c00a0;
+}
+
+.patient-reg-modal-btn-secondary {
+  width: 100%;
+  border: 1px solid #006a60;
+  background: transparent;
+  color: #006a60;
+  border-radius: 9999px;
+  padding: 12px 24px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.patient-reg-modal-btn-secondary:hover {
+  background: rgba(0, 106, 96, 0.08);
+}
+
+.patient-reg-modal-btn-tertiary {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #7a7583;
+  padding: 8px 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.patient-reg-modal-btn-tertiary:hover {
+  color: #191c1e;
+}
+
+@keyframes regFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes regScaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
