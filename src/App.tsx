@@ -29,6 +29,61 @@ import AdminUploadRecord from './components/records/AdminUploadRecord';
 import AdminOcrQueue from './components/ocr/AdminOcrQueue';
 import AdminOcrAnalytics from './components/ocr/AdminOcrAnalytics';
 import AdminOcrVerificationWorkspace from './components/ocr/AdminOcrVerificationWorkspace';
+import AdminOcrRejected from './components/ocr/AdminOcrRejected';
+import AdminReferralDashboard from './components/referrals/AdminReferralDashboard';
+import AdminReferralMonitoring from './components/referrals/AdminReferralMonitoring';
+import AdminReferralDetails from './components/referrals/AdminReferralDetails';
+import AdminReferralAudit from './components/referrals/AdminReferralAudit';
+
+const ReferralDashboardPage: React.FC = () => {
+  const navigate = useNavigate();
+  return (
+    <AdminReferralDashboard
+      onNavigate={(path) => navigate(path)}
+      onLogout={() => navigate('/')}
+    />
+  );
+};
+
+const ReferralMonitoringPage: React.FC = () => {
+  const navigate = useNavigate();
+  return (
+    <AdminReferralMonitoring
+      onNavigate={(path) => navigate(path)}
+      onLogout={() => navigate('/')}
+    />
+  );
+};
+
+const ReferralDetailsPage: React.FC = () => {
+  const navigate = useNavigate();
+  return (
+    <AdminReferralDetails
+      onNavigate={(path) => navigate(path)}
+      onLogout={() => navigate('/')}
+    />
+  );
+};
+
+const ReferralAuditPage: React.FC = () => {
+  const navigate = useNavigate();
+  return (
+    <AdminReferralAudit
+      onNavigate={(path) => navigate(path)}
+      onLogout={() => navigate('/')}
+    />
+  );
+};
+
+const OcrRejectedPage: React.FC = () => {
+  const navigate = useNavigate();
+  return (
+    <AdminOcrRejected
+      onNavigate={(path) => navigate(path)}
+      onLogout={() => navigate('/')}
+    />
+  );
+};
 
 const OcrVerificationWorkspacePage: React.FC = () => {
   const navigate = useNavigate();
@@ -395,6 +450,9 @@ export const App: React.FC = () => {
         <Route path="/admin/ocr" element={<Navigate to="/admin/ocr/queue" replace />} />
         <Route path="/admin/ocr/queue" element={<OcrQueuePage />} />
         <Route path="/admin/ocr/analytics" element={<OcrAnalyticsPage />} />
+        <Route path="/admin/ocr/rejected" element={<OcrRejectedPage />} />
+        <Route path="/admin/ocr/history" element={<OcrRejectedPage />} />
+        <Route path="/admin/ocr/rejected-history" element={<Navigate to="/admin/ocr/rejected" replace />} />
         <Route path="/admin/ocr/verify/:id" element={<OcrVerificationWorkspacePage />} />
         <Route path="/admin/ocr/verify" element={<OcrVerificationWorkspacePage />} />
         <Route path="/admin/ocr/workspace/:id" element={<OcrVerificationWorkspacePage />} />
@@ -402,9 +460,28 @@ export const App: React.FC = () => {
         <Route path="/admin/ocr-verification" element={<Navigate to="/admin/ocr/queue" replace />} />
         <Route path="/admin/ocr-verification/queue" element={<Navigate to="/admin/ocr/queue" replace />} />
         <Route path="/admin/ocr-verification/analytics" element={<Navigate to="/admin/ocr/analytics" replace />} />
+        <Route path="/admin/ocr-verification/rejected" element={<Navigate to="/admin/ocr/rejected" replace />} />
+        <Route path="/admin/ocr-verification/history" element={<Navigate to="/admin/ocr/history" replace />} />
         <Route path="/admin/ocr-verification/workspace/:id" element={<OcrVerificationWorkspacePage />} />
         <Route path="/admin/ocr-verification/workspace" element={<OcrVerificationWorkspacePage />} />
-        <Route path="/ocr" element={<Navigate to="/admin/ocr/queue" replace />} />
+        {/* Referral Management & Escalation Monitoring */}
+        <Route path="/admin/referrals" element={<ReferralDashboardPage />} />
+        <Route path="/admin/referrals/overview" element={<Navigate to="/admin/referrals" replace />} />
+        <Route path="/admin/referral-dashboard" element={<Navigate to="/admin/referrals" replace />} />
+        <Route path="/admin/referrals/escalations" element={<ReferralMonitoringPage />} />
+        <Route path="/admin/referrals/monitoring" element={<Navigate to="/admin/referrals/escalations" replace />} />
+        <Route path="/admin/referrals/queue" element={<Navigate to="/admin/referrals/escalations" replace />} />
+        <Route path="/admin/referral-monitoring" element={<Navigate to="/admin/referrals/escalations" replace />} />
+        {/* Referral Audit Log & Empty States */}
+        <Route path="/admin/referrals/audit" element={<ReferralAuditPage />} />
+        <Route path="/admin/referrals/audit-history" element={<Navigate to="/admin/referrals/audit" replace />} />
+        <Route path="/admin/referrals/history" element={<Navigate to="/admin/referrals/audit" replace />} />
+        <Route path="/admin/referrals/details" element={<Navigate to="/admin/referrals/ref-9021" replace />} />
+        <Route path="/admin/referrals/details/:referralId" element={<ReferralDetailsPage />} />
+        <Route path="/admin/referrals/:referralId" element={<ReferralDetailsPage />} />
+        <Route path="/admin/referral-details/:referralId" element={<ReferralDetailsPage />} />
+        <Route path="/admin/referral-details" element={<Navigate to="/admin/referrals/ref-9021" replace />} />
+        <Route path="/referrals" element={<Navigate to="/admin/referrals" replace />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

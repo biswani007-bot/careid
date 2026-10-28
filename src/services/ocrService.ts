@@ -620,7 +620,222 @@ export function useSaveOcrDraftMutation() {
       queryClient.invalidateQueries({ queryKey: ['ocrItem'] });
       queryClient.invalidateQueries({ queryKey: ['ocrItem', variables.ocrId] });
       queryClient.invalidateQueries({ queryKey: ['ocrQueueStats'] });
+    },
+  });
+}
+
+export interface OcrRejectedItem {
+  id: string;
+  ocrId: string;
+  fileName: string;
+  fileSize?: string;
+  uploadDate: string;
+  uploadTimestamp?: string;
+  rejectionReason: string;
+  explanation: string;
+  reviewerName: string;
+  reviewerAvatar?: string;
+  reviewerInitials: string;
+  documentUrl?: string;
+  thumbnailUrl?: string;
+  patientName?: string;
+  patientId?: string;
+  canReprocess?: boolean;
+}
+
+export interface OcrRejectedFilters {
+  reason?: string;
+  reviewer?: string;
+  searchQuery?: string;
+}
+
+const initialRejectedItems: OcrRejectedItem[] = [
+  {
+    id: 'rej-1',
+    ocrId: 'DOC-9921',
+    fileName: 'LabResults_Q3_Smith.pdf',
+    fileSize: '2.4 MB',
+    uploadDate: 'Oct 24, 2023',
+    uploadTimestamp: '2026-10-24T09:15:00Z',
+    rejectionReason: 'Unreadable Text',
+    explanation: 'DPI too low, artifacts present.',
+    reviewerName: 'S. Jenkins',
+    reviewerInitials: 'SJ',
+    canReprocess: true,
+  },
+  {
+    id: 'rej-2',
+    ocrId: 'DOC-9844',
+    fileName: 'Prescription_DrDavis.pdf',
+    fileSize: '1.1 MB',
+    uploadDate: 'Oct 23, 2023',
+    uploadTimestamp: '2026-10-23T14:30:00Z',
+    rejectionReason: 'Missing Signature',
+    explanation: 'Signature not detected.',
+    reviewerName: 'R. Vance',
+    reviewerInitials: 'RV',
+    canReprocess: true,
+  },
+  {
+    id: 'rej-3',
+    ocrId: '#OCR-8828',
+    fileName: 'Prescription_Handwritten_Patel.pdf',
+    fileSize: '3.8 MB',
+    uploadDate: 'Oct 23, 2023',
+    uploadTimestamp: '2026-10-23T09:20:00Z',
+    rejectionReason: 'Illegible Region',
+    explanation: 'Illegible Region Detected across sig line.',
+    reviewerName: 'Dr. E. Vance',
+    reviewerInitials: 'EV',
+    canReprocess: true,
+  },
+];
+
+let ocrRejectedStore: OcrRejectedItem[] = [...initialRejectedItems];
+
+export function useOcrRejectedQuery(filters?: OcrRejectedFilters) {
+  return useQuery({
+    queryKey: ['ocrRejected', filters],
+    queryFn: async (): Promise<OcrRejectedItem[]> => {
+      await new Promise((resolve) => setTimeout(resolve, 80));
+
+      // Combine dedicated rejected items with any rejected items from ocrQueueStore
+      const queueRejectedMapped: OcrRejectedItem[] = ocrQueueStore
+        .filter((item) => item.status === 'Rejected')
+        .map((item) => {
+          const initials =
+            item.reviewer && item.reviewer !== 'Unassigned'
+              ? item.reviewer
+                  .split(' ')
+                  .map((n) => n[0])
+                  .join('')
+                  .toUpperCase()
+                  .slice(0, 2)
+              : 'EV';
+          return {
+            id: `rej-${item.id}`,
+            ocrId: item.ocrId,
+            fileName: `${item.documentType.replace(/\s+/g, '_')}.pdf`,
+            fileSize: '1.8 MB',
+            uploadDate: item.uploadDate,
+            uploadTimestamp: item.uploadTimestamp,
+            rejectionReason: item.exceptionReason?.split(' ')[0] || 'Verification Failed',
+            explanation: item.exceptionReason || 'Document flagged during manual verification.',
+            reviewerName: item.reviewer || 'Dr. E. Vance',
+            reviewerInitials: initials,
+            patientName: item.patientName,
+            patientId: item.patientId,
+            canReprocess: true,
+          };
+        });
+
+      // De-duplicate by ocrId
+      const seen = new Set<string>();
+      const combined: OcrRejectedItem[] = [];
+
+      for (const it of [...ocrRejectedStore, ...queueRejectedMapped]) {
+        const key = it.ocrId.toLowerCase().replace('#', '');
+        if (!seen.has(key)) {
+          seen.add(key);
+          combined.push(it);
+        }
+      }
+
+      let filtered = [...combined];
+
+      if (filters?.reason && filters.reason !== 'All') {
+        filtered = filtered.filter(
+          (it) => it.rejectionReason.toLowerCase() === filters.reason?.toLowerCase()
+        );
+      }
+
+      if (filters?.reviewer && filters.reviewer !== 'All') {
+        filtered = filtered.filter((it) =>
+          it.reviewerName.toLowerCase().includes(filters.reviewer!.toLowerCase())
+        );
+      }
+
+      if (filters?.searchQuery && filters.searchQuery.trim()) {
+        const q = filters.searchQuery.toLowerCase().trim();
+        filtered = filtered.filter(
+          (it) =>
+            it.fileName.toLowerCase().includes(q) ||
+            it.ocrId.toLowerCase().includes(q) ||
+            it.explanation.toLowerCase().includes(q) ||
+            it.rejectionReason.toLowerCase().includes(q) ||
+            it.reviewerName.toLowerCase().includes(q)
+        );
+      }
+
+      return filtered;
+    },
+    staleTime: 1000 * 60,
+  });
+}
+
+export function useReprocessRejectedOcrMutation() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: async ({ id, ocrId }: { id: string; ocrId: string }) => {
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      // In a real API, this calls POST /api/v1/ocr/jobs with medicalAttachmentId
+      // In local state, mark as re-queued
+      ocrRejectedStore = ocrRejectedStore.filter((it) => it.id !== id && it.ocrId !== ocrId);
+      ocrQueueStore = ocrQueueStore.map((it) =>
+        it.ocrId === ocrId || it.id === id
+          ? { ...it, status: 'Under Review', confidence: Math.min(95, it.confidence + 15) }
+          : it
+      );
+      return { success: true, ocrId };
+    },
+    onSuccess: (_, variables) => {
+      queryClient.invalidateQueries({ queryKey: ['ocrRejected'] });
+      queryClient.invalidateQueries({ queryKey: ['ocrQueue'] });
+      queryClient.invalidateQueries({ queryKey: ['ocrQueueStats'] });
       queryClient.invalidateQueries({ queryKey: ['ocrAnalytics'] });
+      queryClient.invalidateQueries({ queryKey: ['ocrItem'] });
+      queryClient.invalidateQueries({ queryKey: ['ocrItem', variables.ocrId] });
+    },
+  });
+}
+
+export function useReplaceOcrDocumentMutation() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: async ({
+      id,
+      ocrId,
+      fileName,
+      notes,
+    }: {
+      id: string;
+      ocrId: string;
+      fileName: string;
+      notes?: string;
+    }) => {
+      await new Promise((resolve) => setTimeout(resolve, 600));
+      // In a real API, this registers an attachment via POST /api/v1/attachments and triggers POST /api/v1/ocr/jobs
+      ocrRejectedStore = ocrRejectedStore.filter((it) => it.id !== id && it.ocrId !== ocrId);
+      ocrQueueStore = ocrQueueStore.map((it) =>
+        it.ocrId === ocrId || it.id === id
+          ? {
+              ...it,
+              status: 'Under Review',
+              confidence: 90,
+              confidenceLevel: 'high',
+              exceptionReason: notes || 'Replaced with high-resolution scan',
+            }
+          : it
+      );
+      return { success: true, ocrId, fileName };
+    },
+    onSuccess: (_, variables) => {
+      queryClient.invalidateQueries({ queryKey: ['ocrRejected'] });
+      queryClient.invalidateQueries({ queryKey: ['ocrQueue'] });
+      queryClient.invalidateQueries({ queryKey: ['ocrQueueStats'] });
+      queryClient.invalidateQueries({ queryKey: ['ocrAnalytics'] });
+      queryClient.invalidateQueries({ queryKey: ['ocrItem'] });
+      queryClient.invalidateQueries({ queryKey: ['ocrItem', variables.ocrId] });
     },
   });
 }

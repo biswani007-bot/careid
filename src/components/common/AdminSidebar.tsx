@@ -1,7 +1,8 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { X, ChevronDown, Plus } from 'lucide-react';
+import '../dashboard/AdminDashboard.css';
 
 // Authentic Assets
 import logoImg from '../../assets/dashboard/careid-logo.png';
@@ -41,6 +42,63 @@ export const AdminSidebar: React.FC<AdminSidebarProps> = ({
 }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isOcrActive =
+    activeNav === 'ocr' ||
+    activeNav.startsWith('ocr-') ||
+    location.pathname.startsWith('/admin/ocr');
+
+  const [isOcrExpanded, setIsOcrExpanded] = useState(isOcrActive);
+
+  useEffect(() => {
+    if (isOcrActive) {
+      setIsOcrExpanded(true);
+    }
+  }, [isOcrActive, location.pathname]);
+
+  const isQueueActive =
+    activeNav === 'ocr-queue' ||
+    location.pathname === '/admin/ocr/queue' ||
+    location.pathname === '/admin/ocr' ||
+    location.pathname === '/admin/ocr-verification/queue' ||
+    (activeNav === 'ocr' && !location.pathname.includes('/rejected') && !location.pathname.includes('/history'));
+
+  const isRejectedActive =
+    activeNav === 'ocr-rejected' ||
+    location.pathname === '/admin/ocr/rejected' ||
+    location.pathname === '/admin/ocr-verification/rejected';
+
+  const isHistoryActive =
+    activeNav === 'ocr-history' ||
+    location.pathname === '/admin/ocr/history' ||
+    location.pathname === '/admin/ocr-verification/history';
+
+  const isReferralsActive =
+    activeNav === 'referrals' ||
+    activeNav.startsWith('referral') ||
+    location.pathname.startsWith('/admin/referral');
+
+  const [isReferralsExpanded, setIsReferralsExpanded] = useState(isReferralsActive);
+
+  useEffect(() => {
+    if (isReferralsActive) {
+      setIsReferralsExpanded(true);
+    }
+  }, [isReferralsActive, location.pathname]);
+
+  const isReferralAuditActive =
+    activeNav === 'referrals-audit' ||
+    location.pathname === '/admin/referrals/audit';
+
+  const isReferralMonitoringActive =
+    activeNav === 'referrals-escalations' ||
+    location.pathname.startsWith('/admin/referrals/escalations');
+
+  const isReferralOverviewActive =
+    (activeNav === 'referrals' || activeNav === 'referrals-overview') &&
+    !isReferralAuditActive &&
+    !isReferralMonitoringActive;
 
   const handleNavClick = (path: string) => {
     onCloseDrawer();
@@ -208,36 +266,123 @@ export const AdminSidebar: React.FC<AdminSidebarProps> = ({
           )}
         </div>
 
-        {/* OCR Verification with Badge 12 */}
-        <button
-          type="button"
-          className={`sidebar-nav-item ${activeNav === 'ocr' || activeNav.startsWith('ocr-') ? 'active' : ''}`}
-          onClick={() => handleNavClick('/admin/ocr/queue')}
-          aria-current={activeNav === 'ocr' || activeNav.startsWith('ocr-') ? 'page' : undefined}
-        >
-          <span className="sidebar-nav-icon">
-            <img src={navOcrIcon} alt="" />
-          </span>
-          <span className="sidebar-nav-label">
-            {t('dashboard.nav.ocrVerification', 'OCR Verification')}
-          </span>
-          <span className="sidebar-badge sidebar-badge-red">12</span>
-        </button>
+        {/* OCR Verification with Submenu */}
+        <div className="w-full flex flex-col">
+          <button
+            type="button"
+            className={`sidebar-nav-item ${isOcrActive ? 'active' : ''}`}
+            onClick={() => {
+              if (isOcrActive) {
+                setIsOcrExpanded(!isOcrExpanded);
+              } else {
+                handleNavClick('/admin/ocr/queue');
+              }
+            }}
+            aria-current={isOcrActive ? 'page' : undefined}
+            aria-expanded={isOcrExpanded}
+          >
+            <span className="sidebar-nav-icon">
+              <img src={navOcrIcon} alt="" />
+            </span>
+            <span className="sidebar-nav-label">
+              {t('dashboard.nav.ocrVerification', 'OCR Verification')}
+            </span>
+            <div className="flex items-center gap-1.5 ml-auto">
+              <span className="sidebar-badge sidebar-badge-red">12</span>
+              <ChevronDown
+                size={15}
+                className={`transition-transform duration-200 ${
+                  isOcrExpanded ? 'rotate-180 text-white' : 'text-[#ab8efd]'
+                }`}
+              />
+            </div>
+          </button>
 
-        {/* Referrals with Badge 5 */}
-        <button
-          type="button"
-          className={`sidebar-nav-item ${activeNav === 'referrals' ? 'active' : ''}`}
-          onClick={() => handleNavClick('/admin/dashboard')}
-        >
-          <span className="sidebar-nav-icon">
-            <img src={navReferralsIcon} alt="" />
-          </span>
-          <span className="sidebar-nav-label">
-            {t('dashboard.nav.referrals', 'Referrals')}
-          </span>
-          <span className="sidebar-badge sidebar-badge-amber">5</span>
-        </button>
+          {isOcrExpanded && (
+            <div className="sidebar-subnav-list">
+              <button
+                type="button"
+                className={`sidebar-subnav-item ${isQueueActive ? 'active' : ''}`}
+                onClick={() => handleNavClick('/admin/ocr/queue')}
+              >
+                {t('dashboard.nav.ocrProcessingQueue', 'Processing Queue')}
+              </button>
+              <button
+                type="button"
+                className={`sidebar-subnav-item ${isRejectedActive ? 'active' : ''}`}
+                onClick={() => handleNavClick('/admin/ocr/rejected')}
+              >
+                {t('dashboard.nav.ocrRejected', 'Rejected Documents')}
+              </button>
+              <button
+                type="button"
+                className={`sidebar-subnav-item ${isHistoryActive ? 'active' : ''}`}
+                onClick={() => handleNavClick('/admin/ocr/history')}
+              >
+                {t('dashboard.nav.ocrHistory', 'Review History')}
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* Referrals with Submenu */}
+        <div className="w-full flex flex-col">
+          <button
+            type="button"
+            className={`sidebar-nav-item ${isReferralsActive ? 'active' : ''}`}
+            onClick={() => {
+              if (isReferralsActive) {
+                setIsReferralsExpanded(!isReferralsExpanded);
+              } else {
+                handleNavClick('/admin/referrals');
+              }
+            }}
+            aria-current={isReferralsActive ? 'page' : undefined}
+            aria-expanded={isReferralsExpanded}
+          >
+            <span className="sidebar-nav-icon">
+              <img src={navReferralsIcon} alt="" />
+            </span>
+            <span className="sidebar-nav-label">
+              {t('dashboard.nav.referrals', 'Referrals')}
+            </span>
+            <div className="flex items-center gap-1.5 ml-auto">
+              <span className="sidebar-badge sidebar-badge-amber">5</span>
+              <ChevronDown
+                size={15}
+                className={`transition-transform duration-200 ${
+                  isReferralsExpanded ? 'rotate-180 text-white' : 'text-[#ab8efd]'
+                }`}
+              />
+            </div>
+          </button>
+
+          {isReferralsExpanded && (
+            <div className="sidebar-subnav-list">
+              <button
+                type="button"
+                className={`sidebar-subnav-item ${isReferralOverviewActive ? 'active' : ''}`}
+                onClick={() => handleNavClick('/admin/referrals')}
+              >
+                {t('dashboard.nav.referralsOverview', 'Overview')}
+              </button>
+              <button
+                type="button"
+                className={`sidebar-subnav-item ${isReferralMonitoringActive ? 'active' : ''}`}
+                onClick={() => handleNavClick('/admin/referrals/escalations')}
+              >
+                {t('dashboard.nav.referralsMonitoring', 'Monitoring & Queue')}
+              </button>
+              <button
+                type="button"
+                className={`sidebar-subnav-item ${isReferralAuditActive ? 'active' : ''}`}
+                onClick={() => handleNavClick('/admin/referrals/audit')}
+              >
+                {t('dashboard.nav.referralAudit', 'Referral Audit')}
+              </button>
+            </div>
+          )}
+        </div>
 
         {/* Reports */}
         <button
@@ -315,7 +460,7 @@ export const AdminSidebar: React.FC<AdminSidebarProps> = ({
           {ctaLabel ? (
             <>
               <Plus size={18} />
-              <span>{ctaLabel}</span>
+              <span>{ctaLabel.replace(/^\+\s*/, '')}</span>
             </>
           ) : (
             <>

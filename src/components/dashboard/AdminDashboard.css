@@ -33,6 +33,8 @@
   flex-shrink: 0;
   height: 100dvh;
   max-height: 100dvh;
+  position: sticky;
+  top: 0;
   overflow: hidden; /* Sidebar container itself is fixed; middle nav list scrolls if needed */
   z-index: 30;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1470,8 +1472,10 @@
     transform: translateX(0);
   }
 
-  .careid-drawer-backdrop.drawer-open {
+  .careid-drawer-backdrop.drawer-open,
+  .careid-drawer-backdrop.show {
     display: block;
+    z-index: 45;
   }
 
   .sidebar-close-btn {

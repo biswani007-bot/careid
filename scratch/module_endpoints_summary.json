@@ -1,0 +1,4094 @@
+{
+  "Authentication & Identity": [
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/otp/request",
+      "operationId": "AuthController_requestOtp_v1",
+      "summary": "Request Phone OTP",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/otp/verify",
+      "operationId": "AuthController_verifyOtp_v1",
+      "summary": "Verify Phone OTP & Login",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/otp/resend",
+      "operationId": "AuthController_resendOtp_v1",
+      "summary": "Resend OTP to registered phone number",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/token/refresh",
+      "operationId": "AuthController_refreshToken_v1",
+      "summary": "Refresh JWT Access Token",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/logout",
+      "operationId": "AuthController_logout_v1",
+      "summary": "User Session Logout",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/auth/logout-all",
+      "operationId": "AuthController_logoutAll_v1",
+      "summary": "Logout all devices and revoke all tokens",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/me",
+      "operationId": "AuthController_getMe_v1",
+      "summary": "Get current user profile and claims",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/sessions",
+      "operationId": "AuthController_getSessions_v1",
+      "summary": "List active sessions for authenticated user",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/auth/sessions",
+      "operationId": "AuthController_revokeOtherSessions_v1",
+      "summary": "Terminate all other active sessions",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "204"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/auth/sessions/{sessionId}",
+      "operationId": "AuthController_revokeSession_v1",
+      "summary": "Terminate a specific active session",
+      "parameters": [
+        {
+          "name": "sessionId",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "204"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/roles",
+      "operationId": "AuthController_getRoles_v1",
+      "summary": "Get current user assigned roles",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/permissions",
+      "operationId": "AuthController_getPermissions_v1",
+      "summary": "Get current user assigned permissions",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    }
+  ],
+  "Admin": [
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/dashboard/stats",
+      "operationId": "AdminController_getDashboardStats_v1",
+      "summary": "Get quick legacy dashboard statistics",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/dashboard/summary",
+      "operationId": "AdminController_getDashboardSummary_v1",
+      "summary": "Get platform-wide aggregated summary & growth metrics",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/users",
+      "operationId": "AdminController_getUsers_v1",
+      "summary": "Search and list platform users with filter & roles",
+      "parameters": [
+        {
+          "name": "q",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        },
+        {
+          "name": "status",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/users/{id}",
+      "operationId": "AdminController_getUserById_v1",
+      "summary": "Get user details by ID",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/admin/users/{id}",
+      "operationId": "AdminController_softDeleteUser_v1",
+      "summary": "Soft-delete / block a user account",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/admin/users/{id}/status",
+      "operationId": "AdminController_updateUserStatus_v1",
+      "summary": "Activate, deactivate, or lock/block user account",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/admin/users/{id}/roles",
+      "operationId": "AdminController_assignUserRoles_v1",
+      "summary": "Assign RBAC roles to user",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/users/{id}/restore",
+      "operationId": "AdminController_restoreUser_v1",
+      "summary": "Restore a blocked/soft-deleted user account",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/roles",
+      "operationId": "AdminController_getRoles_v1",
+      "summary": "List all RBAC roles with assigned permissions",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/permissions",
+      "operationId": "AdminController_getPermissions_v1",
+      "summary": "List all system permissions",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/permissions",
+      "operationId": "AdminController_createPermission_v1",
+      "summary": "Create a new granular permission",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/permission-groups",
+      "operationId": "AdminController_getPermissionGroups_v1",
+      "summary": "List permission groups with permissions",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/permission-groups",
+      "operationId": "AdminController_createPermissionGroup_v1",
+      "summary": "Create a new permission group",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/admin/roles/{id}/permissions",
+      "operationId": "AdminController_assignRolePermissions_v1",
+      "summary": "Assign permissions to a role",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/permission-matrix",
+      "operationId": "AdminController_getPermissionMatrix_v1",
+      "summary": "Get complete Role-Permission matrix",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/organizations",
+      "operationId": "AdminController_createOrganization_v1",
+      "summary": "Create an organization profile",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/organizations",
+      "operationId": "AdminController_getOrganizations_v1",
+      "summary": "List all registered organizations",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/organizations/{id}",
+      "operationId": "AdminController_getOrganizationById_v1",
+      "summary": "Get organization details",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/admin/organizations/{id}",
+      "operationId": "AdminController_updateOrganization_v1",
+      "summary": "Update organization details and settings",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/admin/organizations/{id}",
+      "operationId": "AdminController_softDeleteOrganization_v1",
+      "summary": "Soft-delete an organization",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/settings",
+      "operationId": "AdminController_getSettings_v1",
+      "summary": "Get system settings by category or all",
+      "parameters": [
+        {
+          "name": "category",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/admin/settings",
+      "operationId": "AdminController_upsertSetting_v1",
+      "summary": "Upsert platform configuration setting",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/audit-logs",
+      "operationId": "AdminController_getAuditLogs_v1",
+      "summary": "Get global system audit trail",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    }
+  ],
+  "Patients": [
+    {
+      "method": "POST",
+      "path": "/api/v1/patients/register",
+      "operationId": "PatientController_register_v1",
+      "summary": "Step 1: Initialize Patient Draft Registration",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/patients/register/status",
+      "operationId": "PatientController_getRegistrationStatus_v1",
+      "summary": "Check Draft Registration Progress Status",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/patients/register/resume",
+      "operationId": "PatientController_resumeRegistration_v1",
+      "summary": "Resume and update registration progress",
+      "parameters": [
+        {
+          "name": "step",
+          "in": "query",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/patients/onboarding/demographics",
+      "operationId": "PatientController_onboardDemographics_v1",
+      "summary": "Step 2: Patient Demographic Registration",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/patients/onboarding/demographics",
+      "operationId": "PatientController_updateDemographics_v1",
+      "summary": "Step 2: Update Demographics Details",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/patients/onboarding/emergency-contact",
+      "operationId": "PatientController_onboardEmergencyContact_v1",
+      "summary": "Step 3: Save Emergency Contact",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/patients/onboarding/emergency-contact",
+      "operationId": "PatientController_updateEmergencyContact_v1",
+      "summary": "Step 3: Update Emergency Contact",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/patients/onboarding/insurance",
+      "operationId": "PatientController_onboardInsurance_v1",
+      "summary": "Step 4: Save Primary/Secondary Insurance Link",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/patients/onboarding/insurance",
+      "operationId": "PatientController_updateInsurance_v1",
+      "summary": "Step 4: Update Insurance Details",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/patients/onboarding/health-card",
+      "operationId": "PatientController_onboardHealthCard_v1",
+      "summary": "Step 5: Initialize Secure Digital Health Card",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/patients/onboarding/family-invite",
+      "operationId": "PatientController_onboardFamilyInvite_v1",
+      "summary": "Step 6: Family Account Linkage Request",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/patients/onboarding/progress",
+      "operationId": "PatientController_getOnboardingProgress_v1",
+      "summary": "Get Step-by-Step Onboarding Progress Checklist",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/patients/onboarding/complete",
+      "operationId": "PatientController_completeOnboarding_v1",
+      "summary": "Finalize and Complete Onboarding Registration",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/patients/profile/completion",
+      "operationId": "PatientController_getProfileCompletion_v1",
+      "summary": "Get Patient Profile Completion Status with section breakdown",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/patients/me",
+      "operationId": "PatientController_getProfile_v1",
+      "summary": "Get Patient Profile Details",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/patients/me",
+      "operationId": "PatientController_updateProfile_v1",
+      "summary": "Update Patient Profile",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/patients/family-consents/{id}",
+      "operationId": "PatientController_updateFamilyConsent_v1",
+      "summary": "Accept / Reject Family Linkage Consent",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/patients/me/full",
+      "operationId": "PatientController_getFullProfile_v1",
+      "summary": "Get Full Patient Profile with all extended fields",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/patients/me/basic",
+      "operationId": "PatientController_updateBasicInfo_v1",
+      "summary": "Update Basic Patient Information (name, DOB, gender, nationality, etc.)",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/patients/me/contact",
+      "operationId": "PatientController_updateContact_v1",
+      "summary": "Update Contact Preferences",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/patients/me/address",
+      "operationId": "PatientController_updateAddress_v1",
+      "summary": "Update Current and Permanent Address",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/patients/me/preferences",
+      "operationId": "PatientController_updatePreferences_v1",
+      "summary": "Update Communication Preferences and Privacy Settings",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/patients/me/medical-summary",
+      "operationId": "PatientController_updateMedicalSummary_v1",
+      "summary": "Update Medical Summary (blood group, allergies, conditions, disabilities)",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/patients/me/photo",
+      "operationId": "PatientController_uploadPhoto_v1",
+      "summary": "Upload or Replace Profile Photo (provide photoUrl and photoKey)",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/patients/me/photo",
+      "operationId": "PatientController_deletePhoto_v1",
+      "summary": "Delete Profile Photo",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/patients/profile/timeline",
+      "operationId": "PatientController_getProfileTimeline_v1",
+      "summary": "Get Patient Profile Change Timeline",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/patients/profile/activity",
+      "operationId": "PatientController_getProfileActivity_v1",
+      "summary": "Get Patient Profile Activity Summary",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    }
+  ],
+  "Doctors": [
+    {
+      "method": "POST",
+      "path": "/api/v1/doctors",
+      "operationId": "DoctorController_registerDoctor_v1",
+      "summary": "Register/Create a doctor profile in Master Registry",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/doctors",
+      "operationId": "DoctorController_getDoctors_v1",
+      "summary": "List all registered doctor profiles in Master Registry",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/doctors/search",
+      "operationId": "DoctorController_searchDoctors_v1",
+      "summary": "Enterprise doctor search (by name, registration, license, dept, specialization)",
+      "parameters": [
+        {
+          "name": "q",
+          "in": "query",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/doctors/statistics",
+      "operationId": "DoctorController_getStatistics_v1",
+      "summary": "Get platform-wide doctor directory statistics",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/doctors/verification/pending",
+      "operationId": "DoctorController_getPendingDoctors_v1",
+      "summary": "List doctor profiles pending admin verification",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/doctors/{id}",
+      "operationId": "DoctorController_getDoctorById_v1",
+      "summary": "Get complete doctor profile details",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/doctors/{id}",
+      "operationId": "DoctorController_updateDoctor_v1",
+      "summary": "Update doctor profile details",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/doctors/{id}",
+      "operationId": "DoctorController_softDeleteDoctor_v1",
+      "summary": "Soft-delete a doctor profile",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/doctors/{id}/verify",
+      "operationId": "DoctorController_verifyDoctor_v1",
+      "summary": "Approve & verify doctor registration",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/doctors/{id}/reject",
+      "operationId": "DoctorController_rejectDoctor_v1",
+      "summary": "Reject doctor verification with reason",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/doctors/{id}/suspend",
+      "operationId": "DoctorController_suspendDoctor_v1",
+      "summary": "Suspend doctor registration",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/doctors/{id}/restore",
+      "operationId": "DoctorController_restoreDoctor_v1",
+      "summary": "Restore suspended doctor registration",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/doctors/{id}/renew-license",
+      "operationId": "DoctorController_renewLicense_v1",
+      "summary": "Renew medical registration license (extends expiry)",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/doctors/{id}/generate-qr",
+      "operationId": "DoctorController_generateQr_v1",
+      "summary": "Generate/Issue Doctor Digital Verification QR token",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/doctors/{id}/documents",
+      "operationId": "DoctorController_getDocuments_v1",
+      "summary": "List attached doctor credential documents",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/doctors/{id}/documents",
+      "operationId": "DoctorController_attachDocument_v1",
+      "summary": "Attach credential document (reusing MedicalAttachment)",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/doctors/{id}/history",
+      "operationId": "DoctorController_getHistory_v1",
+      "summary": "Get complete verification & status lifecycle history",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/doctors/{id}/slots",
+      "operationId": "DoctorController_getDoctorSlots_v1",
+      "summary": "Get Doctor Availability Schedule Slots",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    }
+  ],
+  "Facilities": [
+    {
+      "method": "POST",
+      "path": "/api/v1/facilities",
+      "operationId": "FacilityController_registerFacility_v1",
+      "summary": "Register/Create a facility profile in Master Registry",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/facilities",
+      "operationId": "FacilityController_getFacilities_v1",
+      "summary": "List all registered facility profiles",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/facilities/search",
+      "operationId": "FacilityController_searchFacilities_v1",
+      "summary": "Enterprise facility search (by name, code, city, type)",
+      "parameters": [
+        {
+          "name": "q",
+          "in": "query",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/facilities/statistics",
+      "operationId": "FacilityController_getStatistics_v1",
+      "summary": "Get platform-wide facility directory statistics",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/facilities/{id}",
+      "operationId": "FacilityController_getFacilityById_v1",
+      "summary": "Get complete facility details",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/facilities/{id}",
+      "operationId": "FacilityController_updateFacility_v1",
+      "summary": "Update facility details",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/facilities/{id}",
+      "operationId": "FacilityController_softDeleteFacility_v1",
+      "summary": "Soft-delete a facility",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/facilities/{id}/verify",
+      "operationId": "FacilityController_verifyFacility_v1",
+      "summary": "Approve & verify facility registration",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/facilities/{id}/suspend",
+      "operationId": "FacilityController_suspendFacility_v1",
+      "summary": "Suspend facility registration",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/facilities/{id}/restore",
+      "operationId": "FacilityController_restoreFacility_v1",
+      "summary": "Restore suspended facility registration",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/facilities/{id}/generate-qr",
+      "operationId": "FacilityController_generateQr_v1",
+      "summary": "Generate Facility Digital Identity QR token",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/facilities/{id}/departments",
+      "operationId": "FacilityController_getDepartments_v1",
+      "summary": "List facility departments",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/facilities/{id}/departments",
+      "operationId": "FacilityController_createDepartment_v1",
+      "summary": "Create facility department",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/facilities/{id}/rooms",
+      "operationId": "FacilityController_getRooms_v1",
+      "summary": "List facility rooms",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/facilities/{id}/rooms",
+      "operationId": "FacilityController_createRoom_v1",
+      "summary": "Create facility room",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/facilities/{id}/assign-doctor",
+      "operationId": "FacilityController_assignDoctor_v1",
+      "summary": "Assign doctor to facility",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/facilities/{id}/doctors",
+      "operationId": "FacilityController_listDoctors_v1",
+      "summary": "List associated facility doctors",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/facilities/{id}/documents",
+      "operationId": "FacilityController_getDocuments_v1",
+      "summary": "List attached facility credential documents",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/facilities/{id}/documents",
+      "operationId": "FacilityController_attachDocument_v1",
+      "summary": "Attach credential document (reusing MedicalAttachment)",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/facilities/{id}/history",
+      "operationId": "FacilityController_getHistory_v1",
+      "summary": "Get complete verification & status lifecycle history",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    }
+  ],
+  "Staff": [
+    {
+      "method": "POST",
+      "path": "/api/v1/staff",
+      "operationId": "StaffController_registerStaff_v1",
+      "summary": "Register/Create a staff member profile in Master Workforce Registry",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/staff",
+      "operationId": "StaffController_getStaffMembers_v1",
+      "summary": "List all registered staff members in Master Workforce Registry",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/staff/search",
+      "operationId": "StaffController_searchStaff_v1",
+      "summary": "Enterprise staff search (by name, code, designation, staff type)",
+      "parameters": [
+        {
+          "name": "q",
+          "in": "query",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/staff/statistics",
+      "operationId": "StaffController_getStatistics_v1",
+      "summary": "Get platform-wide workforce directory statistics",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/staff/{id}",
+      "operationId": "StaffController_getStaffById_v1",
+      "summary": "Get complete staff member details",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/staff/{id}",
+      "operationId": "StaffController_updateStaff_v1",
+      "summary": "Update staff member profile details",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/staff/{id}",
+      "operationId": "StaffController_softDeleteStaff_v1",
+      "summary": "Soft-delete a staff member profile",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/staff/{id}/verify",
+      "operationId": "StaffController_verifyStaff_v1",
+      "summary": "Approve & verify staff registration",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/staff/{id}/suspend",
+      "operationId": "StaffController_suspendStaff_v1",
+      "summary": "Suspend staff registration",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/staff/{id}/restore",
+      "operationId": "StaffController_restoreStaff_v1",
+      "summary": "Restore suspended staff registration",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/staff/{id}/generate-qr",
+      "operationId": "StaffController_generateQr_v1",
+      "summary": "Generate Staff Digital Identity QR token",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/staff/{id}/assign-facility",
+      "operationId": "StaffController_assignFacility_v1",
+      "summary": "Assign staff member to primary / secondary facilities",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/staff/{id}/assign-department",
+      "operationId": "StaffController_assignDepartment_v1",
+      "summary": "Assign staff member to primary / secondary departments",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/staff/{id}/documents",
+      "operationId": "StaffController_getDocuments_v1",
+      "summary": "List attached staff credential documents",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/staff/{id}/documents",
+      "operationId": "StaffController_attachDocument_v1",
+      "summary": "Attach credential document (reusing MedicalAttachment)",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/staff/{id}/history",
+      "operationId": "StaffController_getHistory_v1",
+      "summary": "Get complete verification & employment status history",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    }
+  ],
+  "Medical Records": [
+    {
+      "method": "POST",
+      "path": "/api/v1/medical-records",
+      "operationId": "MedicalRecordController_createRecord_v1",
+      "summary": "Create a new medical record with encounter, vitals, diagnosis, and procedures",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/medical-records",
+      "operationId": "MedicalRecordController_getRecords_v1",
+      "summary": "Get all medical records for the authenticated patient",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/medical-records/timeline",
+      "operationId": "MedicalRecordController_getTimeline_v1",
+      "summary": "Get unified medical timeline combining records and attachments",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/medical-records/search",
+      "operationId": "MedicalRecordController_searchRecords_v1",
+      "summary": "Search medical records by title, complaints, notes, diagnosis, or plan",
+      "parameters": [
+        {
+          "name": "q",
+          "in": "query",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/medical-records/{id}",
+      "operationId": "MedicalRecordController_getRecordById_v1",
+      "summary": "Get a specific medical record by ID",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/medical-records/{id}",
+      "operationId": "MedicalRecordController_updateRecord_v1",
+      "summary": "Update an existing medical record (blocked if ARCHIVED)",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/medical-records/{id}",
+      "operationId": "MedicalRecordController_softDeleteRecord_v1",
+      "summary": "Soft delete a medical record",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/medical-records/{id}/archive",
+      "operationId": "MedicalRecordController_archiveRecord_v1",
+      "summary": "Archive a medical record (makes record immutable)",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/medical-records/{id}/restore",
+      "operationId": "MedicalRecordController_restoreRecord_v1",
+      "summary": "Restore a soft-deleted or archived medical record",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/medical-records/{id}/attachments",
+      "operationId": "MedicalRecordController_uploadRecordAttachment_v1",
+      "summary": "Upload and link an attachment to a specific medical record",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/medical-records/{id}/attachments",
+      "operationId": "MedicalRecordController_getRecordAttachments_v1",
+      "summary": "List all attachments linked to a specific medical record",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    }
+  ],
+  "OCR & Document Processing": [
+    {
+      "method": "GET",
+      "path": "/api/v1/ocr/dashboard",
+      "operationId": "OCRController_getDashboard_v1",
+      "summary": "Get Enterprise OCR Platform analytics dashboard summary",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ocr/statistics",
+      "operationId": "OCRController_getStatistics_v1",
+      "summary": "Get Enterprise OCR accuracy & throughput statistics",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/ocr/jobs",
+      "operationId": "OCRController_submitJob_v1",
+      "summary": "Submit medical attachment for local CPU OCR processing",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ocr/jobs",
+      "operationId": "OCRController_getJobs_v1",
+      "summary": "List all OCR jobs with optional status and document type filters",
+      "parameters": [
+        {
+          "name": "status",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        },
+        {
+          "name": "documentType",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ocr/jobs/{id}",
+      "operationId": "OCRController_getJobById_v1",
+      "summary": "Get OCR job status and details by ID",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ocr/jobs/{id}/text",
+      "operationId": "OCRController_getJobText_v1",
+      "summary": "Get extracted raw OCR text for job",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ocr/jobs/{id}/fields",
+      "operationId": "OCRController_getJobFields_v1",
+      "summary": "Get extracted structured fields with confidence scores",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ocr/jobs/{id}/json",
+      "operationId": "OCRController_getJobJson_v1",
+      "summary": "Get formatted structured JSON output of OCR job",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/ocr/templates",
+      "operationId": "OCRController_createTemplate_v1",
+      "summary": "Create an OCR Document Template with field definitions",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ocr/templates",
+      "operationId": "OCRController_getTemplates_v1",
+      "summary": "List all OCR Document Templates",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/ocr/templates/{id}",
+      "operationId": "OCRController_updateTemplate_v1",
+      "summary": "Update OCR Document Template and increment version",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/ocr/templates/{id}",
+      "operationId": "OCRController_softDeleteTemplate_v1",
+      "summary": "Soft-delete an OCR Document Template",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/ocr/review",
+      "operationId": "OCRController_getJobsRequiringReview_v1",
+      "summary": "List OCR jobs requiring manual human verification",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/ocr/review/{jobId}",
+      "operationId": "OCRController_submitVerification_v1",
+      "summary": "Submit human verification review for low-confidence OCR job",
+      "parameters": [
+        {
+          "name": "jobId",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    }
+  ],
+  "Attachments Platform": [
+    {
+      "method": "POST",
+      "path": "/api/v1/attachments",
+      "operationId": "AttachmentController_uploadGlobalAttachment_v1",
+      "summary": "Upload an unlinked or global attachment (reusable across system)",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/attachments/{id}",
+      "operationId": "AttachmentController_getAttachmentById_v1",
+      "summary": "Get attachment metadata by ID",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/attachments/{id}",
+      "operationId": "AttachmentController_updateAttachment_v1",
+      "summary": "Update attachment category, metadata, or upload a new file version",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/attachments/{id}",
+      "operationId": "AttachmentController_softDeleteAttachment_v1",
+      "summary": "Soft-delete an attachment",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/attachments/{id}/restore",
+      "operationId": "AttachmentController_restoreAttachment_v1",
+      "summary": "Restore a soft-deleted attachment",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/attachments/{id}/versions",
+      "operationId": "AttachmentController_getAttachmentVersions_v1",
+      "summary": "Get file version history for an attachment",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    }
+  ],
+  "Reports": [
+    {
+      "method": "POST",
+      "path": "/api/v1/reports",
+      "operationId": "ReportController_uploadReport_v1",
+      "summary": "Upload and register a diagnostic medical report",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports",
+      "operationId": "ReportController_getReportsList_v1",
+      "summary": "Get all diagnostic reports for the patient (supports category filtering)",
+      "parameters": [
+        {
+          "name": "category",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/categories",
+      "operationId": "ReportController_getCategories_v1",
+      "summary": "Get report categories list with record count breakdown",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/search",
+      "operationId": "ReportController_searchReports_v1",
+      "summary": "Search diagnostic reports by title, description, doctor, provider, or tags",
+      "parameters": [
+        {
+          "name": "q",
+          "in": "query",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/timeline",
+      "operationId": "ReportController_getTimeline_v1",
+      "summary": "Get diagnostic reports timeline ordered by report date",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/{id}",
+      "operationId": "ReportController_getReportDetails_v1",
+      "summary": "Get specific diagnostic report details by ID",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/reports/{id}",
+      "operationId": "ReportController_updateReport_v1",
+      "summary": "Update diagnostic report metadata (blocked if ARCHIVED)",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/reports/{id}",
+      "operationId": "ReportController_softDeleteReport_v1",
+      "summary": "Soft-delete a diagnostic report",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/{id}/archive",
+      "operationId": "ReportController_archiveReport_v1",
+      "summary": "Archive a report (makes report read-only)",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/{id}/restore",
+      "operationId": "ReportController_restoreReport_v1",
+      "summary": "Restore a soft-deleted or archived report",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/{id}/replace",
+      "operationId": "ReportController_replaceReportFile_v1",
+      "summary": "Replace PDF file for report — creates a new immutable version snapshot",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/{id}/versions",
+      "operationId": "ReportController_getReportVersions_v1",
+      "summary": "Get full version history for a diagnostic report",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/{id}/verify",
+      "operationId": "ReportController_verifyReport_v1",
+      "summary": "Mark diagnostic report as VERIFIED with verification notes",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/download/{id}",
+      "operationId": "ReportController_getDownloadToken_v1",
+      "summary": "Generate a secure timed download URL/token for a report file",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/preview/{id}",
+      "operationId": "ReportController_getPreviewMetadata_v1",
+      "summary": "Get PDF preview metadata (page count, size, MIME type, storage URL)",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/dashboard/executive",
+      "operationId": "ReportsController_getExecutiveDashboard_v1",
+      "summary": "Get Executive Dashboard platform summary statistics",
+      "parameters": [
+        {
+          "name": "startDate",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        },
+        {
+          "name": "endDate",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/analytics/modules/{module}",
+      "operationId": "ReportsController_getModuleAnalytics_v1",
+      "summary": "Get domain analytics for a specific module",
+      "parameters": [
+        {
+          "name": "module",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        },
+        {
+          "name": "startDate",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        },
+        {
+          "name": "endDate",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/definitions",
+      "operationId": "ReportsController_createDefinition_v1",
+      "summary": "Create a new Report Definition",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/definitions",
+      "operationId": "ReportsController_getDefinitions_v1",
+      "summary": "List Report Definitions, optionally filtered by module",
+      "parameters": [
+        {
+          "name": "module",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/definitions/{id}",
+      "operationId": "ReportsController_getDefinitionById_v1",
+      "summary": "Get Report Definition by ID",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/reports/definitions/{id}",
+      "operationId": "ReportsController_updateDefinition_v1",
+      "summary": "Update a Report Definition",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/reports/definitions/{id}",
+      "operationId": "ReportsController_softDeleteDefinition_v1",
+      "summary": "Soft-delete a Report Definition",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/generate",
+      "operationId": "ReportsController_generateReport_v1",
+      "summary": "Generate a report based on a Report Definition or custom filters",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/generated",
+      "operationId": "ReportsController_getGeneratedReports_v1",
+      "summary": "List generated reports for user or platform",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/generated/{id}",
+      "operationId": "ReportsController_getGeneratedReportById_v1",
+      "summary": "Get generated report details",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/generated/{id}/export",
+      "operationId": "ReportsController_exportReport_v1",
+      "summary": "Export a generated report to PDF, CSV, XLSX, or JSON",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        },
+        {
+          "name": "format",
+          "in": "query",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/widgets",
+      "operationId": "ReportsController_createWidget_v1",
+      "summary": "Create a new configurable Dashboard Widget",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/widgets",
+      "operationId": "ReportsController_getWidgets_v1",
+      "summary": "List configured Dashboard Widgets",
+      "parameters": [
+        {
+          "name": "isEnabledOnly",
+          "in": "query",
+          "required": false,
+          "schema": "boolean"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/reports/widgets/{id}",
+      "operationId": "ReportsController_updateWidget_v1",
+      "summary": "Update a Dashboard Widget configuration",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/widgets/reorder",
+      "operationId": "ReportsController_reorderWidgets_v1",
+      "summary": "Reorder Dashboard Widgets display order",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/reports/snapshots",
+      "operationId": "ReportsController_createAnalyticsSnapshot_v1",
+      "summary": "Record an immutable Analytics Snapshot",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/reports/snapshots",
+      "operationId": "ReportsController_getAnalyticsSnapshots_v1",
+      "summary": "Get Analytics Snapshots for a module and metric",
+      "parameters": [
+        {
+          "name": "module",
+          "in": "query",
+          "required": true,
+          "schema": "string"
+        },
+        {
+          "name": "metric",
+          "in": "query",
+          "required": true,
+          "schema": "string"
+        },
+        {
+          "name": "startDate",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        },
+        {
+          "name": "endDate",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    }
+  ],
+  "Governance": [
+    {
+      "method": "GET",
+      "path": "/api/v1/governance/dashboard",
+      "operationId": "GovernanceController_getDashboard_v1",
+      "summary": "Get Enterprise Governance Dashboard summary",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/governance/configurations",
+      "operationId": "GovernanceController_createConfiguration_v1",
+      "summary": "Create a new system configuration key-value entry",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/governance/configurations",
+      "operationId": "GovernanceController_getConfigurations_v1",
+      "summary": "List all system configurations, optionally filtered by category",
+      "parameters": [
+        {
+          "name": "category",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/governance/configurations/export",
+      "operationId": "GovernanceController_exportConfigurations_v1",
+      "summary": "Export system configurations in JSON format",
+      "parameters": [
+        {
+          "name": "category",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/governance/configurations/import",
+      "operationId": "GovernanceController_importConfigurations_v1",
+      "summary": "Bulk import system configurations",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/governance/configurations/{id}",
+      "operationId": "GovernanceController_getConfigurationById_v1",
+      "summary": "Get system configuration by ID",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/governance/configurations/{id}",
+      "operationId": "GovernanceController_updateConfiguration_v1",
+      "summary": "Update system configuration value and increment version",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/governance/configurations/{id}",
+      "operationId": "GovernanceController_softDeleteConfiguration_v1",
+      "summary": "Soft-delete system configuration entry",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/governance/features",
+      "operationId": "GovernanceController_createFeatureFlag_v1",
+      "summary": "Create a new feature flag with rollout rules",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/governance/features",
+      "operationId": "GovernanceController_getFeatureFlags_v1",
+      "summary": "List all feature flags",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/governance/features/{id}",
+      "operationId": "GovernanceController_getFeatureFlagById_v1",
+      "summary": "Get feature flag details by ID",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/governance/features/{id}",
+      "operationId": "GovernanceController_updateFeatureFlag_v1",
+      "summary": "Update feature flag status, roles, or rollout percentage",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/governance/features/{id}",
+      "operationId": "GovernanceController_softDeleteFeatureFlag_v1",
+      "summary": "Soft-delete a feature flag",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/governance/master-data/categories",
+      "operationId": "GovernanceController_createMasterCategory_v1",
+      "summary": "Create a master data category",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/governance/master-data/categories",
+      "operationId": "GovernanceController_getMasterCategories_v1",
+      "summary": "List all master data categories with items",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/governance/master-data/items",
+      "operationId": "GovernanceController_createMasterItem_v1",
+      "summary": "Create a master data item under a category",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/governance/master-data/items",
+      "operationId": "GovernanceController_getMasterItems_v1",
+      "summary": "List master data items, optionally filtered by category",
+      "parameters": [
+        {
+          "name": "categoryId",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/governance/master-data/items/{id}",
+      "operationId": "GovernanceController_updateMasterItem_v1",
+      "summary": "Update master data item",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/governance/master-data/items/{id}",
+      "operationId": "GovernanceController_softDeleteMasterItem_v1",
+      "summary": "Soft-delete a master data item",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/governance/policies",
+      "operationId": "GovernanceController_createPolicy_v1",
+      "summary": "Create a new platform governance policy",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/governance/policies",
+      "operationId": "GovernanceController_getPolicies_v1",
+      "summary": "List all platform governance policies",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/governance/policies/{id}",
+      "operationId": "GovernanceController_getPolicyById_v1",
+      "summary": "Get policy details by ID",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/governance/policies/{id}",
+      "operationId": "GovernanceController_updatePolicy_v1",
+      "summary": "Update policy title, content, or version",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/governance/policies/{id}",
+      "operationId": "GovernanceController_softDeletePolicy_v1",
+      "summary": "Soft-delete a platform policy",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/governance/maintenance",
+      "operationId": "GovernanceController_getMaintenanceConfig_v1",
+      "summary": "Get active platform maintenance configuration",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/governance/maintenance",
+      "operationId": "GovernanceController_updateMaintenanceConfig_v1",
+      "summary": "Set or update platform maintenance mode (OFF / READ_ONLY / FULL)",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/governance/audit",
+      "operationId": "GovernanceController_getAuditLogs_v1",
+      "summary": "List governance audit logs",
+      "parameters": [
+        {
+          "name": "entityType",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/governance/audit/{id}",
+      "operationId": "GovernanceController_getAuditLogById_v1",
+      "summary": "Get governance audit log detail by ID",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    }
+  ],
+  "Security & Compliance": [
+    {
+      "method": "GET",
+      "path": "/api/v1/security/dashboard",
+      "operationId": "SecurityController_getDashboard_v1",
+      "summary": "Get Enterprise Security & Compliance Dashboard summary",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/security/consents",
+      "operationId": "SecurityController_createConsent_v1",
+      "summary": "Capture patient consent record",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/security/consents",
+      "operationId": "SecurityController_getConsents_v1",
+      "summary": "List patient consents with optional filters",
+      "parameters": [
+        {
+          "name": "patientId",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        },
+        {
+          "name": "status",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/security/consents/{id}",
+      "operationId": "SecurityController_getConsentById_v1",
+      "summary": "Get consent record details by ID",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/security/consents/{id}/withdraw",
+      "operationId": "SecurityController_withdrawConsent_v1",
+      "summary": "Withdraw patient consent",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/security/retention",
+      "operationId": "SecurityController_createRetentionPolicy_v1",
+      "summary": "Create data retention policy",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/security/retention",
+      "operationId": "SecurityController_getRetentionPolicies_v1",
+      "summary": "List all data retention policies",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/security/retention/{id}",
+      "operationId": "SecurityController_updateRetentionPolicy_v1",
+      "summary": "Update retention policy parameters",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/security/retention/{id}",
+      "operationId": "SecurityController_softDeleteRetentionPolicy_v1",
+      "summary": "Soft-delete a retention policy",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/security/incidents",
+      "operationId": "SecurityController_createIncident_v1",
+      "summary": "Report a security incident",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/security/incidents",
+      "operationId": "SecurityController_getIncidents_v1",
+      "summary": "List reported security incidents",
+      "parameters": [
+        {
+          "name": "severity",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        },
+        {
+          "name": "status",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/security/incidents/{id}/resolve",
+      "operationId": "SecurityController_resolveIncident_v1",
+      "summary": "Mark security incident as RESOLVED",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/security/keys/active",
+      "operationId": "SecurityController_getActiveEncryptionKey_v1",
+      "summary": "Get active KMS encryption key metadata",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/security/keys/rotate",
+      "operationId": "SecurityController_rotateEncryptionKey_v1",
+      "summary": "Trigger KMS encryption key rotation",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/security/compliance/report",
+      "operationId": "SecurityController_generateComplianceReport_v1",
+      "summary": "Generate automated compliance assessment report",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/security/compliance/reports",
+      "operationId": "SecurityController_getComplianceReports_v1",
+      "summary": "List generated compliance reports",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/security/audit",
+      "operationId": "SecurityController_getAuditLogs_v1",
+      "summary": "List security audit logs",
+      "parameters": [
+        {
+          "name": "userId",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        },
+        {
+          "name": "resource",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    }
+  ],
+  "Observability & Performance": [
+    {
+      "method": "GET",
+      "path": "/api/v1/observability/dashboard",
+      "operationId": "ObservabilityController_getDashboard_v1",
+      "summary": "Get Enterprise Observability Platform operational dashboard",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/observability/health",
+      "operationId": "ObservabilityController_getHealth_v1",
+      "summary": "Get full component health diagnostics status",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/observability/health/live",
+      "operationId": "ObservabilityController_getLiveness_v1",
+      "summary": "Liveness probe endpoint",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/observability/health/ready",
+      "operationId": "ObservabilityController_getReadiness_v1",
+      "summary": "Readiness probe endpoint",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/observability/metrics",
+      "operationId": "ObservabilityController_recordMetric_v1",
+      "summary": "Record custom system/application metric",
+      "parameters": [],
+      "hasRequestBody": true,
+      "requestBodyContent": [
+        "application/json"
+      ],
+      "responses": [
+        "201"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/observability/metrics",
+      "operationId": "ObservabilityController_getMetrics_v1",
+      "summary": "List recorded metrics",
+      "parameters": [
+        {
+          "name": "category",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        },
+        {
+          "name": "name",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/observability/metrics/{category}",
+      "operationId": "ObservabilityController_getMetricsByCategory_v1",
+      "summary": "Get metrics by category",
+      "parameters": [
+        {
+          "name": "category",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/observability/logs",
+      "operationId": "ObservabilityController_getLogs_v1",
+      "summary": "Query structured application logs",
+      "parameters": [
+        {
+          "name": "severity",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        },
+        {
+          "name": "requestId",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        },
+        {
+          "name": "traceId",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/observability/logs/{requestId}",
+      "operationId": "ObservabilityController_getLogsByRequestId_v1",
+      "summary": "Get all logs for a specific Request ID",
+      "parameters": [
+        {
+          "name": "requestId",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/observability/traces",
+      "operationId": "ObservabilityController_getTraces_v1",
+      "summary": "List distributed trace executions",
+      "parameters": [
+        {
+          "name": "traceId",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        },
+        {
+          "name": "status",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/observability/traces/{traceId}",
+      "operationId": "ObservabilityController_getTraceById_v1",
+      "summary": "Get distributed trace by Trace ID",
+      "parameters": [
+        {
+          "name": "traceId",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/observability/jobs",
+      "operationId": "ObservabilityController_getBackgroundJobs_v1",
+      "summary": "List background job execution history",
+      "parameters": [
+        {
+          "name": "status",
+          "in": "query",
+          "required": false,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/observability/jobs/{id}",
+      "operationId": "ObservabilityController_getBackgroundJobById_v1",
+      "summary": "Get background job execution details by ID",
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": "string"
+        }
+      ],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/observability/performance",
+      "operationId": "ObservabilityController_getPerformanceSnapshot_v1",
+      "summary": "Get latest application performance snapshot",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/observability/statistics",
+      "operationId": "ObservabilityController_getStatistics_v1",
+      "summary": "Get platform operational throughput & latency statistics",
+      "parameters": [],
+      "hasRequestBody": false,
+      "requestBodyContent": [],
+      "responses": [
+        "200"
+      ]
+    }
+  ]
+}

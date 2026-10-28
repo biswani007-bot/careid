@@ -1,0 +1,403 @@
+<frame id="20:4755" name="Admin Portal - Referral Dashboard" x="197" y="12052" width="1280" height="1024">
+    <frame id="20:4756" name="Main Content Wrapper" x="0" y="0" width="1302.77001953125" height="1024">
+      <frame id="20:4757" name="Header - TopNavBar:margin" x="0" y="0" width="1302.77001953125" height="64">
+        <frame id="20:4758" name="Header - TopNavBar" x="280" y="0" width="1022.77001953125" height="64">
+          <frame id="20:4759" name="Heading 2" x="32" y="20" width="188.22000122070312" height="24">
+            <text id="20:4760" name="Text" x="0" y="0" width="188.22000122070312" height="24" />
+          </frame>
+          <frame id="20:4761" name="Container" x="536.77001953125" y="11" width="454" height="42">
+            <frame id="20:4762" name="Container" x="0" y="2" width="256" height="38">
+              <frame id="20:4763" name="Input" x="0" y="0" width="256" height="38">
+                <frame id="20:4764" name="Container" x="41" y="10" width="198" height="18">
+                  <text id="20:4765" name="Search..." x="0" y="0" width="198" height="18" />
+                </frame>
+              </frame>
+              <frame id="20:4766" name="Container" x="12" y="7" width="18" height="24">
+                <vector id="20:4767" name="Icon" x="0" y="0" width="18" height="18" />
+              </frame>
+            </frame>
+            <frame id="20:4768" name="Container" x="280" y="0" width="118" height="42">
+              <frame id="20:4769" name="Button" x="0" y="0" width="32" height="42">
+                <frame id="20:4770" name="Container" x="8" y="8" width="16" height="20">
+                  <vector id="20:4771" name="Icon" x="0" y="0" width="16" height="20" />
+                </frame>
+              </frame>
+              <frame id="20:4772" name="Button" x="40" y="1" width="34" height="40">
+                <frame id="20:4773" name="Container" x="8" y="8" width="18" height="18">
+                  <vector id="20:4774" name="Icon" x="0" y="0" width="18" height="18" />
+                </frame>
+              </frame>
+              <frame id="20:4775" name="Button" x="82" y="0" width="36" height="42">
+                <frame id="20:4776" name="Container" x="8" y="8" width="20" height="20">
+                  <vector id="20:4777" name="Icon" x="0" y="0" width="20" height="20" />
+                </frame>
+              </frame>
+            </frame>
+            <frame id="20:4778" name="Background+Border" x="422" y="5" width="32" height="32">
+              <frame id="20:4779" name="Administrator Profile" x="1" y="1" width="30" height="30" />
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+      <frame id="20:4780" name="Main - Dashboard Content:margin" x="0" y="64" width="1302.77001953125" height="960">
+        <frame id="20:4781" name="Main - Dashboard Content" x="280" y="0" width="1022.77001953125" height="960">
+          <frame id="20:4782" name="Container" x="24" y="24" width="974.77001953125" height="537">
+            <frame id="20:4783" name="Header Actions" x="0" y="0" width="974.77001953125" height="56">
+              <frame id="20:4784" name="Container" x="0" y="0" width="298.7699890136719" height="56">
+                <frame id="20:4785" name="Heading 3" x="0" y="0" width="298.7699890136719" height="32">
+                  <text id="20:4786" name="Text" x="0" y="0" width="111.75" height="32" />
+                </frame>
+                <frame id="20:4787" name="Container" x="0" y="36" width="298.7699890136719" height="20">
+                  <text id="20:4788" name="Text" x="0" y="0" width="298.7699890136719" height="20" />
+                </frame>
+              </frame>
+              <frame id="20:4789" name="Button" x="804.72998046875" y="10" width="170.02999877929688" height="36">
+                <frame id="20:4790" name="Container" x="24" y="12" width="12" height="12">
+                  <vector id="20:4791" name="Icon" x="0" y="0" width="12" height="12" />
+                </frame>
+                <text id="20:4792" name="Text" x="44" y="10" width="102.02999877929688" height="16" />
+              </frame>
+            </frame>
+            <frame id="20:4793" name="Summary Cards Bento Grid" x="0" y="80" width="974.77001953125" height="90">
+              <frame id="20:4794" name="Background+Border" x="-0.01000213623046875" y="0" width="149.1300048828125" height="90">
+                <frame id="20:4795" name="Container" x="17" y="17" width="115.12999725341797" height="16">
+                  <text id="20:4796" name="Total Referrals" x="0" y="0" width="115.12999725341797" height="16" />
+                </frame>
+                <frame id="20:4797" name="Container" x="17" y="41" width="115.12999725341797" height="32">
+                  <text id="20:4798" name="4,281" x="0" y="0" width="115.12999725341797" height="32" />
+                </frame>
+              </frame>
+              <frame id="20:4799" name="Background+Border" x="165.1199951171875" y="0" width="149.1300048828125" height="90">
+                <frame id="20:4800" name="Container" x="17" y="17" width="115.12999725341797" height="16">
+                  <text id="20:4801" name="Pending" x="0" y="0" width="115.12999725341797" height="16" />
+                </frame>
+                <frame id="20:4802" name="Container" x="17" y="41" width="115.12999725341797" height="32">
+                  <text id="20:4803" name="124" x="0" y="0" width="115.12999725341797" height="32" />
+                </frame>
+                <rounded-rectangle id="20:4804" name="Background" x="1" y="1" width="4" height="88" />
+              </frame>
+              <frame id="20:4805" name="Background+Border" x="330.25" y="0" width="149.1300048828125" height="90">
+                <frame id="20:4806" name="Container" x="17" y="17" width="115.12999725341797" height="16">
+                  <text id="20:4807" name="Accepted" x="0" y="0" width="115.12999725341797" height="16" />
+                </frame>
+                <frame id="20:4808" name="Container" x="17" y="41" width="115.12999725341797" height="32">
+                  <text id="20:4809" name="2,840" x="0" y="0" width="115.12999725341797" height="32" />
+                </frame>
+                <rounded-rectangle id="20:4810" name="Background" x="1" y="1" width="4" height="88" />
+              </frame>
+              <frame id="20:4811" name="Background+Border" x="495.3800048828125" y="0" width="149.1300048828125" height="90">
+                <frame id="20:4812" name="Container" x="17" y="17" width="115.12999725341797" height="16">
+                  <text id="20:4813" name="Completed" x="0" y="0" width="115.12999725341797" height="16" />
+                </frame>
+                <frame id="20:4814" name="Container" x="17" y="41" width="115.12999725341797" height="32">
+                  <text id="20:4815" name="1,154" x="0" y="0" width="115.12999725341797" height="32" />
+                </frame>
+                <rounded-rectangle id="20:4816" name="Background" x="1" y="1" width="4" height="88" />
+              </frame>
+              <frame id="20:4817" name="Background+Border" x="660.510009765625" y="0" width="149.1300048828125" height="90">
+                <frame id="20:4818" name="Container" x="17" y="17" width="115.12999725341797" height="16">
+                  <text id="20:4819" name="Cancelled" x="0" y="0" width="115.12999725341797" height="16" />
+                </frame>
+                <frame id="20:4820" name="Container" x="17" y="41" width="115.12999725341797" height="32">
+                  <text id="20:4821" name="82" x="0" y="0" width="115.12999725341797" height="32" />
+                </frame>
+                <rounded-rectangle id="20:4822" name="Background" x="1" y="1" width="4" height="88" />
+              </frame>
+              <frame id="20:4823" name="Background+Border" x="825.6400146484375" y="0" width="149.13999938964844" height="90">
+                <frame id="20:4824" name="Container" x="17" y="17" width="115.13999938964844" height="16">
+                  <text id="20:4825" name="Escalated" x="0" y="0" width="115.13999938964844" height="16" />
+                </frame>
+                <frame id="20:4826" name="Container" x="17" y="41" width="115.13999938964844" height="32">
+                  <text id="20:4827" name="81" x="0" y="0" width="115.13999938964844" height="32" />
+                </frame>
+                <rounded-rectangle id="20:4828" name="Background" x="1" y="1" width="4" height="88" />
+              </frame>
+            </frame>
+            <frame id="20:4829" name="Main Data Section" x="0" y="194" width="974.77001953125" height="343">
+              <frame id="20:4830" name="Search &amp; Filter Toolbar" x="1" y="1" width="972.77001953125" height="75">
+                <frame id="20:4831" name="Container" x="16" y="16" width="448" height="42">
+                  <frame id="20:4832" name="Input" x="0" y="0" width="448" height="42">
+                    <frame id="20:4833" name="Container" x="41" y="12" width="390" height="18">
+                      <text id="20:4834" name="Search by Referral ID, Patient, or Doctor..." x="0" y="0" width="390" height="18" />
+                    </frame>
+                  </frame>
+                  <frame id="20:4835" name="Container" x="12" y="9" width="18" height="24">
+                    <vector id="20:4836" name="Icon" x="0" y="0" width="18" height="18" />
+                  </frame>
+                </frame>
+                <frame id="20:4837" name="Container" x="612.52001953125" y="20" width="344.25" height="34">
+                  <frame id="20:4838" name="Button" x="0" y="0" width="102.16000366210938" height="34">
+                    <frame id="20:4839" name="Container" x="17" y="12.5" width="13.5" height="9">
+                      <vector id="20:4840" name="Icon" x="0" y="0" width="13.5" height="9" />
+                    </frame>
+                    <text id="20:4841" name="Text" x="38.5" y="9" width="46.65999984741211" height="16" />
+                  </frame>
+                  <frame id="20:4842" name="Button" x="110.16000366210938" y="0" width="108.75" height="34">
+                    <frame id="20:4843" name="Container" x="17" y="10.25" width="13.5" height="13.5">
+                      <vector id="20:4844" name="Icon" x="0" y="0" width="13.5" height="13.5" />
+                    </frame>
+                    <text id="20:4845" name="Text" x="38.5" y="9" width="53.25" height="16" />
+                  </frame>
+                  <frame id="20:4846" name="Button" x="226.91000366210938" y="0" width="117.33999633789062" height="34">
+                    <frame id="20:4847" name="Container" x="17" y="9.5" width="15" height="15">
+                      <vector id="20:4848" name="Icon" x="0" y="0" width="15" height="15" />
+                    </frame>
+                    <text id="20:4849" name="Text" x="40" y="9" width="60.34000015258789" height="16" />
+                  </frame>
+                </frame>
+              </frame>
+              <frame id="20:4850" name="High Density Data Table → Table" x="1" y="76" width="972.77001953125" height="211">
+                <frame id="20:4851" name="Header → Row" x="0" y="0" width="972.77001953125" height="41">
+                  <frame id="20:4852" name="Cell" x="0" y="0" width="98.22000122070312" height="40">
+                    <text id="20:4853" name="Text" x="16" y="12" width="66.22000122070312" height="16" />
+                  </frame>
+                  <frame id="20:4854" name="Cell" x="98.22000122070312" y="0" width="83.91999816894531" height="40">
+                    <text id="20:4855" name="Text" x="16" y="12" width="45.40999984741211" height="16" />
+                  </frame>
+                  <frame id="20:4856" name="Cell" x="182.13999938964844" y="0" width="137.94000244140625" height="40">
+                    <text id="20:4857" name="Text" x="16" y="12" width="105.94000244140625" height="16" />
+                  </frame>
+                  <frame id="20:4858" name="Cell" x="320.0799865722656" y="0" width="141.47000122070312" height="40">
+                    <text id="20:4859" name="Text" x="16" y="12" width="109.47000122070312" height="16" />
+                  </frame>
+                  <frame id="20:4860" name="Cell" x="461.54998779296875" y="0" width="87.63999938964844" height="40">
+                    <text id="20:4861" name="Text" x="16" y="12" width="53.25" height="16" />
+                  </frame>
+                  <frame id="20:4862" name="Cell" x="549.1900024414062" y="0" width="100.44999694824219" height="40">
+                    <text id="20:4863" name="Text" x="16" y="12" width="46.65999984741211" height="16" />
+                  </frame>
+                  <frame id="20:4864" name="Cell" x="649.6400146484375" y="0" width="67.58000183105469" height="40">
+                    <text id="20:4865" name="Text" x="16" y="12" width="30.15999984741211" height="16" />
+                  </frame>
+                  <frame id="20:4866" name="Cell" x="717.219970703125" y="0" width="111.55000305175781" height="40">
+                    <text id="20:4867" name="Text" x="16" y="12" width="41.029998779296875" height="16" />
+                  </frame>
+                  <frame id="20:4868" name="Cell" x="828.77001953125" y="0" width="144" height="40">
+                    <text id="20:4869" name="Text" x="79.63999938964844" y="12" width="48.36000061035156" height="16" />
+                  </frame>
+                </frame>
+                <frame id="20:4870" name="Body" x="0" y="40" width="972.77001953125" height="171">
+                  <frame id="20:4871" name="Row" x="0" y="0" width="972.77001953125" height="86">
+                    <frame id="20:4872" name="Data" x="0" y="0" width="98.22000122070312" height="85">
+                      <text id="20:4873" name="Text" x="16" y="22.5" width="44.83000183105469" height="40" />
+                    </frame>
+                    <frame id="20:4874" name="Data" x="98.22000122070312" y="0" width="83.91999816894531" height="85">
+                      <text id="20:4875" name="Text" x="16" y="22.5" width="50.189998626708984" height="40" />
+                    </frame>
+                    <frame id="20:4876" name="Data" x="182.13999938964844" y="0" width="137.94000244140625" height="85">
+                      <text id="20:4877" name="Text" x="16" y="22.5" width="58.4900016784668" height="40" />
+                    </frame>
+                    <frame id="20:4878" name="Data" x="320.0799865722656" y="0" width="141.47000122070312" height="85">
+                      <text id="20:4879" name="Text" x="16" y="22.5" width="72.11000061035156" height="40" />
+                    </frame>
+                    <frame id="20:4880" name="Data" x="461.54998779296875" y="0" width="87.63999938964844" height="85">
+                      <text id="20:4881" name="Text" x="16" y="22.5" width="52.68000030517578" height="40" />
+                    </frame>
+                    <frame id="20:4882" name="Data" x="549.1900024414062" y="0" width="100.44999694824219" height="85">
+                      <frame id="20:4883" name="Background" x="16" y="28.5" width="54" height="28">
+                        <rounded-rectangle id="20:4884" name="Background" x="10" y="11" width="6" height="6" />
+                        <text id="20:4885" name="Text" x="22" y="4" width="22" height="20" />
+                      </frame>
+                    </frame>
+                    <frame id="20:4886" name="Data" x="649.6400146484375" y="0" width="67.58000183105469" height="85">
+                      <text id="20:4887" name="Text" x="16" y="12.5" width="35.58000183105469" height="60" />
+                    </frame>
+                    <frame id="20:4888" name="Data" x="717.219970703125" y="0" width="111.55000305175781" height="85">
+                      <frame id="20:4889" name="Background" x="16" y="28.5" width="71.41999816894531" height="28">
+                        <rounded-rectangle id="20:4890" name="Background" x="10" y="11" width="6" height="6" />
+                        <text id="20:4891" name="Text" x="22" y="4" width="39.41999816894531" height="20" />
+                      </frame>
+                    </frame>
+                    <frame id="20:4892" name="Data" x="828.77001953125" y="26.166667938232422" width="128" height="32.666664123535156">
+                      <frame id="20:4893" name="Button" x="22.66666603088379" y="2.083332061767578" width="30.33333396911621" height="28.5">
+                        <frame id="20:4894" name="Container" x="6" y="6" width="18.33333396911621" height="12.5">
+                          <vector id="20:4895" name="Icon" x="0" y="0" width="18.33333396911621" height="12.5" />
+                        </frame>
+                      </frame>
+                      <frame id="20:4896" name="Button" x="61" y="3.333332061767578" width="30.33333396911621" height="26">
+                        <frame id="20:4897" name="Container" x="6" y="6" width="18.33333396911621" height="10">
+                          <vector id="20:4898" name="Icon" x="0" y="0" width="18.33333396911621" height="10" />
+                        </frame>
+                      </frame>
+                      <frame id="20:4899" name="Button" x="99.33333587646484" y="0" width="28.66666603088379" height="32.666664123535156">
+                        <frame id="20:4900" name="Container" x="6" y="6" width="16.66666603088379" height="16.66666603088379">
+                          <vector id="20:4901" name="Icon" x="0" y="0" width="16.66666603088379" height="16.66666603088379" />
+                        </frame>
+                      </frame>
+                    </frame>
+                  </frame>
+                  <frame id="20:4902" name="Row - Dummy rows to show density" x="0" y="85" width="972.77001953125" height="86">
+                    <frame id="20:4903" name="Data" x="0" y="0" width="98.22000122070312" height="85">
+                      <text id="20:4904" name="Text" x="16" y="22.5" width="44.83000183105469" height="40" />
+                    </frame>
+                    <frame id="20:4905" name="Data" x="98.22000122070312" y="0" width="83.91999816894531" height="85">
+                      <text id="20:4906" name="Text" x="16" y="22.5" width="51.91999816894531" height="40" />
+                    </frame>
+                    <frame id="20:4907" name="Data" x="182.13999938964844" y="0" width="137.94000244140625" height="85">
+                      <text id="20:4908" name="Text" x="16" y="32.5" width="89.38999938964844" height="20" />
+                    </frame>
+                    <frame id="20:4909" name="Data" x="320.0799865722656" y="0" width="141.47000122070312" height="85">
+                      <text id="20:4910" name="Text" x="16" y="32.5" width="94.16999816894531" height="20" />
+                    </frame>
+                    <frame id="20:4911" name="Data" x="461.54998779296875" y="0" width="87.63999938964844" height="85">
+                      <text id="20:4912" name="Text" x="16" y="22.5" width="55.650001525878906" height="40" />
+                    </frame>
+                    <frame id="20:4913" name="Data" x="549.1900024414062" y="0" width="100.44999694824219" height="85">
+                      <frame id="20:4914" name="Background" x="16" y="28.5" width="68.44999694824219" height="28">
+                        <rounded-rectangle id="20:4915" name="Background" x="10" y="11" width="6" height="6" />
+                        <text id="20:4916" name="Text" x="22" y="4" width="36.45000076293945" height="20" />
+                      </frame>
+                    </frame>
+                    <frame id="20:4917" name="Data" x="649.6400146484375" y="0" width="67.58000183105469" height="85">
+                      <text id="20:4918" name="Text" x="16" y="12.5" width="35.58000183105469" height="60" />
+                    </frame>
+                    <frame id="20:4919" name="Data" x="717.219970703125" y="0" width="111.55000305175781" height="85">
+                      <frame id="20:4920" name="Background" x="16" y="28.5" width="79.55000305175781" height="28">
+                        <rounded-rectangle id="20:4921" name="Background" x="10" y="11" width="6" height="6" />
+                        <text id="20:4922" name="Text" x="22" y="4" width="47.54999923706055" height="20" />
+                      </frame>
+                    </frame>
+                    <frame id="20:4923" name="Data" x="828.77001953125" y="26.166667938232422" width="128" height="32.666664123535156">
+                      <frame id="20:4924" name="Button" x="22.66666603088379" y="2.083332061767578" width="30.33333396911621" height="28.5">
+                        <frame id="20:4925" name="Container" x="6" y="6" width="18.33333396911621" height="12.5">
+                          <vector id="20:4926" name="Icon" x="0" y="0" width="18.33333396911621" height="12.5" />
+                        </frame>
+                      </frame>
+                      <frame id="20:4927" name="Button" x="61" y="3.333332061767578" width="30.33333396911621" height="26">
+                        <frame id="20:4928" name="Container" x="6" y="6" width="18.33333396911621" height="10">
+                          <vector id="20:4929" name="Icon" x="0" y="0" width="18.33333396911621" height="10" />
+                        </frame>
+                      </frame>
+                      <frame id="20:4930" name="Button" x="99.33333587646484" y="0" width="28.66666603088379" height="32.666664123535156">
+                        <frame id="20:4931" name="Container" x="6" y="6" width="16.66666603088379" height="16.66666603088379">
+                          <vector id="20:4932" name="Icon" x="0" y="0" width="16.66666603088379" height="16.66666603088379" />
+                        </frame>
+                      </frame>
+                    </frame>
+                  </frame>
+                </frame>
+              </frame>
+              <frame id="20:4933" name="Pagination Footer" x="1" y="287" width="972.77001953125" height="55">
+                <frame id="20:4934" name="Container" x="16" y="20" width="171.9499969482422" height="16">
+                  <text id="20:4935" name="Text" x="0" y="0" width="171.9499969482422" height="16" />
+                </frame>
+                <frame id="20:4936" name="Container" x="920.4367065429688" y="17" width="36.33333206176758" height="22">
+                  <frame id="20:4937" name="Button" x="0" y="0" width="14.166666030883789" height="22">
+                    <frame id="20:4938" name="Container" x="4" y="4" width="6.166666507720947" height="10">
+                      <vector id="20:4939" name="Icon" x="0" y="0" width="6.166666507720947" height="10" />
+                    </frame>
+                  </frame>
+                  <frame id="20:4940" name="Button" x="22.16666603088379" y="0" width="14.166666030883789" height="22">
+                    <frame id="20:4941" name="Container" x="4" y="4" width="6.166666507720947" height="10">
+                      <vector id="20:4942" name="Icon" x="0" y="0" width="6.166666507720947" height="10" />
+                    </frame>
+                  </frame>
+                </frame>
+              </frame>
+            </frame>
+          </frame>
+        </frame>
+      </frame>
+    </frame>
+    <frame id="20:4943" name="SideNavBar" x="0" y="0" width="280" height="1024">
+      <frame id="20:4944" name="Margin" x="0" y="24" width="280" height="96">
+        <frame id="20:4945" name="Margin" x="24" y="0" width="232" height="64">
+          <frame id="20:4946" name="Container" x="24" y="0" width="230" height="32">
+            <rounded-rectangle id="20:4947" name="CareIDlogo 1" x="0" y="7" width="110" height="25" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="20:4948" name="Container" x="0" y="120" width="280" height="816">
+        <frame id="20:4949" name="Link - Active: Dashboard" x="24" y="0" width="232" height="48">
+          <frame id="20:4950" name="Container" x="16" y="15" width="18" height="18">
+            <vector id="20:4951" name="Icon" x="0" y="0" width="18" height="18" />
+          </frame>
+          <text id="20:4952" name="Dashboard" x="46" y="12" width="86" height="24" />
+        </frame>
+        <frame id="20:4953" name="Link" x="24" y="52" width="232" height="48">
+          <frame id="20:4954" name="Container" x="16" y="16" width="22" height="16">
+            <vector id="20:4955" name="Icon" x="0" y="0" width="22" height="16" />
+          </frame>
+          <text id="20:4956" name="Text" x="50" y="12" width="43.38999938964844" height="24" />
+        </frame>
+        <frame id="20:4957" name="Link" x="24" y="104" width="232" height="48">
+          <frame id="20:4958" name="Container" x="16" y="14" width="16" height="20">
+            <vector id="20:4959" name="Icon" x="0" y="0" width="16" height="20" />
+          </frame>
+          <text id="20:4960" name="Patients" x="44" y="12" width="64" height="24" />
+        </frame>
+        <frame id="20:4961" name="Link" x="24" y="156" width="232" height="48">
+          <frame id="20:4962" name="Container" x="16" y="14" width="20" height="20">
+            <vector id="20:4963" name="Icon" x="0" y="0" width="20" height="20" />
+          </frame>
+          <text id="20:4964" name="Text" x="48" y="12" width="62.77000045776367" height="24" />
+        </frame>
+        <frame id="20:4965" name="Link" x="24" y="208" width="232" height="48">
+          <frame id="20:4966" name="Container" x="16" y="16.5" width="16.66666603088379" height="15">
+            <vector id="20:4967" name="Icon" x="0" y="0" width="16.66666603088379" height="15" />
+          </frame>
+          <frame id="20:4968" name="Container" x="44.666664123535156" y="12" width="93" height="24">
+            <text id="20:4969" name="Facilities" x="0" y="0" width="93" height="24" />
+          </frame>
+        </frame>
+        <frame id="20:4970" name="Link" x="24" y="260" width="232" height="48">
+          <frame id="20:4971" name="Container" x="16" y="14" width="16" height="20">
+            <vector id="20:4972" name="Icon" x="0" y="0" width="16" height="20" />
+          </frame>
+          <text id="20:4973" name="Health Records" x="44" y="12" width="118" height="24" />
+        </frame>
+        <frame id="20:4974" name="Link" x="24" y="312" width="232" height="72">
+          <frame id="20:4975" name="Container" x="16" y="12" width="216" height="48">
+            <frame id="20:4976" name="Container" x="0" y="14" width="18" height="20">
+              <vector id="20:4977" name="Icon" x="0" y="0" width="18" height="20" />
+            </frame>
+            <text id="20:4978" name="Text" x="30" y="0" width="88.31999969482422" height="48" />
+          </frame>
+        </frame>
+        <frame id="20:4979" name="Link" x="24" y="388" width="232" height="52">
+          <frame id="20:4980" name="Container" x="50.589996337890625" y="14" width="100.66000366210938" height="24">
+            <frame id="20:4981" name="Container" x="0" y="3" width="20" height="18">
+              <vector id="20:4982" name="Icon" x="0" y="0" width="20" height="18" />
+            </frame>
+            <text id="20:4983" name="Text" x="32" y="0" width="68.66000366210938" height="24" />
+          </frame>
+          <frame id="20:4984" name="Background" x="159.25" y="12" width="22.15999984741211" height="28">
+            <text id="20:4985" name="Text" x="8" y="2" width="6.159999847412109" height="24" />
+          </frame>
+        </frame>
+        <frame id="20:4986" name="Link" x="24" y="444" width="232" height="48">
+          <frame id="20:4987" name="Container" x="16" y="16" width="16" height="16">
+            <vector id="20:4988" name="Icon" x="0" y="0" width="16" height="16" />
+          </frame>
+          <text id="20:4989" name="Text" x="44" y="12" width="61.59000015258789" height="24" />
+        </frame>
+        <rounded-rectangle id="20:4990" name="Horizontal Divider" x="32" y="496" width="216" height="1" />
+        <frame id="20:4991" name="Link" x="24" y="501" width="232" height="48">
+          <frame id="20:4992" name="Container" x="16" y="14" width="20.100000381469727" height="20">
+            <vector id="20:4993" name="Icon" x="0" y="0" width="20.100000381469727" height="20" />
+          </frame>
+          <text id="20:4994" name="Text" x="48.099998474121094" y="12" width="126.37999725341797" height="24" />
+        </frame>
+        <frame id="20:4995" name="Link" x="24" y="553" width="232" height="48">
+          <frame id="20:4996" name="Container" x="16" y="16" width="19.5" height="16">
+            <vector id="20:4997" name="Icon" x="0" y="0" width="19.5" height="16" />
+          </frame>
+          <text id="20:4998" name="Text" x="47.5" y="12" width="81.94999694824219" height="24" />
+        </frame>
+        <frame id="20:4999" name="Link" x="24" y="605" width="232" height="48">
+          <frame id="20:5000" name="Container" x="16" y="14" width="17" height="20">
+            <vector id="20:5001" name="Icon" x="0" y="0" width="17" height="20" />
+          </frame>
+          <text id="20:5002" name="Text" x="45" y="12" width="64.05999755859375" height="24" />
+        </frame>
+      </frame>
+      <frame id="20:5003" name="Container" x="0" y="936" width="280" height="64">
+        <frame id="20:5004" name="Button" x="8" y="24" width="264" height="40">
+          <frame id="20:5005" name="Container" x="84.29000091552734" y="14.75" width="10.5" height="10.5">
+            <vector id="20:5006" name="Icon" x="0" y="0" width="10.5" height="10.5" />
+          </frame>
+          <text id="20:5007" name="Text" x="102.79000091552734" y="12" width="76.91999816894531" height="16" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>

@@ -176,7 +176,7 @@ export const AdminOcrQueue: React.FC<AdminOcrQueueProps> = ({ onNavigate, onLogo
 
       {/* Shared CareID Sidebar */}
       <AdminSidebar
-        activeNav="ocr"
+        activeNav="ocr-queue"
         isDrawerOpen={isDrawerOpen}
         onCloseDrawer={() => setIsDrawerOpen(false)}
         onNavigate={handleNav}

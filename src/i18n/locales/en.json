@@ -33,7 +33,13 @@
       "facilities": "Facilities",
       "healthRecords": "Health Records",
       "ocrVerification": "OCR Verification",
+      "ocrProcessingQueue": "Processing Queue",
+      "ocrRejected": "Rejected Documents",
+      "ocrHistory": "Review History",
       "referrals": "Referrals",
+      "referralsOverview": "Overview",
+      "referralsMonitoring": "Monitoring & Queue",
+      "referralAudit": "Referral Audit",
       "reports": "Reports",
       "systemSettings": "System Settings",
       "auditLogs": "Audit Logs",
@@ -1729,8 +1735,369 @@
       "providerRequired": "Provider is required",
       "rejectionReasonRequired": "Please enter a reason for rejecting this record."
     }
+  },
+  "ocrRejected": {
+    "breadcrumb": "OCR Verification",
+    "breadcrumbRejected": "Rejected",
+    "breadcrumbHistory": "Review History",
+    "title": "Rejected Documents",
+    "historyTitle": "Review History",
+    "subtitle": "Review and manage scans that failed OCR processing.",
+    "historySubtitle": "Review past OCR validation decisions, reprocessing outcomes, and audit logs.",
+    "filterBtn": "Filter",
+    "filterModal": {
+      "title": "Filter Rejected Records",
+      "reasonLabel": "Rejection Reason",
+      "allReasons": "All Reasons",
+      "reviewerLabel": "Reviewer",
+      "allReviewers": "All Reviewers",
+      "searchLabel": "Search by Document / ID",
+      "searchPlaceholder": "Filter by file name or document ID...",
+      "apply": "Apply Filters",
+      "reset": "Reset Filters",
+      "close": "Close"
+    },
+    "table": {
+      "docDetails": "DOCUMENT DETAILS",
+      "rejectionReason": "REJECTION REASON",
+      "reviewer": "REVIEWER",
+      "actions": "ACTIONS",
+      "reprocess": "Reprocess",
+      "replace": "Replace",
+      "reprocessing": "Reprocessing...",
+      "empty": "No rejected documents found.",
+      "emptySubtitle": "Documents that fail automated extraction or manual review will appear here.",
+      "loading": "Loading rejected documents..."
+    },
+    "replaceModal": {
+      "title": "Replace Document Scan",
+      "subtitle": "Upload a higher resolution scan or corrected document for {{docId}}.",
+      "currentFile": "Current Document",
+      "dropzoneTitle": "Drop new scan here, or click to browse",
+      "dropzoneHint": "Supported formats: PDF, JPG, PNG (Max 15MB)",
+      "selectFileBtn": "Choose File",
+      "selectedFile": "Selected Replacement File:",
+      "replaceNoteLabel": "Replacement Notes (Optional)",
+      "replaceNotePlaceholder": "e.g., High-resolution 300 DPI re-scan with clear physician signature...",
+      "cancel": "Cancel",
+      "uploadAndRerun": "Upload & Re-run OCR",
+      "uploading": "Uploading & Re-processing..."
+    },
+    "toasts": {
+      "reprocessSuccess": "OCR re-run queued for {{id}}.",
+      "replaceSuccess": "Replacement scan uploaded and queued for processing for {{id}}.",
+      "error": "Failed to process document operation."
+    }
+  },
+  "referralDashboard": {
+    "pageTitle": "Referral Management",
+    "overview": "Overview",
+    "overviewSubtitle": "Monitor and manage patient referral lifecycle.",
+    "exportReferrals": "Export Referrals",
+    "exportSuccess": "Referrals exported successfully to CSV.",
+    "exportEmpty": "No referrals found to export with current filters.",
+    "summaryCards": {
+      "totalReferrals": "Total Referrals",
+      "pending": "Pending",
+      "accepted": "Accepted",
+      "completed": "Completed",
+      "cancelled": "Cancelled",
+      "escalated": "Escalated"
+    },
+    "filters": {
+      "searchPlaceholder": "Search by Referral ID, Patient, or Doctor...",
+      "priority": "Priority",
+      "hospital": "Hospital",
+      "specialty": "Specialty",
+      "status": "Status",
+      "all": "All",
+      "allPriorities": "All Priorities",
+      "allHospitals": "All Hospitals",
+      "allSpecialties": "All Specialties",
+      "allStatuses": "All Statuses",
+      "clearFilters": "Clear Filters",
+      "activeFilters": "Active filters"
+    },
+    "priorities": {
+      "high": "High",
+      "routine": "Routine",
+      "urgent": "Urgent"
+    },
+    "statuses": {
+      "pending": "Pending",
+      "accepted": "Accepted",
+      "completed": "Completed",
+      "cancelled": "Cancelled",
+      "escalated": "Escalated"
+    },
+    "table": {
+      "referralId": "Referral ID",
+      "patient": "Patient",
+      "referringDoctor": "Referring Doctor",
+      "receivingDoctor": "Receiving Doctor",
+      "hospital": "Hospital",
+      "priority": "Priority",
+      "date": "Date",
+      "status": "Status",
+      "actions": "Actions",
+      "viewDetails": "View Details",
+      "viewHistory": "Referral Lifecycle & History",
+      "viewNotes": "View Clinical Notes & Attachments",
+      "escalate": "Escalate Referral",
+      "emptyTitle": "No referrals found",
+      "emptyDescription": "No patient referrals match the current search or filter criteria. Try adjusting your search term or resetting the filters.",
+      "resetFilters": "Reset Filters",
+      "loading": "Loading referrals data...",
+      "errorTitle": "Unable to load referrals",
+      "errorDescription": "There was an error communicating with the referral service. Please retry.",
+      "retry": "Retry"
+    },
+    "pagination": {
+      "showing": "Showing",
+      "to": "–",
+      "of": "of",
+      "referrals": "referrals",
+      "prev": "Previous Page",
+      "next": "Next Page",
+      "page": "Page"
+    },
+    "modal": {
+      "detailsTitle": "Referral Details",
+      "timelineTitle": "Referral Lifecycle & History",
+      "escalateNoticeTitle": "API Capability Notice: Escalation",
+      "escalateNoticeBody": "Backend endpoint PATCH /api/v1/admin/referrals/:id/escalate is not present in the OpenAPI specification. The documented contract supports status transition via PUT /api/v1/referrals/{id}/status and clinical triage via PUT /api/v1/referrals/{id}/triage.",
+      "close": "Close",
+      "patientId": "Patient ID",
+      "clinicalReason": "Clinical Reason",
+      "insurance": "Insurance Provider",
+      "authCode": "Authorization Code",
+      "timeline": "Urgency Timeline",
+      "notes": "Clinical Notes",
+      "markEscalated": "Set Escalated Status (Local)"
+    }
+  },
+  "referralMonitoring": {
+    "pageTitle": "Referral Management",
+    "topTabs": {
+      "overview": "Overview",
+      "escalations": "Escalations",
+      "analytics": "Analytics"
+    },
+    "searchPlaceholder": "Search Referrals...",
+    "heading": "Monitoring & Escalation Queue",
+    "subtitle": "Operational view focusing on SLA compliance.",
+    "exportReport": "Export Report",
+    "exportSuccess": "Export report generated successfully.",
+    "metrics": {
+      "pendingReferrals": "PENDING REFERRALS",
+      "delayedReferrals": "DELAYED REFERRALS (SLA BREACH)",
+      "avgCompletionTime": "AVG COMPLETION TIME",
+      "days": "Days"
+    },
+    "table": {
+      "title": "Critical Escalations",
+      "refId": "REF ID",
+      "patient": "PATIENT",
+      "currentHospital": "CURRENT HOSPITAL",
+      "delayDuration": "DELAY DURATION",
+      "priority": "PRIORITY",
+      "assignedAdmin": "ASSIGNED ADMIN",
+      "actions": "ACTIONS",
+      "unassigned": "Unassigned",
+      "viewAll": "View All Escalations ({{count}})",
+      "loading": "Loading escalation queue...",
+      "emptyTitle": "No critical escalations found",
+      "emptySubtitle": "All patient referrals are currently within acceptable SLA response windows.",
+      "retry": "Retry",
+      "filterPriority": "Filter Priority",
+      "filterHospital": "Filter Hospital",
+      "filterAll": "All",
+      "assignAdminTooltip": "Assign Administrator",
+      "notesTooltip": "Clinical Notes & Attachments",
+      "resolveTooltip": "Resolve SLA Breach"
+    },
+    "charts": {
+      "hospitalTitle": "Delay Volume by Hospital",
+      "specialtyTitle": "Delays by Specialty",
+      "sla": "SLA",
+      "cardiology": "Cardiology",
+      "neurology": "Neurology",
+      "oncology": "Oncology",
+      "other": "Other"
+    },
+    "dialogs": {
+      "assignTitle": "Assign Administrator",
+      "assignSubtitle": "Designate a triage case manager for referral {{refId}}.",
+      "adminLabel": "Assigned Administrator",
+      "selectAdmin": "Select administrator...",
+      "cancel": "Cancel",
+      "assignBtn": "Save Assignment",
+      "assignSuccess": "Assigned {{admin}} to {{refId}}.",
+      "notesTitle": "Clinical Notes & SLA Documentation",
+      "notesSubtitle": "Review patient clinical summary, notes, and SLA status for {{refId}}.",
+      "clinicalReason": "Clinical Reason",
+      "existingNotes": "Clinical Notes",
+      "noNotes": "No notes recorded yet.",
+      "addNoteLabel": "Add Operational Note",
+      "addNotePlaceholder": "Enter case notes or SLA escalation notes...",
+      "addNoteBtn": "Append Note",
+      "noteAddedSuccess": "Note appended to {{refId}}.",
+      "resolveTitle": "Resolve SLA Escalation",
+      "resolveMessage": "Are you sure you want to resolve the escalation for referral {{refId}}? The record status will be updated to Accepted and the SLA breach flag will be cleared.",
+      "resolveBtn": "Resolve Escalation",
+      "resolveSuccess": "Escalation for {{refId}} resolved successfully.",
+      "capabilityNoticeTitle": "Backend API Capability Notice",
+      "capabilityNoticeMessage": "The CareID backend OpenAPI specification does not expose a dedicated PATCH /api/v1/admin/referrals/:id/escalate endpoint. Escalation resolution uses PUT /api/v1/referrals/:id/status and triage endpoints."
+    }
+  },
+  "referralDetails": {
+    "topNav": {
+      "title": "Referral Management",
+      "searchPlaceholder": "Search referrals..."
+    },
+    "breadcrumb": "Referrals",
+    "heading": "Referral Details",
+    "actions": {
+      "viewPatientProfile": "View Patient Profile",
+      "downloadPdf": "Download PDF"
+    },
+    "status": {
+      "pendingReview": "Pending Review",
+      "pending": "Pending",
+      "accepted": "Accepted",
+      "inProgress": "In Progress",
+      "escalated": "Escalated",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "infoCard": {
+      "title": "Referral Information",
+      "highPriority": "HIGH PRIORITY",
+      "routinePriority": "ROUTINE",
+      "urgentPriority": "URGENT",
+      "referralId": "Referral ID",
+      "healthVaultId": "Health Vault ID",
+      "patientSummary": "Patient Summary",
+      "referringDoctor": "Referring Doctor",
+      "receivingDepartment": "Receiving Department",
+      "referralReason": "Referral Reason",
+      "notSpecified": "Not specified"
+    },
+    "attachments": {
+      "title": "Attached Medical Records",
+      "noAttachments": "No medical records attached to this referral.",
+      "view": "View",
+      "download": "Download",
+      "added": "Added",
+      "previewTitle": "Medical Attachment Preview",
+      "close": "Close",
+      "fileType": "Document Format",
+      "fileSize": "File Size",
+      "author": "Attached By"
+    },
+    "notes": {
+      "title": "Operational Notes",
+      "addNote": "Add Note",
+      "noNotes": "No operational notes recorded yet.",
+      "modalTitle": "Add Operational Note",
+      "modalSubtitle": "Add a coordination note to referral {{refId}}.",
+      "noteLabel": "Note Content",
+      "notePlaceholder": "Enter case notes or operational coordination notes...",
+      "privateLabel": "Mark as Private (internal administrative view only)",
+      "cancel": "Cancel",
+      "submit": "Save Note",
+      "submitting": "Saving Note...",
+      "successToast": "Operational note added successfully.",
+      "validationRequired": "Please enter note content.",
+      "validationMin": "Note must be at least 3 characters long.",
+      "validationMax": "Note cannot exceed 1000 characters."
+    },
+    "timeline": {
+      "title": "Activity Timeline",
+      "currentStatus": "CURRENT STATUS",
+      "noHistory": "No lifecycle transition history recorded for this referral."
+    },
+    "pdf": {
+      "generated": "Referral summary report opened for print/PDF export."
+    },
+    "states": {
+      "loading": "Loading referral details...",
+      "notFoundTitle": "Referral Not Found",
+      "notFoundDesc": "The requested referral {{id}} does not exist or may have been removed.",
+      "backToReferrals": "Return to Referral Management",
+      "errorTitle": "Unable to Load Referral",
+      "errorDesc": "An error occurred while loading this referral. Please try again.",
+      "retry": "Retry"
+    }
+  },
+  "referralAudit": {
+    "breadcrumbs": {
+      "referrals": "Referrals",
+      "auditHistory": "Audit History"
+    },
+    "title": "System Audit Log",
+    "description": "Tracking lifecycle events and escalations for all referrals.",
+    "actions": {
+      "filter": "Filter",
+      "exportCsv": "Export CSV",
+      "apply": "Apply Filter",
+      "reset": "Reset",
+      "refresh": "Refresh",
+      "liveActive": "Live Updates Active",
+      "livePaused": "Static Snapshot",
+      "toggleLive": "Toggle Live Sync",
+      "recordEvent": "Record Event"
+    },
+    "filterModal": {
+      "title": "Filter Audit Trail",
+      "subtitle": "Narrow down lifecycle events by action, user, or status.",
+      "actionLabel": "Action Type",
+      "allActions": "All Actions",
+      "userLabel": "User ID / System Bot",
+      "allUsers": "All Users",
+      "searchLabel": "Search Event Details",
+      "searchPlaceholder": "Search IP, status, or details..."
+    },
+    "table": {
+      "title": "Recent Activity Log",
+      "cols": {
+        "timestamp": "Timestamp",
+        "userId": "User ID",
+        "action": "Action",
+        "statusChange": "Status Change",
+        "ipAddress": "IP Address"
+      },
+      "actions": {
+        "escalated": "Escalated",
+        "verified": "Verified",
+        "modified": "Modified",
+        "approved": "Approved",
+        "created": "Created",
+        "cancelled": "Cancelled"
+      },
+      "showingRecords": "Showing {{start}}–{{end}} of {{total}} records",
+      "loading": "Loading audit history...",
+      "errorTitle": "Unable to Load Audit Trail",
+      "errorSubtitle": "There was an error retrieving referral lifecycle events.",
+      "retry": "Retry",
+      "emptyTitle": "No Audit Records Found",
+      "emptySubtitle": "No lifecycle status transitions or administrative events have been recorded for referrals yet.",
+      "recordSample": "Simulate Referral Event"
+    },
+    "escalationsPanel": {
+      "emptyHeading": "No Escalations Found",
+      "emptyDescription": "All critical referral workflows are operating normally. No manual intervention required.",
+      "checkMonitoring": "Check Monitoring",
+      "activeHeading": "Escalations Pending ({{count}})",
+      "activeDescription": "Critical referral SLA delays detected requiring triage intervention.",
+      "viewQueue": "Check Monitoring"
+    },
+    "capabilityNotice": {
+      "badge": "Contract Specification",
+      "title": "Referral Audit Capability Notice",
+      "description": "The CareID backend does not expose a dedicated GET /api/v1/referrals/audit endpoint. Audit events reflect actual status transitions and administrative operations.",
+      "dismiss": "Understood"
+    },
+    "exportSuccess": "Audit log CSV exported successfully ({{count}} records)."
   }
 }
-
-
-

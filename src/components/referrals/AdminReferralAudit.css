@@ -1,0 +1,963 @@
+/* ==========================================================================
+   CareID Admin Portal - Referral Audit & Empty States
+   Matching Figma Node ID: 20:5535, 20:5585, 20:5699, 20:5700
+   Fluid, Responsive & Zoom-Resilient Architecture
+   ========================================================================== */
+
+/* Main Full Height Outer Shell */
+.audit-dashboard-wrapper {
+  display: flex;
+  height: 100vh;
+  max-height: 100dvh;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: #f8f9fb;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #191c1e;
+  position: relative;
+}
+
+/* Main Content Column */
+.audit-main-wrapper {
+  flex: 1 1 0%;
+  min-width: 0;
+  width: 100%;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: #f8f9fb;
+}
+
+/* Stationary Top App Bar matching Figma 20:5537 */
+.audit-top-navbar {
+  height: 64px;
+  min-height: 64px;
+  background-color: #f8f9fb;
+  border-bottom: 1px solid #cbc4d4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(16px, 2vw, 32px);
+  flex-shrink: 0;
+  z-index: 20;
+  box-sizing: border-box;
+  gap: clamp(8px, 1.5vw, 16px);
+  width: 100%;
+}
+
+.audit-top-left {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.5vw, 24px);
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+/* Menu Toggle Button: synchronized with CareID sidebar collapsing at 1023px */
+.audit-menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: #494552;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.audit-menu-toggle:hover {
+  background-color: #edeef0;
+  color: #28006d;
+}
+
+@media (max-width: 1023px) {
+  .audit-menu-toggle {
+    display: flex;
+  }
+}
+
+.audit-brand-title {
+  font-size: clamp(15px, 1.3vw, 18px);
+  font-weight: 700;
+  line-height: 24px;
+  color: #191c1e;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Top Navigation Tabs */
+.audit-nav-tabs {
+  display: none;
+  align-items: center;
+  gap: clamp(8px, 1.2vw, 20px);
+  height: 32px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 900px) {
+  .audit-nav-tabs {
+    display: flex;
+  }
+}
+
+.audit-nav-tab {
+  background: transparent;
+  border: none;
+  font-size: clamp(13.5px, 1.1vw, 15px);
+  font-weight: 500;
+  color: #494552;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.audit-nav-tab:hover {
+  color: #28006d;
+}
+
+.audit-nav-tab.active {
+  font-weight: 700;
+  color: #28006d;
+  border-bottom: 2px solid #28006d;
+  border-radius: 0;
+  padding-bottom: 6px;
+}
+
+/* Top Actions Group matching Figma 20:5539 */
+.audit-top-actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.2vw, 16px);
+  flex-shrink: 0;
+}
+
+.audit-search-box {
+  display: none;
+  position: relative;
+  width: clamp(140px, 15vw, 256px);
+}
+
+@media (min-width: 1024px) {
+  .audit-search-box {
+    display: block;
+  }
+}
+
+.audit-search-input {
+  width: 100%;
+  height: 38px;
+  background-color: #f2f4f6;
+  border: 1px solid #cbc4d4;
+  border-radius: 9999px;
+  padding: 0 17px 0 41px;
+  font-size: 13.5px;
+  color: #191c1e;
+  outline: none;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  box-sizing: border-box;
+}
+
+.audit-search-input::placeholder {
+  color: rgba(73, 69, 82, 0.7);
+}
+
+.audit-search-input:focus {
+  border-color: #28006d;
+  box-shadow: 0 0 0 2px rgba(40, 0, 109, 0.15);
+}
+
+.audit-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #494552;
+  pointer-events: none;
+}
+
+.audit-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: #494552;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.audit-icon-btn:hover {
+  background-color: #edeef0;
+  color: #28006d;
+}
+
+.audit-icon-btn.active-history {
+  background-color: #e1e2e4;
+  border-bottom: 2px solid #28006d;
+  border-radius: 9999px;
+  color: #28006d;
+}
+
+.audit-avatar-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  background-color: #3f1d8b;
+  border: 1px solid #cbc4d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Scrollable Canvas */
+.audit-canvas {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: clamp(16px, 2vw, 32px);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.audit-canvas::-webkit-scrollbar {
+  width: 6px;
+}
+.audit-canvas::-webkit-scrollbar-track {
+  background: transparent;
+}
+.audit-canvas::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+.audit-canvas::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Inner Container with fluid max-width constraint */
+.audit-canvas-inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 24px);
+  box-sizing: border-box;
+}
+
+/* Page Header matching Figma 20:5562 */
+.audit-page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+}
+
+.audit-breadcrumb-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.audit-breadcrumb-link {
+  font-size: 12px;
+  color: #494552;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.audit-breadcrumb-link:hover {
+  color: #28006d;
+}
+
+.audit-breadcrumb-sep {
+  font-size: 12px;
+  color: #cbc4d4;
+  display: flex;
+  align-items: center;
+}
+
+.audit-breadcrumb-current {
+  font-size: 12px;
+  font-weight: 600;
+  color: #28006d;
+  letter-spacing: 0.6px;
+}
+
+.audit-page-title {
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #191c1e;
+  letter-spacing: -0.64px;
+  margin: 0;
+}
+
+.audit-page-description {
+  font-size: clamp(13px, 1.1vw, 14px);
+  font-weight: 400;
+  line-height: 20px;
+  color: #494552;
+  margin: 4px 0 0 0;
+}
+
+.audit-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.audit-action-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.audit-action-btn.filter {
+  background-color: transparent;
+  border: 1px solid #cbc4d4;
+  color: #191c1e;
+}
+
+.audit-action-btn.filter:hover {
+  background-color: #f2f4f6;
+  border-color: #28006d;
+  color: #28006d;
+}
+
+.audit-action-btn.filter.active {
+  background-color: #edeef0;
+  border-color: #28006d;
+  color: #28006d;
+}
+
+.audit-action-btn.export {
+  background-color: transparent;
+  border: 1px solid #006a60;
+  color: #006a60;
+}
+
+.audit-action-btn.export:hover {
+  background-color: #e6f7f5;
+  border-color: #00564e;
+  color: #00564e;
+}
+
+/* Capability Notice Banner */
+.audit-capability-banner {
+  background-color: #f8f9fb;
+  border: 1px solid #cbc4d4;
+  border-left: 4px solid #28006d;
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  color: #494552;
+}
+
+.audit-capability-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Bento Grid matching Figma 20:5584 */
+.audit-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 24px);
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .audit-bento-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .audit-main-log-col {
+    grid-column: span 2 / span 2;
+  }
+
+  .audit-empty-state-col {
+    grid-column: span 1 / span 1;
+  }
+}
+
+/* Main Audit Log Card matching Figma 20:5585 */
+.audit-log-card {
+  background-color: #ffffff;
+  border: 1px solid #e1e2e4;
+  border-radius: 12px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.audit-card-header {
+  background-color: #f2f4f6;
+  border-bottom: 1px solid #e1e2e4;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.audit-card-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.audit-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #191c1e;
+  margin: 0;
+}
+
+.audit-status-badge {
+  background-color: #e1e2e4;
+  color: #494552;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s ease;
+}
+
+.audit-status-badge:hover {
+  background-color: #d7d8da;
+}
+
+.audit-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: #006a60;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+/* Contained Scrollable Table */
+.audit-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
+.audit-table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+.audit-table-wrapper::-webkit-scrollbar-track {
+  background: #f2f4f6;
+}
+.audit-table-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+
+.audit-table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.audit-table th {
+  background-color: rgba(242, 244, 246, 0.5);
+  border-bottom: 1px solid #e1e2e4;
+  padding: 12px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #494552;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.audit-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e1e2e4;
+  vertical-align: middle;
+  font-size: 13.5px;
+  box-sizing: border-box;
+}
+
+.audit-table tr:last-child td {
+  border-bottom: none;
+}
+
+.audit-row {
+  background-color: #ffffff;
+  transition: background-color 0.15s ease;
+}
+
+.audit-row:hover {
+  background-color: #f8f9fb;
+}
+
+/* Column Dimensions */
+.audit-col-timestamp {
+  width: 24%;
+  min-width: 175px;
+}
+
+.audit-col-userid {
+  width: 19%;
+  min-width: 140px;
+}
+
+.audit-col-action {
+  width: 16%;
+  min-width: 120px;
+}
+
+.audit-col-status {
+  width: 26%;
+  min-width: 190px;
+}
+
+.audit-col-ip {
+  width: 15%;
+  min-width: 120px;
+  text-align: right;
+}
+
+/* Cell Elements */
+.audit-timestamp-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  color: #494552;
+  white-space: nowrap;
+}
+
+.audit-pip {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+.audit-pip.red {
+  background-color: #ba1a1a;
+}
+
+.audit-pip.teal {
+  background-color: #006a60;
+}
+
+.audit-pip.amber {
+  background-color: #fabd00;
+}
+
+.audit-pip.gray {
+  background-color: #7a7583;
+}
+
+.audit-userid-cell {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  color: #28006d;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.audit-action-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.audit-action-badge.escalated {
+  background-color: #ffdad6;
+  color: #93000a;
+}
+
+.audit-action-badge.verified {
+  background-color: #e7e8ea;
+  color: #191c1e;
+}
+
+.audit-action-badge.modified {
+  background-color: #e7e8ea;
+  color: #191c1e;
+}
+
+.audit-action-badge.approved {
+  background-color: #e7e8ea;
+  color: #191c1e;
+}
+
+.audit-action-badge.created {
+  background-color: #e7e8ea;
+  color: #191c1e;
+}
+
+.audit-status-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.audit-status-old {
+  font-size: 12px;
+  color: #494552;
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
+.audit-status-arrow {
+  color: #7a7583;
+  display: flex;
+  align-items: center;
+}
+
+.audit-status-new {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.audit-status-new.critical {
+  color: #ba1a1a;
+}
+
+.audit-status-new.active {
+  color: #006a60;
+}
+
+.audit-status-new.pending-review {
+  color: #fabd00;
+}
+
+.audit-status-new.approved {
+  color: #006a60;
+}
+
+.audit-status-new.cancelled {
+  color: #ba1a1a;
+}
+
+.audit-ip-cell {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: #494552;
+  opacity: 0.7;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Table Footer matching Figma 20:5689 */
+.audit-table-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e1e2e4;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.audit-records-count {
+  font-size: 12px;
+  color: #494552;
+}
+
+.audit-pagination-btns {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.audit-page-arrow-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 6px;
+  color: #494552;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.audit-page-arrow-btn:hover:not(:disabled) {
+  background-color: #f2f4f6;
+  color: #28006d;
+}
+
+.audit-page-arrow-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Escalations Empty State Panel matching Figma 20:5700 */
+.audit-escalation-panel {
+  background-color: #ffffff;
+  border: 1px solid #e1e2e4;
+  border-radius: 12px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 351px;
+  padding: 40px 24px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background accent */
+.audit-escalation-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(40, 0, 109, 0.03) 0%, rgba(40, 0, 109, 0) 70%);
+  pointer-events: none;
+}
+
+.audit-panel-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 9999px;
+  background-color: #e7e8ea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: #494552;
+  flex-shrink: 0;
+}
+
+.audit-panel-heading {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #191c1e;
+  margin: 0 0 8px 0;
+}
+
+.audit-panel-description {
+  font-size: 14px;
+  line-height: 20px;
+  color: #494552;
+  max-width: 220px;
+  margin: 0 0 24px 0;
+}
+
+.audit-check-btn {
+  background-color: #28006d;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  padding: 10px 24px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.audit-check-btn:hover {
+  background-color: #3b009e;
+  transform: translateY(-1px);
+  box-shadow: 0px 4px 8px rgba(40, 0, 109, 0.2);
+}
+
+/* Filter Modal Dialog */
+.audit-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+  animation: fadeIn 0.15s ease-out;
+}
+
+.audit-modal-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #cbc4d4;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+  width: 100%;
+  max-width: min(480px, calc(100vw - 32px));
+  max-height: min(90vh, 90dvh);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.audit-modal-header {
+  padding: 18px 24px;
+  border-bottom: 1px solid #cbc4d4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.audit-modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #191c1e;
+  margin: 0;
+}
+
+.audit-modal-subtitle {
+  font-size: 13px;
+  color: #494552;
+  margin: 4px 0 0 0;
+}
+
+.audit-modal-close-btn {
+  background: transparent;
+  border: none;
+  color: #494552;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.audit-modal-close-btn:hover {
+  background-color: #f2f4f6;
+  color: #191c1e;
+}
+
+.audit-modal-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.audit-modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #cbc4d4;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  background-color: #f8f9fb;
+  border-radius: 0 0 16px 16px;
+}
+
+.audit-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.audit-form-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #494552;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.audit-form-select,
+.audit-form-input {
+  width: 100%;
+  border: 1px solid #cbc4d4;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13.5px;
+  color: #191c1e;
+  background-color: #ffffff;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.audit-form-select:focus,
+.audit-form-input:focus {
+  border-color: #28006d;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
