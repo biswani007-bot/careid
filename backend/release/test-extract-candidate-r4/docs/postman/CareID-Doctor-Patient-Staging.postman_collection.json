@@ -1,0 +1,2732 @@
+{
+  "info": {
+    "name": "CareID API \u2014 Doctor & Patient App Integration Collection (Phase 12 Release \u2014 November 16, 2026)",
+    "_postman_id": "careid-doctor-patient-staging-v1",
+    "description": "Official CareID / Health Vault 360 integration collection tailored specifically for Doctor and Patient applications. Verified against staging API at https://360api.vnvision.in (Phase 12 Consolidated Release \u2014 November 16, 2026).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://360api.vnvision.in",
+      "type": "string",
+      "description": "CareID API Origin Host"
+    },
+    {
+      "key": "doctorPhone",
+      "value": "+919876543210",
+      "type": "string",
+      "description": "Primary Staging Verified Doctor Phone Number"
+    },
+    {
+      "key": "patientPhone",
+      "value": "+16505550004",
+      "type": "string",
+      "description": "Staging Patient Phone Number (John Doe)"
+    },
+    {
+      "key": "testOtp",
+      "value": "123456",
+      "type": "string",
+      "description": "Staging Test OTP Bypass Code"
+    },
+    {
+      "key": "challengeId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "doctorAccessToken",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "doctorRefreshToken",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "patientAccessToken",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "patientRefreshToken",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "doctorId",
+      "value": "1f06067b-e229-4707-84e2-afa27da2e4cd",
+      "type": "string"
+    },
+    {
+      "key": "patientId",
+      "value": "787e5187-7859-4320-bb1a-465a57dd086a",
+      "type": "string"
+    },
+    {
+      "key": "facilityId",
+      "value": "3b6a3f47-ed9c-4010-bb1a-e0fdea5f4abb",
+      "type": "string"
+    },
+    {
+      "key": "recordId",
+      "value": "45d5ba2a-05bd-4a7f-ad34-fe9e677cff78",
+      "type": "string"
+    },
+    {
+      "key": "healthCardId",
+      "value": "85d5a9aa-0f01-4f1c-9671-d67bfa9d35b6",
+      "type": "string"
+    },
+    {
+      "key": "referralId",
+      "value": "226ad0ab-0e15-4ddb-a212-27f0c3963203",
+      "type": "string"
+    },
+    {
+      "key": "offerId",
+      "value": "b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22",
+      "type": "string",
+      "description": "Sample Treatment Offer UUID"
+    },
+    {
+      "key": "applicationId",
+      "value": "app-sample-001",
+      "type": "string",
+      "description": "Sample Financing Application UUID"
+    },
+    {
+      "key": "base_url",
+      "value": "https://360api.vnvision.in",
+      "type": "string",
+      "description": "CareID API Origin Host (alias)"
+    },
+    {
+      "key": "testDoctorPhone",
+      "value": "+919876543210",
+      "type": "string",
+      "description": "Staging Test Doctor Phone Number"
+    },
+    {
+      "key": "seedDoctorPhone",
+      "value": "+16505550003",
+      "type": "string",
+      "description": "Synthetic Doctor Phone Number (Dr. Sarah Jenkins)"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Doctor App Integration",
+      "item": [
+        {
+          "name": "01. Authentication & Session",
+          "item": [
+            {
+              "name": "Step 1: Request Phone OTP Challenge (Doctor)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phone\": \"{{doctorPhone}}\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/auth/otp/request",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "otp",
+                    "request"
+                  ]
+                },
+                "description": "Requests an OTP challenge for the seeded Doctor account (+16505550003). On staging, OTP generation is instantaneous and automated tests will capture challengeId."
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Status is 200 or 201', function () { pm.expect(pm.response.code).to.be.oneOf([200, 201]); });",
+                      "var jsonData = pm.response.json();",
+                      "if (jsonData.data && jsonData.data.challengeId) {",
+                      "    pm.collectionVariables.set('challengeId', jsonData.data.challengeId);",
+                      "    pm.environment.set('challengeId', jsonData.data.challengeId);",
+                      "    console.log('Saved challengeId: ' + jsonData.data.challengeId);",
+                      "}"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Step 2: Verify Phone OTP & Login (Doctor)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"challengeId\": \"{{challengeId}}\",\n  \"otpCode\": \"{{testOtp}}\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/auth/otp/verify",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "otp",
+                    "verify"
+                  ]
+                },
+                "description": "Verifies the staging OTP (123456) using challengeId. The test script saves accessToken into doctorAccessToken and environment."
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                      "var jsonData = pm.response.json();",
+                      "if (jsonData.data && jsonData.data.accessToken) {",
+                      "    pm.collectionVariables.set('doctorAccessToken', jsonData.data.accessToken);",
+                      "    pm.environment.set('doctorAccessToken', jsonData.data.accessToken);",
+                      "    pm.environment.set('accessToken', jsonData.data.accessToken);",
+                      "}",
+                      "if (jsonData.data && jsonData.data.refreshToken) {",
+                      "    pm.collectionVariables.set('doctorRefreshToken', jsonData.data.refreshToken);",
+                      "    pm.environment.set('doctorRefreshToken', jsonData.data.refreshToken);",
+                      "}"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Step 3: Get Authenticated Doctor User Details (/auth/me)",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/auth/me",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "me"
+                  ]
+                },
+                "description": "Retrieves identity claims, role (DOCTOR), and permission tokens (read:profile, read:reports, write:reports, read:health-card, verify:health-card)."
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                      "var jsonData = pm.response.json();",
+                      "pm.test('User has DOCTOR role', function () {",
+                      "    pm.expect(jsonData.data.roles).to.include('DOCTOR');",
+                      "});"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Step 4: Rotate Token (/auth/token/refresh)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"refreshToken\": \"{{doctorRefreshToken}}\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/auth/token/refresh",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "token",
+                    "refresh"
+                  ]
+                },
+                "description": "Rotates JWT access and refresh tokens."
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                      "var jsonData = pm.response.json();",
+                      "if (jsonData.data && jsonData.data.accessToken) {",
+                      "    pm.collectionVariables.set('doctorAccessToken', jsonData.data.accessToken);",
+                      "    pm.environment.set('doctorAccessToken', jsonData.data.accessToken);",
+                      "}"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "02. Doctor Profile & Master Directory",
+          "item": [
+            {
+              "name": "List All Registered Doctors (Directory)",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors"
+                  ]
+                },
+                "description": "Returns all verified and active doctors in the Master Registry."
+              }
+            },
+            {
+              "name": "Search Doctors (Enterprise Search)",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/search?q=Cardiology",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "Cardiology"
+                    }
+                  ]
+                },
+                "description": "Search doctors by name, license, medical council, or specialization."
+              }
+            },
+            {
+              "name": "Get Doctor Profile Details by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/{{doctorId}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "{{doctorId}}"
+                  ]
+                },
+                "description": "Retrieves complete clinical profile for Dr. Sarah Jenkins (NPI, council, specialization, experience)."
+              }
+            },
+            {
+              "name": "Get Doctor Credential Documents",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/{{doctorId}}/documents",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "{{doctorId}}",
+                    "documents"
+                  ]
+                },
+                "description": "Lists doctor certifications, medical degrees, and council license copies."
+              }
+            },
+            {
+              "name": "Generate Doctor Verification QR Token",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/{{doctorId}}/generate-qr",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "{{doctorId}}",
+                    "generate-qr"
+                  ]
+                },
+                "description": "Generates a signed digital QR code token for provider verification."
+              }
+            },
+            {
+              "name": "Get Doctor Availability Slots",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/{{doctorId}}/slots",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "{{doctorId}}",
+                    "slots"
+                  ]
+                },
+                "description": "Retrieves scheduled consultation availability slots for Dr. Sarah Jenkins."
+              }
+            }
+          ]
+        },
+        {
+          "name": "03. Schedules, Shifts & Facility Rostering",
+          "item": [
+            {
+              "name": "List Availability Schedules",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/schedules",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "schedules"
+                  ]
+                },
+                "description": "List doctor availability schedules across days of the week."
+              }
+            },
+            {
+              "name": "List Operational Shifts",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/shifts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "shifts"
+                  ]
+                },
+                "description": "Operational shift rosters for healthcare providers."
+              }
+            },
+            {
+              "name": "List Facility Holidays",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/holidays",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "holidays"
+                  ]
+                },
+                "description": "Facility holidays when standard consultations are paused."
+              }
+            }
+          ]
+        },
+        {
+          "name": "04. Referrals & Care Coordination",
+          "item": [
+            {
+              "name": "List Referrals",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/referrals",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "referrals"
+                  ]
+                },
+                "description": "List incoming and outgoing clinical referrals."
+              }
+            },
+            {
+              "name": "Get Referral Details by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/referrals/{{referralId}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "referrals",
+                    "{{referralId}}"
+                  ]
+                },
+                "description": "Retrieves complete clinical referral data and triage status."
+              }
+            },
+            {
+              "name": "Triage Referral (Accept / Reject / Schedule)",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorAccessToken}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"outcome\": \"ACCEPTED\",\n  \"receivingDoctorId\": \"{{doctorId}}\",\n  \"reason\": \"Clinical indication confirmed for cardiology consultation.\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/referrals/{{referralId}}/triage",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "referrals",
+                    "{{referralId}}",
+                    "triage"
+                  ]
+                },
+                "description": "Triages a referral to ACCEPTED or REJECTED status."
+              }
+            }
+          ]
+        },
+        {
+          "name": "05. QR Verification Workflow",
+          "item": [
+            {
+              "name": "Verify Patient Digital QR Token",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorAccessToken}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"qrToken\": \"CAREID_SAMPLE_TOKEN_HEX_STRING_HERE\",\n  \"entityType\": \"HEALTH_CARD\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/qr/verify",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "qr",
+                    "verify"
+                  ]
+                },
+                "description": "Doctor app scans patient QR code; verifies validity, emergency status, and active identity."
+              }
+            }
+          ]
+        },
+        {
+          "name": "06. Boundary & Security Tests (Doctor)",
+          "item": [
+            {
+              "name": "Test Missing Authorization Header (Expect 401)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/{{doctorId}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "{{doctorId}}"
+                  ]
+                },
+                "description": "Asserts that protected doctor endpoints reject unauthenticated calls."
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Status is 401 Unauthorized', function () { pm.response.to.have.status(401); });"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Test Doctor Accessing Patient-Scoped Records (Expect 404 / Blocker Check)",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/medical-records",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "medical-records"
+                  ]
+                },
+                "description": "Documents the known integration blocker: /medical-records expects patientProfileId on caller. Doctor receives 404 Patient profile not found."
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Status is 404 Patient Profile Not Found', function () { pm.response.to.have.status(404); });"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "07. Treatment Proposals & Offers",
+          "description": "Doctor workflows for authoring multi-procedure treatment proposals, locking drafts, dispatching to patients, and lifecycle status inspection.",
+          "item": [
+            {
+              "name": "Create a new draft treatment proposal [Doctor]",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{doctorAccessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"patientProfileId\": \"{{patientId}}\",\n  \"title\": \"Comprehensive Dental Reconstruction Plan\",\n  \"clinicalRationale\": \"Patient requires multi-stage restorative procedure following periodontal assessment\",\n  \"expiresAt\": \"2026-12-01T00:00:00.000Z\",\n  \"notes\": \"Includes bone graft, titanium fixture, and porcelain crown\",\n  \"procedures\": [\n    {\n      \"procedureCode\": \"D6010\",\n      \"procedureName\": \"Surgical Placement of Implant Body\",\n      \"category\": \"DENTAL\",\n      \"unitPrice\": 45000,\n      \"quantity\": 1,\n      \"discountAmount\": 5000\n    },\n    {\n      \"procedureCode\": \"D6058\",\n      \"procedureName\": \"Abutment Supported Porcelain Crown\",\n      \"category\": \"DENTAL\",\n      \"unitPrice\": 25000,\n      \"quantity\": 1,\n      \"discountAmount\": 0\n    }\n  ],\n  \"financingOptions\": [\n    {\n      \"financingOptionId\": \"opt-zerocost-care\",\n      \"partnerName\": \"Bajaj Finserv Health\",\n      \"tenureMonths\": 12,\n      \"monthlyEmi\": 5416.67,\n      \"interestRatePercent\": 0,\n      \"preApproved\": true\n    }\n  ]\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/treatment-offers",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "treatment-offers"
+                  ]
+                }
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 201 (Offer Created)\", function () {",
+                      "    pm.response.to.have.status(201);",
+                      "});",
+                      "const res = pm.response.json();",
+                      "const data = res.data || res;",
+                      "if (data && data.id) {",
+                      "    pm.collectionVariables.set(\"offerId\", data.id);",
+                      "    console.log(\"[Doctor App] Saved new offerId:\", data.id);",
+                      "}"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "List authored treatment proposals [Doctor]",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{doctorAccessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/treatment-offers?page=1&limit=20",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "treatment-offers"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Get treatment offer details [Doctor]",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{doctorAccessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/treatment-offers/{{offerId}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "treatment-offers",
+                    "{{offerId}}"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Lock draft and dispatch treatment offer to patient [Doctor]",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{doctorAccessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notes\": \"Clinical proposal finalized and dispatched to patient\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/treatment-offers/{{offerId}}/dispatch",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "treatment-offers",
+                    "{{offerId}}",
+                    "dispatch"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Cancel active treatment proposal [Doctor]",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{doctorAccessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reason\": \"Patient requested revision of procedure plan\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/treatment-offers/{{offerId}}/cancel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "treatment-offers",
+                    "{{offerId}}",
+                    "cancel"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "08. Clinical Addenda & Record Sharing",
+          "item": [
+            {
+              "name": "Append Clinical Addendum to Medical Record",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"addendumNotes\": \"Pathology consultation confirms complete margins and no malignant infiltration.\",\n  \"reason\": \"Final histology report received from central laboratory\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/medical-records/{{medicalRecordId}}/addenda",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "medical-records",
+                    "{{medicalRecordId}}",
+                    "addenda"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Get Clinical Addenda for Medical Record",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/medical-records/{{medicalRecordId}}/addenda",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "medical-records",
+                    "{{medicalRecordId}}",
+                    "addenda"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Generate Secure Cryptographic Share Link",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"recipientType\": \"DOCTOR\",\n  \"recipientTarget\": \"{{consultantDoctorId}}\",\n  \"purpose\": \"Inter-facility cardio-thoracic surgical consultation\",\n  \"expiryHours\": 72\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/medical-records/{{medicalRecordId}}/share",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "medical-records",
+                    "{{medicalRecordId}}",
+                    "share"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Access Shared Record via Token (Public / Grantee)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/shares/{{shareToken}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "shares",
+                    "{{shareToken}}"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "09. Dental Health Records",
+          "item": [
+            {
+              "name": "Create Dental Treatment Record",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"toothNumber\": \"18\",\n  \"toothSurface\": \"MOD\",\n  \"procedureName\": \"Composite Resin Restoration\",\n  \"procedureCode\": \"D2393\",\n  \"clinicalFindings\": \"Mesial-occlusal-distal class II dentinal caries\",\n  \"treatmentDate\": \"2026-11-14T10:00:00Z\",\n  \"status\": \"COMPLETED\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/patients/{{patientProfileId}}/dental-records",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "patients",
+                    "{{patientProfileId}}",
+                    "dental-records"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "List Patient Dental Records",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/patients/{{patientProfileId}}/dental-records",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "patients",
+                    "{{patientProfileId}}",
+                    "dental-records"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Get Dental Record by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/dental-records/{{dentalRecordId}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "dental-records",
+                    "{{dentalRecordId}}"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "10. Vision & Optometry Records",
+          "item": [
+            {
+              "name": "Create Vision & Refraction Record",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"odSphere\": -2.5,\n  \"odCylinder\": -0.75,\n  \"odAxis\": 180,\n  \"odAddition\": 1.5,\n  \"odVisualAcuity\": \"20/20\",\n  \"odIopMmHg\": 14.5,\n  \"osSphere\": -2.75,\n  \"osCylinder\": -0.5,\n  \"osAxis\": 175,\n  \"osAddition\": 1.5,\n  \"osVisualAcuity\": \"20/20\",\n  \"osIopMmHg\": 15,\n  \"contactLensBaseCurve\": 8.6,\n  \"contactLensDiameter\": 14.2,\n  \"clinicalNotes\": \"Anterior segment quiet, fundus clear without cupping\",\n  \"recommendations\": \"Bifocal progressive prescription issued\",\n  \"status\": \"FINAL\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/patients/{{patientProfileId}}/vision-records",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "patients",
+                    "{{patientProfileId}}",
+                    "vision-records"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "List Patient Vision Records",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/patients/{{patientProfileId}}/vision-records",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "patients",
+                    "{{patientProfileId}}",
+                    "vision-records"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Get Vision Record by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/vision-records/{{visionRecordId}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "vision-records",
+                    "{{visionRecordId}}"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "11. Diagnostic Laboratory Results",
+          "item": [
+            {
+              "name": "Create Structured Laboratory Report with Auto-Flagging",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"laboratoryName\": \"Metropolis Central Diagnostic Laboratory\",\n  \"specimenType\": \"Venous Whole Blood\",\n  \"collectedDate\": \"2026-11-14T08:00:00Z\",\n  \"reportedDate\": \"2026-11-14T11:00:00Z\",\n  \"status\": \"FINAL\",\n  \"overallNotes\": \"Anemia screen shows microcytosis\",\n  \"testItems\": [\n    {\n      \"testName\": \"Hemoglobin (Hb)\",\n      \"testCategory\": \"Complete Blood Count\",\n      \"numericValue\": 11.2,\n      \"unit\": \"g/dL\",\n      \"referenceRange\": \"13.5 - 17.5 g/dL\",\n      \"referenceLow\": 13.5,\n      \"referenceHigh\": 17.5\n    },\n    {\n      \"testName\": \"Platelet Count\",\n      \"testCategory\": \"Complete Blood Count\",\n      \"numericValue\": 245000,\n      \"unit\": \"/uL\",\n      \"referenceRange\": \"150000 - 450000 /uL\",\n      \"referenceLow\": 150000,\n      \"referenceHigh\": 450000\n    }\n  ]\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/patients/{{patientProfileId}}/lab-results",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "patients",
+                    "{{patientProfileId}}",
+                    "lab-results"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "List Patient Laboratory Results",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/patients/{{patientProfileId}}/lab-results",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "patients",
+                    "{{patientProfileId}}",
+                    "lab-results"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "12. Prescriptions & Drug Interactions",
+          "item": [
+            {
+              "name": "Screen Medications for Drug-Drug Interactions & Allergy Conflicts",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"patientProfileId\": \"{{patientProfileId}}\",\n  \"medications\": [\n    {\n      \"drugName\": \"Warfarin\",\n      \"dosage\": \"5mg\",\n      \"form\": \"Tablet\",\n      \"frequency\": \"Once daily\",\n      \"durationDays\": 30\n    },\n    {\n      \"drugName\": \"Aspirin\",\n      \"dosage\": \"75mg\",\n      \"form\": \"Tablet\",\n      \"frequency\": \"Once daily\",\n      \"durationDays\": 30\n    }\n  ]\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/prescriptions/check-interactions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "prescriptions",
+                    "check-interactions"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Write and Issue Prescription",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"diagnosisCode\": \"J02.9\",\n  \"notes\": \"Complete 7-day course. Discontinue if rash appears.\",\n  \"items\": [\n    {\n      \"drugName\": \"Amoxicillin\",\n      \"dosage\": \"500mg\",\n      \"form\": \"Capsule\",\n      \"route\": \"ORAL\",\n      \"frequency\": \"Three times daily (TID)\",\n      \"durationDays\": 7,\n      \"instructions\": \"Take after meals with water\"\n    }\n  ]\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/patients/{{patientProfileId}}/prescriptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "patients",
+                    "{{patientProfileId}}",
+                    "prescriptions"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "List Patient Prescriptions",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/patients/{{patientProfileId}}/prescriptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "patients",
+                    "{{patientProfileId}}",
+                    "prescriptions"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Get Prescription Preview (Digital Rx Certificate)",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/prescriptions/{{prescriptionId}}/preview",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "prescriptions",
+                    "{{prescriptionId}}",
+                    "preview"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Discontinue Prescription",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reason\": \"Adverse gastrointestinal intolerance observed on day 3\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/prescriptions/{{prescriptionId}}/discontinue",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "prescriptions",
+                    "{{prescriptionId}}",
+                    "discontinue"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Issue Prescription Refill",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notes\": \"Authorized 30-day refill dispensation\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/prescriptions/{{prescriptionId}}/refill",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "prescriptions",
+                    "{{prescriptionId}}",
+                    "refill"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "13. Patient-Doctor Secure Messaging",
+          "item": [
+            {
+              "name": "List Doctor Conversations",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/conversations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "conversations"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Get Unread Messages Count",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/conversations/unread-count",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "conversations",
+                    "unread-count"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Send Message in Conversation",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"content\": \"Please apply the ice compress for 15 minutes twice daily and rest.\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/conversations/{{conversationId}}/messages",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "conversations",
+                    "{{conversationId}}",
+                    "messages"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "14. Veterinary Pet Clinical Care",
+          "item": [
+            {
+              "name": "List Patient Pets for Doctor",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/patients/{{patientProfileId}}/pets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "patients",
+                    "{{patientProfileId}}",
+                    "pets"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Get Pet Veterinary Timeline",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/pets/{{petId}}/timeline",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "pets",
+                    "{{petId}}",
+                    "timeline"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Add Pet Clinical Record",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"diagnosis\": \"Canine Atopic Dermatitis\",\n  \"treatmentPlan\": \"Oclacitinib 5.4mg BID for 14 days, followed by SID maintenance\",\n  \"notes\": \"Pruritus score 7/10 upon initial examination\",\n  \"weightKg\": 14.2,\n  \"temperatureC\": 38.6\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/doctors/pets/{{petId}}/records",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "doctors",
+                    "pets",
+                    "{{petId}}",
+                    "records"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "15. Doctor QR Verification Audit History",
+          "item": [
+            {
+              "name": "Get Doctor Scan Audit Log History",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{doctorToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/qr/history/doctor",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "qr",
+                    "history",
+                    "doctor"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2. Patient App Integration",
+      "item": [
+        {
+          "name": "01. Authentication & Session",
+          "item": [
+            {
+              "name": "Step 1: Request Phone OTP Challenge (Patient)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phone\": \"{{patientPhone}}\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/auth/otp/request",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "otp",
+                    "request"
+                  ]
+                },
+                "description": "Requests an OTP challenge for the seeded Patient account (+16505550004). Captures challengeId automatically."
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Status is 200 or 201', function () { pm.expect(pm.response.code).to.be.oneOf([200, 201]); });",
+                      "var jsonData = pm.response.json();",
+                      "if (jsonData.data && jsonData.data.challengeId) {",
+                      "    pm.collectionVariables.set('challengeId', jsonData.data.challengeId);",
+                      "    pm.environment.set('challengeId', jsonData.data.challengeId);",
+                      "}"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Step 2: Verify Phone OTP & Login (Patient)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"challengeId\": \"{{challengeId}}\",\n  \"otpCode\": \"{{testOtp}}\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/auth/otp/verify",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "otp",
+                    "verify"
+                  ]
+                },
+                "description": "Verifies test OTP 123456. Test script captures patientAccessToken into collection and environment."
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                      "var jsonData = pm.response.json();",
+                      "if (jsonData.data && jsonData.data.accessToken) {",
+                      "    pm.collectionVariables.set('patientAccessToken', jsonData.data.accessToken);",
+                      "    pm.environment.set('patientAccessToken', jsonData.data.accessToken);",
+                      "    pm.environment.set('accessToken', jsonData.data.accessToken);",
+                      "}",
+                      "if (jsonData.data && jsonData.data.refreshToken) {",
+                      "    pm.collectionVariables.set('patientRefreshToken', jsonData.data.refreshToken);",
+                      "    pm.environment.set('patientRefreshToken', jsonData.data.refreshToken);",
+                      "}"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Step 3: Get Authenticated Patient User Details (/auth/me)",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{patientAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/auth/me",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "me"
+                  ]
+                },
+                "description": "Retrieves user ID, phone, status, and patient role claims."
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                      "var jsonData = pm.response.json();",
+                      "pm.test('User has PATIENT role', function () {",
+                      "    pm.expect(jsonData.data.roles).to.include('PATIENT');",
+                      "});"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Step 4: Rotate Token (/auth/token/refresh)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"refreshToken\": \"{{patientRefreshToken}}\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/auth/token/refresh",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "token",
+                    "refresh"
+                  ]
+                },
+                "description": "Refreshes patient access token."
+              }
+            }
+          ]
+        },
+        {
+          "name": "02. Patient Profile & Onboarding",
+          "item": [
+            {
+              "name": "Get Current Patient Profile (/patients/me)",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{patientAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/patients/me",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "patients",
+                    "me"
+                  ]
+                },
+                "description": "Retrieves core demographics: name, date of birth, blood group, address, onboarding step."
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                      "var jsonData = pm.response.json();",
+                      "if (jsonData.data && jsonData.data.id) {",
+                      "    pm.collectionVariables.set('patientId', jsonData.data.id);",
+                      "    pm.environment.set('patientId', jsonData.data.id);",
+                      "}"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Get Full Patient Profile (/patients/me/full)",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{patientAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/patients/me/full",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "patients",
+                    "me",
+                    "full"
+                  ]
+                },
+                "description": "Retrieves full patient profile with emergency contacts, allergies, chronic conditions, and preferences."
+              }
+            },
+            {
+              "name": "Update Basic Information (/patients/me/basic)",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{patientAccessToken}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"nationality\": \"American\",\n  \"maritalStatus\": \"Married\",\n  \"languages\": [\n    \"English\"\n  ]\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/patients/me/basic",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "patients",
+                    "me",
+                    "basic"
+                  ]
+                },
+                "description": "Updates core basic patient details."
+              }
+            },
+            {
+              "name": "Update Address Details (/patients/me/address)",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{patientAccessToken}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"currentAddressLine1\": \"742 Evergreen Terrace\",\n  \"currentCity\": \"Springfield\",\n  \"currentState\": \"Central\",\n  \"currentPostalCode\": \"62704\",\n  \"currentCountry\": \"United States\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/patients/me/address",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "patients",
+                    "me",
+                    "address"
+                  ]
+                },
+                "description": "Updates residential and permanent address."
+              }
+            },
+            {
+              "name": "Update Medical Summary & Allergies (/patients/me/medical-summary)",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{patientAccessToken}}"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"bloodGroup\": \"O+\",\n  \"knownAllergies\": [\n    \"Penicillin\",\n    \"Peanuts\"\n  ],\n  \"chronicConditions\": [\n    \"Hypertension (Mild)\"\n  ],\n  \"disabilities\": []\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/patients/me/medical-summary",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "patients",
+                    "me",
+                    "medical-summary"
+                  ]
+                },
+                "description": "Updates known clinical warnings, blood group, and chronic conditions."
+              }
+            },
+            {
+              "name": "Get Onboarding Progress Checklist (/patients/onboarding/progress)",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{patientAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/patients/onboarding/progress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "patients",
+                    "onboarding",
+                    "progress"
+                  ]
+                },
+                "description": "Step-by-step completion checklist and percentage."
+              }
+            }
+          ]
+        },
+        {
+          "name": "03. Digital Health Card & Access Passes",
+          "item": [
+            {
+              "name": "Get Active Digital Health Card (/health-cards)",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{patientAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/health-cards",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "health-cards"
+                  ]
+                },
+                "description": "Returns the patient's active digital Health Vault card (HC-CAREID-2026-0004) with card number and issue dates."
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                      "var jsonData = pm.response.json();",
+                      "if (jsonData.data && jsonData.data.id) {",
+                      "    pm.collectionVariables.set('healthCardId', jsonData.data.id);",
+                      "    pm.environment.set('healthCardId', jsonData.data.id);",
+                      "}"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Get Health Card Details by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{patientAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/health-cards/{{healthCardId}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "health-cards",
+                    "{{healthCardId}}"
+                  ]
+                },
+                "description": "Full Health Card details including emergency contact flags."
+              }
+            }
+          ]
+        },
+        {
+          "name": "04. Medical Records & Clinical Timeline",
+          "item": [
+            {
+              "name": "Get Patient Medical Records (General, Dental, Vision)",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{patientAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/medical-records",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "medical-records"
+                  ]
+                },
+                "description": "Lists all personal medical encounters, vitals, prescriptions, diagnoses, and procedures."
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Status is 200', function () { pm.response.to.have.status(200); });",
+                      "var jsonData = pm.response.json();",
+                      "if (jsonData.data && jsonData.data.length > 0) {",
+                      "    pm.collectionVariables.set('recordId', jsonData.data[0].id);",
+                      "    pm.environment.set('recordId', jsonData.data[0].id);",
+                      "}"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Get Unified Medical Timeline",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{patientAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/medical-records/timeline",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "medical-records",
+                    "timeline"
+                  ]
+                },
+                "description": "Chronological clinical history combining clinical consultations and lab reports."
+              }
+            },
+            {
+              "name": "Search Personal Medical Records",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{patientAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/medical-records/search?q=cardiology",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "medical-records",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "cardiology"
+                    }
+                  ]
+                },
+                "description": "Search personal records by chief complaint, diagnosis, or medication name."
+              }
+            },
+            {
+              "name": "Get Specific Medical Record by ID",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{patientAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/medical-records/{{recordId}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "medical-records",
+                    "{{recordId}}"
+                  ]
+                },
+                "description": "Detailed view of single encounter with vitals, diagnostic codes, and attached prescriptions."
+              }
+            }
+          ]
+        },
+        {
+          "name": "05. File Uploads & Document Storage",
+          "item": [
+            {
+              "name": "Upload Medical Document (Multipart Upload)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{patientAccessToken}}"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "file",
+                      "type": "file",
+                      "src": []
+                    },
+                    {
+                      "key": "category",
+                      "value": "LAB_REPORT",
+                      "type": "text"
+                    },
+                    {
+                      "key": "medicalRecordId",
+                      "value": "{{recordId}}",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/attachments/upload",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "attachments",
+                    "upload"
+                  ]
+                },
+                "description": "Uploads clinical document to secure Backblaze B2/S3 storage. Allowed MIME: JPEG, PNG, WEBP, PDF, DICOM, TIFF (max 15MB)."
+              }
+            }
+          ]
+        },
+        {
+          "name": "06. Notifications & In-App Alerts",
+          "item": [
+            {
+              "name": "List Patient Notifications",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{patientAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/notifications",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "notifications"
+                  ]
+                },
+                "description": "In-app alerts for lab results, referral updates, and clinical notices."
+              }
+            }
+          ]
+        },
+        {
+          "name": "07. Boundary & Security Tests (Patient)",
+          "item": [
+            {
+              "name": "Test Patient Accessing Admin User List (Expect 401 or 403 Forbidden)",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{patientAccessToken}}"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/admin/users",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "admin",
+                    "users"
+                  ]
+                },
+                "description": "Enforces RBAC: Patient should be blocked from administrative user directories."
+              }
+            },
+            {
+              "name": "Test Invalid OTP Verification (Expect 401)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"challengeId\": \"{{challengeId}}\",\n  \"otpCode\": \"000000\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/auth/otp/verify",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "otp",
+                    "verify"
+                  ]
+                },
+                "description": "Asserts that incorrect OTP codes are rejected."
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test('Status is 401 Unauthorized', function () { pm.response.to.have.status(401); });"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "08. Treatment Offers & Healthcare Financing",
+          "description": "Patient workflows for reviewing received clinical treatment offers, ratifying/accepting or declining proposals, and applying for healthcare EMI financing.",
+          "item": [
+            {
+              "name": "List received treatment offers for authenticated patient [Patient]",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{patientAccessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/patients/treatment-offers?page=1&limit=20",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "patients",
+                    "treatment-offers"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Patient view of treatment offer [Patient]",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{patientAccessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/patients/treatment-offers/{{offerId}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "patients",
+                    "treatment-offers",
+                    "{{offerId}}"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Patient ratifies and accepts treatment offer [Patient]",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{patientAccessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"selectedFinancingOptionId\": \"opt-zerocost-care\",\n  \"notes\": \"Patient ratified treatment plan with 12-month financing\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/patients/treatment-offers/{{offerId}}/accept",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "patients",
+                    "treatment-offers",
+                    "{{offerId}}",
+                    "accept"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Patient declines treatment offer [Patient]",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{patientAccessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"rejectionReason\": \"Patient elected to defer procedure\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/patients/treatment-offers/{{offerId}}/reject",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "patients",
+                    "treatment-offers",
+                    "{{offerId}}",
+                    "reject"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "List available healthcare financing options [Patient]",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{patientAccessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/financing/options",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "financing",
+                    "options"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Submit healthcare financing application [Patient]",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{patientAccessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"optionId\": \"opt-zerocost-care\",\n  \"facilityId\": \"{{facilityId}}\",\n  \"treatmentName\": \"Orthopedic Knee Replacement Surgery\",\n  \"requestedAmount\": 50000,\n  \"tenureMonths\": 6,\n  \"monthlyIncome\": 65000,\n  \"employmentType\": \"SALARIED\",\n  \"panOrNationalId\": \"ABCDE1234F\",\n  \"notes\": \"Planned surgery next month\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/financing/apply",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "financing",
+                    "apply"
+                  ]
+                }
+              },
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.test(\"Status code is 201 (Financing Application Created)\", function () {",
+                      "    pm.response.to.have.status(201);",
+                      "});",
+                      "const res = pm.response.json();",
+                      "const data = res.data || res;",
+                      "if (data && data.id) {",
+                      "    pm.collectionVariables.set(\"applicationId\", data.id);",
+                      "    console.log(\"[Patient App] Saved new applicationId:\", data.id);",
+                      "}"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "List patient financing applications [Patient]",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{patientAccessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/financing/applications?page=1&limit=20",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "financing",
+                    "applications"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Defensive URL Normalizer: Supports baseUrl with or without /api/v1 suffix",
+          "let currentBase = pm.environment.get(\"baseUrl\") || pm.collectionVariables.get(\"baseUrl\") || \"https://360api.vnvision.in\";",
+          "if (typeof currentBase === \"string\" && currentBase.endsWith(\"/api/v1\")) {",
+          "    pm.variables.set(\"baseUrl\", currentBase.replace(/\\/api\\/v1\\/?$/, \"\").replace(/\\/+$/, \"\"));",
+          "}",
+          "let currentSnake = pm.environment.get(\"base_url\") || pm.collectionVariables.get(\"base_url\") || \"https://360api.vnvision.in\";",
+          "if (typeof currentSnake === \"string\" && currentSnake.endsWith(\"/api/v1\")) {",
+          "    pm.variables.set(\"base_url\", currentSnake.replace(/\\/api\\/v1\\/?$/, \"\").replace(/\\/+$/, \"\"));",
+          "}"
+        ]
+      }
+    }
+  ]
+}

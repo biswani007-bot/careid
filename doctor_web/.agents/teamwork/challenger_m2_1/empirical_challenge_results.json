@@ -1,0 +1,176 @@
+{
+  "totalTests": 19,
+  "passedTests": 19,
+  "failedTests": 0,
+  "testResults": [
+    {
+      "name": "validateAttachmentFile: 0-byte file is rejected",
+      "passed": true,
+      "details": {
+        "isValid": false,
+        "error": "Selected file is empty (0 bytes). Please select a valid document."
+      }
+    },
+    {
+      "name": "validateAttachmentFile: >25MB file is rejected",
+      "passed": true,
+      "details": {
+        "isValid": false,
+        "error": "File size (25.0 MB) exceeds the maximum allowed limit of 25 MB."
+      }
+    },
+    {
+      "name": "validateAttachmentFile: Disallowed extension (.exe) is rejected",
+      "passed": true,
+      "details": {
+        "isValid": false,
+        "error": "Unsupported file format. Allowed formats: .pdf, .jpg, .jpeg, .png, .webp, .tiff, .dcm, .dicom"
+      }
+    },
+    {
+      "name": "validateAttachmentFile: Permitted extensions (.pdf, .jpg, .png, etc., case-insensitive) pass",
+      "passed": true
+    },
+    {
+      "name": "getAttachmentFileUrl formats relative streaming URL with URI encoding",
+      "passed": true,
+      "error": "Unexpected URLs: /api/v1/attachments/file/report.pdf, /api/v1/attachments/file/blood%20report%20%231%20(final).pdf"
+    },
+    {
+      "name": "PDF upload returns HTTP 201 with authentic UUID v4 id",
+      "passed": true,
+      "error": "Invalid UUID: c5b06849-e8a9-4bc9-a813-0ef5dfc4b80a",
+      "details": {
+        "id": "c5b06849-e8a9-4bc9-a813-0ef5dfc4b80a"
+      }
+    },
+    {
+      "name": "PDF upload returns authentic server storageUrl and storageKey",
+      "passed": true,
+      "error": "Invalid storageUrl: /api/v1/attachments/file/att-787e5187-7859-4320-bb1a-465a57dd086a-1794214224478-careid_challenger_test_1794214219802.pdf, storageKey: attachments/att-787e5187-7859-4320-bb1a-465a57dd086a-1794214224478-careid_challenger_test_1794214219802.pdf",
+      "details": {
+        "storageUrl": "/api/v1/attachments/file/att-787e5187-7859-4320-bb1a-465a57dd086a-1794214224478-careid_challenger_test_1794214219802.pdf",
+        "storageKey": "attachments/att-787e5187-7859-4320-bb1a-465a57dd086a-1794214224478-careid_challenger_test_1794214219802.pdf"
+      }
+    },
+    {
+      "name": "PDF upload preserves originalName and exact binary byte size",
+      "passed": true,
+      "error": "Size expected 386, got 386. Name expected careid_challenger_test_1794214219802.pdf, got careid_challenger_test_1794214219802.pdf"
+    },
+    {
+      "name": "GET /api/v1/attachments/file/:filename returns HTTP 200 OK",
+      "passed": true,
+      "error": "Expected status 200, received 200"
+    },
+    {
+      "name": "Stream downloaded bytes match uploaded PDF bytes exactly (SHA-256 bit-for-bit check)",
+      "passed": true,
+      "error": "Byte mismatch! Uploaded len=386 sha=1f104841d222ed5f8746d96b6a801f2d2ca8997050bd307f8732dec53af4e22f, Downloaded len=386 sha=1f104841d222ed5f8746d96b6a801f2d2ca8997050bd307f8732dec53af4e22f",
+      "details": {
+        "uploadedSha256": "1f104841d222ed5f8746d96b6a801f2d2ca8997050bd307f8732dec53af4e22f",
+        "downloadedSha256": "1f104841d222ed5f8746d96b6a801f2d2ca8997050bd307f8732dec53af4e22f",
+        "uploadedLength": 386,
+        "downloadedLength": 386
+      }
+    },
+    {
+      "name": "Live backend rejects 0-byte binary upload with HTTP 400 Bad Request",
+      "passed": true,
+      "error": "Expected 400 Bad Request, got 400"
+    },
+    {
+      "name": "Live backend rejects upload without Authorization header with HTTP 401 Unauthorized",
+      "passed": true,
+      "error": "Expected 401 Unauthorized, got 401"
+    },
+    {
+      "name": "Live backend rejects multipart payload with missing file field with HTTP 400",
+      "passed": true,
+      "error": "Expected 400 Bad Request, got 400"
+    },
+    {
+      "name": "Camera JPEG capture binary uploads successfully with authentic attachment UUID",
+      "passed": true,
+      "error": "Camera capture failed: {\"id\":\"0e09f45b-7916-4307-91b7-23e48cc6f344\",\"patientProfileId\":\"787e5187-7859-4320-bb1a-465a57dd086a\",\"fileName\":\"att-787e5187-7859-4320-bb1a-465a57dd086a-1794214229575-careid_cam_capture_1794214226125.jpg\",\"originalName\":\"careid_cam_capture_1794214226125.jpg\",\"fileSize\":149,\"mimeType\":\"image/jpeg\",\"category\":\"LAB_RESULT\",\"storageKey\":\"attachments/att-787e5187-7859-4320-bb1a-465a57dd086a-1794214229575-careid_cam_capture_1794214226125.jpg\",\"storageUrl\":\"/api/v1/attachments/file/att-787e5187-7859-4320-bb1a-465a57dd086a-1794214229575-careid_cam_capture_1794214226125.jpg\",\"checksum\":\"05e41fc518431259062337160b3db8ae4d4f6a4796ec9b5d83da297a8a101e7b\",\"version\":1,\"isDeleted\":false,\"virusScanStatus\":\"PENDING\",\"createdAt\":\"2026-11-09T08:50:29.879Z\",\"updatedAt\":\"2026-11-09T08:50:29.879Z\"}",
+      "details": {
+        "id": "0e09f45b-7916-4307-91b7-23e48cc6f344",
+        "patientProfileId": "787e5187-7859-4320-bb1a-465a57dd086a",
+        "fileName": "att-787e5187-7859-4320-bb1a-465a57dd086a-1794214229575-careid_cam_capture_1794214226125.jpg",
+        "originalName": "careid_cam_capture_1794214226125.jpg",
+        "fileSize": 149,
+        "mimeType": "image/jpeg",
+        "category": "LAB_RESULT",
+        "storageKey": "attachments/att-787e5187-7859-4320-bb1a-465a57dd086a-1794214229575-careid_cam_capture_1794214226125.jpg",
+        "storageUrl": "/api/v1/attachments/file/att-787e5187-7859-4320-bb1a-465a57dd086a-1794214229575-careid_cam_capture_1794214226125.jpg",
+        "checksum": "05e41fc518431259062337160b3db8ae4d4f6a4796ec9b5d83da297a8a101e7b",
+        "version": 1,
+        "isDeleted": false,
+        "virusScanStatus": "PENDING",
+        "createdAt": "2026-11-09T08:50:29.879Z",
+        "updatedAt": "2026-11-09T08:50:29.879Z"
+      }
+    },
+    {
+      "name": "Camera JPEG attachment stream returns HTTP 200 with matching image binary",
+      "passed": true,
+      "error": "Stream check failed: status=200, byte match=true"
+    },
+    {
+      "name": "Concurrent parallel uploads generate distinct, collision-free UUIDs and storage files",
+      "passed": true,
+      "error": "Collision detected or invalid: id1=43e1e7b9-9fac-4222-9dd0-582a8083b147, id2=0beb7105-215e-4c43-9225-31f330aa14bb",
+      "details": {
+        "res1": {
+          "id": "43e1e7b9-9fac-4222-9dd0-582a8083b147",
+          "patientProfileId": "787e5187-7859-4320-bb1a-465a57dd086a",
+          "fileName": "att-787e5187-7859-4320-bb1a-465a57dd086a-1794214232354-concurrent_1.pdf",
+          "originalName": "concurrent_1.pdf",
+          "fileSize": 355,
+          "mimeType": "application/pdf",
+          "category": "LAB_RESULT",
+          "storageKey": "attachments/att-787e5187-7859-4320-bb1a-465a57dd086a-1794214232354-concurrent_1.pdf",
+          "storageUrl": "/api/v1/attachments/file/att-787e5187-7859-4320-bb1a-465a57dd086a-1794214232354-concurrent_1.pdf",
+          "checksum": "a482a6b10f8ffa564608dfbc8d85acd7efa76767ac12fc66de984636cd0cd2bd",
+          "version": 1,
+          "isDeleted": false,
+          "virusScanStatus": "PENDING",
+          "createdAt": "2026-11-09T08:50:32.848Z",
+          "updatedAt": "2026-11-09T08:50:32.848Z"
+        },
+        "res2": {
+          "id": "0beb7105-215e-4c43-9225-31f330aa14bb",
+          "patientProfileId": "787e5187-7859-4320-bb1a-465a57dd086a",
+          "fileName": "att-787e5187-7859-4320-bb1a-465a57dd086a-1794214232347-concurrent_2.pdf",
+          "originalName": "concurrent_2.pdf",
+          "fileSize": 355,
+          "mimeType": "application/pdf",
+          "category": "LAB_RESULT",
+          "storageKey": "attachments/att-787e5187-7859-4320-bb1a-465a57dd086a-1794214232347-concurrent_2.pdf",
+          "storageUrl": "/api/v1/attachments/file/att-787e5187-7859-4320-bb1a-465a57dd086a-1794214232347-concurrent_2.pdf",
+          "checksum": "72ecaf7edc19bfc4e1ceae222bcb76b771e0f4b7f39bf828974f2606e7f70989",
+          "version": 1,
+          "isDeleted": false,
+          "virusScanStatus": "PENDING",
+          "createdAt": "2026-11-09T08:50:32.980Z",
+          "updatedAt": "2026-11-09T08:50:32.980Z"
+        }
+      }
+    },
+    {
+      "name": "Zero occurrences of dummy string \"attachment-uuid-1\" in MedicalRecordUploadPage.tsx",
+      "passed": true,
+      "error": "Found dummy string \"attachment-uuid-1\" still present in source code"
+    },
+    {
+      "name": "handleSaveRecord strictly eliminates ephemeral blob: URLs as storageUrl",
+      "passed": true,
+      "error": "Missing safeguard against blob: URL persistence in medical record creation"
+    },
+    {
+      "name": "MedicalRecordUploadPage.tsx imports and calls attachmentService.uploadAttachment",
+      "passed": true,
+      "error": "uploadAttachment is not called in MedicalRecordUploadPage.tsx"
+    }
+  ]
+}

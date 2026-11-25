@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Get appointments scheduled for authenticated doctor",
+    "method": "GET",
+    "url": "/api/v1/appointments/doctor/my-appointments",
+    "folder": "10. Appointments, Schedules & Shifts"
+  },
+  {
+    "name": "Get appointments scheduled for authenticated doctor",
+    "method": "GET",
+    "url": "/api/v1/appointments/doctor/me",
+    "folder": "10. Appointments, Schedules & Shifts"
+  },
+  {
+    "name": "Get appointments scheduled for authenticated patient",
+    "method": "GET",
+    "url": "/api/v1/appointments/patient/my-appointments",
+    "folder": "10. Appointments, Schedules & Shifts"
+  },
+  {
+    "name": "Get appointments scheduled for authenticated patient",
+    "method": "GET",
+    "url": "/api/v1/appointments/patient/me",
+    "folder": "10. Appointments, Schedules & Shifts"
+  },
+  {
+    "name": "Reschedule an existing appointment",
+    "method": "PUT",
+    "url": "/api/v1/appointments/:id/reschedule",
+    "folder": "10. Appointments, Schedules & Shifts"
+  },
+  {
+    "name": "Cancel an appointment",
+    "method": "PUT",
+    "url": "/api/v1/appointments/:id/cancel",
+    "folder": "10. Appointments, Schedules & Shifts"
+  },
+  {
+    "name": "Update appointment status (clinical & operational staff)",
+    "method": "PUT",
+    "url": "/api/v1/appointments/:id/status",
+    "folder": "10. Appointments, Schedules & Shifts"
+  },
+  {
+    "name": "Update current user notification channel preferences",
+    "method": "PUT",
+    "url": "/api/v1/notifications/preferences",
+    "folder": "14. Notifications & Alerts"
+  },
+  {
+    "name": "Update current user notification channel preferences",
+    "method": "PUT",
+    "url": "/api/v1/notification/preferences",
+    "folder": "14. Notifications & Alerts"
+  },
+  {
+    "name": "Reprocess a completed, failed, or review-required OCR job",
+    "method": "POST",
+    "url": "/api/v1/ocr/reprocess/:jobId",
+    "folder": "15. OCR & Document Verification"
+  },
+  {
+    "name": "Capture patient consent record",
+    "method": "POST",
+    "url": "/api/v1/security/consents",
+    "folder": "18. Security, Threat Detection & Sessions"
+  },
+  {
+    "name": "Scan insurance card image via OCR extraction",
+    "method": "POST",
+    "url": "/api/v1/insurance/ocr/scan",
+    "folder": "19. Insurance Platform & Claims"
+  }
+]

@@ -1,0 +1,151 @@
+{
+  "total": 18,
+  "passed": 18,
+  "failed": 0,
+  "results": [
+    {
+      "testNumber": 1,
+      "name": "Register Facility Alpha (India / Asia/Kolkata / INR)",
+      "status": "PASS",
+      "details": "Created facility adfe6f74-78bc-46d4-9fb4-f96be2ca8e42 with timezone Asia/Kolkata and currency INR",
+      "evidence": "",
+      "timestamp": "2026-11-25T04:25:52.368Z"
+    },
+    {
+      "testNumber": 2,
+      "name": "Register Facility Beta (US / America/New_York / USD)",
+      "status": "PASS",
+      "details": "Created facility 2bc9aa71-5133-47d5-8a90-42a1a7d5a1e8 with timezone America/New_York and currency USD",
+      "evidence": "",
+      "timestamp": "2026-11-25T04:25:52.400Z"
+    },
+    {
+      "testNumber": 3,
+      "name": "Register Facility Gamma (UK / Europe/London / GBP)",
+      "status": "PASS",
+      "details": "Created facility 9872b29e-5084-4379-bd58-4cb813c98c03 with timezone Europe/London and currency GBP",
+      "evidence": "",
+      "timestamp": "2026-11-25T04:25:52.422Z"
+    },
+    {
+      "testNumber": 4,
+      "name": "Facility query preserves localized currency & timezone metadata",
+      "status": "PASS",
+      "details": "India (INR, Asia/Kolkata), US (USD, America/New_York), UK (GBP, Europe/London) verified",
+      "evidence": "",
+      "timestamp": "2026-11-25T04:25:52.500Z"
+    },
+    {
+      "testNumber": 5,
+      "name": "Strict Policy REQUIRE_EXPLICIT_PRICE blocks unconfigured catalogue fallback",
+      "status": "PASS",
+      "details": "Pricing rejected: Explicit facility price required: Facility policy REQUIRE_EXPLICIT_PRICE prohibits standard catalogue fallback.",
+      "evidence": "",
+      "timestamp": "2026-11-25T04:25:52.603Z"
+    },
+    {
+      "testNumber": 6,
+      "name": "Configure explicit Chargemaster override in INR for Facility Alpha",
+      "status": "PASS",
+      "details": "Configured ₹1,850,000 for procedure PR-016-2322 at Indian facility",
+      "evidence": "",
+      "timestamp": "2026-11-25T04:25:52.630Z"
+    },
+    {
+      "testNumber": 7,
+      "name": "Facility Alpha receives explicit INR price override",
+      "status": "PASS",
+      "details": "Price ₹1,850,000 with currency INR confirmed",
+      "evidence": "",
+      "timestamp": "2026-11-25T04:25:52.652Z"
+    },
+    {
+      "testNumber": 8,
+      "name": "Facility Beta allows compatible USD catalogue standard charge fallback",
+      "status": "PASS",
+      "details": "Standard charge $250,000 with currency USD confirmed",
+      "evidence": "",
+      "timestamp": "2026-11-25T04:25:52.673Z"
+    },
+    {
+      "testNumber": 9,
+      "name": "Cross-currency discrepancy prevention blocks USD catalogue fallback at GBP facility",
+      "status": "PASS",
+      "details": "Blocked cross-currency conversion: Incompatible currency: Procedure catalogue currency is USD but facility operates in GBP. Explicit override required.",
+      "evidence": "",
+      "timestamp": "2026-11-25T04:25:52.718Z"
+    },
+    {
+      "testNumber": 10,
+      "name": "Server rejects Treatment Offer with currency conflicting with facility",
+      "status": "PASS",
+      "details": "Rejected USD offer at INR facility: \"Currency mismatch: Facility operates in INR, but offer was submitted with currency USD.\"",
+      "evidence": "",
+      "timestamp": "2026-11-25T04:25:52.737Z"
+    },
+    {
+      "testNumber": 11,
+      "name": "Create Treatment Offer persisted with facility INR currency snapshot",
+      "status": "PASS",
+      "details": "Created offer d08b01c6-7c5d-45da-b10f-b7213cfb03d7 in INR with net payable ₹1,800,000",
+      "evidence": "",
+      "timestamp": "2026-11-25T04:25:52.769Z"
+    },
+    {
+      "testNumber": 12,
+      "name": "Create Treatment Offer persisted with facility USD currency snapshot",
+      "status": "PASS",
+      "details": "Created offer 2408b684-c9eb-420e-b7ef-e2ff44cd4bf1 in USD with net payable $240,000",
+      "evidence": "",
+      "timestamp": "2026-11-25T04:25:52.815Z"
+    },
+    {
+      "testNumber": 13,
+      "name": "Appointment Policy query respects India facility ID",
+      "status": "PASS",
+      "details": "Retrieved policy with slot hold 45m, default slot 30m",
+      "evidence": "",
+      "timestamp": "2026-11-25T04:25:52.827Z"
+    },
+    {
+      "testNumber": 14,
+      "name": "Doctor Web queries holiday calendar for scheduling slot picker",
+      "status": "PASS",
+      "details": "Retrieved 3 configured calendar holidays",
+      "evidence": "",
+      "timestamp": "2026-11-25T04:25:52.841Z"
+    },
+    {
+      "testNumber": 15,
+      "name": "Admin Web Consultation Management navigation & active sidebar highlight",
+      "status": "PASS",
+      "details": "Hub rendered and accessible from /admin/consultation-management",
+      "evidence": "D:\\careid\\Admin_web\\docs\\evidence\\CAREID_DYNAMIC_CONSULTATION_016\\admin_consultation_hub_sidebar_verified.png",
+      "timestamp": "2026-11-25T04:26:03.050Z"
+    },
+    {
+      "testNumber": 16,
+      "name": "Admin Web Facility Registration Form with IANA Timezone & Currency",
+      "status": "PASS",
+      "details": "Form renders IANA timezones and ISO currencies",
+      "evidence": "D:\\careid\\Admin_web\\docs\\evidence\\CAREID_DYNAMIC_CONSULTATION_016\\admin_facility_create_iana_timezone_currency.png",
+      "timestamp": "2026-11-25T04:26:07.114Z"
+    },
+    {
+      "testNumber": 17,
+      "name": "Doctor Web Treatment Offer page with dynamic facility currency formatting",
+      "status": "PASS",
+      "details": "Dynamic price breakdown rendered with facility currency",
+      "evidence": "D:\\careid\\Admin_web\\docs\\evidence\\CAREID_DYNAMIC_CONSULTATION_016\\doctor_web_treatment_offer_facility_currency.png",
+      "timestamp": "2026-11-25T04:26:13.346Z"
+    },
+    {
+      "testNumber": 18,
+      "name": "Doctor Web Procedure Scheduling displaying facility timezone",
+      "status": "PASS",
+      "details": "Schedule header displays facility operating timezone and live slots",
+      "evidence": "D:\\careid\\Admin_web\\docs\\evidence\\CAREID_DYNAMIC_CONSULTATION_016\\doctor_web_procedure_scheduling_timezone.png",
+      "timestamp": "2026-11-25T04:26:17.403Z"
+    }
+  ]
+}

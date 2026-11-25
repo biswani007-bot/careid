@@ -1,0 +1,724 @@
+{
+  "filePath": "C:\\Users\\PABANI\\Downloads\\hvapi-main\\hvapi-main\\ocr-poc\\sample_docs\\04_multipage_lab_report.pdf",
+  "pageCount": 2,
+  "overallConfidence": 0.9963,
+  "pages": [
+    {
+      "pageNumber": 1,
+      "lines": [
+        {
+          "text": "HEALTH VAULT 360 - COMPREHENSIVE METABOLIC PANEL",
+          "confidence": 0.9931,
+          "box": [
+            [
+              137,
+              139
+            ],
+            [
+              1014,
+              139
+            ],
+            [
+              1014,
+              169
+            ],
+            [
+              137,
+              169
+            ]
+          ]
+        },
+        {
+          "text": "Patient: David Kim | MRN: MRN-554433 | DOB: 1980-05-12",
+          "confidence": 0.9949,
+          "box": [
+            [
+              136,
+              181
+            ],
+            [
+              951,
+              181
+            ],
+            [
+              951,
+              215
+            ],
+            [
+              136,
+              215
+            ]
+          ]
+        },
+        {
+          "text": "Date of Specimen: 2026-11-04 | Facility: General Medical Center",
+          "confidence": 0.9992,
+          "box": [
+            [
+              137,
+              223
+            ],
+            [
+              1016,
+              223
+            ],
+            [
+              1016,
+              257
+            ],
+            [
+              137,
+              257
+            ]
+          ]
+        },
+        {
+          "text": "PANEL 1: RENAL & ELECTROLYTES",
+          "confidence": 0.9989,
+          "box": [
+            [
+              136,
+              305
+            ],
+            [
+              664,
+              305
+            ],
+            [
+              664,
+              338
+            ],
+            [
+              136,
+              338
+            ]
+          ]
+        },
+        {
+          "text": "Sodium (Na): 140 mmol/L [Normal: 135 - 145]",
+          "confidence": 0.9983,
+          "box": [
+            [
+              134,
+              348
+            ],
+            [
+              758,
+              347
+            ],
+            [
+              758,
+              384
+            ],
+            [
+              134,
+              386
+            ]
+          ]
+        },
+        {
+          "text": "Potassium (K): 4.2 mmol/L [Normal: 3.5 - 5.1]",
+          "confidence": 0.9999,
+          "box": [
+            [
+              134,
+              389
+            ],
+            [
+              754,
+              391
+            ],
+            [
+              754,
+              428
+            ],
+            [
+              134,
+              427
+            ]
+          ]
+        },
+        {
+          "text": "Chloride (CI): 102 mmol/L [Normal: 96 - 106]",
+          "confidence": 0.9963,
+          "box": [
+            [
+              135,
+              432
+            ],
+            [
+              742,
+              433
+            ],
+            [
+              742,
+              470
+            ],
+            [
+              135,
+              469
+            ]
+          ]
+        },
+        {
+          "text": "Carbon Dioxide (CO2): 25 mmol/L [Normal: 22 - 29]",
+          "confidence": 0.9862,
+          "box": [
+            [
+              136,
+              475
+            ],
+            [
+              839,
+              475
+            ],
+            [
+              839,
+              512
+            ],
+            [
+              136,
+              512
+            ]
+          ]
+        },
+        {
+          "text": "Blood Urea Nitrogen (BUN): 15 mg/dL [Normal: 7 - 20]",
+          "confidence": 0.9929,
+          "box": [
+            [
+              135,
+              517
+            ],
+            [
+              873,
+              518
+            ],
+            [
+              873,
+              552
+            ],
+            [
+              135,
+              551
+            ]
+          ]
+        },
+        {
+          "text": "Serum Creatinine: 0.90 mg/dL [Normal: 0.70 - 1.30]",
+          "confidence": 0.9977,
+          "box": [
+            [
+              134,
+              557
+            ],
+            [
+              835,
+              559
+            ],
+            [
+              835,
+              596
+            ],
+            [
+              134,
+              594
+            ]
+          ]
+        },
+        {
+          "text": "eGFR: > 90 mL/min/1.73m2 [Normal: > 60]",
+          "confidence": 0.9997,
+          "box": [
+            [
+              135,
+              599
+            ],
+            [
+              719,
+              601
+            ],
+            [
+              719,
+              635
+            ],
+            [
+              135,
+              633
+            ]
+          ]
+        },
+        {
+          "text": "PANEL 2: LIVER FUNCTION TESTS",
+          "confidence": 0.9998,
+          "box": [
+            [
+              136,
+              683
+            ],
+            [
+              643,
+              683
+            ],
+            [
+              643,
+              714
+            ],
+            [
+              136,
+              714
+            ]
+          ]
+        },
+        {
+          "text": "Total Protein: 7.2 g/dL [Normal: 6.0 - 8.3]",
+          "confidence": 0.9999,
+          "box": [
+            [
+              134,
+              725
+            ],
+            [
+              693,
+              727
+            ],
+            [
+              693,
+              761
+            ],
+            [
+              134,
+              759
+            ]
+          ]
+        },
+        {
+          "text": "Albumin: 4.4 g/dL [Normal: 3.5 - 5.0]",
+          "confidence": 0.9995,
+          "box": [
+            [
+              136,
+              768
+            ],
+            [
+              631,
+              769
+            ],
+            [
+              631,
+              803
+            ],
+            [
+              136,
+              802
+            ]
+          ]
+        },
+        {
+          "text": "Total Bilirubin: 0.6 mg/dL [Normal: 0.2 - 1.2]",
+          "confidence": 0.9996,
+          "box": [
+            [
+              135,
+              811
+            ],
+            [
+              730,
+              811
+            ],
+            [
+              730,
+              845
+            ],
+            [
+              135,
+              845
+            ]
+          ]
+        },
+        {
+          "text": "Alkaline Phosphatase (ALP): 68 U/L [Normal: 40 - 129]",
+          "confidence": 0.9963,
+          "box": [
+            [
+              137,
+              853
+            ],
+            [
+              880,
+              853
+            ],
+            [
+              880,
+              887
+            ],
+            [
+              137,
+              887
+            ]
+          ]
+        },
+        {
+          "text": "Alanine Aminotransferase (ALT): 22 U/L [Normal: 7 - 56]",
+          "confidence": 0.9998,
+          "box": [
+            [
+              135,
+              892
+            ],
+            [
+              901,
+              893
+            ],
+            [
+              901,
+              930
+            ],
+            [
+              135,
+              929
+            ]
+          ]
+        },
+        {
+          "text": "Aspartate Aminotransferase (AST): 24 U/L [Normal: 10 - 40]",
+          "confidence": 0.9997,
+          "box": [
+            [
+              137,
+              937
+            ],
+            [
+              950,
+              937
+            ],
+            [
+              950,
+              971
+            ],
+            [
+              137,
+              971
+            ]
+          ]
+        }
+      ],
+      "rawText": "HEALTH VAULT 360 - COMPREHENSIVE METABOLIC PANEL\nPatient: David Kim | MRN: MRN-554433 | DOB: 1980-05-12\nDate of Specimen: 2026-11-04 | Facility: General Medical Center\nPANEL 1: RENAL & ELECTROLYTES\nSodium (Na): 140 mmol/L [Normal: 135 - 145]\nPotassium (K): 4.2 mmol/L [Normal: 3.5 - 5.1]\nChloride (CI): 102 mmol/L [Normal: 96 - 106]\nCarbon Dioxide (CO2): 25 mmol/L [Normal: 22 - 29]\nBlood Urea Nitrogen (BUN): 15 mg/dL [Normal: 7 - 20]\nSerum Creatinine: 0.90 mg/dL [Normal: 0.70 - 1.30]\neGFR: > 90 mL/min/1.73m2 [Normal: > 60]\nPANEL 2: LIVER FUNCTION TESTS\nTotal Protein: 7.2 g/dL [Normal: 6.0 - 8.3]\nAlbumin: 4.4 g/dL [Normal: 3.5 - 5.0]\nTotal Bilirubin: 0.6 mg/dL [Normal: 0.2 - 1.2]\nAlkaline Phosphatase (ALP): 68 U/L [Normal: 40 - 129]\nAlanine Aminotransferase (ALT): 22 U/L [Normal: 7 - 56]\nAspartate Aminotransferase (AST): 24 U/L [Normal: 10 - 40]"
+    },
+    {
+      "pageNumber": 2,
+      "lines": [
+        {
+          "text": "HEALTH VAULT 360 - LIPID PROFILE & SUMMARY",
+          "confidence": 0.9985,
+          "box": [
+            [
+              137,
+              139
+            ],
+            [
+              863,
+              139
+            ],
+            [
+              863,
+              169
+            ],
+            [
+              137,
+              169
+            ]
+          ]
+        },
+        {
+          "text": "Patient: David Kim | MRN: MRN-554433 | Page 2 of 2",
+          "confidence": 0.9886,
+          "box": [
+            [
+              136,
+              181
+            ],
+            [
+              866,
+              181
+            ],
+            [
+              866,
+              215
+            ],
+            [
+              136,
+              215
+            ]
+          ]
+        },
+        {
+          "text": "PANEL 3: FASTING LIPID PANEL",
+          "confidence": 0.9874,
+          "box": [
+            [
+              137,
+              264
+            ],
+            [
+              607,
+              264
+            ],
+            [
+              607,
+              295
+            ],
+            [
+              137,
+              295
+            ]
+          ]
+        },
+        {
+          "text": "Total Cholesterol: 195 mg/dL [Desirable: < 200]",
+          "confidence": 0.9998,
+          "box": [
+            [
+              136,
+              307
+            ],
+            [
+              781,
+              307
+            ],
+            [
+              781,
+              341
+            ],
+            [
+              136,
+              341
+            ]
+          ]
+        },
+        {
+          "text": "Triglycerides: 142 mg/dL [Desirable: < 150]",
+          "confidence": 0.9946,
+          "box": [
+            [
+              136,
+              350
+            ],
+            [
+              722,
+              350
+            ],
+            [
+              722,
+              384
+            ],
+            [
+              136,
+              384
+            ]
+          ]
+        },
+        {
+          "text": "HDL Cholesterol: 52 mg/dL [Optimal: > 40]",
+          "confidence": 0.9999,
+          "box": [
+            [
+              134,
+              388
+            ],
+            [
+              718,
+              390
+            ],
+            [
+              718,
+              427
+            ],
+            [
+              134,
+              426
+            ]
+          ]
+        },
+        {
+          "text": "LDL Cholesterol (Calculated): 115 mg/dL [Optimal: < 100 - Borderline]",
+          "confidence": 0.9985,
+          "box": [
+            [
+              136,
+              434
+            ],
+            [
+              1085,
+              434
+            ],
+            [
+              1085,
+              468
+            ],
+            [
+              136,
+              468
+            ]
+          ]
+        },
+        {
+          "text": "Cholesterol / HDL Ratio: 3.75 [Optimal: < 5.0]",
+          "confidence": 0.9959,
+          "box": [
+            [
+              136,
+              474
+            ],
+            [
+              753,
+              476
+            ],
+            [
+              753,
+              510
+            ],
+            [
+              136,
+              508
+            ]
+          ]
+        },
+        {
+          "text": "CLINICAL RECOMMENDATIONS:",
+          "confidence": 0.9998,
+          "box": [
+            [
+              137,
+              558
+            ],
+            [
+              610,
+              558
+            ],
+            [
+              610,
+              589
+            ],
+            [
+              137,
+              589
+            ]
+          ]
+        },
+        {
+          "text": "1. Borderline calculated LDL cholesterol. Recommend dietary moderation.",
+          "confidence": 0.9969,
+          "box": [
+            [
+              137,
+              601
+            ],
+            [
+              1139,
+              601
+            ],
+            [
+              1139,
+              634
+            ],
+            [
+              137,
+              634
+            ]
+          ]
+        },
+        {
+          "text": "2. Aerobic physical activity for 150 minutes weekly.",
+          "confidence": 0.9855,
+          "box": [
+            [
+              135,
+              642
+            ],
+            [
+              825,
+              643
+            ],
+            [
+              824,
+              677
+            ],
+            [
+              135,
+              676
+            ]
+          ]
+        },
+        {
+          "text": "3. Repeat fasting lipid panel in 6 months.",
+          "confidence": 0.9897,
+          "box": [
+            [
+              136,
+              685
+            ],
+            [
+              691,
+              685
+            ],
+            [
+              691,
+              718
+            ],
+            [
+              136,
+              718
+            ]
+          ]
+        },
+        {
+          "text": "Doctor Signature: Dr. Patricia Shaw, MD",
+          "confidence": 1.0,
+          "box": [
+            [
+              137,
+              769
+            ],
+            [
+              686,
+              769
+            ],
+            [
+              686,
+              802
+            ],
+            [
+              137,
+              802
+            ]
+          ]
+        },
+        {
+          "text": "License: DOC-LIC-55412 | Hospital Affiliation: City Health Vault",
+          "confidence": 0.9938,
+          "box": [
+            [
+              136,
+              811
+            ],
+            [
+              996,
+              811
+            ],
+            [
+              996,
+              844
+            ],
+            [
+              136,
+              844
+            ]
+          ]
+        }
+      ],
+      "rawText": "HEALTH VAULT 360 - LIPID PROFILE & SUMMARY\nPatient: David Kim | MRN: MRN-554433 | Page 2 of 2\nPANEL 3: FASTING LIPID PANEL\nTotal Cholesterol: 195 mg/dL [Desirable: < 200]\nTriglycerides: 142 mg/dL [Desirable: < 150]\nHDL Cholesterol: 52 mg/dL [Optimal: > 40]\nLDL Cholesterol (Calculated): 115 mg/dL [Optimal: < 100 - Borderline]\nCholesterol / HDL Ratio: 3.75 [Optimal: < 5.0]\nCLINICAL RECOMMENDATIONS:\n1. Borderline calculated LDL cholesterol. Recommend dietary moderation.\n2. Aerobic physical activity for 150 minutes weekly.\n3. Repeat fasting lipid panel in 6 months.\nDoctor Signature: Dr. Patricia Shaw, MD\nLicense: DOC-LIC-55412 | Hospital Affiliation: City Health Vault"
+    }
+  ],
+  "combinedText": "HEALTH VAULT 360 - COMPREHENSIVE METABOLIC PANEL\nPatient: David Kim | MRN: MRN-554433 | DOB: 1980-05-12\nDate of Specimen: 2026-11-04 | Facility: General Medical Center\nPANEL 1: RENAL & ELECTROLYTES\nSodium (Na): 140 mmol/L [Normal: 135 - 145]\nPotassium (K): 4.2 mmol/L [Normal: 3.5 - 5.1]\nChloride (CI): 102 mmol/L [Normal: 96 - 106]\nCarbon Dioxide (CO2): 25 mmol/L [Normal: 22 - 29]\nBlood Urea Nitrogen (BUN): 15 mg/dL [Normal: 7 - 20]\nSerum Creatinine: 0.90 mg/dL [Normal: 0.70 - 1.30]\neGFR: > 90 mL/min/1.73m2 [Normal: > 60]\nPANEL 2: LIVER FUNCTION TESTS\nTotal Protein: 7.2 g/dL [Normal: 6.0 - 8.3]\nAlbumin: 4.4 g/dL [Normal: 3.5 - 5.0]\nTotal Bilirubin: 0.6 mg/dL [Normal: 0.2 - 1.2]\nAlkaline Phosphatase (ALP): 68 U/L [Normal: 40 - 129]\nAlanine Aminotransferase (ALT): 22 U/L [Normal: 7 - 56]\nAspartate Aminotransferase (AST): 24 U/L [Normal: 10 - 40]\n\n--- Page Break ---\n\nHEALTH VAULT 360 - LIPID PROFILE & SUMMARY\nPatient: David Kim | MRN: MRN-554433 | Page 2 of 2\nPANEL 3: FASTING LIPID PANEL\nTotal Cholesterol: 195 mg/dL [Desirable: < 200]\nTriglycerides: 142 mg/dL [Desirable: < 150]\nHDL Cholesterol: 52 mg/dL [Optimal: > 40]\nLDL Cholesterol (Calculated): 115 mg/dL [Optimal: < 100 - Borderline]\nCholesterol / HDL Ratio: 3.75 [Optimal: < 5.0]\nCLINICAL RECOMMENDATIONS:\n1. Borderline calculated LDL cholesterol. Recommend dietary moderation.\n2. Aerobic physical activity for 150 minutes weekly.\n3. Repeat fasting lipid panel in 6 months.\nDoctor Signature: Dr. Patricia Shaw, MD\nLicense: DOC-LIC-55412 | Hospital Affiliation: City Health Vault"
+}

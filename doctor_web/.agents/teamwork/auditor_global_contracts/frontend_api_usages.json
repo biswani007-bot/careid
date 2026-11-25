@@ -1,0 +1,1152 @@
+[
+  {
+    "file": "hooks/useDashboard.ts",
+    "lineNum": 351,
+    "line": "// Action: Start Consultation (PUT /api/v1/appointments/:id/status)"
+  },
+  {
+    "file": "hooks/useDashboard.ts",
+    "lineNum": 375,
+    "line": "// Action: End Consultation (PUT /api/v1/appointments/:id/status)"
+  },
+  {
+    "file": "hooks/useDashboard.ts",
+    "lineNum": 399,
+    "line": "// Action: Verify Lab Report (POST /api/v1/reports/:id/verify)"
+  },
+  {
+    "file": "pages/ocr/MedicalRecordUploadPage.tsx",
+    "lineNum": 429,
+    "line": "// POST /api/v1/ocr/jobs"
+  },
+  {
+    "file": "services/apiClient.ts",
+    "lineNum": 87,
+    "line": "const refreshUrl = `${baseUrl}/api/v1/auth/token/refresh`;"
+  },
+  {
+    "file": "services/attachmentService.ts",
+    "lineNum": 5,
+    "line": "* against https://360api.vnvision.in/api/v1/attachments."
+  },
+  {
+    "file": "services/attachmentService.ts",
+    "lineNum": 100,
+    "line": "return `/api/v1/attachments/file/${encodeURIComponent(fileName)}`;"
+  },
+  {
+    "file": "services/attachmentService.ts",
+    "lineNum": 104,
+    "line": "* Upload binary document via multipart/form-data to POST /api/v1/attachments"
+  },
+  {
+    "file": "services/attachmentService.ts",
+    "lineNum": 145,
+    "line": "await apiClient.postFormData<AttachmentUploadResponse>("
+  },
+  {
+    "file": "services/attachmentService.ts",
+    "lineNum": 146,
+    "line": "'/api/v1/attachments',"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 4,
+    "line": "* - POST /api/v1/auth/otp/request"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 5,
+    "line": "* - POST /api/v1/auth/otp/verify"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 6,
+    "line": "* - POST /api/v1/auth/otp/resend"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 7,
+    "line": "* - POST /api/v1/auth/token/refresh"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 8,
+    "line": "* - POST /api/v1/auth/logout"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 9,
+    "line": "* - GET /api/v1/auth/me"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 10,
+    "line": "* - GET /api/v1/doctors/me"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 82,
+    "line": "* Endpoint: POST /api/v1/auth/otp/request"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 87,
+    "line": "const response: ApiResponse<OtpRequestData> = await apiClient.post<OtpRequestData>("
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 88,
+    "line": "'/api/v1/auth/otp/request',"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 96,
+    "line": "* Endpoint: POST /api/v1/auth/otp/verify"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 100,
+    "line": "const response: ApiResponse<OtpVerifyData> = await apiClient.post<OtpVerifyData>("
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 101,
+    "line": "'/api/v1/auth/otp/verify',"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 112,
+    "line": "* Endpoint: POST /api/v1/auth/otp/resend"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 116,
+    "line": "const response: ApiResponse<OtpRequestData> = await apiClient.post<OtpRequestData>("
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 117,
+    "line": "'/api/v1/auth/otp/resend',"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 125,
+    "line": "* Endpoint: POST /api/v1/auth/token/refresh"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 133,
+    "line": "const response: ApiResponse<OtpVerifyData> = await apiClient.post<OtpVerifyData>("
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 134,
+    "line": "'/api/v1/auth/token/refresh',"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 145,
+    "line": "* Endpoint: GET /api/v1/auth/me"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 149,
+    "line": "const response: ApiResponse<AuthMeData> = await apiClient.get<AuthMeData>("
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 150,
+    "line": "'/api/v1/auth/me',"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 158,
+    "line": "* Endpoint: GET /api/v1/doctors/me"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 162,
+    "line": "const response: ApiResponse<DoctorMeData> = await apiClient.get<DoctorMeData>("
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 163,
+    "line": "'/api/v1/doctors/me',"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 171,
+    "line": "* Endpoint: POST /api/v1/auth/logout"
+  },
+  {
+    "file": "services/authService.ts",
+    "lineNum": 177,
+    "line": "await apiClient.post('/api/v1/auth/logout', { refreshToken });"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 6,
+    "line": "*   - GET /api/v1/doctors/treatment-offers (List authored treatment proposals)"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 7,
+    "line": "*   - POST /api/v1/doctors/patients/:patientProfileId/encounters (Document clinical encounter)"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 8,
+    "line": "*   - POST /api/v1/doctors/patients/:patientProfileId/medical-records (Create medical record)"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 9,
+    "line": "*   - PUT /api/v1/doctors/patients/:patientProfileId/medical-records/:recordId (Update clinical record)"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 10,
+    "line": "*   - GET /api/v1/doctors/patients/:patientProfileId/medical-records (Get patient records with pagination)"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 11,
+    "line": "*   - GET /api/v1/doctors/patients/:patientProfileId/medical-records/timeline (Get timeline)"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 13,
+    "line": "*   - GET /api/v1/appointments/doctor/me (Appointments scheduled for authenticated doctor)"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 14,
+    "line": "*   - GET /api/v1/appointments/:id (Get appointment details)"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 15,
+    "line": "*   - PUT /api/v1/appointments/:id/status (Update appointment status)"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 17,
+    "line": "*   - GET /api/v1/financing/options (List available healthcare financing options and partners)"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 18,
+    "line": "*   - GET /api/v1/financing/offers (List pre-approved healthcare financing offers)"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 19,
+    "line": "*   - POST /api/v1/financing/apply (Submit application for healthcare financing / EMI assistance)"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 20,
+    "line": "*   - GET /api/v1/financing/applications (List financing applications)"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 136,
+    "line": "* Merges live appointments (`GET /api/v1/appointments/doctor/me`) with live"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 137,
+    "line": "* authored treatment proposals (`GET /api/v1/doctors/treatment-offers`)."
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 145,
+    "line": "const apptRes = await apiClient.get<unknown>('/api/v1/appointments/doctor/me');"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 167,
+    "line": "const toRes = await apiClient.get<unknown>('/api/v1/doctors/treatment-offers');"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 326,
+    "line": "const recRes = await apiClient.get<Array<Record<string, unknown>>>("
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 327,
+    "line": "`/api/v1/doctors/patients/${encodeURIComponent(pId)}/medical-records`"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 384,
+    "line": "* Endpoint: POST /api/v1/doctors/patients/:patientProfileId/encounters"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 390,
+    "line": "const response = await apiClient.post<Record<string, unknown>>("
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 391,
+    "line": "`/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/encounters`,"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 399,
+    "line": "* Endpoint: POST /api/v1/doctors/patients/:patientProfileId/medical-records"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 405,
+    "line": "const response = await apiClient.post<Record<string, unknown>>("
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 406,
+    "line": "`/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/medical-records`,"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 414,
+    "line": "* Endpoint: PUT /api/v1/doctors/patients/:patientProfileId/medical-records/:recordId"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 428,
+    "line": "const response = await apiClient.put<Record<string, unknown>>("
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 429,
+    "line": "`/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/medical-records/${encodeURIComponent(recordId)}`,"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 437,
+    "line": "* Endpoint: GET /api/v1/financing/options"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 441,
+    "line": "const response = await apiClient.get<FinancingOption[] | { data: FinancingOption[] }>('/api/v1/financing/options');"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 456,
+    "line": "* Endpoint: GET /api/v1/financing/offers"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 460,
+    "line": "const response = await apiClient.get<FinancingOption[] | { data: FinancingOption[] }>('/api/v1/financing/offers');"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 475,
+    "line": "* Endpoint: POST /api/v1/financing/apply"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 478,
+    "line": "const response = await apiClient.post<Record<string, unknown>>('/api/v1/financing/apply', payload);"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 484,
+    "line": "* Endpoint: GET /api/v1/financing/applications"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 488,
+    "line": "const response = await apiClient.get<{ data?: Array<Record<string, unknown>> }>('/api/v1/financing/applications');"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 507,
+    "line": "* Endpoint: PUT /api/v1/appointments/:id/status"
+  },
+  {
+    "file": "services/consultationService.ts",
+    "lineNum": 514,
+    "line": "await apiClient.put(`/api/v1/appointments/${encodeURIComponent(appointmentId)}/status`, {"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 5,
+    "line": "* - 05. Doctor Portal: GET /api/v1/doctors/me, GET /api/v1/doctors/statistics"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 6,
+    "line": "* - 10. Appointments: GET /api/v1/appointments/doctor/me, PUT /api/v1/appointments/:id/status"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 7,
+    "line": "* - 20. Reports & Labs: GET /api/v1/reports, POST /api/v1/reports/:id/verify"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 8,
+    "line": "* - 14. Notifications: GET /api/v1/notifications"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 135,
+    "line": "* GET /api/v1/doctors/me (Postman folder: 05. Doctor Portal)"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 138,
+    "line": "const res = await apiClient.get<DoctorProfile>('/api/v1/doctors/me');"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 144,
+    "line": "* GET /api/v1/appointments/doctor/me (Postman folder: 10. Appointments, Schedules & Shifts)"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 156,
+    "line": "const endpoint = `/api/v1/appointments/doctor/me${qs ? `?${qs}` : ''}`;"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 159,
+    "line": "const res = await apiClient.get<AppointmentListResponse | Appointment[]>(endpoint);"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 175,
+    "line": "const aliasEndpoint = `/api/v1/appointments/doctor/my-appointments${qs ? `?${qs}` : ''}`;"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 176,
+    "line": "const res = await apiClient.get<AppointmentListResponse | Appointment[]>(aliasEndpoint);"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 194,
+    "line": "* PUT /api/v1/appointments/:id/status (Postman folder: 10. Appointments, Schedules & Shifts)"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 201,
+    "line": "return apiClient.put<Appointment>(`/api/v1/appointments/${appointmentId}/status`, {"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 209,
+    "line": "* GET /api/v1/reports (Postman folder: 20. Clinical Reports & Analytics)"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 213,
+    "line": "const res = await apiClient.get<DiagnosticLabReport[] | { data: DiagnosticLabReport[] }>(`/api/v1/reports${qs}`);"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 222,
+    "line": "* POST /api/v1/reports/:id/verify (Postman folder: 20. Clinical Reports & Analytics)"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 225,
+    "line": "const res = await apiClient.post<DiagnosticLabReport>(`/api/v1/reports/${reportId}/verify`, {"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 233,
+    "line": "* GET /api/v1/notifications (Postman folder: 14. Notifications & Alerts)"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 237,
+    "line": "const res = await apiClient.get<DashboardNotification[] | { data: DashboardNotification[] }>(`/api/v1/notifications${qs}`);"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 246,
+    "line": "* PUT /api/v1/notifications/:id/read (Postman folder: 14. Notifications & Alerts)"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 249,
+    "line": "await apiClient.put(`/api/v1/notifications/${notificationId}/read`);"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 254,
+    "line": "* GET /api/v1/doctors/statistics (Postman folder: 05. Doctor Portal)"
+  },
+  {
+    "file": "services/dashboardService.ts",
+    "lineNum": 257,
+    "line": "const res = await apiClient.get<DoctorStatistics>('/api/v1/doctors/statistics');"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 6,
+    "line": "* - POST /api/v1/ocr/jobs"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 7,
+    "line": "* - GET  /api/v1/ocr/jobs"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 8,
+    "line": "* - GET  /api/v1/ocr/jobs/:id"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 9,
+    "line": "* - GET  /api/v1/ocr/jobs/:id/fields"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 10,
+    "line": "* - GET  /api/v1/ocr/jobs/:id/text"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 11,
+    "line": "* - GET  /api/v1/ocr/jobs/:id/json"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 12,
+    "line": "* - GET  /api/v1/ocr/dashboard"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 13,
+    "line": "* - GET  /api/v1/ocr/statistics"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 14,
+    "line": "* - POST /api/v1/ocr/reprocess/:jobId"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 15,
+    "line": "* - POST /api/v1/ai/ocr/extract"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 16,
+    "line": "* - POST /api/v1/ai/ocr/confirm"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 146,
+    "line": "* POST /api/v1/ocr/jobs"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 163,
+    "line": "const res = await apiClient.post<BackendOcrJob>('/api/v1/ocr/jobs', payload);"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 169,
+    "line": "* GET /api/v1/ocr/jobs/:id"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 175,
+    "line": "const res = await apiClient.get<BackendOcrJob>(`/api/v1/ocr/jobs/${encodeURIComponent(jobId)}`);"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 188,
+    "line": "* GET /api/v1/ocr/jobs/:id/fields"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 194,
+    "line": "const res = await apiClient.get<ExtractedOcrField[]>(`/api/v1/ocr/jobs/${encodeURIComponent(jobId)}/fields`);"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 207,
+    "line": "* GET /api/v1/ocr/jobs/:id/text"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 213,
+    "line": "const res = await apiClient.get<string | { text: string }>(`/api/v1/ocr/jobs/${encodeURIComponent(jobId)}/text`);"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 232,
+    "line": "* GET /api/v1/ocr/jobs/:id/json"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 238,
+    "line": "const res = await apiClient.get<BackendOcrStructuredJson>(`/api/v1/ocr/jobs/${encodeURIComponent(jobId)}/json`);"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 251,
+    "line": "* GET /api/v1/ocr/jobs"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 266,
+    "line": "const endpoint = `/api/v1/ocr/jobs${queryString ? `?${queryString}` : ''}`;"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 267,
+    "line": "const res = await apiClient.get<OcrJobListResponse | BackendOcrJob[]>(endpoint);"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 273,
+    "line": "* GET /api/v1/ocr/dashboard"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 276,
+    "line": "const res = await apiClient.get<OcrDashboardSummary>('/api/v1/ocr/dashboard');"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 282,
+    "line": "* Primary route: POST /api/v1/ocr/jobs/:jobId/reprocess"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 283,
+    "line": "* Fallback route: POST /api/v1/ocr/reprocess/:jobId"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 290,
+    "line": "const res = await apiClient.post<BackendOcrJob>(`/api/v1/ocr/jobs/${encodeURIComponent(jobId)}/reprocess`);"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 294,
+    "line": "const fallback = await apiClient.post<BackendOcrJob>(`/api/v1/ocr/reprocess/${encodeURIComponent(jobId)}`);"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 303,
+    "line": "* POST /api/v1/ai/ocr/extract"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 306,
+    "line": "const res = await apiClient.post<AiOcrExtractResponse>('/api/v1/ai/ocr/extract', { imageUrl });"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 312,
+    "line": "* POST /api/v1/ai/ocr/confirm"
+  },
+  {
+    "file": "services/ocrService.ts",
+    "lineNum": 315,
+    "line": "const res = await apiClient.post<AiOcrConfirmResponse>('/api/v1/ai/ocr/confirm', {"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 6,
+    "line": "*   - GET /api/v1/admin/patients"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 7,
+    "line": "*   - GET /api/v1/admin/patients/:patientId"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 8,
+    "line": "*   - GET /api/v1/admin/patients/:patientId/medical-records"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 9,
+    "line": "*   - GET /api/v1/admin/patients/:patientId/medical-records/timeline"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 11,
+    "line": "*   - GET /api/v1/doctors/patients/:patientProfileId/medical-records"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 12,
+    "line": "*   - GET /api/v1/doctors/patients/:patientProfileId/medical-records/timeline"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 13,
+    "line": "*   - POST /api/v1/doctors/patients/:patientProfileId/medical-records"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 14,
+    "line": "*   - POST /api/v1/doctors/patients/:patientProfileId/encounters"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 15,
+    "line": "*   - PUT /api/v1/doctors/patients/:patientProfileId/medical-records/:recordId"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 17,
+    "line": "*   - GET /api/v1/appointments/doctor/me"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 18,
+    "line": "*   - GET /api/v1/appointments"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 20,
+    "line": "*   - GET /api/v1/patients/:patientId/insurance-cards"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 22,
+    "line": "*   - GET /api/v1/reports"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 44,
+    "line": "* - Relative paths (e.g. /api/v1/patients/me/photo/file/...)"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 76,
+    "line": "const isBackendProtected = resolved.includes('/api/v1/') || resolved.startsWith(apiBase);"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 739,
+    "line": "* Priority 1: GET /api/v1/admin/patients (with server-side filters & pagination)"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 740,
+    "line": "* Priority 2: Fallback for Doctor role via GET /api/v1/appointments/doctor/me (extracts assigned patients)"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 763,
+    "line": "const response: ApiResponse<unknown> = await apiClient.get<unknown>("
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 764,
+    "line": "`/api/v1/admin/patients?${queryParts.join('&')}`"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 821,
+    "line": "// Canonical Doctor Route: Queries doctor's assigned patient panel via /api/v1/appointments/doctor/me"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 826,
+    "line": "* Doctor-authorized patient listing: Aggregates real patients assigned to doctor via /api/v1/appointments/doctor/me"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 832,
+    "line": "const response = await apiClient.get<unknown>('/api/v1/appointments/doctor/me');"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 911,
+    "line": "* Primary route: GET /api/v1/doctors/patients/:patientProfileId"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 922,
+    "line": "* Endpoint: GET /api/v1/doctors/patients/:patientProfileId"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 932,
+    "line": "// 1. Authoritative Doctor Endpoint: GET /api/v1/doctors/patients/:patientProfileId"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 935,
+    "line": "const response = await apiClient.get<PatientProfileResponse | { data: PatientProfileResponse }>("
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 936,
+    "line": "`/api/v1/doctors/patients/${encodeURIComponent(cleanId)}`"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 980,
+    "line": "apiClient.get<Array<Record<string, unknown>>>(`/api/v1/patients/${encodeURIComponent(cleanId)}/insurance-cards`),"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 1031,
+    "line": "* Endpoint: GET /api/v1/doctors/patients/:patientProfileId/medical-records"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 1046,
+    "line": "// Authoritative Doctor Portal endpoint: /api/v1/doctors/patients/:patientProfileId/medical-records"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 1048,
+    "line": "const response = await apiClient.get<unknown>("
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 1049,
+    "line": "`/api/v1/doctors/patients/${encodeURIComponent(patientId)}/medical-records${qs}`"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 1062,
+    "line": "* Endpoint: POST /api/v1/doctors/patients/:patientProfileId/medical-records"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 1068,
+    "line": "const response = await apiClient.post<MedicalRecord>("
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 1069,
+    "line": "`/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/medical-records`,"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 1077,
+    "line": "* Endpoint: GET /api/v1/doctors/patients/:patientProfileId/medical-records/timeline"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 1083,
+    "line": "const adminRes = await apiClient.get<unknown>("
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 1084,
+    "line": "`/api/v1/admin/patients/${encodeURIComponent(patientId)}/medical-records/timeline${qs}`"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 1096,
+    "line": "const response = await apiClient.get<unknown>("
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 1097,
+    "line": "`/api/v1/doctors/patients/${encodeURIComponent(patientId)}/medical-records/timeline${qs}`"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 1124,
+    "line": "const response = await apiClient.get<unknown>(`/api/v1/admin/medical-records/${encodeURIComponent(recordId)}`);"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 1136,
+    "line": "const apptRes = await apiClient.get<unknown>('/api/v1/appointments/doctor/me');"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 1352,
+    "line": "* Endpoint: GET /api/v1/facilities with appointment fallback"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 1356,
+    "line": "const response = await apiClient.get<Array<{ id?: string; name?: string }>>('/api/v1/facilities');"
+  },
+  {
+    "file": "services/patientService.ts",
+    "lineNum": 1365,
+    "line": "const apptRes = await apiClient.get<unknown>('/api/v1/appointments/doctor/me');"
+  },
+  {
+    "file": "services/prescriptionService.ts",
+    "lineNum": 6,
+    "line": "*   - GET /api/v1/doctors/patients/:patientProfileId/medical-records (Fetch medical records & treatment plans)"
+  },
+  {
+    "file": "services/prescriptionService.ts",
+    "lineNum": 7,
+    "line": "*   - GET /api/v1/doctors/patients/:patientProfileId/medical-records/timeline (Fetch unified patient clinical timeline)"
+  },
+  {
+    "file": "services/prescriptionService.ts",
+    "lineNum": 8,
+    "line": "*   - POST /api/v1/doctors/patients/:patientProfileId/encounters (Document clinical prescription encounter, vitals, diagnoses)"
+  },
+  {
+    "file": "services/prescriptionService.ts",
+    "lineNum": 9,
+    "line": "*   - POST /api/v1/doctors/patients/:patientProfileId/medical-records (Create medical record)"
+  },
+  {
+    "file": "services/prescriptionService.ts",
+    "lineNum": 10,
+    "line": "*   - PUT /api/v1/doctors/patients/:patientProfileId/medical-records/:recordId (Update record notes & refill authorizations)"
+  },
+  {
+    "file": "services/prescriptionService.ts",
+    "lineNum": 116,
+    "line": "* Endpoint: GET /api/v1/doctors/patients/:patientProfileId/medical-records"
+  },
+  {
+    "file": "services/prescriptionService.ts",
+    "lineNum": 125,
+    "line": "const response: ApiResponse<MedicalRecord[]> = await apiClient.get<MedicalRecord[]>("
+  },
+  {
+    "file": "services/prescriptionService.ts",
+    "lineNum": 126,
+    "line": "`/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/medical-records?includeArchived=false`"
+  },
+  {
+    "file": "services/prescriptionService.ts",
+    "lineNum": 170,
+    "line": "* Endpoint: POST /api/v1/doctors/patients/:patientProfileId/encounters"
+  },
+  {
+    "file": "services/prescriptionService.ts",
+    "lineNum": 199,
+    "line": "const response = await apiClient.post<Record<string, unknown>>("
+  },
+  {
+    "file": "services/prescriptionService.ts",
+    "lineNum": 200,
+    "line": "`/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/encounters`,"
+  },
+  {
+    "file": "services/prescriptionService.ts",
+    "lineNum": 209,
+    "line": "* Endpoint: PUT /api/v1/doctors/patients/:patientProfileId/medical-records/:recordId"
+  },
+  {
+    "file": "services/prescriptionService.ts",
+    "lineNum": 220,
+    "line": "const response = await apiClient.put<Record<string, unknown>>("
+  },
+  {
+    "file": "services/prescriptionService.ts",
+    "lineNum": 221,
+    "line": "`/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/medical-records/${encodeURIComponent(recordId)}`,"
+  },
+  {
+    "file": "services/prescriptionService.ts",
+    "lineNum": 233,
+    "line": "* Endpoint: GET /api/v1/doctors/patients/:patientProfileId/medical-records/timeline"
+  },
+  {
+    "file": "services/prescriptionService.ts",
+    "lineNum": 239,
+    "line": "const response = await apiClient.get<TimelineEvent[]>("
+  },
+  {
+    "file": "services/prescriptionService.ts",
+    "lineNum": 240,
+    "line": "`/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/medical-records/timeline?page=1&limit=50`"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 6,
+    "line": "*   1. POST /api/v1/doctors/treatment-offers (Create a new draft treatment proposal)"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 7,
+    "line": "*   2. GET /api/v1/doctors/treatment-offers (List authored treatment proposals)"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 8,
+    "line": "*   3. GET /api/v1/doctors/treatment-offers/:id (Get treatment offer details)"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 9,
+    "line": "*   4. PUT /api/v1/doctors/treatment-offers/:id (Update draft treatment offer)"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 10,
+    "line": "*   5. POST /api/v1/doctors/treatment-offers/:id/dispatch (Lock draft and dispatch to patient)"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 11,
+    "line": "*   6. GET /api/v1/doctors/treatment-offers/:id/status (Inspect live offer lifecycle status)"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 12,
+    "line": "*   7. POST /api/v1/doctors/treatment-offers/:id/cancel (Doctor cancels active treatment proposal)"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 14,
+    "line": "*   8. POST /api/v1/patients/treatment-offers/:id/accept (Patient ratifies/accepts offer)"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 15,
+    "line": "*   9. POST /api/v1/patients/treatment-offers/:id/reject (Patient declines offer)"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 245,
+    "line": "* Endpoint: POST /api/v1/doctors/treatment-offers"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 248,
+    "line": "const res = await apiClient.post<TreatmentOfferDTO | { data: TreatmentOfferDTO }>("
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 249,
+    "line": "'/api/v1/doctors/treatment-offers',"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 257,
+    "line": "* Endpoint: GET /api/v1/doctors/treatment-offers"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 268,
+    "line": "const endpoint = `/api/v1/doctors/treatment-offers${qs ? `?${qs}` : ''}`;"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 270,
+    "line": "const res = await apiClient.get<PaginatedTreatmentOffers | TreatmentOfferDTO[]>(endpoint);"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 276,
+    "line": "* Endpoint: GET /api/v1/doctors/treatment-offers/:id"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 279,
+    "line": "const res = await apiClient.get<TreatmentOfferDTO | { data: TreatmentOfferDTO }>("
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 280,
+    "line": "`/api/v1/doctors/treatment-offers/${encodeURIComponent(id)}`"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 287,
+    "line": "* Endpoint: PUT /api/v1/doctors/treatment-offers/:id"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 290,
+    "line": "const res = await apiClient.put<TreatmentOfferDTO | { data: TreatmentOfferDTO }>("
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 291,
+    "line": "`/api/v1/doctors/treatment-offers/${encodeURIComponent(id)}`,"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 299,
+    "line": "* Endpoint: POST /api/v1/doctors/treatment-offers/:id/dispatch"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 302,
+    "line": "const res = await apiClient.post<TreatmentOfferDTO | { data: TreatmentOfferDTO }>("
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 303,
+    "line": "`/api/v1/doctors/treatment-offers/${encodeURIComponent(id)}/dispatch`,"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 311,
+    "line": "* Endpoint: GET /api/v1/doctors/treatment-offers/:id/status"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 314,
+    "line": "const res = await apiClient.get<TreatmentOfferStatusResponse | { data: TreatmentOfferStatusResponse }>("
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 315,
+    "line": "`/api/v1/doctors/treatment-offers/${encodeURIComponent(id)}/status`"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 322,
+    "line": "* Endpoint: POST /api/v1/doctors/treatment-offers/:id/cancel"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 329,
+    "line": "const res = await apiClient.post<TreatmentOfferDTO | { data: TreatmentOfferDTO }>("
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 330,
+    "line": "`/api/v1/doctors/treatment-offers/${encodeURIComponent(id)}/cancel`,"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 338,
+    "line": "* Endpoint: POST /api/v1/patients/treatment-offers/:id/accept"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 348,
+    "line": "const res = await apiClient.post<TreatmentOfferDTO | { data: TreatmentOfferDTO }>("
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 349,
+    "line": "`/api/v1/patients/treatment-offers/${encodeURIComponent(id)}/accept`,"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 357,
+    "line": "* Endpoint: POST /api/v1/patients/treatment-offers/:id/reject"
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 366,
+    "line": "const res = await apiClient.post<TreatmentOfferDTO | { data: TreatmentOfferDTO }>("
+  },
+  {
+    "file": "services/treatmentOfferService.ts",
+    "lineNum": 367,
+    "line": "`/api/v1/patients/treatment-offers/${encodeURIComponent(id)}/reject`,"
+  }
+]

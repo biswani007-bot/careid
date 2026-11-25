@@ -1,0 +1,485 @@
+[
+  {
+    "name": "Search and list patients with server-side pagination and filters",
+    "folder": "04. Admin Portal & System Operations",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/admin/patients?page=1&limit=20&q=string&status=string&gender=string&bloodGroup=string",
+    "body": null
+  },
+  {
+    "name": "Get unified medical timeline for a specific patient",
+    "folder": "04. Admin Portal & System Operations",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/admin/patients/:patientId/medical-records/timeline?page=1&limit=20",
+    "body": null
+  },
+  {
+    "name": "List medical records for a specific patient with pagination",
+    "folder": "04. Admin Portal & System Operations",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/admin/patients/:patientId/medical-records?page=1&limit=20&status=string&startDate=string&endDate=string&includeArchived=true",
+    "body": null
+  },
+  {
+    "name": "Get comprehensive patient details by ID or User ID",
+    "folder": "04. Admin Portal & System Operations",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/admin/patients/:patientId",
+    "body": null
+  },
+  {
+    "name": "Search and list medical records platform-wide with pagination",
+    "folder": "04. Admin Portal & System Operations",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/admin/medical-records?page=1&limit=20&q=string&status=string&patientProfileId=string&startDate=string&endDate=string",
+    "body": null
+  },
+  {
+    "name": "Get authorized patient medical record timeline",
+    "folder": "05. Doctor Portal",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/medical-records/timeline?page=1&limit=20",
+    "body": null
+  },
+  {
+    "name": "Get authorized patient medical records with pagination",
+    "folder": "05. Doctor Portal",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/medical-records?page=1&limit=20&status=string&startDate=string&endDate=string&includeArchived=false",
+    "body": null
+  },
+  {
+    "name": "Create medical record for an authorized patient",
+    "folder": "05. Doctor Portal",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/medical-records",
+    "body": "{\n  \"title\": \"Annual Routine Health Checkup\",\n  \"chiefComplaint\": \"Mild fatigue and occasional headache\",\n  \"clinicalNotes\": \"Patient appears well nourished. No acute distress.\",\n  \"treatmentPlan\": \"Increase fluid intake, maintain low glycemic diet\",\n  \"followUpInstructions\": \"Follow up in 4 weeks for repeat blood panel\",\n  \"status\": \"FINAL\",\n  \"encounter\": {\n    \"providerName\": \"Dr. Sarah Connor\",\n    \"facilityName\": \"City General Hospital\",\n    \"encounterType\": \"CONSULTATION\",\n    \"encounterDate\": \"2026-07-31T10:00:00Z\"\n  },\n  \"diagnoses\": [\n    {\n      \"description\": \"Type 2 Diabetes Mellitus without complications\",\n      \"code\": \"E11.9\",\n      \"type\": \"PRIMARY\",\n      \"status\": \"ACTIVE\"\n    },\n    {\n      \"description\": \"Type 2 Diabetes Mellitus without complications\",\n      \"code\": \"E11.9\",\n      \"type\": \"PRIMARY\",\n      \"status\": \"ACTIVE\"\n    }\n  ],\n  \"vitalSigns\": {\n    \"heightCm\": 175.5,\n    \"weightKg\": 70,\n    \"systolicBp\": 120,\n    \"diastolicBp\": 80,\n    \"pulseBpm\": 72,\n    \"respirationRate\": 16,\n    \"temperatureC\": 36.6,\n    \"bloodSugarMgDl\": 95,\n    \"oxygenSaturation\": 98\n  },\n  \"procedures\": [\n    {\n      \"name\": \"Routine Blood Panel\",\n      \"code\": \"CPT-80053\",\n      \"performedAt\": \"2026-07-31\",\n      \"notes\": \"Patient fasted for 12 hours prior\"\n    },\n    {\n      \"name\": \"Routine Blood Panel\",\n      \"code\": \"CPT-80053\",\n      \"performedAt\": \"2026-07-31\",\n      \"notes\": \"Patient fasted for 12 hours prior\"\n    }\n  ]\n}"
+  },
+  {
+    "name": "Document clinical encounter, diagnoses, vitals, procedures for an authorized patient",
+    "folder": "05. Doctor Portal",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/encounters",
+    "body": "{\n  \"title\": \"Annual Routine Health Checkup\",\n  \"chiefComplaint\": \"Mild fatigue and occasional headache\",\n  \"clinicalNotes\": \"Patient appears well nourished. No acute distress.\",\n  \"treatmentPlan\": \"Increase fluid intake, maintain low glycemic diet\",\n  \"followUpInstructions\": \"Follow up in 4 weeks for repeat blood panel\",\n  \"status\": \"FINAL\",\n  \"encounter\": {\n    \"providerName\": \"Dr. Sarah Connor\",\n    \"facilityName\": \"City General Hospital\",\n    \"encounterType\": \"CONSULTATION\",\n    \"encounterDate\": \"2026-07-31T10:00:00Z\"\n  },\n  \"diagnoses\": [\n    {\n      \"description\": \"Type 2 Diabetes Mellitus without complications\",\n      \"code\": \"E11.9\",\n      \"type\": \"PRIMARY\",\n      \"status\": \"ACTIVE\"\n    },\n    {\n      \"description\": \"Type 2 Diabetes Mellitus without complications\",\n      \"code\": \"E11.9\",\n      \"type\": \"PRIMARY\",\n      \"status\": \"ACTIVE\"\n    }\n  ],\n  \"vitalSigns\": {\n    \"heightCm\": 175.5,\n    \"weightKg\": 70,\n    \"systolicBp\": 120,\n    \"diastolicBp\": 80,\n    \"pulseBpm\": 72,\n    \"respirationRate\": 16,\n    \"temperatureC\": 36.6,\n    \"bloodSugarMgDl\": 95,\n    \"oxygenSaturation\": 98\n  },\n  \"procedures\": [\n    {\n      \"name\": \"Routine Blood Panel\",\n      \"code\": \"CPT-80053\",\n      \"performedAt\": \"2026-07-31\",\n      \"notes\": \"Patient fasted for 12 hours prior\"\n    },\n    {\n      \"name\": \"Routine Blood Panel\",\n      \"code\": \"CPT-80053\",\n      \"performedAt\": \"2026-07-31\",\n      \"notes\": \"Patient fasted for 12 hours prior\"\n    }\n  ]\n}"
+  },
+  {
+    "name": "Update clinical notes/record documented by doctor",
+    "folder": "05. Doctor Portal",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/medical-records/:recordId",
+    "body": "{\n  \"title\": \"Updated Health Checkup Record\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"ARCHIVED\"\n}"
+  },
+  {
+    "name": "Step 1: Initialize Patient Draft Registration",
+    "folder": "06. Patient App",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/patients/register",
+    "body": null
+  },
+  {
+    "name": "Check Draft Registration Progress Status",
+    "folder": "06. Patient App",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/patients/register/status",
+    "body": null
+  },
+  {
+    "name": "Resume and update registration progress",
+    "folder": "06. Patient App",
+    "method": "PATCH",
+    "url": "{{baseUrl}}/api/v1/patients/register/resume?step=string",
+    "body": null
+  },
+  {
+    "name": "Step 2: Patient Demographic Registration",
+    "folder": "06. Patient App",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/patients/onboarding/demographics",
+    "body": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"dateOfBirth\": \"1990-01-01\",\n  \"gender\": \"Male\",\n  \"bloodGroup\": \"O+\",\n  \"address\": \"123 Main St, New York, NY\"\n}"
+  },
+  {
+    "name": "Step 2: Update Demographics Details",
+    "folder": "06. Patient App",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/patients/onboarding/demographics",
+    "body": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"dateOfBirth\": \"1990-01-01\",\n  \"gender\": \"Male\",\n  \"bloodGroup\": \"O+\",\n  \"address\": \"123 Main St, New York, NY\"\n}"
+  },
+  {
+    "name": "Step 3: Save Emergency Contact",
+    "folder": "06. Patient App",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/patients/onboarding/emergency-contact",
+    "body": "{\n  \"name\": \"Jane Doe\",\n  \"relationship\": \"Spouse\",\n  \"phone\": \"+14155552671\"\n}"
+  },
+  {
+    "name": "Step 3: Update Emergency Contact",
+    "folder": "06. Patient App",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/patients/onboarding/emergency-contact",
+    "body": "{\n  \"name\": \"Jane Doe\",\n  \"relationship\": \"Spouse\",\n  \"phone\": \"+14155552671\"\n}"
+  },
+  {
+    "name": "Step 4: Save Primary/Secondary Insurance Link",
+    "folder": "06. Patient App",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/patients/onboarding/insurance",
+    "body": "{\n  \"providerName\": \"Blue Shield\",\n  \"policyNumber\": \"POL987654321\",\n  \"coverageDetails\": \"Co-pay $20, Deductible $500\"\n}"
+  },
+  {
+    "name": "Step 4: Update Insurance Details",
+    "folder": "06. Patient App",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/patients/onboarding/insurance",
+    "body": "{\n  \"providerName\": \"Blue Shield\",\n  \"policyNumber\": \"POL987654321\",\n  \"coverageDetails\": \"Co-pay $20, Deductible $500\"\n}"
+  },
+  {
+    "name": "Step 5: Initialize Secure Digital Health Card",
+    "folder": "06. Patient App",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/patients/onboarding/health-card",
+    "body": null
+  },
+  {
+    "name": "Step 6: Family Account Linkage Request",
+    "folder": "06. Patient App",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/patients/onboarding/family-invite",
+    "body": "{\n  \"inviteePhone\": \"+14155559876\",\n  \"relationship\": \"Child\"\n}"
+  },
+  {
+    "name": "Get Step-by-Step Onboarding Progress Checklist",
+    "folder": "06. Patient App",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/patients/onboarding/progress",
+    "body": null
+  },
+  {
+    "name": "Finalize and Complete Onboarding Registration",
+    "folder": "06. Patient App",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/patients/onboarding/complete",
+    "body": null
+  },
+  {
+    "name": "Get overall Patient Onboarding Completion percentage",
+    "folder": "06. Patient App",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/patients/onboarding/completion",
+    "body": null
+  },
+  {
+    "name": "Get Patient Profile Details",
+    "folder": "06. Patient App",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/patients/me",
+    "body": null
+  },
+  {
+    "name": "Update Patient Profile",
+    "folder": "06. Patient App",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/patients/me",
+    "body": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"dateOfBirth\": \"1990-01-01\",\n  \"gender\": \"Male\",\n  \"bloodGroup\": \"O+\",\n  \"address\": \"123 Main St, New York, NY\"\n}"
+  },
+  {
+    "name": "Accept / Reject Family Linkage Consent",
+    "folder": "06. Patient App",
+    "method": "PATCH",
+    "url": "{{baseUrl}}/api/v1/patients/family-consents/:id",
+    "body": "{\n  \"status\": \"ACCEPTED\"\n}"
+  },
+  {
+    "name": "Get Full Patient Profile with all extended fields",
+    "folder": "06. Patient App",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/patients/me/full",
+    "body": null
+  },
+  {
+    "name": "Update Basic Patient Information (name, DOB, gender, nationality, etc.)",
+    "folder": "06. Patient App",
+    "method": "PATCH",
+    "url": "{{baseUrl}}/api/v1/patients/me/basic",
+    "body": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"dateOfBirth\": \"1990-01-01\",\n  \"gender\": \"MALE\",\n  \"bloodGroup\": \"O+\",\n  \"nationality\": \"Pakistani\",\n  \"occupation\": \"Software Engineer\",\n  \"maritalStatus\": \"MARRIED\",\n  \"languages\": [\n    \"English\",\n    \"Urdu\"\n  ]\n}"
+  },
+  {
+    "name": "Update Contact Preferences",
+    "folder": "06. Patient App",
+    "method": "PATCH",
+    "url": "{{baseUrl}}/api/v1/patients/me/contact",
+    "body": "{\n  \"phone\": \"+923001234567\",\n  \"email\": \"john.doe@email.com\",\n  \"prefContactMethod\": \"PHONE\"\n}"
+  },
+  {
+    "name": "Update Current and Permanent Address",
+    "folder": "06. Patient App",
+    "method": "PATCH",
+    "url": "{{baseUrl}}/api/v1/patients/me/address",
+    "body": "{\n  \"currentAddress\": {\n    \"line1\": \"123 Main Street\",\n    \"line2\": \"Apartment 4B\",\n    \"city\": \"Karachi\",\n    \"state\": \"Sindh\",\n    \"district\": \"South\",\n    \"postalCode\": \"74200\",\n    \"country\": \"Pakistan\"\n  },\n  \"permanentAddress\": {\n    \"line1\": \"123 Main Street\",\n    \"line2\": \"Apartment 4B\",\n    \"city\": \"Karachi\",\n    \"state\": \"Sindh\",\n    \"district\": \"South\",\n    \"postalCode\": \"74200\",\n    \"country\": \"Pakistan\"\n  }\n}"
+  },
+  {
+    "name": "Update Communication Preferences and Privacy Settings",
+    "folder": "06. Patient App",
+    "method": "PATCH",
+    "url": "{{baseUrl}}/api/v1/patients/me/preferences",
+    "body": "{\n  \"emailNotifications\": true,\n  \"smsNotifications\": true,\n  \"pushNotifications\": true,\n  \"prefContactMethod\": \"EMAIL\",\n  \"profileVisibility\": \"PRIVATE\"\n}"
+  },
+  {
+    "name": "Update Medical Summary (blood group, allergies, conditions, disabilities)",
+    "folder": "06. Patient App",
+    "method": "PATCH",
+    "url": "{{baseUrl}}/api/v1/patients/me/medical-summary",
+    "body": "{\n  \"bloodGroup\": \"O+\",\n  \"knownAllergies\": [\n    \"Penicillin\",\n    \"Nuts\"\n  ],\n  \"chronicConditions\": [\n    \"Diabetes Type 2\",\n    \"Hypertension\"\n  ],\n  \"disabilities\": [\n    \"Visual Impairment\"\n  ]\n}"
+  },
+  {
+    "name": "Upload or Replace Profile Photo (provide photoUrl and photoKey)",
+    "folder": "06. Patient App",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/patients/me/photo",
+    "body": null
+  },
+  {
+    "name": "Delete Profile Photo",
+    "folder": "06. Patient App",
+    "method": "DELETE",
+    "url": "{{baseUrl}}/api/v1/patients/me/photo",
+    "body": null
+  },
+  {
+    "name": "Get Patient Profile Completion Status with section breakdown",
+    "folder": "06. Patient App",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/patients/profile/completion",
+    "body": null
+  },
+  {
+    "name": "Get Patient Profile Change Timeline",
+    "folder": "06. Patient App",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/patients/profile/timeline",
+    "body": null
+  },
+  {
+    "name": "Get Patient Profile Activity Summary",
+    "folder": "06. Patient App",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/patients/profile/activity",
+    "body": null
+  },
+  {
+    "name": "Issue a new Health Card for authenticated patient",
+    "folder": "07. Digital Health Cards & Passes",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/health-cards",
+    "body": "{\n  \"reason\": \"Initial issuance during registration\"\n}"
+  },
+  {
+    "name": "Get active Health Card details for current patient",
+    "folder": "07. Digital Health Cards & Passes",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/health-cards",
+    "body": null
+  },
+  {
+    "name": "Search Health Cards by card number or patient name",
+    "folder": "07. Digital Health Cards & Passes",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/health-cards/search?q=string",
+    "body": null
+  },
+  {
+    "name": "Get all medical records for the authenticated patient",
+    "folder": "08. Medical Records (General, Dental & Vision)",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/medical-records",
+    "body": null
+  },
+  {
+    "name": "List appointments with filtering and pagination",
+    "folder": "10. Appointments, Schedules & Shifts",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/appointments?page=1&limit=20&patientProfileId=string&doctorProfileId=string&facilityId=string&status=SCHEDULED&type=IN_PERSON&fromDate=string&toDate=string",
+    "body": null
+  },
+  {
+    "name": "Get appointments scheduled for authenticated doctor",
+    "folder": "10. Appointments, Schedules & Shifts",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/appointments/doctor/my-appointments?page=1&limit=20&patientProfileId=string&doctorProfileId=string&facilityId=string&status=SCHEDULED&type=IN_PERSON&fromDate=string&toDate=string",
+    "body": null
+  },
+  {
+    "name": "Get appointments scheduled for authenticated doctor",
+    "folder": "10. Appointments, Schedules & Shifts",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/appointments/doctor/me?page=1&limit=20&patientProfileId=string&doctorProfileId=string&facilityId=string&status=SCHEDULED&type=IN_PERSON&fromDate=string&toDate=string",
+    "body": null
+  },
+  {
+    "name": "Get appointments scheduled for authenticated patient",
+    "folder": "10. Appointments, Schedules & Shifts",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/appointments/patient/my-appointments?page=1&limit=20&patientProfileId=string&doctorProfileId=string&facilityId=string&status=SCHEDULED&type=IN_PERSON&fromDate=string&toDate=string",
+    "body": null
+  },
+  {
+    "name": "Get appointments scheduled for authenticated patient",
+    "folder": "10. Appointments, Schedules & Shifts",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/appointments/patient/me?page=1&limit=20&patientProfileId=string&doctorProfileId=string&facilityId=string&status=SCHEDULED&type=IN_PERSON&fromDate=string&toDate=string",
+    "body": null
+  },
+  {
+    "name": "Create patient care referral",
+    "folder": "11. Referrals & Care Coordination",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/referrals",
+    "body": "{\n  \"patientId\": \"patient-uuid-1\",\n  \"receivingFacilityId\": \"facility-uuid-2\",\n  \"reasonForReferral\": \"Patient presents with unresolved cardiology symptoms\",\n  \"receivingDoctorId\": \"doctor-uuid-2\",\n  \"medicalRecordId\": \"medrec-uuid-1\",\n  \"accessScope\": \"REFERRAL_ONLY\",\n  \"referralType\": \"SPECIALIST_CONSULTATION\",\n  \"priority\": \"URGENT\",\n  \"clinicalSummary\": \"High blood pressure, ECG abnormal\",\n  \"specialtyRequired\": \"Cardiology\"\n}"
+  },
+  {
+    "name": "List patient care referrals with optional filters",
+    "folder": "11. Referrals & Care Coordination",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/referrals?patientId=string&referringDoctorId=string&receivingDoctorId=string&receivingFacilityId=string&status=string&priority=string&page=7043.494767911134&limit=7043.494767911134",
+    "body": null
+  },
+  {
+    "name": "Triage patient referral (Approve/Decline/Redirect)",
+    "folder": "11. Referrals & Care Coordination",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/referrals/:id/triage",
+    "body": "{\n  \"outcome\": \"APPROVED\",\n  \"receivingDoctorId\": \"doctor-uuid-2\",\n  \"reason\": \"Accepted for cardiology evaluation\"\n}"
+  },
+  {
+    "name": "List all invitations sent by the patient",
+    "folder": "12. Family Members & Relationships",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/family/invitations",
+    "body": null
+  },
+  {
+    "name": "List all active consents granted by the patient",
+    "folder": "12. Family Members & Relationships",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/family/consents",
+    "body": null
+  },
+  {
+    "name": "Get full consent audit history for the patient",
+    "folder": "12. Family Members & Relationships",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/family/consents/history",
+    "body": null
+  },
+  {
+    "name": "List all guardians assigned to the patient",
+    "folder": "12. Family Members & Relationships",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/family/guardians",
+    "body": null
+  },
+  {
+    "name": "Assign a guardian to the patient",
+    "folder": "12. Family Members & Relationships",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/family/guardians",
+    "body": "{\n  \"fullName\": \"Ahmed Ali\",\n  \"phone\": \"+923001234567\",\n  \"relationshipType\": \"GUARDIAN\",\n  \"relationship\": \"Father\",\n  \"isPrimary\": true,\n  \"notes\": \"Legal guardian by court order\"\n}"
+  },
+  {
+    "name": "List all dependents registered under this patient",
+    "folder": "12. Family Members & Relationships",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/family/dependents",
+    "body": null
+  },
+  {
+    "name": "Register a dependent (minor, senior, or care patient)",
+    "folder": "12. Family Members & Relationships",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/family/dependents",
+    "body": "{\n  \"fullName\": \"Sara Ali\",\n  \"phone\": \"+923001234567\",\n  \"relationshipType\": \"CHILD\",\n  \"relationship\": \"Daughter\",\n  \"isCaregiver\": false,\n  \"notes\": \"Minor, age 7\"\n}"
+  },
+  {
+    "name": "Capture patient consent record",
+    "folder": "18. Security, Threat Detection & Sessions",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/security/consents",
+    "body": "{\n  \"patientId\": \"patient-uuid-1\",\n  \"purpose\": \"Authorization for clinical data processing and treatment history sharing\",\n  \"consentType\": \"TREATMENT\",\n  \"authorizedDoctorId\": \"doctor-uuid-1\",\n  \"authorizedFacilityId\": \"facility-uuid-1\",\n  \"accessScope\": \"ALL\",\n  \"expiresAt\": \"2026-12-31T23:59:59.000Z\",\n  \"evidenceReference\": \"DOC_REF_SIGNED_CONSENT_FORM_123\"\n}"
+  },
+  {
+    "name": "List patient consents with optional filters",
+    "folder": "18. Security, Threat Detection & Sessions",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/security/consents?patientId=string&status=string",
+    "body": null
+  },
+  {
+    "name": "Withdraw patient consent",
+    "folder": "18. Security, Threat Detection & Sessions",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/security/consents/:id/withdraw",
+    "body": null
+  },
+  {
+    "name": "Confirm and grant a pending patient consent record",
+    "folder": "18. Security, Threat Detection & Sessions",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/security/consents/:id/confirm",
+    "body": null
+  },
+  {
+    "name": "Issue/Register a full insurance policy for patient",
+    "folder": "19. Insurance Platform & Claims",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/insurance/policies",
+    "body": "{\n  \"providerName\": \"State Life Health Insurance\",\n  \"policyNumber\": \"POL-9988776655\",\n  \"providerId\": \"provider-uuid-1\",\n  \"planId\": \"plan-uuid-1\",\n  \"groupNumber\": \"GRP-100200\",\n  \"status\": \"ACTIVE\",\n  \"coverageDetails\": \"Inpatient & Outpatient 80/20 coverage up to $500,000\",\n  \"startDate\": \"2026-01-01\",\n  \"expiryDate\": \"2026-12-31\",\n  \"copayAmount\": 25,\n  \"deductibleAmount\": 500,\n  \"maxLimit\": 500000,\n  \"preAuthRequired\": true,\n  \"beneficiaries\": [\n    {\n      \"fullName\": \"Jane Doe\",\n      \"relationship\": \"SPOUSE\",\n      \"dateOfBirth\": \"1992-08-20\",\n      \"isPrimary\": false\n    },\n    {\n      \"fullName\": \"Jane Doe\",\n      \"relationship\": \"SPOUSE\",\n      \"dateOfBirth\": \"1992-08-20\",\n      \"isPrimary\": false\n    }\n  ]\n}"
+  },
+  {
+    "name": "Get all insurance policies for current patient",
+    "folder": "19. Insurance Platform & Claims",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/insurance/policies",
+    "body": null
+  },
+  {
+    "name": "List all claim drafts for current patient",
+    "folder": "19. Insurance Platform & Claims",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/insurance/claims",
+    "body": null
+  },
+  {
+    "name": "Save insurance details during 6-step patient onboarding (Step 4)",
+    "folder": "19. Insurance Platform & Claims",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/insurance/onboard",
+    "body": "{\n  \"providerName\": \"Blue Shield\",\n  \"policyNumber\": \"POL987654321\",\n  \"coverageDetails\": \"Co-pay $20, Deductible $500\"\n}"
+  },
+  {
+    "name": "Get all diagnostic reports for the patient (supports category filtering)",
+    "folder": "20. Clinical Reports & Analytics",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/reports?category=string",
+    "body": null
+  },
+  {
+    "name": "Create/Schedule a patient vaccination record",
+    "folder": "24. Immunisation Platform & Vaccines",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/immunisation/records",
+    "body": "{\n  \"vaccineId\": \"vaccine-uuid-1\",\n  \"scheduleId\": \"schedule-uuid-1\",\n  \"doseNumber\": 1,\n  \"dueDate\": \"2026-08-15\",\n  \"notes\": \"Standard dose schedule notes\"\n}"
+  },
+  {
+    "name": "List all vaccination records for current patient",
+    "folder": "24. Immunisation Platform & Vaccines",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/immunisation/records",
+    "body": null
+  },
+  {
+    "name": "List all digital vaccine certificates for current patient",
+    "folder": "24. Immunisation Platform & Vaccines",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/immunisation/certificates",
+    "body": null
+  }
+]

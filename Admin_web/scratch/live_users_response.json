@@ -1,0 +1,233 @@
+{
+  "path": "/api/v1/admin/users?limit=50",
+  "status": 200,
+  "json": {
+    "success": true,
+    "statusCode": 200,
+    "message": "Operation executed successfully",
+    "data": {
+      "data": [
+        {
+          "id": "74e82159-f90e-4695-9c61-a3feb2997a11",
+          "phone": "+91784697854",
+          "email": "swagat@gmail.com",
+          "status": "ACTIVE",
+          "roles": [
+            "DOCTOR"
+          ],
+          "createdAt": "2026-11-03T12:22:38.251Z",
+          "updatedAt": "2026-11-03T12:22:38.251Z"
+        },
+        {
+          "id": "a19472f6-7076-45f3-a5b2-163b7c2d1b8d",
+          "phone": "+91784697824",
+          "email": "biswa@gmail.com",
+          "status": "ACTIVE",
+          "roles": [
+            "DOCTOR"
+          ],
+          "createdAt": "2026-11-03T12:20:28.032Z",
+          "updatedAt": "2026-11-03T12:20:28.032Z"
+        },
+        {
+          "id": "07f8d810-dc6f-499d-90fc-d029716610a3",
+          "phone": "+917846917558",
+          "email": "pawani2k20@gmail.com",
+          "status": "ACTIVE",
+          "roles": [
+            "PATIENT"
+          ],
+          "patientProfileId": "0568dae9-97e9-4f9a-9407-926eb705a477",
+          "createdAt": "2026-11-03T12:13:28.411Z",
+          "updatedAt": "2026-11-03T12:13:28.411Z"
+        },
+        {
+          "id": "fda226cc-1c4f-4292-8893-c98aab723e34",
+          "phone": "+16505550999",
+          "email": "test.admin.create@careid.test",
+          "status": "ACTIVE",
+          "roles": [
+            "STAFF",
+            "ADMIN"
+          ],
+          "createdAt": "2026-11-03T09:10:21.385Z",
+          "updatedAt": "2026-11-03T09:11:09.400Z"
+        },
+        {
+          "id": "7ca13aa7-5daf-4661-a131-25fe70bdc350",
+          "phone": "+14155559876",
+          "status": "ACTIVE",
+          "roles": [
+            "PATIENT"
+          ],
+          "createdAt": "2026-11-02T08:36:16.716Z",
+          "updatedAt": "2026-11-02T08:36:16.716Z"
+        },
+        {
+          "id": "96101d74-161b-4455-af97-32c86497d941",
+          "phone": "+14155552671",
+          "status": "ACTIVE",
+          "roles": [
+            "PATIENT"
+          ],
+          "createdAt": "2026-10-29T05:12:28.562Z",
+          "updatedAt": "2026-10-30T13:20:59.495Z"
+        },
+        {
+          "id": "f105909a-a722-42e9-8e7c-ffa0eafa00b1",
+          "phone": "+16505550017",
+          "status": "ACTIVE",
+          "roles": [
+            "PATIENT"
+          ],
+          "createdAt": "2026-10-29T05:01:55.331Z",
+          "updatedAt": "2026-10-29T05:01:55.331Z"
+        },
+        {
+          "id": "a21d9036-e29e-495c-a4be-dfcab91345ca",
+          "phone": "+16505550016",
+          "status": "ACTIVE",
+          "roles": [
+            "PATIENT"
+          ],
+          "createdAt": "2026-10-29T05:01:53.984Z",
+          "updatedAt": "2026-10-29T05:01:53.984Z"
+        },
+        {
+          "id": "9ffbce67-846f-481e-b663-6920b4350630",
+          "phone": "+16505550015",
+          "status": "ACTIVE",
+          "roles": [
+            "PATIENT"
+          ],
+          "createdAt": "2026-10-29T05:01:52.623Z",
+          "updatedAt": "2026-10-29T05:01:52.623Z"
+        },
+        {
+          "id": "08f8bc87-3e2b-4e69-8b27-f32eff363726",
+          "phone": "+16505550014",
+          "status": "ACTIVE",
+          "roles": [
+            "PATIENT"
+          ],
+          "createdAt": "2026-10-29T05:01:51.259Z",
+          "updatedAt": "2026-10-29T05:01:51.259Z"
+        },
+        {
+          "id": "fbbbbf33-5bab-42e3-b9f7-394df31df41f",
+          "phone": "+16505550013",
+          "status": "ACTIVE",
+          "roles": [
+            "PATIENT"
+          ],
+          "createdAt": "2026-10-29T05:01:49.737Z",
+          "updatedAt": "2026-10-29T05:01:49.737Z"
+        },
+        {
+          "id": "6e22059b-4d0f-4499-927a-4febc9ca086a",
+          "phone": "+16505550012",
+          "status": "ACTIVE",
+          "roles": [
+            "PATIENT"
+          ],
+          "createdAt": "2026-10-29T05:01:48.358Z",
+          "updatedAt": "2026-10-29T05:01:48.358Z"
+        },
+        {
+          "id": "d17aeaac-d25b-47e2-b853-85b18f2663f0",
+          "phone": "+16505550011",
+          "status": "ACTIVE",
+          "roles": [
+            "PATIENT"
+          ],
+          "createdAt": "2026-10-29T05:01:22.964Z",
+          "updatedAt": "2026-11-01T17:09:46.332Z"
+        },
+        {
+          "id": "acc149a9-a2e0-4d3d-8e09-db69cd46e435",
+          "phone": "+16505550007",
+          "status": "ACTIVE",
+          "roles": [
+            "FAMILY_MEMBER"
+          ],
+          "createdAt": "2026-10-28T07:40:44.315Z",
+          "updatedAt": "2026-10-28T17:43:14.963Z"
+        },
+        {
+          "id": "2e900c36-0820-4247-aa1d-2f907f3882d9",
+          "phone": "+16505550006",
+          "status": "ACTIVE",
+          "roles": [
+            "STAFF"
+          ],
+          "staffMemberId": "3dcc7842-8570-43a0-9b1c-da174b23432b",
+          "createdAt": "2026-10-28T07:40:44.304Z",
+          "updatedAt": "2026-10-29T05:44:49.501Z"
+        },
+        {
+          "id": "8e8ede62-bb00-41fe-af08-06d707805434",
+          "phone": "+16505550005",
+          "status": "ACTIVE",
+          "roles": [
+            "FACILITY_ADMIN"
+          ],
+          "doctorProfileId": "7c8fd004-cba1-4a72-9db6-437fc6d2baed",
+          "createdAt": "2026-10-28T07:40:44.293Z",
+          "updatedAt": "2026-10-28T09:26:28.354Z"
+        },
+        {
+          "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+          "phone": "+16505550004",
+          "status": "ACTIVE",
+          "roles": [
+            "PATIENT"
+          ],
+          "patientProfileId": "787e5187-7859-4320-bb1a-465a57dd086a",
+          "createdAt": "2026-10-28T07:40:44.284Z",
+          "updatedAt": "2026-10-31T12:48:58.947Z"
+        },
+        {
+          "id": "fa502f2e-332c-4ec0-b6aa-83713216ec88",
+          "phone": "+16505550003",
+          "status": "ACTIVE",
+          "roles": [
+            "DOCTOR"
+          ],
+          "doctorProfileId": "1f06067b-e229-4707-84e2-afa27da2e4cd",
+          "createdAt": "2026-10-28T07:40:44.272Z",
+          "updatedAt": "2026-10-28T09:26:28.328Z"
+        },
+        {
+          "id": "554f1941-f337-4a98-a8b6-d4409e1cfa04",
+          "phone": "+16505550002",
+          "email": "admin@careid.test",
+          "status": "ACTIVE",
+          "roles": [
+            "ADMIN"
+          ],
+          "doctorProfileId": "f7c78c3e-4072-4e15-bce9-fe403442c76b",
+          "createdAt": "2026-10-28T07:40:44.259Z",
+          "updatedAt": "2026-10-28T09:26:28.315Z"
+        },
+        {
+          "id": "bc6f6875-434c-4050-b893-07343cc27986",
+          "phone": "+16505550001",
+          "email": "superadmin@careid.test",
+          "status": "ACTIVE",
+          "roles": [
+            "SUPER_ADMIN"
+          ],
+          "doctorProfileId": "5ab2e715-bf8f-4fd4-98bb-c5166dd7157b",
+          "createdAt": "2026-10-28T07:40:44.227Z",
+          "updatedAt": "2026-10-28T09:26:28.231Z"
+        }
+      ],
+      "total": 20,
+      "page": 1,
+      "limit": 50
+    },
+    "meta": {
+      "timestamp": "2026-11-03T12:25:32.099Z"
+    }
+  }
+}

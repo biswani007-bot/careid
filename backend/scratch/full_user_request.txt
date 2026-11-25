@@ -1,0 +1,383 @@
+<USER_REQUEST>
+# CAREID BACKEND — AUTHENTICATION FIX, COMPLETE VALIDATION & PRODUCTION DEPLOYMENT
+
+Act as a senior NestJS backend engineer, security engineer and DevOps engineer.
+
+Your task is to investigate and fix the CareID backend authentication failure, verify the existing backend implementation, resolve all related issues, and deploy the verified application to the production aaPanel server.
+
+Do not stop after producing an audit report. Implement the necessary fixes, test them, and complete deployment if all release gates pass.
+
+## 1. Project and deployment details
+
+Production project:
+`/www/wwwroot/360api.vnvision.in`
+
+Technology:
+- NestJS 11
+- TypeScript 5.7
+- Prisma 7
+- PostgreSQL 17
+- Node.js 22
+- JWT authentication
+
+Production API:
+`https://360api.vnvision.in`
+
+API prefix:
+`/api/v1`
+
+Production application port:
+`3073`
+
+Local repository:
+`C:\Users\PABANI\Downloads\hvapi-main\hvapi-main`
+
+Frontend currently requests:
+
+`POST /api/v1/auth/password/login`
+
+Current production error:
+
+`404 NotFoundException: Cannot POST /api/v1/auth/password/login`
+
+Health endpoint:
+`GET /api/v1/health` returns HTTP 200.
+
+## 2. Confirmed authentication findings
+
+The deployed authentication controller currently contains:
+
+- POST `/auth/otp/request`
+- POST `/auth/otp/verify`
+- POST `/auth/otp/resend`
+- POST `/auth/token/refresh`
+- POST `/auth/logout`
+- POST `/auth/logout-all`
+- GET `/auth/me`
+- GET `/auth/sessions`
+- GET `/auth/roles`
+- GET `/auth/permissions`
+
+There is no registered `POST /auth/password/login` route.
+
+The existing `AuthService` implements OTP-based authentication, JWT issuance, refresh-token rotation and session management. It does not currently expose a password-login method.
+
+Relevant files:
+
+- `src/modules/auth/presentation/controllers/auth.controller.ts`
+- `src/modules/auth/application/use-cases/auth.service.ts`
+- `src/modules/auth/infrastructure/`
+- `src/modules/auth/presentation/dto/`
+- `prisma/schema.prisma`
+
+An authentication backup has already been created on the server under:
+
+`/www/backup/careid-auth-fix/`
+
+Do not assume that password authentication is already implemented.
+
+## 3. Phase 1 — Investigate existing password infrastructure
+
+Before coding, inspect:
+
+1. Prisma User model and password-related fields.
+2. User repository and authentication repository.
+3. Registration and password-setting workflows.
+4. Existing password hashing algorithm.
+5. Existing account status and verification rules.
+6. JWT payload structure and signing configuration.
+7. Refresh-token and session creation logic.
+8. Login audit logging.
+9. Rate-limiting and brute-force protection.
+10. Existing DTO validation conventions.
+
+Determine whether users actually have stored password hashes.
+
+Identify whether patient, doctor, staff and administrator accounts use the same password authentication mechanism or different authentication policies.
+
+Do not invent password fields, user roles or account status rules.
+
+If password hashes already exist, reuse the existing hashing implementation.
+
+If the database does not support password authentication, determine the smallest safe implementation required. Do not modify the production database schema without a verified requirement and a tested migration.
+
+## 4. Phase 2 — Implement password login
+
+Implement:
+
+`POST /api/v1/auth/password/login`
+
+Use the existing NestJS architecture and authentication conventions.
+
+Requirements:
+
+- Create a properly validated login DTO.
+- Accept the actual credential format expected by the frontend.
+- Verify the password against the stored password hash.
+- Use the existing password hashing library.
+- Never store or log plaintext passwords.
+- Return a generic invalid-credentials response.
+- Check account status and verification requirements.
+- Reject suspended, deleted, blocked or otherwise ineligible accounts according to existing business rules.
+- Preserve existing RBAC.
+- Prevent account enumeration.
+- Apply appropriate login rate limiting.
+- Record successful and failed authentication attempts without logging secrets.
+- Generate JWT access and refresh tokens using the existing AuthService conventions.
+- Create a proper authenticated session.
+- Record IP address and user-agent information.
+- Maintain refresh-token rotation and logout compatibility.
+- Return the response structure expected by the existing frontend API contract.
+
+Do not:
+- Bypass password verification.
+- Issue tokens for nonexistent users.
+- Hardcode credentials.
+- Create a default administrator account.
+- Return fake success responses.
+- Disable existing guards.
+- weaken existing authentication or authorization policies.
+
+If password authentication is intentionally disabled by the approved PRD, do not silently enable it. Report the conflict and identify the required approval.
+
+## 5. Phase 3 — Complete authentication consistency audit
+
+Review all authentication workflows:
+
+- Password login.
+- OTP request.
+- OTP verification.
+- OTP resend.
+- Token refresh.
+- Logout.
+- Logout all devices.
+- Current-user profile.
+- Session listing.
+- Individual session revocation.
+- Other-session revocation.
+- Role retrieval.
+- Permission retrieval.
+
+Verify that all workflows use consistent user identity, session IDs, JWT claims, token expiry and revocation rules.
+
+Check that password login does not break existing OTP login.
+
+Check that inactive or deleted users cannot continue using refresh tokens.
+
+Check for:
+- Token reuse vulnerabilities.
+- Refresh-token replay.
+- Session ownership bypass.
+- Cross-user session revocation.
+- Missing audit logs.
+- Missing authorization guards.
+- Inconsistent response structures.
+- Missing validation.
+- Incorrect API versioning.
+
+Do not add unrelated product features.
+
+## 6. Phase 4 — Complete backend regression audit
+
+Review the existing backend against the approved CareID PRD and the official Postman collection.
+
+Validate the following modules:
+
+- Authentication and identity.
+- Patient.
+- Doctor.
+- Staff.
+- Admin.
+- Facility.
+- Medical records.
+- Consent and clinical authorization.
+- Referrals.
+- Appointments and schedules.
+- OCR.
+- File uploads and downloads.
+- Notifications.
+- Health cards and QR.
+- Family and dependents.
+- Reports.
+- Security and audit logs.
+
+Preserve:
+- Patient ownership.
+- Doctor and facility isolation.
+- RBAC.
+- Explicit patient consent.
+- Referral-scoped clinical access.
+- Existing API contracts.
+- Existing Flutter and React compatibility.
+
+AI must remain limited to OCR. Do not introduce chatbot or LLM functionality.
+
+Do not change frontend applications.
+
+Fix only verified defects. Do not rewrite working modules unnecessarily.
+
+## 7. Phase 5 — Automated verification
+
+Run and record the actual results of:
+
+1. Full Jest test suite.
+2. Authentication unit tests.
+3. Authentication integration tests.
+4. Existing 46-scenario runtime verification suite.
+5. TypeScript production build.
+6. ESLint.
+7. Prisma schema validation.
+8. Prisma migration status.
+9. Authentication endpoint HTTP tests.
+
+Add regression tests for:
+
+- Correct password.
+- Incorrect password.
+- Nonexistent account.
+- Suspended account.
+- Deleted account.
+- Missing password.
+- Invalid request format.
+- Rate-limited login.
+- Successful session creation.
+- Access token generation.
+- Refresh token rotation.
+- Logout and session revocation.
+- Unauthorized access.
+- Existing OTP login compatibility.
+
+Verify the real login endpoint with a controlled test account. Do not use real patient credentials in test output.
+
+All tests must use isolated test data.
+
+Do not claim a test passed unless it actually ran and passed.
+
+## 8. Phase 6 — Database and migration safety
+
+Inspect migration history before deploying.
+
+The previous audit identified a manually synchronized local `_prisma_migrations` checksum for:
+
+`20261030123000_appointment_module_and_state_machine`
+
+Verify the physical migration checksum and migration history.
+
+Requirements:
+
+- Never manually alter production `_prisma_migrations`.
+- Never reset production databases.
+- Never drop tables or columns.
+- Never truncate clinical data.
+- Never run `prisma migrate reset` on production.
+- Test every required migration against an isolated PostgreSQL database.
+- Verify migration order and schema compatibility.
+- Take and verify a production database backup before any approved production migration.
+- Use forward-only migrations.
+- If migration history or schema integrity is uncertain, stop deployment and report the blocker.
+
+Do not apply unnecessary database migrations.
+
+## 9. Phase 7 — Production deployment through aaPanel
+
+After all release gates pass:
+
+1. Identify the actual production process manager and startup configuration.
+2. Confirm the production project directory and port.
+3. Check the current running application version.
+4. Create a timestamped backup of the current deployment.
+5. Preserve the existing `.env` and production configuration.
+6. Build the verified application.
+7. Deploy the new build.
+8. Use the existing aaPanel process manager or actual service configuration.
+9. Do not assume PM2 is being used.
+10. Ensure the production application runs in production mode, not NestJS watch mode.
+11. Preserve port `3073`.
+12. Verify Nginx reverse proxy configuration remains correct.
+13. Verify CORS configuration for the actual approved frontend origins.
+14. Restart only the identified CareID application process.
+15. Check startup logs and health endpoint.
+
+Do not print `.env`, JWT secrets, database passwords, SMS credentials or other secrets in reports or terminal output.
+
+Do not change unrelated applications hosted on this server.
+
+If deployment requires a database migration that has not been safely validated, stop and report the exact approval required.
+
+## 10. Phase 8 — Production smoke tests
+
+After deployment, test:
+
+`GET https://360api.vnvision.in/api/v1/health`
+
+Then test:
+
+`POST https://360api.vnvision.in/api/v1/auth/password/login`
+
+Use a controlled test account and valid credentials.
+
+Verify:
+
+- Correct credentials return the expected successful response.
+- Incorrect credentials return the expected authentication error.
+- Suspended accounts cannot log in.
+- The JWT is valid.
+- The refresh-token flow works.
+- Logout invalidates the session.
+- Existing OTP login remains functional.
+- Existing API routes continue working.
+- No unexpected 404, 500 or startup errors occur.
+
+Never expose access or refresh tokens in the final report.
+
+## 11. Deployment rollback plan
+
+Before deployment, preserve the previous known-good build and configuration.
+
+If the new deployment fails:
+
+- Restore the previous build.
+- Restore the previous application startup configuration.
+- Restart only the CareID application.
+- Verify the health endpoint.
+- Report the failure and rollback result.
+
+Do not attempt destructive database rollback.
+
+## 12. Final completion report
+
+Provide a factual report containing:
+
+1. Exact root cause of the original 404.
+2. Files changed.
+3. Password-login implementation details.
+4. Authentication security improvements.
+5. Test counts and actual results.
+6. Migration verification.
+7. Build and lint results.
+8. Deployment timestamp.
+9. Actual process manager and runtime mode.
+10. Production health-check result.
+11. Password-login HTTP test result.
+12. Rollback status.
+13. Remaining blockers, if any.
+
+Clearly distinguish between:
+- Implemented.
+- Locally tested.
+- Deployed.
+- Verified on production.
+
+## FINAL EXECUTION RULE
+
+Complete the work in one coordinated implementation and deployment workflow. Avoid unnecessary separate phases or repeated audit-only reports.
+
+Do not stop after finding the missing route.
+
+However, production deployment is permitted only after the security, test, backup and migration gates pass. If a critical security defect, missing credential, unverified migration or failed test prevents safe deployment, fix it where possible and clearly report what still blocks release.
+
+The final objective is a working, secure CareID backend with a functioning password-login API and all existing authentication and clinical authorization workflows preserved.
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-10-30T16:28:51+05:30.
+</ADDITIONAL_METADATA>

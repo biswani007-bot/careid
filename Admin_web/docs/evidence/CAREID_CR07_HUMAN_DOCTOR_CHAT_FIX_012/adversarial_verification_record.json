@@ -1,0 +1,120 @@
+{
+  "checks": [
+    {
+      "name": "Sidebar items presence",
+      "pass": true,
+      "detail": "Sidebar items found: Dashboard, Patients, Referrals, Office Chat, Reports, Profile"
+    },
+    {
+      "name": "Sidebar link navigates to /chat",
+      "pass": true,
+      "detail": "Current URL: http://localhost:5173/chat"
+    },
+    {
+      "name": "Office Chat active pill highlighting",
+      "pass": true,
+      "detail": "Classes: w-full h-11 flex items-center gap-3 px-4 rounded-full text-sm transition-colors bg-[#3f1d8b] text-[#ab8efd] font-semibold active, computedBg: rgb(63, 29, 139)"
+    },
+    {
+      "name": "Direct navigation to /chat loads properly",
+      "pass": true,
+      "detail": "Loaded without redirect or error"
+    },
+    {
+      "name": "Browser refresh on /chat preserves console",
+      "pass": true,
+      "detail": "Refreshed cleanly"
+    },
+    {
+      "name": "Legacy /communication/chat alias supported",
+      "pass": true,
+      "detail": "Loaded successfully on legacy route"
+    },
+    {
+      "name": "Search input present in modal",
+      "pass": true,
+      "detail": "Found modal search input"
+    },
+    {
+      "name": "Search filtering by \"Eleanor\" isolates Eleanor Vance",
+      "pass": true,
+      "detail": "Options: Eleanor Vance (CAREID-BATCH2-001)"
+    },
+    {
+      "name": "Search filtering by \"John\" isolates John Doe",
+      "pass": true,
+      "detail": "Options: John Doe (PT-CAREID-2026-0004)"
+    },
+    {
+      "name": "Search with no matching patient shows \"No matching patients\" and empty value",
+      "pass": true,
+      "detail": "Options: No matching patients, Value: \"\""
+    },
+    {
+      "name": "Clearing search restores all patient options",
+      "pass": true,
+      "detail": "Restored count: 2"
+    },
+    {
+      "name": "New conversation created and active in header",
+      "pass": true,
+      "detail": "Active subject: \"Adversarial Audit Thread 1795512737707\""
+    },
+    {
+      "name": "Chat message composer box is visible and accessible",
+      "pass": true,
+      "detail": "Message box found"
+    },
+    {
+      "name": "Message sent via Enter key appears in bubble stream",
+      "pass": true,
+      "detail": "Found message: Enter key message 1795512741367"
+    },
+    {
+      "name": "Message sent via Send button appears in bubble stream",
+      "pass": true,
+      "detail": "Found message: Send button message 1795512743534"
+    },
+    {
+      "name": "Quick reply templates rendered",
+      "pass": true,
+      "detail": "Pills: Manage Templates, Appointment Confirmation, Medication Adherence..."
+    },
+    {
+      "name": "Manage Templates modal opens cleanly",
+      "pass": true,
+      "detail": "Modal mounted"
+    },
+    {
+      "name": "New Conversation modal auto-opens when navigating with unthreaded patientId",
+      "pass": true,
+      "detail": "Modal automatically opened for unthreaded patientId"
+    },
+    {
+      "name": "Canceling modal with patientId in query cleanly dismisses without loop",
+      "pass": true,
+      "detail": "Modal remained dismissed after clicking Cancel"
+    },
+    {
+      "name": "Veterinary sidebar includes Office Chat",
+      "pass": true,
+      "detail": "Veterinary items: Dashboard, Pet Directory, Pet Health Vault, Clinical Encounters, Immunizations, Office Chat"
+    },
+    {
+      "name": "Veterinary Doctor Office Chat navigates to /chat",
+      "pass": true,
+      "detail": "URL: http://localhost:5173/chat"
+    },
+    {
+      "name": "Cross-role conversation access boundary enforced (HTTP 403 Forbidden)",
+      "pass": true,
+      "detail": "Vet accessing Human Doctor thread returned HTTP 403"
+    },
+    {
+      "name": "Mobile viewport (768px) displays functional chat console",
+      "pass": true,
+      "detail": "Chat console rendered cleanly at 768px width"
+    }
+  ],
+  "failures": []
+}

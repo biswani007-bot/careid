@@ -1,0 +1,14 @@
+{
+  "releaseName": "CareID_Master_Backend_Staging_Candidate_2026-11-18_R4",
+  "releaseVersion": "R4-Final-Remediation",
+  "targetEnvironment": "Staging",
+  "stagingHost": "vmi2673411",
+  "stagingPath": "/www/wwwroot/360api.vnvision.in",
+  "generatedAt": "2026-11-18T05:54:58.802Z",
+  "nodeVersion": "v24.14.0",
+  "platform": "win32",
+  "containsSourceCode": true,
+  "containsCompiledDist": true,
+  "containsPrismaMigrations": true,
+  "summary": "CareID Master Backend R4 Staging Release Candidate with OCR IDOR remediations, zero synthetic fallbacks, and aligned Prisma dependencies."
+}

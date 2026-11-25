@@ -1,0 +1,2369 @@
+{
+  "auth": {
+    "title": "CareID",
+    "portalName": "Admin Portal",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "admin@careid.com",
+    "emailRequired": "Email address is required.",
+    "emailInvalid": "Please enter a valid email address.",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "••••••••",
+    "passwordRequired": "Password is required.",
+    "forgotPassword": "Forgot Password?",
+    "rememberMe": "Remember me for 30 days",
+    "signIn": "Sign In",
+    "signingIn": "Signing In...",
+    "secureEnterprise": "Secure Enterprise Connection",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "adminSupport": "Admin Support",
+    "loginMethodEmail": "Email & Password",
+    "loginMethodOtp": "Mobile Number & OTP",
+    "phoneLabel": "Mobile Phone Number",
+    "phonePlaceholder": "+1 650 555 0001",
+    "sendOtp": "Send OTP Code",
+    "sendingOtp": "Sending OTP...",
+    "resendOtp": "Resend OTP",
+    "resendIn": "Resend code in {{seconds}}s",
+    "otpCodeLabel": "6-Digit Verification Code",
+    "otpCodePlaceholder": "Enter 6-digit OTP",
+    "otpSentNotice": "A 6-digit verification code has been sent to your mobile phone.",
+    "verifyAndSignIn": "Verify & Sign In",
+    "verifyingOtp": "Verifying Code...",
+    "validationPassed": "Authentication verified with CareID backend. Redirecting to Dashboard...",
+    "invalidCredentials": "Invalid email or password. Please verify your credentials and try again.",
+    "forbiddenAccess": "Access denied. Administrator privileges (SUPER_ADMIN or ADMIN) are required to access the Admin Portal.",
+    "validationFailed": "Validation failed for email or password.",
+    "serverError": "The authentication server returned an error. Please try again later.",
+    "networkError": "Network error: Unable to connect to authentication server. Please check your network connection.",
+    "unexpectedError": "An unexpected error occurred during authentication. Please try again.",
+    "endpointUnavailable": "Authentication endpoint (POST /api/v1/auth/password/login) was not found on the backend server (404 Not Found). Administrator access requires backend deployment of this endpoint.",
+    "logoutSuccess": "You have been logged out successfully.",
+    "sessionRestored": "Authenticated session verified with CareID backend."
+  },
+  "dashboard": {
+    "title": "Dashboard Overview",
+    "subtitle": "System status and key metrics across CareID.",
+    "exportData": "Export Data",
+    "newRecord": "New Record",
+    "securityCompliance": "Security & Compliance",
+    "nav": {
+      "dashboard": "Dashboard",
+      "users": "Users",
+      "patients": "Patients",
+      "doctors": "Doctors",
+      "facilities": "Facilities",
+      "healthRecords": "Health Records",
+      "ocrVerification": "OCR Verification",
+      "ocrProcessingQueue": "Processing Queue",
+      "ocrRejected": "Rejected Documents",
+      "ocrHistory": "Review History",
+      "referrals": "Referrals",
+      "referralsOverview": "Overview",
+      "referralsMonitoring": "Monitoring & Queue",
+      "referralAudit": "Referral Audit",
+      "reports": "Reports",
+      "systemSettings": "System Settings",
+      "auditLogs": "Audit Logs",
+      "support": "Support & Notifications",
+      "reviewPendingOcr": "Review Pending OCR",
+      "logout": "Logout"
+    },
+    "header": {
+      "addDoctor": "Add Doctor",
+      "approveOcr": "Approve OCR",
+      "reviewReferral": "Review Referral",
+      "generateReport": "Generate Report"
+    },
+    "kpi": {
+      "verifiedPatients": "VERIFIED PATIENTS",
+      "totalPatients": "VERIFIED PATIENTS",
+      "verifiedDoctors": "VERIFIED DOCTORS",
+      "totalDoctors": "VERIFIED DOCTORS",
+      "activeUsers": "ACTIVE USERS (NOW)",
+      "pendingOcr": "PENDING OCR",
+      "pendingReferrals": "PENDING REFERRALS",
+      "systemApi": "SYSTEM API",
+      "attentionRequired": "Attention Required",
+      "warning": "Warning",
+      "healthy": "Healthy",
+      "live": "Live",
+      "uptime": "Uptime",
+      "activeSessionsNote": "Active Sessions",
+      "sessions": "Sessions",
+      "metricUnavailable": "Metric Unavailable",
+      "allVerified": "All Verified",
+      "upToDate": "Up to Date",
+      "degraded": "Degraded"
+    },
+    "tasks": {
+      "title": "High Priority Tasks",
+      "subtitle": "Tasks requiring immediate administrative action.",
+      "viewAll": "View All",
+      "headers": {
+        "taskType": "TASK TYPE",
+        "entity": "ENTITY",
+        "submitted": "SUBMITTED",
+        "status": "STATUS",
+        "action": "ACTION"
+      },
+      "review": "Review",
+      "process": "Process",
+      "approve": "Approve"
+    },
+    "quickActions": {
+      "title": "Quick Actions",
+      "addDoctor": "Add Doctor",
+      "approveOcr": "Approve OCR",
+      "reviewReferral": "Review Referral",
+      "generateReport": "Generate Report"
+    },
+    "systemLogs": {
+      "title": "System Logs",
+      "viewFull": "View Full Audit Log"
+    },
+    "emptyTasksTitle": "No Pending Priority Tasks",
+    "emptyTasksDesc": "All OCR verification documents and clinical care referrals are currently up to date.",
+    "emptyLogs": "No audit log activities recorded yet.",
+    "refresh": "Refresh Live Data"
+  },
+  "users": {
+    "title": "User Directory",
+    "subtitle": "Manage all system users, roles, and access credentials.",
+    "addUser": "Add User",
+    "newRecord": "New Record",
+    "breadcrumbs": {
+      "home": "Home",
+      "users": "Users"
+    },
+    "support": "Support",
+    "adminConsole": "Admin Console",
+    "kpi": {
+      "totalUsers": "TOTAL USERS",
+      "active": "ACTIVE",
+      "inactive": "INACTIVE",
+      "pending": "PENDING"
+    },
+    "filters": {
+      "allUsers": "All Users",
+      "admins": "Admins",
+      "doctors": "Doctors",
+      "patients": "Patients",
+      "active": "Active",
+      "inactive": "Inactive",
+      "pending": "Pending",
+      "verified": "Verified"
+    },
+    "searchPlaceholder": "Search Name, Email, Mobile, HV-ID...",
+    "table": {
+      "userDetails": "USER DETAILS",
+      "role": "ROLE",
+      "contact": "CONTACT",
+      "status": "STATUS",
+      "verification": "VERIFICATION",
+      "created": "CREATED",
+      "lastLogin": "LAST LOGIN",
+      "actions": "Actions",
+      "noResults": "No users found matching your filters."
+    },
+    "pagination": {
+      "showing": "Showing {{start}} to {{end}} of {{total}} results",
+      "rowsPerPage": "Rows per page:"
+    },
+    "modal": {
+      "title": "Add New User",
+      "subtitle": "Create a new user record with role and access status.",
+      "name": "Full Name",
+      "namePlaceholder": "e.g. Dr. Jane Doe",
+      "email": "Email Address",
+      "emailPlaceholder": "j.doe@careid.health",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+1 (555) 012-3456",
+      "role": "Role",
+      "status": "Status",
+      "verification": "Verification",
+      "cancel": "Cancel",
+      "submit": "Create User",
+      "saving": "Creating..."
+    }
+  },
+  "userDetails": {
+    "title": "User Details",
+    "breadcrumbs": {
+      "users": "Users",
+      "details": "Details"
+    },
+    "header": {
+      "searchPlaceholder": "Search...",
+      "support": "Support",
+      "adminConsole": "Admin Console"
+    },
+    "actions": {
+      "resetPassword": "Reset Password",
+      "suspend": "Suspend",
+      "reactivate": "Reactivate",
+      "editProfile": "Edit Profile"
+    },
+    "profileCard": {
+      "healthVaultId": "Health Vault ID",
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "accountInfo": {
+      "title": "Account Information",
+      "email": "Email Address",
+      "phone": "Mobile Number",
+      "createdDate": "Created Date",
+      "lastLogin": "Last Login"
+    },
+    "security": {
+      "title": "Security Overview",
+      "password": "Password",
+      "passwordSub": "Last changed 30 days ago",
+      "twoFactor": "2FA Status",
+      "twoFactorSub": "Active (Authenticator App)",
+      "sessions": "Active Sessions",
+      "sessionsSub": "3 sessions active",
+      "devices": "Trusted Devices",
+      "devicesSub": "2 devices verified"
+    },
+    "modals": {
+      "editProfileTitle": "Edit Profile",
+      "editProfileSubtitle": "Update user profile and contact details.",
+      "nameLabel": "Full Name",
+      "emailLabel": "Email Address",
+      "phoneLabel": "Mobile Number",
+      "roleLabel": "Role",
+      "statusLabel": "Status",
+      "saveChanges": "Save Changes",
+      "saving": "Saving...",
+      "cancel": "Cancel",
+      "resetPasswordTitle": "Reset Password",
+      "resetPasswordMessage": "A secure password reset link will be dispatched to {{email}}. Do you wish to continue?",
+      "resetPasswordConfirm": "Send Reset Link",
+      "suspendTitle": "Suspend User Account",
+      "suspendMessage": "Are you sure you want to suspend access for {{name}}? They will be prevented from logging into the portal until reactivated.",
+      "suspendConfirm": "Suspend Account",
+      "reactivateTitle": "Reactivate User Account",
+      "reactivateMessage": "Are you sure you want to restore access for {{name}}?",
+      "reactivateConfirm": "Reactivate Account"
+    },
+    "toasts": {
+      "resetSuccess": "Password reset email sent to {{email}}.",
+      "suspendSuccess": "User account for {{name}} has been suspended.",
+      "reactivateSuccess": "User account for {{name}} has been reactivated.",
+      "updateSuccess": "Profile for {{name}} updated successfully."
+    }
+  },
+  "createUser": {
+    "breadcrumb": "Add User",
+    "title": "Create New User",
+    "subtitle": "Enter the details below to provision a new account in the health administration system.",
+    "searchPlaceholder": "Search patients, doctors, or ID...",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "e.g., Jane Doe",
+    "email": "Email Address",
+    "emailPlaceholder": "name@hospital.org",
+    "mobile": "Mobile Number",
+    "mobilePlaceholder": "+1 (555) 000-0000",
+    "role": "System Role",
+    "roleSelect": "Select a role...",
+    "roleDoctor": "Doctor",
+    "rolePatient": "Patient",
+    "roleAdmin": "Admin",
+    "temporaryPassword": "Temporary Password",
+    "generatePassword": "Generate Password",
+    "accountStatus": "Account Status",
+    "accountStatusSubtitle": "Activate this user immediately upon creation.",
+    "cancel": "Cancel",
+    "saveUser": "Save User",
+    "saving": "Saving User...",
+    "successTitle": "User Created Successfully",
+    "successMessage": "New account for {{name}} has been provisioned.",
+    "errorTitle": "Error Creating User",
+    "validation": {
+      "nameRequired": "Full Name is required (minimum 2 characters)",
+      "emailRequired": "Valid email address is required",
+      "roleRequired": "Please select a system role",
+      "passwordRequired": "Password is required (minimum 6 characters)"
+    },
+    "alternativeView": "ALTERNATIVE VIEW: EMPTY STATE",
+    "emptyState": {
+      "title": "No Users Found",
+      "description": "We couldn't find any users matching your current search criteria. Try adjusting your filters or add a new user to the system.",
+      "noUsersTitle": "No Users Yet",
+      "noUsersDescription": "Get started by provisioning the first user account in the system.",
+      "clearFilters": "Clear Filters",
+      "addNewUser": "Add New User"
+    }
+  },
+  "userActionDialogs": {
+    "deactivate": {
+      "title": "Deactivate User?",
+      "description": "Are you sure you want to deactivate {{name}}? Access to the platform will be immediately suspended.",
+      "confirm": "Deactivate",
+      "cancel": "Cancel",
+      "loading": "Deactivating..."
+    },
+    "activate": {
+      "title": "Activate User?",
+      "description": "Are you sure you want to reactivate access for {{name}}? Access to the platform will be restored immediately.",
+      "confirm": "Activate",
+      "cancel": "Cancel",
+      "loading": "Activating..."
+    },
+    "resetPassword": {
+      "title": "Reset Password",
+      "description": "Send password reset instructions to {{email}}?",
+      "confirm": "Send Reset Link",
+      "cancel": "Cancel",
+      "loading": "Sending..."
+    },
+    "snackbar": {
+      "passwordResetSuccess": "User password has been reset successfully.",
+      "deactivateSuccess": "User account for {{name}} has been deactivated.",
+      "activateSuccess": "User account for {{name}} has been reactivated.",
+      "dismiss": "DISMISS"
+    },
+    "screen": {
+      "heading": "User Action Dialogs",
+      "subtitle": "Interactive modals for user suspension, access revocation, and credential reset flows.",
+      "openDeactivate": "Preview Deactivate Dialog",
+      "openReset": "Preview Reset Password Dialog",
+      "openActivate": "Preview Activate Dialog",
+      "showSnackbar": "Trigger Success Snackbar"
+    }
+  },
+  "patients": {
+    "title": "Patients Directory",
+    "subtitle": "Manage and verify patient records within the CareID ecosystem.",
+    "breadcrumbs": {
+      "admin": "Admin",
+      "patients": "Patients Directory"
+    },
+    "accountActions": {
+      "breadcrumb": "Patient Account Actions",
+      "pageTitle": "Admin Portal — Patient Account Actions",
+      "pageSubtitle": "Interactive dialogs for patient deactivation, credential reset, and profile modification matching Figma Node 20:2149.",
+      "openDeactivate": "Preview Deactivate Dialog",
+      "openReset": "Preview Reset Password Dialog",
+      "openEdit": "Preview Edit Profile Dialog",
+      "openReactivate": "Preview Reactivate Dialog",
+      "deactivateCardDesc": "Trigger destructive confirmation dialog to suspend patient portal access and automated billing.",
+      "resetCardDesc": "Dispatch a secure recovery link to the patient's registered email with session invalidation option.",
+      "editCardDesc": "Modify patient first name, last name, email address, date of birth, phone number, and photo.",
+      "reactivateCardDesc": "Restore active account status and reinstate portal access for deactivated patient records."
+    },
+    "actions": {
+      "exportList": "Export List",
+      "addPatient": "Add Patient",
+      "searchPlaceholder": "Search by patient name, Vault ID, phone, or demographics...",
+      "sortBy": "Sort by:",
+      "newest": "Newest Registered",
+      "oldest": "Oldest Registered",
+      "nameAsc": "Name (A-Z)",
+      "vaultIdAsc": "Vault ID (A-Z)",
+      "filterStatus": "All Status",
+      "filterDate": "Date Range",
+      "filterGender": "Gender"
+    },
+    "kpi": {
+      "totalPatients": "Total Patients",
+      "verifiedPatients": "Verified Patients",
+      "pendingVerification": "Pending Verification",
+      "inactiveAccounts": "Inactive Accounts",
+      "fromLastMonth": "+12% from last month",
+      "totalBaseRatio": "87% of total base",
+      "requiresReview": "Requires manual OCR review",
+      "archivedOrLocked": "Archived or locked"
+    },
+    "table": {
+      "patient": "Patient",
+      "vaultId": "Vault ID",
+      "demographics": "Demographics",
+      "registered": "Registered",
+      "verification": "Verification",
+      "status": "Status",
+      "links": "Links",
+      "actions": "Actions",
+      "verified": "Verified",
+      "pending": "Pending",
+      "active": "Active",
+      "inactive": "Inactive",
+      "viewDetails": "View Patient Details",
+      "toggleStatus": "Toggle Account Status",
+      "exportRecord": "Export Patient Record",
+      "verifyOcr": "Review OCR Documents"
+    },
+    "pagination": {
+      "showing": "Showing {{start}} to {{end}} of {{total}} patients"
+    },
+    "emptyState": {
+      "noResultsTitle": "No Patients Found",
+      "noResultsDesc": "No patient records matched your active filters or search query.",
+      "clearFilters": "Clear All Filters"
+    },
+    "toast": {
+      "exportStarted": "Patient directory export has started.",
+      "statusUpdated": "Status updated for {{name}}."
+    }
+  },
+  "patientProfile": {
+    "title": "Patient Profile",
+    "breadcrumbs": {
+      "patients": "Patients",
+      "profile": "Profile"
+    },
+    "header": {
+      "searchPlaceholder": "Search patients, doctors...",
+      "support": "Support",
+      "adminConsole": "Admin Console"
+    },
+    "actions": {
+      "resetAccount": "Reset Account",
+      "suspend": "Suspend",
+      "reactivate": "Reactivate",
+      "editProfile": "Edit Profile"
+    },
+    "coreCard": {
+      "activeVerified": "Active Verified",
+      "pendingVerification": "Pending Verification",
+      "inactive": "Inactive",
+      "dob": "DOB",
+      "gender": "Gender",
+      "bloodGroup": "Blood Group"
+    },
+    "accountDetails": {
+      "title": "Account Details",
+      "registered": "Registered",
+      "verificationLevel": "Verification Level",
+      "lastLogin": "Last Login"
+    },
+    "personalInfo": {
+      "title": "Personal Information",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "primaryAddress": "Primary Address",
+      "emergencyContact": "Emergency Contact",
+      "viewAuthForm": "View Auth Form"
+    },
+    "vaultSummary": {
+      "title": "Vault Summary",
+      "totalRecords": "Total Records",
+      "encryptedAndStored": "Encrypted & Stored",
+      "latestUpload": "Latest Upload",
+      "pendingOcr": "Pending OCR",
+      "vaxPassStatus": "Vax Pass Status",
+      "documents": "{{count}} Documents",
+      "upToDate": "Up to date"
+    },
+    "familySharing": {
+      "title": "Family & Sharing",
+      "dependents": "Dependents ({{count}})",
+      "dataSharingConsent": "Data Sharing Consent",
+      "granted": "Granted",
+      "revoked": "Revoked",
+      "activeProviderLinks": "Active Provider Links",
+      "facilities": "{{count}} Facilities"
+    },
+    "modals": {
+      "editProfileTitle": "Edit Patient Profile",
+      "editTitle": "Edit Patient Profile",
+      "editProfileSubtitle": "Update demographic and contact details for this patient.",
+      "changePhoto": "Change Photo",
+      "photoRequirements": "JPG, GIF or PNG. Max size of 800K",
+      "firstNameLabel": "First Name",
+      "lastNameLabel": "Last Name",
+      "nameLabel": "Full Name",
+      "dobLabel": "Date of Birth",
+      "bloodGroupLabel": "Blood Group",
+      "emailLabel": "Email Address",
+      "phoneLabel": "Phone Number",
+      "addressLine1Label": "Address Line 1",
+      "addressLine2Label": "Address Line 2 (Optional)",
+      "cityStateZipLabel": "City, State, Zip",
+      "statusLabel": "Account Status",
+      "discardChanges": "Discard Changes",
+      "saveProfile": "Save Profile",
+      "savingProfile": "Saving Profile...",
+      "saveChanges": "Save Changes",
+      "saving": "Saving...",
+      "cancel": "Cancel",
+      "resetTitle": "Reset Patient Password",
+      "resetMessage": "Send a password reset link to the patient's registered email address. This will invalidate their current session.",
+      "registeredEmailLabel": "Registered Email",
+      "forceLogoutLabel": "Force immediate logout across all devices",
+      "sendResetLink": "Send Reset Link",
+      "resetAccountTitle": "Reset Patient Account",
+      "resetAccountMessage": "Are you sure you want to reset credentials and trigger a recovery link for {{name}}?",
+      "resetAccountConfirm": "Reset Account",
+      "deactivateTitle": "Deactivate Patient Record",
+      "deactivateMessagePrefix": "Are you sure you want to deactivate the record for ",
+      "deactivateMessageSuffix": "This action will suspend access to their patient portal and halt automated billing cycles. This action can be reversed by an administrator later.",
+      "deactivateConfirm": "Deactivate",
+      "suspendTitle": "Suspend Patient Account",
+      "suspendMessage": "Are you sure you want to suspend access for {{name}}? Access to CareID records will be temporarily locked.",
+      "suspendConfirm": "Suspend Patient",
+      "reactivateTitle": "Reactivate Patient Record",
+      "reactivateMessagePrefix": "Are you sure you want to reactivate the record for ",
+      "reactivateMessageSuffix": "This action will restore access to their patient portal and automated billing cycles.",
+      "reactivateMessage": "Are you sure you want to restore active access for {{name}}?",
+      "reactivateConfirm": "Reactivate"
+    },
+    "toasts": {
+      "resetSuccess": "Account recovery link dispatched to {{email}}.",
+      "suspendSuccess": "Patient record for {{name}} has been deactivated.",
+      "reactivateSuccess": "Patient record for {{name}} has been reactivated.",
+      "updateSuccess": "Patient profile for {{name}} updated successfully."
+    }
+  },
+  "patientRegistration": {
+    "title": "Register New Patient",
+    "subtitle": "Enter the details below to create a new patient profile in the CareID system.",
+    "breadcrumbs": {
+      "admin": "Admin",
+      "patients": "Patients Directory",
+      "register": "Register New Patient"
+    },
+    "personalDetails": {
+      "title": "Personal Details",
+      "photoTitle": "Patient Photo",
+      "photoSubtitle": "Recommended size: 400x400px. JPG, PNG.",
+      "uploadOverlay": "Upload",
+      "changePhoto": "Change Photo",
+      "removePhoto": "Remove Photo",
+      "firstNameLabel": "First Name",
+      "lastNameLabel": "Last Name",
+      "dobLabel": "Date of Birth",
+      "genderLabel": "Gender",
+      "genderPlaceholder": "Select gender",
+      "genderOptions": {
+        "female": "Female",
+        "male": "Male",
+        "other": "Other",
+        "preferNotToSay": "Prefer not to say"
+      }
+    },
+    "contactDetails": {
+      "title": "Contact Details",
+      "emailLabel": "Email Address",
+      "phoneLabel": "Phone Number",
+      "zipLabel": "ZIP / Postal Code",
+      "addressLabel": "Residential Address"
+    },
+    "actions": {
+      "cancel": "Cancel",
+      "createAccount": "Create Account",
+      "submitting": "Creating Account...",
+      "clearForm": "Clear Form"
+    },
+    "validation": {
+      "firstNameRequired": "First name is required (minimum 2 characters)",
+      "lastNameRequired": "Last name is required (minimum 2 characters)",
+      "dobRequired": "Please enter a valid date of birth",
+      "genderRequired": "Please select a gender",
+      "emailRequired": "A valid email address is required",
+      "phoneRequired": "Phone number is required (minimum 6 digits)",
+      "zipRequired": "ZIP / Postal code is required",
+      "addressRequired": "Residential address is required (minimum 5 characters)"
+    },
+    "successModal": {
+      "title": "Patient Registered Successfully",
+      "message": "A new patient profile for {{name}} has been created and registered in CareID.",
+      "vaultIdLabel": "Assigned Vault ID",
+      "viewProfile": "View Patient Profile",
+      "registerAnother": "Register Another Patient",
+      "backToDirectory": "Return to Patients Directory"
+    }
+  },
+  "doctors": {
+    "breadcrumbs": {
+      "admin": "Admin",
+      "doctors": "Doctors"
+    },
+    "title": "Doctor Directory",
+    "actions": {
+      "addDoctor": "Add Doctor",
+      "searchPlaceholder": "Search records, IDs, or patients...",
+      "allSpecialties": "All Specialties",
+      "allHospitals": "All Hospitals",
+      "clearFilters": "Clear All Filters"
+    },
+    "kpis": {
+      "totalDoctors": "TOTAL DOCTORS",
+      "verified": "VERIFIED",
+      "pending": "PENDING",
+      "suspended": "SUSPENDED"
+    },
+    "filters": {
+      "all": "All",
+      "verified": "Verified",
+      "pending": "Pending",
+      "suspended": "Suspended"
+    },
+    "table": {
+      "name": "Name",
+      "hvId": "HV ID",
+      "license": "License",
+      "specialty": "Specialty",
+      "status": "Status",
+      "actions": "Actions",
+      "verified": "Verified",
+      "pending": "Pending",
+      "suspended": "Suspended",
+      "viewDetails": "View Doctor Profile",
+      "editDoctor": "Edit Doctor Info",
+      "suspendDoctor": "Suspend Account",
+      "activateDoctor": "Activate Account",
+      "exportRecord": "Export Profile"
+    },
+    "emptyState": {
+      "noResultsTitle": "No Doctors Found",
+      "noResultsDesc": "No doctor records matched your search query or active filters.",
+      "clearFilters": "Reset Filters"
+    },
+    "toasts": {
+      "addDoctorInfo": "Doctor registration workflow initiated.",
+      "statusUpdated": "{{name}} account status updated to {{nextStatus}}."
+    },
+    "addDoctor": {
+      "title": "Add Doctor Profile",
+      "subtitle": "Register a new medical professional in the system.",
+      "uploadPhoto": "Upload Photo",
+      "photoHint": "JPG or PNG, max 2MB",
+      "passwordCopied": "Temporary password copied to clipboard.",
+      "sections": {
+        "personal": "Personal Details",
+        "professional": "Professional Details",
+        "hospital": "Hospital Assignment",
+        "documents": "Verification Documents",
+        "security": "Account Security"
+      },
+      "documentsSubtitle": "Upload necessary documentation for compliance.",
+      "fields": {
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "gender": "Gender",
+        "dob": "Date of Birth",
+        "license": "Medical License Number",
+        "issuingBody": "Issuing Body",
+        "licenseExpiry": "License Expiry Date",
+        "experienceYears": "Experience (Years)",
+        "specialty": "Primary Specialty",
+        "subSpecialty": "Sub-specialty (Optional)",
+        "hospital": "Primary Hospital",
+        "department": "Department",
+        "officeNumber": "Office Number",
+        "email": "Email Address",
+        "phone": "Mobile Number",
+        "temporaryPassword": "Temporary Password (Auto-generated)"
+      },
+      "docs": {
+        "medicalLicense": "Medical License",
+        "govId": "Government ID",
+        "affiliation": "Affiliation Letter"
+      },
+      "actions": {
+        "cancel": "Cancel",
+        "submit": "Register Doctor",
+        "submitting": "Registering Doctor..."
+      }
+    },
+    "profile": {
+      "breadcrumbs": {
+        "admin": "Admin",
+        "doctors": "Doctors"
+      },
+      "title": "Doctor Profile",
+      "actions": {
+        "editProfile": "Edit Profile",
+        "resetPassword": "Reset Password",
+        "suspendDoctor": "Suspend Doctor",
+        "activateDoctor": "Activate Doctor"
+      },
+      "card": {
+        "careId": "Care ID",
+        "medicalLicense": "Medical License",
+        "status": "Status",
+        "verified": "Verified",
+        "pending": "Pending",
+        "suspended": "Suspended"
+      },
+      "accountInfo": {
+        "title": "Account Info",
+        "registrationDate": "REGISTRATION DATE",
+        "lastLogin": "LAST LOGIN",
+        "twoFactorStatus": "2FA STATUS",
+        "enabled": "Enabled",
+        "disabled": "Disabled",
+        "accountStatus": "ACCOUNT STATUS",
+        "active": "Active",
+        "suspended": "Suspended"
+      },
+      "professionalDetails": {
+        "title": "Professional Details",
+        "medicalCouncilReg": "Medical Council Registration",
+        "licenseExpiry": "License Expiry",
+        "yearsExperience": "Years of Experience",
+        "primarySpecialty": "Primary Specialty",
+        "subSpecialty": "Sub-specialty",
+        "primaryHospital": "Primary Hospital",
+        "primaryFacility": "Primary Facility",
+        "department": "Department"
+      },
+      "contactInfo": {
+        "title": "Contact Information",
+        "emailAddress": "Email Address",
+        "mobile": "Mobile",
+        "officeAddress": "Office Address"
+      },
+      "documentVerification": {
+        "title": "Document Verification",
+        "medicalLicense": "Medical License",
+        "identityDoc": "Identity Doc",
+        "affiliationLetter": "Affiliation Letter",
+        "view": "View",
+        "timelineTitle": "Verification Timeline",
+        "approved": "Approved",
+        "approvedDesc": "Mar 16, 2022 by Admin User",
+        "underReview": "Under Review",
+        "underReviewDesc": "Mar 15, 2022",
+        "docsSubmitted": "Documents Submitted",
+        "docsSubmittedDesc": "Mar 15, 2022 via Portal"
+      },
+      "dialogs": {
+        "editTitle": "Edit Doctor Profile",
+        "suspendTitle": "Suspend Doctor Account",
+        "suspendConfirm": "Are you sure you want to suspend Dr. {{name}}? They will temporarily lose access to the medical portal.",
+        "suspendBtn": "Suspend Doctor",
+        "activateTitle": "Activate Doctor Account",
+        "activateConfirm": "Are you sure you want to activate Dr. {{name}}? Their full access will be restored.",
+        "activateBtn": "Activate Doctor",
+        "resetPasswordTitle": "Reset Doctor Password",
+        "resetPasswordConfirm": "A secure password reset link will be sent to {{email}}.",
+        "resetPasswordBtn": "Send Reset Link",
+        "viewDocTitle": "Document Preview",
+        "cancel": "Cancel",
+        "close": "Close",
+        "save": "Save Changes"
+      },
+      "toasts": {
+        "suspended": "Dr. {{name}}'s account has been suspended.",
+        "activated": "Dr. {{name}}'s account has been activated.",
+        "profileUpdated": "Doctor profile for Dr. {{name}} updated successfully.",
+        "passwordResetSent": "Password reset instructions sent to {{email}}.",
+        "viewDoc": "Viewing document: {{docName}}"
+      }
+    },
+    "managementActions": {
+      "breadcrumb": "Actions & States",
+      "pageTitle": "Doctor Management Actions & States",
+      "pageSubtitle": "Interactive administrative dialogs, credential resets, account suspension, and verification states matching Figma Node 20:3306.",
+      "emptyState": {
+        "title": "You're all caught up!",
+        "subtitle": "No Pending Verifications",
+        "reviewDirectory": "Review Doctor Directory"
+      },
+      "modals": {
+        "suspend": {
+          "title": "Suspend Doctor Account",
+          "confirm": "Are you sure you want to suspend {{name}}? This will disable access to the Doctor App and Portal immediately.",
+          "cancel": "Cancel",
+          "action": "Suspend",
+          "activateTitle": "Activate Doctor Account",
+          "activateConfirm": "Are you sure you want to activate {{name}}? Access to the Doctor App and Portal will be restored immediately.",
+          "activateAction": "Activate"
+        },
+        "reset": {
+          "title": "Reset Doctor Password",
+          "instruction": "Send a temporary password reset link to:",
+          "cancel": "Cancel",
+          "sendLink": "Send Link"
+        }
+      },
+      "cards": {
+        "suspendCardTitle": "Suspend / Activate Doctor",
+        "suspendCardDesc": "Disables access to the Doctor App and CareID Portal immediately or restores account access.",
+        "openSuspend": "Preview Suspend Dialog",
+        "resetCardTitle": "Reset Doctor Password",
+        "resetCardDesc": "Dispatches a temporary password reset link directly to the doctor's verified email address.",
+        "openReset": "Preview Reset Dialog",
+        "editCardTitle": "Edit Doctor Profile",
+        "editCardDesc": "Modifies clinical specialization, licensing data, and hospital facility assignments.",
+        "openEdit": "Preview Edit Dialog",
+        "emptyStateTitle": "All Caught Up State",
+        "emptyStateDesc": "Displays verification completion state when no doctor credential verifications are pending.",
+        "openEmpty": "Preview Caught Up State"
+      },
+      "controls": {
+        "selectDoctor": "Active Doctor Context:",
+        "currentStatus": "Account Status:",
+        "toggleDualView": "Figma Dual-Modal Layout",
+        "toggleEmptyState": "Figma Caught-Up View",
+        "showDirectory": "Back to Directory"
+      }
+    }
+  },
+  "facilities": {
+    "directory": {
+      "title": "Facility Directory",
+      "subtitle": "Manage registered clinical hospital campuses, surgical centers, and regional health facilities.",
+      "addFacility": "Add Facility",
+      "searchPlaceholder": "Search by facility name, ID, city, or license...",
+      "filterType": "All Types",
+      "filterStatus": "All Statuses",
+      "table": {
+        "facility": "Facility Name",
+        "code": "Facility ID",
+        "type": "Type",
+        "location": "Location",
+        "license": "License / NPI",
+        "admin": "Administrator",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "empty": "No facilities found matching your criteria.",
+      "stats": {
+        "total": "Total Facilities",
+        "active": "Active Campuses",
+        "pending": "Pending Accreditation",
+        "staging": "Draft / Staging"
+      }
+    },
+    "create": {
+      "breadcrumbs": {
+        "admin": "Admin",
+        "facilities": "Facilities",
+        "addFacility": "Add Facility"
+      },
+      "heading": "Add New Facility",
+      "subtitle": "Register and onboard a new clinical hospital campus, surgical center, or branch to the Care ID ecosystem.",
+      "cancel": "Cancel",
+      "saveFacility": "Save Facility",
+      "saving": "Saving...",
+      "saveAndContinue": "Save & Continue to Facility Details",
+      "discardChanges": "Discard Changes",
+      "ledgerNotice": "Facility will be registered on the Care ID cryptographic ledger upon save.",
+      "card1": {
+        "title": "General Facility Information",
+        "subtitle": "State registry credentials and clinical taxonomy",
+        "tier1Badge": "Tier 1 Verification",
+        "legalName": "Facility Legal Name",
+        "legalNameHint": "As shown on state license",
+        "legalNamePlaceholder": "e.g., Mount Sinai West Ambulatory Center",
+        "facilityCode": "Facility Code / ID Prefix",
+        "autoAssigned": "AUTO-ASSIGNED",
+        "facilityType": "Facility Type",
+        "license": "Clinical License & Reg. Number",
+        "licensePlaceholder": "State Lic #NY-HOSP-88319",
+        "npi": "NPI / Institutional Provider ID",
+        "npiPlaceholder": "10-digit NPI e.g. 1982049102"
+      },
+      "card4": {
+        "title": "Governance & Initial Status",
+        "subtitle": "Cryptographic authority mapping and access tier",
+        "statusLabel": "Operational Status Designation",
+        "statusActive": "Active",
+        "statusActiveDesc": "Ready for immediate staff onboarding",
+        "statusPending": "Pending Review",
+        "statusPendingDesc": "Awaiting document accreditation",
+        "statusDraft": "Draft / Staging",
+        "statusDraftDesc": "Config sandbox isolation",
+        "adminLabel": "Initial Facility Admin Assignment",
+        "capabilitiesLabel": "Department Capabilities"
+      },
+      "card2": {
+        "title": "Location & Address",
+        "subtitle": "Physical coordinates & routing",
+        "address1": "Street Address Line 1",
+        "address1Placeholder": "e.g. 1000 10th Avenue",
+        "address2": "Street Address Line 2",
+        "address2Placeholder": "Suite / Pavilion / Interventional Wing",
+        "city": "City",
+        "cityPlaceholder": "New York",
+        "state": "State / Province",
+        "statePlaceholder": "NY",
+        "postalCode": "Postal / ZIP Code",
+        "postalCodePlaceholder": "10019",
+        "country": "Country",
+        "geoValidation": "Geographic Validation",
+        "gpsLocked": "GPS Locked",
+        "coordinates": "40.7712° N, 73.9876° W (Manhattan District)"
+      },
+      "card3": {
+        "title": "Contact & Operations",
+        "subtitle": "Direct lines, triage & dispatch",
+        "mainPhone": "Facility Main Telephone",
+        "mainPhonePlaceholder": "+1 (212) 523-4000",
+        "emergencyPhone": "Emergency / Triage",
+        "emergencyPhonePlaceholder": "+1 (212) 523-4911",
+        "priorityBadge": "Priority",
+        "email": "Official Administrative Email",
+        "emailPlaceholder": "admissions.west@careid-health.org",
+        "billing": "Billing & Fiduciary Contact",
+        "billingPlaceholder": "billing-ny@careid-health.org",
+        "timezone": "Facility Operating Timezone"
+      },
+      "hipaa": {
+        "badge": "HIPAA & FHIR R4 READY",
+        "text": "Upon creation, an institutional root public key and FHIR interoperability endpoints are automatically provisioned. Staff accounts will immediately inherit localized RBAC privileges.",
+        "sha": "SHA-256 Vault Hash Verification"
+      },
+      "validation": {
+        "legalNameRequired": "Facility Legal Name is required (at least 3 characters)",
+        "facilityTypeRequired": "Please select a facility type",
+        "licenseRequired": "Clinical license number is required",
+        "npiRequired": "10-digit NPI / Institutional Provider ID is required",
+        "npiInvalid": "NPI must be a valid 10-digit numeric identifier",
+        "addressRequired": "Street address line 1 is required",
+        "cityRequired": "City is required",
+        "stateRequired": "State or province is required",
+        "postalCodeRequired": "Postal or ZIP code is required",
+        "countryRequired": "Country is required",
+        "phoneRequired": "Facility main telephone is required",
+        "emailRequired": "Official administrative email is required",
+        "emailInvalid": "Please enter a valid email address"
+      },
+      "toast": {
+        "success": "Facility {{name}} successfully registered on Care ID cryptographic ledger."
+      }
+    },
+    "details": {
+      "backToDirectory": "Back to Facility Directory",
+      "activeAndAccredited": "Active & Accredited",
+      "fhirLive": "EHR FHIR v4.0.1 Live",
+      "tier1Hub": "Tier-1 Hub",
+      "editFacility": "Edit Facility",
+      "mapDoctor": "Map Doctor",
+      "mapStaff": "Map Staff",
+      "assignAdmin": "Assign Admin",
+      "activeDoctors": "Active Doctors",
+      "medicalStaff": "Medical Staff",
+      "operatingSuites": "Operating Suites",
+      "clinicalOperations": "Clinical Operations",
+      "tabs": {
+        "overview": "Overview & Capacity",
+        "mappedDoctors": "Mapped Doctors",
+        "assignedStaff": "Assigned Staff",
+        "governance": "Facility Admin & Governance"
+      },
+      "nexus": {
+        "title": "Facility Information & Contact Nexus",
+        "hqVerified": "HQ Verified",
+        "locationTitle": "PHYSICAL LOCATION",
+        "timezoneTitle": "TIMEZONE & INAUGURATION",
+        "switchboard": "Main Switchboard",
+        "trauma": "Trauma & Emergency",
+        "encryptedMail": "Direct Encrypted Mail"
+      },
+      "doctors": {
+        "title": "Mapped Doctors",
+        "total": "Total",
+        "subtitle": "Accredited attending, surgical, and specialist practitioners linked to Care ID credentialing.",
+        "viewAll": "View all Doctors",
+        "mapDoctorBtn": "Map Doctor",
+        "table": {
+          "doctorName": "Doctor Name",
+          "specialty": "Specialty",
+          "license": "License #",
+          "clinicalRole": "Clinical Role",
+          "status": "Status",
+          "actions": "Actions"
+        },
+        "empty": "No accredited doctors mapped to this facility."
+      },
+      "staff": {
+        "title": "Assigned Clinical Staff",
+        "active": "Active",
+        "subtitle": "Specialized nurses, perfusionists, surgical techs, and cath suite navigators.",
+        "viewAll": "View all Staff",
+        "mapStaffBtn": "Map Staff",
+        "table": {
+          "staffName": "Staff Name",
+          "role": "Role Designation",
+          "department": "Department / Suite",
+          "shift": "Shift Roster",
+          "status": "Status",
+          "actions": "Actions"
+        },
+        "empty": "No clinical staff assigned to this facility."
+      },
+      "governance": {
+        "officerLabel": "FACILITY GOVERNANCE OFFICER",
+        "activeAuth": "Active & Authenticated",
+        "assignedBy": "Assigned by Super Admin",
+        "extension": "Internal Extension",
+        "reassignBtn": "Change / Reassign Admin"
+      },
+      "capacity": {
+        "title": "Capacity & Infrastructure",
+        "healthy": "Healthy",
+        "suitesAllocation": "Cath & Surgical Suites Allocation",
+        "utilization": "Utilization",
+        "totalBays": "Total Certified Bays",
+        "ehrPipeline": "EHR Core Pipeline",
+        "dataEncryption": "Data Encryption",
+        "networkSync": "Care ID Network Sync",
+        "subSecond": "Sub-second"
+      },
+      "audit": {
+        "title": "Facility Activity & Audit",
+        "viewEvents": "View Full Audit Events"
+      },
+      "notFound": {
+        "title": "Facility Not Found",
+        "desc": "The healthcare facility record with ID \"{{id}}\" does not exist or has been removed.",
+        "backBtn": "Back to Facility Directory"
+      },
+      "editModal": {
+        "title": "Edit Facility Details",
+        "subtitle": "Update operational and administrative credentials for this facility.",
+        "cancel": "Cancel",
+        "save": "Save Changes",
+        "success": "Facility details updated successfully."
+      },
+      "mapModal": {
+        "title": "Map Doctor to Facility",
+        "subtitle": "Select an accredited doctor and assign clinical operating privileges.",
+        "selectDoctor": "Select Doctor",
+        "privilegeLevel": "Clinical Privilege Level",
+        "department": "Department Assignment",
+        "cancel": "Cancel",
+        "confirm": "Confirm & Map Doctor",
+        "success": "Doctor successfully mapped to facility."
+      }
+    },
+    "edit": {
+      "breadcrumb": "Edit Facility",
+      "backToDetails": "Back to Facility Details",
+      "cancel": "Cancel",
+      "saveChanges": "Save Changes",
+      "saveAndReturn": "Save Changes & Return to Details",
+      "discardChanges": "Discard Changes",
+      "lastModified": "Last modified: {{date}} by Super Admin",
+      "title": "Edit Facility — {{name}}",
+      "subtitle": "Update institutional credentials, geographic location, operational capabilities, and status for Facility #{{code}}.",
+      "accreditation": {
+        "badge": "ACCREDITATION CLASS",
+        "title": "Tier 1 Academic Center",
+        "verified": "Joint Commission Gold Seal Verified"
+      },
+      "sections": {
+        "general": {
+          "title": "General Facility Information",
+          "subtitle": "Federally registered designations and registry identifiers",
+          "step": "Step 1 of 4",
+          "legalName": "Facility Legal Name",
+          "legalNameHint": "Must mirror official CMS Form 855A filing",
+          "code": "Facility Code / ID",
+          "codeHint": "System-locked globally unique ID",
+          "type": "Facility Type",
+          "license": "Clinical License & Regulatory Number",
+          "npi": "NPI / Institutional Provider ID"
+        },
+        "location": {
+          "title": "Location & Address",
+          "subtitle": "Public navigation endpoints and ambulance bay ingress",
+          "gisVerified": "GIS Verified",
+          "street1": "Street Address Line 1",
+          "street2": "Street Address Line 2",
+          "city": "City",
+          "state": "State / Province",
+          "postalCode": "Postal / ZIP Code",
+          "country": "Country"
+        },
+        "contact": {
+          "title": "Contact & Operational Communications",
+          "subtitle": "Direct encrypted endpoints, triage channels, and routing hubs",
+          "switchboard": "Main Switchboard Telephone",
+          "emergency": "Emergency / Triage Line",
+          "adminEmail": "Official Administrative Email",
+          "medicalEmail": "Direct Encrypted Medical Mail",
+          "timezone": "Facility Operating Timezone"
+        },
+        "media": {
+          "title": "Campus Imagery & Documentation",
+          "subtitle": "Attached verified photographs of facility bay and ingress points",
+          "uploadBtn": "Upload Media",
+          "caption1": "Main Ingress Pavilion",
+          "caption2": "Cath Lab Room 3A",
+          "caption3": "Emergency Ambulance Bay"
+        },
+        "status": {
+          "title": "Operational Status",
+          "subtitle": "Live clinical eligibility",
+          "activeTitle": "Active & Accredited",
+          "activeDesc": "Admitting patients and processing EHR sync",
+          "holdTitle": "Maintenance Hold",
+          "holdDesc": "System audits or licensing updates pending",
+          "stagingTitle": "Draft / Staging",
+          "stagingDesc": "Initial credentialing in progress",
+          "capabilitiesTitle": "DEPARTMENT CAPABILITIES"
+        },
+        "danger": {
+          "title": "Danger Zone",
+          "subtitle": "Irreversible governance actions",
+          "deactivate": "Deactivate Facility",
+          "deactivateDesc": "Temporarily suspends scheduling, maintains historical medical records and audit trails.",
+          "delete": "Delete Facility",
+          "deleteDesc": "Only available if 0 active patient encounters and 0 mapped staff are associated."
+        }
+      },
+      "toast": {
+        "saved": "Facility \"{{name}}\" details successfully updated and cryptographically verified.",
+        "deactivated": "Facility operating status changed to Maintenance Hold.",
+        "discarded": "Form reset to current saved values."
+      }
+    },
+    "staffMapping": {
+      "breadcrumb": "Staff & Governance Mapping",
+      "title": "Staff Mapping & Governance Assignment",
+      "subtitle": "Administrators can manage staff-to-facility associations, departmental clinical wings, and administrative governance assignments.",
+      "returnBtn": "Return to Facility Details",
+      "tabs": {
+        "clinicalStaff": "Map Clinical Staff (Active)",
+        "recordsCount": "{{count}} Live Records",
+        "adminAssign": "Assign Facility Administrator"
+      },
+      "banner": {
+        "activeStatus": "ACTIVE STATUS",
+        "assignedStaff": "ASSIGNED STAFF",
+        "live": "Live",
+        "currentAdmin": "CURRENT ADMINISTRATOR"
+      },
+      "filters": {
+        "searchPlaceholder": "Search nurses, technologists, navigators by name, employee ID, or role...",
+        "staffDisplayed": "{{count}} Staff Displayed",
+        "roleFilter": "Role Filter:",
+        "roles": {
+          "all": "All Roles",
+          "circulatingNurse": "Circulating Nurse (RN)",
+          "cathLabTech": "Cath Lab Tech (RCIS)",
+          "recoveryRN": "Recovery RN (BSN)",
+          "radiationTech": "Radiation Tech",
+          "clinicalNavigator": "Clinical Navigator"
+        }
+      },
+      "actionSubbar": {
+        "discard": "Discard Changes",
+        "auditNotice": "All mappings logged to Care ID audit trail #AUD-FAC-8891",
+        "confirm": "Confirm All Mappings & Return to Facility Details"
+      },
+      "table": {
+        "colIdentity": "STAFF IDENTITY & ID",
+        "colDesignation": "CLINICAL DESIGNATION",
+        "colSuite": "ASSIGNED SUITE / WING",
+        "colRoster": "ROSTER STATE",
+        "colActions": "ACTIONS",
+        "unassigned": "Currently Unassigned",
+        "mapAction": "Map to Wing",
+        "reassignAction": "Reassign",
+        "unassignAction": "Unassign",
+        "states": {
+          "active": "Active",
+          "standby": "Standby Pool",
+          "dual": "Dual-Roster"
+        },
+        "footer": "Showing {{count}} of {{total}} personnel mapped to {{name}} #{{code}}",
+        "page": "Page {{page}} of {{totalPages}}"
+      },
+      "adminPanel": {
+        "title": "Facility Administrator Assignment",
+        "subtitle": "Assign a certified healthcare administrator (MHA/MBA) to oversee facility governance, clinical quotas, and cryptographic audit credentials.",
+        "activeHead": "ACTIVE DESIGNATED HEAD",
+        "vaultKey": "RSA-2048 VAULT",
+        "tokenLabel": "CARE ID CRYPTOGRAPHIC TOKEN",
+        "selectAdmin": "Select Verified Admin User from Pool",
+        "delegationScope": "Delegation Scope",
+        "tier1Authority": "TIER-1 AUTHORITY",
+        "scope1": "Facility configuration & hardware vault keys",
+        "scope2": "Doctor credentialing & clinical staff quotas",
+        "scope3": "Statutory audit trails & transfer protocols",
+        "securityNoticeTitle": "Security Notice",
+        "securityNoticeDesc": "Assigning a new Facility Admin will transfer primary operational alerts and cryptographic approval gates. All pending transfers will re-verify under the recipient's institutional key.",
+        "saveAdminBtn": "Save Facility Admin Assignment",
+        "saving": "Saving...",
+        "keyContactsTitle": "Pavilion Key Contacts",
+        "directoryLink": "Directory"
+      },
+      "modals": {
+        "mapStaffTitle": "Map Staff Member to Wing",
+        "reassignStaffTitle": "Reassign Clinical Suite & Wing",
+        "staffMember": "Staff Member",
+        "suiteWing": "Assigned Suite / Wing",
+        "shiftRoster": "Shift Roster",
+        "rosterState": "Roster State",
+        "unassignConfirmTitle": "Move Staff to Standby Pool?",
+        "unassignConfirmDesc": "Are you sure you want to remove {{name}} from {{suite}}? They will be marked as Standby Pool.",
+        "confirmUnassign": "Unassign to Standby Pool",
+        "cancel": "Cancel",
+        "save": "Save Assignment"
+      },
+      "toast": {
+        "adminSaved": "Facility Administrator successfully updated to {{name}}.",
+        "staffMapped": "Staff member {{name}} successfully mapped to {{suite}}.",
+        "staffUnassigned": "{{name}} unassigned and moved to Standby Pool.",
+        "discarded": "Staff mapping changes have been discarded.",
+        "allConfirmed": "All staff mappings successfully confirmed and logged to audit trail."
+      }
+    },
+    "mapDoctorScreen": {
+      "breadcrumb": "Map Doctors",
+      "breadcrumbFacilities": "Facilities",
+      "returnBtn": "Return to Facility Details",
+      "badge": "CLINICAL PRIVILEGES WORKSPACE • ACCREDITATION ENGINE V4.2",
+      "title": "Map Doctors to Facility",
+      "subtitle": "Credential certified medical doctors, assign operating suite clinical privileges, and register institutional dual-practice agreements.",
+      "quota": {
+        "label": "QUOTA CAPACITY",
+        "ratio": "24 / 30 Specialists",
+        "activeBadge": "Live Capacity Verified"
+      },
+      "filters": {
+        "searchPlaceholder": "Search doctors by name, NPI, or clinical specialization...",
+        "specialty": "Specialty",
+        "allSpecialties": "All Specialties",
+        "affiliation": "Affiliation",
+        "allDoctors": "All Doctors",
+        "onlyUnmapped": "Available / Unassigned",
+        "onlyMapped": "Already Credentialed"
+      },
+      "directory": {
+        "title": "Accredited Practitioner Directory",
+        "badge": "{{count}} Available Live Real-time State",
+        "colDoctor": "DOCTOR & IDENTIFIERS",
+        "colSpecialty": "PRIMARY SPECIALTY",
+        "colFacility": "PRIMARY FACILITY",
+        "npi": "NPI",
+        "lic": "LIC",
+        "currentlyMapped": "Currently Mapped",
+        "requested": "Dual-Privilege Requested",
+        "available": "Available Immediately",
+        "eligible": "Dual-Privilege Eligible",
+        "primaryLead": "Primary Lead",
+        "associateAttending": "Associate Attending",
+        "selected": "Selected for Privileging",
+        "empty": "No accredited doctors match your search or filter criteria."
+      },
+      "drawer": {
+        "stageConfig": "CONFIGURATION STAGE",
+        "stageReady": "READY TO COMMIT",
+        "stageMapped": "ALREADY CREDENTIALED",
+        "title": "Privilege Specification",
+        "subtitle": "Configure clinical privileges and operating suite access.",
+        "noDoctorSelected": "Select a doctor from the directory to configure clinical privileges.",
+        "doctorCard": {
+          "npiRecord": "NPI Record",
+          "primaryFacility": "Primary Facility",
+          "unassigned": "Unassigned / Independent",
+          "verified": "Verified Active Practitioner"
+        },
+        "alreadyMappedAlert": {
+          "title": "Doctor Already Credentialed",
+          "desc": "This doctor already holds an active clinical mapping at {{facilityName}}. Duplicate privilege mappings are prohibited under standard governance."
+        },
+        "form": {
+          "privilegeLevel": "Clinical Privilege Level",
+          "privilegeLevelPlaceholder": "Select privilege tier...",
+          "privilegeLevelRequired": "Please select a clinical privilege level",
+          "attendingSurgeon": "Attending Surgeon (Full Operating Rights)",
+          "associateAttending": "Associate Attending (Supervised Cases)",
+          "consultingSpecialist": "Consulting Specialist (Evaluation & Rounding)",
+          "courtesyStaff": "Courtesy / Dual-Privilege Staff",
+          "operatingSuites": "Operating Suite Privileges",
+          "suiteCathLab": "Cath Lab Suites 1–4",
+          "suiteCathLabDesc": "Angiography & Stent",
+          "suiteInterventional": "Interventional OR 1–2",
+          "suiteInterventionalDesc": "Hybrid Open Suites",
+          "department": "Department Assignment",
+          "departmentPlaceholder": "e.g. Vascular & Interventional Services",
+          "effectiveDate": "Effective Start Date",
+          "dateHelp": "Immediately active after institutional sign-off",
+          "complianceTitle": "Compliance & Audit Note",
+          "complianceDesc": "This credential action initiates an automated HL7 credential notification to Mount Sinai Credentialing Board and updates state NPI registry associations."
+        },
+        "actions": {
+          "confirm": "Confirm & Map Doctor to Facility",
+          "confirming": "Processing Credentialing...",
+          "alreadyMappedBtn": "Already Credentialed at this Facility",
+          "cancel": "Cancel Selection"
+        }
+      },
+      "toast": {
+        "success": "Dr. {{name}} has been successfully mapped to {{facilityName}} with {{privilegeLevel}} privileges.",
+        "duplicateError": "Dr. {{name}} is already mapped to this facility.",
+        "error": "Failed to map doctor. Please try again."
+      }
+    }
+  },
+  "healthRecords": {
+    "title": "Health Records",
+    "subtitle": "View and manage patient health records across all clinical categories (Medical, Dental, Vision).",
+    "breadcrumbs": {
+      "adminPortal": "Admin Portal",
+      "healthRecords": "Health Records",
+      "allRecords": "All Records"
+    },
+    "actions": {
+      "filterPresets": "Filter Presets",
+      "exportCsv": "Export CSV",
+      "exportingCsv": "Exporting...",
+      "addRecord": "Add Record",
+      "forceSync": "Force Sync",
+      "allDetails": "All Details",
+      "view": "View",
+      "close": "Close",
+      "download": "Download File",
+      "copyId": "Copy Record ID"
+    },
+    "tabs": {
+      "all": "All Records",
+      "medical": "Medical Records",
+      "dental": "Dental Records",
+      "vision": "Vision Records"
+    },
+    "subnav": {
+      "medical": "Medical Records",
+      "dental": "Dental Records",
+      "vision": "Vision Records"
+    },
+    "federated": {
+      "label": "Federated Nodes Active",
+      "status": "3/3 Operational",
+      "bannerText": "Federated Health Records Repository — Real-time synchronization active across Medical, Dental, and Vision clinical nodes.",
+      "syncId": "Sync ID: #FED-99201-LIVE",
+      "syncedToast": "Federated health records successfully synchronized across all 3 nodes."
+    },
+    "search": {
+      "placeholder": "Search patient, patient ID, or record ID...",
+      "dateRange": "Oct 01 - Oct 24, 2026",
+      "reset": "Reset Filters"
+    },
+    "table": {
+      "recordNameAndId": "RECORD NAME & ID",
+      "patient": "PATIENT",
+      "patientId": "PATIENT ID",
+      "category": "CATEGORY",
+      "recordType": "RECORD TYPE",
+      "providerFacility": "PROVIDER / FACILITY",
+      "recordDate": "RECORD DATE",
+      "status": "STATUS",
+      "actions": "ACTIONS"
+    },
+    "status": {
+      "verified": "Verified",
+      "pendingVerification": "Pending Verification",
+      "rejected": "Rejected"
+    },
+    "pagination": {
+      "showing": "Showing {{start}}–{{end}} of {{total}} records",
+      "rows": "Rows:"
+    },
+    "empty": {
+      "title": "No health records found matching your filters",
+      "subtitle": "Try adjusting your search query, clinical category, date range, or status filters.",
+      "reset": "Clear All Filters"
+    },
+    "modal": {
+      "title": "Clinical Record Inspection",
+      "patientDetails": "Patient & Demographic Nexus",
+      "clinicalSummary": "Clinical Overview & Findings",
+      "technicalDetails": "Verification & Audit Metadata",
+      "ocrScore": "OCR / Biometric Confidence",
+      "statusBadge": "Verification State"
+    },
+    "medical": {
+      "title": "Medical Records",
+      "nodeBadge": "Live Repository",
+      "subtitle": "Federated medical health records across connected clinical repositories",
+      "searchPlaceholder": "Search patient, patient ID, diagnosis, doctor, or record ID...",
+      "kpiTotal": "Total Medical Records",
+      "kpiVerifiedSub": "HIPAA & Clinical Compliance",
+      "kpiPendingSub": "Awaiting OCR / clinical signoff",
+      "info": "Showing comprehensive medical repository records, lab reports, inpatient summaries, and clinical encounters across federated health systems."
+    },
+    "dental": {
+      "title": "Dental Records",
+      "nodeBadge": "Live Dental Node",
+      "subtitle": "Federated dental records and clinical charts across connected nodes",
+      "searchPlaceholder": "Search patient, patient ID, diagnosis, dentist, or record ID...",
+      "kpiTotal": "Total Dental Records",
+      "kpiVerifiedSub": "ADA & Clinical Compliance",
+      "kpiPendingSub": "Awaiting OCR / clinical signoff",
+      "info": "Showing odontogram records, bitewing & panoramic radiographs, periodontal charts, and endodontic operative summaries."
+    },
+    "vision": {
+      "title": "Vision Records",
+      "nodeBadge": "Live Vision Node",
+      "subtitle": "Federated vision health records and diagnostic repositories",
+      "searchPlaceholder": "Search patient, patient ID, diagnosis, optometrist, or record ID...",
+      "kpiTotal": "Total Vision Records",
+      "kpiVerifiedSub": "Clinical & Optometric Standard",
+      "kpiPendingSub": "Awaiting OCR / ophthalmologist signoff",
+      "info": "Showing visual acuity exams, OCT retinal scans, fundus photography, tonometry reports, and ophthalmic prescription records."
+    },
+    "badges": {
+      "dependent": "DEPENDENT"
+    },
+    "kpi": {
+      "verified": "Verified",
+      "pending": "Pending Verification",
+      "processing": "Processing"
+    },
+    "filters": {
+      "categoryAll": "Category: All",
+      "patientAll": "Patient: All Patients",
+      "providerAll": "Provider: All Providers",
+      "facilityAll": "Facility: All Facilities",
+      "statusAll": "Status: All Statuses",
+      "patient": "PATIENT",
+      "facility": "FACILITY",
+      "recordType": "RECORD TYPE",
+      "status": "STATUS",
+      "dateRange": "DATE RANGE",
+      "providerDoctor": "PROVIDER / DOCTOR",
+      "providerDentist": "PROVIDER / DENTIST",
+      "providerOptometrist": "PROVIDER / OPTOMETRIST"
+    },
+    "syncBanner": {
+      "title": "Live Federated Sync: Node {{hash}} is connected and operational.",
+      "integrity": "Record Integrity Hash: {{hash}} • Cryptographically verified across 3 nodes."
+    },
+    "toast": {
+      "recordCreated": "New record successfully indexed.",
+      "filtersReset": "All filters reset to defaults.",
+      "exportSuccess": "Exported records to CSV successfully.",
+      "statusUpdated": "Record status updated successfully.",
+      "syncSuccess": "Federated node synced successfully."
+    }
+  },
+  "recordDetails": {
+    "title": "Health Record Detail",
+    "schemaBadge": "Shared Care ID Schema v2.4",
+    "subtitle": "Unified clinical inspection, document preview, and verification audit for patient health records.",
+    "backToList": "Back to {{category}} Records",
+    "backToRecords": "Back to Records",
+    "downloadOriginal": "Download Original File",
+    "auditLog": "Audit Log",
+    "printExport": "Print / Export Summary",
+    "disciplineLens": "DISCIPLINE LENS:",
+    "allRecords": "All Records",
+    "medical": "Medical",
+    "dental": "Dental",
+    "dentalActive": "Dental (Active)",
+    "vision": "Vision",
+    "contextInfo": "Currently viewing: {{category}} Record • {{recordId}}. Switch category preview to inspect Medical or Vision schemas.",
+    "patientNexus": "Patient & Demographic Nexus",
+    "careId": "Care ID:",
+    "dob": "DOB:",
+    "age": "Age {{age}}",
+    "gender": "Gender:",
+    "female": "Female",
+    "male": "Male",
+    "type": "Type:",
+    "healthcareProvider": "HEALTHCARE PROVIDER",
+    "facilityLocation": "FACILITY LOCATION",
+    "recordDate": "Record Date:",
+    "uploaded": "Uploaded:",
+    "hipaaLedger": "HIPAA Audit Ledger Confirmed",
+    "adminRoute": "Administrative Route:",
+    "previewTitle": "{{title}} Preview",
+    "dicomBadge": "DICOM 3.0",
+    "zoomIn": "Zoom In",
+    "zoomOut": "Zoom Out",
+    "rotateLeft": "Rotate Left",
+    "rotateRight": "Rotate Right",
+    "contrast": "Toggle Contrast / Invert",
+    "fullscreen": "Toggle Fullscreen",
+    "openHighRes": "Open High-Res DICOM",
+    "inspectAnnotations": "Inspect Annotations ({{count}})",
+    "zeroKnowledge": "Zero-Knowledge Encrypted In-Transit",
+    "standardizationTitle": "Unified Multi-Discipline Schema Standardization",
+    "harmonizerBadge": "Care ID Harmonizer",
+    "standardizationDesc": "Care ID's single, unified record detail architecture dynamically displays Medical, Dental, and Vision clinical payloads into the same standardized verification layout without schema friction or duplicate user flows:",
+    "medicalPayloads": "Medical Payloads",
+    "medicalDesc": "Blood Chemistry Panels, Lipid Profiles, EHR CDA/FHIR extracts, Cardiology ECG sweeps.",
+    "dentalPayloads": "Dental Payloads (Active)",
+    "dentalDesc": "Orthopantomograms (OPG), Bitewing radiographs, 3D CBCT models, Periodontal charts.",
+    "visionPayloads": "Vision Payloads",
+    "visionDesc": "Optical Coherence Tomography (OCT), Fundus Auto-fluorescence, Visual Field Perimetry.",
+    "authorityBoundary": "Administrative Authority Boundary",
+    "authorityDesc": "Pure administrative inspection & verification routing. No medical alterations or diagnosis generation permitted.",
+    "rerunOcr": "Re-run OCR",
+    "flagClarification": "Flag for Clarification",
+    "metadataTitle": "Record Metadata",
+    "complianceBadge": "ADA & HIPAA Compliant",
+    "modality": "CLINICAL MODALITY",
+    "categoryLens": "CATEGORY LENS",
+    "formatSize": "FILE FORMAT & SIZE",
+    "resolution": "RESOLUTION",
+    "cryptoHash": "Cryptographic Hash (SHA-256)",
+    "uploadGateway": "Upload Gateway Source",
+    "retentionPolicy": "Retention Lifecycle Policy",
+    "encryptionStandard": "Encryption Standard",
+    "ocrTitle": "OCR Extraction & Validation",
+    "confidence": "{{percent}}% Confidence",
+    "processedEngine": "PROCESSED ENGINE",
+    "schemaMatch": "SCHEMA MATCH",
+    "jawAlignment": "Jaw Alignment",
+    "dentitionCount": "Dentition Count",
+    "impactedMolars": "Impacted Molars",
+    "restorations": "Restorations",
+    "viewOcrResults": "View OCR Results & Raw Extraction",
+    "auditTitle": "Immutable Audit Timeline",
+    "ledgerSubtitle": "Append-Only Ledger",
+    "viewAuditCertificate": "View Full Cryptographic Audit Certificate",
+    "exportCsv": "Export as CSV",
+    "noAuditEvents": "No audit trail events available for this record.",
+    "loading": "Loading record details and audit trail...",
+    "notFoundTitle": "Record Not Found",
+    "notFoundDesc": "The requested health record could not be found or has been archived.",
+    "toasts": {
+      "downloadStarted": "Downloading original file: {{file}}",
+      "ocrTriggered": "OCR re-run queued with high-priority neural pipeline.",
+      "recordFlagged": "Record flagged for clinical clarification.",
+      "exportStarted": "Audit trail exported to CSV."
+    }
+  },
+  "recordUpload": {
+    "title": "Upload & Manage Records",
+    "subtitle": "Securely ingest patient data or manage existing archival records.",
+    "searchPlaceholder": "Search records...",
+    "workspaceTitle": "Upload Workspace",
+    "dragDropTitle": "Drag & Drop files here",
+    "dragDropSubtitle": "Support for PDF, JPG, PNG, and DICOM formats up to 15MB per file.",
+    "browseFiles": "Browse Files",
+    "currentUploads": "CURRENT UPLOADS ({{count}})",
+    "duplicateWarningTitle": "Duplicate detection: Similar record exists for Patient ID #{{patientId}}.",
+    "reviewDetails": "Review Details",
+    "dismiss": "Dismiss",
+    "recentUploads": "Recent Uploads",
+    "noRecentRecords": "No Records Found",
+    "noRecentSubtitle": "You haven't uploaded any records in the current session.",
+    "metadataForm": {
+      "title": "Record Metadata Association",
+      "patientId": "Patient Care ID",
+      "patientIdPlaceholder": "CID-9205-1289",
+      "category": "Clinical Category",
+      "recordType": "Record Type",
+      "recordTypePlaceholder": "e.g., Full Panoramic OPG X-Ray",
+      "provider": "Healthcare Provider",
+      "providerPlaceholder": "e.g., Dr. Michael Chen",
+      "facility": "Facility",
+      "facilityPlaceholder": "e.g., Apex Dental Care Center",
+      "summary": "Clinical Summary",
+      "summaryPlaceholder": "Enter clinical notes, diagnosis observations, or encounter details...",
+      "submit": "Upload & Process Record",
+      "submitting": "Ingesting to Vault..."
+    },
+    "validation": {
+      "fileRequired": "Please select a document or scan to upload.",
+      "invalidType": "Unsupported file format. Please upload PDF, DICOM, PNG, or JPG.",
+      "fileTooLarge": "File size exceeds maximum limit of 15MB.",
+      "patientRequired": "Patient Care ID is required (format CID-XXXX-XXXX).",
+      "categoryRequired": "Please select a clinical category.",
+      "recordTypeRequired": "Record type is required.",
+      "providerRequired": "Healthcare provider name is required.",
+      "facilityRequired": "Facility name is required.",
+      "summaryMin": "Clinical summary must be at least 10 characters."
+    },
+    "toasts": {
+      "uploadSuccess": "Document successfully uploaded and indexed in CareID Vault.",
+      "uploadError": "Failed to upload document. Please check the file and try again.",
+      "duplicateDismissed": "Duplicate detection warning dismissed."
+    }
+  },
+  "recordLifecycle": {
+    "archive": {
+      "dialogTitle": "Archive Record?",
+      "dialogMessage": "Are you sure you want to archive {{fileName}}? Archived records are removed from the active directory but will remain accessible in the Archive Vault history.",
+      "cancel": "Cancel",
+      "confirm": "Archive",
+      "toastSuccess": "Record {{fileName}} successfully archived to Vault."
+    },
+    "restore": {
+      "dialogTitle": "Restore Record",
+      "dialogMessage": "Restoring this document will move it back to the active Record Directory for Patient #{{patientId}}.",
+      "archivedOn": "Archived on: {{date}}",
+      "cancel": "Cancel",
+      "confirm": "Restore",
+      "toastSuccess": "Record {{fileName}} restored back to active directory."
+    }
+  },
+  "ocrQueue": {
+    "breadcrumb": "OCR Verification",
+    "title": "OCR Processing Queue",
+    "reviewOcrBtn": "Review OCR",
+    "viewAnalyticsBtn": "Analytics Dashboard",
+    "kpi": {
+      "pendingReviews": "Pending Reviews",
+      "highConfidence": "High Confidence",
+      "mediumConfidence": "Medium Confidence",
+      "lowConfidence": "Low Confidence"
+    },
+    "filters": {
+      "allStatus": "All Status",
+      "pending": "Pending",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "highConfidence": "High Confidence",
+      "mediumConfidence": "Medium Confidence",
+      "lowConfidence": "Low Confidence",
+      "labReports": "Lab Reports",
+      "imaging": "Imaging",
+      "prescriptions": "Prescriptions",
+      "searchPlaceholder": "Search by Patient, ID, Doctor..."
+    },
+    "table": {
+      "ocrId": "OCR ID",
+      "patient": "Patient",
+      "documentType": "Document Type",
+      "confidence": "Confidence",
+      "uploadDate": "Upload Date",
+      "status": "Status",
+      "reviewer": "Reviewer",
+      "action": "Action",
+      "unassigned": "Unassigned",
+      "reviewBtn": "Review",
+      "showingRecords": "Showing {{start}}–{{end}} of {{total}} records",
+      "pageStatus": "Page {{current}} of {{total}}",
+      "noRecords": "No OCR records found matching your filters."
+    },
+    "reviewModal": {
+      "title": "OCR Document Review & Validation",
+      "subtitle": "Verify extracted clinical tokens against scanned image",
+      "extractedFields": "Extracted Clinical Fields",
+      "approve": "Approve Extraction",
+      "reject": "Reject / Flag Document",
+      "rerun": "Re-run OCR Engine",
+      "cancel": "Close",
+      "rejectionPrompt": "Enter reason for rejection or flag:"
+    },
+    "toasts": {
+      "approved": "Record {{ocrId}} approved and indexed into patient health vault.",
+      "rejected": "Record {{ocrId}} rejected and flagged for manual clinician review.",
+      "rerunSuccess": "OCR re-run completed for {{ocrId}}. Confidence updated."
+    }
+  },
+  "ocrAnalytics": {
+    "breadcrumb": "Analytics",
+    "title": "OCR Analytics Dashboard",
+    "subtitle": "Real-time operational metrics for document processing engine.",
+    "viewQueueBtn": "Processing Queue",
+    "dateFilter": "Today",
+    "exportReportBtn": "Export Report",
+    "kpis": {
+      "todayVolume": "TODAY'S VOLUME",
+      "avgConfidence": "AVG CONFIDENCE",
+      "approvalRate": "APPROVAL RATE",
+      "rejectedRate": "REJECTED RATE",
+      "avgProcessing": "AVG PROCESSING",
+      "seconds": "sec",
+      "stable": "Stable"
+    },
+    "processingVolume": {
+      "title": "Processing Volume",
+      "subtitle": "Hourly breakdown for today",
+      "processed": "Processed",
+      "exceptions": "Exceptions"
+    },
+    "documentDistribution": {
+      "title": "Document Distribution"
+    },
+    "recentExceptions": {
+      "title": "Recent Exceptions",
+      "viewAll": "View All"
+    }
+  },
+  "ocrWorkspace": {
+    "breadcrumbs": {
+      "home": "Home",
+      "ocrVerification": "OCR Verification",
+      "queue": "Processing Queue",
+      "workspace": "Verification Workspace"
+    },
+    "backToQueue": "Back to OCR Queue",
+    "taskIdPrefix": "VERIFICATION TASK ID:",
+    "status": {
+      "pending": "PENDING",
+      "underReview": "UNDER REVIEW",
+      "approved": "APPROVED",
+      "rejected": "REJECTED"
+    },
+    "actions": {
+      "saveDraft": "Save Draft",
+      "savingDraft": "Saving Draft...",
+      "rejectOcr": "Reject OCR",
+      "rejecting": "Rejecting...",
+      "approveAndFile": "Approve & File",
+      "approving": "Approving..."
+    },
+    "sourceDocument": {
+      "title": "Source Document",
+      "zoomOut": "Zoom Out",
+      "zoomIn": "Zoom In",
+      "resetZoom": "Reset Zoom & Orientation",
+      "pageIndicator": "Page {{current}} of {{total}}",
+      "prevPage": "Previous Page",
+      "nextPage": "Next Page",
+      "memorialHospital": "MEMORIAL HOSPITAL",
+      "clinicalLaboratory": "DEPARTMENT OF PATHOLOGY & LABORATORY MEDICINE",
+      "highConfidenceToken": "High Confidence",
+      "mediumConfidenceToken": "Medium Confidence",
+      "lowConfidenceToken": "Low Confidence",
+      "missingDocument": "Document preview unavailable"
+    },
+    "extractedData": {
+      "title": "Extracted Data",
+      "patientMetaSection": "PATIENT & DOCUMENT META",
+      "patientName": "Patient Name",
+      "patientId": "Patient ID",
+      "collectionDate": "Collection Date",
+      "provider": "Provider",
+      "clinicalValuesSection": "EXTRACTED CLINICAL VALUES",
+      "table": {
+        "testName": "Test Name",
+        "value": "Value",
+        "unit": "Unit",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "addMissingRow": "Add Missing Row",
+      "removeRow": "Remove Row",
+      "correctedBadge": "Corrected"
+    },
+    "analysis": {
+      "title": "Analysis",
+      "globalConfidence": "GLOBAL CONFIDENCE",
+      "alerts": "ALERTS",
+      "possibleDuplicate": "Possible Duplicate",
+      "possibleDuplicateDesc": "A metabolic panel for '{{name}}' was processed on {{date}}.",
+      "lowConfidenceAlert": "Low Confidence Field",
+      "lowConfidenceAlertDesc": "Provider name and Creatinine value require manual verification.",
+      "allChecksPassed": "All Confidence Checks Passed",
+      "allChecksPassedDesc": "No critical discrepancies or duplicate flags detected for this record."
+    },
+    "rejectDialog": {
+      "title": "Reject OCR Extraction",
+      "subtitle": "Provide reason for rejecting this automated extraction. The clinician team will be notified.",
+      "reasonLabel": "Rejection / Discrepancy Reason",
+      "reasonPlaceholder": "e.g., Scan is illegible, incorrect patient matched, duplicate lab submission...",
+      "cancel": "Cancel",
+      "confirm": "Confirm Rejection"
+    },
+    "toasts": {
+      "draftSaved": "Draft saved successfully for {{id}}.",
+      "approved": "Record {{id}} approved and filed successfully into health records.",
+      "rejected": "Record {{id}} has been rejected.",
+      "rowAdded": "New clinical row added.",
+      "rowRemoved": "Row removed."
+    },
+    "notFound": {
+      "title": "OCR Record Not Found",
+      "message": "The OCR verification task you requested does not exist or has already been archived.",
+      "backBtn": "Return to OCR Processing Queue"
+    },
+    "loading": "Loading OCR Verification Workspace...",
+    "errors": {
+      "patientNameRequired": "Patient name is required",
+      "patientIdRequired": "Patient ID is required",
+      "collectionDateRequired": "Collection date is required",
+      "providerRequired": "Provider is required",
+      "rejectionReasonRequired": "Please enter a reason for rejecting this record."
+    }
+  },
+  "ocrRejected": {
+    "breadcrumb": "OCR Verification",
+    "breadcrumbRejected": "Rejected",
+    "breadcrumbHistory": "Review History",
+    "title": "Rejected Documents",
+    "historyTitle": "Review History",
+    "subtitle": "Review and manage scans that failed OCR processing.",
+    "historySubtitle": "Review past OCR validation decisions, reprocessing outcomes, and audit logs.",
+    "filterBtn": "Filter",
+    "filterModal": {
+      "title": "Filter Rejected Records",
+      "reasonLabel": "Rejection Reason",
+      "allReasons": "All Reasons",
+      "reviewerLabel": "Reviewer",
+      "allReviewers": "All Reviewers",
+      "searchLabel": "Search by Document / ID",
+      "searchPlaceholder": "Filter by file name or document ID...",
+      "apply": "Apply Filters",
+      "reset": "Reset Filters",
+      "close": "Close"
+    },
+    "table": {
+      "docDetails": "DOCUMENT DETAILS",
+      "rejectionReason": "REJECTION REASON",
+      "reviewer": "REVIEWER",
+      "actions": "ACTIONS",
+      "reprocess": "Reprocess",
+      "replace": "Replace",
+      "reprocessing": "Reprocessing...",
+      "empty": "No rejected documents found.",
+      "emptySubtitle": "Documents that fail automated extraction or manual review will appear here.",
+      "loading": "Loading rejected documents..."
+    },
+    "replaceModal": {
+      "title": "Replace Document Scan",
+      "subtitle": "Upload a higher resolution scan or corrected document for {{docId}}.",
+      "currentFile": "Current Document",
+      "dropzoneTitle": "Drop new scan here, or click to browse",
+      "dropzoneHint": "Supported formats: PDF, JPG, PNG (Max 15MB)",
+      "selectFileBtn": "Choose File",
+      "selectedFile": "Selected Replacement File:",
+      "replaceNoteLabel": "Replacement Notes (Optional)",
+      "replaceNotePlaceholder": "e.g., High-resolution 300 DPI re-scan with clear physician signature...",
+      "cancel": "Cancel",
+      "uploadAndRerun": "Upload & Re-run OCR",
+      "uploading": "Uploading & Re-processing..."
+    },
+    "toasts": {
+      "reprocessSuccess": "OCR re-run queued for {{id}}.",
+      "replaceSuccess": "Replacement scan uploaded and queued for processing for {{id}}.",
+      "error": "Failed to process document operation."
+    }
+  },
+  "referralDashboard": {
+    "pageTitle": "Referral Management",
+    "overview": "Overview",
+    "overviewSubtitle": "Monitor and manage patient referral lifecycle.",
+    "exportReferrals": "Export Referrals",
+    "exportSuccess": "Referrals exported successfully to CSV.",
+    "exportEmpty": "No referrals found to export with current filters.",
+    "summaryCards": {
+      "totalReferrals": "Total Referrals",
+      "pending": "Pending",
+      "accepted": "Accepted",
+      "completed": "Completed",
+      "cancelled": "Cancelled",
+      "escalated": "Escalated"
+    },
+    "filters": {
+      "searchPlaceholder": "Search by Referral ID, Patient, or Doctor...",
+      "priority": "Priority",
+      "hospital": "Hospital",
+      "specialty": "Specialty",
+      "status": "Status",
+      "all": "All",
+      "allPriorities": "All Priorities",
+      "allHospitals": "All Hospitals",
+      "allSpecialties": "All Specialties",
+      "allStatuses": "All Statuses",
+      "clearFilters": "Clear Filters",
+      "activeFilters": "Active filters"
+    },
+    "priorities": {
+      "high": "High",
+      "routine": "Routine",
+      "urgent": "Urgent"
+    },
+    "statuses": {
+      "pending": "Pending",
+      "accepted": "Accepted",
+      "completed": "Completed",
+      "cancelled": "Cancelled",
+      "escalated": "Escalated"
+    },
+    "table": {
+      "referralId": "Referral ID",
+      "patient": "Patient",
+      "referringDoctor": "Referring Doctor",
+      "receivingDoctor": "Receiving Doctor",
+      "hospital": "Hospital",
+      "priority": "Priority",
+      "date": "Date",
+      "status": "Status",
+      "actions": "Actions",
+      "viewDetails": "View Details",
+      "viewHistory": "Referral Lifecycle & History",
+      "viewNotes": "View Clinical Notes & Attachments",
+      "escalate": "Escalate Referral",
+      "emptyTitle": "No referrals found",
+      "emptyDescription": "No patient referrals match the current search or filter criteria. Try adjusting your search term or resetting the filters.",
+      "resetFilters": "Reset Filters",
+      "loading": "Loading referrals data...",
+      "errorTitle": "Unable to load referrals",
+      "errorDescription": "There was an error communicating with the referral service. Please retry.",
+      "retry": "Retry"
+    },
+    "pagination": {
+      "showing": "Showing",
+      "to": "–",
+      "of": "of",
+      "referrals": "referrals",
+      "prev": "Previous Page",
+      "next": "Next Page",
+      "page": "Page"
+    },
+    "modal": {
+      "detailsTitle": "Referral Details",
+      "timelineTitle": "Referral Lifecycle & History",
+      "escalateNoticeTitle": "API Capability Notice: Escalation",
+      "escalateNoticeBody": "Backend endpoint PATCH /api/v1/admin/referrals/:id/escalate is not present in the OpenAPI specification. The documented contract supports status transition via PUT /api/v1/referrals/{id}/status and clinical triage via PUT /api/v1/referrals/{id}/triage.",
+      "close": "Close",
+      "patientId": "Patient ID",
+      "clinicalReason": "Clinical Reason",
+      "insurance": "Insurance Provider",
+      "authCode": "Authorization Code",
+      "timeline": "Urgency Timeline",
+      "notes": "Clinical Notes",
+      "markEscalated": "Set Escalated Status (Local)"
+    }
+  },
+  "referralMonitoring": {
+    "pageTitle": "Referral Management",
+    "topTabs": {
+      "overview": "Overview",
+      "escalations": "Escalations",
+      "analytics": "Analytics"
+    },
+    "searchPlaceholder": "Search Referrals...",
+    "heading": "Monitoring & Escalation Queue",
+    "subtitle": "Operational view focusing on SLA compliance.",
+    "exportReport": "Export Report",
+    "exportSuccess": "Export report generated successfully.",
+    "metrics": {
+      "pendingReferrals": "PENDING REFERRALS",
+      "delayedReferrals": "DELAYED REFERRALS (SLA BREACH)",
+      "avgCompletionTime": "AVG COMPLETION TIME",
+      "days": "Days"
+    },
+    "table": {
+      "title": "Critical Escalations",
+      "refId": "REF ID",
+      "patient": "PATIENT",
+      "currentHospital": "CURRENT HOSPITAL",
+      "delayDuration": "DELAY DURATION",
+      "priority": "PRIORITY",
+      "assignedAdmin": "ASSIGNED ADMIN",
+      "actions": "ACTIONS",
+      "unassigned": "Unassigned",
+      "viewAll": "View All Escalations ({{count}})",
+      "loading": "Loading escalation queue...",
+      "emptyTitle": "No critical escalations found",
+      "emptySubtitle": "All patient referrals are currently within acceptable SLA response windows.",
+      "retry": "Retry",
+      "filterPriority": "Filter Priority",
+      "filterHospital": "Filter Hospital",
+      "filterAll": "All",
+      "assignAdminTooltip": "Assign Administrator",
+      "notesTooltip": "Clinical Notes & Attachments",
+      "resolveTooltip": "Resolve SLA Breach"
+    },
+    "charts": {
+      "hospitalTitle": "Delay Volume by Hospital",
+      "specialtyTitle": "Delays by Specialty",
+      "sla": "SLA",
+      "cardiology": "Cardiology",
+      "neurology": "Neurology",
+      "oncology": "Oncology",
+      "other": "Other"
+    },
+    "dialogs": {
+      "assignTitle": "Assign Administrator",
+      "assignSubtitle": "Designate a triage case manager for referral {{refId}}.",
+      "adminLabel": "Assigned Administrator",
+      "selectAdmin": "Select administrator...",
+      "cancel": "Cancel",
+      "assignBtn": "Save Assignment",
+      "assignSuccess": "Assigned {{admin}} to {{refId}}.",
+      "notesTitle": "Clinical Notes & SLA Documentation",
+      "notesSubtitle": "Review patient clinical summary, notes, and SLA status for {{refId}}.",
+      "clinicalReason": "Clinical Reason",
+      "existingNotes": "Clinical Notes",
+      "noNotes": "No notes recorded yet.",
+      "addNoteLabel": "Add Operational Note",
+      "addNotePlaceholder": "Enter case notes or SLA escalation notes...",
+      "addNoteBtn": "Append Note",
+      "noteAddedSuccess": "Note appended to {{refId}}.",
+      "resolveTitle": "Resolve SLA Escalation",
+      "resolveMessage": "Are you sure you want to resolve the escalation for referral {{refId}}? The record status will be updated to Accepted and the SLA breach flag will be cleared.",
+      "resolveBtn": "Resolve Escalation",
+      "resolveSuccess": "Escalation for {{refId}} resolved successfully.",
+      "capabilityNoticeTitle": "Backend API Capability Notice",
+      "capabilityNoticeMessage": "The CareID backend OpenAPI specification does not expose a dedicated PATCH /api/v1/admin/referrals/:id/escalate endpoint. Escalation resolution uses PUT /api/v1/referrals/:id/status and triage endpoints."
+    }
+  },
+  "referralDetails": {
+    "topNav": {
+      "title": "Referral Management",
+      "searchPlaceholder": "Search referrals..."
+    },
+    "breadcrumb": "Referrals",
+    "heading": "Referral Details",
+    "actions": {
+      "viewPatientProfile": "View Patient Profile",
+      "downloadPdf": "Download PDF"
+    },
+    "status": {
+      "pendingReview": "Pending Review",
+      "pending": "Pending",
+      "accepted": "Accepted",
+      "inProgress": "In Progress",
+      "escalated": "Escalated",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "infoCard": {
+      "title": "Referral Information",
+      "highPriority": "HIGH PRIORITY",
+      "routinePriority": "ROUTINE",
+      "urgentPriority": "URGENT",
+      "referralId": "Referral ID",
+      "healthVaultId": "Health Vault ID",
+      "patientSummary": "Patient Summary",
+      "referringDoctor": "Referring Doctor",
+      "receivingDepartment": "Receiving Department",
+      "referralReason": "Referral Reason",
+      "notSpecified": "Not specified"
+    },
+    "attachments": {
+      "title": "Attached Medical Records",
+      "noAttachments": "No medical records attached to this referral.",
+      "view": "View",
+      "download": "Download",
+      "added": "Added",
+      "previewTitle": "Medical Attachment Preview",
+      "close": "Close",
+      "fileType": "Document Format",
+      "fileSize": "File Size",
+      "author": "Attached By"
+    },
+    "notes": {
+      "title": "Operational Notes",
+      "addNote": "Add Note",
+      "noNotes": "No operational notes recorded yet.",
+      "modalTitle": "Add Operational Note",
+      "modalSubtitle": "Add a coordination note to referral {{refId}}.",
+      "noteLabel": "Note Content",
+      "notePlaceholder": "Enter case notes or operational coordination notes...",
+      "privateLabel": "Mark as Private (internal administrative view only)",
+      "cancel": "Cancel",
+      "submit": "Save Note",
+      "submitting": "Saving Note...",
+      "successToast": "Operational note added successfully.",
+      "validationRequired": "Please enter note content.",
+      "validationMin": "Note must be at least 3 characters long.",
+      "validationMax": "Note cannot exceed 1000 characters."
+    },
+    "timeline": {
+      "title": "Activity Timeline",
+      "currentStatus": "CURRENT STATUS",
+      "noHistory": "No lifecycle transition history recorded for this referral."
+    },
+    "pdf": {
+      "generated": "Referral summary report opened for print/PDF export."
+    },
+    "states": {
+      "loading": "Loading referral details...",
+      "notFoundTitle": "Referral Not Found",
+      "notFoundDesc": "The requested referral {{id}} does not exist or may have been removed.",
+      "backToReferrals": "Return to Referral Management",
+      "errorTitle": "Unable to Load Referral",
+      "errorDesc": "An error occurred while loading this referral. Please try again.",
+      "retry": "Retry"
+    }
+  },
+  "referralAudit": {
+    "breadcrumbs": {
+      "referrals": "Referrals",
+      "auditHistory": "Audit History"
+    },
+    "title": "System Audit Log",
+    "description": "Tracking lifecycle events and escalations for all referrals.",
+    "actions": {
+      "filter": "Filter",
+      "exportCsv": "Export CSV",
+      "apply": "Apply Filter",
+      "reset": "Reset",
+      "refresh": "Refresh",
+      "liveActive": "Live Updates Active",
+      "livePaused": "Static Snapshot",
+      "toggleLive": "Toggle Live Sync",
+      "recordEvent": "Record Event"
+    },
+    "filterModal": {
+      "title": "Filter Audit Trail",
+      "subtitle": "Narrow down lifecycle events by action, user, or status.",
+      "actionLabel": "Action Type",
+      "allActions": "All Actions",
+      "userLabel": "User ID / System Bot",
+      "allUsers": "All Users",
+      "searchLabel": "Search Event Details",
+      "searchPlaceholder": "Search IP, status, or details..."
+    },
+    "table": {
+      "title": "Recent Activity Log",
+      "cols": {
+        "timestamp": "Timestamp",
+        "userId": "User ID",
+        "action": "Action",
+        "statusChange": "Status Change",
+        "ipAddress": "IP Address"
+      },
+      "actions": {
+        "escalated": "Escalated",
+        "verified": "Verified",
+        "modified": "Modified",
+        "approved": "Approved",
+        "created": "Created",
+        "cancelled": "Cancelled"
+      },
+      "showingRecords": "Showing {{start}}–{{end}} of {{total}} records",
+      "loading": "Loading audit history...",
+      "errorTitle": "Unable to Load Audit Trail",
+      "errorSubtitle": "There was an error retrieving referral lifecycle events.",
+      "retry": "Retry",
+      "emptyTitle": "No Audit Records Found",
+      "emptySubtitle": "No lifecycle status transitions or administrative events have been recorded for referrals yet.",
+      "recordSample": "Simulate Referral Event"
+    },
+    "escalationsPanel": {
+      "emptyHeading": "No Escalations Found",
+      "emptyDescription": "All critical referral workflows are operating normally. No manual intervention required.",
+      "checkMonitoring": "Check Monitoring",
+      "activeHeading": "Escalations Pending ({{count}})",
+      "activeDescription": "Critical referral SLA delays detected requiring triage intervention.",
+      "viewQueue": "Check Monitoring"
+    },
+    "capabilityNotice": {
+      "badge": "Contract Specification",
+      "title": "Referral Audit Capability Notice",
+      "description": "The CareID backend does not expose a dedicated GET /api/v1/referrals/audit endpoint. Audit events reflect actual status transitions and administrative operations.",
+      "dismiss": "Understood"
+    },
+    "exportSuccess": "Audit log CSV exported successfully ({{count}} records)."
+  },
+  "reports": {
+    "topNav": {
+      "reports": "Reports",
+      "analytics": "Analytics"
+    },
+    "header": {
+      "title": "Reports Dashboard",
+      "subtitle": "Real-time metrics and system health overview."
+    },
+    "filters": {
+      "today": "Today",
+      "sevenDays": "7D",
+      "thirtyDays": "30D",
+      "allHospitals": "All Hospitals",
+      "allDepartments": "All Departments"
+    },
+    "kpis": {
+      "registeredPatients": "REGISTERED PATIENTS",
+      "registeredDoctors": "REGISTERED DOCTORS",
+      "recordsUploaded": "RECORDS UPLOADED",
+      "platformAvailability": "PLATFORM AVAILABILITY",
+      "systemHealthy": "System Healthy",
+      "degraded": "Degraded Performance"
+    },
+    "actionCards": {
+      "ocrPerformance": "OCR Performance Report",
+      "clinicalReports": "Clinical Reports",
+      "referralActivity": "Referral Activity Report",
+      "systemHealth": "System health Report"
+    },
+    "exportModal": {
+      "title": "Export Report Data",
+      "subtitle": "Download real-time metrics for {{reportName}} in your preferred format.",
+      "format": "File Format",
+      "csv": "CSV Spreadsheet",
+      "pdf": "PDF Document",
+      "download": "Download Report",
+      "close": "Close",
+      "notice": "Reports are generated directly from verified CareID Admin Portal live metrics."
+    }
+  },
+  "ocrPerformanceReport": {
+    "breadcrumbs": {
+      "reports": "REPORTS",
+      "ocrProcessing": "OCR PROCESSING"
+    },
+    "header": {
+      "title": "OCR Performance Report",
+      "last30Days": "Last 30 Days",
+      "export": "Export"
+    },
+    "kpis": {
+      "totalRequests": "Total OCR Requests",
+      "autoApprovalRate": "Auto-Approval Rate",
+      "avgConfidenceScore": "Avg. Confidence Score",
+      "avgProcessingTime": "Avg. Processing Time"
+    },
+    "status": {
+      "requiresAction": "REQUIRES ACTION",
+      "rejectedDocuments": "Rejected Documents",
+      "rejectedSubtext": "Failed OCR confidence threshold",
+      "review": "Review",
+      "inQueue": "IN QUEUE",
+      "pendingHumanReview": "Pending Human Review",
+      "pendingSubtext": "Flagged for manual validation",
+      "process": "Process"
+    },
+    "charts": {
+      "docTypeDistribution": "Document Type Distribution",
+      "approvalTrend": "Approval Trend",
+      "past7Days": "Past 7 Days"
+    }
+  },
+  "systemHealth": {
+    "header": {
+      "title": "Referral Management",
+      "searchPlaceholder": "Search records, patients, or referrals..."
+    },
+    "breadcrumbs": {
+      "reports": "Reports",
+      "current": "System Health & Export"
+    },
+    "overview": {
+      "title": "System Overview",
+      "description": "Monitor real-time infrastructure status and manage data exports."
+    },
+    "infra": {
+      "title": "Infrastructure Health",
+      "lastUpdated": "Last updated: Just now",
+      "healthy": "Healthy",
+      "serverCluster": "Server Cluster",
+      "uptime": "Uptime",
+      "apiGateway": "API Gateway",
+      "avgLatency": "Avg Latency",
+      "mainDatabase": "Main Database",
+      "connSec": "Conn/sec"
+    },
+    "workload": {
+      "title": "Workload & Storage",
+      "ocrQueue": "OCR Processing Queue",
+      "docs": "docs",
+      "normalLoad": "Normal load",
+      "syncJobs": "Background Sync Jobs",
+      "active": "active",
+      "vaultStorage": "Vault Storage",
+      "used": "3.9 TB used",
+      "total": "5.0 TB total"
+    },
+    "exportEngine": {
+      "title": "Data Export Engine",
+      "subtitle": "Configure and generate system data reports securely.",
+      "formatLabel": "Export Format",
+      "pdfReport": "PDF Report",
+      "excelReport": "Excel (.xlsx)",
+      "rawCsv": "Raw CSV",
+      "frequencyLabel": "Frequency",
+      "oneTime": "One-time Export",
+      "scheduledWeekly": "Scheduled (Weekly)",
+      "generateButton": "Generate Export",
+      "recentExportsTitle": "Recent Exports",
+      "noDataTitle": "No Data Available",
+      "noDataDesc": "Current filters return nothing, or no exports have been generated yet.",
+      "clearFilters": "Clear Filters",
+      "backendDependencyNotice": "Backend export capability (POST /api/v1/reports/export) is pending backend service deployment. No mock export was simulated."
+    }
+  },
+  "referralActivityReport": {
+    "header": {
+      "title": "Referral Management",
+      "searchPlaceholder": "Search patients, providers, or IDs..."
+    },
+    "page": {
+      "title": "Referral Activity Report",
+      "description": "Comprehensive overview of inbound and outbound referral metrics.",
+      "last30Days": "Last 30 Days",
+      "exportPdf": "Export PDF"
+    },
+    "kpis": {
+      "totalVolume": "Total Referral Volume",
+      "requestsLogged": "requests logged",
+      "avgCompletionTime": "AVG COMPLETION TIME",
+      "days": "Days",
+      "escalatedPriority": "ESCALATED PRIORITY",
+      "cases": "Cases"
+    },
+    "pipeline": {
+      "title": "Pipeline Status",
+      "completed": "Completed",
+      "pendingReview": "Pending Review",
+      "cancelled": "Cancelled / Invalid"
+    },
+    "hospital": {
+      "title": "Hospital Distribution"
+    },
+    "departments": {
+      "title": "Top Departments",
+      "viewAll": "View All"
+    }
+  },
+  "systemSettings": {
+    "breadcrumb": {
+      "portal": "Admin Portal",
+      "settings": "System Settings",
+      "general": "General & Organization"
+    },
+    "header": {
+      "searchPlaceholder": "Search facilities, patients, logs...",
+      "adminUser": "Admin User",
+      "superAdmin": "Super Admin"
+    },
+    "banner": {
+      "title": "System Settings — General & Organization",
+      "description": "Manage core platform preferences, legal designations, and localized system defaults for the Care ID Enterprise ecosystem.",
+      "resetDefaults": "Reset Defaults",
+      "saveChanges": "Save Changes"
+    },
+    "tabs": {
+      "general": "General & Organization",
+      "branding": "Branding & Identity",
+      "security": "Security Policies",
+      "roles": "Roles & Permissions",
+      "ocr": "OCR & Notifications",
+      "integrations": "Integrations & Backup",
+      "announcements": "Announcements & Preferences"
+    },
+    "card1": {
+      "heading": "Platform & Primary Contact",
+      "description": "Core identification metadata rendered across patient credentials and medical access portals."
+    },
+    "card2": {
+      "heading": "Organization Hierarchy & Legal Taxonomy",
+      "description": "Manage structural entity nodes, jurisdictional classification, and localized runtime parameters.",
+      "verifiedNode": "Verified Node"
+    },
+    "fields": {
+      "platformName": {
+        "label": "PLATFORM NAME",
+        "helper": "Displayed across system title bars and official clinical verification headers."
+      },
+      "organizationName": {
+        "label": "ORGANIZATION NAME",
+        "helper": "Designated registered corporate entity for regulatory compliance audits."
+      },
+      "supportEmail": {
+        "label": "SUPPORT EMAIL",
+        "helper": "Receives urgent system escalations, failover alerts, and admin notifications."
+      },
+      "supportPhone": {
+        "label": "SUPPORT PHONE",
+        "helper": "24/7 designated hotline for hospital network administrators."
+      },
+      "primaryNode": {
+        "label": "PRIMARY ENTERPRISE NODE"
+      },
+      "subEntities": {
+        "label": "CLINICAL SUB-ENTITIES & FACILITIES"
+      },
+      "timezone": {
+        "label": "OPERATING TIMEZONE"
+      },
+      "locale": {
+        "label": "SYSTEM DEFAULT LOCALE"
+      }
+    },
+    "footer": {
+      "resetOrganization": "Reset to Organization Defaults",
+      "saveChanges": "Save Changes",
+      "proceedBranding": "Proceed to Branding & Identity"
+    }
+  }
+}

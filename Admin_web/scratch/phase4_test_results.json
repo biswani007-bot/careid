@@ -1,0 +1,48 @@
+{
+  "case1": {
+    "status": 201,
+    "userId": "20fc4139-bcdf-4c2a-a7ff-866f3cd88e6b",
+    "doctorProfileId": "24c43fb1-4fc2-48e6-b9e5-f7b19de80849",
+    "fullName": "Dr. Alice Smith 270251",
+    "registrationNumber": "MED-REG-A-270251",
+    "licenseNumber": "LIC-A-270251",
+    "providerIdentifier": "DOC-360-274031"
+  },
+  "case2": {
+    "status": 201,
+    "userId": "f5de8f90-92ea-4ca6-9b47-486dbd170fb4",
+    "doctorProfileId": "65ba9c77-9eea-44ce-8a82-649572efbdf1",
+    "fullName": "Dr. Bob Jones 270251",
+    "registrationNumber": "MED-REG-B-270251",
+    "licenseNumber": "LIC-B-270251"
+  },
+  "case3": {
+    "status": 201,
+    "userId": "b6a62718-6f81-4dd0-ac36-38fc75e77ef8",
+    "doctorProfileId": "9ab72e3a-3f78-4589-bdcb-fad9ea39e27a",
+    "fullName": "Dr. Clara Oswald 270251",
+    "registrationNumber": "MED-REG-C-270251",
+    "licenseNumber": "LIC-C-270251"
+  },
+  "case4": {
+    "status": 409,
+    "errorCode": "ConflictException",
+    "errorMessage": "Medical license number already registered",
+    "conflictField": "licenseNumber"
+  },
+  "case5": {
+    "status": 409,
+    "errorCode": "ConflictException",
+    "errorMessage": "Medical registration number already registered in Master Provider Registry",
+    "conflictField": "registrationNumber"
+  },
+  "case6": {
+    "passed": true,
+    "requestsFired": 1
+  },
+  "uiSuccess": {
+    "registeredName": "Dr. David Miller 270251",
+    "license": "LIC-UI-270251",
+    "foundInTable": true
+  }
+}

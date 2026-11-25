@@ -1,0 +1,767 @@
+/* ==========================================================================
+   CareID Admin Portal - System Settings: General & Organization (Figma 20:12532)
+   Canonical Proportions, Typography, Spacing & Styling
+   ========================================================================== */
+
+.settings-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: #f2f4f6;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #191c1e;
+  position: relative;
+}
+
+.settings-main {
+  flex: 1 1 0%;
+  min-width: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  background-color: #f2f4f6;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .settings-main {
+    margin-left: 280px;
+    width: calc(100% - 280px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .settings-main {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   1. Stationary Top Global Navigation Bar (Figma 20:12534)
+   ========================================================================== */
+.settings-top-navbar {
+  height: 64px;
+  flex-shrink: 0;
+  background-color: #f8f9fb;
+  border-bottom: 1px solid #cbc4d4;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 20;
+  box-sizing: border-box;
+}
+
+.settings-top-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.settings-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.settings-breadcrumb::-webkit-scrollbar {
+  display: none;
+}
+
+.settings-breadcrumb-root {
+  display: flex;
+  align-items: center;
+  color: #494552;
+  transition: color 0.15s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.settings-breadcrumb-root:hover {
+  color: #28006d;
+}
+
+.settings-breadcrumb-sep {
+  color: #cbc4d4;
+  font-weight: 400;
+  user-select: none;
+}
+
+.settings-breadcrumb-parent {
+  color: #494552;
+  font-weight: 500;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.settings-breadcrumb-parent:hover {
+  color: #28006d;
+}
+
+.settings-breadcrumb-current {
+  color: #28006d;
+  font-weight: 600;
+}
+
+.settings-top-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.settings-search-bar {
+  position: relative;
+  width: 299px;
+}
+
+.settings-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #494552;
+  pointer-events: none;
+}
+
+.settings-search-input {
+  width: 100%;
+  height: 35px;
+  background-color: #e7e8ea;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  padding: 6px 16px 7px 38px;
+  font-size: 12px;
+  line-height: normal;
+  color: #191c1e;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.settings-search-input::placeholder {
+  color: #494552;
+}
+
+.settings-search-input:focus {
+  background-color: #ffffff;
+  border-color: #3f1d8b;
+  box-shadow: 0 0 0 2px rgba(63, 29, 139, 0.1);
+}
+
+.settings-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.settings-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #494552;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.settings-icon-btn:hover {
+  background-color: #e7e8ea;
+  color: #28006d;
+}
+
+.settings-notif-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #006a60;
+  border: 1.5px solid #f8f9fb;
+}
+
+.settings-top-divider {
+  width: 1px;
+  height: 24px;
+  background-color: #cbc4d4;
+}
+
+.settings-profile-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.settings-profile-avatar {
+  width: 34px;
+  height: 36px;
+  border-radius: 9999px;
+  border: 1px solid #cbc4d4;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e7e8ea;
+  flex-shrink: 0;
+}
+
+.settings-profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+.settings-profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.settings-profile-name-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.settings-profile-name {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  color: #191c1e;
+}
+
+.settings-profile-role {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 14px;
+  color: #28006d;
+}
+
+/* ==========================================================================
+   2. Scrollable Canvas & Layout Container (Figma 20:12578)
+   ========================================================================== */
+.settings-scroll-canvas {
+  flex: 1 1 0%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.settings-content-wrapper {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ==========================================================================
+   3. Page Title Banner (Figma 20:12580)
+   ========================================================================== */
+.settings-banner-card {
+  background-color: #ffffff;
+  border: 1px solid #e1e2e4;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.settings-banner-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 750px;
+}
+
+.settings-banner-heading-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.settings-banner-icon {
+  color: #191c1e;
+  flex-shrink: 0;
+}
+
+.settings-banner-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+  color: #191c1e;
+  margin: 0;
+}
+
+.settings-banner-desc {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #494552;
+  margin: 0;
+}
+
+.settings-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-secondary-settings {
+  border: 1px solid #cbc4d4;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 9px 17px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #494552;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-secondary-settings:hover {
+  background-color: #f8f9fb;
+  color: #191c1e;
+  border-color: #b3a9be;
+}
+
+.btn-primary-settings {
+  background-color: #3f1d8b;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+  transition: all 0.15s ease;
+}
+
+.btn-primary-settings:hover {
+  background-color: #331771;
+  box-shadow: 0px 2px 4px rgba(63, 29, 139, 0.2);
+}
+
+.btn-primary-settings:active {
+  transform: translateY(1px);
+}
+
+/* ==========================================================================
+   4. Persistent Navigation - Six Tabs (Figma 20:12600)
+   ========================================================================== */
+.settings-tabs-card {
+  background-color: #ffffff;
+  border: 1px solid #e1e2e4;
+  border-radius: 12px;
+  padding: 9px 13px 1px 13px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
+.settings-tabs-card::-webkit-scrollbar {
+  display: none;
+}
+
+.settings-tabs-list {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-width: max-content;
+  gap: 4px;
+  border-bottom: 1px solid #f2f4f6;
+  box-sizing: border-box;
+}
+
+.settings-tab-btn {
+  flex: 1 1 0%;
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px 14px 16px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #494552;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.settings-tab-btn:hover {
+  color: #191c1e;
+  background-color: #f8f9fb;
+}
+
+.settings-tab-btn.active {
+  background-color: rgba(242, 244, 246, 0.5);
+  border-bottom: 2px solid #3f1d8b;
+  color: #3f1d8b;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   5. Form Configuration Cards (Figma 20:12633 & 20:12668)
+   ========================================================================== */
+.settings-config-card {
+  background-color: #ffffff;
+  border: 1px solid #e1e2e4;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.settings-card-header {
+  border-bottom: 1px solid #e1e2e4;
+  padding-bottom: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.settings-card-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.settings-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #191c1e;
+  margin: 0;
+}
+
+.settings-card-description {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #494552;
+  margin: 0;
+}
+
+.settings-verified-badge {
+  background-color: rgba(133, 246, 229, 0.3);
+  border: 1px solid rgba(0, 106, 96, 0.2);
+  border-radius: 9999px;
+  padding: 5px 11px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #006a60;
+  white-space: nowrap;
+}
+
+/* Form Grid */
+.settings-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 24px;
+  row-gap: 24px;
+}
+
+.settings-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.settings-field-label {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #494552;
+  margin: 0;
+}
+
+.settings-field-input {
+  background-color: #f2f4f6;
+  border: 1px solid #cbc4d4;
+  border-radius: 12px;
+  padding: 13.5px 17px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #191c1e;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.settings-field-input:focus {
+  background-color: #ffffff;
+  border-color: #3f1d8b;
+  box-shadow: 0 0 0 1px #3f1d8b;
+}
+
+.settings-field-input.has-error {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.settings-field-helper {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 16.5px;
+  color: #494552;
+  margin: 0;
+}
+
+.settings-field-error {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #dc2626;
+  margin: 0;
+}
+
+/* Custom Select Dropdowns */
+.settings-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.settings-field-select {
+  background-color: #f2f4f6;
+  border: 1px solid #cbc4d4;
+  border-radius: 12px;
+  padding: 13px 40px 13px 17px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #191c1e;
+  width: 100%;
+  box-sizing: border-box;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.settings-field-select:focus {
+  background-color: #ffffff;
+  border-color: #3f1d8b;
+  box-shadow: 0 0 0 1px #3f1d8b;
+}
+
+.settings-select-chevron {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #494552;
+}
+
+/* ==========================================================================
+   6. Bottom Action Footer (Figma 20:12704)
+   ========================================================================== */
+.settings-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  padding-bottom: 32px;
+  width: 100%;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.settings-footer-left {
+  display: flex;
+  align-items: center;
+}
+
+.btn-footer-reset {
+  border: 1px solid #cbc4d4;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 11px 17px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #494552;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-footer-reset:hover {
+  background-color: #f8f9fb;
+  color: #191c1e;
+  border-color: #b3a9be;
+}
+
+.settings-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-footer-save {
+  background-color: #3f1d8b;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+  transition: all 0.15s ease;
+}
+
+.btn-footer-save:hover {
+  background-color: #331771;
+  box-shadow: 0px 2px 4px rgba(63, 29, 139, 0.2);
+}
+
+.btn-footer-proceed {
+  background-color: #edeef0;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #28006d;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-footer-proceed:hover {
+  background-color: #e1e2e4;
+  color: #1f0054;
+}
+
+/* ==========================================================================
+   7. Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .settings-fields-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-scroll-canvas {
+    padding: 20px;
+  }
+
+  .settings-banner-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .settings-banner-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 768px) {
+  .settings-top-navbar {
+    padding: 0 16px;
+  }
+
+  .settings-search-bar {
+    width: 200px;
+  }
+
+  .settings-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .settings-footer-left,
+  .settings-footer-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .btn-footer-reset,
+  .btn-footer-save,
+  .btn-footer-proceed {
+    flex: 1;
+    justify-content: center;
+  }
+}
+

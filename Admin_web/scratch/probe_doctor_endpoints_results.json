@@ -1,0 +1,498 @@
+[
+  {
+    "name": "Doctor List",
+    "method": "GET",
+    "path": "/api/v1/doctors?page=1&limit=20",
+    "status": 200,
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [
+        {
+          "id": "7c8fd004-cba1-4a72-9db6-437fc6d2baed",
+          "userId": "8e8ede62-bb00-41fe-af08-06d707805434",
+          "fullName": "Dr. Julian Vance, MD",
+          "gender": "MALE",
+          "dateOfBirth": "1982-11-14",
+          "yearsOfExperience": 10,
+          "primarySpecialization": "Cardiology",
+          "secondarySpecializations": [
+            "General Practice"
+          ],
+          "medicalCouncil": "State Medical Board",
+          "registrationNumber": "MED-REG-2026-3950",
+          "licenseNumber": "NY-55193",
+          "providerIdentifier": "DOC-360-071553",
+          "verificationStatus": "VERIFIED",
+          "verificationNotes": "Credentials verified against registry by administrator",
+          "verifiedBy": "bc6f6875-434c-4050-b893-07343cc27986",
+          "verifiedAt": "2026-11-03T11:57:17.504Z",
+          "department": "Outpatient Care",
+          "subSpecializations": [],
+          "clinicalInterests": [],
+          "servicesOffered": [],
+          "languagesSpoken": [
+            "English"
+          ],
+          "isDeleted": false,
+          "qualifications": [],
+          "certifications": [],
+          "experiences": [],
+          "documents": [],
+          "createdAt": "2026-10-29T05:01:11.561Z",
+          "updatedAt": "2026-11-03T11:57:17.509Z"
+        },
+        {
+          "id": "5ab2e715-bf8f-4fd4-98bb-c5166dd7157b",
+          "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+          "fullName": "Dr. Robert Chen",
+          "gender": "MALE",
+          "dateOfBirth": "1978-05-12",
+          "yearsOfExperience": 16,
+          "primarySpecialization": "Cardiology",
+          "secondarySpecializations": [],
+          "medicalCouncil": "State Medical Board",
+          "registrationNumber": "MED-REG-2026-1192",
+          "licenseNumber": "MD-119284",
+          "providerIdentifier": "DOC-360-912162",
+          "verificationStatus": "VERIFIED",
+          "verificationNotes": "Medical board credentialing audit verified",
+          "verifiedBy": "bc6f6875-434c-4050-b893-07343cc27986",
+          "verifiedAt": "2026-10-29T05:45:03.498Z",
+          "department": "Cardiovascular Surgery Division",
+          "subSpecializations": [],
+          "clinicalInterests": [],
+          "servicesOffered": [],
+          "languagesSpoken": [
+            "English"
+          ],
+          "isDeleted": false,
+          "qualifications": [],
+          "certifications": [],
+          "experiences": [],
+          "documents": [],
+          "createdAt": "2026-10-29T04:58:32.167Z",
+          "updatedAt": "2026-10-29T05:45:06.001Z"
+        },
+        {
+          "id": "1f06067b-e229-4707-84e2-afa27da2e4cd",
+          "userId": "fa502f2e-332c-4ec0-b6aa-83713216ec88",
+          "fullName": "Dr. Sarah Jenkins, MD",
+          "gender": "Female",
+          "dateOfBirth": "1980-08-20",
+          "professionalSummary": "Board-certified cardiologist specializing in preventive and diagnostic cardiovascular medicine.",
+          "yearsOfExperience": 14,
+          "primarySpecialization": "Cardiology",
+          "secondarySpecializations": [
+            "Interventional Cardiology",
+            "Echocardiography"
+          ],
+          "medicalCouncil": "State Medical Board",
+          "registrationNumber": "MED-REG-2026-9081",
+          "licenseNumber": "LIC-MD-2026-9081",
+          "providerIdentifier": "NPI-DOC-2026-9081",
+          "verificationStatus": "VERIFIED",
+          "verificationNotes": "Compliance audit test",
+          "department": "Cardiovascular Medicine",
+          "subSpecializations": [],
+          "clinicalInterests": [],
+          "servicesOffered": [],
+          "languagesSpoken": [
+            "English",
+            "Spanish"
+          ],
+          "isDeleted": false,
+          "qualifications": [],
+          "certifications": [],
+          "experiences": [],
+          "documents": [],
+          "createdAt": "2026-10-28T07:40:44.362Z",
+          "updatedAt": "2026-10-29T04:58:22.556Z"
+        }
+      ],
+      "meta": {
+        "timestamp": "2026-11-03T18:54:10.698Z"
+      }
+    }
+  },
+  {
+    "name": "Doctor Statistics",
+    "method": "GET",
+    "path": "/api/v1/doctors/statistics",
+    "status": 200,
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "totalDoctors": 3,
+        "verifiedDoctors": 3,
+        "pendingDoctors": 0,
+        "suspendedDoctors": 0
+      },
+      "meta": {
+        "timestamp": "2026-11-03T18:54:11.308Z"
+      }
+    }
+  },
+  {
+    "name": "Pending Verification Doctors",
+    "method": "GET",
+    "path": "/api/v1/doctors/verification/pending",
+    "status": 200,
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [],
+      "meta": {
+        "timestamp": "2026-11-03T18:54:11.913Z"
+      }
+    }
+  },
+  {
+    "name": "Enterprise Search Doctors",
+    "method": "GET",
+    "path": "/api/v1/doctors/search?q=Sarah",
+    "status": 200,
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [
+        {
+          "id": "1f06067b-e229-4707-84e2-afa27da2e4cd",
+          "userId": "fa502f2e-332c-4ec0-b6aa-83713216ec88",
+          "fullName": "Dr. Sarah Jenkins, MD",
+          "gender": "Female",
+          "dateOfBirth": "1980-08-20",
+          "professionalSummary": "Board-certified cardiologist specializing in preventive and diagnostic cardiovascular medicine.",
+          "yearsOfExperience": 14,
+          "primarySpecialization": "Cardiology",
+          "secondarySpecializations": [
+            "Interventional Cardiology",
+            "Echocardiography"
+          ],
+          "medicalCouncil": "State Medical Board",
+          "registrationNumber": "MED-REG-2026-9081",
+          "licenseNumber": "LIC-MD-2026-9081",
+          "providerIdentifier": "NPI-DOC-2026-9081",
+          "verificationStatus": "VERIFIED",
+          "verificationNotes": "Compliance audit test",
+          "department": "Cardiovascular Medicine",
+          "subSpecializations": [],
+          "clinicalInterests": [],
+          "servicesOffered": [],
+          "languagesSpoken": [
+            "English",
+            "Spanish"
+          ],
+          "isDeleted": false,
+          "qualifications": [],
+          "certifications": [],
+          "experiences": [],
+          "documents": [],
+          "createdAt": "2026-10-28T07:40:44.362Z",
+          "updatedAt": "2026-10-29T04:58:22.556Z"
+        }
+      ],
+      "meta": {
+        "timestamp": "2026-11-03T18:54:13.519Z"
+      }
+    }
+  },
+  {
+    "name": "Doctor Details",
+    "method": "GET",
+    "path": "/api/v1/doctors/7c8fd004-cba1-4a72-9db6-437fc6d2baed",
+    "status": 200,
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "id": "7c8fd004-cba1-4a72-9db6-437fc6d2baed",
+        "userId": "8e8ede62-bb00-41fe-af08-06d707805434",
+        "fullName": "Dr. Julian Vance, MD",
+        "gender": "MALE",
+        "dateOfBirth": "1982-11-14",
+        "yearsOfExperience": 10,
+        "primarySpecialization": "Cardiology",
+        "secondarySpecializations": [
+          "General Practice"
+        ],
+        "medicalCouncil": "State Medical Board",
+        "registrationNumber": "MED-REG-2026-3950",
+        "licenseNumber": "NY-55193",
+        "providerIdentifier": "DOC-360-071553",
+        "verificationStatus": "VERIFIED",
+        "verificationNotes": "Credentials verified against registry by administrator",
+        "verifiedBy": "bc6f6875-434c-4050-b893-07343cc27986",
+        "verifiedAt": "2026-11-03T11:57:17.504Z",
+        "department": "Outpatient Care",
+        "subSpecializations": [],
+        "clinicalInterests": [],
+        "servicesOffered": [],
+        "languagesSpoken": [
+          "English"
+        ],
+        "isDeleted": false,
+        "qualifications": [],
+        "certifications": [],
+        "experiences": [],
+        "documents": [],
+        "createdAt": "2026-10-29T05:01:11.561Z",
+        "updatedAt": "2026-11-03T11:57:17.509Z"
+      },
+      "meta": {
+        "timestamp": "2026-11-03T18:54:14.127Z"
+      }
+    }
+  },
+  {
+    "name": "Doctor Documents",
+    "method": "GET",
+    "path": "/api/v1/doctors/7c8fd004-cba1-4a72-9db6-437fc6d2baed/documents",
+    "status": 200,
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [],
+      "meta": {
+        "timestamp": "2026-11-03T18:54:15.007Z"
+      }
+    }
+  },
+  {
+    "name": "Doctor History",
+    "method": "GET",
+    "path": "/api/v1/doctors/7c8fd004-cba1-4a72-9db6-437fc6d2baed/history",
+    "status": 200,
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [
+        {
+          "id": "ace7d780-c12a-4546-af77-c60532d03891",
+          "doctorProfileId": "7c8fd004-cba1-4a72-9db6-437fc6d2baed",
+          "action": "VERIFIED",
+          "previousStatus": "PENDING",
+          "newStatus": "VERIFIED",
+          "reason": "Credentials verified against registry by administrator",
+          "performedBy": "bc6f6875-434c-4050-b893-07343cc27986",
+          "createdAt": "2026-11-03T11:57:17.534Z"
+        },
+        {
+          "id": "b95ce570-f100-4865-b0c9-0bb8b0608ff9",
+          "doctorProfileId": "7c8fd004-cba1-4a72-9db6-437fc6d2baed",
+          "action": "REGISTERED",
+          "newStatus": "PENDING",
+          "reason": "Initial master doctor profile registration",
+          "performedBy": "8e8ede62-bb00-41fe-af08-06d707805434",
+          "createdAt": "2026-10-29T05:01:11.618Z"
+        }
+      ],
+      "meta": {
+        "timestamp": "2026-11-03T18:54:15.644Z"
+      }
+    }
+  },
+  {
+    "name": "Doctor Slots",
+    "method": "GET",
+    "path": "/api/v1/doctors/7c8fd004-cba1-4a72-9db6-437fc6d2baed/slots",
+    "status": 200,
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [],
+      "meta": {
+        "timestamp": "2026-11-03T18:54:16.562Z"
+      }
+    }
+  },
+  {
+    "name": "Doctor QR Code",
+    "method": "POST",
+    "path": "/api/v1/doctors/7c8fd004-cba1-4a72-9db6-437fc6d2baed/generate-qr",
+    "status": 404,
+    "body": {
+      "success": false,
+      "statusCode": 404,
+      "error": "NotFoundException",
+      "message": "Patient profile not found",
+      "meta": {
+        "timestamp": "2026-11-03T18:54:17.383Z",
+        "path": "/api/v1/doctors/7c8fd004-cba1-4a72-9db6-437fc6d2baed/generate-qr"
+      }
+    }
+  },
+  {
+    "name": "Admin Create Doctor for User (Probe Schema/Validation)",
+    "method": "POST",
+    "path": "/api/v1/admin/doctors",
+    "status": 400,
+    "body": {
+      "success": false,
+      "statusCode": 400,
+      "error": "BadRequestException",
+      "message": [
+        "userId must be a string",
+        "userId should not be empty",
+        "fullName must be a string",
+        "fullName should not be empty",
+        "primarySpecialization must be a string",
+        "primarySpecialization should not be empty",
+        "medicalCouncil must be a string",
+        "medicalCouncil should not be empty",
+        "registrationNumber must be a string",
+        "registrationNumber should not be empty",
+        "licenseNumber must be a string",
+        "licenseNumber should not be empty"
+      ],
+      "meta": {
+        "timestamp": "2026-11-03T18:54:18.281Z",
+        "path": "/api/v1/admin/doctors"
+      }
+    }
+  },
+  {
+    "name": "List Facilities",
+    "method": "GET",
+    "path": "/api/v1/facilities?limit=5",
+    "status": 200,
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [
+        {
+          "id": "f12c37e8-cfc9-4896-992c-82d954905c46",
+          "name": "CAPITAL HOSPITAL",
+          "legalName": "CAPITAL HOSPITAL",
+          "facilityCode": "FAC-360-792674",
+          "registrationNumber": "NY-HOSP-88145",
+          "facilityType": "HOSPITAL",
+          "ownershipType": "PRIVATE",
+          "streetAddress": "PLOT 3, GURUNANAK SERVUCE STATION,  CANADA",
+          "city": "BHUBANESWAR",
+          "state": "ODISHA",
+          "country": "United States (US)",
+          "timezone": "Asia/Karachi",
+          "phone": "+9178469175789",
+          "emergencyPhone": "+917846917545",
+          "email": "pawani220@gmail.com",
+          "verificationStatus": "VERIFIED",
+          "verificationNotes": "Verified by CareID Super Admin",
+          "verifiedBy": "bc6f6875-434c-4050-b893-07343cc27986",
+          "verifiedAt": "2026-11-03T11:54:41.911Z",
+          "isDeleted": false,
+          "branches": [],
+          "departments": [],
+          "rooms": [],
+          "licenses": [],
+          "accreditations": [],
+          "documents": [],
+          "createdAt": "2026-11-03T11:53:12.686Z",
+          "updatedAt": "2026-11-03T11:56:00.413Z"
+        },
+        {
+          "id": "ffd6cadd-4a74-4129-86c0-35e643fd3205",
+          "name": "CareID Apex Diagnostic Center",
+          "legalName": "Apex Health Partners LLC",
+          "facilityCode": "FAC-360-973345",
+          "registrationNumber": "REG-FAC-2026-099",
+          "facilityType": "DIAGNOSTIC_CENTER",
+          "ownershipType": "PRIVATE",
+          "streetAddress": "742 Evergreen Terrace",
+          "city": "Springfield",
+          "state": "Oregon",
+          "country": "United States",
+          "timezone": "Asia/Karachi",
+          "phone": "+16505559876",
+          "emergencyPhone": "+16505559877",
+          "email": "apex@careid.health",
+          "verificationStatus": "VERIFIED",
+          "verificationNotes": "Compliance audit pending",
+          "isDeleted": false,
+          "branches": [],
+          "departments": [],
+          "rooms": [],
+          "licenses": [],
+          "accreditations": [],
+          "documents": [],
+          "createdAt": "2026-10-31T10:36:13.352Z",
+          "updatedAt": "2026-10-31T10:36:39.711Z"
+        },
+        {
+          "id": "3b6a3f47-ed9c-4010-bb1a-e0fdea5f4abb",
+          "name": "Metro General Hospital",
+          "legalName": "Metro Healthcare Systems Inc.",
+          "facilityCode": "FAC-METRO-001",
+          "registrationNumber": "REG-FAC-2026-001",
+          "facilityType": "HOSPITAL",
+          "ownershipType": "PRIVATE",
+          "streetAddress": "100 Medical Center Boulevard",
+          "city": "Metro City",
+          "state": "Central",
+          "country": "United States",
+          "timezone": "America/New_York",
+          "phone": "+16505559000",
+          "email": "contact@metrogeneral.org",
+          "verificationStatus": "VERIFIED",
+          "verificationNotes": "Test verification by Super Admin",
+          "verifiedBy": "bc6f6875-434c-4050-b893-07343cc27986",
+          "verifiedAt": "2026-10-31T10:35:56.357Z",
+          "isDeleted": false,
+          "branches": [],
+          "departments": [
+            {
+              "id": "7c718d5b-a26d-462a-92ef-886bf8331a13",
+              "facilityId": "3b6a3f47-ed9c-4010-bb1a-e0fdea5f4abb",
+              "name": "Cardiology Department",
+              "code": "CARD-01",
+              "description": "Comprehensive Cardiovascular Diagnostics and Care",
+              "departmentHead": "Dr. Sarah Jenkins, MD",
+              "createdAt": "2026-10-28T07:40:44.352Z"
+            }
+          ],
+          "rooms": [],
+          "licenses": [],
+          "accreditations": [],
+          "documents": [],
+          "createdAt": "2026-10-28T07:40:44.329Z",
+          "updatedAt": "2026-10-31T10:35:56.362Z"
+        }
+      ],
+      "meta": {
+        "timestamp": "2026-11-03T18:54:19.087Z"
+      }
+    }
+  },
+  {
+    "name": "Facility Doctors",
+    "method": "GET",
+    "path": "/api/v1/facilities/f12c37e8-cfc9-4896-992c-82d954905c46/doctors",
+    "status": 200,
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [
+        {
+          "id": "7c8fd004-cba1-4a72-9db6-437fc6d2baed",
+          "fullName": "Dr. Julian Vance, MD",
+          "specialization": "Cardiology",
+          "credentials": "State Medical Board"
+        }
+      ],
+      "meta": {
+        "timestamp": "2026-11-03T18:54:19.940Z"
+      }
+    }
+  }
+]

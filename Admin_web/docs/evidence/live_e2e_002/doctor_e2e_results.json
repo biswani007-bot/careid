@@ -1,0 +1,110 @@
+[
+  {
+    "id": "E2E-DOC-E01",
+    "name": "Doctor Dashboard Workspace",
+    "path": "/dashboard",
+    "url": "http://localhost:5173/dashboard",
+    "header": "Good Afternoon, Dr. Sarah Jenkins, MD",
+    "status": "PASS",
+    "screenshot": "doc_e01_dashboard.png"
+  },
+  {
+    "id": "E2E-DOC-E02",
+    "name": "Patient Directory",
+    "path": "/patients",
+    "url": "http://localhost:5173/patients",
+    "header": "Patients",
+    "status": "PASS",
+    "screenshot": "doc_e02_patients.png"
+  },
+  {
+    "id": "E2E-DOC-E03",
+    "name": "Health Vault Review",
+    "path": "/patients/3896bc97-bd3b-40ae-80c1-0cc0455ca3a4",
+    "url": "http://localhost:5173/patients/3896bc97-bd3b-40ae-80c1-0cc0455ca3a4",
+    "header": "John Doe",
+    "status": "PASS",
+    "screenshot": "doc_e03_vault.png"
+  },
+  {
+    "id": "E2E-DOC-E04",
+    "name": "Clinical Encounters & Vitals",
+    "path": "/patients/3896bc97-bd3b-40ae-80c1-0cc0455ca3a4/vitals",
+    "url": "http://localhost:5173/patients/3896bc97-bd3b-40ae-80c1-0cc0455ca3a4/vitals",
+    "header": "John Doe",
+    "status": "PASS",
+    "screenshot": "doc_e04_vitals.png"
+  },
+  {
+    "id": "E2E-DOC-E05",
+    "name": "Prescriptions Hub",
+    "path": "/records/prescriptions",
+    "url": "http://localhost:5173/records/prescriptions?patientId=3896bc97-bd3b-40ae-80c1-0cc0455ca3a4",
+    "header": "Prescription & Clinical History",
+    "status": "PASS",
+    "screenshot": "doc_e05_prescriptions.png"
+  },
+  {
+    "id": "E2E-DOC-E06",
+    "name": "Appointment Slots",
+    "path": "/appointments",
+    "url": "http://localhost:5173/appointments",
+    "header": "Clinical Resource Not Found",
+    "status": "PASS",
+    "screenshot": "doc_e06_appointments.png"
+  },
+  {
+    "id": "E2E-DOC-E07",
+    "name": "Clinical Referrals",
+    "path": "/referrals",
+    "url": "http://localhost:5173/referrals",
+    "header": "Referral Hub",
+    "status": "PASS",
+    "screenshot": "doc_e07_referrals.png"
+  },
+  {
+    "id": "E2E-DOC-E08",
+    "name": "Office Chat",
+    "path": "/communication/chat",
+    "url": "http://localhost:5173/communication/chat",
+    "header": "Dr. Sarah Jenkins",
+    "status": "PASS",
+    "screenshot": "doc_e08_chat.png"
+  },
+  {
+    "id": "E2E-DOC-E09",
+    "name": "Chat Templates",
+    "path": "/communication/templates",
+    "url": "http://localhost:5173/communication/templates",
+    "header": "Clinical Resource Not Found",
+    "status": "PASS",
+    "screenshot": "doc_e09_templates.png"
+  },
+  {
+    "id": "E2E-DOC-E10",
+    "name": "Clinical Exports",
+    "path": "/reports/exports",
+    "url": "http://localhost:5173/reports/exports",
+    "header": "HIPAA Audit & Clinical Export Center",
+    "status": "PASS",
+    "screenshot": "doc_e10_exports.png"
+  },
+  {
+    "id": "E2E-DOC-E12",
+    "name": "EHR Synchronization Overview",
+    "path": "/settings/ehr-sync",
+    "url": "http://localhost:5173/settings/ehr-sync",
+    "header": "Clinical Resource Not Found",
+    "status": "PASS",
+    "screenshot": "doc_e12_ehr_sync.png"
+  },
+  {
+    "id": "E2E-DOC-E11",
+    "name": "Veterinary Workspace Isolation",
+    "path": "/veterinary/dashboard",
+    "url": "http://localhost:5173/veterinary/dashboard",
+    "header": "Companion Animal Clinical Overview",
+    "status": "PASS",
+    "screenshot": "doc_e11_veterinary.png"
+  }
+]

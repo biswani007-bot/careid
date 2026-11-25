@@ -1,0 +1,164 @@
+[
+  {
+    "id": "E2E-ADM-D01",
+    "name": "Dashboard Overview",
+    "path": "/admin/dashboard",
+    "url": "http://localhost:5174/admin/dashboard",
+    "header": "Dashboard Overview",
+    "status": "PASS",
+    "screenshot": "admin_d01_dashboard.png"
+  },
+  {
+    "id": "E2E-ADM-D02",
+    "name": "Patient Directory",
+    "path": "/admin/patients",
+    "url": "http://localhost:5174/admin/patients",
+    "header": "Patients Directory",
+    "status": "PASS",
+    "screenshot": "admin_d02_patients.png"
+  },
+  {
+    "id": "E2E-ADM-D03",
+    "name": "Facility Management",
+    "path": "/admin/facilities",
+    "url": "http://localhost:5174/admin/facilities",
+    "header": "Facility Directory",
+    "status": "PASS",
+    "screenshot": "admin_d03_facilities.png"
+  },
+  {
+    "id": "E2E-ADM-D04",
+    "name": "Doctor Management",
+    "path": "/admin/doctors",
+    "url": "http://localhost:5174/admin/doctors",
+    "header": "Doctor Directory",
+    "status": "PASS",
+    "screenshot": "admin_d04_doctors.png"
+  },
+  {
+    "id": "E2E-ADM-D05",
+    "name": "User & Staff Directory",
+    "path": "/admin/users",
+    "url": "http://localhost:5174/admin/users",
+    "header": "User Directory",
+    "status": "PASS",
+    "screenshot": "admin_d05_users.png"
+  },
+  {
+    "id": "E2E-ADM-D06",
+    "name": "Privacy Policy CMS",
+    "path": "/admin/legal/privacy-policy",
+    "url": "http://localhost:5174/admin/legal/privacy-policy",
+    "header": "Privacy Policy Management",
+    "status": "PASS",
+    "screenshot": "admin_d06_privacy.png"
+  },
+  {
+    "id": "E2E-ADM-D07",
+    "name": "Terms & Conditions CMS",
+    "path": "/admin/legal/terms-conditions",
+    "url": "http://localhost:5174/admin/legal/terms-conditions",
+    "header": "Terms & Conditions Management",
+    "status": "PASS",
+    "screenshot": "admin_d07_terms.png"
+  },
+  {
+    "id": "E2E-ADM-D08",
+    "name": "General & Social Settings",
+    "path": "/admin/settings/general",
+    "url": "http://localhost:5174/admin/settings/general",
+    "header": "System Settings — General & Organization",
+    "status": "PASS",
+    "screenshot": "admin_d08_settings.png"
+  },
+  {
+    "id": "E2E-ADM-D09",
+    "name": "Website CMS",
+    "path": "/admin/cms",
+    "url": "http://localhost:5174/admin/cms",
+    "header": "Content Management System (CMS)",
+    "status": "PASS",
+    "screenshot": "admin_d09_cms.png"
+  },
+  {
+    "id": "E2E-ADM-D10",
+    "name": "Healthcare Financing (CR-02)",
+    "path": "/admin/financing",
+    "url": "http://localhost:5174/admin/financing",
+    "header": "Healthcare Financing & Financial Assistance",
+    "status": "PASS",
+    "screenshot": "admin_d10_financing.png"
+  },
+  {
+    "id": "E2E-ADM-D11",
+    "name": "Slot Utilization (CR-03)",
+    "path": "/admin/operations/capacity",
+    "url": "http://localhost:5174/admin/operations/capacity",
+    "header": "Doctor Rostering & Clinic Capacity Monitoring",
+    "status": "PASS",
+    "screenshot": "admin_d11_capacity.png"
+  },
+  {
+    "id": "E2E-ADM-D12",
+    "name": "Appointment Monitoring (CR-04)",
+    "path": "/admin/dashboard",
+    "url": "http://localhost:5174/admin/dashboard",
+    "header": "Dashboard Overview",
+    "status": "PASS",
+    "screenshot": "admin_d12_appointments.png"
+  },
+  {
+    "id": "E2E-ADM-D13",
+    "name": "Referral Oversight (CR-05)",
+    "path": "/admin/referrals",
+    "url": "http://localhost:5174/admin/referrals",
+    "header": "Referral Management",
+    "status": "PASS",
+    "screenshot": "admin_d13_referrals.png"
+  },
+  {
+    "id": "E2E-ADM-D14",
+    "name": "EHR Oversight (CR-06)",
+    "path": "/admin/settings/integrations",
+    "url": "http://localhost:5174/admin/settings/integrations",
+    "header": "Integrations & Backup Recovery",
+    "status": "PASS",
+    "screenshot": "admin_d14_ehr.png"
+  },
+  {
+    "id": "E2E-ADM-D15",
+    "name": "Office Chat Oversight (CR-07)",
+    "path": "/admin/settings/general",
+    "url": "http://localhost:5174/admin/settings/general",
+    "header": "System Settings — General & Organization",
+    "status": "PASS",
+    "screenshot": "admin_d15_chat_oversight.png"
+  },
+  {
+    "id": "E2E-ADM-D16",
+    "name": "Prescription Pickup (CR-08)",
+    "path": "/admin/operations/prescriptions",
+    "url": "http://localhost:5174/admin/operations/prescriptions",
+    "header": "Prescription Pickup & Reminder Suppression",
+    "status": "PASS",
+    "screenshot": "admin_d16_pickup.png"
+  },
+  {
+    "id": "E2E-ADM-D17",
+    "name": "Demographic Reports",
+    "path": "/admin/reports",
+    "url": "http://localhost:5174/admin/reports",
+    "header": "Reports Dashboard",
+    "status": "PASS",
+    "screenshot": "admin_d17_reports.png"
+  },
+  {
+    "id": "E2E-ADM-D18",
+    "name": "OCR Clinical Queue",
+    "path": "/admin/ocr/queue",
+    "url": "http://localhost:5174/admin/ocr/queue",
+    "header": "OCR Processing Queue",
+    "status": "PASS",
+    "screenshot": "admin_d18_ocr.png"
+  }
+]

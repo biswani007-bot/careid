@@ -1,0 +1,8 @@
+node_modules
+dist
+.git
+.agents
+*.log
+.env
+.env.local
+analysis_reports

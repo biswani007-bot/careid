@@ -1,0 +1,64 @@
+{
+  "before": {
+    "id": "76a3fbf7-aa0f-4631-b4d7-a2de5babb190",
+    "medicalAttachmentId": "00d54e67-af72-4ebc-ae9a-a63710dec128",
+    "documentType": "LAB_REPORT",
+    "status": "FAILED",
+    "submittedBy": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+    "startedAt": "2026-11-16T12:43:50.456Z",
+    "completedAt": "2026-11-16T12:43:50.542Z",
+    "processingTimeMs": 137,
+    "confidenceLevel": "LOW",
+    "failureReason": "OCR worker internal authentication failed. Check CAREID_OCR_SECRET configuration.",
+    "isSimulated": false,
+    "extractionEngine": "PP-OCRv4-Mobile-CPU",
+    "pages": [],
+    "extractedFields": [],
+    "verifications": [],
+    "createdAt": "2026-11-16T12:43:50.300Z",
+    "updatedAt": "2026-11-16T12:43:50.548Z"
+  },
+  "endpoint1": {
+    "success": false,
+    "statusCode": 400,
+    "error": "BadRequestException",
+    "message": "UnsupportedFormat",
+    "meta": {
+      "timestamp": "2026-11-17T05:26:14.202Z",
+      "path": "/api/v1/ocr/jobs/76a3fbf7-aa0f-4631-b4d7-a2de5babb190/reprocess"
+    }
+  },
+  "endpoint2": {
+    "success": false,
+    "statusCode": 400,
+    "error": "BadRequestException",
+    "message": "UnsupportedFormat",
+    "meta": {
+      "timestamp": "2026-11-17T05:26:15.296Z",
+      "path": "/api/v1/ocr/reprocess/76a3fbf7-aa0f-4631-b4d7-a2de5babb190"
+    }
+  },
+  "after": {
+    "id": "76a3fbf7-aa0f-4631-b4d7-a2de5babb190",
+    "medicalAttachmentId": "00d54e67-af72-4ebc-ae9a-a63710dec128",
+    "documentType": "LAB_REPORT",
+    "status": "FAILED",
+    "submittedBy": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+    "startedAt": "2026-11-17T05:26:15.225Z",
+    "completedAt": "2026-11-17T05:26:15.267Z",
+    "processingTimeMs": 71,
+    "confidenceLevel": "LOW",
+    "failureReason": "UnsupportedFormat",
+    "isSimulated": false,
+    "extractionEngine": "PP-OCRv4-Mobile-CPU",
+    "pages": [],
+    "extractedFields": [],
+    "verifications": [],
+    "createdAt": "2026-11-16T12:43:50.300Z",
+    "updatedAt": "2026-11-17T05:26:15.270Z"
+  },
+  "text": {
+    "text": ""
+  },
+  "fields": []
+}

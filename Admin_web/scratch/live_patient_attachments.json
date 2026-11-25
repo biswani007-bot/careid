@@ -1,0 +1,10 @@
+{
+  "success": false,
+  "statusCode": 404,
+  "error": "NotFoundException",
+  "message": "Cannot GET /api/v1/attachments/patient/787e5187-7859-4320-bb1a-465a57dd086a",
+  "meta": {
+    "timestamp": "2026-11-14T20:03:43.226Z",
+    "path": "/api/v1/attachments/patient/787e5187-7859-4320-bb1a-465a57dd086a"
+  }
+}

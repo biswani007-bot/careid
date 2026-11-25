@@ -1,0 +1,463 @@
+[
+  {
+    "folder": "02. Authentication & OTP",
+    "name": "CareID Admin/Super Admin Password Login",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/auth/password/login",
+    "queryParams": [],
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": "{\n  \"identifier\": \"superadmin@careid.test\",\n  \"password\": \"{{adminPassword}}\"\n}"
+  },
+  {
+    "folder": "02. Authentication & OTP",
+    "name": "Admin Email/Password Login (Legacy Alias)",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/auth/admin/login",
+    "queryParams": [],
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": "{\n  \"identifier\": \"superadmin@careid.test\",\n  \"password\": \"{{adminPassword}}\"\n}"
+  },
+  {
+    "folder": "02. Authentication & OTP",
+    "name": "Verify Phone OTP & Login",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/auth/otp/verify",
+    "queryParams": [],
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": "{\n  \"challengeId\": \"{{challengeId}}\",\n  \"otpCode\": \"123456\"\n}"
+  },
+  {
+    "folder": "02. Authentication & OTP",
+    "name": "User Session Logout",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/auth/logout",
+    "queryParams": [],
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": "{\n  \"refreshToken\": \"refresh.token.string\"\n}"
+  },
+  {
+    "folder": "02. Authentication & OTP",
+    "name": "Logout all devices and revoke all tokens",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/auth/logout-all",
+    "queryParams": [],
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": "{\n  \"refreshToken\": \"refresh-token-jwt-string\"\n}"
+  },
+  {
+    "folder": "04. Admin Portal & System Operations",
+    "name": "Export system audit logs as CSV or JSON",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/admin/audit-logs/export?format=csv&userId=string&action=string&startDate=string&endDate=string",
+    "queryParams": [
+      {
+        "disabled": false,
+        "key": "format",
+        "value": "csv"
+      },
+      {
+        "disabled": false,
+        "key": "userId",
+        "value": "string"
+      },
+      {
+        "disabled": false,
+        "key": "action",
+        "value": "string"
+      },
+      {
+        "disabled": false,
+        "key": "startDate",
+        "value": "string"
+      },
+      {
+        "disabled": false,
+        "key": "endDate",
+        "value": "string"
+      }
+    ],
+    "header": [],
+    "body": null
+  },
+  {
+    "folder": "04. Admin Portal & System Operations",
+    "name": "Get single audit log entry by ID",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/admin/audit-logs/:id",
+    "queryParams": [],
+    "header": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": null
+  },
+  {
+    "folder": "04. Admin Portal & System Operations",
+    "name": "Get global system audit trail with filtering and pagination",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/admin/audit-logs?userId=string&action=string&startDate=string&endDate=string&page=1&limit=50",
+    "queryParams": [
+      {
+        "disabled": false,
+        "key": "userId",
+        "value": "string"
+      },
+      {
+        "disabled": false,
+        "key": "action",
+        "value": "string"
+      },
+      {
+        "disabled": false,
+        "key": "startDate",
+        "value": "string"
+      },
+      {
+        "disabled": false,
+        "key": "endDate",
+        "value": "string"
+      },
+      {
+        "disabled": false,
+        "key": "page",
+        "value": "1"
+      },
+      {
+        "disabled": false,
+        "key": "limit",
+        "value": "50"
+      }
+    ],
+    "header": [],
+    "body": null
+  },
+  {
+    "folder": "06. Patient App",
+    "name": "Get Patient Profile Activity Summary",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/patients/profile/activity",
+    "queryParams": [],
+    "header": [],
+    "body": null
+  },
+  {
+    "folder": "07. Digital Health Cards & Passes",
+    "name": "Get complete status lifecycle audit history for Health Card",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/health-cards/:id/history",
+    "queryParams": [],
+    "header": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": null
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Get full schedule audit & modification history",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/schedules/:id/history",
+    "queryParams": [],
+    "header": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": null
+  },
+  {
+    "folder": "12. Family Members & Relationships",
+    "name": "Get full consent audit history for the patient",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/family/consents/history",
+    "queryParams": [],
+    "header": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": null
+  },
+  {
+    "folder": "14. Notifications & Alerts",
+    "name": "List notification audit logs",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/notifications/audit",
+    "queryParams": [],
+    "header": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": null
+  },
+  {
+    "folder": "14. Notifications & Alerts",
+    "name": "List notification audit logs",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/notification/audit",
+    "queryParams": [],
+    "header": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": null
+  },
+  {
+    "folder": "15. OCR & Document Verification",
+    "name": "Get paginated audit history of completed human OCR reviews",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/ocr/reviews/history?page=1&limit=20&status=APPROVED&reviewerId=string&startDate=string&endDate=string",
+    "queryParams": [
+      {
+        "disabled": false,
+        "key": "page",
+        "value": "1",
+        "description": "Page number (1-based)"
+      },
+      {
+        "disabled": false,
+        "key": "limit",
+        "value": "20",
+        "description": "Items per page (max 100)"
+      },
+      {
+        "disabled": false,
+        "key": "status",
+        "value": "APPROVED"
+      },
+      {
+        "disabled": false,
+        "key": "reviewerId",
+        "value": "string",
+        "description": "Filter by reviewing user ID"
+      },
+      {
+        "disabled": false,
+        "key": "startDate",
+        "value": "string",
+        "description": "Filter reviews on or after ISO start timestamp"
+      },
+      {
+        "disabled": false,
+        "key": "endDate",
+        "value": "string",
+        "description": "Filter reviews on or before ISO end timestamp"
+      }
+    ],
+    "header": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": null
+  },
+  {
+    "folder": "17. Governance, Legal & Compliance",
+    "name": "List governance audit logs",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/governance/audit?entityType=string",
+    "queryParams": [
+      {
+        "disabled": false,
+        "key": "entityType",
+        "value": "string"
+      }
+    ],
+    "header": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": null
+  },
+  {
+    "folder": "17. Governance, Legal & Compliance",
+    "name": "Get governance audit log detail by ID",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/governance/audit/:id",
+    "queryParams": [],
+    "header": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": null
+  },
+  {
+    "folder": "18. Security, Threat Detection & Sessions",
+    "name": "Log new security incident",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/security/incidents",
+    "queryParams": [],
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": "{\n  \"title\": \"Unusual Login Attempt Spikes Detected\",\n  \"description\": \"Multiple failed authentication attempts detected from IP 192.168.1.100\",\n  \"severity\": \"HIGH\"\n}"
+  },
+  {
+    "folder": "18. Security, Threat Detection & Sessions",
+    "name": "List security audit logs",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/security/audit?userId=string&resource=string",
+    "queryParams": [
+      {
+        "disabled": false,
+        "key": "userId",
+        "value": "string"
+      },
+      {
+        "disabled": false,
+        "key": "resource",
+        "value": "string"
+      }
+    ],
+    "header": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": null
+  },
+  {
+    "folder": "22. Enterprise QR Subsystem",
+    "name": "Verify QR token signature, check validity status, and log scan details",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/qr/verify",
+    "queryParams": [],
+    "header": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": "{\n  \"token\": \"qr_token_string_or_signed_hash\",\n  \"deviceInfo\": \"iOS / Chrome 120\",\n  \"location\": \"37.7749,-122.4194\"\n}"
+  },
+  {
+    "folder": "22. Enterprise QR Subsystem",
+    "name": "Get scan audit log history for a QR code",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/qr/:id/scans",
+    "queryParams": [],
+    "header": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": null
+  },
+  {
+    "folder": "23. Observability & Performance Probes",
+    "name": "Query structured application logs",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/observability/logs?severity=string&requestId=string&traceId=string",
+    "queryParams": [
+      {
+        "disabled": false,
+        "key": "severity",
+        "value": "string"
+      },
+      {
+        "disabled": false,
+        "key": "requestId",
+        "value": "string"
+      },
+      {
+        "disabled": false,
+        "key": "traceId",
+        "value": "string"
+      }
+    ],
+    "header": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": null
+  },
+  {
+    "folder": "23. Observability & Performance Probes",
+    "name": "Get all logs for a specific Request ID",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/observability/logs/:requestId",
+    "queryParams": [],
+    "header": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": null
+  }
+]

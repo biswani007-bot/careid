@@ -1,0 +1,20 @@
+# CareID Persistent PaddleOCR Worker — Runtime Dependencies
+# Target Python Version: >= 3.10
+# Architecture: PP-OCRv4 (mobile_det + en_mobile_rec) + PyMuPDF
+
+# Async HTTP Web Server & Process Monitoring
+aiohttp>=3.9.0,<4.0.0
+psutil>=5.9.0
+
+# Document & Image Processing
+Pillow>=10.0.0
+numpy>=1.24.0,<2.0.0
+pymupdf>=1.23.0
+
+# Deep Learning & OCR Engines (CPU by default)
+paddlepaddle>=2.5.0,<=3.0.0
+paddleocr>=2.7.0
+
+# HTTP Client (for integration testing suite)
+requests>=2.31.0
+

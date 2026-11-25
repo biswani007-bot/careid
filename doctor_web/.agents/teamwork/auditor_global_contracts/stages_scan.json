@@ -1,0 +1,257 @@
+[
+  {
+    "stage": 6,
+    "name": "Clinical Review",
+    "file": "src/pages/treatment-offers/TreatmentOfferReviewPage.tsx",
+    "serviceImports": [
+      "import { consultationService } from '@/services/consultationService'",
+      "import { treatmentOfferService } from '@/services/treatmentOfferService'",
+      "import { patientService } from '@/services/patientService'"
+    ],
+    "serviceCalls": [
+      "treatmentOfferService.getTreatmentOffer",
+      "patientService.getPatientById",
+      "treatmentOfferService.dispatchTreatmentOffer",
+      "consultationService.saveTreatmentOffer"
+    ],
+    "matchedMocks": [
+      "mock"
+    ],
+    "navigations": [
+      "navigate(`/treatment-offers/${offer.offerId}/status`, {\n        state: {\n          ...offer,\n          dispatchedAt: new Date()",
+      "navigate(`/treatment-offers/${offer.offerId}/status`, { state: offer })",
+      "navigate(\n                offer.patientId\n                  ? `/treatment-offers/new/step-1?patientId=${encodeURIComponent(offer.patientId)",
+      "navigate(offer.patientId ? `/patients/${encodeURIComponent(offer.patientId)",
+      "navigate(\n                offer.patientId\n                  ? `/patients/${encodeURIComponent(offer.patientId)",
+      "navigate(\n                    offer.patientId\n                      ? `/treatment-offers/new/step-1?patientId=${encodeURIComponent(offer.patientId)"
+    ],
+    "linesCount": 762
+  },
+  {
+    "stage": 7,
+    "name": "Dispatched Status",
+    "file": "src/pages/treatment-offers/TreatmentOfferStatusPage.tsx",
+    "serviceImports": [
+      "import { treatmentOfferService, TreatmentOfferStatusResponse } from '@/services/treatmentOfferService'",
+      "import { patientService } from '@/services/patientService'"
+    ],
+    "serviceCalls": [
+      "treatmentOfferService.getTreatmentOfferStatus",
+      "treatmentOfferService.getTreatmentOffer",
+      "patientService.getPatientById",
+      "treatmentOfferService.cancelTreatmentOffer"
+    ],
+    "matchedMocks": [
+      "setTimeout"
+    ],
+    "navigations": [
+      "navigate(offer.patientId ? `/patients/${encodeURIComponent(offer.patientId)",
+      "navigate(`/treatment-offers/${offer.offerId}/accepted`, { state: offer })",
+      "navigate(\n                    offer.patientId\n                      ? `/treatment-offers/new/step-1?patientId=${encodeURIComponent(offer.patientId)",
+      "navigate(`/treatment-offers/${offer.offerId}/cath-lab-safety`, { state: offer })"
+    ],
+    "linesCount": 787
+  },
+  {
+    "stage": 8,
+    "name": "Offer Accepted",
+    "file": "src/pages/treatment-offers/TreatmentOfferAcceptedPage.tsx",
+    "serviceImports": [
+      "import { treatmentOfferService } from '@/services/treatmentOfferService'",
+      "import { patientService } from '@/services/patientService'"
+    ],
+    "serviceCalls": [
+      "treatmentOfferService.getTreatmentOffer",
+      "patientService.getPatientById"
+    ],
+    "matchedMocks": [
+      "93458",
+      "setTimeout"
+    ],
+    "navigations": [
+      "navigate(`/treatment-offers/${offer.offerId}/clearance`, { state: offer })",
+      "navigate(offer.patientId ? `/patients/${encodeURIComponent(offer.patientId)"
+    ],
+    "linesCount": 852
+  },
+  {
+    "stage": 9,
+    "name": "Pre-Op Clearance",
+    "file": "src/pages/treatment-offers/ClinicalHandoffPage.tsx",
+    "serviceImports": [
+      "import { treatmentOfferService } from '@/services/treatmentOfferService'",
+      "import { patientService } from '@/services/patientService'"
+    ],
+    "serviceCalls": [
+      "treatmentOfferService.getTreatmentOffer",
+      "patientService.getPatientById"
+    ],
+    "matchedMocks": [
+      "93458",
+      "setTimeout"
+    ],
+    "navigations": [
+      "navigate(`/treatment-offers/${offer.offerId}/schedule`, { state: offer })",
+      "navigate(offer.patientId ? `/treatment-offers/new/step-1?patientId=${encodeURIComponent(offer.patientId)",
+      "navigate(`/treatment-offers/${offer.offerId}/accepted`, { state: offer })",
+      "navigate(`/patients/${offer.patientId}`)",
+      "navigate('/records/imaging')"
+    ],
+    "linesCount": 778
+  },
+  {
+    "stage": 10,
+    "name": "Suite Scheduling",
+    "file": "src/pages/treatment-offers/ProcedureSchedulingPage.tsx",
+    "serviceImports": [
+      "import { treatmentOfferService } from '@/services/treatmentOfferService'",
+      "import { patientService } from '@/services/patientService'"
+    ],
+    "serviceCalls": [
+      "treatmentOfferService.getTreatmentOffer",
+      "patientService.getPatientById"
+    ],
+    "matchedMocks": [
+      "93458",
+      "setTimeout"
+    ],
+    "navigations": [
+      "navigate(`/treatment-offers/${offer.offerId}/schedule/review`, { state: offer })",
+      "navigate(`/treatment-offers/${offer.offerId}/schedule`, { state: offer })",
+      "navigate(`/treatment-offers/${offer.offerId}/scheduled`, { state: offer })",
+      "navigate(`/treatment-offers/${offer.offerId}/appointment`, { state: offer })",
+      "navigate(`/treatment-offers/${offer.offerId}/pre-op`, { state: offer })",
+      "navigate(offer.patientId ? `/treatment-offers/new/step-1?patientId=${encodeURIComponent(offer.patientId)",
+      "navigate(`/treatment-offers/${offer.offerId}/clearance`, { state: offer })",
+      "navigate(`/patients/${offer.patientId}`)"
+    ],
+    "linesCount": 1473
+  },
+  {
+    "stage": 11,
+    "name": "Hold Review",
+    "file": "src/pages/treatment-offers/ProcedureSchedulingPage.tsx",
+    "serviceImports": [
+      "import { treatmentOfferService } from '@/services/treatmentOfferService'",
+      "import { patientService } from '@/services/patientService'"
+    ],
+    "serviceCalls": [
+      "treatmentOfferService.getTreatmentOffer",
+      "patientService.getPatientById"
+    ],
+    "matchedMocks": [
+      "93458",
+      "setTimeout"
+    ],
+    "navigations": [
+      "navigate(`/treatment-offers/${offer.offerId}/schedule/review`, { state: offer })",
+      "navigate(`/treatment-offers/${offer.offerId}/schedule`, { state: offer })",
+      "navigate(`/treatment-offers/${offer.offerId}/scheduled`, { state: offer })",
+      "navigate(`/treatment-offers/${offer.offerId}/appointment`, { state: offer })",
+      "navigate(`/treatment-offers/${offer.offerId}/pre-op`, { state: offer })",
+      "navigate(offer.patientId ? `/treatment-offers/new/step-1?patientId=${encodeURIComponent(offer.patientId)",
+      "navigate(`/treatment-offers/${offer.offerId}/clearance`, { state: offer })",
+      "navigate(`/patients/${offer.patientId}`)"
+    ],
+    "linesCount": 1473
+  },
+  {
+    "stage": 12,
+    "name": "Slot Confirmed",
+    "file": "src/pages/treatment-offers/ProcedureSchedulingPage.tsx",
+    "serviceImports": [
+      "import { treatmentOfferService } from '@/services/treatmentOfferService'",
+      "import { patientService } from '@/services/patientService'"
+    ],
+    "serviceCalls": [
+      "treatmentOfferService.getTreatmentOffer",
+      "patientService.getPatientById"
+    ],
+    "matchedMocks": [
+      "93458",
+      "setTimeout"
+    ],
+    "navigations": [
+      "navigate(`/treatment-offers/${offer.offerId}/schedule/review`, { state: offer })",
+      "navigate(`/treatment-offers/${offer.offerId}/schedule`, { state: offer })",
+      "navigate(`/treatment-offers/${offer.offerId}/scheduled`, { state: offer })",
+      "navigate(`/treatment-offers/${offer.offerId}/appointment`, { state: offer })",
+      "navigate(`/treatment-offers/${offer.offerId}/pre-op`, { state: offer })",
+      "navigate(offer.patientId ? `/treatment-offers/new/step-1?patientId=${encodeURIComponent(offer.patientId)",
+      "navigate(`/treatment-offers/${offer.offerId}/clearance`, { state: offer })",
+      "navigate(`/patients/${offer.patientId}`)"
+    ],
+    "linesCount": 1473
+  },
+  {
+    "stage": 13,
+    "name": "Appointment Ledger",
+    "file": "src/pages/treatment-offers/AppointmentDetailsPage.tsx",
+    "serviceImports": [
+      "import { treatmentOfferService } from '@/services/treatmentOfferService'",
+      "import { patientService } from '@/services/patientService'"
+    ],
+    "serviceCalls": [
+      "treatmentOfferService.getTreatmentOffer",
+      "patientService.getPatientById"
+    ],
+    "matchedMocks": [
+      "93458",
+      "setTimeout"
+    ],
+    "navigations": [
+      "navigate(`/treatment-offers/${offer.offerId}/pre-op`, { state: offer })",
+      "navigate(offer.patientId ? `/treatment-offers/new/step-1?patientId=${encodeURIComponent(offer.patientId)",
+      "navigate('/records/upload')",
+      "navigate('/records/imaging')"
+    ],
+    "linesCount": 753
+  },
+  {
+    "stage": 14,
+    "name": "Pre-Op Readiness",
+    "file": "src/pages/treatment-offers/PreOpReadinessPage.tsx",
+    "serviceImports": [
+      "import { treatmentOfferService } from '@/services/treatmentOfferService'",
+      "import { patientService } from '@/services/patientService'"
+    ],
+    "serviceCalls": [
+      "treatmentOfferService.getTreatmentOffer",
+      "patientService.getPatientById"
+    ],
+    "matchedMocks": [
+      "93458",
+      "setTimeout"
+    ],
+    "navigations": [
+      "navigate(`/treatment-offers/${offer.offerId}/check-in`, { state: offer })",
+      "navigate(offer.patientId ? `/treatment-offers/new/step-1?patientId=${encodeURIComponent(offer.patientId)",
+      "navigate('/records/imaging')",
+      "navigate(`/treatment-offers/${offer.offerId}/appointment`, { state: offer })"
+    ],
+    "linesCount": 788
+  },
+  {
+    "stage": 15,
+    "name": "Day-of-Checkin",
+    "file": "src/pages/treatment-offers/DayOfCheckinPage.tsx",
+    "serviceImports": [
+      "import { treatmentOfferService } from '@/services/treatmentOfferService'",
+      "import { patientService } from '@/services/patientService'"
+    ],
+    "serviceCalls": [
+      "treatmentOfferService.getTreatmentOffer",
+      "patientService.getPatientById"
+    ],
+    "matchedMocks": [
+      "demo",
+      "93458",
+      "setTimeout"
+    ],
+    "navigations": [
+      "navigate(`/treatment-offers/${offer.offerId}/cath-lab-safety`, { state: offer })",
+      "navigate(offer.patientId ? `/patients/${encodeURIComponent(offer.patientId)"
+    ],
+    "linesCount": 704
+  }
+]

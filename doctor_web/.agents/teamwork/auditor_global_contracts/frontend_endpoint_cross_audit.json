@@ -1,0 +1,397 @@
+[
+  {
+    "url": "/api/v1/attachments/file/${encodeURIComponent(fileName)}",
+    "files": [
+      "services/attachmentService.ts:100"
+    ],
+    "postmanMatch": "GET /api/v1/attachments/file/:filename (16. File Uploads & Attachments > Stream private attachment file with security headers)"
+  },
+  {
+    "url": "/api/v1/attachments",
+    "files": [
+      "services/attachmentService.ts:146"
+    ],
+    "postmanMatch": "POST /api/v1/attachments (16. File Uploads & Attachments > Upload an unlinked or global attachment (supports binary file upload and JSON metadata))"
+  },
+  {
+    "url": "/api/v1/auth/otp/request",
+    "files": [
+      "services/authService.ts:88"
+    ],
+    "postmanMatch": "POST /api/v1/auth/otp/request (02. Authentication & OTP > Request Phone OTP)"
+  },
+  {
+    "url": "/api/v1/auth/otp/verify",
+    "files": [
+      "services/authService.ts:101"
+    ],
+    "postmanMatch": "POST /api/v1/auth/otp/verify (02. Authentication & OTP > Verify Phone OTP & Login)"
+  },
+  {
+    "url": "/api/v1/auth/otp/resend",
+    "files": [
+      "services/authService.ts:117"
+    ],
+    "postmanMatch": "POST /api/v1/auth/otp/resend (02. Authentication & OTP > Resend OTP to registered phone number)"
+  },
+  {
+    "url": "/api/v1/auth/token/refresh",
+    "files": [
+      "services/authService.ts:134"
+    ],
+    "postmanMatch": "POST /api/v1/auth/token/refresh (02. Authentication & OTP > Refresh JWT Access Token)"
+  },
+  {
+    "url": "/api/v1/auth/me",
+    "files": [
+      "services/authService.ts:150"
+    ],
+    "postmanMatch": "GET /api/v1/auth/me (03. User Profile & Account > Get current user profile and claims)"
+  },
+  {
+    "url": "/api/v1/doctors/me",
+    "files": [
+      "services/authService.ts:163",
+      "services/dashboardService.ts:138"
+    ],
+    "postmanMatch": "GET /api/v1/doctors/me (05. Doctor Portal > Get current authenticated doctor profile)"
+  },
+  {
+    "url": "/api/v1/auth/logout",
+    "files": [
+      "services/authService.ts:177"
+    ],
+    "postmanMatch": "POST /api/v1/auth/logout (02. Authentication & OTP > User Session Logout)"
+  },
+  {
+    "url": "/api/v1/appointments/doctor/me",
+    "files": [
+      "services/consultationService.ts:145",
+      "services/patientService.ts:832",
+      "services/patientService.ts:1136",
+      "services/patientService.ts:1365"
+    ],
+    "postmanMatch": "GET /api/v1/appointments/doctor/me (10. Appointments, Schedules & Shifts > Get appointments scheduled for authenticated doctor)"
+  },
+  {
+    "url": "/api/v1/doctors/treatment-offers",
+    "files": [
+      "services/consultationService.ts:167",
+      "services/treatmentOfferService.ts:249"
+    ],
+    "postmanMatch": "POST /api/v1/doctors/treatment-offers (05. Doctor Portal > Create a new draft treatment proposal)"
+  },
+  {
+    "url": "/api/v1/doctors/patients/${encodeURIComponent(pId)}/medical-records",
+    "files": [
+      "services/consultationService.ts:327"
+    ],
+    "postmanMatch": "GET /api/v1/doctors/patients/:patientProfileId/medical-records (05. Doctor Portal > Get authorized patient medical records with pagination)"
+  },
+  {
+    "url": "/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/encounters",
+    "files": [
+      "services/consultationService.ts:391",
+      "services/prescriptionService.ts:200"
+    ],
+    "postmanMatch": "POST /api/v1/doctors/patients/:patientProfileId/encounters (05. Doctor Portal > Document clinical encounter, diagnoses, vitals, procedures for an authorized patient)"
+  },
+  {
+    "url": "/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/medical-records",
+    "files": [
+      "services/consultationService.ts:406",
+      "services/patientService.ts:1069",
+      "services/prescriptionService.ts:126"
+    ],
+    "postmanMatch": "GET /api/v1/doctors/patients/:patientProfileId/medical-records (05. Doctor Portal > Get authorized patient medical records with pagination)"
+  },
+  {
+    "url": "/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/medical-records/${encodeURIComponent(recordId)}",
+    "files": [
+      "services/consultationService.ts:429",
+      "services/prescriptionService.ts:221"
+    ],
+    "postmanMatch": "PUT /api/v1/doctors/patients/:patientProfileId/medical-records/:recordId (05. Doctor Portal > Update clinical notes/record documented by doctor)"
+  },
+  {
+    "url": "/api/v1/financing/options",
+    "files": [
+      "services/consultationService.ts:441"
+    ],
+    "postmanMatch": "GET /api/v1/financing/options (27. Healthcare Financing & Financial Assistance > List available healthcare financing options and partners)"
+  },
+  {
+    "url": "/api/v1/financing/offers",
+    "files": [
+      "services/consultationService.ts:460"
+    ],
+    "postmanMatch": "GET /api/v1/financing/offers (27. Healthcare Financing & Financial Assistance > List pre-approved healthcare financing offers for current patient)"
+  },
+  {
+    "url": "/api/v1/financing/apply",
+    "files": [
+      "services/consultationService.ts:478"
+    ],
+    "postmanMatch": "POST /api/v1/financing/apply (27. Healthcare Financing & Financial Assistance > Submit application for healthcare financing / EMI assistance)"
+  },
+  {
+    "url": "/api/v1/financing/applications",
+    "files": [
+      "services/consultationService.ts:488"
+    ],
+    "postmanMatch": "GET /api/v1/financing/applications (27. Healthcare Financing & Financial Assistance > List financing applications (scoped to patient or global for admin/staff))"
+  },
+  {
+    "url": "/api/v1/appointments/${encodeURIComponent(appointmentId)}/status",
+    "files": [
+      "services/consultationService.ts:514"
+    ],
+    "postmanMatch": "PUT /api/v1/appointments/:id/status (10. Appointments, Schedules & Shifts > Update appointment status (clinical & operational staff))"
+  },
+  {
+    "url": "/api/v1/appointments/doctor/me${qs ",
+    "files": [
+      "services/dashboardService.ts:156"
+    ],
+    "postmanMatch": "MISSING_IN_POSTMAN"
+  },
+  {
+    "url": "/api/v1/appointments/doctor/my-appointments${qs ",
+    "files": [
+      "services/dashboardService.ts:175"
+    ],
+    "postmanMatch": "MISSING_IN_POSTMAN"
+  },
+  {
+    "url": "/api/v1/appointments/${appointmentId}/status",
+    "files": [
+      "services/dashboardService.ts:201"
+    ],
+    "postmanMatch": "PUT /api/v1/appointments/:id/status (10. Appointments, Schedules & Shifts > Update appointment status (clinical & operational staff))"
+  },
+  {
+    "url": "/api/v1/reports${qs}",
+    "files": [
+      "services/dashboardService.ts:213"
+    ],
+    "postmanMatch": "MISSING_IN_POSTMAN"
+  },
+  {
+    "url": "/api/v1/reports/${reportId}/verify",
+    "files": [
+      "services/dashboardService.ts:225"
+    ],
+    "postmanMatch": "POST /api/v1/reports/:id/verify (20. Clinical Reports & Analytics > Mark diagnostic report as VERIFIED with verification notes)"
+  },
+  {
+    "url": "/api/v1/notifications${qs}",
+    "files": [
+      "services/dashboardService.ts:237"
+    ],
+    "postmanMatch": "MISSING_IN_POSTMAN"
+  },
+  {
+    "url": "/api/v1/notifications/${notificationId}/read",
+    "files": [
+      "services/dashboardService.ts:249"
+    ],
+    "postmanMatch": "PUT /api/v1/notifications/:id/read (14. Notifications & Alerts > Mark notification as READ)"
+  },
+  {
+    "url": "/api/v1/doctors/statistics",
+    "files": [
+      "services/dashboardService.ts:257"
+    ],
+    "postmanMatch": "GET /api/v1/doctors/statistics (05. Doctor Portal > Get platform-wide doctor directory statistics)"
+  },
+  {
+    "url": "/api/v1/ocr/jobs",
+    "files": [
+      "services/ocrService.ts:163"
+    ],
+    "postmanMatch": "POST /api/v1/ocr/jobs (15. OCR & Document Verification > Submit medical attachment for local CPU OCR processing)"
+  },
+  {
+    "url": "/api/v1/ocr/jobs/${encodeURIComponent(jobId)}",
+    "files": [
+      "services/ocrService.ts:175"
+    ],
+    "postmanMatch": "GET /api/v1/ocr/jobs/:id (15. OCR & Document Verification > Get OCR job status and details by ID)"
+  },
+  {
+    "url": "/api/v1/ocr/jobs/${encodeURIComponent(jobId)}/fields",
+    "files": [
+      "services/ocrService.ts:194"
+    ],
+    "postmanMatch": "GET /api/v1/ocr/jobs/:id/fields (15. OCR & Document Verification > Get extracted structured fields with confidence scores)"
+  },
+  {
+    "url": "/api/v1/ocr/jobs/${encodeURIComponent(jobId)}/text",
+    "files": [
+      "services/ocrService.ts:213"
+    ],
+    "postmanMatch": "GET /api/v1/ocr/jobs/:id/text (15. OCR & Document Verification > Get extracted raw OCR text for job)"
+  },
+  {
+    "url": "/api/v1/ocr/jobs/${encodeURIComponent(jobId)}/json",
+    "files": [
+      "services/ocrService.ts:238"
+    ],
+    "postmanMatch": "GET /api/v1/ocr/jobs/:id/json (15. OCR & Document Verification > Get formatted structured JSON output of OCR job)"
+  },
+  {
+    "url": "/api/v1/ocr/jobs${queryString ",
+    "files": [
+      "services/ocrService.ts:266"
+    ],
+    "postmanMatch": "MISSING_IN_POSTMAN"
+  },
+  {
+    "url": "/api/v1/ocr/dashboard",
+    "files": [
+      "services/ocrService.ts:276"
+    ],
+    "postmanMatch": "GET /api/v1/ocr/dashboard (15. OCR & Document Verification > Get Enterprise OCR Platform analytics dashboard summary)"
+  },
+  {
+    "url": "/api/v1/ocr/jobs/${encodeURIComponent(jobId)}/reprocess",
+    "files": [
+      "services/ocrService.ts:290"
+    ],
+    "postmanMatch": "POST /api/v1/ocr/jobs/:jobId/reprocess (15. OCR & Document Verification > Reprocess a completed, failed, or review-required OCR job)"
+  },
+  {
+    "url": "/api/v1/ocr/reprocess/${encodeURIComponent(jobId)}",
+    "files": [
+      "services/ocrService.ts:294"
+    ],
+    "postmanMatch": "POST /api/v1/ocr/reprocess/:jobId (15. OCR & Document Verification > Reprocess a completed, failed, or review-required OCR job)"
+  },
+  {
+    "url": "/api/v1/ai/ocr/extract",
+    "files": [
+      "services/ocrService.ts:306"
+    ],
+    "postmanMatch": "POST /api/v1/ai/ocr/extract (15. OCR & Document Verification > Image Scan & Candidate Metadata Extraction)"
+  },
+  {
+    "url": "/api/v1/ai/ocr/confirm",
+    "files": [
+      "services/ocrService.ts:315"
+    ],
+    "postmanMatch": "POST /api/v1/ai/ocr/confirm (15. OCR & Document Verification > OCR Candidate Field Review & Manual Confirmation)"
+  },
+  {
+    "url": "/api/v1/admin/patients",
+    "files": [
+      "services/patientService.ts:764"
+    ],
+    "postmanMatch": "GET /api/v1/admin/patients (04. Admin Portal & System Operations > Search and list patients with server-side pagination and filters)"
+  },
+  {
+    "url": "/api/v1/doctors/patients/${encodeURIComponent(cleanId)}",
+    "files": [
+      "services/patientService.ts:936"
+    ],
+    "postmanMatch": "GET /api/v1/doctors/patients/:patientProfileId (05. Doctor Portal > Get complete demographic information for an authorized patient)"
+  },
+  {
+    "url": "/api/v1/patients/${encodeURIComponent(cleanId)}/insurance-cards",
+    "files": [
+      "services/patientService.ts:980"
+    ],
+    "postmanMatch": "GET /api/v1/patients/:patientId/insurance-cards (19. Insurance Platform & Claims > Get all insurance cards for a specific patient)"
+  },
+  {
+    "url": "/api/v1/doctors/patients/${encodeURIComponent(patientId)}/medical-records${qs}",
+    "files": [
+      "services/patientService.ts:1049"
+    ],
+    "postmanMatch": "MISSING_IN_POSTMAN"
+  },
+  {
+    "url": "/api/v1/admin/patients/${encodeURIComponent(patientId)}/medical-records/timeline${qs}",
+    "files": [
+      "services/patientService.ts:1084"
+    ],
+    "postmanMatch": "MISSING_IN_POSTMAN"
+  },
+  {
+    "url": "/api/v1/doctors/patients/${encodeURIComponent(patientId)}/medical-records/timeline${qs}",
+    "files": [
+      "services/patientService.ts:1097"
+    ],
+    "postmanMatch": "PUT /api/v1/doctors/patients/:patientProfileId/medical-records/:recordId (05. Doctor Portal > Update clinical notes/record documented by doctor)"
+  },
+  {
+    "url": "/api/v1/admin/medical-records/${encodeURIComponent(recordId)}",
+    "files": [
+      "services/patientService.ts:1124"
+    ],
+    "postmanMatch": "GET /api/v1/admin/medical-records/:recordId (04. Admin Portal & System Operations > Get clinical details of a specific medical record)"
+  },
+  {
+    "url": "/api/v1/facilities",
+    "files": [
+      "services/patientService.ts:1356"
+    ],
+    "postmanMatch": "POST /api/v1/facilities (09. Facilities & Branches > Register/Create a facility profile in Master Registry)"
+  },
+  {
+    "url": "/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/medical-records/timeline",
+    "files": [
+      "services/prescriptionService.ts:240"
+    ],
+    "postmanMatch": "GET /api/v1/doctors/patients/:patientProfileId/medical-records/timeline (05. Doctor Portal > Get authorized patient medical record timeline)"
+  },
+  {
+    "url": "/api/v1/doctors/treatment-offers${qs ",
+    "files": [
+      "services/treatmentOfferService.ts:268"
+    ],
+    "postmanMatch": "GET /api/v1/doctors/:id (05. Doctor Portal > Get complete doctor profile details)"
+  },
+  {
+    "url": "/api/v1/doctors/treatment-offers/${encodeURIComponent(id)}",
+    "files": [
+      "services/treatmentOfferService.ts:280",
+      "services/treatmentOfferService.ts:291"
+    ],
+    "postmanMatch": "GET /api/v1/doctors/treatment-offers/:offerId (05. Doctor Portal > Get treatment offer details)"
+  },
+  {
+    "url": "/api/v1/doctors/treatment-offers/${encodeURIComponent(id)}/dispatch",
+    "files": [
+      "services/treatmentOfferService.ts:303"
+    ],
+    "postmanMatch": "POST /api/v1/doctors/treatment-offers/:offerId/dispatch (05. Doctor Portal > Lock draft and dispatch treatment offer to patient)"
+  },
+  {
+    "url": "/api/v1/doctors/treatment-offers/${encodeURIComponent(id)}/status",
+    "files": [
+      "services/treatmentOfferService.ts:315"
+    ],
+    "postmanMatch": "GET /api/v1/doctors/treatment-offers/:offerId/status (05. Doctor Portal > Inspect live offer lifecycle status and review timestamps)"
+  },
+  {
+    "url": "/api/v1/doctors/treatment-offers/${encodeURIComponent(id)}/cancel",
+    "files": [
+      "services/treatmentOfferService.ts:330"
+    ],
+    "postmanMatch": "POST /api/v1/doctors/treatment-offers/:offerId/cancel (05. Doctor Portal > Doctor cancels active treatment proposal with clinical justification)"
+  },
+  {
+    "url": "/api/v1/patients/treatment-offers/${encodeURIComponent(id)}/accept",
+    "files": [
+      "services/treatmentOfferService.ts:349"
+    ],
+    "postmanMatch": "POST /api/v1/patients/treatment-offers/:offerId/accept (06. Patient App > Patient ratifies and accepts treatment offer (RATIFIED_ACCEPTED))"
+  },
+  {
+    "url": "/api/v1/patients/treatment-offers/${encodeURIComponent(id)}/reject",
+    "files": [
+      "services/treatmentOfferService.ts:367"
+    ],
+    "postmanMatch": "POST /api/v1/patients/treatment-offers/:offerId/reject (06. Patient App > Patient declines treatment offer proposal (DECLINED))"
+  }
+]

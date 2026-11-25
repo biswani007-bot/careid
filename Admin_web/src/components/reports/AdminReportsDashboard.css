@@ -1,0 +1,791 @@
+/* CareID Admin Portal - Reports Dashboard Styles matching Figma 20:5782 */
+
+.reports-dashboard-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: #f8f9fb;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #191c1e;
+  position: relative;
+}
+
+.reports-main-wrapper,
+.reports-main-layout {
+  flex: 1 1 0%;
+  min-width: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  background-color: #f8f9fb;
+}
+
+/* ==========================================================================
+   1. Stationary Top Navigation Bar (Figma 20:5848)
+   ========================================================================== */
+.reports-top-navbar {
+  height: 64px;
+  flex-shrink: 0;
+  background-color: #f8f9fb;
+  border-bottom: 1px solid #cbc4d4;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 20;
+  box-sizing: border-box;
+}
+
+.reports-top-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.reports-nav-tabs {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 38px;
+}
+
+.reports-nav-tab {
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0 4px;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.reports-nav-tab.active {
+  font-weight: 700;
+  color: #28006d;
+  border-bottom-color: #28006d;
+}
+
+.reports-nav-tab:not(.active) {
+  font-weight: 500;
+  color: #494552;
+}
+
+.reports-nav-tab:not(.active):hover {
+  color: #28006d;
+}
+
+.reports-top-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Header Icon Buttons (Figma 20:5858, 20:5861, 20:5865, 20:5868) */
+.reports-icon-btn {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #494552;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.reports-icon-btn:hover {
+  background-color: #edeef0;
+  color: #28006d;
+}
+
+.reports-notification-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  background-color: #ba1a1a;
+  border-radius: 9999px;
+  border: 1.5px solid #ffffff;
+}
+
+.reports-admin-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 9999px;
+  border: 1px solid #cbc4d4;
+  overflow: hidden;
+  background-color: #e1e2e4;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease;
+}
+
+.reports-admin-avatar:hover {
+  border-color: #28006d;
+}
+
+.reports-admin-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   2. Main Scrollable Canvas (Figma 20:5874)
+   ========================================================================== */
+.reports-canvas {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 32px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.reports-canvas::-webkit-scrollbar {
+  width: 6px;
+}
+.reports-canvas::-webkit-scrollbar-track {
+  background: transparent;
+}
+.reports-canvas::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+
+/* ==========================================================================
+   3. Header & Filter Toolbar Row (Figma 20:5875)
+   ========================================================================== */
+.reports-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.reports-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.reports-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.64px;
+  color: #191c1e;
+  margin: 0;
+}
+
+.reports-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #494552;
+  margin: 0;
+}
+
+/* Unified Filters Group */
+.reports-filters-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* Segmented Date Range Selector (Figma 20:5882) */
+.reports-time-segmented {
+  height: 38px;
+  background-color: #edeef0;
+  border: 1px solid #cbc4d4;
+  border-radius: 8px;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.reports-time-btn {
+  height: 30px;
+  min-width: 52px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 11px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.reports-time-btn.active {
+  background-color: #ffffff;
+  color: #191c1e;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.reports-time-btn:not(.active) {
+  background-color: transparent;
+  color: #494552;
+  font-weight: 500;
+}
+
+.reports-time-btn:not(.active):hover {
+  color: #191c1e;
+}
+
+/* Dropdown Filters (Hospitals & Departments) (Figma 20:5889, 20:5895) */
+.reports-dropdown-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.reports-dropdown-btn {
+  height: 38px;
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 8px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #191c1e;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  white-space: nowrap;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.reports-dropdown-btn:hover {
+  border-color: #28006d;
+  color: #28006d;
+}
+
+.reports-dropdown-icon {
+  color: #494552;
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+
+.reports-dropdown-btn:hover .reports-dropdown-icon {
+  color: #28006d;
+}
+
+.reports-dropdown-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  line-height: 16px;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Reset Button */
+.reports-reset-btn {
+  height: 38px;
+  background-color: #ffffff;
+  border: 1px solid #ba1a1a;
+  border-radius: 8px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #ba1a1a;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.reports-reset-btn:hover {
+  background-color: rgba(186, 26, 26, 0.06);
+}
+
+/* Period Specific Badge */
+.reports-period-badge {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background-color: #edeef0;
+  color: #28006d;
+  border: 1px solid #cbc4d4;
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+}
+
+/* Applied Filters Bar */
+.reports-active-filters-chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 10px;
+  border-top: 1px dashed #e1e2e4;
+  margin-top: 6px;
+}
+
+.reports-active-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #76737f;
+}
+
+.reports-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 10px;
+  background-color: #edeef0;
+  border: 1px solid #cbc4d4;
+  border-radius: 9999px;
+  font-size: 11px;
+  color: #191c1e;
+}
+
+.reports-filter-chip strong {
+  color: #28006d;
+  font-weight: 600;
+}
+
+.reports-filter-chip button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #76737f;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.reports-filter-chip button:hover {
+  color: #ba1a1a;
+}
+
+.reports-clear-all-link {
+  background: transparent;
+  border: none;
+  color: #ba1a1a;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: auto;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.reports-clear-all-link:hover {
+  color: #93000a;
+}
+
+.reports-dropdown-chevron {
+  color: #494552;
+  flex-shrink: 0;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.reports-dropdown-btn:hover .reports-dropdown-chevron {
+  color: #28006d;
+}
+
+.reports-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  min-width: 210px;
+  z-index: 50;
+  padding: 6px 0;
+  overflow: hidden;
+  animation: fadeIn 0.15s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reports-dropdown-item {
+  width: 100%;
+  text-align: left;
+  padding: 9px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #191c1e;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.12s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.reports-dropdown-item:hover {
+  background-color: #f3f4f6;
+  color: #28006d;
+}
+
+.reports-dropdown-item.selected {
+  font-weight: 700;
+  color: #28006d;
+  background-color: #f3f0f7;
+}
+
+/* ==========================================================================
+   4. Summary Cards Grid (Bento Style) (Figma 20:5901)
+   ========================================================================== */
+.reports-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.reports-kpi-card {
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 20px;
+  padding: 21px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 142px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  min-width: 0;
+  width: 100%;
+}
+
+.reports-kpi-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+.reports-kpi-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.reports-kpi-label {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #494552;
+}
+
+.reports-kpi-icon {
+  color: #28006d;
+  flex-shrink: 0;
+}
+
+.reports-kpi-value {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.64px;
+  color: #191c1e;
+  margin-top: 8px;
+}
+
+.reports-kpi-trend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #006a60;
+  margin-top: 4px;
+}
+
+/* Card 4 (Status Focus) Overlay (Figma 20:5942) */
+.reports-kpi-overlay {
+  position: absolute;
+  right: -16px;
+  top: -16px;
+  width: 96px;
+  height: 96px;
+  background-color: rgba(0, 106, 96, 0.1);
+  border-bottom-left-radius: 9999px;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   5. Report Category Action Cards (Figma 20:5963, 20:5958, 20:5953, 360:51)
+   ========================================================================== */
+.reports-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.reports-action-card {
+  background-color: #85f6e5;
+  border: none;
+  border-radius: 8px;
+  height: 44px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+  min-width: 0;
+}
+
+.reports-action-card:hover {
+  background-color: #6ee7b7;
+  box-shadow: 0 2px 8px rgba(0, 106, 96, 0.15);
+  transform: translateY(-1px);
+}
+
+.reports-action-card:active {
+  transform: scale(0.99);
+}
+
+.reports-action-icon {
+  flex-shrink: 0;
+  color: #000000;
+}
+
+.reports-action-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #000000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Demographic Breakdown Section (PRD Section 4.4.12) */
+.reports-demographics-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .reports-demographics-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.reports-demographics-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.reports-demo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #F1F5F9;
+  padding-bottom: 12px;
+}
+
+.reports-demo-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0F172A;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reports-demo-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6C2BD9;
+  background-color: #F3E8FF;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.reports-demo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reports-demo-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.reports-demo-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.reports-demo-name {
+  font-weight: 600;
+  color: #334155;
+}
+
+.reports-demo-stats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #64748B;
+}
+
+.reports-demo-percent {
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.reports-demo-progress-track {
+  height: 8px;
+  background-color: #F1F5F9;
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.reports-demo-progress-bar {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.4s ease-in-out;
+}
+
+/* ==========================================================================
+   6. Responsive Layout & Viewports
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .reports-header-row {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .reports-actions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  .reports-bento-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .reports-canvas {
+    padding: 16px;
+    gap: 20px;
+  }
+  .reports-top-navbar {
+    padding: 0 16px;
+  }
+  .reports-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .reports-filters-group {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+    gap: 8px;
+  }
+  .reports-filters-group::-webkit-scrollbar {
+    height: 4px;
+  }
+  .reports-filters-group::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 640px) {
+  .reports-bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .reports-actions-grid {
+    grid-template-columns: 1fr;
+  }
+}

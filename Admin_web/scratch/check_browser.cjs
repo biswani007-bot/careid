@@ -1,0 +1,13 @@
+try {
+  require.resolve("puppeteer");
+  console.log("puppeteer: available");
+} catch(e) {
+  console.log("puppeteer: NOT available");
+}
+try {
+  require.resolve("playwright");
+  console.log("playwright: available");
+} catch(e) {
+  console.log("playwright: NOT available");
+}
+

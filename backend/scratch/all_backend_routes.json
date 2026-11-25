@@ -1,0 +1,6162 @@
+[
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "dashboard/stats",
+    "fullPath": "/api/v1/admin/dashboard/stats",
+    "handler": "HttpCode",
+    "roles": "ADMIN,SUPER_ADMIN"
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "dashboard/summary",
+    "fullPath": "/api/v1/admin/dashboard/summary",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "users",
+    "fullPath": "/api/v1/admin/users",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "POST",
+    "subPath": "users",
+    "fullPath": "/api/v1/admin/users",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "POST",
+    "subPath": "doctors",
+    "fullPath": "/api/v1/admin/doctors",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "users/:id",
+    "fullPath": "/api/v1/admin/users/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "PUT",
+    "subPath": "users/:id",
+    "fullPath": "/api/v1/admin/users/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "POST",
+    "subPath": "users/:id/reset-password",
+    "fullPath": "/api/v1/admin/users/:id/reset-password",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "patients",
+    "fullPath": "/api/v1/admin/patients",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "patients/:patientId/medical-records/timeline",
+    "fullPath": "/api/v1/admin/patients/:patientId/medical-records/timeline",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "patients/:patientId/medical-records",
+    "fullPath": "/api/v1/admin/patients/:patientId/medical-records",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "patients/:patientId",
+    "fullPath": "/api/v1/admin/patients/:patientId",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "medical-records",
+    "fullPath": "/api/v1/admin/medical-records",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "medical-records/:recordId",
+    "fullPath": "/api/v1/admin/medical-records/:recordId",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "PUT",
+    "subPath": "users/:id/status",
+    "fullPath": "/api/v1/admin/users/:id/status",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "PUT",
+    "subPath": "users/:id/roles",
+    "fullPath": "/api/v1/admin/users/:id/roles",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "DELETE",
+    "subPath": "users/:id",
+    "fullPath": "/api/v1/admin/users/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "POST",
+    "subPath": "users/:id/restore",
+    "fullPath": "/api/v1/admin/users/:id/restore",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "roles",
+    "fullPath": "/api/v1/admin/roles",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "POST",
+    "subPath": "roles",
+    "fullPath": "/api/v1/admin/roles",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "roles/:id",
+    "fullPath": "/api/v1/admin/roles/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "PUT",
+    "subPath": "roles/:id",
+    "fullPath": "/api/v1/admin/roles/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "DELETE",
+    "subPath": "roles/:id",
+    "fullPath": "/api/v1/admin/roles/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "permissions",
+    "fullPath": "/api/v1/admin/permissions",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "permission-groups",
+    "fullPath": "/api/v1/admin/permission-groups",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "POST",
+    "subPath": "permission-groups",
+    "fullPath": "/api/v1/admin/permission-groups",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "POST",
+    "subPath": "permissions",
+    "fullPath": "/api/v1/admin/permissions",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "PUT",
+    "subPath": "roles/:id/permissions",
+    "fullPath": "/api/v1/admin/roles/:id/permissions",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "permission-matrix",
+    "fullPath": "/api/v1/admin/permission-matrix",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "POST",
+    "subPath": "organizations",
+    "fullPath": "/api/v1/admin/organizations",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "organizations",
+    "fullPath": "/api/v1/admin/organizations",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "organizations/:id",
+    "fullPath": "/api/v1/admin/organizations/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "PUT",
+    "subPath": "organizations/:id",
+    "fullPath": "/api/v1/admin/organizations/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "DELETE",
+    "subPath": "organizations/:id",
+    "fullPath": "/api/v1/admin/organizations/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "settings",
+    "fullPath": "/api/v1/admin/settings",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "PUT",
+    "subPath": "settings",
+    "fullPath": "/api/v1/admin/settings",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "audit-logs/export",
+    "fullPath": "/api/v1/admin/audit-logs/export",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "audit-logs/:id",
+    "fullPath": "/api/v1/admin/audit-logs/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "admin.controller.ts",
+    "file": "src/modules/admin/presentation/controllers/admin.controller.ts",
+    "prefix": "admin",
+    "httpMethod": "GET",
+    "subPath": "audit-logs",
+    "fullPath": "/api/v1/admin/audit-logs",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "ai-ocr.controller.ts",
+    "file": "src/modules/ai-ocr/presentation/controllers/ai-ocr.controller.ts",
+    "prefix": "ai/ocr",
+    "httpMethod": "POST",
+    "subPath": "extract",
+    "fullPath": "/api/v1/ai/ocr/extract",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "ai-ocr.controller.ts",
+    "file": "src/modules/ai-ocr/presentation/controllers/ai-ocr.controller.ts",
+    "prefix": "ai/ocr",
+    "httpMethod": "POST",
+    "subPath": "confirm",
+    "fullPath": "/api/v1/ai/ocr/confirm",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "appointment.controller.ts",
+    "file": "src/modules/appointment/presentation/controllers/appointment.controller.ts",
+    "prefix": "appointments",
+    "httpMethod": "POST",
+    "subPath": "",
+    "fullPath": "/api/v1/appointments",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "appointment.controller.ts",
+    "file": "src/modules/appointment/presentation/controllers/appointment.controller.ts",
+    "prefix": "appointments",
+    "httpMethod": "GET",
+    "subPath": "",
+    "fullPath": "/api/v1/appointments",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "appointment.controller.ts",
+    "file": "src/modules/appointment/presentation/controllers/appointment.controller.ts",
+    "prefix": "appointments",
+    "httpMethod": "GET",
+    "subPath": ":id",
+    "fullPath": "/api/v1/appointments/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "appointment.controller.ts",
+    "file": "src/modules/appointment/presentation/controllers/appointment.controller.ts",
+    "prefix": "appointments",
+    "httpMethod": "PUT",
+    "subPath": ":id/reschedule",
+    "fullPath": "/api/v1/appointments/:id/reschedule",
+    "handler": "Patch",
+    "roles": ""
+  },
+  {
+    "controller": "appointment.controller.ts",
+    "file": "src/modules/appointment/presentation/controllers/appointment.controller.ts",
+    "prefix": "appointments",
+    "httpMethod": "PUT",
+    "subPath": ":id/cancel",
+    "fullPath": "/api/v1/appointments/:id/cancel",
+    "handler": "Patch",
+    "roles": ""
+  },
+  {
+    "controller": "appointment.controller.ts",
+    "file": "src/modules/appointment/presentation/controllers/appointment.controller.ts",
+    "prefix": "appointments",
+    "httpMethod": "PUT",
+    "subPath": ":id/status",
+    "fullPath": "/api/v1/appointments/:id/status",
+    "handler": "Patch",
+    "roles": ""
+  },
+  {
+    "controller": "appointment.controller.ts",
+    "file": "src/modules/appointment/presentation/controllers/appointment.controller.ts",
+    "prefix": "appointments",
+    "httpMethod": "POST",
+    "subPath": "holds",
+    "fullPath": "/api/v1/appointments/holds",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "appointment.controller.ts",
+    "file": "src/modules/appointment/presentation/controllers/appointment.controller.ts",
+    "prefix": "appointments",
+    "httpMethod": "GET",
+    "subPath": "holds/:id",
+    "fullPath": "/api/v1/appointments/holds/:id",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "appointment.controller.ts",
+    "file": "src/modules/appointment/presentation/controllers/appointment.controller.ts",
+    "prefix": "appointments",
+    "httpMethod": "DELETE",
+    "subPath": "holds/:id",
+    "fullPath": "/api/v1/appointments/holds/:id",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "appointment.controller.ts",
+    "file": "src/modules/appointment/presentation/controllers/appointment.controller.ts",
+    "prefix": "appointments",
+    "httpMethod": "GET",
+    "subPath": ":id/readiness",
+    "fullPath": "/api/v1/appointments/:id/readiness",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "appointment.controller.ts",
+    "file": "src/modules/appointment/presentation/controllers/appointment.controller.ts",
+    "prefix": "appointments",
+    "httpMethod": "PATCH",
+    "subPath": ":id/readiness",
+    "fullPath": "/api/v1/appointments/:id/readiness",
+    "handler": "Put",
+    "roles": ""
+  },
+  {
+    "controller": "appointment.controller.ts",
+    "file": "src/modules/appointment/presentation/controllers/appointment.controller.ts",
+    "prefix": "appointments",
+    "httpMethod": "POST",
+    "subPath": ":id/check-in",
+    "fullPath": "/api/v1/appointments/:id/check-in",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "appointment.controller.ts",
+    "file": "src/modules/appointment/presentation/controllers/appointment.controller.ts",
+    "prefix": "appointments",
+    "httpMethod": "GET",
+    "subPath": ":id/cath-lab-checklist",
+    "fullPath": "/api/v1/appointments/:id/cath-lab-checklist",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "appointment.controller.ts",
+    "file": "src/modules/appointment/presentation/controllers/appointment.controller.ts",
+    "prefix": "appointments",
+    "httpMethod": "POST",
+    "subPath": ":id/cath-lab-checklist",
+    "fullPath": "/api/v1/appointments/:id/cath-lab-checklist",
+    "handler": "Put",
+    "roles": ""
+  },
+  {
+    "controller": "auth.controller.ts",
+    "file": "src/modules/auth/presentation/controllers/auth.controller.ts",
+    "prefix": "auth",
+    "httpMethod": "POST",
+    "subPath": "password/login",
+    "fullPath": "/api/v1/auth/password/login",
+    "handler": "ApiOperation",
+    "roles": ""
+  },
+  {
+    "controller": "auth.controller.ts",
+    "file": "src/modules/auth/presentation/controllers/auth.controller.ts",
+    "prefix": "auth",
+    "httpMethod": "POST",
+    "subPath": "admin/login",
+    "fullPath": "/api/v1/auth/admin/login",
+    "handler": "ApiOperation",
+    "roles": ""
+  },
+  {
+    "controller": "auth.controller.ts",
+    "file": "src/modules/auth/presentation/controllers/auth.controller.ts",
+    "prefix": "auth",
+    "httpMethod": "POST",
+    "subPath": "otp/request",
+    "fullPath": "/api/v1/auth/otp/request",
+    "handler": "ApiOperation",
+    "roles": ""
+  },
+  {
+    "controller": "auth.controller.ts",
+    "file": "src/modules/auth/presentation/controllers/auth.controller.ts",
+    "prefix": "auth",
+    "httpMethod": "POST",
+    "subPath": "otp/verify",
+    "fullPath": "/api/v1/auth/otp/verify",
+    "handler": "ApiOperation",
+    "roles": ""
+  },
+  {
+    "controller": "auth.controller.ts",
+    "file": "src/modules/auth/presentation/controllers/auth.controller.ts",
+    "prefix": "auth",
+    "httpMethod": "POST",
+    "subPath": "otp/resend",
+    "fullPath": "/api/v1/auth/otp/resend",
+    "handler": "ApiOperation",
+    "roles": ""
+  },
+  {
+    "controller": "auth.controller.ts",
+    "file": "src/modules/auth/presentation/controllers/auth.controller.ts",
+    "prefix": "auth",
+    "httpMethod": "POST",
+    "subPath": "token/refresh",
+    "fullPath": "/api/v1/auth/token/refresh",
+    "handler": "ApiOperation",
+    "roles": ""
+  },
+  {
+    "controller": "auth.controller.ts",
+    "file": "src/modules/auth/presentation/controllers/auth.controller.ts",
+    "prefix": "auth",
+    "httpMethod": "POST",
+    "subPath": "logout",
+    "fullPath": "/api/v1/auth/logout",
+    "handler": "ApiOperation",
+    "roles": ""
+  },
+  {
+    "controller": "auth.controller.ts",
+    "file": "src/modules/auth/presentation/controllers/auth.controller.ts",
+    "prefix": "auth",
+    "httpMethod": "POST",
+    "subPath": "logout-all",
+    "fullPath": "/api/v1/auth/logout-all",
+    "handler": "ApiOperation",
+    "roles": ""
+  },
+  {
+    "controller": "auth.controller.ts",
+    "file": "src/modules/auth/presentation/controllers/auth.controller.ts",
+    "prefix": "auth",
+    "httpMethod": "GET",
+    "subPath": "me",
+    "fullPath": "/api/v1/auth/me",
+    "handler": "ApiOperation",
+    "roles": ""
+  },
+  {
+    "controller": "auth.controller.ts",
+    "file": "src/modules/auth/presentation/controllers/auth.controller.ts",
+    "prefix": "auth",
+    "httpMethod": "PUT",
+    "subPath": "me",
+    "fullPath": "/api/v1/auth/me",
+    "handler": "ApiOperation",
+    "roles": ""
+  },
+  {
+    "controller": "auth.controller.ts",
+    "file": "src/modules/auth/presentation/controllers/auth.controller.ts",
+    "prefix": "auth",
+    "httpMethod": "PATCH",
+    "subPath": "me",
+    "fullPath": "/api/v1/auth/me",
+    "handler": "ApiOperation",
+    "roles": ""
+  },
+  {
+    "controller": "auth.controller.ts",
+    "file": "src/modules/auth/presentation/controllers/auth.controller.ts",
+    "prefix": "auth",
+    "httpMethod": "POST",
+    "subPath": "password/change",
+    "fullPath": "/api/v1/auth/password/change",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "auth.controller.ts",
+    "file": "src/modules/auth/presentation/controllers/auth.controller.ts",
+    "prefix": "auth",
+    "httpMethod": "GET",
+    "subPath": "sessions",
+    "fullPath": "/api/v1/auth/sessions",
+    "handler": "ApiOperation",
+    "roles": ""
+  },
+  {
+    "controller": "auth.controller.ts",
+    "file": "src/modules/auth/presentation/controllers/auth.controller.ts",
+    "prefix": "auth",
+    "httpMethod": "DELETE",
+    "subPath": "sessions/:sessionId",
+    "fullPath": "/api/v1/auth/sessions/:sessionId",
+    "handler": "ApiOperation",
+    "roles": ""
+  },
+  {
+    "controller": "auth.controller.ts",
+    "file": "src/modules/auth/presentation/controllers/auth.controller.ts",
+    "prefix": "auth",
+    "httpMethod": "DELETE",
+    "subPath": "sessions",
+    "fullPath": "/api/v1/auth/sessions",
+    "handler": "ApiOperation",
+    "roles": ""
+  },
+  {
+    "controller": "auth.controller.ts",
+    "file": "src/modules/auth/presentation/controllers/auth.controller.ts",
+    "prefix": "auth",
+    "httpMethod": "GET",
+    "subPath": "roles",
+    "fullPath": "/api/v1/auth/roles",
+    "handler": "ApiOperation",
+    "roles": ""
+  },
+  {
+    "controller": "auth.controller.ts",
+    "file": "src/modules/auth/presentation/controllers/auth.controller.ts",
+    "prefix": "auth",
+    "httpMethod": "GET",
+    "subPath": "permissions",
+    "fullPath": "/api/v1/auth/permissions",
+    "handler": "ApiOperation",
+    "roles": ""
+  },
+  {
+    "controller": "cath-lab.controller.ts",
+    "file": "src/modules/cath-lab/cath-lab.controller.ts",
+    "prefix": "cath-lab",
+    "httpMethod": "POST",
+    "subPath": "safety-timeout",
+    "fullPath": "/api/v1/cath-lab/safety-timeout",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "cath-lab.controller.ts",
+    "file": "src/modules/cath-lab/cath-lab.controller.ts",
+    "prefix": "cath-lab",
+    "httpMethod": "GET",
+    "subPath": "safety-timeout/:appointmentId",
+    "fullPath": "/api/v1/cath-lab/safety-timeout/:appointmentId",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "cath-lab.controller.ts",
+    "file": "src/modules/cath-lab/cath-lab.controller.ts",
+    "prefix": "cath-lab",
+    "httpMethod": "POST",
+    "subPath": "safety-hold",
+    "fullPath": "/api/v1/cath-lab/safety-hold",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "cath-lab.controller.ts",
+    "file": "src/modules/cath-lab/cath-lab.controller.ts",
+    "prefix": "cath-lab",
+    "httpMethod": "POST",
+    "subPath": "safety-hold/:holdId/clear",
+    "fullPath": "/api/v1/cath-lab/safety-hold/:holdId/clear",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "cath-lab.controller.ts",
+    "file": "src/modules/cath-lab/cath-lab.controller.ts",
+    "prefix": "cath-lab",
+    "httpMethod": "GET",
+    "subPath": "safety-hold/active",
+    "fullPath": "/api/v1/cath-lab/safety-hold/active",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "cath-lab.controller.ts",
+    "file": "src/modules/cath-lab/cath-lab.controller.ts",
+    "prefix": "cath-lab",
+    "httpMethod": "POST",
+    "subPath": "telemetry/log",
+    "fullPath": "/api/v1/cath-lab/telemetry/log",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "cath-lab.controller.ts",
+    "file": "src/modules/cath-lab/cath-lab.controller.ts",
+    "prefix": "cath-lab",
+    "httpMethod": "GET",
+    "subPath": "telemetry/live",
+    "fullPath": "/api/v1/cath-lab/telemetry/live",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "cath-lab.controller.ts",
+    "file": "src/modules/cath-lab/cath-lab.controller.ts",
+    "prefix": "cath-lab",
+    "httpMethod": "POST",
+    "subPath": "encounters/:encounterId/vessel-findings",
+    "fullPath": "/api/v1/cath-lab/encounters/:encounterId/vessel-findings",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "cath-lab.controller.ts",
+    "file": "src/modules/cath-lab/cath-lab.controller.ts",
+    "prefix": "cath-lab",
+    "httpMethod": "GET",
+    "subPath": "encounters/:encounterId/vessel-findings",
+    "fullPath": "/api/v1/cath-lab/encounters/:encounterId/vessel-findings",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "cath-lab.controller.ts",
+    "file": "src/modules/cath-lab/cath-lab.controller.ts",
+    "prefix": "cath-lab",
+    "httpMethod": "POST",
+    "subPath": "encounters/:encounterId/dicom-series",
+    "fullPath": "/api/v1/cath-lab/encounters/:encounterId/dicom-series",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "cath-lab.controller.ts",
+    "file": "src/modules/cath-lab/cath-lab.controller.ts",
+    "prefix": "cath-lab",
+    "httpMethod": "GET",
+    "subPath": "encounters/:encounterId/dicom-series",
+    "fullPath": "/api/v1/cath-lab/encounters/:encounterId/dicom-series",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "cath-lab.controller.ts",
+    "file": "src/modules/cath-lab/cath-lab.controller.ts",
+    "prefix": "cath-lab",
+    "httpMethod": "GET",
+    "subPath": "dicom-series/:seriesId/frames/:frameNumber",
+    "fullPath": "/api/v1/cath-lab/dicom-series/:seriesId/frames/:frameNumber",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "GET",
+    "subPath": "statistics",
+    "fullPath": "/api/v1/cms/statistics",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "POST",
+    "subPath": "pages",
+    "fullPath": "/api/v1/cms/pages",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "GET",
+    "subPath": "pages",
+    "fullPath": "/api/v1/cms/pages",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "GET",
+    "subPath": "pages/search",
+    "fullPath": "/api/v1/cms/pages/search",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "GET",
+    "subPath": "pages/:id",
+    "fullPath": "/api/v1/cms/pages/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "PUT",
+    "subPath": "pages/:id",
+    "fullPath": "/api/v1/cms/pages/:id",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "DELETE",
+    "subPath": "pages/:id",
+    "fullPath": "/api/v1/cms/pages/:id",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "POST",
+    "subPath": "faqs",
+    "fullPath": "/api/v1/cms/faqs",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "GET",
+    "subPath": "faqs",
+    "fullPath": "/api/v1/cms/faqs",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "PUT",
+    "subPath": "faqs/:id",
+    "fullPath": "/api/v1/cms/faqs/:id",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "DELETE",
+    "subPath": "faqs/:id",
+    "fullPath": "/api/v1/cms/faqs/:id",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "POST",
+    "subPath": "announcements",
+    "fullPath": "/api/v1/cms/announcements",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "GET",
+    "subPath": "announcements",
+    "fullPath": "/api/v1/cms/announcements",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "PUT",
+    "subPath": "announcements/:id",
+    "fullPath": "/api/v1/cms/announcements/:id",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "DELETE",
+    "subPath": "announcements/:id",
+    "fullPath": "/api/v1/cms/announcements/:id",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "POST",
+    "subPath": "policies",
+    "fullPath": "/api/v1/cms/policies",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "GET",
+    "subPath": "policies",
+    "fullPath": "/api/v1/cms/policies",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "PUT",
+    "subPath": "policies/:id",
+    "fullPath": "/api/v1/cms/policies/:id",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "DELETE",
+    "subPath": "policies/:id",
+    "fullPath": "/api/v1/cms/policies/:id",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "POST",
+    "subPath": "banners",
+    "fullPath": "/api/v1/cms/banners",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "GET",
+    "subPath": "banners",
+    "fullPath": "/api/v1/cms/banners",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "PUT",
+    "subPath": "banners/:id",
+    "fullPath": "/api/v1/cms/banners/:id",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "DELETE",
+    "subPath": "banners/:id",
+    "fullPath": "/api/v1/cms/banners/:id",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "POST",
+    "subPath": "media",
+    "fullPath": "/api/v1/cms/media",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "GET",
+    "subPath": "media",
+    "fullPath": "/api/v1/cms/media",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "GET",
+    "subPath": "media/search",
+    "fullPath": "/api/v1/cms/media/search",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "DELETE",
+    "subPath": "media/:id",
+    "fullPath": "/api/v1/cms/media/:id",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "POST",
+    "subPath": "blocks",
+    "fullPath": "/api/v1/cms/blocks",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "GET",
+    "subPath": "blocks",
+    "fullPath": "/api/v1/cms/blocks",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "PUT",
+    "subPath": "blocks/:id",
+    "fullPath": "/api/v1/cms/blocks/:id",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "DELETE",
+    "subPath": "blocks/:id",
+    "fullPath": "/api/v1/cms/blocks/:id",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "cms.controller.ts",
+    "file": "src/modules/cms/presentation/controllers/cms.controller.ts",
+    "prefix": "cms",
+    "httpMethod": "GET",
+    "subPath": "treatment-terms",
+    "fullPath": "/api/v1/cms/treatment-terms",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "cpt.controller.ts",
+    "file": "src/modules/cpt/cpt.controller.ts",
+    "prefix": "cpt",
+    "httpMethod": "GET",
+    "subPath": "",
+    "fullPath": "/api/v1/cpt",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "cpt.controller.ts",
+    "file": "src/modules/cpt/cpt.controller.ts",
+    "prefix": "cpt",
+    "httpMethod": "GET",
+    "subPath": "search",
+    "fullPath": "/api/v1/cpt/search",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "cpt.controller.ts",
+    "file": "src/modules/cpt/cpt.controller.ts",
+    "prefix": "cpt",
+    "httpMethod": "GET",
+    "subPath": ":code",
+    "fullPath": "/api/v1/cpt/:code",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "dental.controller.ts",
+    "file": "src/modules/dental/dental.controller.ts",
+    "prefix": "",
+    "httpMethod": "POST",
+    "subPath": "doctors/patients/:patientProfileId/dental-records",
+    "fullPath": "/api/v1/doctors/patients/:patientProfileId/dental-records",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "dental.controller.ts",
+    "file": "src/modules/dental/dental.controller.ts",
+    "prefix": "",
+    "httpMethod": "GET",
+    "subPath": "dental-records/:id",
+    "fullPath": "/api/v1/dental-records/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "dental.controller.ts",
+    "file": "src/modules/dental/dental.controller.ts",
+    "prefix": "",
+    "httpMethod": "PUT",
+    "subPath": "dental-records/:id",
+    "fullPath": "/api/v1/dental-records/:id",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "dental.controller.ts",
+    "file": "src/modules/dental/dental.controller.ts",
+    "prefix": "",
+    "httpMethod": "POST",
+    "subPath": "dental-records/:id/archive",
+    "fullPath": "/api/v1/dental-records/:id/archive",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "dental.controller.ts",
+    "file": "src/modules/dental/dental.controller.ts",
+    "prefix": "",
+    "httpMethod": "POST",
+    "subPath": "dental-records/:id/restore",
+    "fullPath": "/api/v1/dental-records/:id/restore",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "POST",
+    "subPath": "",
+    "fullPath": "/api/v1/doctors",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": "",
+    "fullPath": "/api/v1/doctors",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": "search",
+    "fullPath": "/api/v1/doctors/search",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": "statistics",
+    "fullPath": "/api/v1/doctors/statistics",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": "verification/pending",
+    "fullPath": "/api/v1/doctors/verification/pending",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": "me",
+    "fullPath": "/api/v1/doctors/me",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": "patients",
+    "fullPath": "/api/v1/doctors/patients",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": "patients/:patientProfileId/medical-records/timeline",
+    "fullPath": "/api/v1/doctors/patients/:patientProfileId/medical-records/timeline",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": "patients/:patientProfileId/medical-records/export",
+    "fullPath": "/api/v1/doctors/patients/:patientProfileId/medical-records/export",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": "patients/:patientProfileId/medical-records",
+    "fullPath": "/api/v1/doctors/patients/:patientProfileId/medical-records",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "POST",
+    "subPath": "patients/:patientProfileId/encounters",
+    "fullPath": "/api/v1/doctors/patients/:patientProfileId/encounters",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "POST",
+    "subPath": "patients/:patientProfileId/medical-records",
+    "fullPath": "/api/v1/doctors/patients/:patientProfileId/medical-records",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "PUT",
+    "subPath": "patients/:patientProfileId/medical-records/:recordId",
+    "fullPath": "/api/v1/doctors/patients/:patientProfileId/medical-records/:recordId",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": "patients/:patientProfileId/prescriptions",
+    "fullPath": "/api/v1/doctors/patients/:patientProfileId/prescriptions",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "POST",
+    "subPath": "patients/:patientProfileId/prescriptions",
+    "fullPath": "/api/v1/doctors/patients/:patientProfileId/prescriptions",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": "patients/:patientProfileId/vitals",
+    "fullPath": "/api/v1/doctors/patients/:patientProfileId/vitals",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "POST",
+    "subPath": "patients/:patientProfileId/vitals",
+    "fullPath": "/api/v1/doctors/patients/:patientProfileId/vitals",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": "patients/:patientProfileId/admissions",
+    "fullPath": "/api/v1/doctors/patients/:patientProfileId/admissions",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "POST",
+    "subPath": "patients/:patientProfileId/admissions",
+    "fullPath": "/api/v1/doctors/patients/:patientProfileId/admissions",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": "patients/:patientProfileId",
+    "fullPath": "/api/v1/doctors/patients/:patientProfileId",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": ":id",
+    "fullPath": "/api/v1/doctors/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "PUT",
+    "subPath": ":id",
+    "fullPath": "/api/v1/doctors/:id",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "DELETE",
+    "subPath": ":id",
+    "fullPath": "/api/v1/doctors/:id",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "POST",
+    "subPath": ":id/verify",
+    "fullPath": "/api/v1/doctors/:id/verify",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "POST",
+    "subPath": ":id/reject",
+    "fullPath": "/api/v1/doctors/:id/reject",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "POST",
+    "subPath": ":id/suspend",
+    "fullPath": "/api/v1/doctors/:id/suspend",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "POST",
+    "subPath": ":id/restore",
+    "fullPath": "/api/v1/doctors/:id/restore",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "POST",
+    "subPath": ":id/renew-license",
+    "fullPath": "/api/v1/doctors/:id/renew-license",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "POST",
+    "subPath": ":id/generate-qr",
+    "fullPath": "/api/v1/doctors/:id/generate-qr",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": ":id/documents",
+    "fullPath": "/api/v1/doctors/:id/documents",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "POST",
+    "subPath": ":id/documents",
+    "fullPath": "/api/v1/doctors/:id/documents",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": ":id/history",
+    "fullPath": "/api/v1/doctors/:id/history",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "doctor.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/doctor.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": ":id/slots",
+    "fullPath": "/api/v1/doctors/:id/slots",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "prescription.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/prescription.controller.ts",
+    "prefix": "prescriptions",
+    "httpMethod": "GET",
+    "subPath": ":prescriptionId",
+    "fullPath": "/api/v1/prescriptions/:prescriptionId",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "prescription.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/prescription.controller.ts",
+    "prefix": "prescriptions",
+    "httpMethod": "PUT",
+    "subPath": ":prescriptionId",
+    "fullPath": "/api/v1/prescriptions/:prescriptionId",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "prescription.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/prescription.controller.ts",
+    "prefix": "prescriptions",
+    "httpMethod": "POST",
+    "subPath": ":prescriptionId/refill",
+    "fullPath": "/api/v1/prescriptions/:prescriptionId/refill",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "prescription.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/prescription.controller.ts",
+    "prefix": "prescriptions",
+    "httpMethod": "PATCH",
+    "subPath": ":prescriptionId/discontinue",
+    "fullPath": "/api/v1/prescriptions/:prescriptionId/discontinue",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "prescription.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/prescription.controller.ts",
+    "prefix": "prescriptions",
+    "httpMethod": "GET",
+    "subPath": ":prescriptionId/export",
+    "fullPath": "/api/v1/prescriptions/:prescriptionId/export",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "prescription.controller.ts",
+    "file": "src/modules/doctor/presentation/controllers/prescription.controller.ts",
+    "prefix": "prescriptions",
+    "httpMethod": "GET",
+    "subPath": ":prescriptionId/refills",
+    "fullPath": "/api/v1/prescriptions/:prescriptionId/refills",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "POST",
+    "subPath": "",
+    "fullPath": "/api/v1/facilities",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "GET",
+    "subPath": "",
+    "fullPath": "/api/v1/facilities",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "GET",
+    "subPath": "search",
+    "fullPath": "/api/v1/facilities/search",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "GET",
+    "subPath": "statistics",
+    "fullPath": "/api/v1/facilities/statistics",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "GET",
+    "subPath": ":id",
+    "fullPath": "/api/v1/facilities/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "PUT",
+    "subPath": ":id",
+    "fullPath": "/api/v1/facilities/:id",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "DELETE",
+    "subPath": ":id",
+    "fullPath": "/api/v1/facilities/:id",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "POST",
+    "subPath": ":id/verify",
+    "fullPath": "/api/v1/facilities/:id/verify",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "POST",
+    "subPath": ":id/suspend",
+    "fullPath": "/api/v1/facilities/:id/suspend",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "POST",
+    "subPath": ":id/restore",
+    "fullPath": "/api/v1/facilities/:id/restore",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "POST",
+    "subPath": ":id/generate-qr",
+    "fullPath": "/api/v1/facilities/:id/generate-qr",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "GET",
+    "subPath": ":id/chargemaster",
+    "fullPath": "/api/v1/facilities/:id/chargemaster",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "GET",
+    "subPath": ":id/departments",
+    "fullPath": "/api/v1/facilities/:id/departments",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "POST",
+    "subPath": ":id/departments",
+    "fullPath": "/api/v1/facilities/:id/departments",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "GET",
+    "subPath": ":id/rooms",
+    "fullPath": "/api/v1/facilities/:id/rooms",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "POST",
+    "subPath": ":id/rooms",
+    "fullPath": "/api/v1/facilities/:id/rooms",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "POST",
+    "subPath": ":id/assign-doctor",
+    "fullPath": "/api/v1/facilities/:id/assign-doctor",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "GET",
+    "subPath": ":id/doctors",
+    "fullPath": "/api/v1/facilities/:id/doctors",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "GET",
+    "subPath": ":id/documents",
+    "fullPath": "/api/v1/facilities/:id/documents",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "POST",
+    "subPath": ":id/documents",
+    "fullPath": "/api/v1/facilities/:id/documents",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "GET",
+    "subPath": ":id/history",
+    "fullPath": "/api/v1/facilities/:id/history",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "facility.controller.ts",
+    "file": "src/modules/facility/presentation/controllers/facility.controller.ts",
+    "prefix": "facilities",
+    "httpMethod": "GET",
+    "subPath": ":id/pricing-rules",
+    "fullPath": "/api/v1/facilities/:id/pricing-rules",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "POST",
+    "subPath": "invitations",
+    "fullPath": "/api/v1/family/invitations",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "POST",
+    "subPath": "invitations/:id/resend",
+    "fullPath": "/api/v1/family/invitations/:id/resend",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "POST",
+    "subPath": "invitations/:id/accept",
+    "fullPath": "/api/v1/family/invitations/:id/accept",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "POST",
+    "subPath": "invitations/:id/reject",
+    "fullPath": "/api/v1/family/invitations/:id/reject",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "DELETE",
+    "subPath": "invitations/:id",
+    "fullPath": "/api/v1/family/invitations/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "GET",
+    "subPath": "invitations",
+    "fullPath": "/api/v1/family/invitations",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "GET",
+    "subPath": "members",
+    "fullPath": "/api/v1/family/members",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "GET",
+    "subPath": "members/:id",
+    "fullPath": "/api/v1/family/members/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "PATCH",
+    "subPath": "members/:id",
+    "fullPath": "/api/v1/family/members/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "DELETE",
+    "subPath": "members/:id",
+    "fullPath": "/api/v1/family/members/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "POST",
+    "subPath": "consents",
+    "fullPath": "/api/v1/family/consents",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "PUT",
+    "subPath": "consents/:id",
+    "fullPath": "/api/v1/family/consents/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "DELETE",
+    "subPath": "consents/:id",
+    "fullPath": "/api/v1/family/consents/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "GET",
+    "subPath": "consents",
+    "fullPath": "/api/v1/family/consents",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "GET",
+    "subPath": "consents/history",
+    "fullPath": "/api/v1/family/consents/history",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "GET",
+    "subPath": "guardians",
+    "fullPath": "/api/v1/family/guardians",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "POST",
+    "subPath": "guardians",
+    "fullPath": "/api/v1/family/guardians",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "PATCH",
+    "subPath": "guardians/:id",
+    "fullPath": "/api/v1/family/guardians/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "GET",
+    "subPath": "dependents",
+    "fullPath": "/api/v1/family/dependents",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "POST",
+    "subPath": "dependents",
+    "fullPath": "/api/v1/family/dependents",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "PATCH",
+    "subPath": "dependents/:id",
+    "fullPath": "/api/v1/family/dependents/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "family.controller.ts",
+    "file": "src/modules/family/presentation/controllers/family.controller.ts",
+    "prefix": "family",
+    "httpMethod": "DELETE",
+    "subPath": "dependents/:id",
+    "fullPath": "/api/v1/family/dependents/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "financing.controller.ts",
+    "file": "src/modules/financing/presentation/controllers/financing.controller.ts",
+    "prefix": "financing",
+    "httpMethod": "GET",
+    "subPath": "options",
+    "fullPath": "/api/v1/financing/options",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "financing.controller.ts",
+    "file": "src/modules/financing/presentation/controllers/financing.controller.ts",
+    "prefix": "financing",
+    "httpMethod": "GET",
+    "subPath": "offers",
+    "fullPath": "/api/v1/financing/offers",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "financing.controller.ts",
+    "file": "src/modules/financing/presentation/controllers/financing.controller.ts",
+    "prefix": "financing",
+    "httpMethod": "GET",
+    "subPath": "offers/:id",
+    "fullPath": "/api/v1/financing/offers/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "financing.controller.ts",
+    "file": "src/modules/financing/presentation/controllers/financing.controller.ts",
+    "prefix": "financing",
+    "httpMethod": "POST",
+    "subPath": "offers/:id/accept",
+    "fullPath": "/api/v1/financing/offers/:id/accept",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "financing.controller.ts",
+    "file": "src/modules/financing/presentation/controllers/financing.controller.ts",
+    "prefix": "financing",
+    "httpMethod": "POST",
+    "subPath": "offers/:id/reject",
+    "fullPath": "/api/v1/financing/offers/:id/reject",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "financing.controller.ts",
+    "file": "src/modules/financing/presentation/controllers/financing.controller.ts",
+    "prefix": "financing",
+    "httpMethod": "POST",
+    "subPath": "apply",
+    "fullPath": "/api/v1/financing/apply",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "financing.controller.ts",
+    "file": "src/modules/financing/presentation/controllers/financing.controller.ts",
+    "prefix": "financing",
+    "httpMethod": "GET",
+    "subPath": "applications",
+    "fullPath": "/api/v1/financing/applications",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "financing.controller.ts",
+    "file": "src/modules/financing/presentation/controllers/financing.controller.ts",
+    "prefix": "financing",
+    "httpMethod": "GET",
+    "subPath": "applications/:id",
+    "fullPath": "/api/v1/financing/applications/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "financing.controller.ts",
+    "file": "src/modules/financing/presentation/controllers/financing.controller.ts",
+    "prefix": "financing",
+    "httpMethod": "PATCH",
+    "subPath": "applications/:id/status",
+    "fullPath": "/api/v1/financing/applications/:id/status",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "GET",
+    "subPath": "dashboard",
+    "fullPath": "/api/v1/governance/dashboard",
+    "handler": "HttpCode",
+    "roles": "ADMIN,SUPER_ADMIN"
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "POST",
+    "subPath": "configurations",
+    "fullPath": "/api/v1/governance/configurations",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "GET",
+    "subPath": "configurations",
+    "fullPath": "/api/v1/governance/configurations",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "GET",
+    "subPath": "configurations/export",
+    "fullPath": "/api/v1/governance/configurations/export",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "POST",
+    "subPath": "configurations/import",
+    "fullPath": "/api/v1/governance/configurations/import",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "GET",
+    "subPath": "configurations/:id",
+    "fullPath": "/api/v1/governance/configurations/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "PUT",
+    "subPath": "configurations/:id",
+    "fullPath": "/api/v1/governance/configurations/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "DELETE",
+    "subPath": "configurations/:id",
+    "fullPath": "/api/v1/governance/configurations/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "POST",
+    "subPath": "features",
+    "fullPath": "/api/v1/governance/features",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "GET",
+    "subPath": "features",
+    "fullPath": "/api/v1/governance/features",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "GET",
+    "subPath": "features/:id",
+    "fullPath": "/api/v1/governance/features/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "PUT",
+    "subPath": "features/:id",
+    "fullPath": "/api/v1/governance/features/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "DELETE",
+    "subPath": "features/:id",
+    "fullPath": "/api/v1/governance/features/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "POST",
+    "subPath": "master-data/categories",
+    "fullPath": "/api/v1/governance/master-data/categories",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "GET",
+    "subPath": "master-data/categories",
+    "fullPath": "/api/v1/governance/master-data/categories",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "POST",
+    "subPath": "master-data/items",
+    "fullPath": "/api/v1/governance/master-data/items",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "GET",
+    "subPath": "master-data/items",
+    "fullPath": "/api/v1/governance/master-data/items",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "PUT",
+    "subPath": "master-data/items/:id",
+    "fullPath": "/api/v1/governance/master-data/items/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "DELETE",
+    "subPath": "master-data/items/:id",
+    "fullPath": "/api/v1/governance/master-data/items/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "POST",
+    "subPath": "policies",
+    "fullPath": "/api/v1/governance/policies",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "GET",
+    "subPath": "policies",
+    "fullPath": "/api/v1/governance/policies",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "GET",
+    "subPath": "policies/:id",
+    "fullPath": "/api/v1/governance/policies/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "PUT",
+    "subPath": "policies/:id",
+    "fullPath": "/api/v1/governance/policies/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "DELETE",
+    "subPath": "policies/:id",
+    "fullPath": "/api/v1/governance/policies/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "GET",
+    "subPath": "maintenance",
+    "fullPath": "/api/v1/governance/maintenance",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "PUT",
+    "subPath": "maintenance",
+    "fullPath": "/api/v1/governance/maintenance",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "GET",
+    "subPath": "audit",
+    "fullPath": "/api/v1/governance/audit",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "governance.controller.ts",
+    "file": "src/modules/governance/presentation/controllers/governance.controller.ts",
+    "prefix": "governance",
+    "httpMethod": "GET",
+    "subPath": "audit/:id",
+    "fullPath": "/api/v1/governance/audit/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "POST",
+    "subPath": "",
+    "fullPath": "/api/v1/health-cards",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "GET",
+    "subPath": "",
+    "fullPath": "/api/v1/health-cards",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "GET",
+    "subPath": "active",
+    "fullPath": "/api/v1/health-cards/active",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "GET",
+    "subPath": "wallet",
+    "fullPath": "/api/v1/health-cards/wallet",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "POST",
+    "subPath": "reminders/monthly",
+    "fullPath": "/api/v1/health-cards/reminders/monthly",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "GET",
+    "subPath": "search",
+    "fullPath": "/api/v1/health-cards/search",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "GET",
+    "subPath": ":id",
+    "fullPath": "/api/v1/health-cards/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "GET",
+    "subPath": ":id/wallet",
+    "fullPath": "/api/v1/health-cards/:id/wallet",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "GET",
+    "subPath": ":id/wallet/apple",
+    "fullPath": "/api/v1/health-cards/:id/wallet/apple",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "GET",
+    "subPath": ":id/wallet/google",
+    "fullPath": "/api/v1/health-cards/:id/wallet/google",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "POST",
+    "subPath": ":id/reminders/monthly",
+    "fullPath": "/api/v1/health-cards/:id/reminders/monthly",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "PUT",
+    "subPath": ":id",
+    "fullPath": "/api/v1/health-cards/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "POST",
+    "subPath": ":id/activate",
+    "fullPath": "/api/v1/health-cards/:id/activate",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "POST",
+    "subPath": ":id/deactivate",
+    "fullPath": "/api/v1/health-cards/:id/deactivate",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "POST",
+    "subPath": ":id/suspend",
+    "fullPath": "/api/v1/health-cards/:id/suspend",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "POST",
+    "subPath": ":id/block",
+    "fullPath": "/api/v1/health-cards/:id/block",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "POST",
+    "subPath": ":id/unblock",
+    "fullPath": "/api/v1/health-cards/:id/unblock",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "POST",
+    "subPath": ":id/replace",
+    "fullPath": "/api/v1/health-cards/:id/replace",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "POST",
+    "subPath": ":id/renew",
+    "fullPath": "/api/v1/health-cards/:id/renew",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "POST",
+    "subPath": ":id/archive",
+    "fullPath": "/api/v1/health-cards/:id/archive",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "POST",
+    "subPath": ":id/restore",
+    "fullPath": "/api/v1/health-cards/:id/restore",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "GET",
+    "subPath": ":id/history",
+    "fullPath": "/api/v1/health-cards/:id/history",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "health-card.controller.ts",
+    "file": "src/modules/health-card/presentation/controllers/health-card.controller.ts",
+    "prefix": "health-cards",
+    "httpMethod": "POST",
+    "subPath": "verify-qr",
+    "fullPath": "/api/v1/health-cards/verify-qr",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "immunisation.controller.ts",
+    "file": "src/modules/immunisation/presentation/controllers/immunisation.controller.ts",
+    "prefix": "immunisation",
+    "httpMethod": "POST",
+    "subPath": "vaccines",
+    "fullPath": "/api/v1/immunisation/vaccines",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "immunisation.controller.ts",
+    "file": "src/modules/immunisation/presentation/controllers/immunisation.controller.ts",
+    "prefix": "immunisation",
+    "httpMethod": "GET",
+    "subPath": "vaccines",
+    "fullPath": "/api/v1/immunisation/vaccines",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "immunisation.controller.ts",
+    "file": "src/modules/immunisation/presentation/controllers/immunisation.controller.ts",
+    "prefix": "immunisation",
+    "httpMethod": "POST",
+    "subPath": "schedules",
+    "fullPath": "/api/v1/immunisation/schedules",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "immunisation.controller.ts",
+    "file": "src/modules/immunisation/presentation/controllers/immunisation.controller.ts",
+    "prefix": "immunisation",
+    "httpMethod": "GET",
+    "subPath": "schedules",
+    "fullPath": "/api/v1/immunisation/schedules",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "immunisation.controller.ts",
+    "file": "src/modules/immunisation/presentation/controllers/immunisation.controller.ts",
+    "prefix": "immunisation",
+    "httpMethod": "POST",
+    "subPath": "records",
+    "fullPath": "/api/v1/immunisation/records",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "immunisation.controller.ts",
+    "file": "src/modules/immunisation/presentation/controllers/immunisation.controller.ts",
+    "prefix": "immunisation",
+    "httpMethod": "GET",
+    "subPath": "records",
+    "fullPath": "/api/v1/immunisation/records",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "immunisation.controller.ts",
+    "file": "src/modules/immunisation/presentation/controllers/immunisation.controller.ts",
+    "prefix": "immunisation",
+    "httpMethod": "GET",
+    "subPath": "search",
+    "fullPath": "/api/v1/immunisation/search",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "immunisation.controller.ts",
+    "file": "src/modules/immunisation/presentation/controllers/immunisation.controller.ts",
+    "prefix": "immunisation",
+    "httpMethod": "GET",
+    "subPath": "statistics",
+    "fullPath": "/api/v1/immunisation/statistics",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "immunisation.controller.ts",
+    "file": "src/modules/immunisation/presentation/controllers/immunisation.controller.ts",
+    "prefix": "immunisation",
+    "httpMethod": "GET",
+    "subPath": "records/:id",
+    "fullPath": "/api/v1/immunisation/records/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "immunisation.controller.ts",
+    "file": "src/modules/immunisation/presentation/controllers/immunisation.controller.ts",
+    "prefix": "immunisation",
+    "httpMethod": "PUT",
+    "subPath": "records/:id",
+    "fullPath": "/api/v1/immunisation/records/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "immunisation.controller.ts",
+    "file": "src/modules/immunisation/presentation/controllers/immunisation.controller.ts",
+    "prefix": "immunisation",
+    "httpMethod": "POST",
+    "subPath": "records/:id/administer",
+    "fullPath": "/api/v1/immunisation/records/:id/administer",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "immunisation.controller.ts",
+    "file": "src/modules/immunisation/presentation/controllers/immunisation.controller.ts",
+    "prefix": "immunisation",
+    "httpMethod": "POST",
+    "subPath": "records/:id/complete",
+    "fullPath": "/api/v1/immunisation/records/:id/complete",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "immunisation.controller.ts",
+    "file": "src/modules/immunisation/presentation/controllers/immunisation.controller.ts",
+    "prefix": "immunisation",
+    "httpMethod": "POST",
+    "subPath": "records/:id/defer",
+    "fullPath": "/api/v1/immunisation/records/:id/defer",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "immunisation.controller.ts",
+    "file": "src/modules/immunisation/presentation/controllers/immunisation.controller.ts",
+    "prefix": "immunisation",
+    "httpMethod": "POST",
+    "subPath": "records/:id/archive",
+    "fullPath": "/api/v1/immunisation/records/:id/archive",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "immunisation.controller.ts",
+    "file": "src/modules/immunisation/presentation/controllers/immunisation.controller.ts",
+    "prefix": "immunisation",
+    "httpMethod": "POST",
+    "subPath": "records/:id/restore",
+    "fullPath": "/api/v1/immunisation/records/:id/restore",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "immunisation.controller.ts",
+    "file": "src/modules/immunisation/presentation/controllers/immunisation.controller.ts",
+    "prefix": "immunisation",
+    "httpMethod": "POST",
+    "subPath": "certificates",
+    "fullPath": "/api/v1/immunisation/certificates",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "immunisation.controller.ts",
+    "file": "src/modules/immunisation/presentation/controllers/immunisation.controller.ts",
+    "prefix": "immunisation",
+    "httpMethod": "GET",
+    "subPath": "certificates",
+    "fullPath": "/api/v1/immunisation/certificates",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "immunisation.controller.ts",
+    "file": "src/modules/immunisation/presentation/controllers/immunisation.controller.ts",
+    "prefix": "immunisation",
+    "httpMethod": "POST",
+    "subPath": "reminders/config",
+    "fullPath": "/api/v1/immunisation/reminders/config",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance-card.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance-card.controller.ts",
+    "prefix": "",
+    "httpMethod": "GET",
+    "subPath": "patients/:patientId/insurance-cards",
+    "fullPath": "/api/v1/patients/:patientId/insurance-cards",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance-card.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance-card.controller.ts",
+    "prefix": "",
+    "httpMethod": "POST",
+    "subPath": "patients/:patientId/insurance-cards",
+    "fullPath": "/api/v1/patients/:patientId/insurance-cards",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance-card.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance-card.controller.ts",
+    "prefix": "",
+    "httpMethod": "GET",
+    "subPath": "insurance-cards/:id",
+    "fullPath": "/api/v1/insurance-cards/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance-card.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance-card.controller.ts",
+    "prefix": "",
+    "httpMethod": "PUT",
+    "subPath": "insurance-cards/:id",
+    "fullPath": "/api/v1/insurance-cards/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance-card.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance-card.controller.ts",
+    "prefix": "",
+    "httpMethod": "DELETE",
+    "subPath": "insurance-cards/:id",
+    "fullPath": "/api/v1/insurance-cards/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "POST",
+    "subPath": "providers",
+    "fullPath": "/api/v1/insurance/providers",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "GET",
+    "subPath": "providers",
+    "fullPath": "/api/v1/insurance/providers",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "POST",
+    "subPath": "plans",
+    "fullPath": "/api/v1/insurance/plans",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "GET",
+    "subPath": "plans",
+    "fullPath": "/api/v1/insurance/plans",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "POST",
+    "subPath": "policies",
+    "fullPath": "/api/v1/insurance/policies",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "GET",
+    "subPath": "policies",
+    "fullPath": "/api/v1/insurance/policies",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "GET",
+    "subPath": "search",
+    "fullPath": "/api/v1/insurance/search",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "GET",
+    "subPath": "statistics",
+    "fullPath": "/api/v1/insurance/statistics",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "GET",
+    "subPath": "policies/:id",
+    "fullPath": "/api/v1/insurance/policies/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "PUT",
+    "subPath": "policies/:id",
+    "fullPath": "/api/v1/insurance/policies/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "POST",
+    "subPath": "policies/:id/activate",
+    "fullPath": "/api/v1/insurance/policies/:id/activate",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "POST",
+    "subPath": "policies/:id/renew",
+    "fullPath": "/api/v1/insurance/policies/:id/renew",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "POST",
+    "subPath": "policies/:id/suspend",
+    "fullPath": "/api/v1/insurance/policies/:id/suspend",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "POST",
+    "subPath": "policies/:id/cancel",
+    "fullPath": "/api/v1/insurance/policies/:id/cancel",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "POST",
+    "subPath": "policies/:id/archive",
+    "fullPath": "/api/v1/insurance/policies/:id/archive",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "POST",
+    "subPath": "policies/:id/restore",
+    "fullPath": "/api/v1/insurance/policies/:id/restore",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "POST",
+    "subPath": "policies/:id/verify",
+    "fullPath": "/api/v1/insurance/policies/:id/verify",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "POST",
+    "subPath": "claims",
+    "fullPath": "/api/v1/insurance/claims",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "GET",
+    "subPath": "claims",
+    "fullPath": "/api/v1/insurance/claims",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "POST",
+    "subPath": "onboard",
+    "fullPath": "/api/v1/insurance/onboard",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "POST",
+    "subPath": "ocr",
+    "fullPath": "/api/v1/insurance/ocr",
+    "handler": "UseInterceptors",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "GET",
+    "subPath": "ocr/file/:filename",
+    "fullPath": "/api/v1/insurance/ocr/file/:filename",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "GET",
+    "subPath": "ocr/:id",
+    "fullPath": "/api/v1/insurance/ocr/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "POST",
+    "subPath": "manual-review",
+    "fullPath": "/api/v1/insurance/manual-review",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "insurance.controller.ts",
+    "file": "src/modules/insurance/presentation/controllers/insurance.controller.ts",
+    "prefix": "insurance",
+    "httpMethod": "POST",
+    "subPath": "ocr/confirm",
+    "fullPath": "/api/v1/insurance/ocr/confirm",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "laboratory.controller.ts",
+    "file": "src/modules/laboratory/laboratory.controller.ts",
+    "prefix": "",
+    "httpMethod": "POST",
+    "subPath": "doctors/patients/:patientProfileId/lab-results",
+    "fullPath": "/api/v1/doctors/patients/:patientProfileId/lab-results",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "laboratory.controller.ts",
+    "file": "src/modules/laboratory/laboratory.controller.ts",
+    "prefix": "",
+    "httpMethod": "GET",
+    "subPath": "lab-results/:id",
+    "fullPath": "/api/v1/lab-results/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "laboratory.controller.ts",
+    "file": "src/modules/laboratory/laboratory.controller.ts",
+    "prefix": "",
+    "httpMethod": "PUT",
+    "subPath": "lab-results/:id",
+    "fullPath": "/api/v1/lab-results/:id",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "encounter.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/encounter.controller.ts",
+    "prefix": "encounters",
+    "httpMethod": "POST",
+    "subPath": ":id/procedures",
+    "fullPath": "/api/v1/encounters/:id/procedures",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "encounter.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/encounter.controller.ts",
+    "prefix": "encounters",
+    "httpMethod": "POST",
+    "subPath": ":id/hemodynamics",
+    "fullPath": "/api/v1/encounters/:id/hemodynamics",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "POST",
+    "subPath": "",
+    "fullPath": "/api/v1/shares",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "POST",
+    "subPath": "upload",
+    "fullPath": "/api/v1/shares/upload",
+    "handler": "UseInterceptors",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "GET",
+    "subPath": "",
+    "fullPath": "/api/v1/shares",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "GET",
+    "subPath": "export",
+    "fullPath": "/api/v1/shares/export",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "GET",
+    "subPath": "timeline",
+    "fullPath": "/api/v1/shares/timeline",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "GET",
+    "subPath": "search",
+    "fullPath": "/api/v1/shares/search",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "GET",
+    "subPath": ":id",
+    "fullPath": "/api/v1/shares/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "PUT",
+    "subPath": ":id",
+    "fullPath": "/api/v1/shares/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "DELETE",
+    "subPath": ":id",
+    "fullPath": "/api/v1/shares/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "POST",
+    "subPath": ":id/archive",
+    "fullPath": "/api/v1/shares/:id/archive",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "POST",
+    "subPath": ":id/restore",
+    "fullPath": "/api/v1/shares/:id/restore",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "POST",
+    "subPath": ":id/attachments",
+    "fullPath": "/api/v1/shares/:id/attachments",
+    "handler": "UseInterceptors",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "GET",
+    "subPath": ":id/attachments",
+    "fullPath": "/api/v1/shares/:id/attachments",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "POST",
+    "subPath": ":id/addenda",
+    "fullPath": "/api/v1/shares/:id/addenda",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "GET",
+    "subPath": ":id/addenda",
+    "fullPath": "/api/v1/shares/:id/addenda",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "POST",
+    "subPath": ":id/share",
+    "fullPath": "/api/v1/shares/:id/share",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "GET",
+    "subPath": ":id/shares",
+    "fullPath": "/api/v1/shares/:id/shares",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "DELETE",
+    "subPath": ":id/share/:grantId",
+    "fullPath": "/api/v1/shares/:id/share/:grantId",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "GET",
+    "subPath": ":shareToken",
+    "fullPath": "/api/v1/shares/:shareToken",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "POST",
+    "subPath": "",
+    "fullPath": "/api/v1/shares",
+    "handler": "UseInterceptors",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "GET",
+    "subPath": "file/:filename",
+    "fullPath": "/api/v1/shares/file/:filename",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "GET",
+    "subPath": ":id",
+    "fullPath": "/api/v1/shares/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "GET",
+    "subPath": ":id/download-url",
+    "fullPath": "/api/v1/shares/:id/download-url",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "PATCH",
+    "subPath": ":id",
+    "fullPath": "/api/v1/shares/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "DELETE",
+    "subPath": ":id",
+    "fullPath": "/api/v1/shares/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "POST",
+    "subPath": ":id/restore",
+    "fullPath": "/api/v1/shares/:id/restore",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "medical-record.controller.ts",
+    "file": "src/modules/medical-record/presentation/controllers/medical-record.controller.ts",
+    "prefix": "shares",
+    "httpMethod": "GET",
+    "subPath": ":id/versions",
+    "fullPath": "/api/v1/shares/:id/versions",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "messaging.controller.ts",
+    "file": "src/modules/messaging/messaging.controller.ts",
+    "prefix": "conversations",
+    "httpMethod": "GET",
+    "subPath": "",
+    "fullPath": "/api/v1/conversations",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "messaging.controller.ts",
+    "file": "src/modules/messaging/messaging.controller.ts",
+    "prefix": "conversations",
+    "httpMethod": "POST",
+    "subPath": "",
+    "fullPath": "/api/v1/conversations",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "messaging.controller.ts",
+    "file": "src/modules/messaging/messaging.controller.ts",
+    "prefix": "conversations",
+    "httpMethod": "GET",
+    "subPath": "unread-count",
+    "fullPath": "/api/v1/conversations/unread-count",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "messaging.controller.ts",
+    "file": "src/modules/messaging/messaging.controller.ts",
+    "prefix": "conversations",
+    "httpMethod": "GET",
+    "subPath": ":id",
+    "fullPath": "/api/v1/conversations/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "messaging.controller.ts",
+    "file": "src/modules/messaging/messaging.controller.ts",
+    "prefix": "conversations",
+    "httpMethod": "GET",
+    "subPath": ":id/messages",
+    "fullPath": "/api/v1/conversations/:id/messages",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "messaging.controller.ts",
+    "file": "src/modules/messaging/messaging.controller.ts",
+    "prefix": "conversations",
+    "httpMethod": "POST",
+    "subPath": ":id/messages",
+    "fullPath": "/api/v1/conversations/:id/messages",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "messaging.controller.ts",
+    "file": "src/modules/messaging/messaging.controller.ts",
+    "prefix": "conversations",
+    "httpMethod": "PUT",
+    "subPath": ":id/read",
+    "fullPath": "/api/v1/conversations/:id/read",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "notification-template.controller.ts",
+    "file": "src/modules/notifications/presentation/controllers/notification-template.controller.ts",
+    "prefix": "notifications/templates",
+    "httpMethod": "POST",
+    "subPath": "",
+    "fullPath": "/api/v1/notifications/templates",
+    "handler": "HttpCode",
+    "roles": "ADMIN,SUPER_ADMIN,FACILITY_ADMIN,STAFF"
+  },
+  {
+    "controller": "notification-template.controller.ts",
+    "file": "src/modules/notifications/presentation/controllers/notification-template.controller.ts",
+    "prefix": "notifications/templates",
+    "httpMethod": "GET",
+    "subPath": "",
+    "fullPath": "/api/v1/notifications/templates",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "notification-template.controller.ts",
+    "file": "src/modules/notifications/presentation/controllers/notification-template.controller.ts",
+    "prefix": "notifications/templates",
+    "httpMethod": "GET",
+    "subPath": ":id",
+    "fullPath": "/api/v1/notifications/templates/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "notification-template.controller.ts",
+    "file": "src/modules/notifications/presentation/controllers/notification-template.controller.ts",
+    "prefix": "notifications/templates",
+    "httpMethod": "PUT",
+    "subPath": ":id",
+    "fullPath": "/api/v1/notifications/templates/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "notification-template.controller.ts",
+    "file": "src/modules/notifications/presentation/controllers/notification-template.controller.ts",
+    "prefix": "notifications/templates",
+    "httpMethod": "DELETE",
+    "subPath": ":id",
+    "fullPath": "/api/v1/notifications/templates/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "notification.controller.ts",
+    "file": "src/modules/notifications/presentation/controllers/notification.controller.ts",
+    "prefix": "",
+    "httpMethod": "GET",
+    "subPath": "dashboard/stats",
+    "fullPath": "/api/v1/dashboard/stats",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "notification.controller.ts",
+    "file": "src/modules/notifications/presentation/controllers/notification.controller.ts",
+    "prefix": "",
+    "httpMethod": "GET",
+    "subPath": "preferences",
+    "fullPath": "/api/v1/preferences",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "notification.controller.ts",
+    "file": "src/modules/notifications/presentation/controllers/notification.controller.ts",
+    "prefix": "",
+    "httpMethod": "PUT",
+    "subPath": "preferences",
+    "fullPath": "/api/v1/preferences",
+    "handler": "Patch",
+    "roles": ""
+  },
+  {
+    "controller": "notification.controller.ts",
+    "file": "src/modules/notifications/presentation/controllers/notification.controller.ts",
+    "prefix": "",
+    "httpMethod": "GET",
+    "subPath": "queue",
+    "fullPath": "/api/v1/queue",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "notification.controller.ts",
+    "file": "src/modules/notifications/presentation/controllers/notification.controller.ts",
+    "prefix": "",
+    "httpMethod": "POST",
+    "subPath": "queue/retry",
+    "fullPath": "/api/v1/queue/retry",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "notification.controller.ts",
+    "file": "src/modules/notifications/presentation/controllers/notification.controller.ts",
+    "prefix": "",
+    "httpMethod": "POST",
+    "subPath": "queue/process",
+    "fullPath": "/api/v1/queue/process",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "notification.controller.ts",
+    "file": "src/modules/notifications/presentation/controllers/notification.controller.ts",
+    "prefix": "",
+    "httpMethod": "GET",
+    "subPath": "audit",
+    "fullPath": "/api/v1/audit",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "notification.controller.ts",
+    "file": "src/modules/notifications/presentation/controllers/notification.controller.ts",
+    "prefix": "",
+    "httpMethod": "POST",
+    "subPath": "",
+    "fullPath": "/api/v1/",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "notification.controller.ts",
+    "file": "src/modules/notifications/presentation/controllers/notification.controller.ts",
+    "prefix": "",
+    "httpMethod": "GET",
+    "subPath": "",
+    "fullPath": "/api/v1/",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "notification.controller.ts",
+    "file": "src/modules/notifications/presentation/controllers/notification.controller.ts",
+    "prefix": "",
+    "httpMethod": "GET",
+    "subPath": ":id",
+    "fullPath": "/api/v1/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "notification.controller.ts",
+    "file": "src/modules/notifications/presentation/controllers/notification.controller.ts",
+    "prefix": "",
+    "httpMethod": "PUT",
+    "subPath": ":id/read",
+    "fullPath": "/api/v1/:id/read",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "notification.controller.ts",
+    "file": "src/modules/notifications/presentation/controllers/notification.controller.ts",
+    "prefix": "",
+    "httpMethod": "DELETE",
+    "subPath": ":id",
+    "fullPath": "/api/v1/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "observability.controller.ts",
+    "file": "src/modules/observability/presentation/controllers/observability.controller.ts",
+    "prefix": "observability",
+    "httpMethod": "GET",
+    "subPath": "dashboard",
+    "fullPath": "/api/v1/observability/dashboard",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "observability.controller.ts",
+    "file": "src/modules/observability/presentation/controllers/observability.controller.ts",
+    "prefix": "observability",
+    "httpMethod": "GET",
+    "subPath": "health",
+    "fullPath": "/api/v1/observability/health",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "observability.controller.ts",
+    "file": "src/modules/observability/presentation/controllers/observability.controller.ts",
+    "prefix": "observability",
+    "httpMethod": "GET",
+    "subPath": "health/live",
+    "fullPath": "/api/v1/observability/health/live",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "observability.controller.ts",
+    "file": "src/modules/observability/presentation/controllers/observability.controller.ts",
+    "prefix": "observability",
+    "httpMethod": "GET",
+    "subPath": "health/ready",
+    "fullPath": "/api/v1/observability/health/ready",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "observability.controller.ts",
+    "file": "src/modules/observability/presentation/controllers/observability.controller.ts",
+    "prefix": "observability",
+    "httpMethod": "POST",
+    "subPath": "metrics",
+    "fullPath": "/api/v1/observability/metrics",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "observability.controller.ts",
+    "file": "src/modules/observability/presentation/controllers/observability.controller.ts",
+    "prefix": "observability",
+    "httpMethod": "GET",
+    "subPath": "metrics",
+    "fullPath": "/api/v1/observability/metrics",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "observability.controller.ts",
+    "file": "src/modules/observability/presentation/controllers/observability.controller.ts",
+    "prefix": "observability",
+    "httpMethod": "GET",
+    "subPath": "metrics/:category",
+    "fullPath": "/api/v1/observability/metrics/:category",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "observability.controller.ts",
+    "file": "src/modules/observability/presentation/controllers/observability.controller.ts",
+    "prefix": "observability",
+    "httpMethod": "GET",
+    "subPath": "logs",
+    "fullPath": "/api/v1/observability/logs",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "observability.controller.ts",
+    "file": "src/modules/observability/presentation/controllers/observability.controller.ts",
+    "prefix": "observability",
+    "httpMethod": "GET",
+    "subPath": "logs/:requestId",
+    "fullPath": "/api/v1/observability/logs/:requestId",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "observability.controller.ts",
+    "file": "src/modules/observability/presentation/controllers/observability.controller.ts",
+    "prefix": "observability",
+    "httpMethod": "GET",
+    "subPath": "traces",
+    "fullPath": "/api/v1/observability/traces",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "observability.controller.ts",
+    "file": "src/modules/observability/presentation/controllers/observability.controller.ts",
+    "prefix": "observability",
+    "httpMethod": "GET",
+    "subPath": "traces/:traceId",
+    "fullPath": "/api/v1/observability/traces/:traceId",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "observability.controller.ts",
+    "file": "src/modules/observability/presentation/controllers/observability.controller.ts",
+    "prefix": "observability",
+    "httpMethod": "GET",
+    "subPath": "jobs",
+    "fullPath": "/api/v1/observability/jobs",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "observability.controller.ts",
+    "file": "src/modules/observability/presentation/controllers/observability.controller.ts",
+    "prefix": "observability",
+    "httpMethod": "GET",
+    "subPath": "jobs/:id",
+    "fullPath": "/api/v1/observability/jobs/:id",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "observability.controller.ts",
+    "file": "src/modules/observability/presentation/controllers/observability.controller.ts",
+    "prefix": "observability",
+    "httpMethod": "GET",
+    "subPath": "performance",
+    "fullPath": "/api/v1/observability/performance",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "observability.controller.ts",
+    "file": "src/modules/observability/presentation/controllers/observability.controller.ts",
+    "prefix": "observability",
+    "httpMethod": "GET",
+    "subPath": "statistics",
+    "fullPath": "/api/v1/observability/statistics",
+    "handler": "UseGuards",
+    "roles": ""
+  },
+  {
+    "controller": "ocr.controller.ts",
+    "file": "src/modules/ocr/presentation/controllers/ocr.controller.ts",
+    "prefix": "ocr",
+    "httpMethod": "GET",
+    "subPath": "dashboard",
+    "fullPath": "/api/v1/ocr/dashboard",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "ocr.controller.ts",
+    "file": "src/modules/ocr/presentation/controllers/ocr.controller.ts",
+    "prefix": "ocr",
+    "httpMethod": "GET",
+    "subPath": "statistics",
+    "fullPath": "/api/v1/ocr/statistics",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "ocr.controller.ts",
+    "file": "src/modules/ocr/presentation/controllers/ocr.controller.ts",
+    "prefix": "ocr",
+    "httpMethod": "POST",
+    "subPath": "jobs",
+    "fullPath": "/api/v1/ocr/jobs",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "ocr.controller.ts",
+    "file": "src/modules/ocr/presentation/controllers/ocr.controller.ts",
+    "prefix": "ocr",
+    "httpMethod": "GET",
+    "subPath": "jobs",
+    "fullPath": "/api/v1/ocr/jobs",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "ocr.controller.ts",
+    "file": "src/modules/ocr/presentation/controllers/ocr.controller.ts",
+    "prefix": "ocr",
+    "httpMethod": "GET",
+    "subPath": "jobs/:id",
+    "fullPath": "/api/v1/ocr/jobs/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "ocr.controller.ts",
+    "file": "src/modules/ocr/presentation/controllers/ocr.controller.ts",
+    "prefix": "ocr",
+    "httpMethod": "GET",
+    "subPath": "jobs/:id/text",
+    "fullPath": "/api/v1/ocr/jobs/:id/text",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "ocr.controller.ts",
+    "file": "src/modules/ocr/presentation/controllers/ocr.controller.ts",
+    "prefix": "ocr",
+    "httpMethod": "GET",
+    "subPath": "jobs/:id/fields",
+    "fullPath": "/api/v1/ocr/jobs/:id/fields",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "ocr.controller.ts",
+    "file": "src/modules/ocr/presentation/controllers/ocr.controller.ts",
+    "prefix": "ocr",
+    "httpMethod": "GET",
+    "subPath": "jobs/:id/json",
+    "fullPath": "/api/v1/ocr/jobs/:id/json",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "ocr.controller.ts",
+    "file": "src/modules/ocr/presentation/controllers/ocr.controller.ts",
+    "prefix": "ocr",
+    "httpMethod": "POST",
+    "subPath": "templates",
+    "fullPath": "/api/v1/ocr/templates",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "ocr.controller.ts",
+    "file": "src/modules/ocr/presentation/controllers/ocr.controller.ts",
+    "prefix": "ocr",
+    "httpMethod": "GET",
+    "subPath": "templates",
+    "fullPath": "/api/v1/ocr/templates",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "ocr.controller.ts",
+    "file": "src/modules/ocr/presentation/controllers/ocr.controller.ts",
+    "prefix": "ocr",
+    "httpMethod": "PUT",
+    "subPath": "templates/:id",
+    "fullPath": "/api/v1/ocr/templates/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "ocr.controller.ts",
+    "file": "src/modules/ocr/presentation/controllers/ocr.controller.ts",
+    "prefix": "ocr",
+    "httpMethod": "DELETE",
+    "subPath": "templates/:id",
+    "fullPath": "/api/v1/ocr/templates/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "ocr.controller.ts",
+    "file": "src/modules/ocr/presentation/controllers/ocr.controller.ts",
+    "prefix": "ocr",
+    "httpMethod": "GET",
+    "subPath": "reviews/history",
+    "fullPath": "/api/v1/ocr/reviews/history",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "ocr.controller.ts",
+    "file": "src/modules/ocr/presentation/controllers/ocr.controller.ts",
+    "prefix": "ocr",
+    "httpMethod": "GET",
+    "subPath": "review",
+    "fullPath": "/api/v1/ocr/review",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "ocr.controller.ts",
+    "file": "src/modules/ocr/presentation/controllers/ocr.controller.ts",
+    "prefix": "ocr",
+    "httpMethod": "POST",
+    "subPath": "review/:jobId",
+    "fullPath": "/api/v1/ocr/review/:jobId",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "POST",
+    "subPath": "register",
+    "fullPath": "/api/v1/patients/register",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "GET",
+    "subPath": "register/status",
+    "fullPath": "/api/v1/patients/register/status",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "PATCH",
+    "subPath": "register/resume",
+    "fullPath": "/api/v1/patients/register/resume",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "POST",
+    "subPath": "onboarding/demographics",
+    "fullPath": "/api/v1/patients/onboarding/demographics",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "PUT",
+    "subPath": "onboarding/demographics",
+    "fullPath": "/api/v1/patients/onboarding/demographics",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "POST",
+    "subPath": "onboarding/emergency-contact",
+    "fullPath": "/api/v1/patients/onboarding/emergency-contact",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "PUT",
+    "subPath": "onboarding/emergency-contact",
+    "fullPath": "/api/v1/patients/onboarding/emergency-contact",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "POST",
+    "subPath": "onboarding/insurance",
+    "fullPath": "/api/v1/patients/onboarding/insurance",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "PUT",
+    "subPath": "onboarding/insurance",
+    "fullPath": "/api/v1/patients/onboarding/insurance",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "POST",
+    "subPath": "onboarding/health-card",
+    "fullPath": "/api/v1/patients/onboarding/health-card",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "POST",
+    "subPath": "onboarding/family-invite",
+    "fullPath": "/api/v1/patients/onboarding/family-invite",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "GET",
+    "subPath": "onboarding/progress",
+    "fullPath": "/api/v1/patients/onboarding/progress",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "POST",
+    "subPath": "onboarding/complete",
+    "fullPath": "/api/v1/patients/onboarding/complete",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "GET",
+    "subPath": "onboarding/completion",
+    "fullPath": "/api/v1/patients/onboarding/completion",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "GET",
+    "subPath": "me",
+    "fullPath": "/api/v1/patients/me",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "PUT",
+    "subPath": "me",
+    "fullPath": "/api/v1/patients/me",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "PATCH",
+    "subPath": "family-consents/:id",
+    "fullPath": "/api/v1/patients/family-consents/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "GET",
+    "subPath": "me/dashboard",
+    "fullPath": "/api/v1/patients/me/dashboard",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "GET",
+    "subPath": "me/full",
+    "fullPath": "/api/v1/patients/me/full",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "PATCH",
+    "subPath": "me/basic",
+    "fullPath": "/api/v1/patients/me/basic",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "PATCH",
+    "subPath": "me/contact",
+    "fullPath": "/api/v1/patients/me/contact",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "PATCH",
+    "subPath": "me/address",
+    "fullPath": "/api/v1/patients/me/address",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "PATCH",
+    "subPath": "me/preferences",
+    "fullPath": "/api/v1/patients/me/preferences",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "PATCH",
+    "subPath": "me/medical-summary",
+    "fullPath": "/api/v1/patients/me/medical-summary",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "POST",
+    "subPath": "me/photo",
+    "fullPath": "/api/v1/patients/me/photo",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "GET",
+    "subPath": "me/photo/file/:filename",
+    "fullPath": "/api/v1/patients/me/photo/file/:filename",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "DELETE",
+    "subPath": "me/photo",
+    "fullPath": "/api/v1/patients/me/photo",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "GET",
+    "subPath": "profile/completion",
+    "fullPath": "/api/v1/patients/profile/completion",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "GET",
+    "subPath": "profile/timeline",
+    "fullPath": "/api/v1/patients/profile/timeline",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "patient.controller.ts",
+    "file": "src/modules/patient/presentation/controllers/patient.controller.ts",
+    "prefix": "patients",
+    "httpMethod": "GET",
+    "subPath": "profile/activity",
+    "fullPath": "/api/v1/patients/profile/activity",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-pet.controller.ts",
+    "file": "src/modules/pet/presentation/controllers/doctor-pet.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": "patients/:patientProfileId/pets",
+    "fullPath": "/api/v1/doctors/patients/:patientProfileId/pets",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-pet.controller.ts",
+    "file": "src/modules/pet/presentation/controllers/doctor-pet.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": "pets/:petId",
+    "fullPath": "/api/v1/doctors/pets/:petId",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-pet.controller.ts",
+    "file": "src/modules/pet/presentation/controllers/doctor-pet.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": "pets/:petId/timeline",
+    "fullPath": "/api/v1/doctors/pets/:petId/timeline",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-pet.controller.ts",
+    "file": "src/modules/pet/presentation/controllers/doctor-pet.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "POST",
+    "subPath": "pets/:petId/records",
+    "fullPath": "/api/v1/doctors/pets/:petId/records",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-pet.controller.ts",
+    "file": "src/modules/pet/presentation/controllers/doctor-pet.controller.ts",
+    "prefix": "doctors",
+    "httpMethod": "GET",
+    "subPath": "pets/:petId/records",
+    "fullPath": "/api/v1/doctors/pets/:petId/records",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "pet.controller.ts",
+    "file": "src/modules/pet/presentation/controllers/pet.controller.ts",
+    "prefix": "pets",
+    "httpMethod": "POST",
+    "subPath": "",
+    "fullPath": "/api/v1/pets",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "pet.controller.ts",
+    "file": "src/modules/pet/presentation/controllers/pet.controller.ts",
+    "prefix": "pets",
+    "httpMethod": "GET",
+    "subPath": "",
+    "fullPath": "/api/v1/pets",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "pet.controller.ts",
+    "file": "src/modules/pet/presentation/controllers/pet.controller.ts",
+    "prefix": "pets",
+    "httpMethod": "GET",
+    "subPath": ":id",
+    "fullPath": "/api/v1/pets/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "pet.controller.ts",
+    "file": "src/modules/pet/presentation/controllers/pet.controller.ts",
+    "prefix": "pets",
+    "httpMethod": "PUT",
+    "subPath": ":id",
+    "fullPath": "/api/v1/pets/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "pet.controller.ts",
+    "file": "src/modules/pet/presentation/controllers/pet.controller.ts",
+    "prefix": "pets",
+    "httpMethod": "DELETE",
+    "subPath": ":id",
+    "fullPath": "/api/v1/pets/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "pet.controller.ts",
+    "file": "src/modules/pet/presentation/controllers/pet.controller.ts",
+    "prefix": "pets",
+    "httpMethod": "POST",
+    "subPath": ":id/vaccinations",
+    "fullPath": "/api/v1/pets/:id/vaccinations",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "pet.controller.ts",
+    "file": "src/modules/pet/presentation/controllers/pet.controller.ts",
+    "prefix": "pets",
+    "httpMethod": "GET",
+    "subPath": ":id/vaccinations",
+    "fullPath": "/api/v1/pets/:id/vaccinations",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "prescription.controller.ts",
+    "file": "src/modules/prescription/prescription.controller.ts",
+    "prefix": "",
+    "httpMethod": "POST",
+    "subPath": "prescriptions/check-interactions",
+    "fullPath": "/api/v1/prescriptions/check-interactions",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "prescription.controller.ts",
+    "file": "src/modules/prescription/prescription.controller.ts",
+    "prefix": "",
+    "httpMethod": "POST",
+    "subPath": "doctors/patients/:patientProfileId/prescriptions",
+    "fullPath": "/api/v1/doctors/patients/:patientProfileId/prescriptions",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "prescription.controller.ts",
+    "file": "src/modules/prescription/prescription.controller.ts",
+    "prefix": "",
+    "httpMethod": "GET",
+    "subPath": "prescriptions/:id",
+    "fullPath": "/api/v1/prescriptions/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "prescription.controller.ts",
+    "file": "src/modules/prescription/prescription.controller.ts",
+    "prefix": "",
+    "httpMethod": "GET",
+    "subPath": "prescriptions/:id/preview",
+    "fullPath": "/api/v1/prescriptions/:id/preview",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "prescription.controller.ts",
+    "file": "src/modules/prescription/prescription.controller.ts",
+    "prefix": "",
+    "httpMethod": "PATCH",
+    "subPath": "prescriptions/:id/discontinue",
+    "fullPath": "/api/v1/prescriptions/:id/discontinue",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "prescription.controller.ts",
+    "file": "src/modules/prescription/prescription.controller.ts",
+    "prefix": "",
+    "httpMethod": "POST",
+    "subPath": "prescriptions/:id/refill",
+    "fullPath": "/api/v1/prescriptions/:id/refill",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "POST",
+    "subPath": "",
+    "fullPath": "/api/v1/qr",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "POST",
+    "subPath": "generate",
+    "fullPath": "/api/v1/qr/generate",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "POST",
+    "subPath": "verify",
+    "fullPath": "/api/v1/qr/verify",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "POST",
+    "subPath": "rotate",
+    "fullPath": "/api/v1/qr/rotate",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "POST",
+    "subPath": ":id/rotate",
+    "fullPath": "/api/v1/qr/:id/rotate",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "POST",
+    "subPath": "revoke",
+    "fullPath": "/api/v1/qr/revoke",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "POST",
+    "subPath": ":id/revoke",
+    "fullPath": "/api/v1/qr/:id/revoke",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "POST",
+    "subPath": ":id/restore",
+    "fullPath": "/api/v1/qr/:id/restore",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "POST",
+    "subPath": ":id/archive",
+    "fullPath": "/api/v1/qr/:id/archive",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "GET",
+    "subPath": "",
+    "fullPath": "/api/v1/qr",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "GET",
+    "subPath": "search",
+    "fullPath": "/api/v1/qr/search",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "GET",
+    "subPath": "statistics",
+    "fullPath": "/api/v1/qr/statistics",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "GET",
+    "subPath": "history/doctor",
+    "fullPath": "/api/v1/qr/history/doctor",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "GET",
+    "subPath": ":id",
+    "fullPath": "/api/v1/qr/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "PUT",
+    "subPath": ":id",
+    "fullPath": "/api/v1/qr/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "DELETE",
+    "subPath": ":id",
+    "fullPath": "/api/v1/qr/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "GET",
+    "subPath": ":id/history",
+    "fullPath": "/api/v1/qr/:id/history",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "GET",
+    "subPath": ":id/scans",
+    "fullPath": "/api/v1/qr/:id/scans",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "POST",
+    "subPath": "bulk-generate",
+    "fullPath": "/api/v1/qr/bulk-generate",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "POST",
+    "subPath": "bulk-rotate",
+    "fullPath": "/api/v1/qr/bulk-rotate",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "qr.controller.ts",
+    "file": "src/modules/qr/presentation/controllers/qr.controller.ts",
+    "prefix": "qr",
+    "httpMethod": "POST",
+    "subPath": "bulk-revoke",
+    "fullPath": "/api/v1/qr/bulk-revoke",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "referral.controller.ts",
+    "file": "src/modules/referral/presentation/controllers/referral.controller.ts",
+    "prefix": "referrals",
+    "httpMethod": "POST",
+    "subPath": "",
+    "fullPath": "/api/v1/referrals",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "referral.controller.ts",
+    "file": "src/modules/referral/presentation/controllers/referral.controller.ts",
+    "prefix": "referrals",
+    "httpMethod": "GET",
+    "subPath": "",
+    "fullPath": "/api/v1/referrals",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "referral.controller.ts",
+    "file": "src/modules/referral/presentation/controllers/referral.controller.ts",
+    "prefix": "referrals",
+    "httpMethod": "GET",
+    "subPath": "my-incoming",
+    "fullPath": "/api/v1/referrals/my-incoming",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "referral.controller.ts",
+    "file": "src/modules/referral/presentation/controllers/referral.controller.ts",
+    "prefix": "referrals",
+    "httpMethod": "GET",
+    "subPath": "my-outgoing",
+    "fullPath": "/api/v1/referrals/my-outgoing",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "referral.controller.ts",
+    "file": "src/modules/referral/presentation/controllers/referral.controller.ts",
+    "prefix": "referrals",
+    "httpMethod": "GET",
+    "subPath": "dashboard/stats",
+    "fullPath": "/api/v1/referrals/dashboard/stats",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "referral.controller.ts",
+    "file": "src/modules/referral/presentation/controllers/referral.controller.ts",
+    "prefix": "referrals",
+    "httpMethod": "GET",
+    "subPath": ":id",
+    "fullPath": "/api/v1/referrals/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "referral.controller.ts",
+    "file": "src/modules/referral/presentation/controllers/referral.controller.ts",
+    "prefix": "referrals",
+    "httpMethod": "PUT",
+    "subPath": ":id",
+    "fullPath": "/api/v1/referrals/:id",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "referral.controller.ts",
+    "file": "src/modules/referral/presentation/controllers/referral.controller.ts",
+    "prefix": "referrals",
+    "httpMethod": "PUT",
+    "subPath": ":id/triage",
+    "fullPath": "/api/v1/referrals/:id/triage",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "referral.controller.ts",
+    "file": "src/modules/referral/presentation/controllers/referral.controller.ts",
+    "prefix": "referrals",
+    "httpMethod": "PUT",
+    "subPath": ":id/status",
+    "fullPath": "/api/v1/referrals/:id/status",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "referral.controller.ts",
+    "file": "src/modules/referral/presentation/controllers/referral.controller.ts",
+    "prefix": "referrals",
+    "httpMethod": "PATCH",
+    "subPath": ":id/status",
+    "fullPath": "/api/v1/referrals/:id/status",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "referral.controller.ts",
+    "file": "src/modules/referral/presentation/controllers/referral.controller.ts",
+    "prefix": "referrals",
+    "httpMethod": "POST",
+    "subPath": ":id/notes",
+    "fullPath": "/api/v1/referrals/:id/notes",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "referral.controller.ts",
+    "file": "src/modules/referral/presentation/controllers/referral.controller.ts",
+    "prefix": "referrals",
+    "httpMethod": "GET",
+    "subPath": ":id/notes",
+    "fullPath": "/api/v1/referrals/:id/notes",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "referral.controller.ts",
+    "file": "src/modules/referral/presentation/controllers/referral.controller.ts",
+    "prefix": "referrals",
+    "httpMethod": "POST",
+    "subPath": ":id/attachments",
+    "fullPath": "/api/v1/referrals/:id/attachments",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "referral.controller.ts",
+    "file": "src/modules/referral/presentation/controllers/referral.controller.ts",
+    "prefix": "referrals",
+    "httpMethod": "GET",
+    "subPath": ":id/attachments",
+    "fullPath": "/api/v1/referrals/:id/attachments",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "referral.controller.ts",
+    "file": "src/modules/referral/presentation/controllers/referral.controller.ts",
+    "prefix": "referrals",
+    "httpMethod": "GET",
+    "subPath": ":id/history",
+    "fullPath": "/api/v1/referrals/:id/history",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "referral.controller.ts",
+    "file": "src/modules/referral/presentation/controllers/referral.controller.ts",
+    "prefix": "referrals",
+    "httpMethod": "DELETE",
+    "subPath": ":id",
+    "fullPath": "/api/v1/referrals/:id",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "report.controller.ts",
+    "file": "src/modules/report/presentation/controllers/report.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "POST",
+    "subPath": "",
+    "fullPath": "/api/v1/reports",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "report.controller.ts",
+    "file": "src/modules/report/presentation/controllers/report.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "GET",
+    "subPath": "",
+    "fullPath": "/api/v1/reports",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "report.controller.ts",
+    "file": "src/modules/report/presentation/controllers/report.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "GET",
+    "subPath": "categories",
+    "fullPath": "/api/v1/reports/categories",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "report.controller.ts",
+    "file": "src/modules/report/presentation/controllers/report.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "GET",
+    "subPath": "search",
+    "fullPath": "/api/v1/reports/search",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "report.controller.ts",
+    "file": "src/modules/report/presentation/controllers/report.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "GET",
+    "subPath": "timeline",
+    "fullPath": "/api/v1/reports/timeline",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "report.controller.ts",
+    "file": "src/modules/report/presentation/controllers/report.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "GET",
+    "subPath": ":id",
+    "fullPath": "/api/v1/reports/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "report.controller.ts",
+    "file": "src/modules/report/presentation/controllers/report.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "PUT",
+    "subPath": ":id",
+    "fullPath": "/api/v1/reports/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "report.controller.ts",
+    "file": "src/modules/report/presentation/controllers/report.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "DELETE",
+    "subPath": ":id",
+    "fullPath": "/api/v1/reports/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "report.controller.ts",
+    "file": "src/modules/report/presentation/controllers/report.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "POST",
+    "subPath": ":id/archive",
+    "fullPath": "/api/v1/reports/:id/archive",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "report.controller.ts",
+    "file": "src/modules/report/presentation/controllers/report.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "POST",
+    "subPath": ":id/restore",
+    "fullPath": "/api/v1/reports/:id/restore",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "report.controller.ts",
+    "file": "src/modules/report/presentation/controllers/report.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "POST",
+    "subPath": ":id/replace",
+    "fullPath": "/api/v1/reports/:id/replace",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "report.controller.ts",
+    "file": "src/modules/report/presentation/controllers/report.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "GET",
+    "subPath": ":id/versions",
+    "fullPath": "/api/v1/reports/:id/versions",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "report.controller.ts",
+    "file": "src/modules/report/presentation/controllers/report.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "POST",
+    "subPath": ":id/verify",
+    "fullPath": "/api/v1/reports/:id/verify",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "report.controller.ts",
+    "file": "src/modules/report/presentation/controllers/report.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "GET",
+    "subPath": "download/:id",
+    "fullPath": "/api/v1/reports/download/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "report.controller.ts",
+    "file": "src/modules/report/presentation/controllers/report.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "GET",
+    "subPath": "download/:id/file",
+    "fullPath": "/api/v1/reports/download/:id/file",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "report.controller.ts",
+    "file": "src/modules/report/presentation/controllers/report.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "GET",
+    "subPath": ":id/file",
+    "fullPath": "/api/v1/reports/:id/file",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "report.controller.ts",
+    "file": "src/modules/report/presentation/controllers/report.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "GET",
+    "subPath": "preview/:id",
+    "fullPath": "/api/v1/reports/preview/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "reports.controller.ts",
+    "file": "src/modules/reports/presentation/controllers/reports.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "GET",
+    "subPath": "dashboard/executive",
+    "fullPath": "/api/v1/reports/dashboard/executive",
+    "handler": "HttpCode",
+    "roles": "ADMIN,SUPER_ADMIN,FACILITY_ADMIN"
+  },
+  {
+    "controller": "reports.controller.ts",
+    "file": "src/modules/reports/presentation/controllers/reports.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "GET",
+    "subPath": "analytics/modules/:module",
+    "fullPath": "/api/v1/reports/analytics/modules/:module",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "reports.controller.ts",
+    "file": "src/modules/reports/presentation/controllers/reports.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "POST",
+    "subPath": "definitions",
+    "fullPath": "/api/v1/reports/definitions",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "reports.controller.ts",
+    "file": "src/modules/reports/presentation/controllers/reports.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "GET",
+    "subPath": "definitions",
+    "fullPath": "/api/v1/reports/definitions",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "reports.controller.ts",
+    "file": "src/modules/reports/presentation/controllers/reports.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "GET",
+    "subPath": "definitions/:id",
+    "fullPath": "/api/v1/reports/definitions/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "reports.controller.ts",
+    "file": "src/modules/reports/presentation/controllers/reports.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "PUT",
+    "subPath": "definitions/:id",
+    "fullPath": "/api/v1/reports/definitions/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "reports.controller.ts",
+    "file": "src/modules/reports/presentation/controllers/reports.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "DELETE",
+    "subPath": "definitions/:id",
+    "fullPath": "/api/v1/reports/definitions/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "reports.controller.ts",
+    "file": "src/modules/reports/presentation/controllers/reports.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "POST",
+    "subPath": "generate",
+    "fullPath": "/api/v1/reports/generate",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "reports.controller.ts",
+    "file": "src/modules/reports/presentation/controllers/reports.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "GET",
+    "subPath": "generated",
+    "fullPath": "/api/v1/reports/generated",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "reports.controller.ts",
+    "file": "src/modules/reports/presentation/controllers/reports.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "GET",
+    "subPath": "generated/:id",
+    "fullPath": "/api/v1/reports/generated/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "reports.controller.ts",
+    "file": "src/modules/reports/presentation/controllers/reports.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "POST",
+    "subPath": "generated/:id/export",
+    "fullPath": "/api/v1/reports/generated/:id/export",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "reports.controller.ts",
+    "file": "src/modules/reports/presentation/controllers/reports.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "POST",
+    "subPath": "widgets",
+    "fullPath": "/api/v1/reports/widgets",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "reports.controller.ts",
+    "file": "src/modules/reports/presentation/controllers/reports.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "GET",
+    "subPath": "widgets",
+    "fullPath": "/api/v1/reports/widgets",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "reports.controller.ts",
+    "file": "src/modules/reports/presentation/controllers/reports.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "PUT",
+    "subPath": "widgets/:id",
+    "fullPath": "/api/v1/reports/widgets/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "reports.controller.ts",
+    "file": "src/modules/reports/presentation/controllers/reports.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "POST",
+    "subPath": "widgets/reorder",
+    "fullPath": "/api/v1/reports/widgets/reorder",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "reports.controller.ts",
+    "file": "src/modules/reports/presentation/controllers/reports.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "POST",
+    "subPath": "snapshots",
+    "fullPath": "/api/v1/reports/snapshots",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "reports.controller.ts",
+    "file": "src/modules/reports/presentation/controllers/reports.controller.ts",
+    "prefix": "reports",
+    "httpMethod": "GET",
+    "subPath": "snapshots",
+    "fullPath": "/api/v1/reports/snapshots",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "holiday.controller.ts",
+    "file": "src/modules/schedule/presentation/controllers/holiday.controller.ts",
+    "prefix": "holidays",
+    "httpMethod": "POST",
+    "subPath": "",
+    "fullPath": "/api/v1/holidays",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "holiday.controller.ts",
+    "file": "src/modules/schedule/presentation/controllers/holiday.controller.ts",
+    "prefix": "holidays",
+    "httpMethod": "GET",
+    "subPath": "",
+    "fullPath": "/api/v1/holidays",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "schedule.controller.ts",
+    "file": "src/modules/schedule/presentation/controllers/schedule.controller.ts",
+    "prefix": "schedules",
+    "httpMethod": "POST",
+    "subPath": "",
+    "fullPath": "/api/v1/schedules",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "schedule.controller.ts",
+    "file": "src/modules/schedule/presentation/controllers/schedule.controller.ts",
+    "prefix": "schedules",
+    "httpMethod": "GET",
+    "subPath": "",
+    "fullPath": "/api/v1/schedules",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "schedule.controller.ts",
+    "file": "src/modules/schedule/presentation/controllers/schedule.controller.ts",
+    "prefix": "schedules",
+    "httpMethod": "GET",
+    "subPath": "search",
+    "fullPath": "/api/v1/schedules/search",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "schedule.controller.ts",
+    "file": "src/modules/schedule/presentation/controllers/schedule.controller.ts",
+    "prefix": "schedules",
+    "httpMethod": "GET",
+    "subPath": "statistics",
+    "fullPath": "/api/v1/schedules/statistics",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "schedule.controller.ts",
+    "file": "src/modules/schedule/presentation/controllers/schedule.controller.ts",
+    "prefix": "schedules",
+    "httpMethod": "GET",
+    "subPath": ":id",
+    "fullPath": "/api/v1/schedules/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "schedule.controller.ts",
+    "file": "src/modules/schedule/presentation/controllers/schedule.controller.ts",
+    "prefix": "schedules",
+    "httpMethod": "PUT",
+    "subPath": ":id",
+    "fullPath": "/api/v1/schedules/:id",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "schedule.controller.ts",
+    "file": "src/modules/schedule/presentation/controllers/schedule.controller.ts",
+    "prefix": "schedules",
+    "httpMethod": "DELETE",
+    "subPath": ":id",
+    "fullPath": "/api/v1/schedules/:id",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "schedule.controller.ts",
+    "file": "src/modules/schedule/presentation/controllers/schedule.controller.ts",
+    "prefix": "schedules",
+    "httpMethod": "POST",
+    "subPath": ":id/generate-slots",
+    "fullPath": "/api/v1/schedules/:id/generate-slots",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "schedule.controller.ts",
+    "file": "src/modules/schedule/presentation/controllers/schedule.controller.ts",
+    "prefix": "schedules",
+    "httpMethod": "GET",
+    "subPath": ":id/slots",
+    "fullPath": "/api/v1/schedules/:id/slots",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "schedule.controller.ts",
+    "file": "src/modules/schedule/presentation/controllers/schedule.controller.ts",
+    "prefix": "schedules",
+    "httpMethod": "POST",
+    "subPath": ":id/block",
+    "fullPath": "/api/v1/schedules/:id/block",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "schedule.controller.ts",
+    "file": "src/modules/schedule/presentation/controllers/schedule.controller.ts",
+    "prefix": "schedules",
+    "httpMethod": "POST",
+    "subPath": ":id/unblock",
+    "fullPath": "/api/v1/schedules/:id/unblock",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "schedule.controller.ts",
+    "file": "src/modules/schedule/presentation/controllers/schedule.controller.ts",
+    "prefix": "schedules",
+    "httpMethod": "POST",
+    "subPath": ":id/leave",
+    "fullPath": "/api/v1/schedules/:id/leave",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "schedule.controller.ts",
+    "file": "src/modules/schedule/presentation/controllers/schedule.controller.ts",
+    "prefix": "schedules",
+    "httpMethod": "GET",
+    "subPath": ":id/history",
+    "fullPath": "/api/v1/schedules/:id/history",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "shift.controller.ts",
+    "file": "src/modules/schedule/presentation/controllers/shift.controller.ts",
+    "prefix": "shifts",
+    "httpMethod": "POST",
+    "subPath": "",
+    "fullPath": "/api/v1/shifts",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "shift.controller.ts",
+    "file": "src/modules/schedule/presentation/controllers/shift.controller.ts",
+    "prefix": "shifts",
+    "httpMethod": "GET",
+    "subPath": "",
+    "fullPath": "/api/v1/shifts",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "shift.controller.ts",
+    "file": "src/modules/schedule/presentation/controllers/shift.controller.ts",
+    "prefix": "shifts",
+    "httpMethod": "POST",
+    "subPath": ":id/assign",
+    "fullPath": "/api/v1/shifts/:id/assign",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "shift.controller.ts",
+    "file": "src/modules/schedule/presentation/controllers/shift.controller.ts",
+    "prefix": "shifts",
+    "httpMethod": "GET",
+    "subPath": ":id/assignments",
+    "fullPath": "/api/v1/shifts/:id/assignments",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "GET",
+    "subPath": "dashboard",
+    "fullPath": "/api/v1/security/dashboard",
+    "handler": "HttpCode",
+    "roles": "ADMIN,SUPER_ADMIN"
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "GET",
+    "subPath": "consents",
+    "fullPath": "/api/v1/security/consents",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "GET",
+    "subPath": "consents/active",
+    "fullPath": "/api/v1/security/consents/active",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "GET",
+    "subPath": "consents/:id",
+    "fullPath": "/api/v1/security/consents/:id",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "POST",
+    "subPath": "consents/:id/withdraw",
+    "fullPath": "/api/v1/security/consents/:id/withdraw",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "POST",
+    "subPath": "consents/:id/confirm",
+    "fullPath": "/api/v1/security/consents/:id/confirm",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "POST",
+    "subPath": "retention",
+    "fullPath": "/api/v1/security/retention",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "GET",
+    "subPath": "retention",
+    "fullPath": "/api/v1/security/retention",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "PUT",
+    "subPath": "retention/:id",
+    "fullPath": "/api/v1/security/retention/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "DELETE",
+    "subPath": "retention/:id",
+    "fullPath": "/api/v1/security/retention/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "POST",
+    "subPath": "incidents",
+    "fullPath": "/api/v1/security/incidents",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "GET",
+    "subPath": "incidents",
+    "fullPath": "/api/v1/security/incidents",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "PUT",
+    "subPath": "incidents/:id/resolve",
+    "fullPath": "/api/v1/security/incidents/:id/resolve",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "GET",
+    "subPath": "keys/active",
+    "fullPath": "/api/v1/security/keys/active",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "POST",
+    "subPath": "keys/rotate",
+    "fullPath": "/api/v1/security/keys/rotate",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "POST",
+    "subPath": "compliance/report",
+    "fullPath": "/api/v1/security/compliance/report",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "GET",
+    "subPath": "compliance/reports",
+    "fullPath": "/api/v1/security/compliance/reports",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "GET",
+    "subPath": "audit",
+    "fullPath": "/api/v1/security/audit",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "POST",
+    "subPath": "api-keys",
+    "fullPath": "/api/v1/security/api-keys",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "GET",
+    "subPath": "api-keys",
+    "fullPath": "/api/v1/security/api-keys",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "GET",
+    "subPath": "api-keys/:id",
+    "fullPath": "/api/v1/security/api-keys/:id",
+    "handler": "Roles",
+    "roles": "ADMIN,SUPER_ADMIN"
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "DELETE",
+    "subPath": "api-keys/:id",
+    "fullPath": "/api/v1/security/api-keys/:id",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "security.controller.ts",
+    "file": "src/modules/security/presentation/controllers/security.controller.ts",
+    "prefix": "security",
+    "httpMethod": "PATCH",
+    "subPath": "api-keys/:id/revoke",
+    "fullPath": "/api/v1/security/api-keys/:id/revoke",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "staff.controller.ts",
+    "file": "src/modules/staff/presentation/controllers/staff.controller.ts",
+    "prefix": "staff",
+    "httpMethod": "POST",
+    "subPath": "",
+    "fullPath": "/api/v1/staff",
+    "handler": "HttpCode",
+    "roles": "FACILITY_ADMIN,ADMIN,SUPER_ADMIN"
+  },
+  {
+    "controller": "staff.controller.ts",
+    "file": "src/modules/staff/presentation/controllers/staff.controller.ts",
+    "prefix": "staff",
+    "httpMethod": "GET",
+    "subPath": "",
+    "fullPath": "/api/v1/staff",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "staff.controller.ts",
+    "file": "src/modules/staff/presentation/controllers/staff.controller.ts",
+    "prefix": "staff",
+    "httpMethod": "GET",
+    "subPath": "search",
+    "fullPath": "/api/v1/staff/search",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "staff.controller.ts",
+    "file": "src/modules/staff/presentation/controllers/staff.controller.ts",
+    "prefix": "staff",
+    "httpMethod": "GET",
+    "subPath": "statistics",
+    "fullPath": "/api/v1/staff/statistics",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "staff.controller.ts",
+    "file": "src/modules/staff/presentation/controllers/staff.controller.ts",
+    "prefix": "staff",
+    "httpMethod": "GET",
+    "subPath": ":id",
+    "fullPath": "/api/v1/staff/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "staff.controller.ts",
+    "file": "src/modules/staff/presentation/controllers/staff.controller.ts",
+    "prefix": "staff",
+    "httpMethod": "PUT",
+    "subPath": ":id",
+    "fullPath": "/api/v1/staff/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "staff.controller.ts",
+    "file": "src/modules/staff/presentation/controllers/staff.controller.ts",
+    "prefix": "staff",
+    "httpMethod": "DELETE",
+    "subPath": ":id",
+    "fullPath": "/api/v1/staff/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "staff.controller.ts",
+    "file": "src/modules/staff/presentation/controllers/staff.controller.ts",
+    "prefix": "staff",
+    "httpMethod": "POST",
+    "subPath": ":id/verify",
+    "fullPath": "/api/v1/staff/:id/verify",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "staff.controller.ts",
+    "file": "src/modules/staff/presentation/controllers/staff.controller.ts",
+    "prefix": "staff",
+    "httpMethod": "POST",
+    "subPath": ":id/suspend",
+    "fullPath": "/api/v1/staff/:id/suspend",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "staff.controller.ts",
+    "file": "src/modules/staff/presentation/controllers/staff.controller.ts",
+    "prefix": "staff",
+    "httpMethod": "POST",
+    "subPath": ":id/restore",
+    "fullPath": "/api/v1/staff/:id/restore",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "staff.controller.ts",
+    "file": "src/modules/staff/presentation/controllers/staff.controller.ts",
+    "prefix": "staff",
+    "httpMethod": "POST",
+    "subPath": ":id/generate-qr",
+    "fullPath": "/api/v1/staff/:id/generate-qr",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "staff.controller.ts",
+    "file": "src/modules/staff/presentation/controllers/staff.controller.ts",
+    "prefix": "staff",
+    "httpMethod": "POST",
+    "subPath": ":id/assign-facility",
+    "fullPath": "/api/v1/staff/:id/assign-facility",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "staff.controller.ts",
+    "file": "src/modules/staff/presentation/controllers/staff.controller.ts",
+    "prefix": "staff",
+    "httpMethod": "POST",
+    "subPath": ":id/assign-department",
+    "fullPath": "/api/v1/staff/:id/assign-department",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "staff.controller.ts",
+    "file": "src/modules/staff/presentation/controllers/staff.controller.ts",
+    "prefix": "staff",
+    "httpMethod": "GET",
+    "subPath": ":id/documents",
+    "fullPath": "/api/v1/staff/:id/documents",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "staff.controller.ts",
+    "file": "src/modules/staff/presentation/controllers/staff.controller.ts",
+    "prefix": "staff",
+    "httpMethod": "POST",
+    "subPath": ":id/documents",
+    "fullPath": "/api/v1/staff/:id/documents",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "staff.controller.ts",
+    "file": "src/modules/staff/presentation/controllers/staff.controller.ts",
+    "prefix": "staff",
+    "httpMethod": "GET",
+    "subPath": ":id/history",
+    "fullPath": "/api/v1/staff/:id/history",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "support.controller.ts",
+    "file": "src/modules/support/presentation/controllers/support.controller.ts",
+    "prefix": "support/tickets",
+    "httpMethod": "POST",
+    "subPath": "",
+    "fullPath": "/api/v1/support/tickets",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "support.controller.ts",
+    "file": "src/modules/support/presentation/controllers/support.controller.ts",
+    "prefix": "support/tickets",
+    "httpMethod": "GET",
+    "subPath": "",
+    "fullPath": "/api/v1/support/tickets",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "support.controller.ts",
+    "file": "src/modules/support/presentation/controllers/support.controller.ts",
+    "prefix": "support/tickets",
+    "httpMethod": "GET",
+    "subPath": ":id",
+    "fullPath": "/api/v1/support/tickets/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "support.controller.ts",
+    "file": "src/modules/support/presentation/controllers/support.controller.ts",
+    "prefix": "support/tickets",
+    "httpMethod": "PUT",
+    "subPath": ":id",
+    "fullPath": "/api/v1/support/tickets/:id",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "support.controller.ts",
+    "file": "src/modules/support/presentation/controllers/support.controller.ts",
+    "prefix": "support/tickets",
+    "httpMethod": "POST",
+    "subPath": ":id/reply",
+    "fullPath": "/api/v1/support/tickets/:id/reply",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "support.controller.ts",
+    "file": "src/modules/support/presentation/controllers/support.controller.ts",
+    "prefix": "support/tickets",
+    "httpMethod": "GET",
+    "subPath": ":id/replies",
+    "fullPath": "/api/v1/support/tickets/:id/replies",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/doctor-treatment-offer.controller.ts",
+    "prefix": "doctors/treatment-offers",
+    "httpMethod": "POST",
+    "subPath": "",
+    "fullPath": "/api/v1/doctors/treatment-offers",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/doctor-treatment-offer.controller.ts",
+    "prefix": "doctors/treatment-offers",
+    "httpMethod": "GET",
+    "subPath": "",
+    "fullPath": "/api/v1/doctors/treatment-offers",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/doctor-treatment-offer.controller.ts",
+    "prefix": "doctors/treatment-offers",
+    "httpMethod": "GET",
+    "subPath": ":offerId",
+    "fullPath": "/api/v1/doctors/treatment-offers/:offerId",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/doctor-treatment-offer.controller.ts",
+    "prefix": "doctors/treatment-offers",
+    "httpMethod": "PUT",
+    "subPath": ":offerId",
+    "fullPath": "/api/v1/doctors/treatment-offers/:offerId",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/doctor-treatment-offer.controller.ts",
+    "prefix": "doctors/treatment-offers",
+    "httpMethod": "POST",
+    "subPath": ":offerId/dispatch",
+    "fullPath": "/api/v1/doctors/treatment-offers/:offerId/dispatch",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/doctor-treatment-offer.controller.ts",
+    "prefix": "doctors/treatment-offers",
+    "httpMethod": "GET",
+    "subPath": ":offerId/status",
+    "fullPath": "/api/v1/doctors/treatment-offers/:offerId/status",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/doctor-treatment-offer.controller.ts",
+    "prefix": "doctors/treatment-offers",
+    "httpMethod": "POST",
+    "subPath": ":offerId/cancel",
+    "fullPath": "/api/v1/doctors/treatment-offers/:offerId/cancel",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/doctor-treatment-offer.controller.ts",
+    "prefix": "doctors/treatment-offers",
+    "httpMethod": "GET",
+    "subPath": ":offerId/acceptance-certificate",
+    "fullPath": "/api/v1/doctors/treatment-offers/:offerId/acceptance-certificate",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/doctor-treatment-offer.controller.ts",
+    "prefix": "doctors/treatment-offers",
+    "httpMethod": "GET",
+    "subPath": ":offerId/clearance",
+    "fullPath": "/api/v1/doctors/treatment-offers/:offerId/clearance",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/doctor-treatment-offer.controller.ts",
+    "prefix": "doctors/treatment-offers",
+    "httpMethod": "PUT",
+    "subPath": ":offerId/clearance",
+    "fullPath": "/api/v1/doctors/treatment-offers/:offerId/clearance",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/doctor-treatment-offer.controller.ts",
+    "prefix": "doctors/treatment-offers",
+    "httpMethod": "POST",
+    "subPath": ":offerId/clinical-review",
+    "fullPath": "/api/v1/doctors/treatment-offers/:offerId/clinical-review",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/doctor-treatment-offer.controller.ts",
+    "prefix": "doctors/treatment-offers",
+    "httpMethod": "GET",
+    "subPath": ":offerId/clinical-review",
+    "fullPath": "/api/v1/doctors/treatment-offers/:offerId/clinical-review",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/doctor-treatment-offer.controller.ts",
+    "prefix": "doctors/treatment-offers",
+    "httpMethod": "POST",
+    "subPath": ":offerId/attest",
+    "fullPath": "/api/v1/doctors/treatment-offers/:offerId/attest",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/doctor-treatment-offer.controller.ts",
+    "prefix": "doctors/treatment-offers",
+    "httpMethod": "GET",
+    "subPath": ":offerId/attestations",
+    "fullPath": "/api/v1/doctors/treatment-offers/:offerId/attestations",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/doctor-treatment-offer.controller.ts",
+    "prefix": "doctors/treatment-offers",
+    "httpMethod": "POST",
+    "subPath": ":offerId/financing-preview",
+    "fullPath": "/api/v1/doctors/treatment-offers/:offerId/financing-preview",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/doctor-treatment-offer.controller.ts",
+    "prefix": "doctors/treatment-offers",
+    "httpMethod": "PUT",
+    "subPath": ":offerId/financing",
+    "fullPath": "/api/v1/doctors/treatment-offers/:offerId/financing",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/doctor-treatment-offer.controller.ts",
+    "prefix": "doctors/treatment-offers",
+    "httpMethod": "GET",
+    "subPath": ":offerId/financing",
+    "fullPath": "/api/v1/doctors/treatment-offers/:offerId/financing",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/doctor-treatment-offer.controller.ts",
+    "prefix": "doctors/treatment-offers",
+    "httpMethod": "POST",
+    "subPath": ":offerId/approve-discount",
+    "fullPath": "/api/v1/doctors/treatment-offers/:offerId/approve-discount",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/doctor-treatment-offer.controller.ts",
+    "prefix": "doctors/treatment-offers",
+    "httpMethod": "GET",
+    "subPath": ":offerId/discount-status",
+    "fullPath": "/api/v1/doctors/treatment-offers/:offerId/discount-status",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "doctor-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/doctor-treatment-offer.controller.ts",
+    "prefix": "doctors/treatment-offers",
+    "httpMethod": "POST",
+    "subPath": ":offerId/resend",
+    "fullPath": "/api/v1/doctors/treatment-offers/:offerId/resend",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "patient-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/patient-treatment-offer.controller.ts",
+    "prefix": "patients/treatment-offers",
+    "httpMethod": "GET",
+    "subPath": "",
+    "fullPath": "/api/v1/patients/treatment-offers",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "patient-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/patient-treatment-offer.controller.ts",
+    "prefix": "patients/treatment-offers",
+    "httpMethod": "GET",
+    "subPath": ":offerId",
+    "fullPath": "/api/v1/patients/treatment-offers/:offerId",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "patient-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/patient-treatment-offer.controller.ts",
+    "prefix": "patients/treatment-offers",
+    "httpMethod": "POST",
+    "subPath": ":offerId/accept",
+    "fullPath": "/api/v1/patients/treatment-offers/:offerId/accept",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "patient-treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/patient-treatment-offer.controller.ts",
+    "prefix": "patients/treatment-offers",
+    "httpMethod": "POST",
+    "subPath": ":offerId/reject",
+    "fullPath": "/api/v1/patients/treatment-offers/:offerId/reject",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/treatment-offer.controller.ts",
+    "prefix": "treatment-offers",
+    "httpMethod": "GET",
+    "subPath": ":offerId/acceptance-certificate",
+    "fullPath": "/api/v1/treatment-offers/:offerId/acceptance-certificate",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/treatment-offer.controller.ts",
+    "prefix": "treatment-offers",
+    "httpMethod": "GET",
+    "subPath": ":offerId/clearance",
+    "fullPath": "/api/v1/treatment-offers/:offerId/clearance",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "treatment-offer.controller.ts",
+    "file": "src/modules/treatment-offer/presentation/controllers/treatment-offer.controller.ts",
+    "prefix": "treatment-offers",
+    "httpMethod": "PUT",
+    "subPath": ":offerId/clearance",
+    "fullPath": "/api/v1/treatment-offers/:offerId/clearance",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "vision.controller.ts",
+    "file": "src/modules/vision/vision.controller.ts",
+    "prefix": "",
+    "httpMethod": "POST",
+    "subPath": "doctors/patients/:patientProfileId/vision-records",
+    "fullPath": "/api/v1/doctors/patients/:patientProfileId/vision-records",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "vision.controller.ts",
+    "file": "src/modules/vision/vision.controller.ts",
+    "prefix": "",
+    "httpMethod": "GET",
+    "subPath": "vision-records/:id",
+    "fullPath": "/api/v1/vision-records/:id",
+    "handler": "HttpCode",
+    "roles": ""
+  },
+  {
+    "controller": "vision.controller.ts",
+    "file": "src/modules/vision/vision.controller.ts",
+    "prefix": "",
+    "httpMethod": "PUT",
+    "subPath": "vision-records/:id",
+    "fullPath": "/api/v1/vision-records/:id",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "vision.controller.ts",
+    "file": "src/modules/vision/vision.controller.ts",
+    "prefix": "",
+    "httpMethod": "POST",
+    "subPath": "vision-records/:id/archive",
+    "fullPath": "/api/v1/vision-records/:id/archive",
+    "handler": "Roles",
+    "roles": ""
+  },
+  {
+    "controller": "vision.controller.ts",
+    "file": "src/modules/vision/vision.controller.ts",
+    "prefix": "",
+    "httpMethod": "POST",
+    "subPath": "vision-records/:id/restore",
+    "fullPath": "/api/v1/vision-records/:id/restore",
+    "handler": "Roles",
+    "roles": ""
+  }
+]

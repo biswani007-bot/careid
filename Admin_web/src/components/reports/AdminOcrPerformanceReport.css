@@ -1,0 +1,676 @@
+/* CareID Admin Portal - OCR Performance Report Styles (Figma Node 20:5968) */
+
+.ocr-perf-wrapper {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f8f9fb;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #191c1e;
+  position: relative;
+}
+
+.ocr-perf-main {
+  flex: 1 1 0%;
+  min-width: 0;
+  min-height: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ==========================================================================
+   1. Top Global Navigation Bar (Figma 20:6034)
+   ========================================================================== */
+.ocr-perf-top-navbar {
+  height: 64px;
+  flex-shrink: 0;
+  background-color: #f8f9fb;
+  border-bottom: 1px solid #cbc4d4;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 20;
+  box-sizing: border-box;
+}
+
+.ocr-perf-top-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ocr-perf-top-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Search Box Container (Figma 20:6038) */
+.ocr-perf-search-box {
+  display: flex;
+  align-items: center;
+  height: 38px;
+  width: 256px;
+  background-color: #f2f4f6;
+  border: 1px solid #cbc4d4;
+  border-radius: 9999px;
+  padding: 0 16px;
+  gap: 8px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  transition: border-color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ocr-perf-search-box:focus-within {
+  border-color: #28006d;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(40, 0, 109, 0.08);
+}
+
+.ocr-perf-search-icon {
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.ocr-perf-search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #191c1e;
+  width: 100%;
+  padding: 0;
+}
+
+.ocr-perf-search-input::placeholder {
+  color: #6b7280;
+}
+
+.ocr-perf-search-clear {
+  color: #9ca3af;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+.ocr-perf-search-clear:hover {
+  color: #494552;
+}
+
+/* Header Icon Buttons */
+.ocr-perf-icon-btn {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #494552;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.ocr-perf-icon-btn:hover {
+  background-color: #edeef0;
+  color: #28006d;
+}
+
+.ocr-perf-admin-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  border: 1px solid #cbc4d4;
+  overflow: hidden;
+  background-color: #3f1d8b;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease;
+}
+
+.ocr-perf-admin-avatar:hover {
+  border-color: #28006d;
+}
+
+.ocr-perf-admin-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   2. Main Scrollable Canvas (Figma 20:6057)
+   ========================================================================== */
+.ocr-perf-canvas {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 32px;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ocr-perf-canvas::-webkit-scrollbar {
+  width: 6px;
+}
+.ocr-perf-canvas::-webkit-scrollbar-track {
+  background: transparent;
+}
+.ocr-perf-canvas::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+
+/* ==========================================================================
+   3. Page Header & Actions (Figma 20:6058)
+   ========================================================================== */
+.ocr-perf-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ocr-perf-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.ocr-perf-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ocr-perf-breadcrumb-item {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #494552;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: color 0.15s ease;
+}
+
+.ocr-perf-breadcrumb-item:hover {
+  color: #28006d;
+}
+
+.ocr-perf-breadcrumb-sep {
+  color: #494552;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.ocr-perf-breadcrumb-active {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #28006d;
+}
+
+.ocr-perf-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.64px;
+  color: #191c1e;
+  margin: 0;
+}
+
+/* Top Actions Group (Figma 20:6069) */
+.ocr-perf-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Dropdown Container */
+.ocr-perf-dropdown-wrapper {
+  position: relative;
+}
+
+.ocr-perf-btn-action {
+  height: 42px;
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 8px;
+  padding: 0 17px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #191c1e;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.ocr-perf-btn-action:hover {
+  border-color: #28006d;
+  color: #28006d;
+  background-color: #fafafa;
+}
+
+.ocr-perf-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  z-index: 50;
+  padding: 6px 0;
+  overflow: hidden;
+  animation: fadeIn 0.15s ease-out;
+}
+
+.ocr-perf-dropdown-item {
+  width: 100%;
+  text-align: left;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #191c1e;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.12s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ocr-perf-dropdown-item:hover {
+  background-color: #f3f4f6;
+  color: #28006d;
+}
+
+.ocr-perf-dropdown-item.selected {
+  font-weight: 700;
+  color: #28006d;
+  background-color: #f3f0f7;
+}
+
+/* ==========================================================================
+   4. Bento KPI Cards Grid (Figma 20:6080)
+   ========================================================================== */
+.ocr-perf-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ocr-perf-kpi-card {
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 170px;
+  box-sizing: border-box;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ocr-perf-kpi-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+.ocr-perf-kpi-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ocr-perf-icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ocr-perf-trend-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.ocr-perf-kpi-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 16px;
+}
+
+.ocr-perf-kpi-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #494552;
+}
+
+.ocr-perf-kpi-val {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.64px;
+  color: #191c1e;
+}
+
+/* ==========================================================================
+   5. Secondary Section: Status Column & Charts (Figma 20:6141)
+   ========================================================================== */
+.ocr-perf-secondary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Status Column */
+.ocr-perf-status-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ocr-perf-status-card {
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ocr-perf-status-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.ocr-perf-status-card-rejected {
+  background-color: rgba(255, 218, 214, 0.2);
+  border-color: #ffdad6;
+}
+
+.ocr-perf-status-card-pending {
+  background-color: rgba(255, 223, 158, 0.2);
+  border-color: #ffdf9e;
+}
+
+.ocr-perf-status-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ocr-perf-status-tag {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.ocr-perf-status-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #191c1e;
+  margin: 0;
+}
+
+.ocr-perf-status-subtext {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #494552;
+}
+
+.ocr-perf-status-action-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 7px;
+  flex-shrink: 0;
+}
+
+.ocr-perf-status-count {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.64px;
+}
+
+.ocr-perf-status-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: opacity 0.15s ease;
+}
+
+.ocr-perf-status-link-btn:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Charts Cards */
+.ocr-perf-chart-card {
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 20px;
+  padding: 25px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+.ocr-perf-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ocr-perf-chart-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #191c1e;
+  margin: 0;
+}
+
+.ocr-perf-chart-sub {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #494552;
+}
+
+/* Progress Distribution Bars (Figma 20:6179) */
+.ocr-perf-distribution-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.ocr-perf-dist-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.ocr-perf-dist-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ocr-perf-dist-label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #191c1e;
+}
+
+.ocr-perf-dist-pct {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #494552;
+}
+
+.ocr-perf-dist-track {
+  width: 100%;
+  height: 8px;
+  background-color: #e1e2e4;
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.ocr-perf-dist-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Approval Trend Chart (Figma 20:6214) */
+.ocr-perf-trend-svg-container {
+  width: 100%;
+  height: 180px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.ocr-perf-xaxis-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 8px;
+  margin-top: 4px;
+}
+
+.ocr-perf-xaxis-label {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 15px;
+  color: #494552;
+}
+
+/* ==========================================================================
+   6. Responsive Viewports
+   ========================================================================== */
+@media (max-width: 1180px) {
+  .ocr-perf-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ocr-perf-secondary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ocr-perf-canvas {
+    padding: 16px;
+    gap: 20px;
+  }
+  .ocr-perf-top-navbar {
+    padding: 0 16px;
+  }
+  .ocr-perf-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .ocr-perf-actions-group {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .ocr-perf-bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .ocr-perf-search-box {
+    display: none;
+  }
+}
+

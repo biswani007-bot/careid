@@ -1,0 +1,146 @@
+[
+  {
+    "id": "C01",
+    "name": "Human Doctor Authentication & Workspace",
+    "status": "PASS",
+    "details": "Dr. Sarah Jenkins"
+  },
+  {
+    "id": "C03",
+    "name": "Patient Directory",
+    "status": "PASS",
+    "details": {
+      "patientCount": "12"
+    }
+  },
+  {
+    "id": "C04",
+    "name": "Health Vault",
+    "status": "PASS",
+    "details": "Dr. Sarah Jenkins"
+  },
+  {
+    "id": "C05",
+    "name": "Clinical Encounters & Vitals",
+    "status": "PASS",
+    "details": "Vitals tracking & modal active"
+  },
+  {
+    "id": "C06",
+    "name": "Medical History & Allergies",
+    "status": "PASS",
+    "details": "Allergies displayed"
+  },
+  {
+    "id": "C07",
+    "name": "SOAP Notes & Encounters",
+    "status": "PASS",
+    "details": "Clinical notes active"
+  },
+  {
+    "id": "C08",
+    "name": "Prescription Creation & Drug Screening",
+    "status": "PASS",
+    "details": {
+      "rxCount": "43"
+    }
+  },
+  {
+    "id": "C09",
+    "name": "Prescription Warnings & Screening",
+    "status": "PASS",
+    "details": "Interaction engine active"
+  },
+  {
+    "id": "C10",
+    "name": "Prescription Export",
+    "status": "PASS",
+    "details": "PDF summary active"
+  },
+  {
+    "id": "C11",
+    "name": "Slot Management (CR-03)",
+    "status": "PASS",
+    "details": "Treatment offers active"
+  },
+  {
+    "id": "C12",
+    "name": "Appointments (CR-04)",
+    "status": "PASS",
+    "details": "Booking slots active"
+  },
+  {
+    "id": "C13",
+    "name": "Referral Hub (CR-05)",
+    "status": "PASS",
+    "details": {
+      "refCount": "6"
+    }
+  },
+  {
+    "id": "C14",
+    "name": "Office Chat (CR-07)",
+    "status": "PASS",
+    "details": "Messaging active"
+  },
+  {
+    "id": "C15",
+    "name": "Chat Template CRUD (CR-07)",
+    "status": "PASS",
+    "details": "Templates active"
+  },
+  {
+    "id": "C16",
+    "name": "Clinical Documents",
+    "status": "PASS",
+    "details": "Record viewer active"
+  },
+  {
+    "id": "C02",
+    "name": "Veterinary Doctor Login & Workspace",
+    "status": "PASS",
+    "details": "Companion Animal Clinical Overview"
+  },
+  {
+    "id": "C17",
+    "name": "Veterinary Records & Isolation",
+    "status": "PASS",
+    "details": {
+      "petCount": "6"
+    }
+  },
+  {
+    "id": "C18",
+    "name": "CR-08 Reminder Configuration",
+    "status": "PASS",
+    "details": "Updated via Doctor Web UI button"
+  },
+  {
+    "id": "C19",
+    "name": "CR-08 Prescription Collection",
+    "status": "PASS",
+    "details": "Collected via Doctor Web UI button"
+  },
+  {
+    "id": "C20",
+    "name": "EHR Settings (CR-06)",
+    "status": "PASS",
+    "details": "EHR connector UI verified"
+  },
+  {
+    "id": "C21",
+    "name": "Clinical Audit Logging",
+    "status": "PASS",
+    "details": {
+      "auditCount": "1373"
+    }
+  },
+  {
+    "id": "C22",
+    "name": "Security & Domain Isolation",
+    "status": "PASS",
+    "details": {
+      "isDenied": true
+    }
+  }
+]

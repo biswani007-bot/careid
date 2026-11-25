@@ -1,0 +1,116 @@
+[
+  {
+    "id": "F1",
+    "name": "Migration & Scheduler Readiness",
+    "status": "PASS",
+    "details": "20261123120000_cr08_prescription_pickup_reminder_engine"
+  },
+  {
+    "id": "F2",
+    "name": "Reminder Configuration",
+    "status": "PASS",
+    "details": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "id": "b1a73c34-933e-4c7b-aa3f-2a64577c6801",
+        "patientProfileId": "3896bc97-bd3b-40ae-80c1-0cc0455ca3a4",
+        "doctorId": "771bee09-3092-4599-9e76-fc31f97f7d05",
+        "doctorName": "Dr.",
+        "diagnosisCode": "ICD10-E78.0",
+        "status": "ACTIVE",
+        "notes": "Routine outpatient lipid management prescription",
+        "pickupReminderEnabled": true,
+        "pickupReminderHours": 6,
+        "collected": false,
+        "prescribedAt": "2026-11-22T06:41:18.482Z",
+        "createdAt": "2026-11-22T06:41:18.482Z",
+        "updatedAt": "2026-11-23T11:00:50.434Z",
+        "items": [
+          {
+            "id": "c27ae5c5-55a3-423a-b199-de96b3b81c08",
+            "prescriptionId": "b1a73c34-933e-4c7b-aa3f-2a64577c6801",
+            "drugName": "Atorvastatin",
+            "dosage": "20mg",
+            "form": "Tablet",
+            "route": "ORAL",
+            "frequency": "Once daily at bedtime",
+            "durationDays": 30,
+            "instructions": "Take with or without food"
+          }
+        ],
+        "refills": []
+      },
+      "meta": {
+        "timestamp": "2026-11-23T11:00:50.441Z"
+      }
+    }
+  },
+  {
+    "id": "F3",
+    "name": "First Reminder Schedule Persistence",
+    "status": "PASS",
+    "details": {
+      "count": "1",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "id": "F4",
+    "name": "Recurrence Pacing",
+    "status": "PASS",
+    "details": {
+      "interval_hours": "6"
+    }
+  },
+  {
+    "id": "F6",
+    "name": "Disablement",
+    "status": "PASS",
+    "details": {
+      "httpStatus": 200,
+      "schedEnabled": "f",
+      "schedStatus": "PAUSED"
+    }
+  },
+  {
+    "id": "F5",
+    "name": "Collection Cancellation",
+    "status": "PASS",
+    "details": {
+      "schedStatus": "CANCELLED",
+      "collectedAt": "2026-11-23 11:00:51.19"
+    }
+  },
+  {
+    "id": "F7",
+    "name": "Restart Recovery",
+    "status": "PASS",
+    "details": {
+      "totalSchedules": "24"
+    }
+  },
+  {
+    "id": "F8",
+    "name": "Concurrency Safety",
+    "status": "PASS",
+    "details": {
+      "eventCount": "19"
+    }
+  },
+  {
+    "id": "F9",
+    "name": "Patient Visibility Boundary",
+    "status": "PASS",
+    "details": {
+      "notifCount": "20"
+    }
+  },
+  {
+    "id": "F10",
+    "name": "External SMS/Push Delivery",
+    "status": "DEFERRED",
+    "details": "Option A Mandate"
+  }
+]

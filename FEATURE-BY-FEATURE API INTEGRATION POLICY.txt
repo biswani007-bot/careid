@@ -1,0 +1,26 @@
+## FEATURE-BY-FEATURE API INTEGRATION POLICY
+
+CareID Doctor App and Patient App shall follow an incremental, feature-by-feature API integration methodology.
+
+A separate comprehensive Flutter application audit is not required before development begins.
+
+At the start of each selected feature, the development team shall:
+
+1. Inspect existing Flutter screens and compare them with the approved Figma design.
+2. Identify mock data, placeholder actions and nonfunctional controls.
+3. Identify existing Backend API integrations.
+4. Identify missing or incomplete Backend endpoints.
+5. Identify any approved PRD/FSD requirement without a corresponding Flutter screen.
+6. Integrate the feature with authoritative Backend APIs while preserving the existing approved UI.
+7. Validate real data loading, user actions, authorization, database persistence and cross-application consistency.
+8. Document results and close the feature only after acceptance criteria are satisfied.
+
+**UI PROTECTION:** Existing Figma-approved screens, visual design, layout, typography, colors, spacing and navigation must not be redesigned without explicit approval.
+
+**SCOPE PROTECTION:** Any missing screen or workflow must first be verified against the approved PRD/FSD and change requests. Do not introduce new features based on developer assumptions.
+
+**QR REQUIREMENT:** Patient App QR scanning and related Doctor App interactions are mandatory scope-reconciliation items. Their exact behavior must follow the original documentation.
+
+**DEVELOPMENT OWNERSHIP:** Developer 2 owns Flutter implementation. Backend changes must be coordinated with the responsible Backend developer.
+
+**COMPLETION RULE:** A feature is complete only after its real API integration, functional behavior, security, persistence and relevant regression tests have been verified.

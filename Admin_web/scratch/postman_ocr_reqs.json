@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Get Enterprise OCR Platform analytics dashboard summary",
+    "folder": "15. OCR & Document Verification",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/ocr/dashboard",
+    "body": null
+  },
+  {
+    "name": "Get Enterprise OCR accuracy & throughput statistics",
+    "folder": "15. OCR & Document Verification",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/ocr/statistics",
+    "body": null
+  },
+  {
+    "name": "Submit medical attachment for local CPU OCR processing",
+    "folder": "15. OCR & Document Verification",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/ocr/jobs",
+    "body": "{\n  \"medicalAttachmentId\": \"attachment-uuid-1\",\n  \"documentType\": \"LAB_REPORT\"\n}"
+  },
+  {
+    "name": "List all OCR jobs with optional status, document type and pagination filters",
+    "folder": "15. OCR & Document Verification",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/ocr/jobs?status=string&documentType=string&page=7043.494767911134&limit=7043.494767911134",
+    "body": null
+  },
+  {
+    "name": "Reprocess a completed, failed, or review-required OCR job",
+    "folder": "15. OCR & Document Verification",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/ocr/reprocess/:jobId",
+    "body": null
+  },
+  {
+    "name": "Get OCR job status and details by ID",
+    "folder": "15. OCR & Document Verification",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/ocr/jobs/:id",
+    "body": null
+  },
+  {
+    "name": "Get extracted raw OCR text for job",
+    "folder": "15. OCR & Document Verification",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/ocr/jobs/:id/text",
+    "body": null
+  },
+  {
+    "name": "Get extracted structured fields with confidence scores",
+    "folder": "15. OCR & Document Verification",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/ocr/jobs/:id/fields",
+    "body": null
+  },
+  {
+    "name": "Get formatted structured JSON output of OCR job",
+    "folder": "15. OCR & Document Verification",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/ocr/jobs/:id/json",
+    "body": null
+  },
+  {
+    "name": "Create an OCR Document Template with field definitions",
+    "folder": "15. OCR & Document Verification",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/ocr/templates",
+    "body": "{\n  \"code\": \"TPL_LAB_CBC\",\n  \"name\": \"Complete Blood Count (CBC) Lab Report Template\",\n  \"documentType\": \"LAB_REPORT\",\n  \"fieldDefinitions\": {\n    \"patientName\": {\n      \"type\": \"string\",\n      \"required\": true\n    },\n    \"hemoglobin\": {\n      \"type\": \"number\",\n      \"min\": 5,\n      \"max\": 20\n    }\n  },\n  \"validationRules\": {\n    \"requireDoctorSignature\": true\n  },\n  \"isActive\": true\n}"
+  },
+  {
+    "name": "List all OCR Document Templates",
+    "folder": "15. OCR & Document Verification",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/ocr/templates",
+    "body": null
+  },
+  {
+    "name": "Update OCR Document Template and increment version",
+    "folder": "15. OCR & Document Verification",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/ocr/templates/:id",
+    "body": "{\n  \"name\": \"Updated CBC Template Name\",\n  \"documentType\": \"LAB_REPORT\",\n  \"isActive\": true\n}"
+  },
+  {
+    "name": "Soft-delete an OCR Document Template",
+    "folder": "15. OCR & Document Verification",
+    "method": "DELETE",
+    "url": "{{baseUrl}}/api/v1/ocr/templates/:id",
+    "body": null
+  },
+  {
+    "name": "Get paginated audit history of completed human OCR reviews",
+    "folder": "15. OCR & Document Verification",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/ocr/reviews/history?page=1&limit=20&status=APPROVED&reviewerId=string&startDate=string&endDate=string",
+    "body": null
+  },
+  {
+    "name": "List OCR jobs requiring manual human verification",
+    "folder": "15. OCR & Document Verification",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/ocr/review",
+    "body": null
+  },
+  {
+    "name": "Submit human verification review for low-confidence OCR job",
+    "folder": "15. OCR & Document Verification",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/ocr/review/:jobId",
+    "body": "{\n  \"reviewStatus\": \"APPROVED\",\n  \"reviewNotes\": \"All extracted fields verified against original scan.\",\n  \"corrections\": [\n    {\n      \"fieldName\": \"patientName\",\n      \"correctedValue\": \"Johnathan Doe\",\n      \"fieldId\": \"field-uuid-1\",\n      \"confidence\": 1\n    },\n    {\n      \"fieldName\": \"patientName\",\n      \"correctedValue\": \"Johnathan Doe\",\n      \"fieldId\": \"field-uuid-1\",\n      \"confidence\": 1\n    }\n  ]\n}"
+  },
+  {
+    "name": "Image Scan & Candidate Metadata Extraction",
+    "folder": "15. OCR & Document Verification",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/ai/ocr/extract",
+    "body": "{\n  \"imageUrl\": \"https://storage.healthvault360.com/reports/lab-123.jpg\"\n}"
+  },
+  {
+    "name": "OCR Candidate Field Review & Manual Confirmation",
+    "folder": "15. OCR & Document Verification",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/ai/ocr/confirm",
+    "body": "{\n  \"documentId\": \"ocr-doc-uuid-v4\",\n  \"confirmedData\": \"{\\\"title\\\":\\\"Blood Panel\\\",\\\"category\\\":\\\"Laboratory\\\",\\\"prescribedBy\\\":\\\"Dr. Watson\\\"}\"\n}"
+  },
+  {
+    "name": "Scan insurance card image via OCR extraction",
+    "folder": "19. Insurance Platform & Claims",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/insurance/ocr/scan",
+    "body": "{\n  \"imageUrl\": \"https://storage.healthvault360.com/cards/ins-123.jpg\"\n}"
+  },
+  {
+    "name": "Confirm extracted OCR data to create insurance policy",
+    "folder": "19. Insurance Platform & Claims",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/insurance/ocr/confirm",
+    "body": "{\n  \"ocrId\": \"ocr-uuid-v4\",\n  \"confirmedData\": {\n    \"providerName\": \"Blue Shield\",\n    \"policyNumber\": \"POL987654321\",\n    \"coverageDetails\": \"Co-pay $20, Deductible $500\"\n  }\n}"
+  }
+]

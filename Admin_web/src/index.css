@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Brand & Theme Colors (verified directly from Figma frame 20:56) */
+  --color-canvas-bg: #F2F4F6;
+  --color-card-bg: #FFFFFF;
+  --color-card-border: #E0E2E6;
+  --color-footer-bg: #F8F9FB;
+  
+  --color-input-border: #CBC4D4;
+  --color-input-border-focus: #6C2BD9;
+  --color-input-focus-ring: rgba(108, 43, 217, 0.15);
+  --color-input-placeholder: #7A7583;
+  --color-input-text: #1F1A24;
+  
+  --color-text-heading: #494552;
+  --color-text-label: #494552;
+  --color-text-body: #494552;
+  --color-text-muted: #7A7583;
+  --color-link-primary: #28006D;
+  
+  --color-btn-gradient-start: #A44CFF;
+  --color-btn-gradient-end: #5B14B8;
+  --color-btn-text: #FFFFFF;
+  
+  --color-error: #DC2626;
+  --color-error-bg: #FEF2F2;
+  --color-error-border: #FCA5A5;
+  
+  --color-info-bg: #F5F3FF;
+  --color-info-border: #DDD6FE;
+  --color-info-text: #5B21B6;
+  
+  --shadow-card: 0px 4px 12px 0px rgba(40, 0, 109, 0.05);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: var(--font-sans);
+  background-color: var(--color-canvas-bg);
+  color: var(--color-text-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@layer base {
+  button {
+    font-family: inherit;
+    cursor: pointer;
+  }
+}
+
+input {
+  font-family: inherit;
+}
+
+/* ==========================================================================
+   System Settings Page Heading Standalone Announcements & Preferences Button
+   ========================================================================== */
+.settings-announcements-standalone-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 38px;
+  padding: 0 16px;
+  background-color: #28006d;
+  color: #ffffff;
+  border: 1px solid #28006d;
+  border-radius: 10px;
+  font-family: var(--font-sans, inherit);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(40, 0, 109, 0.15);
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.settings-announcements-standalone-btn:hover {
+  background-color: #3b009e;
+  border-color: #3b009e;
+  box-shadow: 0px 4px 10px rgba(40, 0, 109, 0.25);
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+.settings-announcements-standalone-btn:active {
+  transform: translateY(0);
+  box-shadow: 0px 1px 2px rgba(40, 0, 109, 0.2);
+}
+
+.settings-announcements-standalone-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #28006d;
+}
+
+/* Active state when currently on the Announcements & Preferences page */
+.settings-announcements-standalone-btn.active {
+  background-color: #006a60;
+  border-color: #006a60;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #006a60;
+  color: #ffffff;
+}
+
+.settings-announcements-standalone-btn.active:hover {
+  background-color: #00534b;
+  border-color: #00534b;
+}
+
+.settings-announcements-btn-icon {
+  flex-shrink: 0;
+  color: currentColor;
+}
+
+@media (max-width: 640px) {
+  .settings-announcements-standalone-btn {
+    height: 38px;
+    font-size: 12.5px;
+    padding: 0 14px;
+  }
+}
+

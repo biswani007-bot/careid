@@ -1,0 +1,84 @@
+{
+  "testResults": [
+    {
+      "page": "Healthcare Financing",
+      "viewport": "1440x900",
+      "headingClear": true,
+      "cardClear": true,
+      "searchClear": true,
+      "tableClear": true,
+      "singleActive": true,
+      "activeItem": "Financing (CR-02)",
+      "refreshPassed": true
+    },
+    {
+      "page": "Capacity Monitoring",
+      "viewport": "1440x900",
+      "headingClear": true,
+      "cardClear": true,
+      "searchClear": true,
+      "tableClear": true,
+      "singleActive": true,
+      "activeItem": "Capacity Monitor",
+      "refreshPassed": true
+    },
+    {
+      "page": "Prescription Collection",
+      "viewport": "1440x900",
+      "headingClear": true,
+      "cardClear": true,
+      "searchClear": true,
+      "tableClear": true,
+      "singleActive": true,
+      "activeItem": "Prescription Pickup",
+      "refreshPassed": true
+    },
+    {
+      "page": "Dashboard",
+      "viewport": "1440x900",
+      "headingClear": true,
+      "cardClear": true,
+      "singleActive": true,
+      "activeItem": "Dashboard",
+      "refreshPassed": true
+    },
+    {
+      "page": "Users",
+      "viewport": "1440x900",
+      "headingClear": true,
+      "cardClear": true,
+      "singleActive": true,
+      "activeItem": "Users",
+      "refreshPassed": true
+    },
+    {
+      "page": "Patients",
+      "viewport": "1440x900",
+      "headingClear": true,
+      "cardClear": true,
+      "singleActive": true,
+      "activeItem": "Patients",
+      "refreshPassed": true
+    },
+    {
+      "page": "Doctors",
+      "viewport": "1440x900",
+      "headingClear": true,
+      "cardClear": true,
+      "singleActive": true,
+      "activeItem": "Doctors",
+      "refreshPassed": true
+    },
+    {
+      "page": "Facilities",
+      "viewport": "1440x900",
+      "headingClear": true,
+      "cardClear": true,
+      "singleActive": true,
+      "activeItem": "Facilities",
+      "refreshPassed": true
+    }
+  ],
+  "consoleErrors": [],
+  "allPassed": true
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Medical Laboratory Report",
+    "format": "PNG",
+    "pages": 1,
+    "durationMs": 63210.34,
+    "avgConfidence": 0.9942,
+    "accuracyPercent": 100.0,
+    "missingKeywords": [],
+    "residentRamMb": 559.69,
+    "extractedLinesCount": 63,
+    "status": "PASS"
+  },
+  {
+    "name": "Doctor Prescription",
+    "format": "JPEG",
+    "pages": 1,
+    "durationMs": 35532.54,
+    "avgConfidence": 0.9937,
+    "accuracyPercent": 100.0,
+    "missingKeywords": [],
+    "residentRamMb": 578.02,
+    "extractedLinesCount": 20,
+    "status": "PASS"
+  },
+  {
+    "name": "Insurance Card",
+    "format": "PNG",
+    "pages": 1,
+    "durationMs": 24684.89,
+    "avgConfidence": 0.9966,
+    "accuracyPercent": 100.0,
+    "missingKeywords": [],
+    "residentRamMb": 577.14,
+    "extractedLinesCount": 15,
+    "status": "PASS"
+  },
+  {
+    "name": "Multi-Page Lab Report (2 Pages)",
+    "format": "PDF (2 Pages)",
+    "pages": 2,
+    "durationMs": 143140.65,
+    "avgConfidence": 0.9963,
+    "accuracyPercent": 100.0,
+    "missingKeywords": [],
+    "residentRamMb": 636.62,
+    "extractedLinesCount": 32,
+    "status": "PASS"
+  },
+  {
+    "name": "Rotated Document (90 deg Clockwise)",
+    "format": "PNG (Rotated)",
+    "pages": 1,
+    "durationMs": 23966.76,
+    "avgConfidence": 0.9957,
+    "accuracyPercent": 100.0,
+    "missingKeywords": [],
+    "residentRamMb": 640.82,
+    "extractedLinesCount": 15,
+    "status": "PASS"
+  },
+  {
+    "name": "Low-Quality Degraded Scan",
+    "format": "JPEG (Degraded)",
+    "pages": 1,
+    "durationMs": 22386.36,
+    "avgConfidence": 0.9768,
+    "accuracyPercent": 100.0,
+    "missingKeywords": [],
+    "residentRamMb": 644.48,
+    "extractedLinesCount": 15,
+    "status": "PASS"
+  }
+]

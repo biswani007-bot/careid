@@ -1,0 +1,3136 @@
+[
+  {
+    "folder": "01. Environment & Health Checks",
+    "name": "Platform Readiness Probe",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/ready",
+    "headers": [],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "name": "Application and Database are ready to process traffic.",
+        "code": 200,
+        "status": "OK",
+        "body": ""
+      },
+      {
+        "name": "Database connectivity probe failed; service is not ready.",
+        "code": 503,
+        "status": "Service Unavailable",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "readiness"
+    ]
+  },
+  {
+    "folder": "04. Admin Portal & System Operations",
+    "name": "Register/Create a doctor profile for an existing user account",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/admin/doctors",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"userId\": \"{{userId}}\",\n  \"fullName\": \"Dr. Sarah Jenkins, MD\",\n  \"primarySpecialization\": \"Cardiology\",\n  \"medicalCouncil\": \"Pakistan Medical & Dental Council (PMDC)\",\n  \"registrationNumber\": \"PMC-REG-998877\",\n  \"licenseNumber\": \"LIC-2026-CARDIO-1\",\n  \"gender\": \"FEMALE\",\n  \"dateOfBirth\": \"1985-06-20\",\n  \"yearsOfExperience\": 12,\n  \"department\": \"Department of Cardiology\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"d0c70000-0000-0000-0000-000000000001\",\n  \"doctorProfileId\": \"d0c70000-0000-0000-0000-000000000001\",\n  \"userId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n  \"fullName\": \"Dr. Sarah Jenkins, MD\",\n  \"user\": {\n    \"id\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n    \"phone\": \"+923001234567\",\n    \"email\": \"doctor@careid.com\"\n  },\n  \"primarySpecialization\": \"Cardiology\",\n  \"medicalCouncil\": \"Pakistan Medical & Dental Council (PMDC)\",\n  \"registrationNumber\": \"PMC-REG-998877\",\n  \"licenseNumber\": \"L"
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Create a new draft treatment proposal",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/doctors/treatment-offers",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"patientProfileId\": \"string\",\n  \"facilityId\": \"string\",\n  \"clinicalIndication\": \"string\",\n  \"procedures\": [\n    {\n      \"procedureCode\": \"string\",\n      \"procedureName\": \"string\",\n      \"unitCost\": 9075.247776047214,\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"isOptional\": false,\n      \"clinicalJustification\": \"string\"\n    },\n    {\n      \"procedureCode\": \"string\",\n      \"procedureName\": \"string\",\n      \"unitCost\": 1736.0278869047875,\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"isOptional\": false,\n      \"clinicalJustification\": \"string\"\n    }\n  ],\n  \"validUntil\": \"string\",\n  \"encounterId\": \"string\",\n  \"discountAmount\": 0,\n  \"financingEligible\": false,\n  \"recommendedTenureMonths\": 2734.589294109142,\n  \"clinicalNotes\": \"string\",\n  \"termsAndConditions\": \"string\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  "
+      }
+    ],
+    "matchedKw": [
+      "treatment-offer",
+      "treatment",
+      "facility",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "List authored treatment proposals",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors/treatment-offers?status=EXPIRED&patientId=string&search=string&page=1&limit=20",
+    "headers": [],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "name": "Paginated list of authored treatment offers",
+        "code": 200,
+        "status": "OK",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "treatment-offer",
+      "treatment",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Get treatment offer details",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors/treatment-offers/:offerId",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  "
+      }
+    ],
+    "matchedKw": [
+      "treatment-offer",
+      "treatment",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Update draft treatment offer",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/doctors/treatment-offers/:offerId",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"clinicalIndication\": \"string\",\n  \"procedures\": [\n    {\n      \"procedureCode\": \"string\",\n      \"procedureName\": \"string\",\n      \"unitCost\": 4018.8680365558093,\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"isOptional\": false,\n      \"clinicalJustification\": \"string\"\n    },\n    {\n      \"procedureCode\": \"string\",\n      \"procedureName\": \"string\",\n      \"unitCost\": 6506.738656644382,\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"isOptional\": false,\n      \"clinicalJustification\": \"string\"\n    }\n  ],\n  \"discountAmount\": 4807.219522303252,\n  \"financingEligible\": true,\n  \"recommendedTenureMonths\": 2573.025151074737,\n  \"validUntil\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"termsAndConditions\": \"string\",\n  \"expectedVersion\": 1753.1245021832665\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  "
+      }
+    ],
+    "matchedKw": [
+      "treatment-offer",
+      "treatment",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Lock draft and dispatch treatment offer to patient",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/doctors/treatment-offers/:offerId/dispatch",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"expectedVersion\": 51.68578073745378\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  "
+      }
+    ],
+    "matchedKw": [
+      "treatment-offer",
+      "treatment",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Inspect live offer lifecycle status and review timestamps",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors/treatment-offers/:offerId/status",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"status\": \"DISPATCHED\",\n  \"isExpired\": false,\n  \"validUntil\": \"2026-12-31T23:59:59.000Z\",\n  \"version\": 1,\n  \"dispatchedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"patientViewedAt\": \"2026-11-06T12:05:00.000Z\",\n  \"patientRespondedAt\": \"2026-11-06T12:10:00.000Z\",\n  \"patientResponseNotes\": \"Accepted with informed consent\",\n  \"cancellationReason\": \"Elective procedure deferred\"\n}"
+      }
+    ],
+    "matchedKw": [
+      "treatment-offer",
+      "treatment",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Doctor cancels active treatment proposal with clinical justification",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/doctors/treatment-offers/:offerId/cancel",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"cancellationReason\": \"string\",\n  \"expectedVersion\": 8285.85026418029\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  "
+      }
+    ],
+    "matchedKw": [
+      "treatment-offer",
+      "treatment",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Register/Create a doctor profile in Master Registry",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/doctors",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"fullName\": \"Dr. Alexander Fleming, MD\",\n  \"primarySpecialization\": \"Cardiology\",\n  \"medicalCouncil\": \"Pakistan Medical & Dental Council (PMDC)\",\n  \"registrationNumber\": \"PMC-REG-998877\",\n  \"licenseNumber\": \"LIC-2026-CARDIO-1\",\n  \"gender\": \"MALE\",\n  \"dateOfBirth\": \"1980-05-15\",\n  \"profilePhotoUrl\": \"https://storage.healthvault360.com/doctors/photo-100.jpg\",\n  \"digitalSignatureUrl\": \"https://storage.healthvault360.com/doctors/sig-100.png\",\n  \"biography\": \"Consultant Cardiologist with 15+ years experience in interventional cardiology.\",\n  \"professionalSummary\": \"Expert in adult cardiology, echocardiography, and cardiac catheterization.\",\n  \"yearsOfExperience\": 15,\n  \"secondarySpecializations\": [\n    \"Interventional Cardiology\",\n    \"Echocardiography\"\n  ],\n  \"registrationState\": \"Federal / Punjab\",\n  \"registrationCountry\": \"Pakistan\",\n  \"registrationIssueDate\": \"2020-01-01\",\n  \"registrationExpiryDate\": \"2027-12-31\",\n  \"department\": \"Department of Cardiology\",\n  \"subSpecializations\": [\n    \"Coronary Angioplasty\",\n    \"Heart Failure Management\"\n  ],\n  \"clinicalInterests\": [\n    \"Valvular Heart Disease\",\n    \"Hypertension\"\n  ],\n  \"servicesOffered\": [\n    \"ECG\",\n    \"ECHO\",\n    \"Angiography Consultation\"\n  ],\n  \"languagesSpoken\": [\n    \"English\",\n    \"Urdu\"\n  ],\n  \"emergencyPhone\": \"+92-300-1234567\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"userId\": \"string\",\n  \"fullName\": \"string\",\n  \"gender\": \"string\",\n  \"dateOfBirth\": \"string\",\n  \"profilePhotoUrl\": \"string\",\n  \"digitalSignatureUrl\": \"string\",\n  \"biography\": \"string\",\n  \"professionalSummary\": \"string\",\n  \"yearsOfExperience\": 4065.576524935164,\n  \"primarySpecialization\": \"string\",\n  \"secondarySpecializations\": [\n    \"string\",\n    \"string\"\n  ],\n  \"medicalCouncil\": \"string\",\n  \"registrationNumber\": \"string\",\n  \"licenseNumber\": \"string\",\n  \"providerIdentifier\":"
+      }
+    ],
+    "matchedKw": [
+      "consultation",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "List all registered doctor profiles in Master Registry",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors?page=3467.616117677217&limit=3467.616117677217",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"userId\": \"string\",\n    \"fullName\": \"string\",\n    \"gender\": \"string\",\n    \"dateOfBirth\": \"string\",\n    \"profilePhotoUrl\": \"string\",\n    \"digitalSignatureUrl\": \"string\",\n    \"biography\": \"string\",\n    \"professionalSummary\": \"string\",\n    \"yearsOfExperience\": 7936.66924281009,\n    \"primarySpecialization\": \"string\",\n    \"secondarySpecializations\": [\n      \"string\",\n      \"string\"\n    ],\n    \"medicalCouncil\": \"string\",\n    \"registrationNumber\": \"string\",\n    \"licenseNum"
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Enterprise doctor search (by name, registration, license, dept, specialization)",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors/search?q=string",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"userId\": \"string\",\n    \"fullName\": \"string\",\n    \"gender\": \"string\",\n    \"dateOfBirth\": \"string\",\n    \"profilePhotoUrl\": \"string\",\n    \"digitalSignatureUrl\": \"string\",\n    \"biography\": \"string\",\n    \"professionalSummary\": \"string\",\n    \"yearsOfExperience\": 7936.66924281009,\n    \"primarySpecialization\": \"string\",\n    \"secondarySpecializations\": [\n      \"string\",\n      \"string\"\n    ],\n    \"medicalCouncil\": \"string\",\n    \"registrationNumber\": \"string\",\n    \"licenseNum"
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Get platform-wide doctor directory statistics",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors/statistics",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"totalDoctors\": 7502.67031828981,\n  \"verifiedDoctors\": 9340.408779469471,\n  \"pendingDoctors\": 6339.1968732549685,\n  \"suspendedDoctors\": 991.3627852740103\n}"
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "List doctor profiles pending admin verification",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors/verification/pending",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"userId\": \"string\",\n    \"fullName\": \"string\",\n    \"gender\": \"string\",\n    \"dateOfBirth\": \"string\",\n    \"profilePhotoUrl\": \"string\",\n    \"digitalSignatureUrl\": \"string\",\n    \"biography\": \"string\",\n    \"professionalSummary\": \"string\",\n    \"yearsOfExperience\": 7936.66924281009,\n    \"primarySpecialization\": \"string\",\n    \"secondarySpecializations\": [\n      \"string\",\n      \"string\"\n    ],\n    \"medicalCouncil\": \"string\",\n    \"registrationNumber\": \"string\",\n    \"licenseNum"
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Get current authenticated doctor profile",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors/me",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"userId\": \"string\",\n  \"fullName\": \"string\",\n  \"gender\": \"string\",\n  \"dateOfBirth\": \"string\",\n  \"profilePhotoUrl\": \"string\",\n  \"digitalSignatureUrl\": \"string\",\n  \"biography\": \"string\",\n  \"professionalSummary\": \"string\",\n  \"yearsOfExperience\": 1429.492499492082,\n  \"primarySpecialization\": \"string\",\n  \"secondarySpecializations\": [\n    \"string\",\n    \"string\"\n  ],\n  \"medicalCouncil\": \"string\",\n  \"registrationNumber\": \"string\",\n  \"licenseNumber\": \"string\",\n  \"providerIdentifier\":"
+      }
+    ],
+    "matchedKw": [
+      "doctors/me",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "List patients the authenticated doctor is authorized to treat",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors/patients?page=1&limit=20&search=string&q=string&gender=string&bloodGroup=string&status=string",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"data\": [\n    [],\n    []\n  ],\n  \"meta\": {\n    \"totalItems\": 100,\n    \"page\": 1,\n    \"limit\": 20,\n    \"totalPages\": 5,\n    \"hasNextPage\": {},\n    \"hasPreviousPage\": false\n  }\n}"
+      },
+      {
+        "name": "Unauthorized",
+        "code": 401,
+        "status": "Unauthorized",
+        "body": ""
+      },
+      {
+        "name": "Forbidden - Doctor role required",
+        "code": 403,
+        "status": "Forbidden",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Get authorized patient medical record timeline",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/medical-records/timeline?page=1&limit=20",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"data\": [\n    [],\n    []\n  ],\n  \"meta\": {\n    \"totalItems\": 100,\n    \"page\": 1,\n    \"limit\": 20,\n    \"totalPages\": 5,\n    \"hasNextPage\": {},\n    \"hasPreviousPage\": false\n  }\n}"
+      },
+      {
+        "name": "Unauthorized",
+        "code": 401,
+        "status": "Unauthorized",
+        "body": ""
+      },
+      {
+        "name": "Forbidden - Doctor authorization required",
+        "code": 403,
+        "status": "Forbidden",
+        "body": ""
+      },
+      {
+        "name": "Patient or Doctor profile not found",
+        "code": 404,
+        "status": "Not Found",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Get authorized patient medical records with pagination",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/medical-records?page=1&limit=20&status=string&startDate=string&endDate=string&includeArchived=true",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"data\": [\n    [],\n    []\n  ],\n  \"meta\": {\n    \"totalItems\": 100,\n    \"page\": 1,\n    \"limit\": 20,\n    \"totalPages\": 5,\n    \"hasNextPage\": {},\n    \"hasPreviousPage\": false\n  }\n}"
+      },
+      {
+        "name": "Unauthorized",
+        "code": 401,
+        "status": "Unauthorized",
+        "body": ""
+      },
+      {
+        "name": "Forbidden - Doctor authorization required",
+        "code": 403,
+        "status": "Forbidden",
+        "body": ""
+      },
+      {
+        "name": "Patient or Doctor profile not found",
+        "code": 404,
+        "status": "Not Found",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Create medical record for an authorized patient",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/medical-records",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"title\": \"Annual Routine Health Checkup\",\n  \"chiefComplaint\": \"Mild fatigue and occasional headache\",\n  \"clinicalNotes\": \"Patient appears well nourished. No acute distress.\",\n  \"treatmentPlan\": \"Increase fluid intake, maintain low glycemic diet\",\n  \"followUpInstructions\": \"Follow up in 4 weeks for repeat blood panel\",\n  \"status\": \"FINAL\",\n  \"encounter\": {\n    \"providerName\": \"Dr. Sarah Connor\",\n    \"facilityName\": \"City General Hospital\",\n    \"encounterType\": \"CONSULTATION\",\n    \"encounterDate\": \"2026-07-31T10:00:00Z\"\n  },\n  \"diagnoses\": [\n    {\n      \"description\": \"Type 2 Diabetes Mellitus without complications\",\n      \"code\": \"E11.9\",\n      \"type\": \"PRIMARY\",\n      \"status\": \"ACTIVE\"\n    },\n    {\n      \"description\": \"Type 2 Diabetes Mellitus without complications\",\n      \"code\": \"E11.9\",\n      \"type\": \"PRIMARY\",\n      \"status\": \"ACTIVE\"\n    }\n  ],\n  \"vitalSigns\": {\n    \"heightCm\": 175.5,\n    \"weightKg\": 70,\n    \"systolicBp\": 120,\n    \"diastolicBp\": 80,\n    \"pulseBpm\": 72,\n    \"respirationRate\": 16,\n    \"temperatureC\": 36.6,\n    \"bloodSugarMgDl\": 95,\n    \"oxygenSaturation\": 98\n  },\n  \"procedures\": [\n    {\n      \"name\": \"Routine Blood Panel\",\n      \"code\": \"CPT-80053\",\n      \"performedAt\": \"2026-07-31\",\n      \"notes\": \"Patient fasted for 12 hours prior\"\n    },\n    {\n      \"name\": \"Routine Blood Panel\",\n      \"code\": \"CPT-80053\",\n      \"performedAt\": \"2026-07-31\",\n      \"notes\": \"Patient fasted for 12 hours prior\"\n    }\n  ]\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"title\": \"string\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"string\",\n  \"isDeleted\": true,\n  \"deletedAt\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"attachments\": [\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \""
+      }
+    ],
+    "matchedKw": [
+      "treatment",
+      "consultation",
+      "facility",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Document clinical encounter, diagnoses, vitals, procedures for an authorized patient",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/encounters",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"title\": \"Annual Routine Health Checkup\",\n  \"chiefComplaint\": \"Mild fatigue and occasional headache\",\n  \"clinicalNotes\": \"Patient appears well nourished. No acute distress.\",\n  \"treatmentPlan\": \"Increase fluid intake, maintain low glycemic diet\",\n  \"followUpInstructions\": \"Follow up in 4 weeks for repeat blood panel\",\n  \"status\": \"FINAL\",\n  \"encounter\": {\n    \"providerName\": \"Dr. Sarah Connor\",\n    \"facilityName\": \"City General Hospital\",\n    \"encounterType\": \"CONSULTATION\",\n    \"encounterDate\": \"2026-07-31T10:00:00Z\"\n  },\n  \"diagnoses\": [\n    {\n      \"description\": \"Type 2 Diabetes Mellitus without complications\",\n      \"code\": \"E11.9\",\n      \"type\": \"PRIMARY\",\n      \"status\": \"ACTIVE\"\n    },\n    {\n      \"description\": \"Type 2 Diabetes Mellitus without complications\",\n      \"code\": \"E11.9\",\n      \"type\": \"PRIMARY\",\n      \"status\": \"ACTIVE\"\n    }\n  ],\n  \"vitalSigns\": {\n    \"heightCm\": 175.5,\n    \"weightKg\": 70,\n    \"systolicBp\": 120,\n    \"diastolicBp\": 80,\n    \"pulseBpm\": 72,\n    \"respirationRate\": 16,\n    \"temperatureC\": 36.6,\n    \"bloodSugarMgDl\": 95,\n    \"oxygenSaturation\": 98\n  },\n  \"procedures\": [\n    {\n      \"name\": \"Routine Blood Panel\",\n      \"code\": \"CPT-80053\",\n      \"performedAt\": \"2026-07-31\",\n      \"notes\": \"Patient fasted for 12 hours prior\"\n    },\n    {\n      \"name\": \"Routine Blood Panel\",\n      \"code\": \"CPT-80053\",\n      \"performedAt\": \"2026-07-31\",\n      \"notes\": \"Patient fasted for 12 hours prior\"\n    }\n  ]\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"title\": \"string\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"string\",\n  \"isDeleted\": true,\n  \"deletedAt\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"attachments\": [\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \""
+      },
+      {
+        "name": "Unauthorized",
+        "code": 401,
+        "status": "Unauthorized",
+        "body": ""
+      },
+      {
+        "name": "Forbidden - Doctor authorization required",
+        "code": 403,
+        "status": "Forbidden",
+        "body": ""
+      },
+      {
+        "name": "Patient or Doctor profile not found",
+        "code": 404,
+        "status": "Not Found",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "treatment",
+      "consultation",
+      "facility",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Update clinical notes/record documented by doctor",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/medical-records/:recordId",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"title\": \"Updated Health Checkup Record\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"DRAFT\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"title\": \"string\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"string\",\n  \"isDeleted\": true,\n  \"deletedAt\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"attachments\": [\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \""
+      },
+      {
+        "name": "Forbidden - Authorship required",
+        "code": 403,
+        "status": "Forbidden",
+        "body": ""
+      },
+      {
+        "name": "Record not found",
+        "code": 404,
+        "status": "Not Found",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "treatment",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "List prescriptions for an authorized patient",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/prescriptions?page=1&limit=20",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"data\": [\n    [],\n    []\n  ],\n  \"meta\": {\n    \"totalItems\": 100,\n    \"page\": 1,\n    \"limit\": 20,\n    \"totalPages\": 5,\n    \"hasNextPage\": {},\n    \"hasPreviousPage\": false\n  }\n}"
+      },
+      {
+        "name": "Unauthorized",
+        "code": 401,
+        "status": "Unauthorized",
+        "body": ""
+      },
+      {
+        "name": "Forbidden - Doctor authorization required",
+        "code": 403,
+        "status": "Forbidden",
+        "body": ""
+      },
+      {
+        "name": "Patient or Doctor profile not found",
+        "code": 404,
+        "status": "Not Found",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Create a new prescription for an authorized patient",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/prescriptions",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"title\": \"Prescription for Acute Upper Respiratory Infection\",\n  \"medications\": [\n    {\n      \"name\": \"Amoxicillin\",\n      \"dosage\": \"500mg\",\n      \"frequency\": \"Three times daily (TID)\",\n      \"duration\": \"7 days\",\n      \"instructions\": \"Take after meals with plenty of water\"\n    },\n    {\n      \"name\": \"Amoxicillin\",\n      \"dosage\": \"500mg\",\n      \"frequency\": \"Three times daily (TID)\",\n      \"duration\": \"7 days\",\n      \"instructions\": \"Take after meals with plenty of water\"\n    }\n  ],\n  \"description\": \"Patient presented with 3-day history of cough, fever, and pharyngitis.\",\n  \"notes\": \"Avoid alcohol and complete the full course of antibiotics.\",\n  \"diagnosis\": \"Acute Pharyngitis (ICD-10 J02.9)\",\n  \"facilityName\": \"Metro Health Hospital\",\n  \"reportDate\": \"2026-11-05T09:00:00.000Z\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"prescription-uuid\",\n  \"patientProfileId\": \"patient-profile-uuid\",\n  \"title\": \"Prescription for Acute Upper Respiratory Infection\",\n  \"description\": {},\n  \"category\": \"PRESCRIPTION\",\n  \"status\": \"UPLOADED\",\n  \"reportDate\": {},\n  \"prescribedBy\": {},\n  \"doctorName\": {},\n  \"providerName\": {},\n  \"facilityName\": {},\n  \"medications\": [\n    {\n      \"name\": \"Amoxicillin\",\n      \"dosage\": \"500mg\",\n      \"frequency\": \"Three times daily (TID)\",\n      \"duration\": \"7 days\",\n      \"instructions\": \"T"
+      },
+      {
+        "name": "Bad Request - Validation failure",
+        "code": 400,
+        "status": "Bad Request",
+        "body": ""
+      },
+      {
+        "name": "Unauthorized",
+        "code": 401,
+        "status": "Unauthorized",
+        "body": ""
+      },
+      {
+        "name": "Forbidden - Doctor authorization required",
+        "code": 403,
+        "status": "Forbidden",
+        "body": ""
+      },
+      {
+        "name": "Patient or Doctor profile not found",
+        "code": 404,
+        "status": "Not Found",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "List vital signs records for an authorized patient",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/vitals?page=1&limit=20",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"data\": [\n    [],\n    []\n  ],\n  \"meta\": {\n    \"totalItems\": 100,\n    \"page\": 1,\n    \"limit\": 20,\n    \"totalPages\": 5,\n    \"hasNextPage\": {},\n    \"hasPreviousPage\": false\n  }\n}"
+      },
+      {
+        "name": "Unauthorized",
+        "code": 401,
+        "status": "Unauthorized",
+        "body": ""
+      },
+      {
+        "name": "Forbidden - Doctor authorization required",
+        "code": 403,
+        "status": "Forbidden",
+        "body": ""
+      },
+      {
+        "name": "Patient or Doctor profile not found",
+        "code": 404,
+        "status": "Not Found",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Record vital signs for an authorized patient",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/vitals",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"heightCm\": 175.5,\n  \"weightKg\": 70,\n  \"systolicBp\": 120,\n  \"diastolicBp\": 80,\n  \"pulseBpm\": 72,\n  \"respirationRate\": 16,\n  \"temperatureC\": 36.8,\n  \"bloodSugarMgDl\": 95,\n  \"oxygenSaturation\": 98,\n  \"medicalRecordId\": \"medical-record-uuid\",\n  \"recordedAt\": \"2026-11-05T09:30:00.000Z\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"vitals-uuid\",\n  \"medicalRecordId\": \"medical-record-uuid\",\n  \"heightCm\": {},\n  \"weightKg\": {},\n  \"bmi\": {},\n  \"systolicBp\": {},\n  \"diastolicBp\": {},\n  \"bloodPressure\": {},\n  \"pulseBpm\": {},\n  \"respirationRate\": {},\n  \"temperatureC\": {},\n  \"bloodSugarMgDl\": {},\n  \"oxygenSaturation\": {},\n  \"recordedAt\": \"2026-11-05T09:30:00.000Z\",\n  \"recordedBy\": {\n    \"fullName\": \"Dr. Evelyn Reed\"\n  }\n}"
+      },
+      {
+        "name": "Bad Request - Validation failure",
+        "code": 400,
+        "status": "Bad Request",
+        "body": ""
+      },
+      {
+        "name": "Unauthorized",
+        "code": 401,
+        "status": "Unauthorized",
+        "body": ""
+      },
+      {
+        "name": "Forbidden - Doctor authorization required",
+        "code": 403,
+        "status": "Forbidden",
+        "body": ""
+      },
+      {
+        "name": "Patient or Doctor profile not found",
+        "code": 404,
+        "status": "Not Found",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "List hospital admission records for an authorized patient",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/admissions?page=1&limit=20",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"data\": [\n    [],\n    []\n  ],\n  \"meta\": {\n    \"totalItems\": 100,\n    \"page\": 1,\n    \"limit\": 20,\n    \"totalPages\": 5,\n    \"hasNextPage\": {},\n    \"hasPreviousPage\": false\n  }\n}"
+      },
+      {
+        "name": "Unauthorized",
+        "code": 401,
+        "status": "Unauthorized",
+        "body": ""
+      },
+      {
+        "name": "Forbidden - Doctor authorization required",
+        "code": 403,
+        "status": "Forbidden",
+        "body": ""
+      },
+      {
+        "name": "Patient or Doctor profile not found",
+        "code": 404,
+        "status": "Not Found",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Record a hospital admission for an authorized patient",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/admissions",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"title\": \"Hospital Admission - Inpatient Care\",\n  \"admissionDate\": \"2026-11-05T08:00:00.000Z\",\n  \"dischargeDate\": \"2026-11-10T12:00:00.000Z\",\n  \"admissionType\": \"EMERGENCY\",\n  \"reasonForAdmission\": \"Severe acute chest pain radiating to left arm\",\n  \"admittingDiagnosis\": \"Acute Coronary Syndrome (ICD-10 I20.0)\",\n  \"ward\": \"Cardiology - ICU\",\n  \"roomBed\": \"Bed 4B\",\n  \"facilityName\": \"Metro Health Hospital\",\n  \"attendingDoctorName\": \"Dr. Evelyn Reed\",\n  \"clinicalNotes\": \"Patient admitted via ED; continuous telemetry monitoring initiated.\",\n  \"treatmentPlan\": \"Serial troponin tests, 12-lead ECG, cardiology consult.\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"admission-encounter-uuid\",\n  \"medicalRecordId\": \"medical-record-uuid\",\n  \"patientProfileId\": \"patient-profile-uuid\",\n  \"title\": \"Hospital Admission - Inpatient Care\",\n  \"encounterType\": \"ADMISSION\",\n  \"encounterDate\": \"2026-11-05T08:00:00.000Z\",\n  \"facilityName\": {},\n  \"providerName\": {},\n  \"chiefComplaint\": {},\n  \"clinicalNotes\": {},\n  \"treatmentPlan\": {},\n  \"status\": \"FINAL\",\n  \"diagnoses\": [],\n  \"createdAt\": \"2026-11-05T08:00:00.000Z\",\n  \"updatedAt\": \"2026-11-05T08:00:00.000Z\"\n}"
+      },
+      {
+        "name": "Bad Request - Validation failure",
+        "code": 400,
+        "status": "Bad Request",
+        "body": ""
+      },
+      {
+        "name": "Unauthorized",
+        "code": 401,
+        "status": "Unauthorized",
+        "body": ""
+      },
+      {
+        "name": "Forbidden - Doctor authorization required",
+        "code": 403,
+        "status": "Forbidden",
+        "body": ""
+      },
+      {
+        "name": "Patient or Doctor profile not found",
+        "code": 404,
+        "status": "Not Found",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "treatment",
+      "facility",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Get complete demographic information for an authorized patient",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"patient-profile-uuid\",\n  \"userId\": \"user-uuid\",\n  \"patientNumber\": {},\n  \"firstName\": {},\n  \"lastName\": {},\n  \"dateOfBirth\": {},\n  \"gender\": {},\n  \"bloodGroup\": {},\n  \"phone\": {},\n  \"email\": {},\n  \"status\": \"ACTIVE\",\n  \"photoUrl\": {},\n  \"authSource\": \"APPOINTMENT\",\n  \"createdAt\": \"2026-01-15T10:00:00.000Z\",\n  \"updatedAt\": \"2026-02-01T15:30:00.000Z\",\n  \"nationality\": {},\n  \"occupation\": {},\n  \"maritalStatus\": {},\n  \"languages\": [\n    \"English\",\n    \"Spanish\"\n  ],\n  \"address\": {},\n  \"kn"
+      },
+      {
+        "name": "Unauthorized",
+        "code": 401,
+        "status": "Unauthorized",
+        "body": ""
+      },
+      {
+        "name": "Forbidden - Doctor authorization required",
+        "code": 403,
+        "status": "Forbidden",
+        "body": ""
+      },
+      {
+        "name": "Patient or Doctor profile not found",
+        "code": 404,
+        "status": "Not Found",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Get complete doctor profile details",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors/:id",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"userId\": \"string\",\n  \"fullName\": \"string\",\n  \"gender\": \"string\",\n  \"dateOfBirth\": \"string\",\n  \"profilePhotoUrl\": \"string\",\n  \"digitalSignatureUrl\": \"string\",\n  \"biography\": \"string\",\n  \"professionalSummary\": \"string\",\n  \"yearsOfExperience\": 1429.492499492082,\n  \"primarySpecialization\": \"string\",\n  \"secondarySpecializations\": [\n    \"string\",\n    \"string\"\n  ],\n  \"medicalCouncil\": \"string\",\n  \"registrationNumber\": \"string\",\n  \"licenseNumber\": \"string\",\n  \"providerIdentifier\":"
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Update doctor profile details",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/doctors/:id",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"userId\": \"string\",\n  \"fullName\": \"string\",\n  \"gender\": \"string\",\n  \"dateOfBirth\": \"string\",\n  \"profilePhotoUrl\": \"string\",\n  \"digitalSignatureUrl\": \"string\",\n  \"biography\": \"string\",\n  \"professionalSummary\": \"string\",\n  \"yearsOfExperience\": 1429.492499492082,\n  \"primarySpecialization\": \"string\",\n  \"secondarySpecializations\": [\n    \"string\",\n    \"string\"\n  ],\n  \"medicalCouncil\": \"string\",\n  \"registrationNumber\": \"string\",\n  \"licenseNumber\": \"string\",\n  \"providerIdentifier\":"
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Soft-delete a doctor profile",
+    "method": "DELETE",
+    "url": "{{baseUrl}}/api/v1/doctors/:id",
+    "headers": [],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "name": "Doctor profile soft-deleted",
+        "code": 200,
+        "status": "OK",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Approve & verify doctor registration",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/doctors/:id/verify",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"reason\": \"Verified credentials against council database / Administrative decision\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"userId\": \"string\",\n  \"fullName\": \"string\",\n  \"gender\": \"string\",\n  \"dateOfBirth\": \"string\",\n  \"profilePhotoUrl\": \"string\",\n  \"digitalSignatureUrl\": \"string\",\n  \"biography\": \"string\",\n  \"professionalSummary\": \"string\",\n  \"yearsOfExperience\": 1429.492499492082,\n  \"primarySpecialization\": \"string\",\n  \"secondarySpecializations\": [\n    \"string\",\n    \"string\"\n  ],\n  \"medicalCouncil\": \"string\",\n  \"registrationNumber\": \"string\",\n  \"licenseNumber\": \"string\",\n  \"providerIdentifier\":"
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Reject doctor verification with reason",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/doctors/:id/reject",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"reason\": \"Verified credentials against council database / Administrative decision\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"userId\": \"string\",\n  \"fullName\": \"string\",\n  \"gender\": \"string\",\n  \"dateOfBirth\": \"string\",\n  \"profilePhotoUrl\": \"string\",\n  \"digitalSignatureUrl\": \"string\",\n  \"biography\": \"string\",\n  \"professionalSummary\": \"string\",\n  \"yearsOfExperience\": 1429.492499492082,\n  \"primarySpecialization\": \"string\",\n  \"secondarySpecializations\": [\n    \"string\",\n    \"string\"\n  ],\n  \"medicalCouncil\": \"string\",\n  \"registrationNumber\": \"string\",\n  \"licenseNumber\": \"string\",\n  \"providerIdentifier\":"
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Suspend doctor registration",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/doctors/:id/suspend",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"reason\": \"Verified credentials against council database / Administrative decision\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"userId\": \"string\",\n  \"fullName\": \"string\",\n  \"gender\": \"string\",\n  \"dateOfBirth\": \"string\",\n  \"profilePhotoUrl\": \"string\",\n  \"digitalSignatureUrl\": \"string\",\n  \"biography\": \"string\",\n  \"professionalSummary\": \"string\",\n  \"yearsOfExperience\": 1429.492499492082,\n  \"primarySpecialization\": \"string\",\n  \"secondarySpecializations\": [\n    \"string\",\n    \"string\"\n  ],\n  \"medicalCouncil\": \"string\",\n  \"registrationNumber\": \"string\",\n  \"licenseNumber\": \"string\",\n  \"providerIdentifier\":"
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Restore suspended doctor registration",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/doctors/:id/restore",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"reason\": \"Verified credentials against council database / Administrative decision\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"userId\": \"string\",\n  \"fullName\": \"string\",\n  \"gender\": \"string\",\n  \"dateOfBirth\": \"string\",\n  \"profilePhotoUrl\": \"string\",\n  \"digitalSignatureUrl\": \"string\",\n  \"biography\": \"string\",\n  \"professionalSummary\": \"string\",\n  \"yearsOfExperience\": 1429.492499492082,\n  \"primarySpecialization\": \"string\",\n  \"secondarySpecializations\": [\n    \"string\",\n    \"string\"\n  ],\n  \"medicalCouncil\": \"string\",\n  \"registrationNumber\": \"string\",\n  \"licenseNumber\": \"string\",\n  \"providerIdentifier\":"
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Renew medical registration license (extends expiry)",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/doctors/:id/renew-license",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"newExpiryDate\": \"2029-12-31\",\n  \"reason\": \"License renewed with state medical board\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"userId\": \"string\",\n  \"fullName\": \"string\",\n  \"gender\": \"string\",\n  \"dateOfBirth\": \"string\",\n  \"profilePhotoUrl\": \"string\",\n  \"digitalSignatureUrl\": \"string\",\n  \"biography\": \"string\",\n  \"professionalSummary\": \"string\",\n  \"yearsOfExperience\": 1429.492499492082,\n  \"primarySpecialization\": \"string\",\n  \"secondarySpecializations\": [\n    \"string\",\n    \"string\"\n  ],\n  \"medicalCouncil\": \"string\",\n  \"registrationNumber\": \"string\",\n  \"licenseNumber\": \"string\",\n  \"providerIdentifier\":"
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Generate/Issue Doctor Digital Verification QR token",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/doctors/:id/generate-qr",
+    "headers": [],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "name": "Generated QR Token details",
+        "code": 200,
+        "status": "OK",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "List attached doctor credential documents",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors/:id/documents",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"documentType\": \"string\",\n    \"medicalAttachmentId\": \"string\",\n    \"verificationStatus\": \"string\",\n    \"createdAt\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"documentType\": \"string\",\n    \"medicalAttachmentId\": \"string\",\n    \"verificationStatus\": \"string\",\n    \"createdAt\": \"string\"\n  }\n]"
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Attach credential document (reusing MedicalAttachment)",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/doctors/:id/documents",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"documentType\": \"MEDICAL_LICENSE\",\n  \"medicalAttachmentId\": \"attachment-uuid-1\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"documentType\": \"string\",\n  \"medicalAttachmentId\": \"string\",\n  \"verificationStatus\": \"string\",\n  \"createdAt\": \"string\"\n}"
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Get complete verification & status lifecycle history",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors/:id/history",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"doctorProfileId\": \"string\",\n    \"action\": \"string\",\n    \"previousStatus\": \"string\",\n    \"newStatus\": \"string\",\n    \"reason\": \"string\",\n    \"performedBy\": \"string\",\n    \"createdAt\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"doctorProfileId\": \"string\",\n    \"action\": \"string\",\n    \"previousStatus\": \"string\",\n    \"newStatus\": \"string\",\n    \"reason\": \"string\",\n    \"performedBy\": \"string\",\n    \"createdAt\": \"string\"\n  }\n]"
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Get Doctor Availability Schedule Slots",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/doctors/:id/slots",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"slot-uuid-v4\",\n    \"startTime\": \"2026-07-30T09:00:00.000Z\",\n    \"endTime\": \"2026-07-30T09:30:00.000Z\",\n    \"isBooked\": false\n  },\n  {\n    \"id\": \"slot-uuid-v4\",\n    \"startTime\": \"2026-07-30T09:00:00.000Z\",\n    \"endTime\": \"2026-07-30T09:30:00.000Z\",\n    \"isBooked\": false\n  }\n]"
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "06. Patient App",
+    "name": "List received treatment offers for authenticated patient",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/patients/treatment-offers?status=EXPIRED&patientId=string&search=string&page=1&limit=20",
+    "headers": [],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "name": "Paginated list of received treatment proposals",
+        "code": 200,
+        "status": "OK",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "treatment-offer",
+      "treatment"
+    ]
+  },
+  {
+    "folder": "06. Patient App",
+    "name": "Patient view of treatment offer (Triggers PATIENT_REVIEWING state)",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/patients/treatment-offers/:offerId",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  "
+      }
+    ],
+    "matchedKw": [
+      "treatment-offer",
+      "treatment"
+    ]
+  },
+  {
+    "folder": "06. Patient App",
+    "name": "Patient ratifies and accepts treatment offer (RATIFIED_ACCEPTED)",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/patients/treatment-offers/:offerId/accept",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"signatureConsent\": true,\n  \"patientResponseNotes\": \"string\",\n  \"expectedVersion\": 1885.198472948083\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  "
+      }
+    ],
+    "matchedKw": [
+      "treatment-offer",
+      "treatment"
+    ]
+  },
+  {
+    "folder": "06. Patient App",
+    "name": "Patient declines treatment offer proposal (DECLINED)",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/patients/treatment-offers/:offerId/reject",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"declineReason\": \"Seeking second opinion\",\n  \"expectedVersion\": 492.45563914452896\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  "
+      }
+    ],
+    "matchedKw": [
+      "treatment-offer",
+      "treatment"
+    ]
+  },
+  {
+    "folder": "08. Medical Records (General, Dental & Vision)",
+    "name": "Update prescription instructions or medication items",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/prescriptions/:prescriptionId",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"title\": \"Prescription for Acute Upper Respiratory Infection (Updated)\",\n  \"description\": \"Updated medication instructions and extended course.\",\n  \"medications\": [\n    {\n      \"name\": \"Amoxicillin\",\n      \"dosage\": \"500mg\",\n      \"frequency\": \"Three times daily (TID)\",\n      \"duration\": \"7 days\",\n      \"instructions\": \"Take after meals with plenty of water\"\n    },\n    {\n      \"name\": \"Amoxicillin\",\n      \"dosage\": \"500mg\",\n      \"frequency\": \"Three times daily (TID)\",\n      \"duration\": \"7 days\",\n      \"instructions\": \"Take after meals with plenty of water\"\n    }\n  ],\n  \"notes\": \"Take with food. Patient tolerated initial dosage.\",\n  \"facilityName\": \"Metro Health Hospital\",\n  \"diagnosis\": \"Acute Pharyngitis (ICD-10 J02.9)\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"prescription-uuid\",\n  \"patientProfileId\": \"patient-profile-uuid\",\n  \"title\": \"Prescription for Acute Upper Respiratory Infection\",\n  \"description\": {},\n  \"category\": \"PRESCRIPTION\",\n  \"status\": \"UPLOADED\",\n  \"reportDate\": {},\n  \"prescribedBy\": {},\n  \"doctorName\": {},\n  \"providerName\": {},\n  \"facilityName\": {},\n  \"medications\": [\n    {\n      \"name\": \"Amoxicillin\",\n      \"dosage\": \"500mg\",\n      \"frequency\": \"Three times daily (TID)\",\n      \"duration\": \"7 days\",\n      \"instructions\": \"T"
+      },
+      {
+        "name": "Bad Request - Validation failure or already discontinued",
+        "code": 400,
+        "status": "Bad Request",
+        "body": ""
+      },
+      {
+        "name": "Unauthorized",
+        "code": 401,
+        "status": "Unauthorized",
+        "body": ""
+      },
+      {
+        "name": "Forbidden - Authorizing doctor only",
+        "code": 403,
+        "status": "Forbidden",
+        "body": ""
+      },
+      {
+        "name": "Prescription not found",
+        "code": 404,
+        "status": "Not Found",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "facility"
+    ]
+  },
+  {
+    "folder": "08. Medical Records (General, Dental & Vision)",
+    "name": "Discontinue an active prescription with clinical justification",
+    "method": "PATCH",
+    "url": "{{baseUrl}}/api/v1/prescriptions/:prescriptionId/discontinue",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"reason\": \"Patient experienced adverse skin rash; switching to alternative antibiotic.\",\n  \"notes\": \"Discontinued after consultation on 2026-11-05\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"prescription-uuid\",\n  \"patientProfileId\": \"patient-profile-uuid\",\n  \"title\": \"Prescription for Acute Upper Respiratory Infection\",\n  \"description\": {},\n  \"category\": \"PRESCRIPTION\",\n  \"status\": \"UPLOADED\",\n  \"reportDate\": {},\n  \"prescribedBy\": {},\n  \"doctorName\": {},\n  \"providerName\": {},\n  \"facilityName\": {},\n  \"medications\": [\n    {\n      \"name\": \"Amoxicillin\",\n      \"dosage\": \"500mg\",\n      \"frequency\": \"Three times daily (TID)\",\n      \"duration\": \"7 days\",\n      \"instructions\": \"T"
+      },
+      {
+        "name": "Bad Request - Missing reason or already discontinued",
+        "code": 400,
+        "status": "Bad Request",
+        "body": ""
+      },
+      {
+        "name": "Unauthorized",
+        "code": 401,
+        "status": "Unauthorized",
+        "body": ""
+      },
+      {
+        "name": "Forbidden - Authorizing doctor only",
+        "code": 403,
+        "status": "Forbidden",
+        "body": ""
+      },
+      {
+        "name": "Prescription not found",
+        "code": 404,
+        "status": "Not Found",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "consultation"
+    ]
+  },
+  {
+    "folder": "08. Medical Records (General, Dental & Vision)",
+    "name": "Create a new medical record with encounter, vitals, diagnosis, and procedures",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/medical-records",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"title\": \"Annual Routine Health Checkup\",\n  \"chiefComplaint\": \"Mild fatigue and occasional headache\",\n  \"clinicalNotes\": \"Patient appears well nourished. No acute distress.\",\n  \"treatmentPlan\": \"Increase fluid intake, maintain low glycemic diet\",\n  \"followUpInstructions\": \"Follow up in 4 weeks for repeat blood panel\",\n  \"status\": \"FINAL\",\n  \"encounter\": {\n    \"providerName\": \"Dr. Sarah Connor\",\n    \"facilityName\": \"City General Hospital\",\n    \"encounterType\": \"CONSULTATION\",\n    \"encounterDate\": \"2026-07-31T10:00:00Z\"\n  },\n  \"diagnoses\": [\n    {\n      \"description\": \"Type 2 Diabetes Mellitus without complications\",\n      \"code\": \"E11.9\",\n      \"type\": \"PRIMARY\",\n      \"status\": \"ACTIVE\"\n    },\n    {\n      \"description\": \"Type 2 Diabetes Mellitus without complications\",\n      \"code\": \"E11.9\",\n      \"type\": \"PRIMARY\",\n      \"status\": \"ACTIVE\"\n    }\n  ],\n  \"vitalSigns\": {\n    \"heightCm\": 175.5,\n    \"weightKg\": 70,\n    \"systolicBp\": 120,\n    \"diastolicBp\": 80,\n    \"pulseBpm\": 72,\n    \"respirationRate\": 16,\n    \"temperatureC\": 36.6,\n    \"bloodSugarMgDl\": 95,\n    \"oxygenSaturation\": 98\n  },\n  \"procedures\": [\n    {\n      \"name\": \"Routine Blood Panel\",\n      \"code\": \"CPT-80053\",\n      \"performedAt\": \"2026-07-31\",\n      \"notes\": \"Patient fasted for 12 hours prior\"\n    },\n    {\n      \"name\": \"Routine Blood Panel\",\n      \"code\": \"CPT-80053\",\n      \"performedAt\": \"2026-07-31\",\n      \"notes\": \"Patient fasted for 12 hours prior\"\n    }\n  ]\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"title\": \"string\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"string\",\n  \"isDeleted\": true,\n  \"deletedAt\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"attachments\": [\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \""
+      }
+    ],
+    "matchedKw": [
+      "treatment",
+      "consultation",
+      "facility"
+    ]
+  },
+  {
+    "folder": "08. Medical Records (General, Dental & Vision)",
+    "name": "Create a new medical record with encounter, vitals, diagnosis, and procedures",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/records",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"title\": \"Annual Routine Health Checkup\",\n  \"chiefComplaint\": \"Mild fatigue and occasional headache\",\n  \"clinicalNotes\": \"Patient appears well nourished. No acute distress.\",\n  \"treatmentPlan\": \"Increase fluid intake, maintain low glycemic diet\",\n  \"followUpInstructions\": \"Follow up in 4 weeks for repeat blood panel\",\n  \"status\": \"FINAL\",\n  \"encounter\": {\n    \"providerName\": \"Dr. Sarah Connor\",\n    \"facilityName\": \"City General Hospital\",\n    \"encounterType\": \"CONSULTATION\",\n    \"encounterDate\": \"2026-07-31T10:00:00Z\"\n  },\n  \"diagnoses\": [\n    {\n      \"description\": \"Type 2 Diabetes Mellitus without complications\",\n      \"code\": \"E11.9\",\n      \"type\": \"PRIMARY\",\n      \"status\": \"ACTIVE\"\n    },\n    {\n      \"description\": \"Type 2 Diabetes Mellitus without complications\",\n      \"code\": \"E11.9\",\n      \"type\": \"PRIMARY\",\n      \"status\": \"ACTIVE\"\n    }\n  ],\n  \"vitalSigns\": {\n    \"heightCm\": 175.5,\n    \"weightKg\": 70,\n    \"systolicBp\": 120,\n    \"diastolicBp\": 80,\n    \"pulseBpm\": 72,\n    \"respirationRate\": 16,\n    \"temperatureC\": 36.6,\n    \"bloodSugarMgDl\": 95,\n    \"oxygenSaturation\": 98\n  },\n  \"procedures\": [\n    {\n      \"name\": \"Routine Blood Panel\",\n      \"code\": \"CPT-80053\",\n      \"performedAt\": \"2026-07-31\",\n      \"notes\": \"Patient fasted for 12 hours prior\"\n    },\n    {\n      \"name\": \"Routine Blood Panel\",\n      \"code\": \"CPT-80053\",\n      \"performedAt\": \"2026-07-31\",\n      \"notes\": \"Patient fasted for 12 hours prior\"\n    }\n  ]\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"title\": \"string\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"string\",\n  \"isDeleted\": true,\n  \"deletedAt\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"attachments\": [\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \""
+      }
+    ],
+    "matchedKw": [
+      "treatment",
+      "consultation",
+      "facility"
+    ]
+  },
+  {
+    "folder": "08. Medical Records (General, Dental & Vision)",
+    "name": "Update an existing medical record (blocked if ARCHIVED)",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/medical-records/:id",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"title\": \"Updated Health Checkup Record\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"DRAFT\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"title\": \"string\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"string\",\n  \"isDeleted\": true,\n  \"deletedAt\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"attachments\": [\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \""
+      }
+    ],
+    "matchedKw": [
+      "treatment"
+    ]
+  },
+  {
+    "folder": "08. Medical Records (General, Dental & Vision)",
+    "name": "Update an existing medical record (blocked if ARCHIVED)",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/records/:id",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"title\": \"Updated Health Checkup Record\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"DRAFT\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"title\": \"string\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"string\",\n  \"isDeleted\": true,\n  \"deletedAt\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"attachments\": [\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \""
+      }
+    ],
+    "matchedKw": [
+      "treatment"
+    ]
+  },
+  {
+    "folder": "09. Facilities & Branches",
+    "name": "Register/Create a facility profile in Master Registry",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/facilities",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"name\": \"Shaukat Khanum Memorial Hospital\",\n  \"registrationNumber\": \"REG-HOSP-778899\",\n  \"streetAddress\": \"7A Block R-3 Johar Town\",\n  \"city\": \"Lahore\",\n  \"state\": \"Punjab\",\n  \"phone\": \"+92-42-35905000\",\n  \"legalName\": \"Shaukat Khanum Memorial Cancer Hospital & Research Centre\",\n  \"facilityType\": \"HOSPITAL\",\n  \"ownershipType\": \"PRIVATE\",\n  \"buildingName\": \"Main Clinical Tower\",\n  \"district\": \"Lahore District\",\n  \"country\": \"Pakistan\",\n  \"pinCode\": \"54000\",\n  \"latitude\": 31.472,\n  \"longitude\": 74.283,\n  \"timezone\": \"Asia/Karachi\",\n  \"emergencyPhone\": \"+92-42-111155555\",\n  \"email\": \"info@shaukatkhanum.org.pk\",\n  \"website\": \"https://shaukatkhanum.org.pk\",\n  \"profilePhotoUrl\": \"https://storage.healthvault360.com/facilities/logo-100.png\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"legalName\": \"string\",\n  \"facilityCode\": \"string\",\n  \"registrationNumber\": \"string\",\n  \"facilityType\": \"string\",\n  \"ownershipType\": \"string\",\n  \"buildingName\": \"string\",\n  \"streetAddress\": \"string\",\n  \"city\": \"string\",\n  \"district\": \"string\",\n  \"state\": \"string\",\n  \"country\": \"string\",\n  \"pinCode\": \"string\",\n  \"latitude\": 7208.385256652712,\n  \"longitude\": 4119.381969617726,\n  \"timezone\": \"string\",\n  \"phone\": \"string\",\n  \"emergencyPhone\": \"string\",\n  \"ema"
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "facilities"
+    ]
+  },
+  {
+    "folder": "09. Facilities & Branches",
+    "name": "List all registered facility profiles",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/facilities?page=3467.616117677217&limit=3467.616117677217",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"legalName\": \"string\",\n    \"facilityCode\": \"string\",\n    \"registrationNumber\": \"string\",\n    \"facilityType\": \"string\",\n    \"ownershipType\": \"string\",\n    \"buildingName\": \"string\",\n    \"streetAddress\": \"string\",\n    \"city\": \"string\",\n    \"district\": \"string\",\n    \"state\": \"string\",\n    \"country\": \"string\",\n    \"pinCode\": \"string\",\n    \"latitude\": 8427.524863816794,\n    \"longitude\": 9780.226495093812,\n    \"timezone\": \"string\",\n    \"phone\": \"strin"
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "facilities"
+    ]
+  },
+  {
+    "folder": "09. Facilities & Branches",
+    "name": "Enterprise facility search (by name, code, city, type)",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/facilities/search?q=string",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"legalName\": \"string\",\n    \"facilityCode\": \"string\",\n    \"registrationNumber\": \"string\",\n    \"facilityType\": \"string\",\n    \"ownershipType\": \"string\",\n    \"buildingName\": \"string\",\n    \"streetAddress\": \"string\",\n    \"city\": \"string\",\n    \"district\": \"string\",\n    \"state\": \"string\",\n    \"country\": \"string\",\n    \"pinCode\": \"string\",\n    \"latitude\": 8427.524863816794,\n    \"longitude\": 9780.226495093812,\n    \"timezone\": \"string\",\n    \"phone\": \"strin"
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "facilities"
+    ]
+  },
+  {
+    "folder": "09. Facilities & Branches",
+    "name": "Get platform-wide facility directory statistics",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/facilities/statistics",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"totalFacilities\": 5800.918092312885,\n  \"verifiedFacilities\": 2181.464416462595,\n  \"pendingFacilities\": 4624.780325023935,\n  \"suspendedFacilities\": 9537.992258109902,\n  \"totalDepartments\": 8155.946373768858,\n  \"totalRooms\": 2951.137259199004\n}"
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "facilities"
+    ]
+  },
+  {
+    "folder": "09. Facilities & Branches",
+    "name": "Get complete facility details",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/facilities/:id",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"legalName\": \"string\",\n  \"facilityCode\": \"string\",\n  \"registrationNumber\": \"string\",\n  \"facilityType\": \"string\",\n  \"ownershipType\": \"string\",\n  \"buildingName\": \"string\",\n  \"streetAddress\": \"string\",\n  \"city\": \"string\",\n  \"district\": \"string\",\n  \"state\": \"string\",\n  \"country\": \"string\",\n  \"pinCode\": \"string\",\n  \"latitude\": 8212.524273838488,\n  \"longitude\": 5950.084480374197,\n  \"timezone\": \"string\",\n  \"phone\": \"string\",\n  \"emergencyPhone\": \"string\",\n  \"ema"
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "facilities"
+    ]
+  },
+  {
+    "folder": "09. Facilities & Branches",
+    "name": "Update facility details",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/facilities/:id",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"legalName\": \"string\",\n  \"facilityCode\": \"string\",\n  \"registrationNumber\": \"string\",\n  \"facilityType\": \"string\",\n  \"ownershipType\": \"string\",\n  \"buildingName\": \"string\",\n  \"streetAddress\": \"string\",\n  \"city\": \"string\",\n  \"district\": \"string\",\n  \"state\": \"string\",\n  \"country\": \"string\",\n  \"pinCode\": \"string\",\n  \"latitude\": 8212.524273838488,\n  \"longitude\": 5950.084480374197,\n  \"timezone\": \"string\",\n  \"phone\": \"string\",\n  \"emergencyPhone\": \"string\",\n  \"ema"
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "facilities"
+    ]
+  },
+  {
+    "folder": "09. Facilities & Branches",
+    "name": "Soft-delete a facility",
+    "method": "DELETE",
+    "url": "{{baseUrl}}/api/v1/facilities/:id",
+    "headers": [],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "name": "Facility soft-deleted",
+        "code": 200,
+        "status": "OK",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "facilities"
+    ]
+  },
+  {
+    "folder": "09. Facilities & Branches",
+    "name": "Approve & verify facility registration",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/facilities/:id/verify",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"reason\": \"Verified Healthcare Commission license / Administrative review\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"legalName\": \"string\",\n  \"facilityCode\": \"string\",\n  \"registrationNumber\": \"string\",\n  \"facilityType\": \"string\",\n  \"ownershipType\": \"string\",\n  \"buildingName\": \"string\",\n  \"streetAddress\": \"string\",\n  \"city\": \"string\",\n  \"district\": \"string\",\n  \"state\": \"string\",\n  \"country\": \"string\",\n  \"pinCode\": \"string\",\n  \"latitude\": 8212.524273838488,\n  \"longitude\": 5950.084480374197,\n  \"timezone\": \"string\",\n  \"phone\": \"string\",\n  \"emergencyPhone\": \"string\",\n  \"ema"
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "facilities"
+    ]
+  },
+  {
+    "folder": "09. Facilities & Branches",
+    "name": "Suspend facility registration",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/facilities/:id/suspend",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"reason\": \"Verified Healthcare Commission license / Administrative review\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"legalName\": \"string\",\n  \"facilityCode\": \"string\",\n  \"registrationNumber\": \"string\",\n  \"facilityType\": \"string\",\n  \"ownershipType\": \"string\",\n  \"buildingName\": \"string\",\n  \"streetAddress\": \"string\",\n  \"city\": \"string\",\n  \"district\": \"string\",\n  \"state\": \"string\",\n  \"country\": \"string\",\n  \"pinCode\": \"string\",\n  \"latitude\": 8212.524273838488,\n  \"longitude\": 5950.084480374197,\n  \"timezone\": \"string\",\n  \"phone\": \"string\",\n  \"emergencyPhone\": \"string\",\n  \"ema"
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "facilities"
+    ]
+  },
+  {
+    "folder": "09. Facilities & Branches",
+    "name": "Restore suspended facility registration",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/facilities/:id/restore",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"reason\": \"Verified Healthcare Commission license / Administrative review\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"legalName\": \"string\",\n  \"facilityCode\": \"string\",\n  \"registrationNumber\": \"string\",\n  \"facilityType\": \"string\",\n  \"ownershipType\": \"string\",\n  \"buildingName\": \"string\",\n  \"streetAddress\": \"string\",\n  \"city\": \"string\",\n  \"district\": \"string\",\n  \"state\": \"string\",\n  \"country\": \"string\",\n  \"pinCode\": \"string\",\n  \"latitude\": 8212.524273838488,\n  \"longitude\": 5950.084480374197,\n  \"timezone\": \"string\",\n  \"phone\": \"string\",\n  \"emergencyPhone\": \"string\",\n  \"ema"
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "facilities"
+    ]
+  },
+  {
+    "folder": "09. Facilities & Branches",
+    "name": "Generate Facility Digital Identity QR token",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/facilities/:id/generate-qr",
+    "headers": [],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "name": "Generated QR Token details",
+        "code": 200,
+        "status": "OK",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "facilities"
+    ]
+  },
+  {
+    "folder": "09. Facilities & Branches",
+    "name": "List facility departments",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/facilities/:id/departments",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"facilityId\": \"string\",\n    \"name\": \"string\",\n    \"code\": \"string\",\n    \"description\": \"string\",\n    \"departmentHead\": \"string\",\n    \"operatingHours\": \"string\",\n    \"createdAt\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"facilityId\": \"string\",\n    \"name\": \"string\",\n    \"code\": \"string\",\n    \"description\": \"string\",\n    \"departmentHead\": \"string\",\n    \"operatingHours\": \"string\",\n    \"createdAt\": \"string\"\n  }\n]"
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "facilities"
+    ]
+  },
+  {
+    "folder": "09. Facilities & Branches",
+    "name": "Create facility department",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/facilities/:id/departments",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"name\": \"Department of Medical Oncology\",\n  \"code\": \"ONCO-MED\",\n  \"description\": \"Comprehensive medical oncology and chemotherapy care\",\n  \"departmentHead\": \"Dr. Aasim Yusuf\",\n  \"operatingHours\": \"24/7 OPD & Inpatient Care\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"facilityId\": \"string\",\n  \"name\": \"string\",\n  \"code\": \"string\",\n  \"description\": \"string\",\n  \"departmentHead\": \"string\",\n  \"operatingHours\": \"string\",\n  \"createdAt\": \"string\"\n}"
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "facilities"
+    ]
+  },
+  {
+    "folder": "09. Facilities & Branches",
+    "name": "List facility rooms",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/facilities/:id/rooms",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"facilityId\": \"string\",\n    \"departmentId\": \"string\",\n    \"roomNumber\": \"string\",\n    \"roomName\": \"string\",\n    \"building\": \"string\",\n    \"block\": \"string\",\n    \"floor\": \"string\",\n    \"wing\": \"string\",\n    \"roomCategory\": \"string\",\n    \"capacity\": 9295.061080548576,\n    \"isOperational\": false,\n    \"createdAt\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"facilityId\": \"string\",\n    \"departmentId\": \"string\",\n    \"roomNumber\": \"string\",\n    \"roomName\": \"string\",\n    \"bui"
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "facilities"
+    ]
+  },
+  {
+    "folder": "09. Facilities & Branches",
+    "name": "Create facility room",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/facilities/:id/rooms",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"roomNumber\": \"RM-304\",\n  \"departmentId\": \"department-uuid-1\",\n  \"roomName\": \"Chemotherapy Suite 4\",\n  \"building\": \"Tower A\",\n  \"block\": \"Block 2\",\n  \"floor\": \"3rd Floor\",\n  \"wing\": \"East Wing\",\n  \"roomCategory\": \"ICU\",\n  \"capacity\": 4\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"facilityId\": \"string\",\n  \"departmentId\": \"string\",\n  \"roomNumber\": \"string\",\n  \"roomName\": \"string\",\n  \"building\": \"string\",\n  \"block\": \"string\",\n  \"floor\": \"string\",\n  \"wing\": \"string\",\n  \"roomCategory\": \"string\",\n  \"capacity\": 8552.908678749203,\n  \"isOperational\": false,\n  \"createdAt\": \"string\"\n}"
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "facilities"
+    ]
+  },
+  {
+    "folder": "09. Facilities & Branches",
+    "name": "Assign doctor to facility",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/facilities/:id/assign-doctor",
+    "headers": [
+      "Content-Type: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"doctorId\": \"doctor-profile-uuid-1\",\n  \"departmentId\": \"department-uuid-1\",\n  \"assignmentType\": \"PRIMARY\",\n  \"privileges\": [\n    \"OPD_CONSULTATION\",\n    \"INPATIENT_ADMISSION\",\n    \"SURGERY\"\n  ]\n}",
+    "responses": [
+      {
+        "name": "Doctor assigned to facility",
+        "code": 200,
+        "status": "OK",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "consultation",
+      "facility",
+      "facilities",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "09. Facilities & Branches",
+    "name": "List associated facility doctors",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/facilities/:id/doctors",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"doctor-uuid-v4\",\n    \"fullName\": \"Dr. John Watson\",\n    \"specialization\": \"General Medicine\",\n    \"credentials\": \"MD, PhD\"\n  },\n  {\n    \"id\": \"doctor-uuid-v4\",\n    \"fullName\": \"Dr. John Watson\",\n    \"specialization\": \"General Medicine\",\n    \"credentials\": \"MD, PhD\"\n  }\n]"
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "facilities",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "09. Facilities & Branches",
+    "name": "List attached facility credential documents",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/facilities/:id/documents",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"documentType\": \"string\",\n    \"medicalAttachmentId\": \"string\",\n    \"verificationStatus\": \"string\",\n    \"createdAt\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"documentType\": \"string\",\n    \"medicalAttachmentId\": \"string\",\n    \"verificationStatus\": \"string\",\n    \"createdAt\": \"string\"\n  }\n]"
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "facilities"
+    ]
+  },
+  {
+    "folder": "09. Facilities & Branches",
+    "name": "Attach credential document (reusing MedicalAttachment)",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/facilities/:id/documents",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"documentType\": \"REGISTRATION_LICENSE\",\n  \"medicalAttachmentId\": \"attachment-uuid-1\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"documentType\": \"string\",\n  \"medicalAttachmentId\": \"string\",\n  \"verificationStatus\": \"string\",\n  \"createdAt\": \"string\"\n}"
+      }
+    ],
+    "matchedKw": [
+      "facilities"
+    ]
+  },
+  {
+    "folder": "09. Facilities & Branches",
+    "name": "Get complete verification & status lifecycle history",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/facilities/:id/history",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"facilityId\": \"string\",\n    \"action\": \"string\",\n    \"previousStatus\": \"string\",\n    \"newStatus\": \"string\",\n    \"reason\": \"string\",\n    \"performedBy\": \"string\",\n    \"createdAt\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"facilityId\": \"string\",\n    \"action\": \"string\",\n    \"previousStatus\": \"string\",\n    \"newStatus\": \"string\",\n    \"reason\": \"string\",\n    \"performedBy\": \"string\",\n    \"createdAt\": \"string\"\n  }\n]"
+      }
+    ],
+    "matchedKw": [
+      "facilities"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Book a new appointment",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/appointments",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"doctorProfileId\": \"{{doctorId}}\",\n  \"patientProfileId\": \"{{patientId}}\",\n  \"facilityId\": \"{{facilityId}}\",\n  \"appointmentDate\": \"2026-11-15\",\n  \"startTime\": \"09:30\",\n  \"endTime\": \"09:45\",\n  \"durationMinutes\": 15,\n  \"type\": \"IN_PERSON\",\n  \"reason\": \"Routine cardiology follow-up and prescription review\",\n  \"notes\": \"Patient requested morning appointment slot\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"appointmentNumber\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"doctorProfileId\": \"string\",\n  \"appointmentDate\": \"string\",\n  \"startTime\": \"string\",\n  \"endTime\": \"string\",\n  \"durationMinutes\": 7492.098821810215,\n  \"type\": \"TELECONSULTATION\",\n  \"status\": \"CONFIRMED\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"facilityId\": \"string\",\n  \"scheduleId\": \"string\",\n  \"slotId\": \"string\",\n  \"reason\": \"string\",\n  \"notes\": \"string\",\n  \"bookedBy\": \"string\",\n  \"cancelledAt\": \"s"
+      }
+    ],
+    "matchedKw": [
+      "appointment",
+      "facility",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "List appointments with filtering and pagination",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/appointments?page=1&limit=20&patientProfileId=string&doctorProfileId=string&facilityId=string&status=SCHEDULED&type=IN_PERSON&fromDate=string&toDate=string",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"data\": [\n    [],\n    []\n  ],\n  \"meta\": {\n    \"totalItems\": 100,\n    \"page\": 1,\n    \"limit\": 20,\n    \"totalPages\": 5,\n    \"hasNextPage\": {},\n    \"hasPreviousPage\": false\n  }\n}"
+      }
+    ],
+    "matchedKw": [
+      "appointment",
+      "facility",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Get appointments scheduled for authenticated doctor",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/appointments/doctor/my-appointments?page=1&limit=20&patientProfileId=string&doctorProfileId=string&facilityId=string&status=SCHEDULED&type=IN_PERSON&fromDate=string&toDate=string",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"data\": [\n    [],\n    []\n  ],\n  \"meta\": {\n    \"totalItems\": 100,\n    \"page\": 1,\n    \"limit\": 20,\n    \"totalPages\": 5,\n    \"hasNextPage\": {},\n    \"hasPreviousPage\": false\n  }\n}"
+      }
+    ],
+    "matchedKw": [
+      "appointment",
+      "facility",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Get appointments scheduled for authenticated doctor",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/appointments/doctor/me?page=1&limit=20&patientProfileId=string&doctorProfileId=string&facilityId=string&status=SCHEDULED&type=IN_PERSON&fromDate=string&toDate=string",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"data\": [\n    [],\n    []\n  ],\n  \"meta\": {\n    \"totalItems\": 100,\n    \"page\": 1,\n    \"limit\": 20,\n    \"totalPages\": 5,\n    \"hasNextPage\": {},\n    \"hasPreviousPage\": false\n  }\n}"
+      }
+    ],
+    "matchedKw": [
+      "appointment",
+      "facility",
+      "doctor/me",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Get appointments scheduled for authenticated patient",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/appointments/patient/my-appointments?page=1&limit=20&patientProfileId=string&doctorProfileId=string&facilityId=string&status=SCHEDULED&type=IN_PERSON&fromDate=string&toDate=string",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"data\": [\n    [],\n    []\n  ],\n  \"meta\": {\n    \"totalItems\": 100,\n    \"page\": 1,\n    \"limit\": 20,\n    \"totalPages\": 5,\n    \"hasNextPage\": {},\n    \"hasPreviousPage\": false\n  }\n}"
+      }
+    ],
+    "matchedKw": [
+      "appointment",
+      "facility",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Get appointments scheduled for authenticated patient",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/appointments/patient/me?page=1&limit=20&patientProfileId=string&doctorProfileId=string&facilityId=string&status=SCHEDULED&type=IN_PERSON&fromDate=string&toDate=string",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"data\": [\n    [],\n    []\n  ],\n  \"meta\": {\n    \"totalItems\": 100,\n    \"page\": 1,\n    \"limit\": 20,\n    \"totalPages\": 5,\n    \"hasNextPage\": {},\n    \"hasPreviousPage\": false\n  }\n}"
+      }
+    ],
+    "matchedKw": [
+      "appointment",
+      "facility",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Get appointment details by ID",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/appointments/:id",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"appointmentNumber\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"doctorProfileId\": \"string\",\n  \"appointmentDate\": \"string\",\n  \"startTime\": \"string\",\n  \"endTime\": \"string\",\n  \"durationMinutes\": 7492.098821810215,\n  \"type\": \"TELECONSULTATION\",\n  \"status\": \"CONFIRMED\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"facilityId\": \"string\",\n  \"scheduleId\": \"string\",\n  \"slotId\": \"string\",\n  \"reason\": \"string\",\n  \"notes\": \"string\",\n  \"bookedBy\": \"string\",\n  \"cancelledAt\": \"s"
+      }
+    ],
+    "matchedKw": [
+      "appointment"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Reschedule an existing appointment",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/appointments/:id/reschedule",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"appointmentDate\": \"2026-11-20\",\n  \"startTime\": \"10:00\",\n  \"endTime\": \"10:15\",\n  \"slotId\": \"string\",\n  \"reason\": \"string\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"appointmentNumber\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"doctorProfileId\": \"string\",\n  \"appointmentDate\": \"string\",\n  \"startTime\": \"string\",\n  \"endTime\": \"string\",\n  \"durationMinutes\": 7492.098821810215,\n  \"type\": \"TELECONSULTATION\",\n  \"status\": \"CONFIRMED\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"facilityId\": \"string\",\n  \"scheduleId\": \"string\",\n  \"slotId\": \"string\",\n  \"reason\": \"string\",\n  \"notes\": \"string\",\n  \"bookedBy\": \"string\",\n  \"cancelledAt\": \"s"
+      }
+    ],
+    "matchedKw": [
+      "appointment"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Cancel an appointment",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/appointments/:id/cancel",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"cancellationReason\": \"Patient requested reschedule due to conflict\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"appointmentNumber\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"doctorProfileId\": \"string\",\n  \"appointmentDate\": \"string\",\n  \"startTime\": \"string\",\n  \"endTime\": \"string\",\n  \"durationMinutes\": 7492.098821810215,\n  \"type\": \"TELECONSULTATION\",\n  \"status\": \"CONFIRMED\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"facilityId\": \"string\",\n  \"scheduleId\": \"string\",\n  \"slotId\": \"string\",\n  \"reason\": \"string\",\n  \"notes\": \"string\",\n  \"bookedBy\": \"string\",\n  \"cancelledAt\": \"s"
+      }
+    ],
+    "matchedKw": [
+      "appointment"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Update appointment status (clinical & operational staff)",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/appointments/:id/status",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"status\": \"RESCHEDULED\",\n  \"notes\": \"string\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"appointmentNumber\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"doctorProfileId\": \"string\",\n  \"appointmentDate\": \"string\",\n  \"startTime\": \"string\",\n  \"endTime\": \"string\",\n  \"durationMinutes\": 7492.098821810215,\n  \"type\": \"TELECONSULTATION\",\n  \"status\": \"CONFIRMED\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"facilityId\": \"string\",\n  \"scheduleId\": \"string\",\n  \"slotId\": \"string\",\n  \"reason\": \"string\",\n  \"notes\": \"string\",\n  \"bookedBy\": \"string\",\n  \"cancelledAt\": \"s"
+      }
+    ],
+    "matchedKw": [
+      "appointment"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Create a schedule profile (doctor / staff / facility)",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/schedules",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"ownerType\": \"DOCTOR\",\n  \"title\": \"Dr. Khan Morning OPD Schedule\",\n  \"effectiveFrom\": \"2025-01-01\",\n  \"doctorProfileId\": \"doctor-profile-uuid-1\",\n  \"staffId\": \"staff-uuid-1\",\n  \"facilityId\": \"facility-uuid-1\",\n  \"departmentId\": \"department-uuid-1\",\n  \"timezone\": \"Asia/Karachi\",\n  \"slotDurationMinutes\": 15,\n  \"bufferMinutes\": 5,\n  \"maxPatientsPerSlot\": 1,\n  \"effectiveTo\": \"2025-12-31\",\n  \"isActive\": true,\n  \"notes\": \"Main OPD morning session\",\n  \"workingHours\": [\n    {\n      \"dayOfWeek\": 1,\n      \"startTime\": \"09:00\",\n      \"endTime\": \"13:00\",\n      \"sessionType\": \"MORNING\",\n      \"breakStart\": \"11:00\",\n      \"breakEnd\": \"11:15\",\n      \"isEnabled\": true\n    },\n    {\n      \"dayOfWeek\": 1,\n      \"startTime\": \"09:00\",\n      \"endTime\": \"13:00\",\n      \"sessionType\": \"MORNING\",\n      \"breakStart\": \"11:00\",\n      \"breakEnd\": \"11:15\",\n      \"isEnabled\": true\n    }\n  ]\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"ownerType\": \"string\",\n  \"doctorProfileId\": \"string\",\n  \"staffId\": \"string\",\n  \"facilityId\": \"string\",\n  \"departmentId\": \"string\",\n  \"title\": \"string\",\n  \"timezone\": \"string\",\n  \"slotDurationMinutes\": 6948.308062625337,\n  \"bufferMinutes\": 6130.120391022835,\n  \"maxPatientsPerSlot\": 37.6960566537865,\n  \"effectiveFrom\": \"string\",\n  \"effectiveTo\": \"string\",\n  \"isActive\": false,\n  \"notes\": \"string\",\n  \"isDeleted\": true,\n  \"workingHours\": [\n    {\n      \"id\": \"string\",\n      \"dayO"
+      }
+    ],
+    "matchedKw": [
+      "appointment",
+      "facility",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "List all schedule profiles",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/schedules",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"ownerType\": \"string\",\n    \"doctorProfileId\": \"string\",\n    \"staffId\": \"string\",\n    \"facilityId\": \"string\",\n    \"departmentId\": \"string\",\n    \"title\": \"string\",\n    \"timezone\": \"string\",\n    \"slotDurationMinutes\": 2618.0935710421227,\n    \"bufferMinutes\": 9280.169012596549,\n    \"maxPatientsPerSlot\": 8689.481209686906,\n    \"effectiveFrom\": \"string\",\n    \"effectiveTo\": \"string\",\n    \"isActive\": true,\n    \"notes\": \"string\",\n    \"isDeleted\": true,\n    \"workingHours\": [\n"
+      }
+    ],
+    "matchedKw": [
+      "appointment"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Search schedules by owner type, title, facility or doctor",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/schedules/search?q=string",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"ownerType\": \"string\",\n    \"doctorProfileId\": \"string\",\n    \"staffId\": \"string\",\n    \"facilityId\": \"string\",\n    \"departmentId\": \"string\",\n    \"title\": \"string\",\n    \"timezone\": \"string\",\n    \"slotDurationMinutes\": 2618.0935710421227,\n    \"bufferMinutes\": 9280.169012596549,\n    \"maxPatientsPerSlot\": 8689.481209686906,\n    \"effectiveFrom\": \"string\",\n    \"effectiveTo\": \"string\",\n    \"isActive\": true,\n    \"notes\": \"string\",\n    \"isDeleted\": true,\n    \"workingHours\": [\n"
+      }
+    ],
+    "matchedKw": [
+      "appointment",
+      "facility",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Platform-wide scheduling engine statistics",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/schedules/statistics",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"totalSchedules\": 8373.714478501974,\n  \"activeSchedules\": 4293.303196986981,\n  \"doctorSchedules\": 5718.278447248114,\n  \"staffSchedules\": 6825.392544282911,\n  \"facilitySchedules\": 302.11035982953047,\n  \"totalGeneratedSlots\": 6644.413390914854,\n  \"availableSlots\": 3560.854592136888,\n  \"totalShifts\": 7702.457312953934,\n  \"totalHolidays\": 5483.946604323987\n}"
+      }
+    ],
+    "matchedKw": [
+      "appointment"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Get schedule detail with working hours, exceptions, leave blocks",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/schedules/:id",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"ownerType\": \"string\",\n  \"doctorProfileId\": \"string\",\n  \"staffId\": \"string\",\n  \"facilityId\": \"string\",\n  \"departmentId\": \"string\",\n  \"title\": \"string\",\n  \"timezone\": \"string\",\n  \"slotDurationMinutes\": 4121.3457965459465,\n  \"bufferMinutes\": 5062.660737107783,\n  \"maxPatientsPerSlot\": 1916.1807167367972,\n  \"effectiveFrom\": \"string\",\n  \"effectiveTo\": \"string\",\n  \"isActive\": false,\n  \"notes\": \"string\",\n  \"isDeleted\": false,\n  \"workingHours\": [\n    {\n      \"id\": \"string\",\n      \""
+      }
+    ],
+    "matchedKw": [
+      "appointment"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Update schedule profile and/or working hours",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/schedules/:id",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"ownerType\": \"string\",\n  \"doctorProfileId\": \"string\",\n  \"staffId\": \"string\",\n  \"facilityId\": \"string\",\n  \"departmentId\": \"string\",\n  \"title\": \"string\",\n  \"timezone\": \"string\",\n  \"slotDurationMinutes\": 4121.3457965459465,\n  \"bufferMinutes\": 5062.660737107783,\n  \"maxPatientsPerSlot\": 1916.1807167367972,\n  \"effectiveFrom\": \"string\",\n  \"effectiveTo\": \"string\",\n  \"isActive\": false,\n  \"notes\": \"string\",\n  \"isDeleted\": false,\n  \"workingHours\": [\n    {\n      \"id\": \"string\",\n      \""
+      }
+    ],
+    "matchedKw": [
+      "appointment"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Soft-delete a schedule profile",
+    "method": "DELETE",
+    "url": "{{baseUrl}}/api/v1/schedules/:id",
+    "headers": [],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "name": "Schedule soft-deleted",
+        "code": 200,
+        "status": "OK",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "appointment"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Run slot generation engine for a date range",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/schedules/:id/generate-slots",
+    "headers": [
+      "Content-Type: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"fromDate\": \"2025-08-01\",\n  \"toDate\": \"2025-08-31\"\n}",
+    "responses": [
+      {
+        "name": "Generated availability slots",
+        "code": 200,
+        "status": "OK",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "appointment"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Get generated slots for a schedule in a date range",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/schedules/:id/slots?fromDate=2025-08-01&toDate=2025-08-31",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"scheduleId\": \"string\",\n    \"slotDate\": \"string\",\n    \"startTime\": \"string\",\n    \"endTime\": \"string\",\n    \"durationMinutes\": 8237.889136083295,\n    \"status\": \"string\",\n    \"statusReason\": \"string\",\n    \"createdAt\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"scheduleId\": \"string\",\n    \"slotDate\": \"string\",\n    \"startTime\": \"string\",\n    \"endTime\": \"string\",\n    \"durationMinutes\": 3029.168915551379,\n    \"status\": \"string\",\n    \"statusReason\": \"string\",\n    \"createdAt\""
+      }
+    ],
+    "matchedKw": [
+      "appointment"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Add schedule exception (vacation, conference, emergency, etc.)",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/schedules/:id/block",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"exceptionType\": \"VACATION\",\n  \"startDatetime\": \"2025-08-10T00:00:00.000Z\",\n  \"endDatetime\": \"2025-08-14T23:59:59.000Z\",\n  \"reason\": \"Annual medical conference in Dubai\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"ownerType\": \"string\",\n  \"doctorProfileId\": \"string\",\n  \"staffId\": \"string\",\n  \"facilityId\": \"string\",\n  \"departmentId\": \"string\",\n  \"title\": \"string\",\n  \"timezone\": \"string\",\n  \"slotDurationMinutes\": 4121.3457965459465,\n  \"bufferMinutes\": 5062.660737107783,\n  \"maxPatientsPerSlot\": 1916.1807167367972,\n  \"effectiveFrom\": \"string\",\n  \"effectiveTo\": \"string\",\n  \"isActive\": false,\n  \"notes\": \"string\",\n  \"isDeleted\": false,\n  \"workingHours\": [\n    {\n      \"id\": \"string\",\n      \""
+      }
+    ],
+    "matchedKw": [
+      "appointment"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Remove a schedule exception by its ID",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/schedules/:id/unblock?exceptionId=string",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"ownerType\": \"string\",\n  \"doctorProfileId\": \"string\",\n  \"staffId\": \"string\",\n  \"facilityId\": \"string\",\n  \"departmentId\": \"string\",\n  \"title\": \"string\",\n  \"timezone\": \"string\",\n  \"slotDurationMinutes\": 4121.3457965459465,\n  \"bufferMinutes\": 5062.660737107783,\n  \"maxPatientsPerSlot\": 1916.1807167367972,\n  \"effectiveFrom\": \"string\",\n  \"effectiveTo\": \"string\",\n  \"isActive\": false,\n  \"notes\": \"string\",\n  \"isDeleted\": false,\n  \"workingHours\": [\n    {\n      \"id\": \"string\",\n      \""
+      }
+    ],
+    "matchedKw": [
+      "appointment"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Add leave block (sick, casual, earned, emergency) to schedule",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/schedules/:id/leave",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"startDate\": \"2025-08-05\",\n  \"endDate\": \"2025-08-07\",\n  \"leaveType\": \"SICK\",\n  \"reason\": \"Fever and recovery\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"ownerType\": \"string\",\n  \"doctorProfileId\": \"string\",\n  \"staffId\": \"string\",\n  \"facilityId\": \"string\",\n  \"departmentId\": \"string\",\n  \"title\": \"string\",\n  \"timezone\": \"string\",\n  \"slotDurationMinutes\": 4121.3457965459465,\n  \"bufferMinutes\": 5062.660737107783,\n  \"maxPatientsPerSlot\": 1916.1807167367972,\n  \"effectiveFrom\": \"string\",\n  \"effectiveTo\": \"string\",\n  \"isActive\": false,\n  \"notes\": \"string\",\n  \"isDeleted\": false,\n  \"workingHours\": [\n    {\n      \"id\": \"string\",\n      \""
+      }
+    ],
+    "matchedKw": [
+      "appointment"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Get full schedule audit & modification history",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/schedules/:id/history",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"scheduleId\": \"string\",\n    \"action\": \"string\",\n    \"performedBy\": \"string\",\n    \"details\": \"string\",\n    \"createdAt\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"scheduleId\": \"string\",\n    \"action\": \"string\",\n    \"performedBy\": \"string\",\n    \"details\": \"string\",\n    \"createdAt\": \"string\"\n  }\n]"
+      }
+    ],
+    "matchedKw": [
+      "appointment"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Create shift definition (Morning / Evening / Night / Split / Custom)",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/shifts",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"facilityId\": \"facility-uuid-1\",\n  \"name\": \"ICU Morning Shift\",\n  \"shiftType\": \"MORNING\",\n  \"startTime\": \"07:00\",\n  \"endTime\": \"15:00\",\n  \"departmentId\": \"department-uuid-1\",\n  \"breakDurationMinutes\": 30\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"facilityId\": \"string\",\n  \"departmentId\": \"string\",\n  \"name\": \"string\",\n  \"shiftType\": \"string\",\n  \"startTime\": \"string\",\n  \"endTime\": \"string\",\n  \"breakDurationMinutes\": 9027.278155334112,\n  \"isActive\": false,\n  \"assignments\": [\n    {\n      \"id\": \"string\",\n      \"staffId\": \"string\",\n      \"assignedDate\": \"string\",\n      \"status\": \"string\",\n      \"notes\": \"string\",\n      \"createdAt\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"staffId\": \"string\",\n      \"assignedDate\""
+      }
+    ],
+    "matchedKw": [
+      "appointment",
+      "facility"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "List shift definitions, optionally filtered by facility",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/shifts?facilityId=string",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"facilityId\": \"string\",\n    \"departmentId\": \"string\",\n    \"name\": \"string\",\n    \"shiftType\": \"string\",\n    \"startTime\": \"string\",\n    \"endTime\": \"string\",\n    \"breakDurationMinutes\": 515.9660113343456,\n    \"isActive\": true,\n    \"assignments\": [\n      {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"staffId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n    "
+      }
+    ],
+    "matchedKw": [
+      "appointment",
+      "facility"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Assign a staff member to a shift for a specific date",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/shifts/:id/assign",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"staffId\": \"staff-uuid-1\",\n  \"assignedDate\": \"2025-08-01\",\n  \"status\": \"ASSIGNED\",\n  \"notes\": \"Covering for Sister Ayesha\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"facilityId\": \"string\",\n  \"departmentId\": \"string\",\n  \"name\": \"string\",\n  \"shiftType\": \"string\",\n  \"startTime\": \"string\",\n  \"endTime\": \"string\",\n  \"breakDurationMinutes\": 8366.425958124168,\n  \"isActive\": true,\n  \"assignments\": [\n    {\n      \"id\": \"string\",\n      \"staffId\": \"string\",\n      \"assignedDate\": \"string\",\n      \"status\": \"string\",\n      \"notes\": \"string\",\n      \"createdAt\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"staffId\": \"string\",\n      \"assignedDate\":"
+      }
+    ],
+    "matchedKw": [
+      "appointment"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Get all staff assignments for a specific shift",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/shifts/:id/assignments",
+    "headers": [],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "name": "Shift assignment list",
+        "code": 200,
+        "status": "OK",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "appointment"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Add a holiday to the calendar (global or facility-specific)",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/holidays",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"name\": \"Pakistan Independence Day\",\n  \"holidayDate\": \"2025-08-14\",\n  \"facilityId\": \"facility-uuid-1\",\n  \"isRecurring\": true,\n  \"description\": \"National public holiday\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"facilityId\": \"string\",\n  \"name\": \"string\",\n  \"holidayDate\": \"string\",\n  \"isRecurring\": true,\n  \"description\": \"string\",\n  \"createdAt\": \"string\"\n}"
+      }
+    ],
+    "matchedKw": [
+      "appointment",
+      "facility"
+    ]
+  },
+  {
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "List holidays (global + optional facility-specific)",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/holidays?facilityId=string",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"facilityId\": \"string\",\n    \"name\": \"string\",\n    \"holidayDate\": \"string\",\n    \"isRecurring\": false,\n    \"description\": \"string\",\n    \"createdAt\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"facilityId\": \"string\",\n    \"name\": \"string\",\n    \"holidayDate\": \"string\",\n    \"isRecurring\": true,\n    \"description\": \"string\",\n    \"createdAt\": \"string\"\n  }\n]"
+      }
+    ],
+    "matchedKw": [
+      "appointment",
+      "facility"
+    ]
+  },
+  {
+    "folder": "11. Referrals & Care Coordination",
+    "name": "Create patient care referral",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/referrals",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"patientId\": \"{{patientId}}\",\n  \"receivingFacilityId\": \"{{facilityId}}\",\n  \"receivingDoctorId\": \"{{doctorId}}\",\n  \"priority\": \"URGENT\",\n  \"referralType\": \"SPECIALIST_CONSULTATION\",\n  \"reasonForReferral\": \"Patient presents with persistent chest pain and abnormal ECG findings\",\n  \"clinicalSummary\": \"Blood pressure 145/95 mmHg, elevated cardiac markers\",\n  \"specialtyRequired\": \"Cardiology\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"referralNumber\": \"string\",\n  \"patientId\": \"string\",\n  \"referringDoctorId\": \"string\",\n  \"referringFacilityId\": \"string\",\n  \"receivingDoctorId\": \"string\",\n  \"receivingFacilityId\": \"string\",\n  \"medicalRecordId\": \"string\",\n  \"accessScope\": \"string\",\n  \"referralType\": \"string\",\n  \"priority\": \"string\",\n  \"status\": \"string\",\n  \"reasonForReferral\": \"string\",\n  \"clinicalSummary\": \"string\",\n  \"specialtyRequired\": \"string\",\n  \"expiresAt\": \"string\",\n  \"acceptedAt\": \"string\",\n  \"comple"
+      }
+    ],
+    "matchedKw": [
+      "consultation",
+      "facility",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "11. Referrals & Care Coordination",
+    "name": "List incoming referrals for current doctor/facility",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/referrals/my-incoming",
+    "headers": [],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "name": "Incoming referral list",
+        "code": 200,
+        "status": "OK",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "11. Referrals & Care Coordination",
+    "name": "List outgoing referrals created by current doctor",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/referrals/my-outgoing",
+    "headers": [],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "name": "Outgoing referral list",
+        "code": 200,
+        "status": "OK",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "11. Referrals & Care Coordination",
+    "name": "Get referral dashboard metrics and SLA performance analytics",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/referrals/dashboard/stats?facilityId=string",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"totalReferrals\": 4472.103183126399,\n  \"pendingTriageCount\": 6332.073871309371,\n  \"acceptedCount\": 1180.4692286712982,\n  \"completedCount\": 8937.345876697458,\n  \"avgCompletionTimeHours\": 4340.672835727754\n}"
+      }
+    ],
+    "matchedKw": [
+      "facility"
+    ]
+  },
+  {
+    "folder": "11. Referrals & Care Coordination",
+    "name": "Update referral status (IN_PROGRESS, COMPLETED, CANCELLED)",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/referrals/:id/status",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"status\": \"COMPLETED\",\n  \"reason\": \"Patient seen by Dr. Jenkins; consultation note attached\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"referralNumber\": \"string\",\n  \"patientId\": \"string\",\n  \"referringDoctorId\": \"string\",\n  \"referringFacilityId\": \"string\",\n  \"receivingDoctorId\": \"string\",\n  \"receivingFacilityId\": \"string\",\n  \"medicalRecordId\": \"string\",\n  \"accessScope\": \"string\",\n  \"referralType\": \"string\",\n  \"priority\": \"string\",\n  \"status\": \"string\",\n  \"reasonForReferral\": \"string\",\n  \"clinicalSummary\": \"string\",\n  \"specialtyRequired\": \"string\",\n  \"expiresAt\": \"string\",\n  \"acceptedAt\": \"string\",\n  \"comple"
+      }
+    ],
+    "matchedKw": [
+      "consultation"
+    ]
+  },
+  {
+    "folder": "11. Referrals & Care Coordination",
+    "name": "Update referral status (alias for PUT :id/status)",
+    "method": "PATCH",
+    "url": "{{baseUrl}}/api/v1/referrals/:id/status",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"status\": \"COMPLETED\",\n  \"reason\": \"Patient seen by Dr. Jenkins; consultation note attached\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"referralNumber\": \"string\",\n  \"patientId\": \"string\",\n  \"referringDoctorId\": \"string\",\n  \"referringFacilityId\": \"string\",\n  \"receivingDoctorId\": \"string\",\n  \"receivingFacilityId\": \"string\",\n  \"medicalRecordId\": \"string\",\n  \"accessScope\": \"string\",\n  \"referralType\": \"string\",\n  \"priority\": \"string\",\n  \"status\": \"string\",\n  \"reasonForReferral\": \"string\",\n  \"clinicalSummary\": \"string\",\n  \"specialtyRequired\": \"string\",\n  \"expiresAt\": \"string\",\n  \"acceptedAt\": \"string\",\n  \"comple"
+      }
+    ],
+    "matchedKw": [
+      "consultation"
+    ]
+  },
+  {
+    "folder": "12. Family Members & Relationships",
+    "name": "Grant a consent category to a family member",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/family/consents",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"patientId\": \"patient-uuid-1\",\n  \"purpose\": \"Authorization for clinical data processing and treatment history sharing\",\n  \"consentType\": \"TREATMENT\",\n  \"authorizedDoctorId\": \"doctor-uuid-1\",\n  \"authorizedFacilityId\": \"facility-uuid-1\",\n  \"accessScope\": \"ALL\",\n  \"expiresAt\": \"2026-12-31T23:59:59.000Z\",\n  \"evidenceReference\": \"DOC_REF_SIGNED_CONSENT_FORM_123\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"patientId\": \"string\",\n  \"consentType\": \"string\",\n  \"status\": \"string\",\n  \"purpose\": \"string\",\n  \"authorizedDoctorId\": \"string\",\n  \"authorizedFacilityId\": \"string\",\n  \"accessScope\": \"string\",\n  \"grantedAt\": \"string\",\n  \"expiresAt\": \"string\",\n  \"withdrawnAt\": \"string\",\n  \"capturedBy\": \"string\",\n  \"evidenceReference\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\"\n}"
+      }
+    ],
+    "matchedKw": [
+      "treatment",
+      "facility",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "12. Family Members & Relationships",
+    "name": "Update consent (expiry date, notes)",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/family/consents/:id",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"expiresAt\": \"2028-06-01\",\n  \"notes\": \"Extended for ongoing treatment\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"patientId\": \"string\",\n  \"consentType\": \"string\",\n  \"status\": \"string\",\n  \"purpose\": \"string\",\n  \"authorizedDoctorId\": \"string\",\n  \"authorizedFacilityId\": \"string\",\n  \"accessScope\": \"string\",\n  \"grantedAt\": \"string\",\n  \"expiresAt\": \"string\",\n  \"withdrawnAt\": \"string\",\n  \"capturedBy\": \"string\",\n  \"evidenceReference\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\"\n}"
+      }
+    ],
+    "matchedKw": [
+      "treatment"
+    ]
+  },
+  {
+    "folder": "13. Staff Management",
+    "name": "Register/Create a staff member profile in Master Workforce Registry",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/staff",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"fullName\": \"Sister Mary Joseph\",\n  \"phone\": \"+92-300-9876543\",\n  \"staffType\": \"NURSE\",\n  \"designation\": \"Head ICU Staff Nurse\",\n  \"primaryFacilityId\": \"facility-uuid-1\",\n  \"gender\": \"FEMALE\",\n  \"dateOfBirth\": \"1990-08-20\",\n  \"email\": \"mary.joseph@shaukatkhanum.org.pk\",\n  \"emergencyContact\": \"+92-300-1122334\",\n  \"profilePhotoUrl\": \"https://storage.healthvault360.com/staff/photo-300.jpg\",\n  \"secondaryFacilityId\": \"facility-uuid-2\",\n  \"primaryDepartmentId\": \"department-uuid-icu\",\n  \"secondaryDepartmentId\": \"department-uuid-er\",\n  \"reportingManagerId\": \"reporting-manager-uuid-1\",\n  \"employmentType\": \"PERMANENT\",\n  \"employmentStatus\": \"ACTIVE\",\n  \"joiningDate\": \"2021-06-01\",\n  \"noticePeriodDays\": 30,\n  \"biography\": \"Certified Critical Care Nurse with 8 years ICU experience.\",\n  \"languagesSpoken\": [\n    \"English\",\n    \"Urdu\"\n  ],\n  \"employeeCode\": \"STF-NURSE-0099\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"userId\": \"string\",\n  \"employeeCode\": \"string\",\n  \"fullName\": \"string\",\n  \"gender\": \"string\",\n  \"dateOfBirth\": \"string\",\n  \"phone\": \"string\",\n  \"email\": \"string\",\n  \"emergencyContact\": \"string\",\n  \"profilePhotoUrl\": \"string\",\n  \"staffType\": \"string\",\n  \"designation\": \"string\",\n  \"primaryFacilityId\": \"string\",\n  \"secondaryFacilityId\": \"string\",\n  \"primaryDepartmentId\": \"string\",\n  \"secondaryDepartmentId\": \"string\",\n  \"reportingManagerId\": \"string\",\n  \"employmentType\": \"strin"
+      }
+    ],
+    "matchedKw": [
+      "facility"
+    ]
+  },
+  {
+    "folder": "13. Staff Management",
+    "name": "Assign staff member to primary / secondary facilities",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/staff/:id/assign-facility",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"primaryFacilityId\": \"facility-uuid-1\",\n  \"secondaryFacilityId\": \"facility-uuid-2\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"userId\": \"string\",\n  \"employeeCode\": \"string\",\n  \"fullName\": \"string\",\n  \"gender\": \"string\",\n  \"dateOfBirth\": \"string\",\n  \"phone\": \"string\",\n  \"email\": \"string\",\n  \"emergencyContact\": \"string\",\n  \"profilePhotoUrl\": \"string\",\n  \"staffType\": \"string\",\n  \"designation\": \"string\",\n  \"primaryFacilityId\": \"string\",\n  \"secondaryFacilityId\": \"string\",\n  \"primaryDepartmentId\": \"string\",\n  \"secondaryDepartmentId\": \"string\",\n  \"reportingManagerId\": \"string\",\n  \"employmentType\": \"strin"
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "facilities"
+    ]
+  },
+  {
+    "folder": "14. Notifications & Alerts",
+    "name": "Create a new notification template with variable placeholders",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/notifications/templates",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"code\": \"TPL_PATIENT_ONBOARDING_WELCOME\",\n  \"name\": \"Patient Onboarding Welcome Message\",\n  \"subject\": \"Welcome to Health Vault 360, {{patientName}}!\",\n  \"body\": \"Dear {{patientName}}, your account has been successfully activated with MRN: {{mrn}}.\",\n  \"channel\": \"IN_APP\",\n  \"variables\": {\n    \"patientName\": \"string\",\n    \"mrn\": \"string\"\n  },\n  \"isActive\": true\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"code\": \"string\",\n  \"name\": \"string\",\n  \"subject\": \"string\",\n  \"body\": \"string\",\n  \"channel\": \"string\",\n  \"variables\": {},\n  \"isActive\": true,\n  \"version\": 4468.427707327317,\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\"\n}"
+      }
+    ],
+    "matchedKw": [
+      "hold"
+    ]
+  },
+  {
+    "folder": "15. OCR & Document Verification",
+    "name": "Create an OCR Document Template with field definitions",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/ocr/templates",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"code\": \"TPL_LAB_CBC\",\n  \"name\": \"Complete Blood Count (CBC) Lab Report Template\",\n  \"documentType\": \"LAB_REPORT\",\n  \"fieldDefinitions\": {\n    \"patientName\": {\n      \"type\": \"string\",\n      \"required\": true\n    },\n    \"hemoglobin\": {\n      \"type\": \"number\",\n      \"min\": 5,\n      \"max\": 20\n    }\n  },\n  \"validationRules\": {\n    \"requireDoctorSignature\": true\n  },\n  \"isActive\": true\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"code\": \"string\",\n  \"name\": \"string\",\n  \"documentType\": \"string\",\n  \"fieldDefinitions\": {},\n  \"validationRules\": {},\n  \"version\": 1384.4215281001116,\n  \"isActive\": true,\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\"\n}"
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "17. Governance, Legal & Compliance",
+    "name": "Create a new feature flag with rollout rules",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/governance/features",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"code\": \"FEATURE_AI_OCR_PROCESSING\",\n  \"name\": \"AI Document OCR Processing Engine\",\n  \"description\": \"Enables automated extraction of clinical reports via OCR\",\n  \"status\": \"BETA\",\n  \"enabledForRoles\": [\n    \"ADMIN\",\n    \"DOCTOR\"\n  ],\n  \"enabledForModules\": [\n    \"ai-ocr\",\n    \"medical-record\"\n  ],\n  \"rolloutPercentage\": 50\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"code\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"status\": \"string\",\n  \"enabledForRoles\": [\n    \"string\",\n    \"string\"\n  ],\n  \"enabledForModules\": [\n    \"string\",\n    \"string\"\n  ],\n  \"rolloutPercentage\": 5476.086780778079,\n  \"version\": 5171.812910596798,\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\"\n}"
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "18. Security, Threat Detection & Sessions",
+    "name": "Capture patient consent record",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/security/consents",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"patientId\": \"{{patientId}}\",\n  \"consentType\": \"GENERAL_MEDICAL_TREATMENT\",\n  \"description\": \"Informed consent for general outpatient treatment and diagnostic examinations\",\n  \"validUntil\": \"2027-12-31T23:59:59.000Z\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"patientId\": \"string\",\n  \"consentType\": \"string\",\n  \"status\": \"string\",\n  \"purpose\": \"string\",\n  \"authorizedDoctorId\": \"string\",\n  \"authorizedFacilityId\": \"string\",\n  \"accessScope\": \"string\",\n  \"grantedAt\": \"string\",\n  \"expiresAt\": \"string\",\n  \"withdrawnAt\": \"string\",\n  \"capturedBy\": \"string\",\n  \"evidenceReference\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\"\n}"
+      }
+    ],
+    "matchedKw": [
+      "treatment"
+    ]
+  },
+  {
+    "folder": "18. Security, Threat Detection & Sessions",
+    "name": "Capture patient consent record",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/security/consents/grant",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"patientId\": \"patient-uuid-1\",\n  \"purpose\": \"Authorization for clinical data processing and treatment history sharing\",\n  \"consentType\": \"TREATMENT\",\n  \"authorizedDoctorId\": \"doctor-uuid-1\",\n  \"authorizedFacilityId\": \"facility-uuid-1\",\n  \"accessScope\": \"ALL\",\n  \"expiresAt\": \"2026-12-31T23:59:59.000Z\",\n  \"evidenceReference\": \"DOC_REF_SIGNED_CONSENT_FORM_123\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"patientId\": \"string\",\n  \"consentType\": \"string\",\n  \"status\": \"string\",\n  \"purpose\": \"string\",\n  \"authorizedDoctorId\": \"string\",\n  \"authorizedFacilityId\": \"string\",\n  \"accessScope\": \"string\",\n  \"grantedAt\": \"string\",\n  \"expiresAt\": \"string\",\n  \"withdrawnAt\": \"string\",\n  \"capturedBy\": \"string\",\n  \"evidenceReference\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\"\n}"
+      }
+    ],
+    "matchedKw": [
+      "treatment",
+      "facility",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "18. Security, Threat Detection & Sessions",
+    "name": "Create API key for developer / partner system integration",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/security/api-keys",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"name\": \"Partner Clinical Portal Integration\",\n  \"scopes\": [\n    \"read:patients\",\n    \"write:appointments\"\n  ],\n  \"expiresAt\": \"2027-12-31T23:59:59.000Z\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"prefix\": \"string\",\n  \"scopes\": [\n    \"string\",\n    \"string\"\n  ],\n  \"status\": \"string\",\n  \"expiresAt\": \"string\",\n  \"createdAt\": \"string\",\n  \"key\": \"string\",\n  \"isOperational\": false,\n  \"notice\": \"string\"\n}"
+      }
+    ],
+    "matchedKw": [
+      "appointment"
+    ]
+  },
+  {
+    "folder": "19. Insurance Platform & Claims",
+    "name": "Activate an insurance policy",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/insurance/policies/:id/activate",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"reason\": \"Action requested by policy holder/admin\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"providerId\": \"string\",\n  \"planId\": \"string\",\n  \"providerName\": \"string\",\n  \"policyNumber\": \"string\",\n  \"groupNumber\": \"string\",\n  \"status\": \"string\",\n  \"coverageDetails\": \"string\",\n  \"startDate\": \"string\",\n  \"expiryDate\": \"string\",\n  \"verificationStatus\": \"string\",\n  \"verifiedBy\": \"string\",\n  \"verifiedAt\": \"string\",\n  \"copayAmount\": 1861.2079381306867,\n  \"deductibleAmount\": 8603.43468604731,\n  \"maxLimit\": 1821.3364487517158,\n  \"preAuthRequir"
+      }
+    ],
+    "matchedKw": [
+      "hold"
+    ]
+  },
+  {
+    "folder": "19. Insurance Platform & Claims",
+    "name": "Renew an insurance policy (extends validity by 1 year)",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/insurance/policies/:id/renew",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"reason\": \"Action requested by policy holder/admin\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"providerId\": \"string\",\n  \"planId\": \"string\",\n  \"providerName\": \"string\",\n  \"policyNumber\": \"string\",\n  \"groupNumber\": \"string\",\n  \"status\": \"string\",\n  \"coverageDetails\": \"string\",\n  \"startDate\": \"string\",\n  \"expiryDate\": \"string\",\n  \"verificationStatus\": \"string\",\n  \"verifiedBy\": \"string\",\n  \"verifiedAt\": \"string\",\n  \"copayAmount\": 1861.2079381306867,\n  \"deductibleAmount\": 8603.43468604731,\n  \"maxLimit\": 1821.3364487517158,\n  \"preAuthRequir"
+      }
+    ],
+    "matchedKw": [
+      "hold"
+    ]
+  },
+  {
+    "folder": "19. Insurance Platform & Claims",
+    "name": "Suspend an insurance policy",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/insurance/policies/:id/suspend",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"reason\": \"Action requested by policy holder/admin\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"providerId\": \"string\",\n  \"planId\": \"string\",\n  \"providerName\": \"string\",\n  \"policyNumber\": \"string\",\n  \"groupNumber\": \"string\",\n  \"status\": \"string\",\n  \"coverageDetails\": \"string\",\n  \"startDate\": \"string\",\n  \"expiryDate\": \"string\",\n  \"verificationStatus\": \"string\",\n  \"verifiedBy\": \"string\",\n  \"verifiedAt\": \"string\",\n  \"copayAmount\": 1861.2079381306867,\n  \"deductibleAmount\": 8603.43468604731,\n  \"maxLimit\": 1821.3364487517158,\n  \"preAuthRequir"
+      }
+    ],
+    "matchedKw": [
+      "hold"
+    ]
+  },
+  {
+    "folder": "19. Insurance Platform & Claims",
+    "name": "Cancel an insurance policy",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/insurance/policies/:id/cancel",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"reason\": \"Action requested by policy holder/admin\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"providerId\": \"string\",\n  \"planId\": \"string\",\n  \"providerName\": \"string\",\n  \"policyNumber\": \"string\",\n  \"groupNumber\": \"string\",\n  \"status\": \"string\",\n  \"coverageDetails\": \"string\",\n  \"startDate\": \"string\",\n  \"expiryDate\": \"string\",\n  \"verificationStatus\": \"string\",\n  \"verifiedBy\": \"string\",\n  \"verifiedAt\": \"string\",\n  \"copayAmount\": 1861.2079381306867,\n  \"deductibleAmount\": 8603.43468604731,\n  \"maxLimit\": 1821.3364487517158,\n  \"preAuthRequir"
+      }
+    ],
+    "matchedKw": [
+      "hold"
+    ]
+  },
+  {
+    "folder": "19. Insurance Platform & Claims",
+    "name": "Archive an insurance policy",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/insurance/policies/:id/archive",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"reason\": \"Action requested by policy holder/admin\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"providerId\": \"string\",\n  \"planId\": \"string\",\n  \"providerName\": \"string\",\n  \"policyNumber\": \"string\",\n  \"groupNumber\": \"string\",\n  \"status\": \"string\",\n  \"coverageDetails\": \"string\",\n  \"startDate\": \"string\",\n  \"expiryDate\": \"string\",\n  \"verificationStatus\": \"string\",\n  \"verifiedBy\": \"string\",\n  \"verifiedAt\": \"string\",\n  \"copayAmount\": 1861.2079381306867,\n  \"deductibleAmount\": 8603.43468604731,\n  \"maxLimit\": 1821.3364487517158,\n  \"preAuthRequir"
+      }
+    ],
+    "matchedKw": [
+      "hold"
+    ]
+  },
+  {
+    "folder": "19. Insurance Platform & Claims",
+    "name": "Restore an archived insurance policy",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/insurance/policies/:id/restore",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"reason\": \"Action requested by policy holder/admin\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"providerId\": \"string\",\n  \"planId\": \"string\",\n  \"providerName\": \"string\",\n  \"policyNumber\": \"string\",\n  \"groupNumber\": \"string\",\n  \"status\": \"string\",\n  \"coverageDetails\": \"string\",\n  \"startDate\": \"string\",\n  \"expiryDate\": \"string\",\n  \"verificationStatus\": \"string\",\n  \"verifiedBy\": \"string\",\n  \"verifiedAt\": \"string\",\n  \"copayAmount\": 1861.2079381306867,\n  \"deductibleAmount\": 8603.43468604731,\n  \"maxLimit\": 1821.3364487517158,\n  \"preAuthRequir"
+      }
+    ],
+    "matchedKw": [
+      "hold"
+    ]
+  },
+  {
+    "folder": "19. Insurance Platform & Claims",
+    "name": "Create a claim draft attaching medical records and reports",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/insurance/claims",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"policyId\": \"policy-uuid-1\",\n  \"totalAmount\": 1250.5,\n  \"diagnosisCodes\": [\n    \"ICD10-E11.9\",\n    \"ICD10-I10\"\n  ],\n  \"treatmentDate\": \"2026-07-28\",\n  \"notes\": \"Inpatient consultation and lab test reimbursement claim\",\n  \"attachedRecordIds\": [\n    \"medical-record-uuid-1\"\n  ],\n  \"attachedReportIds\": [\n    \"report-uuid-1\"\n  ]\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"policyId\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"claimNumber\": \"string\",\n  \"status\": \"string\",\n  \"totalAmount\": 4201.0119980453865,\n  \"diagnosisCodes\": [\n    \"string\",\n    \"string\"\n  ],\n  \"treatmentDate\": \"string\",\n  \"notes\": \"string\",\n  \"attachedRecordIds\": [\n    \"string\",\n    \"string\"\n  ],\n  \"attachedReportIds\": [\n    \"string\",\n    \"string\"\n  ],\n  \"createdAt\": \"string\"\n}"
+      }
+    ],
+    "matchedKw": [
+      "treatment",
+      "consultation"
+    ]
+  },
+  {
+    "folder": "20. Clinical Reports & Analytics",
+    "name": "Get Executive Dashboard platform summary statistics",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/reports/dashboard/executive?startDate=string&endDate=string&facilityId=string",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"platformOverview\": {},\n  \"isPartialData\": true,\n  \"unavailableMetrics\": [\n    \"string\",\n    \"string\"\n  ],\n  \"systemHealth\": {}\n}"
+      }
+    ],
+    "matchedKw": [
+      "facility"
+    ]
+  },
+  {
+    "folder": "20. Clinical Reports & Analytics",
+    "name": "Upload and register a diagnostic medical report",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/reports",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"title\": \"Complete Blood Count (CBC) Lab Report\",\n  \"fileName\": \"cbc_report_2026.pdf\",\n  \"fileSize\": 524288,\n  \"mimeType\": \"application/pdf\",\n  \"storageUrl\": \"https://cdn.hvapi.com/reports/2026/07/cbc_report_2026.pdf\",\n  \"description\": \"Routine blood panel covering WBC, RBC, hemoglobin, and platelets\",\n  \"category\": \"LAB\",\n  \"reportDate\": \"2026-07-30\",\n  \"prescribedBy\": \"Dr. House\",\n  \"providerName\": \"Chugtai Labs\",\n  \"facilityName\": \"Main Branch Clinic\",\n  \"doctorName\": \"Dr. John Watson\",\n  \"pageCount\": 2,\n  \"language\": \"en\",\n  \"tags\": [\n    \"blood\",\n    \"cbc\",\n    \"hematology\"\n  ],\n  \"notes\": \"Patient felt slightly dizzy prior to sample collection\",\n  \"storageKey\": \"reports/2026/07/cbc_report_2026.pdf\",\n  \"checksum\": \"a1b2c3d4e5f6...\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"category\": \"string\",\n  \"status\": \"string\",\n  \"reportDate\": \"string\",\n  \"prescribedBy\": \"string\",\n  \"providerName\": \"string\",\n  \"facilityName\": \"string\",\n  \"doctorName\": \"string\",\n  \"pageCount\": 1508.8295041362899,\n  \"language\": \"string\",\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"notes\": \"string\",\n  \"verificationStatus\": \"string\",\n  \"verifiedBy\": \"string\",\n  \"verifiedAt\": \"string\",\n  \"curre"
+      }
+    ],
+    "matchedKw": [
+      "facility",
+      "doctor"
+    ]
+  },
+  {
+    "folder": "20. Clinical Reports & Analytics",
+    "name": "Search diagnostic reports by title, description, doctor, provider, or tags",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/reports/search?q=string",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"patientProfileId\": \"string\",\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"category\": \"string\",\n    \"status\": \"string\",\n    \"reportDate\": \"string\",\n    \"prescribedBy\": \"string\",\n    \"providerName\": \"string\",\n    \"facilityName\": \"string\",\n    \"doctorName\": \"string\",\n    \"pageCount\": 9311.140938521192,\n    \"language\": \"string\",\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"notes\": \"string\",\n    \"verificationStatus\": \"string\",\n    \"verifiedBy\": \""
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "20. Clinical Reports & Analytics",
+    "name": "Update diagnostic report metadata (blocked if ARCHIVED)",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/reports/:id",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"title\": \"Updated Report Title\",\n  \"description\": \"string\",\n  \"category\": \"INSURANCE\",\n  \"reportDate\": \"string\",\n  \"providerName\": \"string\",\n  \"doctorName\": \"string\",\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"notes\": \"string\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"category\": \"string\",\n  \"status\": \"string\",\n  \"reportDate\": \"string\",\n  \"prescribedBy\": \"string\",\n  \"providerName\": \"string\",\n  \"facilityName\": \"string\",\n  \"doctorName\": \"string\",\n  \"pageCount\": 5372.359727012803,\n  \"language\": \"string\",\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"notes\": \"string\",\n  \"verificationStatus\": \"string\",\n  \"verifiedBy\": \"string\",\n  \"verifiedAt\": \"string\",\n  \"curren"
+      }
+    ],
+    "matchedKw": [
+      "doctor"
+    ]
+  },
+  {
+    "folder": "23. Observability & Performance Probes",
+    "name": "Readiness probe endpoint",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/observability/health/ready",
+    "headers": [],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "name": "Service is ready to handle traffic",
+        "code": 200,
+        "status": "OK",
+        "body": ""
+      },
+      {
+        "name": "Subsystem components degraded; not ready",
+        "code": 503,
+        "status": "Service Unavailable",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "readiness"
+    ]
+  },
+  {
+    "folder": "24. Immunisation Platform & Vaccines",
+    "name": "Search immunisation directory by vaccine, batch, or facility",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/immunisation/search?q=string",
+    "headers": [
+      "Accept: application/json"
+    ],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"patientProfileId\": \"string\",\n    \"vaccineId\": \"string\",\n    \"scheduleId\": \"string\",\n    \"doseNumber\": 7810.9989123186715,\n    \"status\": \"string\",\n    \"dueDate\": \"string\",\n    \"administeredDate\": \"string\",\n    \"administeredBy\": \"string\",\n    \"facilityName\": \"string\",\n    \"batchNumber\": \"string\",\n    \"lotNumber\": \"string\",\n    \"expirationDate\": \"string\",\n    \"siteOfInjection\": \"string\",\n    \"routeOfAdmin\": \"string\",\n    \"notes\": \"string\",\n    \"isDeleted\": true,\n    \""
+      }
+    ],
+    "matchedKw": [
+      "facility"
+    ]
+  },
+  {
+    "folder": "24. Immunisation Platform & Vaccines",
+    "name": "Administer a dose (captures batch, lot, site, administrator)",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/immunisation/records/:id/administer",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"administeredBy\": \"Dr. Sarah Connor, RN\",\n  \"facilityName\": \"City Central Immunisation Clinic\",\n  \"batchNumber\": \"BATCH-2026-X99\",\n  \"lotNumber\": \"LOT-778899\",\n  \"expirationDate\": \"2027-12-31\",\n  \"siteOfInjection\": \"Left Deltoid\",\n  \"routeOfAdmin\": \"Intramuscular (IM)\",\n  \"notes\": \"Patient tolerated dose well. No immediate reaction.\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"vaccineId\": \"string\",\n  \"scheduleId\": \"string\",\n  \"doseNumber\": 6805.363271371204,\n  \"status\": \"string\",\n  \"dueDate\": \"string\",\n  \"administeredDate\": \"string\",\n  \"administeredBy\": \"string\",\n  \"facilityName\": \"string\",\n  \"batchNumber\": \"string\",\n  \"lotNumber\": \"string\",\n  \"expirationDate\": \"string\",\n  \"siteOfInjection\": \"string\",\n  \"routeOfAdmin\": \"string\",\n  \"notes\": \"string\",\n  \"isDeleted\": true,\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"str"
+      }
+    ],
+    "matchedKw": [
+      "facility"
+    ]
+  },
+  {
+    "folder": "27. Healthcare Financing & Financial Assistance",
+    "name": "Get details of specific healthcare financing offer or treatment proposal",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/financing/offers/:id",
+    "headers": [],
+    "bodyRaw": "",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": ""
+      }
+    ],
+    "matchedKw": [
+      "treatment"
+    ]
+  },
+  {
+    "folder": "27. Healthcare Financing & Financial Assistance",
+    "name": "Submit application for healthcare financing / EMI assistance",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/financing/apply",
+    "headers": [
+      "Content-Type: application/json",
+      "Accept: application/json"
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"optionId\": \"opt-zerocost-care\",\n  \"facilityId\": \"{{facilityId}}\",\n  \"treatmentName\": \"Orthopedic Knee Replacement Surgery\",\n  \"requestedAmount\": 50000,\n  \"tenureMonths\": 6,\n  \"monthlyIncome\": 65000,\n  \"employmentType\": \"SALARIED\",\n  \"panOrNationalId\": \"ABCDE1234F\",\n  \"notes\": \"Planned surgery next month\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"applicationNumber\": \"string\",\n  \"userId\": \"string\",\n  \"optionId\": \"string\",\n  \"partnerName\": \"string\",\n  \"treatmentName\": \"string\",\n  \"requestedAmount\": 2472.811227304057,\n  \"tenureMonths\": 3931.693074332745,\n  \"monthlyEstimatedEmi\": 3747.5439895760755,\n  \"status\": \"string\",\n  \"adminNotes\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"isDemonstrationStorage\": true,\n  \"storageNotice\": \"string\"\n}"
+      }
+    ],
+    "matchedKw": [
+      "treatment",
+      "facility"
+    ]
+  }
+]

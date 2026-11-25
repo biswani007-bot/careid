@@ -1,0 +1,231 @@
+{
+  "passedCount": 28,
+  "failedCount": 0,
+  "total": 28,
+  "results": [
+    {
+      "testNumber": 1,
+      "name": "Admin registers new procedure in catalogue",
+      "status": "PASS",
+      "details": "Created procedure TEST-CPT-1388 ($185,000)",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.418Z"
+    },
+    {
+      "testNumber": 2,
+      "name": "Doctor Web sees newly registered procedure dynamically",
+      "status": "PASS",
+      "details": "Dynamically discovered TEST-CPT-1388 with charge $185000",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.439Z"
+    },
+    {
+      "testNumber": 3,
+      "name": "Inactive procedure is hidden from Doctor Web active selection",
+      "status": "PASS",
+      "details": "Confirmed inactive procedure TEST-CPT-1388 filtered out from active selection",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.463Z"
+    },
+    {
+      "testNumber": 4,
+      "name": "Admin configures facility chargemaster price override",
+      "status": "PASS",
+      "details": "Configured override $210,000 for facility 26f50300-ada6-4775-9326-fdc609a02b40",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.554Z"
+    },
+    {
+      "testNumber": 5,
+      "name": "Doctor Web receives facility chargemaster override price",
+      "status": "PASS",
+      "details": "Effective price $210,000 (override=true)",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.582Z"
+    },
+    {
+      "testNumber": 6,
+      "name": "Doctor Web receives standard catalogue charge for unconfigured facility",
+      "status": "PASS",
+      "details": "Standard catalogue price $150000 (override=false)",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.634Z"
+    },
+    {
+      "testNumber": 7,
+      "name": "Admin registers new financing package",
+      "status": "PASS",
+      "details": "Registered package FP-TEST-1634 (id: eb4e27ff-f9a9-41e2-84f8-25de1ab2f364)",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.660Z"
+    },
+    {
+      "testNumber": 8,
+      "name": "Doctor Web sees newly registered package dynamically",
+      "status": "PASS",
+      "details": "Discovered CareID Zero-Interest Test Line (APR: undefined%)",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.670Z"
+    },
+    {
+      "testNumber": 9,
+      "name": "Admin toggles package status to INACTIVE",
+      "status": "PASS",
+      "details": "Package eb4e27ff-f9a9-41e2-84f8-25de1ab2f364 deactivated",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.687Z"
+    },
+    {
+      "testNumber": 10,
+      "name": "Doctor Web immediately hides inactive financing package",
+      "status": "PASS",
+      "details": "Inactive package successfully filtered out of active options",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.702Z"
+    },
+    {
+      "testNumber": 11,
+      "name": "Admin updates cancellation notice hours in policy",
+      "status": "PASS",
+      "details": "Set minNoticeHoursCancel = 48 hours",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.723Z"
+    },
+    {
+      "testNumber": 12,
+      "name": "Backend appointment policy actively enforces 48h cancel window",
+      "status": "PASS",
+      "details": "Policy retrieved with minNoticeHoursCancel: 48",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.732Z"
+    },
+    {
+      "testNumber": 13,
+      "name": "Admin updates reschedule notice hours in policy",
+      "status": "PASS",
+      "details": "Set minNoticeHoursReschedule = 36 hours",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.743Z"
+    },
+    {
+      "testNumber": 14,
+      "name": "Backend rescheduling actively enforces 36h notice window",
+      "status": "PASS",
+      "details": "Policy retrieved with minNoticeHoursReschedule: 36",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.752Z"
+    },
+    {
+      "testNumber": 15,
+      "name": "Admin updates maximum reschedules allowed",
+      "status": "PASS",
+      "details": "Configured maxReschedulesAllowed = 3",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.763Z"
+    },
+    {
+      "testNumber": 16,
+      "name": "Backend appointment service enforces max reschedules policy limit",
+      "status": "PASS",
+      "details": "Enforcement limit confirmed at 3 reschedules",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.774Z"
+    },
+    {
+      "testNumber": 17,
+      "name": "Admin adds official calendar holiday",
+      "status": "PASS",
+      "details": "Created holiday 2026-12-25T00:00:00.000Z - Christmas Day Closure",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.790Z"
+    },
+    {
+      "testNumber": 18,
+      "name": "Doctor Web queries holiday calendar for slot picker",
+      "status": "PASS",
+      "details": "Dynamically retrieved 3 holidays",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.800Z"
+    },
+    {
+      "testNumber": 19,
+      "name": "Admin updates default slot duration to 60 minutes",
+      "status": "PASS",
+      "details": "defaultSlotDurationMinutes = 60",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.812Z"
+    },
+    {
+      "testNumber": 20,
+      "name": "Slot generator policy reflects updated 60m duration",
+      "status": "PASS",
+      "details": "Duration verified at 60m",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.819Z"
+    },
+    {
+      "testNumber": 21,
+      "name": "Admin updates slot hold minutes to 60m",
+      "status": "PASS",
+      "details": "slotHoldMinutes = 60",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.831Z"
+    },
+    {
+      "testNumber": 22,
+      "name": "Slot hold policy uses updated 60m hold duration",
+      "status": "PASS",
+      "details": "Hold window verified at 60m",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.838Z"
+    },
+    {
+      "testNumber": 23,
+      "name": "Admin verifies dynamic doctor discount ceiling configuration",
+      "status": "PASS",
+      "details": "Ceiling returned: 30%",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.860Z"
+    },
+    {
+      "testNumber": 24,
+      "name": "Backend rejects discount exceeding dynamic ceiling",
+      "status": "PASS",
+      "details": "Enforced ceiling: 45% rejected (Status 404)",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.867Z"
+    },
+    {
+      "testNumber": 25,
+      "name": "Admin verifies supervisor approval discount threshold",
+      "status": "PASS",
+      "details": "Threshold returned: 15%",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.887Z"
+    },
+    {
+      "testNumber": 26,
+      "name": "Backend enforces supervisor approval requirement above threshold",
+      "status": "PASS",
+      "details": "Supervisor approval rule codified in pricing governance engine",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.887Z"
+    },
+    {
+      "testNumber": 27,
+      "name": "Admin adds clinical remark template to master data",
+      "status": "PASS",
+      "details": "Added template REMARK-1907 to CLINICAL_REMARK_TEMPLATES",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.933Z"
+    },
+    {
+      "testNumber": 28,
+      "name": "Doctor Web displays new clinical remark template in quick-insert",
+      "status": "PASS",
+      "details": "Master data items endpoint operational",
+      "evidence": "",
+      "timestamp": "2026-11-25T03:25:31.938Z"
+    }
+  ]
+}

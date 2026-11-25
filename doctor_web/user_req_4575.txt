@@ -1,0 +1,293 @@
+<USER_REQUEST>
+# CAREID — ADMIN DOCTOR REGISTRATION TO DOCTOR EMAIL/PASSWORD LOGIN
+## Complete End-to-End Account Provisioning Integration
+
+### Objective
+
+Implement a complete workflow in which an Administrator registers a Doctor through the Admin Portal, the system creates the Doctor's actual login account with a temporary password, and that Doctor can log in through the Doctor Web portal using the registered email and temporary password.
+
+After successful authentication, the Doctor must land on their own Doctor Dashboard with their correct Doctor Master Registry profile.
+
+This must be a real backend-integrated workflow, not a frontend simulation.
+
+---
+
+## 1. Project Locations
+
+### Doctor Web
+`D:\New folder\New folder\doctor web\doctor-web-frontend-main`
+
+### Admin Web
+`D:\New folder\New folder\doctor web\doctor-web-frontend-main\healthvault`
+
+### Backend
+`D:\New folder\New folder\doctor web\doctor-web-frontend-main\backend`
+
+### API Reference
+`D:\New folder\New folder\doctor web\doctor-web-frontend-main\Postman collection`
+
+Inspect the existing implementation in all three projects before making changes.
+
+---
+
+## 2. Admin Doctor Registration Workflow
+
+Existing Admin route:
+
+`/admin/doctors/create`
+
+When an Administrator registers a Doctor, the system must:
+
+1. Create the Doctor's clinical profile.
+2. Create an associated authentication user account.
+3. Associate the authentication account with the correct Doctor profile.
+4. Assign the correct `DOCTOR` role.
+5. Associate the Doctor with the selected primary facility.
+6. Preserve medical license and verification document information.
+7. Generate a secure temporary password.
+8. Return the generated temporary password to the authorized Admin only once, if supported by the backend security design.
+
+The account must be created as part of one logically consistent registration workflow.
+
+Do not create a Doctor profile without a linked login account and then incorrectly report that registration is complete.
+
+If account provisioning fails, clearly report the failure and avoid creating orphaned or duplicate Doctor records.
+
+Use database transactions or an existing safe orchestration mechanism where appropriate.
+
+---
+
+## 3. Temporary Password Requirements
+
+The temporary password must:
+
+- Be generated securely on the backend.
+- Meet the existing password policy.
+- Never be hardcoded.
+- Never be stored in plaintext.
+- Be hashed using the backend's existing secure password hashing mechanism.
+- Never appear in application logs.
+- Never be exposed in API responses after the initial authorized provisioning response.
+- Be accessible only to the authorized Administrator during account provisioning.
+
+If the backend supports forced password change, require the Doctor to change the temporary password after first successful login.
+
+Do not implement a fake first-login password-change mechanism without backend support.
+
+---
+
+## 4. Doctor Email/Password Login
+
+Existing Doctor Web route:
+
+`/auth/login`
+
+The email login UI has already been implemented.
+
+Inspect the existing implementation and integrate it with the real backend authentication workflow.
+
+Expected request:
+
+Use the actual authentication endpoint and DTO defined by the backend/Postman collection.
+
+The frontend must:
+
+1. Submit the Doctor's email and password.
+2. Receive the actual backend authentication response.
+3. Store authentication tokens using the existing secure authentication architecture.
+4. Validate the authenticated user.
+5. Verify that the account has the `DOCTOR` role.
+6. Retrieve the associated Doctor Master Registry profile.
+7. Verify that the authenticated user is linked to the correct Doctor profile.
+8. Load the correct Doctor-specific data.
+9. Redirect to `/dashboard`.
+
+Do not allow an ADMIN or SUPER_ADMIN account to enter the Doctor Portal as a Doctor.
+
+Do not identify the Doctor using email alone after authentication. Use the authenticated backend identity and its actual Doctor profile relationship.
+
+---
+
+## 5. Identity and Profile Linking
+
+This is a critical requirement.
+
+Verify the relationship:
+
+`Authentication User ID → Doctor Profile ID → Primary Facility ID`
+
+Ensure:
+
+- The registered email belongs to the created authentication user.
+- The authentication user has the DOCTOR role.
+- The Doctor profile is linked to that exact user ID.
+- The Doctor's primary facility assignment is correctly persisted.
+- `GET /api/v1/auth/me` returns the correct authenticated identity.
+- `GET /api/v1/doctors/me` returns the corresponding Doctor profile.
+
+Prevent a login from loading another Doctor's profile.
+
+Do not rely on frontend static IDs, hardcoded Doctor data or local storage identity overrides.
+
+---
+
+## 6. Backend API and Database Audit
+
+Inspect the existing backend implementation and Postman collection.
+
+Pay special attention to:
+
+- Doctor registration endpoint.
+- `POST /api/v1/admin/users`, if available.
+- Existing Doctor creation services.
+- Password login endpoint.
+- Authentication and token generation.
+- Role assignment.
+- Doctor profile relationship.
+- Facility affiliation.
+- First-login/password reset support.
+
+Determine whether Doctor profile creation and user account creation are already supported.
+
+If existing endpoints can support the workflow, reuse them.
+
+If a required backend API is genuinely missing, implement the necessary backend functionality because end-to-end account provisioning requires it.
+
+Preserve the existing database schema wherever possible. Do not introduce duplicate user or Doctor tables.
+
+If a schema change is unavoidable, explain the reason and obtain approval before applying the migration.
+
+Do not invent endpoints, DTO properties or role values. Define contracts based on the existing backend architecture.
+
+---
+
+## 7. Admin Portal UI
+
+In the existing Doctor Registration form:
+
+- Keep the current design and layout.
+- Integrate the real account provisioning response.
+- Display the temporary password only after successful account creation.
+- Provide a Copy Credentials action.
+- Display the Doctor email clearly.
+- Display a warning that the temporary password should be shared securely.
+- Never display a fake password.
+- Never display success when backend account provisioning fails.
+
+If account creation succeeds but Doctor profile creation fails, handle the partial failure safely.
+
+---
+
+## 8. Doctor Portal Authentication
+
+Ensure the existing Email & Password Login option works with provisioned Doctor credentials.
+
+Expected behavior:
+
+- Valid Doctor credentials → authenticate and open Doctor Dashboard.
+- Invalid password → show appropriate authentication error.
+- Unprovisioned email → show appropriate account-not-found message.
+- ADMIN credentials → deny access to Doctor Portal.
+- Inactive Doctor account → deny access according to backend account status.
+- Unlinked Doctor account → do not silently load an unrelated profile.
+- Expired temporary password → follow the backend's supported password reset flow.
+
+Preserve existing Phone OTP login functionality.
+
+---
+
+## 9. End-to-End Test Scenario
+
+Use a designated local test environment and test Doctor account.
+
+### Test A — Admin Registration
+1. Log in as Admin.
+2. Open Doctors → Add Doctor.
+3. Register a new test Doctor with a unique email.
+4. Complete required details.
+5. Submit registration.
+6. Verify that both the Doctor profile and authentication user are created.
+7. Verify their relationship in the database.
+8. Verify the `DOCTOR` role.
+9. Verify that the temporary password is returned only to the authorized Admin.
+
+### Test B — Doctor Login
+1. Open Doctor Web.
+2. Select Login with Email.
+3. Enter the newly registered Doctor email.
+4. Enter the temporary password.
+5. Submit.
+6. Verify successful authentication.
+7. Verify the user role.
+8. Verify the Doctor profile ID.
+9. Verify the primary facility.
+10. Verify redirect to the Doctor Dashboard.
+
+### Test C — Security
+1. Try an incorrect password.
+2. Try ADMIN credentials on Doctor Web.
+3. Try an inactive Doctor account.
+4. Verify that one Doctor cannot access another Doctor's records.
+5. Verify that the temporary password is not stored or logged in plaintext.
+
+### Test D — Regression
+1. Existing Phone OTP login still works.
+2. Existing Admin login still works.
+3. Existing Doctor profiles are not duplicated.
+4. Existing facility relationships are preserved.
+
+---
+
+## 10. Strict Restrictions
+
+- No mock authentication.
+- No fake successful login.
+- No hardcoded credentials.
+- No bypassing role-based authorization.
+- No hardcoded Doctor IDs.
+- No unrelated UI redesign.
+- No unrelated business feature changes.
+- Do not break existing Phone OTP login.
+- Do not delete existing database records.
+- Do not reset PostgreSQL.
+- Do not modify unrelated API contracts.
+- Do not expose temporary passwords or tokens in logs.
+
+---
+
+## 11. Final Deliverables
+
+Provide:
+
+1. Complete Admin-to-Doctor account provisioning workflow.
+2. Backend API changes, if required.
+3. Doctor Web email login integration.
+4. User-to-Doctor profile linking verification.
+5. Database relationship verification.
+6. End-to-end test results.
+7. List of modified files.
+8. Any remaining backend dependencies.
+
+Create a final report:
+
+`docs/ADMIN_DOCTOR_ACCOUNT_PROVISIONING_REPORT.md`
+
+Clearly distinguish:
+- Implemented and tested.
+- Implemented but not runtime verified.
+- Backend dependency.
+- Failed tests.
+
+### Final Acceptance Criteria
+
+The task is complete only when a Doctor registered through Admin can use the exact email and temporary password generated during registration to log in through Doctor Web and access their own authenticated Doctor Dashboard.
+
+A successful frontend build alone is not sufficient evidence of completion.
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-11-18T18:30:30+05:30.
+
+The user's current state is as follows:
+Active Document: d:\New folder\New folder\doctor web\doctor-web-frontend-main\healthvault\.env (LANGUAGE_UNSPECIFIED)
+Cursor is on line: 2
+</ADDITIONAL_METADATA>

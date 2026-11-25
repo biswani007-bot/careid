@@ -1,0 +1,30 @@
+export class UserEntity {
+  id!: string;
+  phone!: string;
+  email?: string | null;
+  passwordHash?: string | null;
+  status!: 'ACTIVE' | 'INACTIVE' | 'BLOCKED';
+  createdAt!: Date;
+  updatedAt!: Date;
+}
+
+export class AuthOtpEntity {
+  id!: string;
+  userId!: string;
+  otpHash!: string;
+  expiresAt!: Date;
+  isVerified!: boolean;
+  attempts!: number;
+  resendCount!: number;
+  createdAt!: Date;
+}
+
+export class RefreshTokenEntity {
+  id!: string;
+  userId!: string;
+  tokenHash!: string;
+  isRevoked!: boolean;
+  expiresAt!: Date;
+  createdAt!: Date;
+}
+

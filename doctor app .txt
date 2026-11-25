@@ -1,0 +1,1106 @@
+# CAREID — DOCTOR MOBILE APPLICATION
+## Product Requirements Document (PRD) & Functional Specification (FSD)
+
+**Document ID:** CAREID-DOCTOR-APP-PRD-FSD-001  
+**Version:** 1.0 — Proposed Baseline  
+**Status:** Ready for stakeholder review; source-verification items remain open  
+**Platform:** Flutter — Android and iOS  
+**Application:** CAREID_doctor_app  
+**Product:** CareID / HEALTH VAULT 360  
+**Development Owner:** Developer 2  
+**Related Systems:** CareID Backend, Admin Web, Doctor Web, Patient App  
+**Last Updated:** 25 November 2026
+
+---
+
+# 1. DOCUMENT PURPOSE
+
+This document defines the proposed functional, technical and operational scope of the **CareID Doctor Mobile Application**.
+
+The Doctor App is an **Expanded Clinical Companion** that enables authorized doctors to perform daily clinical activities, review consultations, review treatment offers, participate in clinical clearance workflows, book appointments and procedural slots, and communicate with patients or office teams through supported workflows.
+
+The Doctor App is **not intended to duplicate every feature of Doctor Web**.
+
+The application must operate using the existing CareID Backend, shared data and Admin-managed configuration.
+
+## 1.1 Document Authority
+
+The governing requirement sources are:
+
+1. Original HEALTH VAULT 360 PRD/FSD.
+2. Approved CareID change requests, CR-02 through CR-08.
+3. Approved CareID architectural and security decisions.
+4. This Doctor App specification, after stakeholder approval.
+
+**Conflict rule:** If this document conflicts with an explicit requirement in the original PRD/FSD or approved change requests, the original approved requirement takes precedence until a formal change is approved.
+
+**Verification limitation:** The original PRD/FSD and change-request workbook were not available for direct inspection while preparing this version. Therefore, this document distinguishes established project decisions from proposed mobile design and items requiring source verification.
+
+No unverified proposal should be treated as an already-approved requirement.
+
+---
+
+# 2. PRODUCT VISION
+
+## 2.1 Product Definition
+
+CareID Doctor App is a secure mobile clinical workspace for authorized human healthcare doctors and veterinary practitioners.
+
+It enables doctors to access relevant clinical information and perform supported actions without requiring continuous access to a desktop workstation.
+
+## 2.2 Product Principles
+
+1. **Mobile-first usability:** Prioritize frequent, time-sensitive actions.
+2. **Shared Backend:** Doctor App and Doctor Web must use consistent records and business rules.
+3. **Dynamic configuration:** Configurable operational values must be managed through authorized Admin workflows, not duplicated as hardcoded frontend or Backend lists.
+4. **Clinical safety:** Preserve authorization, clinical clearance and patient identity checks.
+5. **Human/veterinary isolation:** Maintain strict separation between human and veterinary clinical workspaces.
+6. **Scope control:** Implement only documented or explicitly approved features.
+7. **Reliable persistence:** Changes must survive refresh, logout, login and application restart.
+8. **Transparent status:** Never display an action as completed until the Backend confirms it.
+
+---
+
+# 3. APPLICATION SCOPE
+
+## 3.1 Included Functional Modules
+
+| ID | Module | Proposed Scope |
+|---|---|---|
+| DA-01 | Authentication & Clinical Workspace | Login, session, authorized clinical classification |
+| DA-02 | Dashboard | Appointments, alerts, pending tasks |
+| DA-03 | Appointment Management | View, schedule, reschedule and status actions |
+| DA-04 | Patient Management | Search and view authorized patient profiles |
+| DA-05 | Clinical Records | View records, reports, history and vitals |
+| DA-06 | Mobile Consultations | Quick documentation and supported consultation actions |
+| DA-07 | Treatment Offers | Review, track and perform approved offer actions |
+| DA-08 | Clinical Clearance | View requirements, evidence and authorized clearance actions |
+| DA-09 | Procedure & Slot Booking | View eligible slots and confirm bookings |
+| DA-10 | Prescription Management | View, issue where supported, and manage pickup status |
+| DA-11 | Referrals | Create and track supported referrals |
+| DA-12 | Office Chat | Two-way office communication and templates |
+| DA-13 | Notifications | In-app alerts and task updates |
+| DA-14 | QR-Based Patient Interaction | Implement documented Patient App QR workflow |
+| DA-15 | Veterinary Workspace | Authorized veterinary clinical workflows |
+| DA-16 | Doctor Profile & Availability | Profile, facilities and supported availability management |
+
+**Important:** Inclusion in this proposed module inventory does not prove every action is required by the original PRD. Each module must be reconciled with source requirements before implementation.
+
+## 3.2 Web-First / Not Initially Duplicated
+
+The following capabilities should remain primarily in Doctor Web unless explicitly required in the original documentation or separately approved:
+
+- Full advanced treatment-offer authoring and financial modeling.
+- Complex financing package configuration.
+- Facility chargemaster maintenance.
+- Procedure catalogue administration.
+- Master-data and clinical policy administration.
+- Advanced reporting and analytics.
+- Bulk data operations.
+- Complex multi-section clinical documentation better suited to desktop workflows.
+- Administrative user, doctor and facility management.
+
+The Doctor App may display information originating from these systems without implementing their administrative editing interfaces.
+
+---
+
+# 4. USER ROLES AND ACCESS
+
+## 4.1 Supported Clinical Personas
+
+### Human Healthcare Doctor
+
+Access to authorized human patient workflows, appointments, consultations, prescriptions, referrals, clinical records and treatment processes.
+
+### Veterinary Practitioner
+
+Access to authorized animal patient workflows, pet records, guardians, vaccinations, appointments and veterinary clinical actions.
+
+## 4.2 Clinical Practice Classification
+
+Clinical practice type must be obtained from authoritative Backend data.
+
+The application must not infer clinical scope solely from a specialty name or a frontend keyword list.
+
+A valid single-scope clinician must be routed to the appropriate workspace.
+
+Missing, contradictory or unauthorized clinical scope must trigger a safe access-blocking state.
+
+## 4.3 Authorization
+
+Every sensitive Backend operation must enforce:
+
+- Authenticated identity.
+- Appropriate role and permission.
+- Patient or animal record access.
+- Facility affiliation where required.
+- Clinical practice scope.
+- Workflow-specific authorization.
+
+Hiding a button in Flutter is not a substitute for Backend authorization.
+
+---
+
+# 5. APPLICATION NAVIGATION
+
+## 5.1 Recommended Bottom Navigation
+
+**Home | Schedule | Patients | Chat | More**
+
+### Home
+Dashboard and priority clinical tasks.
+
+### Schedule
+Appointments, calendar and availability.
+
+### Patients
+Authorized patient search, records and consultations.
+
+### Chat
+Office communication.
+
+### More
+Treatment Offers, Clinical Clearance, Prescriptions, Referrals, Notifications, Profile and other approved modules.
+
+## 5.2 Navigation Requirements
+
+- Preserve context when moving between related screens.
+- Support deep links from authorized notifications where technically supported.
+- Clearly display current patient and facility.
+- Prevent accidental cross-patient actions.
+- Support loading, empty, error and retry states.
+- Do not expose unauthorized modules through direct navigation.
+
+---
+
+# 6. FUNCTIONAL REQUIREMENTS
+
+## DA-01 — AUTHENTICATION AND WORKSPACE
+
+### Features
+
+- Doctor login.
+- Session restoration.
+- Secure logout.
+- Password recovery using supported Backend flows.
+- Retrieval of doctor identity and professional profile.
+- Retrieval of clinical practice classification.
+- Human or veterinary workspace routing.
+
+### Acceptance Criteria
+
+- Valid human doctor enters the human workspace.
+- Valid veterinarian enters the veterinary workspace.
+- Suspended or unauthorized accounts cannot access protected data.
+- Contradictory clinical credentials cannot bypass the safety gate.
+- Session state survives normal app restarts where permitted.
+- Logout invalidates local access to protected content.
+
+---
+
+## DA-02 — DOCTOR DASHBOARD
+
+### Dashboard Information
+
+- Today's appointments.
+- Upcoming appointments.
+- Pending consultation tasks.
+- Pending clinical reviews or clearances.
+- Unread Office Chat messages.
+- Relevant prescription pickup tasks.
+- Referral updates.
+- Important clinical notifications.
+
+### Data Requirements
+
+All counts and statuses must originate from authorized Backend records.
+
+Do not display invented counts or static demonstration values in operational environments.
+
+### Acceptance Criteria
+
+- Dashboard information matches Backend records.
+- Counts update after supported actions.
+- Empty states are accurate.
+- Each actionable card opens the relevant workflow.
+
+---
+
+## DA-03 — APPOINTMENT MANAGEMENT
+
+### Features
+
+- View appointments by date.
+- View appointment details.
+- View patient and facility.
+- View appointment status.
+- View eligible available slots.
+- Schedule or reschedule where permitted.
+- Cancel appointments where permitted.
+- Record supported appointment status transitions.
+
+### Scheduling Rules
+
+Availability must be calculated using the existing Backend and Admin-managed scheduling policies.
+
+The app must respect:
+
+- Facility operating hours.
+- Facility timezone.
+- Doctor availability.
+- Appointment duration.
+- Existing reservations.
+- Resource or room availability where applicable.
+- Booking restrictions and cancellation policies.
+
+### Acceptance Criteria
+
+- Only genuinely eligible slots are offered.
+- Conflicting bookings are rejected.
+- Successful bookings persist.
+- Doctor Web and Doctor App show the same confirmed appointment.
+- Time displays are consistent with the relevant facility timezone.
+
+---
+
+## DA-04 — PATIENT DIRECTORY AND PROFILE
+
+### Features
+
+- Search authorized patients.
+- View patient identity and CareID.
+- View demographic information.
+- View allergies and important clinical warnings.
+- View appointment history.
+- Open relevant clinical records.
+- Navigate to supported consultations.
+
+### Acceptance Criteria
+
+- Search results respect permissions.
+- Patient identity is visible before clinical actions.
+- Unauthorized patient records are inaccessible.
+- The app never mixes records between patients.
+
+---
+
+## DA-05 — CLINICAL RECORDS
+
+### Features
+
+- View medical history.
+- View clinical encounters.
+- View vital signs.
+- View prescriptions.
+- View laboratory and diagnostic reports.
+- View relevant attachments and clinical documents.
+- View documented clinical warnings and holds.
+
+### Scope Boundary
+
+Viewing records is part of the proposed core scope.
+
+Creating or editing advanced clinical documentation must follow the original PRD and approved mobile scope.
+
+### Acceptance Criteria
+
+- Records are loaded from the Backend.
+- Data is presented in human-readable clinical formatting.
+- Raw JSON, serialized objects and internal identifiers must not appear as clinical narrative.
+- Source record identity and relevant timestamps remain traceable.
+
+---
+
+## DA-06 — MOBILE CONSULTATIONS
+
+### Purpose
+
+Support practical consultation activity without duplicating the complete Doctor Web workstation.
+
+### Proposed Actions
+
+- Open an authorized consultation.
+- Review patient clinical context.
+- Review clinical history and current records.
+- Record concise consultation notes where approved.
+- Record supported vitals or observations.
+- Review related prescriptions and referrals.
+- Navigate to associated treatment offers.
+- View consultation status and outstanding requirements.
+
+### Important Constraints
+
+- Clinical documentation must be saved through the Backend.
+- Draft and completed states must be distinguishable.
+- Required clinical fields must follow approved configuration.
+- Do not silently mark a consultation completed.
+- Do not create additional clinical templates without approval.
+
+---
+
+## DA-07 — TREATMENT OFFER REVIEW
+
+### Purpose
+
+Allow doctors to review and track treatment offers created through the approved CareID consultation workflow.
+
+### Proposed Mobile Capabilities
+
+- View treatment offer list.
+- Open offer details.
+- View patient and procedure.
+- View facility and baseline price.
+- View discounts and financial summary.
+- View selected financing option.
+- View offer expiration.
+- View clinical review status.
+- View patient acceptance, rejection or pending response.
+- View offer history.
+- Perform explicitly authorized offer actions.
+
+### Web-First Boundary
+
+Complex treatment-offer creation, advanced pricing calculations and extensive financial editing should remain in Doctor Web unless the approved source documents require them in the Doctor App.
+
+### Dynamic Data Requirements
+
+Offer information must be derived from:
+
+- Procedure catalogue.
+- Facility-specific chargemaster.
+- Facility currency.
+- Approved financing packages.
+- Offer validity policies.
+- Clinical remarks and configured requirements.
+- Backend-calculated totals.
+
+### Acceptance Criteria
+
+- Mobile financial totals match authoritative Backend calculations.
+- Missing required facility prices are not silently replaced by unrelated default prices.
+- An expired offer is not displayed as currently valid.
+- The app distinguishes draft, dispatched, accepted, declined and other supported lifecycle states.
+- Patient acceptance must be a real Backend-confirmed event, not a simulated UI action.
+
+---
+
+## DA-08 — CLINICAL CLEARANCE
+
+### Purpose
+
+Allow authorized clinicians to review clinical readiness and perform permitted clearance actions.
+
+### Proposed Capabilities
+
+- View pre-treatment requirements.
+- View clinical review status.
+- View required laboratory and diagnostic evidence.
+- View anesthesia or specialist clearance status.
+- View unresolved clinical holds.
+- Open linked supporting records.
+- Perform permitted clearance decisions.
+- View reviewer identity, time and decision history.
+
+### Critical Safety Requirements
+
+A clearance must not be marked complete merely because a user taps a button.
+
+Where the approved workflow requires evidence or authorization, the Backend must validate those conditions.
+
+The app must not:
+
+- Auto-approve missing clinical evidence.
+- Bypass required reviews.
+- Allow unauthorized users to clear holds.
+- Convert a UI toast into a completed clearance state without persistence.
+
+### Acceptance Criteria
+
+- Clearance state persists after app restart.
+- Backend and Doctor Web reflect the same state.
+- An unresolved mandatory hold blocks dependent actions.
+- Approval history is auditable.
+- Failed updates show a meaningful error without falsely displaying success.
+
+---
+
+## DA-09 — PROCEDURE AND SLOT BOOKING
+
+### Purpose
+
+Support authorized booking of appointments or procedural resources after applicable requirements are satisfied.
+
+### Proposed Capabilities
+
+- View booking eligibility.
+- View facility-specific available slots.
+- Select an eligible slot.
+- Confirm booking.
+- View booking reference and status.
+- Reschedule or cancel where allowed.
+- View relevant pre-procedure instructions.
+
+### Booking Validation
+
+The Backend must validate:
+
+- Authorized clinician and patient context.
+- Valid facility and procedure.
+- Required clinical clearance state.
+- Applicable offer or authorization state.
+- Available facility resource.
+- Slot availability.
+- Scheduling policy compliance.
+
+### Acceptance Criteria
+
+- Two users cannot successfully reserve the same exclusive resource slot.
+- Failed booking attempts do not create false confirmations.
+- Confirmed bookings appear in both Doctor App and Doctor Web.
+- Facility timezone and currency are displayed correctly.
+- Booking status remains consistent after refresh or restart.
+
+---
+
+## DA-10 — PRESCRIPTION MANAGEMENT
+
+### Features
+
+- View patient prescriptions.
+- View prescribed medicines and instructions.
+- Create prescriptions where mobile authoring is approved.
+- View pickup status.
+- Mark prescriptions collected when authorized.
+- View reminder status where supported.
+
+### CR-08 Requirements
+
+Prescription pickup reminders must follow the approved recurring reminder rules until collection.
+
+Doctor and Admin configuration must be respected.
+
+The approved initial implementation uses Backend internal notifications. SMS, WhatsApp and mobile push delivery must not be claimed as operational unless separately implemented and verified.
+
+### Acceptance Criteria
+
+- Collection status persists.
+- Collection stops future recurring pickup reminders.
+- Reminder settings match authoritative configuration.
+- No duplicate or unauthorized collection actions occur.
+
+---
+
+## DA-11 — REFERRALS
+
+### Features
+
+- View incoming and outgoing referrals.
+- View referral status.
+- Create supported referrals.
+- Select an eligible receiving clinician or facility.
+- Add permitted referral notes.
+- Track accepted, rejected, completed or other supported statuses.
+
+### Acceptance Criteria
+
+- Referral creation persists.
+- Referral history is visible.
+- Status changes reflect real Backend transitions.
+- Unauthorized clinicians cannot access referral details.
+
+---
+
+## DA-12 — OFFICE CHAT
+
+### Features
+
+- View authorized conversations.
+- Send and receive messages.
+- View conversation history.
+- View unread counts.
+- Use saved templates.
+- View message status where supported.
+
+### CR-07 Requirements
+
+Office Chat must support bidirectional communication and persistent customizable templates according to the approved scope.
+
+### Acceptance Criteria
+
+- Messages persist after reopening the app.
+- Conversation access is permission-controlled.
+- Templates originate from Backend-managed data.
+- Human and veterinary contexts remain appropriately isolated.
+- Message delivery state is not misrepresented.
+
+---
+
+## DA-13 — NOTIFICATIONS
+
+### Proposed Notification Categories
+
+- Appointment updates.
+- Office Chat messages.
+- Referral updates.
+- Treatment-offer updates.
+- Clinical review tasks.
+- Prescription pickup tasks.
+- Relevant administrative notices.
+
+### Delivery Boundary
+
+The app must distinguish:
+
+1. A notification record created in the Backend.
+2. A notification visible inside the application.
+3. A notification delivered through operating-system push services.
+
+These are not equivalent.
+
+### Acceptance Criteria
+
+- In-app notifications display accurate Backend state.
+- Read/unread status persists.
+- Notifications navigate only to authorized records.
+- Push notifications are included only when explicitly approved and technically implemented.
+
+---
+
+# 7. QR-BASED PATIENT INTERACTION
+
+## 7.1 Requirement Status
+
+**Mandatory documentation reconciliation item.**
+
+The user has confirmed that Patient App QR scanning is required by the original documentation.
+
+The exact QR workflow must be verified against the original PRD/FSD before its interaction contract is finalized.
+
+## 7.2 Integration Requirements
+
+The Doctor App must support its documented role in the QR-based patient interaction workflow.
+
+The implementation must identify, from the original source:
+
+- Which application generates or displays the QR code.
+- Which application scans the QR code.
+- Whether scanning occurs during registration, identification, consultation, appointment check-in or another documented stage.
+- Which Backend operation is triggered.
+- Which patient or appointment context is established.
+- What permissions or consent are required.
+- What happens after successful scanning.
+- How expired, invalid, reused or unauthorized QR codes are handled.
+
+## 7.3 Proposed Security Baseline
+
+Subject to alignment with the documented workflow:
+
+- QR content must not be treated as proof of authorization by itself.
+- The Backend must validate any patient or appointment reference.
+- QR data must not grant access to unrelated patient records.
+- Sensitive patient information should not be unnecessarily exposed in QR payloads.
+- Invalid or expired QR interactions must fail safely.
+- Successful scans should be auditable where appropriate.
+
+## 7.4 Acceptance Gate
+
+**QR-GATE-01:** No final QR scanning flow may be declared complete until the original documented sequence has been mapped to Patient App, Doctor App and Backend responsibilities and verified end to end.
+
+---
+
+# 8. VETERINARY WORKSPACE
+
+## 8.1 Purpose
+
+Support veterinary practitioners through a separate authorized clinical workspace.
+
+## 8.2 Proposed Features
+
+- Veterinary dashboard.
+- Animal patient directory.
+- Pet profile.
+- Guardian information.
+- Veterinary appointment management.
+- Veterinary medical records.
+- Vaccination information.
+- Veterinary prescriptions where supported.
+- Veterinary referrals where supported.
+- Veterinary Office Chat.
+- Veterinary clinical notifications.
+
+## 8.3 Isolation Requirements
+
+- Human clinicians must not access animal clinical records without explicit authorized scope.
+- Veterinarians must not access human patient records without explicit authorized scope.
+- Veterinary and human patient searches must remain separated.
+- Shared UI components must not cause shared clinical authorization.
+- Dual or ambiguous clinical credentials must follow the approved safety policy.
+
+---
+
+# 9. DOCTOR PROFILE AND AVAILABILITY
+
+## 9.1 Features
+
+- View doctor name and professional details.
+- View clinical practice type.
+- View specialty and sub-specialty.
+- View affiliated facilities.
+- View license and verification status.
+- View supported availability settings.
+- Edit permitted personal information.
+- View account status.
+
+## 9.2 Dynamic Configuration
+
+Clinical practice types, specialties and facility associations must come from authoritative Backend-managed data.
+
+The Doctor App must not maintain a separate hardcoded specialty catalogue.
+
+---
+
+# 10. ADMIN WEB RESPONSIBILITIES
+
+The Doctor App must not become a second administrative configuration system.
+
+Admin Web remains responsible for approved management functions.
+
+| Configuration Domain | Admin Responsibility | Doctor App Responsibility |
+|---|---|---|
+| Clinical practice types | Manage authorized catalogue | Read assigned classification |
+| Specialties | Manage catalogue and assignments | Display authorized specialty |
+| Procedures | Manage approved catalogue | Search/view relevant procedures |
+| Facility chargemaster | Maintain facility prices | Display authoritative pricing |
+| Facility currency | Configure facility currency | Display correct currency |
+| Facility timezone | Configure facility timezone | Display correct local times |
+| Financing packages | Manage approved packages | View applicable packages |
+| Scheduling policies | Manage booking rules | Follow booking rules |
+| Clinical requirements | Manage approved policies | Display and execute permitted actions |
+| Consultation remarks/templates | Manage approved content | Use applicable content |
+| Office Chat templates | Manage or permit authorized customization | Use saved templates |
+| Notification policies | Manage supported settings | Display and follow settings |
+
+**Important:** Not every technical constant should become an editable Admin setting. Security controls, clinical safety invariants, database constraints and other fundamental protections must remain enforced in code. Admin-managed flexibility must not permit bypassing them.
+
+---
+
+# 11. SHARED SYSTEM ARCHITECTURE
+
+## 11.1 Applications
+
+- **Admin Web:** Administrative configuration and oversight.
+- **Doctor Web:** Full clinical workstation.
+- **Doctor App:** Expanded mobile clinical companion.
+- **Patient App:** Patient-facing workflows, including documented QR interaction.
+- **CareID Backend:** Authentication, authorization, business rules and data access.
+- **Database:** Authoritative persistent records.
+
+## 11.2 Data Ownership
+
+The Backend and database are the authoritative source for:
+
+- User identity.
+- Clinical practice classification.
+- Patient and animal records.
+- Consultations.
+- Treatment offers.
+- Pricing.
+- Clinical clearance.
+- Appointment availability.
+- Bookings.
+- Prescriptions.
+- Referrals.
+- Chat.
+- Notifications.
+
+Flutter must not invent independent operational states that conflict with Backend records.
+
+## 11.3 Developer Ownership
+
+**Developer 1:** Backend, Doctor Web and Admin Web.
+
+**Developer 2:** CAREID_doctor_app and CAREID_patient_app.
+
+Cross-workspace changes require coordination with the owning developer.
+
+The Doctor App implementation must not modify Doctor Web, Admin Web or Backend without explicit authorization and ownership coordination.
+
+---
+
+# 12. DYNAMIC DATA POLICY
+
+## 12.1 No Hardcoded Business Configuration
+
+The Doctor App must not hardcode:
+
+- Procedure lists or CPT selections.
+- Procedure prices.
+- Facility-specific charges.
+- Financing packages.
+- Discount rates.
+- Offer validity periods.
+- Facility currencies.
+- Facility timezones.
+- Specialty catalogues.
+- Clinical practice types.
+- Appointment durations.
+- Scheduling rules.
+- Clinical clearance checklists.
+- Clinical review requirements.
+- User-facing configurable remarks or templates.
+
+These must be obtained from the appropriate authoritative APIs and managed through approved administrative workflows.
+
+## 12.2 Acceptable Static Application Elements
+
+The following may be implemented in code where appropriate:
+
+- Navigation structure.
+- Icons.
+- Basic visual layout.
+- Technical error handling.
+- Security enforcement.
+- Nonconfigurable safety rules.
+- API client logic.
+- Accessibility behavior.
+
+## 12.3 Missing Configuration Behavior
+
+If required configuration is missing:
+
+1. Display a clear explanation.
+2. Prevent unsafe or invalid submission.
+3. Identify the missing configuration where appropriate.
+4. Do not silently substitute a fabricated default.
+5. Allow retry after authorized configuration is corrected.
+
+---
+
+# 13. CONSULTATION-TO-BOOKING LIFECYCLE
+
+The proposed Doctor App must reflect the same authoritative lifecycle as Doctor Web.
+
+### Stage 1 — Patient Context
+
+Identify the authorized patient and relevant consultation.
+
+Use the documented QR workflow at the applicable stage once verified.
+
+### Stage 2 — Clinical Review
+
+Review relevant records, warnings, consultation notes and clinical requirements.
+
+### Stage 3 — Treatment Offer
+
+Review procedure, facility price, financing details, offer validity and current status.
+
+### Stage 4 — Patient Response
+
+Track the patient's actual offer response through the Backend.
+
+Do not simulate acceptance within Doctor App.
+
+### Stage 5 — Clinical Clearance
+
+Review required evidence, outstanding holds and authorized clinical decisions.
+
+### Stage 6 — Booking Eligibility
+
+The Backend evaluates applicable requirements and confirms whether booking is permitted.
+
+### Stage 7 — Slot Selection
+
+Retrieve real available appointment or procedural slots.
+
+### Stage 8 — Booking Confirmation
+
+Confirm the selected slot through the Backend and persist the booking.
+
+### Stage 9 — Follow-Up
+
+Show appointment status, pending tasks and relevant notifications.
+
+**Scope rule:** The exact required sequence, gates and actions must be reconciled with the original PRD/FSD. The Doctor App must not introduce new mandatory clinical gates or financing obligations without approval.
+
+---
+
+# 14. NON-FUNCTIONAL REQUIREMENTS
+
+## 14.1 Security
+
+- Encrypted network communication.
+- Secure token handling.
+- Backend-enforced access control.
+- No sensitive credentials in logs.
+- No unauthorized patient data exposure.
+- Appropriate protection of locally cached clinical data.
+- Secure session expiration and logout.
+
+## 14.2 Reliability
+
+- Graceful handling of unavailable Backend services.
+- Clear error and retry states.
+- No false success messages.
+- No duplicate booking submissions.
+- No silent loss of clinical updates.
+- Consistent state after application restart.
+
+## 14.3 Performance
+
+- Responsive navigation.
+- Paginated or incremental loading for large datasets.
+- Efficient patient search.
+- Avoid unnecessary repeated API calls.
+- Appropriate loading indicators.
+
+Specific numerical performance targets must be approved separately rather than invented.
+
+## 14.4 Accessibility and Usability
+
+- Readable clinical text.
+- Clear primary actions.
+- Accessible contrast.
+- Adequate touch targets.
+- Distinguishable warnings and statuses.
+- Clear confirmation before high-impact actions.
+
+## 14.5 Auditability
+
+Record relevant Backend events for:
+
+- Clinical decisions.
+- Treatment-offer actions.
+- Prescription actions.
+- Booking changes.
+- Clinical clearance changes.
+- Sensitive access where required by policy.
+
+---
+
+# 15. ERROR AND EDGE-CASE HANDLING
+
+The application must handle:
+
+1. Invalid login.
+2. Suspended clinician.
+3. Ambiguous clinical scope.
+4. Unauthorized patient access.
+5. Missing facility configuration.
+6. Missing procedure pricing.
+7. Expired treatment offer.
+8. Unresolved clinical hold.
+9. Unavailable appointment slot.
+10. Concurrent booking conflict.
+11. Backend timeout.
+12. Network disconnection.
+13. Failed clinical update.
+14. Invalid QR interaction.
+15. Session expiration.
+16. Stale data after an external update.
+
+Each case must provide an accurate, actionable state without bypassing Backend safeguards.
+
+---
+
+# 16. DEVELOPMENT PHASES
+
+## Phase 1 — Core Mobile Foundation
+
+- Authentication.
+- Clinical workspace classification.
+- Dashboard.
+- Appointment viewing.
+- Patient directory.
+- Clinical record viewing.
+- Doctor profile.
+- Basic in-app notifications.
+
+## Phase 2 — Everyday Clinical Operations
+
+- Office Chat.
+- Prescription workflows.
+- Referrals.
+- Supported consultation documentation.
+- Appointment management.
+
+## Phase 3 — Expanded Consultation Companion
+
+- Treatment-offer review.
+- Patient response tracking.
+- Clinical clearance review and authorized actions.
+- Booking eligibility.
+- Procedural slot selection and confirmation.
+- Cross-platform state consistency.
+
+## Phase 4 — Documented QR Integration and Final Validation
+
+- Exact Patient App QR workflow.
+- Doctor App QR responsibilities.
+- Backend QR validation.
+- End-to-end patient identification and workflow transitions.
+- Security and negative testing.
+- Final scope reconciliation.
+
+**Phase sequencing is a proposed delivery plan, not permission to defer an original mandatory QR requirement beyond an approved release.** Once the PRD is verified, QR work must be scheduled according to its actual dependency and priority.
+
+---
+
+# 17. ACCEPTANCE TEST MATRIX
+
+| Test ID | Scenario | Expected Result |
+|---|---|---|
+| APP-001 | Human doctor login | Correct human workspace |
+| APP-002 | Veterinary login | Correct veterinary workspace |
+| APP-003 | Contradictory clinical roles | Safe access restriction |
+| APP-004 | Patient search | Authorized results only |
+| APP-005 | Clinical record viewing | Correct patient data |
+| APP-006 | Appointment update | Persisted across platforms |
+| APP-007 | Office Chat message | Persisted and visible to authorized recipient |
+| APP-008 | Treatment offer review | Backend-consistent details |
+| APP-009 | Facility price missing | Submission safely blocked where required |
+| APP-010 | Expired treatment offer | Correct expired state |
+| APP-011 | Clearance action | Authorized, validated and persisted |
+| APP-012 | Unresolved clinical hold | Required action remains blocked |
+| APP-013 | Slot booking | Real slot confirmed |
+| APP-014 | Concurrent slot conflict | No double booking |
+| APP-015 | Prescription collected | Collection persists and reminders stop |
+| APP-016 | Referral status change | Consistent Backend state |
+| APP-017 | Facility timezone | Correct localized appointment time |
+| APP-018 | Facility currency | Correct currency display |
+| APP-019 | Invalid QR | Safe rejection |
+| APP-020 | Documented QR success | Correct authorized workflow transition |
+| APP-021 | App restart | Persisted states remain correct |
+| APP-022 | Backend unavailable | No false success |
+| APP-023 | Human/veterinary isolation | Unauthorized cross-scope access rejected |
+| APP-024 | Admin configuration update | App reflects authoritative new values |
+
+All acceptance tests must use genuine Flutter-to-Backend interactions.
+
+Screenshots alone do not prove successful persistence or end-to-end functionality.
+
+---
+
+# 18. DEFINITION OF DONE
+
+A Doctor App feature is complete only when:
+
+- Its requirement is approved and traceable.
+- The Flutter screen is implemented.
+- The relevant Backend contract is integrated.
+- Authentication and authorization are enforced.
+- Required data is dynamically loaded.
+- User actions persist correctly.
+- Loading, error and empty states are handled.
+- Cross-platform consistency is verified where relevant.
+- Relevant negative and security tests pass.
+- No hardcoded operational configuration is introduced.
+- Evidence is recorded.
+- No unrelated application or workspace is modified.
+
+A compiled application is not automatically a functionally complete application.
+
+---
+
+# 19. OUT-OF-SCOPE AND DEFERRED ITEMS
+
+Unless separately documented and approved:
+
+- Duplicating all Doctor Web screens.
+- Full Admin configuration inside Doctor App.
+- Independent mobile financing engines.
+- Independent mobile procedure pricing engines.
+- New payment processing or lending infrastructure.
+- New external EHR partner integrations.
+- New AI features beyond approved scope.
+- New mandatory clinical gates.
+- New third-party messaging channels.
+- Unapproved mobile push delivery claims.
+- Unapproved patient data sharing.
+- Changes to Patient App outside the documented integration scope.
+
+---
+
+# 20. OPEN REQUIREMENT DECISIONS
+
+The following items must be resolved before this document is promoted to an approved implementation baseline.
+
+| ID | Decision / Verification Required | Status |
+|---|---|---|
+| OPEN-01 | Verify exact QR workflow from original PRD/FSD | Open |
+| OPEN-02 | Confirm Doctor App's precise role in QR generation/scanning | Open |
+| OPEN-03 | Confirm which consultation fields are editable on mobile | Open |
+| OPEN-04 | Confirm treatment-offer actions allowed on mobile | Open |
+| OPEN-05 | Confirm clinical clearance roles and decision permissions | Open |
+| OPEN-06 | Confirm procedural booking workflow and required gates | Open |
+| OPEN-07 | Confirm mobile prescription authoring scope | Open |
+| OPEN-08 | Confirm veterinary feature parity requirements | Open |
+| OPEN-09 | Confirm notification delivery requirements | Open |
+| OPEN-10 | Map each feature to PRD/FSD page or approved CR reference | Open |
+
+No open item should be silently converted into a development assumption.
+
+---
+
+# 21. REQUIREMENTS TRACEABILITY RULE
+
+Before development, maintain a traceability register with these columns:
+
+| Field | Meaning |
+|---|---|
+| Requirement ID | Unique Doctor App requirement |
+| Feature | Functional capability |
+| Source Document | PRD/FSD, approved CR or approved decision |
+| Source Page/Section | Exact source location |
+| Mobile Responsibility | Doctor App behavior |
+| Backend Dependency | Required API or service |
+| Admin Dependency | Relevant configuration |
+| Patient App Dependency | Relevant cross-app interaction |
+| Acceptance Test | Verification scenario |
+| Status | Proposed, Approved, Implemented, Verified or Deferred |
+
+Requirements without a verified source reference must remain marked **Proposed** until approved.
+
+---
+
+# 22. FINAL PRODUCT BOUNDARY
+
+**CareID Doctor App is an Expanded Clinical Companion, not a complete replacement for Doctor Web.**
+
+It must enable approved mobile clinical activities, including:
+
+- Patient and appointment access.
+- Clinical record review.
+- Supported consultation actions.
+- Treatment-offer review and tracking.
+- Authorized clinical clearance actions.
+- Eligible appointment and procedural slot booking.
+- Prescriptions and referrals.
+- Office Chat.
+- Notifications.
+- Documented QR-based Patient App interaction.
+- Separate human and veterinary workspaces.
+
+All operational data and business rules must remain consistent with the authoritative CareID Backend and Admin-managed configuration.
+
+**No new clinical, financial, administrative or interoperability capability may be introduced solely on developer assumption.**
+
+---
+
+# 23. APPROVAL AND VERSION CONTROL
+
+**Current Version:** 1.0 — Proposed Baseline
+
+**Approval Required From:**
+- Product Owner
+- Clinical Workflow Owner
+- Backend / Integration Owner
+- Doctor App Development Owner
+- Patient App Development Owner for QR integration
+
+**Approval Condition:** Original PRD/FSD and approved change requests reviewed; open scope items resolved or formally deferred.
+
+**Change Control:** Any later addition, removal or modification must be documented with a version number, reason, impacted modules and approval.
+
+---
+
+**END OF DOCUMENT — CAREID-DOCTOR-APP-PRD-FSD-001**

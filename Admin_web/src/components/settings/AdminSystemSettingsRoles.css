@@ -1,0 +1,1168 @@
+/* ==========================================================================
+   CareID Admin Portal - System Settings: Roles & Permissions (Figma 20:13500)
+   Responsive Full-Width Canvas, Precision Bento Hierarchy & Mobile Architecture
+   ========================================================================== */
+
+/* Outer Shell */
+.roles-settings-page {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: #f8f9fb;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #191c1e;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Main Content Area - Starts immediately after the 280px Sidebar */
+.roles-main-content {
+  flex: 1 1 0%;
+  min-width: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  background-color: #f8f9fb;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .roles-main-content {
+    margin-left: 280px;
+    width: calc(100% - 280px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .roles-main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   1. Stationary Top Global Navigation Bar (64px)
+   ========================================================================== */
+.roles-top-navbar {
+  height: 64px;
+  flex-shrink: 0;
+  background-color: #f8f9fb;
+  border-bottom: 1px solid #cbc4d4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 20;
+  box-sizing: border-box;
+  gap: 16px;
+}
+
+.roles-top-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.roles-mobile-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #cbc4d4;
+  background-color: #ffffff;
+  color: #494552;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1023px) {
+  .roles-mobile-menu-btn {
+    display: flex;
+  }
+}
+
+.roles-breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 16px;
+  white-space: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.roles-breadcrumb-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.roles-breadcrumb-item {
+  color: #494552;
+  font-weight: 500;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: none;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.roles-breadcrumb-item:hover {
+  color: #28006d;
+}
+
+.roles-breadcrumb-item.active {
+  color: #28006d;
+  font-weight: 600;
+  cursor: default;
+}
+
+.roles-breadcrumb-sep {
+  color: #7a7583;
+  user-select: none;
+}
+
+.roles-top-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.roles-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .roles-search-box {
+    display: none;
+  }
+}
+
+.roles-search-input {
+  width: 260px;
+  background-color: #f2f4f6;
+  border: 1px solid #cbc4d4;
+  border-radius: 9999px;
+  padding: 7px 16px 7px 36px;
+  font-size: 12px;
+  color: #191c1e;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.roles-search-input:focus {
+  border-color: #28006d;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(40, 0, 109, 0.1);
+}
+
+.roles-search-icon {
+  position: absolute;
+  left: 12px;
+  color: #6b7280;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+
+.roles-icon-btn {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  border: 1px solid #cbc4d4;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #494552;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.roles-icon-btn:hover {
+  background-color: #f2f4f6;
+  color: #28006d;
+}
+
+.roles-notif-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #ba1a1a;
+  border: 1.5px solid #ffffff;
+}
+
+.roles-user-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 12px;
+  border-left: 1px solid #cbc4d4;
+  cursor: pointer;
+  background: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  flex-shrink: 0;
+}
+
+.roles-user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  border: 1px solid #cbc4d4;
+  background-color: #e8ddff;
+  color: #28006d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.roles-user-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+@media (max-width: 640px) {
+  .roles-user-info {
+    display: none;
+  }
+}
+
+.roles-user-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #191c1e;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.roles-user-role {
+  font-size: 10px;
+  color: #494552;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   2. Scrollable Page Body (Uses 100% of available viewport width)
+   ========================================================================== */
+.roles-page-body {
+  flex: 1 1 0%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 32px 32px 48px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1023px) {
+  .roles-page-body {
+    padding: 24px 20px 36px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .roles-page-body {
+    padding: 16px 12px 24px 12px;
+    gap: 16px;
+  }
+}
+
+/* ==========================================================================
+   3. Settings Header & Persistent Sub-Nav Tabs Card
+   ========================================================================== */
+.roles-header-card {
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 16px;
+  padding: 24px 24px 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .roles-header-card {
+    padding: 18px 16px 0 16px;
+    gap: 16px;
+  }
+}
+
+.roles-header-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.roles-header-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 1 320px;
+}
+
+.roles-header-title-block h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #191c1e;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 640px) {
+  .roles-header-title-block h1 {
+    font-size: 20px;
+  }
+}
+
+.roles-header-title-block p {
+  font-size: 14px;
+  color: #494552;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.roles-compliance-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(45, 219, 222, 0.15);
+  border: 1px solid rgba(45, 219, 222, 0.4);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  color: #00696b;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.roles-compliance-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #006a60;
+}
+
+/* Persistent Sub-Nav Tabs */
+/* Persistent Sub-Nav Tabs Container */
+.roles-subnav-container {
+  width: calc(100% + 48px);
+  overflow-x: auto;
+  border-bottom: 1px solid #cbc4d4;
+  margin: 0 -24px;
+  padding: 0 24px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .roles-subnav-container {
+    width: calc(100% + 32px);
+    margin: 0 -16px;
+    padding: 0 16px;
+  }
+}
+
+.roles-subnav-container::-webkit-scrollbar {
+  display: none;
+}
+
+.roles-subnav-tabs {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-width: max-content;
+  gap: 4px;
+  box-sizing: border-box;
+}
+
+.roles-subnav-tab {
+  flex: 1 1 0%;
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px 14px 16px;
+  border: none;
+  background: transparent;
+  color: #494552;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.roles-subnav-tab:hover {
+  color: #28006d;
+}
+
+.roles-subnav-tab.active {
+  background-color: rgba(232, 221, 255, 0.3);
+  color: #28006d;
+  font-weight: 700;
+  border-bottom: 2px solid #28006d;
+}
+
+/* ==========================================================================
+   4. Section Card: Roles & Permissions (RBAC) Panel
+   ========================================================================== */
+.roles-section-card {
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .roles-section-card {
+    padding: 16px;
+    gap: 16px;
+  }
+}
+
+.roles-section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.roles-section-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 1 300px;
+}
+
+.roles-title-with-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.roles-title-with-pill h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #191c1e;
+  margin: 0;
+}
+
+.roles-active-role-pill {
+  background-color: #e8ddff;
+  color: #28006d;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.roles-section-subtitle {
+  font-size: 12px;
+  color: #494552;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.roles-section-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.roles-btn-audit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 9999px;
+  border: 1px solid #cbc4d4;
+  background-color: #ffffff;
+  color: #191c1e;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.roles-btn-audit:hover {
+  background-color: #f2f4f6;
+  border-color: #28006d;
+  color: #28006d;
+}
+
+.roles-btn-add-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 9999px;
+  border: none;
+  background-color: #28006d;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  letter-spacing: 0.02em;
+  transition: background-color 0.15s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.roles-btn-add-role:hover {
+  background-color: #3b0993;
+}
+
+/* Role Selector Pills Bar */
+.roles-pill-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.roles-role-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8.5px 16px;
+  border-radius: 9999px;
+  font-size: 11px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  border: 1px solid #cbc4d4;
+  background-color: #ffffff;
+  color: #494552;
+  font-weight: 500;
+  font-family: inherit;
+  flex-shrink: 0;
+}
+
+.roles-role-pill:hover {
+  border-color: #28006d;
+  color: #28006d;
+}
+
+.roles-role-pill.active {
+  background-color: #28006d;
+  color: #ffffff;
+  border-color: #28006d;
+  font-weight: 700;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   5. Matrix Table Container (Controlled horizontal scrolling inside container)
+   ========================================================================== */
+.roles-matrix-container {
+  border: 1px solid #cbc4d4;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.roles-matrix-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.roles-matrix-table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.roles-matrix-table th {
+  background-color: #f2f4f6;
+  border-bottom: 1px solid #cbc4d4;
+  padding: 14px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #494552;
+  white-space: nowrap;
+}
+
+.roles-matrix-table th.col-center {
+  text-align: center;
+}
+
+.roles-matrix-table th.col-scope {
+  padding-left: 20px;
+  width: 34%;
+  min-width: 240px;
+}
+
+.roles-matrix-table td {
+  border-bottom: 1px solid #cbc4d4;
+  padding: 14px 16px;
+  vertical-align: middle;
+}
+
+.roles-matrix-table tr:last-child td {
+  border-bottom: none;
+}
+
+.roles-scope-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 4px;
+}
+
+.roles-scope-icon-wrap {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #28006d;
+  flex-shrink: 0;
+}
+
+.roles-scope-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #191c1e;
+  white-space: nowrap;
+}
+
+.roles-checkbox-cell {
+  text-align: center;
+}
+
+.roles-checkbox-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #cbc4d4;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+
+.roles-checkbox-btn:hover {
+  border-color: #28006d;
+}
+
+.roles-checkbox-btn.checked {
+  background-color: #28006d;
+  border-color: #28006d;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   6. Authentication & Session Protocols Card
+   ========================================================================== */
+.roles-auth-protocols-card {
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .roles-auth-protocols-card {
+    padding: 16px;
+    gap: 16px;
+  }
+}
+
+.roles-auth-protocols-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.roles-auth-protocols-title-wrap {
+  flex: 1 1 300px;
+}
+
+.roles-auth-protocols-title-wrap h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #191c1e;
+  margin: 0 0 4px 0;
+}
+
+.roles-auth-protocols-title-wrap p {
+  font-size: 12px;
+  color: #494552;
+  margin: 0;
+}
+
+.roles-2fa-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(0, 106, 96, 0.15);
+  color: #006a60;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.roles-auth-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .roles-auth-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.roles-auth-subcard {
+  background-color: rgba(242, 244, 246, 0.5);
+  border: 1px solid #cbc4d4;
+  border-radius: 12px;
+  padding: 21px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .roles-auth-subcard {
+    padding: 16px;
+  }
+}
+
+.roles-auth-subcard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #cbc4d4;
+  padding-bottom: 11px;
+}
+
+.roles-auth-subcard-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #191c1e;
+  margin: 0;
+}
+
+.roles-auth-tier-pill {
+  font-size: 11px;
+  font-weight: 600;
+  color: #7a7583;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* Switch Items */
+.roles-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+  gap: 16px;
+}
+
+.roles-switch-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1 1 auto;
+}
+
+.roles-switch-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #191c1e;
+}
+
+.roles-switch-desc {
+  font-size: 11px;
+  font-weight: 500;
+  color: #494552;
+}
+
+/* Toggle Switch Control */
+.roles-toggle-switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: 9999px;
+  background-color: #cbc4d4;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.roles-toggle-switch.checked {
+  background-color: #28006d;
+}
+
+.roles-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.roles-toggle-switch.checked .roles-toggle-thumb {
+  transform: translateX(20px);
+}
+
+/* Policy Rules Controls */
+.roles-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.roles-form-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #494552;
+  letter-spacing: 0.02em;
+}
+
+.roles-select-control {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 8px;
+  padding: 9px 13px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #191c1e;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.roles-select-control:focus {
+  border-color: #28006d;
+  box-shadow: 0 0 0 2px rgba(40, 0, 109, 0.1);
+}
+
+.roles-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border-top: 1px solid #cbc4d4;
+  padding-top: 16px;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.roles-checkbox-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #191c1e;
+}
+
+/* ==========================================================================
+   7. Footer Actions Bar
+   ========================================================================== */
+.roles-footer-bar {
+  border-top: 1px solid #cbc4d4;
+  padding-top: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+}
+
+.roles-footer-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #494552;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.roles-footer-info svg {
+  color: #28006d;
+  flex-shrink: 0;
+}
+
+.roles-footer-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.roles-btn-cancel {
+  border: 1px solid #cbc4d4;
+  background-color: #ffffff;
+  color: #191c1e;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.roles-btn-cancel:hover {
+  background-color: #f2f4f6;
+  border-color: #28006d;
+}
+
+.roles-btn-save {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #3f1d8b;
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  border: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.15s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.roles-btn-save:hover {
+  background-color: #4f25aa;
+}
+
+.roles-btn-proceed {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #85f6e5;
+  color: #002020;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  border: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.15s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.roles-btn-proceed:hover {
+  background-color: #6ee6d3;
+}
+
+/* ==========================================================================
+   8. Modal Dialog & Toast Notification
+   ========================================================================== */
+.roles-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.roles-modal-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border: 1px solid #cbc4d4;
+  width: 100%;
+  max-width: 480px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.roles-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.roles-modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #191c1e;
+}
+
+.roles-modal-close {
+  background: none;
+  border: none;
+  color: #7a7583;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.roles-modal-close:hover {
+  color: #191c1e;
+  background-color: #f2f4f6;
+}
+
+.roles-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.roles-modal-input {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #191c1e;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.roles-modal-input:focus {
+  border-color: #28006d;
+}
+
+.roles-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.roles-toast-notification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #191c1e;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  z-index: 110;
+  animation: rolesSlideUp 0.25s ease-out;
+}
+
+@keyframes rolesSlideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

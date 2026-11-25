@@ -1,0 +1,61 @@
+{
+  "D01": {
+    "status": "PASS",
+    "rxId": "16f0cf87-15ff-4794-86bd-0a6e3df3464e",
+    "qaMedName": "Amoxicillin-CR08-4157"
+  },
+  "D02": {
+    "status": "PASS",
+    "scheduleId": "dc718447-12e4-41c7-a819-170ccc61676c",
+    "intervalHours": "2",
+    "initialNextDue": "2026-11-23 15:29:07.499"
+  },
+  "D03": {
+    "status": "PASS",
+    "scheduleId": "dc718447-12e4-41c7-a819-170ccc61676c",
+    "eventId": "ee4e750e-f9ca-4055-8cca-8f762c4384b1",
+    "notificationId": "7abee810-2caa-4e14-a99b-4383d45e8f49",
+    "dueTimestamp": "2026-11-23 15:29:07.499",
+    "processingTimestamp": "2026-11-23 13:29:12.031",
+    "patientId": "3896bc97-bd3b-40ae-80c1-0cc0455ca3a4",
+    "nextDueTimestamp": "2026-11-23 17:30:07.499"
+  },
+  "D04": {
+    "status": "PASS",
+    "scheduleId": "dc718447-12e4-41c7-a819-170ccc61676c",
+    "firstEventId": "ee4e750e-f9ca-4055-8cca-8f762c4384b1",
+    "secondEventId": "951f319c-8a5b-4929-9a52-4bb1566373c6",
+    "firstNotificationId": "7abee810-2caa-4e14-a99b-4383d45e8f49",
+    "secondNotificationId": "4f47bd35-ce7b-4088-be09-52809c41a68b",
+    "firstDueTimestamp": "2026-11-23 15:29:07.499",
+    "secondDueTimestamp": "2026-11-23 17:30:07.499",
+    "nextDueTimestamp": "2026-11-23 19:31:07.499",
+    "isDistinct": true
+  },
+  "D05": {
+    "status": "PASS",
+    "collectionStatus": "CANCELLED",
+    "collectedAt": "2026-11-23 13:29:17.777",
+    "nextDueAt": null,
+    "recurrenceCeased": true
+  },
+  "D06": {
+    "status": "PASS",
+    "prescriptionId": "a6a576dc-9092-424a-9961-147ab28fa724",
+    "scheduleRecord": ""
+  },
+  "D07": {
+    "status": "PASS",
+    "totalSchedules": "36"
+  },
+  "D08": {
+    "status": "PASS",
+    "idempotentRepeatCollect": true
+  },
+  "D09": {
+    "status": "PASS",
+    "totalAuditLogs": "86",
+    "notificationBodySafe": true,
+    "sampleContent": "Prescription Pickup Reminder|Your prescription is ready for pickup. Please check your CareID account for details."
+  }
+}

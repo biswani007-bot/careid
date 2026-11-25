@@ -1,0 +1,102 @@
+[
+  {
+    "id": "H01",
+    "name": "Unauthenticated API Request Rejection",
+    "status": "PASS",
+    "details": "HTTP 401"
+  },
+  {
+    "id": "H02",
+    "name": "Forged/Expired Token Rejection",
+    "status": "PASS",
+    "details": "HTTP 401"
+  },
+  {
+    "id": "H03",
+    "name": "Admin Endpoint RBAC Guard",
+    "status": "PASS",
+    "details": "HTTP 404"
+  },
+  {
+    "id": "H04",
+    "name": "Doctor Profile Access Guard",
+    "status": "PASS",
+    "details": "HTTP 403"
+  },
+  {
+    "id": "H05",
+    "name": "Multi-Tenant Isolation",
+    "status": "PASS",
+    "details": {
+      "facilities": "9"
+    }
+  },
+  {
+    "id": "H06",
+    "name": "Unconsented Patient Isolation",
+    "status": "PASS",
+    "details": "HTTP 404"
+  },
+  {
+    "id": "H07",
+    "name": "Human/Veterinary Clinical Boundary",
+    "status": "PASS",
+    "details": "HTTP 403"
+  },
+  {
+    "id": "H08",
+    "name": "Prescription Collection Authorization",
+    "status": "PASS",
+    "details": "HTTP 401"
+  },
+  {
+    "id": "H09",
+    "name": "Reminder Configuration Authorization",
+    "status": "PASS",
+    "details": "HTTP 401"
+  },
+  {
+    "id": "H10",
+    "name": "Notification Inbox Scoping",
+    "status": "PASS",
+    "details": "HTTP 200"
+  },
+  {
+    "id": "H11",
+    "name": "CMS Publishing RBAC",
+    "status": "PASS",
+    "details": "HTTP 404"
+  },
+  {
+    "id": "H12",
+    "name": "Financing Underwriting RBAC",
+    "status": "PASS",
+    "details": "HTTP 403"
+  },
+  {
+    "id": "H13",
+    "name": "Chat Template Doctor Isolation",
+    "status": "PASS",
+    "details": {
+      "count": "12"
+    }
+  },
+  {
+    "id": "H14",
+    "name": "Credential Sanitization in API",
+    "status": "PASS",
+    "details": "Zero password/secret leakage"
+  },
+  {
+    "id": "H15",
+    "name": "Privacy-Safe Reminder Content",
+    "status": "PASS",
+    "details": "Compliant with HIPAA minimum necessary rule"
+  },
+  {
+    "id": "H16",
+    "name": "Secret-Free Audit Logging",
+    "status": "PASS",
+    "details": "Zero secret leakage in audit logs"
+  }
+]

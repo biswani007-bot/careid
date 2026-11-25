@@ -1,0 +1,1214 @@
+/* ==========================================================================
+   CareID Admin Portal - System Settings: OCR & Notifications
+   Figma Reference: CAREID AIO FIGMA (Node 20:13976, 1280 x 1617 px)
+   Authoritative Layout: 280px Sidebar, 64px Header, 24px Canvas Padding,
+   Max-Width 1140px Centered Container, 3-Column Content Grid (2 Cols / 1 Col).
+   ========================================================================== */
+
+/* Outer Shell */
+.ocr-settings-page {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: #f8f9fb;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #191c1e;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Main Content Area - Starts immediately after the 280px Sidebar */
+.ocr-main-content {
+  flex: 1 1 0%;
+  min-width: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  background-color: #f8f9fb;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .ocr-main-content {
+    margin-left: 280px;
+    width: calc(100% - 280px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .ocr-main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   1. Stationary Top Global Navigation Bar (64px)
+   ========================================================================== */
+.ocr-top-navbar {
+  height: 64px;
+  flex-shrink: 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #d3e4fe;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 20;
+  box-sizing: border-box;
+  gap: 16px;
+}
+
+.ocr-top-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.ocr-mobile-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #cbc4d4;
+  background-color: #ffffff;
+  color: #494552;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1023px) {
+  .ocr-mobile-menu-btn {
+    display: flex;
+  }
+}
+
+.ocr-breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 19.5px;
+  white-space: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ocr-breadcrumb-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.ocr-breadcrumb-home-icon {
+  width: 13.5px;
+  height: 13.5px;
+  color: #7a7583;
+  flex-shrink: 0;
+}
+
+.ocr-breadcrumb-item {
+  color: #494552;
+  font-weight: 500;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: none;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+  font-family: inherit;
+  font-size: inherit;
+  display: inline-flex;
+  align-items: center;
+}
+
+.ocr-breadcrumb-item:hover {
+  color: #28006d;
+}
+
+.ocr-breadcrumb-item.active {
+  color: #28006d;
+  font-weight: 600;
+  cursor: default;
+}
+
+.ocr-breadcrumb-sep {
+  color: #cbc4d4;
+  user-select: none;
+  font-size: 13px;
+}
+
+.ocr-top-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.ocr-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .ocr-search-box {
+    display: none;
+  }
+}
+
+.ocr-search-input {
+  width: 275px;
+  background-color: #f8f9ff;
+  border: 1px solid #cbc4d4;
+  border-radius: 8px;
+  padding: 9px 16px 9px 36px;
+  font-size: 13px;
+  color: #0b1c30;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.ocr-search-input::placeholder {
+  color: #7a7583;
+}
+
+.ocr-search-input:focus {
+  border-color: #28006d;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(40, 0, 109, 0.1);
+}
+
+.ocr-search-icon {
+  position: absolute;
+  left: 12px;
+  color: #7a7583;
+  width: 13.5px;
+  height: 13.5px;
+  pointer-events: none;
+}
+
+.ocr-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ocr-icon-btn {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 9999px;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #494552;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.ocr-icon-btn:hover {
+  background-color: #eff4ff;
+  color: #28006d;
+}
+
+.ocr-notif-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #ba1a1a;
+  border: 1.5px solid #ffffff;
+}
+
+.ocr-top-divider {
+  width: 1px;
+  height: 24px;
+  background-color: #d3e4fe;
+  flex-shrink: 0;
+}
+
+.ocr-user-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.ocr-user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  border: 1px solid #00e5ff;
+  background-color: #e8ddff;
+  color: #28006d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.ocr-user-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+@media (max-width: 640px) {
+  .ocr-user-info {
+    display: none;
+  }
+}
+
+.ocr-user-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0b1c30;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.ocr-user-role {
+  font-size: 11px;
+  color: #7a7583;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.ocr-dropdown-arrow {
+  width: 8px;
+  height: 5px;
+  color: #7a7583;
+  margin-left: 2px;
+}
+
+/* ==========================================================================
+   2. Scrollable Canvas & Centered 1140px Container
+   ========================================================================== */
+.ocr-page-body {
+  flex: 1 1 0%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f8f9fb;
+}
+
+@media (max-width: 1023px) {
+  .ocr-page-body {
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ocr-page-body {
+    padding: 16px 12px;
+  }
+}
+
+/* Authoritative Centered Container with Max-Width 1140px */
+.ocr-canvas-container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 80px;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   3. Header Title Block & Sub-Navigation Tabs
+   ========================================================================== */
+.ocr-header-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.ocr-header-title-block h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0b1c30;
+  margin: 0;
+  letter-spacing: -0.65px;
+  line-height: 39px;
+}
+
+@media (max-width: 640px) {
+  .ocr-header-title-block h1 {
+    font-size: 22px;
+    line-height: 32px;
+  }
+}
+
+.ocr-header-title-block p {
+  font-size: 14px;
+  color: #494552;
+  margin: 0;
+  line-height: 21px;
+}
+
+/* Persistent Sub-Nav Tabs Container */
+.ocr-subnav-tabs {
+  width: 100%;
+  overflow-x: auto;
+  border-bottom: 1px solid #d3e4fe;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
+.ocr-subnav-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tab list with full width, evenly distributed tabs */
+.ocr-subnav-tab-list {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-width: max-content;
+  gap: 4px;
+  box-sizing: border-box;
+}
+
+.ocr-subnav-tab {
+  flex: 1 1 0%;
+  min-width: max-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  color: #494552;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 19.5px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.ocr-subnav-tab:hover {
+  color: #28006d;
+}
+
+.ocr-subnav-tab.active {
+  background-color: #eff4ff;
+  color: #28006d;
+  font-weight: 700;
+  border-bottom: 2px solid #28006d;
+}
+
+/* ==========================================================================
+   4. Three-Column Content Grid (Figma: repeat(3, minmax(0, 1fr)))
+   Left Col: 2 Cols Span (OCR Engine Config & Supported Doc Types)
+   Right Col: 1 Col Span (Upload Limits & Retry + Audit Trail Card)
+   ========================================================================== */
+.ocr-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .ocr-content-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.ocr-grid-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .ocr-grid-left-col {
+    grid-column: span 2;
+  }
+}
+
+.ocr-grid-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .ocr-grid-right-col {
+    grid-column: span 1;
+  }
+}
+
+/* Card Container Styles */
+.ocr-card {
+  background-color: #ffffff;
+  border: 1px solid #d3e4fe;
+  border-radius: 16px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .ocr-card {
+    padding: 18px 16px;
+    gap: 16px;
+  }
+}
+
+.ocr-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.ocr-card-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ocr-card-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background-color: #eff4ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #28006d;
+  flex-shrink: 0;
+}
+
+.ocr-card-title-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.ocr-card-title-text h2,
+.ocr-card-title-text h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0b1c30;
+  margin: 0;
+  line-height: 24px;
+}
+
+.ocr-card-title-text p {
+  font-size: 12px;
+  color: #7a7583;
+  margin: 0;
+  line-height: 18px;
+}
+
+.ocr-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #e8ddff;
+  color: #28006d;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 16.5px;
+  white-space: nowrap;
+}
+
+.ocr-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: #00696b;
+}
+
+/* ==========================================================================
+   Section 1: Engine Provider & Dual Sliders
+   ========================================================================== */
+.ocr-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.ocr-form-label {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 19.5px;
+  color: #0b1c30;
+}
+
+.ocr-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.ocr-select-control {
+  width: 100%;
+  background-color: #f8f9ff;
+  border: 1px solid #cbc4d4;
+  border-radius: 8px;
+  padding: 11px 41px 11px 17px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #0b1c30;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.ocr-select-control:focus {
+  border-color: #28006d;
+  box-shadow: 0 0 0 2px rgba(40, 0, 109, 0.1);
+  background-color: #ffffff;
+}
+
+.ocr-select-chevron {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: #7a7583;
+  pointer-events: none;
+}
+
+/* Dual Sliders Grid */
+.ocr-sliders-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
+  padding-top: 4px;
+}
+
+@media (min-width: 640px) {
+  .ocr-sliders-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ocr-slider-card {
+  background-color: #f8f9ff;
+  border: 1px solid #d3e4fe;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+.ocr-slider-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ocr-slider-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0b1c30;
+}
+
+.ocr-slider-metric-auto {
+  background-color: rgba(86, 245, 248, 0.3);
+  color: #00696b;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.2;
+}
+
+.ocr-slider-metric-manual {
+  background-color: #ffdbc9;
+  color: #71360d;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.2;
+}
+
+.ocr-slider-range {
+  width: 100%;
+  height: 6px;
+  border-radius: 8px;
+  background: #d3e4fe;
+  outline: none;
+  cursor: pointer;
+  accent-color: #28006d;
+}
+
+.ocr-slider-helptext {
+  font-size: 12px;
+  color: #494552;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   Section 2: Supported Medical Document Types
+   ========================================================================== */
+.ocr-doc-types-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .ocr-doc-types-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.ocr-doc-type-card {
+  background-color: #f8f9ff;
+  border: 1px solid #cbc4d4;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+  min-height: 62px;
+  box-sizing: border-box;
+}
+
+.ocr-doc-type-card:hover {
+  border-color: #28006d;
+  background-color: #ffffff;
+}
+
+.ocr-doc-type-card.full-span {
+  grid-column: 1 / -1;
+  background-color: #ffffff;
+  border-color: #d3e4fe;
+  opacity: 0.85;
+}
+
+.ocr-doc-type-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ocr-doc-icon-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  border: 1px solid #d3e4fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #28006d;
+  flex-shrink: 0;
+}
+
+.ocr-doc-label-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.ocr-doc-title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: #0b1c30;
+}
+
+.ocr-doc-subtitle {
+  font-size: 11px;
+  line-height: 16.5px;
+  color: #7a7583;
+}
+
+.ocr-checkbox-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid #7a7583;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.ocr-checkbox-btn.checked {
+  background-color: #28006d;
+  border-color: #28006d;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Section 3: Upload Limits & Format Badges (Right Column)
+   ========================================================================== */
+.ocr-input-with-suffix {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.ocr-input-number {
+  width: 100%;
+  background-color: #f8f9ff;
+  border: 1px solid #cbc4d4;
+  border-radius: 8px;
+  padding: 11px 48px 11px 17px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #0b1c30;
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.ocr-input-number:focus {
+  border-color: #28006d;
+  background-color: #ffffff;
+}
+
+.ocr-input-suffix {
+  position: absolute;
+  right: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #7a7583;
+  pointer-events: none;
+}
+
+/* Accepted Format Badges */
+.ocr-format-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ocr-format-pill {
+  padding: 5px 13px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1px solid #d3e4fe;
+  background-color: #eff4ff;
+  color: #28006d;
+}
+
+.ocr-format-pill.highlight {
+  background-color: rgba(86, 245, 248, 0.3);
+  border-color: #56f5f8;
+  color: #004f51;
+  font-weight: 700;
+}
+
+.ocr-format-pill:hover {
+  transform: translateY(-1px);
+}
+
+.ocr-divider-line {
+  border-top: 1px solid #d3e4fe;
+  width: 100%;
+  margin: 4px 0 0 0;
+  padding-top: 18px;
+}
+
+.ocr-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+}
+
+.ocr-switch-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ocr-switch-title {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 19.5px;
+  color: #0b1c30;
+}
+
+.ocr-switch-desc {
+  font-size: 11px;
+  line-height: 16.5px;
+  color: #7a7583;
+}
+
+.ocr-toggle-switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: 9999px;
+  background-color: #cbc4d4;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.ocr-toggle-switch.checked {
+  background-color: #28006d;
+}
+
+.ocr-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.ocr-toggle-switch.checked .ocr-toggle-thumb {
+  transform: translateX(20px);
+}
+
+/* ==========================================================================
+   Section 4: Audit Trail Synchronization Gradient Card
+   ========================================================================== */
+.ocr-gradient-card {
+  background: linear-gradient(146.8deg, rgb(63, 29, 139) 0%, rgb(40, 0, 109) 100%);
+  border-radius: 16px;
+  padding: 24px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.ocr-gradient-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #5af8fb;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  line-height: 18px;
+}
+
+.ocr-gradient-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 22.5px;
+}
+
+.ocr-gradient-card p {
+  font-size: 12px;
+  color: #cfbdff;
+  line-height: 19.5px;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Section 5: Notification Routing Matrix (Full Width Card)
+   ========================================================================== */
+.ocr-matrix-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.ocr-matrix-header-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ocr-matrix-header-text h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0b1c30;
+  margin: 0;
+  line-height: 27px;
+}
+
+.ocr-matrix-header-text p {
+  font-size: 13px;
+  color: #494552;
+  margin: 0;
+  line-height: 19.5px;
+}
+
+.ocr-matrix-container {
+  background-color: #ffffff;
+  border: 1px solid #d3e4fe;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ocr-matrix-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ocr-matrix-table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.ocr-matrix-table th {
+  background-color: #f8f9ff;
+  border-bottom: 1px solid #d3e4fe;
+  padding: 14px 24px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #494552;
+  white-space: nowrap;
+}
+
+.ocr-matrix-table th.col-center {
+  text-align: center;
+  width: 112px;
+}
+
+.ocr-matrix-table th.col-event {
+  width: auto;
+}
+
+.ocr-matrix-table td {
+  border-bottom: 1px solid #d3e4fe;
+  padding: 16px 24px;
+  vertical-align: middle;
+}
+
+.ocr-matrix-table tr:last-child td {
+  border-bottom: none;
+}
+
+.ocr-event-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ocr-event-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0b1c30;
+  line-height: 19.5px;
+}
+
+.ocr-event-subtext {
+  font-size: 12px;
+  color: #7a7583;
+  line-height: 18px;
+}
+
+.ocr-matrix-checkbox-cell {
+  text-align: center;
+}
+
+/* ==========================================================================
+   Section 6: Actions Bar Footer
+   ========================================================================== */
+.ocr-footer-bar {
+  border-top: 1px solid #d3e4fe;
+  padding-top: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+}
+
+.ocr-btn-discard {
+  border: 1px solid #cbc4d4;
+  background-color: #ffffff;
+  color: #494552;
+  padding: 11px 21px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.ocr-btn-discard:hover {
+  background-color: #f8f9ff;
+  border-color: #28006d;
+  color: #28006d;
+}
+
+.ocr-footer-right-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ocr-btn-save {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #3f1d8b;
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.15s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.ocr-btn-save:hover {
+  background-color: #4f25aa;
+}
+
+.ocr-btn-proceed {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #eff4ff;
+  color: #28006d;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.ocr-btn-proceed:hover {
+  background-color: #e0ecff;
+}
+
+/* Toast Notification */
+.ocr-toast-notification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #0b1c30;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  z-index: 110;
+  animation: ocrSlideUp 0.25s ease-out;
+}
+
+@keyframes ocrSlideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

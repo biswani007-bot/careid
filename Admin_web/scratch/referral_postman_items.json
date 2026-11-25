@@ -1,0 +1,130 @@
+[
+  {
+    "folder": " > 11. Referrals & Care Coordination",
+    "name": "Create patient care referral",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/referrals",
+    "body": "{\n  \"patientId\": \"{{patientId}}\",\n  \"receivingFacilityId\": \"{{facilityId}}\",\n  \"receivingDoctorId\": \"{{doctorId}}\",\n  \"priority\": \"URGENT\",\n  \"referralType\": \"SPECIALIST_CONSULTATION\",\n  \"reasonForReferral\": \"Patient presents with persistent chest pain and abnormal ECG findings\",\n  \"clinicalSummary\": \"Blood pressure 145/95 mmHg, elevated cardiac markers\",\n  \"specialtyRequired\": \"Cardiology\"\n}",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]"
+  },
+  {
+    "folder": " > 11. Referrals & Care Coordination",
+    "name": "List patient care referrals with optional filters",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/referrals",
+    "body": null,
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]"
+  },
+  {
+    "folder": " > 11. Referrals & Care Coordination",
+    "name": "List incoming referrals for current doctor/facility",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/referrals/my-incoming",
+    "body": null,
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]"
+  },
+  {
+    "folder": " > 11. Referrals & Care Coordination",
+    "name": "List outgoing referrals created by current doctor",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/referrals/my-outgoing",
+    "body": null,
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]"
+  },
+  {
+    "folder": " > 11. Referrals & Care Coordination",
+    "name": "Get referral dashboard metrics and SLA performance analytics",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/referrals/dashboard/stats?facilityId=string",
+    "body": null,
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]"
+  },
+  {
+    "folder": " > 11. Referrals & Care Coordination",
+    "name": "Get referral details by ID",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/referrals/:id",
+    "body": null,
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]"
+  },
+  {
+    "folder": " > 11. Referrals & Care Coordination",
+    "name": "Update referral clinical details",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/referrals/:id",
+    "body": "{\n  \"priority\": \"URGENT\",\n  \"reasonForReferral\": \"Cardiology referral expedited based on abnormal Holter monitor results\",\n  \"clinicalSummary\": \"Follow-up Holter scan revealed episodes of ventricular tachycardia\",\n  \"specialtyRequired\": \"Cardiology\"\n}",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]"
+  },
+  {
+    "folder": " > 11. Referrals & Care Coordination",
+    "name": "Soft-delete referral",
+    "method": "DELETE",
+    "url": "{{baseUrl}}/api/v1/referrals/:id",
+    "body": null,
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]"
+  },
+  {
+    "folder": " > 11. Referrals & Care Coordination",
+    "name": "Triage patient referral (Approve/Decline/Redirect)",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/referrals/:id/triage",
+    "body": "{\n  \"priority\": \"URGENT\",\n  \"reasonForReferral\": \"Cardiology referral expedited based on abnormal Holter monitor results\",\n  \"clinicalSummary\": \"Follow-up Holter scan revealed episodes of ventricular tachycardia\",\n  \"specialtyRequired\": \"Cardiology\"\n}",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]"
+  },
+  {
+    "folder": " > 11. Referrals & Care Coordination",
+    "name": "Update referral status (IN_PROGRESS, COMPLETED, CANCELLED)",
+    "method": "PUT",
+    "url": "{{baseUrl}}/api/v1/referrals/:id/status",
+    "body": "{\n  \"status\": \"COMPLETED\",\n  \"reason\": \"Patient seen by Dr. Jenkins; consultation note attached\"\n}",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]"
+  },
+  {
+    "folder": " > 11. Referrals & Care Coordination",
+    "name": "Update referral status (alias for PUT :id/status)",
+    "method": "PATCH",
+    "url": "{{baseUrl}}/api/v1/referrals/:id/status",
+    "body": "{\n  \"status\": \"COMPLETED\",\n  \"reason\": \"Patient seen by Dr. Jenkins; consultation note attached\"\n}",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]"
+  },
+  {
+    "folder": " > 11. Referrals & Care Coordination",
+    "name": "Add clinical coordination note to referral",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/referrals/:id/notes",
+    "body": "{\n  \"noteText\": \"Reviewed prior lab results; ordered echocardiogram\",\n  \"isPrivate\": false\n}",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]"
+  },
+  {
+    "folder": " > 11. Referrals & Care Coordination",
+    "name": "List clinical notes for referral",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/referrals/:id/notes",
+    "body": null,
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]"
+  },
+  {
+    "folder": " > 11. Referrals & Care Coordination",
+    "name": "Link medical attachment to referral",
+    "method": "POST",
+    "url": "{{baseUrl}}/api/v1/referrals/:id/attachments",
+    "body": "{\n  \"attachmentId\": \"attachment-uuid-1\"\n}",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]"
+  },
+  {
+    "folder": " > 11. Referrals & Care Coordination",
+    "name": "List linked medical attachments for referral",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/referrals/:id/attachments",
+    "body": null,
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]"
+  },
+  {
+    "folder": " > 11. Referrals & Care Coordination",
+    "name": "Get immutable status transition history for referral",
+    "method": "GET",
+    "url": "{{baseUrl}}/api/v1/referrals/:id/history",
+    "body": null,
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]"
+  }
+]

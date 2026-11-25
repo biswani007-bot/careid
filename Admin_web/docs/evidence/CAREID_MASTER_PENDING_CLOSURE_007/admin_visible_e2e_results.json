@@ -1,0 +1,146 @@
+[
+  {
+    "id": "B01",
+    "name": "Admin Authentication & Session",
+    "status": "PASS",
+    "details": true
+  },
+  {
+    "id": "B02",
+    "name": "Dashboard Overview & Metrics",
+    "status": "PASS",
+    "details": {
+      "dbPatients": "12",
+      "dbDoctors": "18",
+      "dbFacilities": "9"
+    }
+  },
+  {
+    "id": "B03",
+    "name": "Patient Management",
+    "status": "PASS",
+    "details": "Search and details verified"
+  },
+  {
+    "id": "B04",
+    "name": "Facility Management",
+    "status": "PASS",
+    "details": {
+      "facCount": "9"
+    }
+  },
+  {
+    "id": "B05",
+    "name": "Doctor Management",
+    "status": "PASS",
+    "details": {
+      "docCount": "18"
+    }
+  },
+  {
+    "id": "B06",
+    "name": "Staff & Roles Management",
+    "status": "PASS",
+    "details": {
+      "userCount": "39"
+    }
+  },
+  {
+    "id": "B07",
+    "name": "Privacy Policy CMS",
+    "status": "PASS",
+    "details": "Editor and preview verified"
+  },
+  {
+    "id": "B08",
+    "name": "Terms and Conditions CMS",
+    "status": "PASS",
+    "details": "Editor and governance active"
+  },
+  {
+    "id": "B09",
+    "name": "General & Social Settings",
+    "status": "PASS",
+    "details": "Settings page loaded"
+  },
+  {
+    "id": "B10",
+    "name": "CMS Pages",
+    "status": "PASS",
+    "details": "Pages tab active"
+  },
+  {
+    "id": "B11",
+    "name": "CMS FAQs",
+    "status": "PASS",
+    "details": "FAQs tab active"
+  },
+  {
+    "id": "B12",
+    "name": "CMS Banners",
+    "status": "PASS",
+    "details": "Banners tab active"
+  },
+  {
+    "id": "B13",
+    "name": "Healthcare Financing (CR-02)",
+    "status": "PASS",
+    "details": {
+      "finCount": "1"
+    }
+  },
+  {
+    "id": "B14",
+    "name": "Capacity & AI Slot Management (CR-03)",
+    "status": "PASS",
+    "details": "Capacity grid and KPIs verified"
+  },
+  {
+    "id": "B15",
+    "name": "Appointment Monitoring (CR-04)",
+    "status": "PASS",
+    "details": {
+      "apptCount": "6"
+    }
+  },
+  {
+    "id": "B16",
+    "name": "Referral Management (CR-05)",
+    "status": "PASS",
+    "details": {
+      "refCount": "6"
+    }
+  },
+  {
+    "id": "B17",
+    "name": "EHR Integrations Oversight (CR-06)",
+    "status": "PASS",
+    "details": "Connector monitoring active"
+  },
+  {
+    "id": "B18",
+    "name": "Office Chat Oversight (CR-07)",
+    "status": "PASS",
+    "details": "Chat governance verified"
+  },
+  {
+    "id": "B19",
+    "name": "Prescription Pickup Monitoring (CR-08)",
+    "status": "PASS",
+    "details": {
+      "schedCount": "45"
+    }
+  },
+  {
+    "id": "B20",
+    "name": "Demographic Reports",
+    "status": "PASS",
+    "details": "Reports dashboard loaded"
+  },
+  {
+    "id": "B21",
+    "name": "OCR Processing Queue",
+    "status": "PASS",
+    "details": "Processing queue loaded"
+  }
+]

@@ -1,0 +1,559 @@
+[1] [GET] {{baseUrl}}/api/v1/health | Folder: 01. Environment & Health Checks | Name: Platform Health Check
+[2] [GET] {{baseUrl}}/api/v1/ready | Folder: 01. Environment & Health Checks | Name: Platform Readiness Probe
+[3] [GET] {{baseUrl}}/api/v1/live | Folder: 01. Environment & Health Checks | Name: Platform Liveness Probe
+[4] [POST] {{baseUrl}}/api/v1/auth/password/login | Folder: 02. Authentication & OTP | Name: CareID Admin/Super Admin Password Login
+[5] [POST] {{baseUrl}}/api/v1/auth/admin/login | Folder: 02. Authentication & OTP | Name: Admin Email/Password Login (Legacy Alias)
+[6] [POST] {{baseUrl}}/api/v1/auth/otp/request | Folder: 02. Authentication & OTP | Name: Request Phone OTP
+[7] [POST] {{baseUrl}}/api/v1/auth/otp/verify | Folder: 02. Authentication & OTP | Name: Verify Phone OTP & Login
+[8] [POST] {{baseUrl}}/api/v1/auth/otp/resend | Folder: 02. Authentication & OTP | Name: Resend OTP to registered phone number
+[9] [POST] {{baseUrl}}/api/v1/auth/token/refresh | Folder: 02. Authentication & OTP | Name: Refresh JWT Access Token
+[10] [POST] {{baseUrl}}/api/v1/auth/logout | Folder: 02. Authentication & OTP | Name: User Session Logout
+[11] [POST] {{baseUrl}}/api/v1/auth/logout-all | Folder: 02. Authentication & OTP | Name: Logout all devices and revoke all tokens
+[12] [POST] {{baseUrl}}/api/v1/auth/password/change | Folder: 02. Authentication & OTP | Name: Change authenticated user password
+[13] [GET] {{baseUrl}}/api/v1/auth/me | Folder: 03. User Profile & Account | Name: Get current user profile and claims
+[14] [PUT] {{baseUrl}}/api/v1/auth/me | Folder: 03. User Profile & Account | Name: Update current user profile
+[15] [PATCH] {{baseUrl}}/api/v1/auth/me | Folder: 03. User Profile & Account | Name: Partially update current user profile
+[16] [GET] {{baseUrl}}/api/v1/auth/sessions | Folder: 03. User Profile & Account | Name: List active sessions for authenticated user
+[17] [DELETE] {{baseUrl}}/api/v1/auth/sessions | Folder: 03. User Profile & Account | Name: Terminate all other active sessions
+[18] [DELETE] {{baseUrl}}/api/v1/auth/sessions/:sessionId | Folder: 03. User Profile & Account | Name: Terminate a specific active session
+[19] [GET] {{baseUrl}}/api/v1/auth/roles | Folder: 03. User Profile & Account | Name: Get current user assigned roles
+[20] [GET] {{baseUrl}}/api/v1/auth/permissions | Folder: 03. User Profile & Account | Name: Get current user assigned permissions
+[21] [GET] {{baseUrl}}/api/v1/admin/dashboard/stats | Folder: 04. Admin Portal & System Operations | Name: Get quick legacy dashboard statistics
+[22] [GET] {{baseUrl}}/api/v1/admin/dashboard/summary | Folder: 04. Admin Portal & System Operations | Name: Get platform-wide aggregated summary & growth metrics
+[23] [GET] {{baseUrl}}/api/v1/admin/users?search=string&q=string&role=string&status=INACTIVE&page=1&limit=50&sortBy=createdAt&sortOrder=desc | Folder: 04. Admin Portal & System Operations | Name: Search and list platform users with filter & roles
+[24] [POST] {{baseUrl}}/api/v1/admin/users | Folder: 04. Admin Portal & System Operations | Name: Create user with role and linked profile
+[25] [POST] {{baseUrl}}/api/v1/admin/doctors | Folder: 04. Admin Portal & System Operations | Name: Register/Create a doctor profile for an existing user account
+[26] [GET] {{baseUrl}}/api/v1/admin/users/:id | Folder: 04. Admin Portal & System Operations | Name: Get user details by ID
+[27] [PUT] {{baseUrl}}/api/v1/admin/users/:id | Folder: 04. Admin Portal & System Operations | Name: Direct demographic and account edit for user
+[28] [DELETE] {{baseUrl}}/api/v1/admin/users/:id | Folder: 04. Admin Portal & System Operations | Name: Soft-delete / block a user account
+[29] [POST] {{baseUrl}}/api/v1/admin/users/:id/reset-password | Folder: 04. Admin Portal & System Operations | Name: Administrator-initiated password reset and session revocation
+[30] [GET] {{baseUrl}}/api/v1/admin/patients?page=1&limit=20&q=string&status=string&gender=string&bloodGroup=string | Folder: 04. Admin Portal & System Operations | Name: Search and list patients with server-side pagination and filters
+[31] [GET] {{baseUrl}}/api/v1/admin/patients/:patientId/medical-records/timeline?page=1&limit=20 | Folder: 04. Admin Portal & System Operations | Name: Get unified medical timeline for a specific patient
+[32] [GET] {{baseUrl}}/api/v1/admin/patients/:patientId/medical-records?page=1&limit=20&status=string&startDate=string&endDate=string&includeArchived=true | Folder: 04. Admin Portal & System Operations | Name: List medical records for a specific patient with pagination
+[33] [GET] {{baseUrl}}/api/v1/admin/patients/:patientId | Folder: 04. Admin Portal & System Operations | Name: Get comprehensive patient details by ID or User ID
+[34] [GET] {{baseUrl}}/api/v1/admin/medical-records?page=1&limit=20&q=string&status=string&patientProfileId=string&startDate=string&endDate=string | Folder: 04. Admin Portal & System Operations | Name: Search and list medical records platform-wide with pagination
+[35] [GET] {{baseUrl}}/api/v1/admin/medical-records/:recordId | Folder: 04. Admin Portal & System Operations | Name: Get clinical details of a specific medical record
+[36] [PUT] {{baseUrl}}/api/v1/admin/users/:id/status | Folder: 04. Admin Portal & System Operations | Name: Activate, deactivate, or lock/block user account
+[37] [PUT] {{baseUrl}}/api/v1/admin/users/:id/roles | Folder: 04. Admin Portal & System Operations | Name: Assign RBAC roles to user
+[38] [POST] {{baseUrl}}/api/v1/admin/users/:id/restore | Folder: 04. Admin Portal & System Operations | Name: Restore a blocked/soft-deleted user account
+[39] [GET] {{baseUrl}}/api/v1/admin/roles | Folder: 04. Admin Portal & System Operations | Name: List all RBAC roles with assigned permissions
+[40] [POST] {{baseUrl}}/api/v1/admin/roles | Folder: 04. Admin Portal & System Operations | Name: Create custom or system role
+[41] [GET] {{baseUrl}}/api/v1/admin/roles/:id | Folder: 04. Admin Portal & System Operations | Name: Get role details with permissions
+[42] [PUT] {{baseUrl}}/api/v1/admin/roles/:id | Folder: 04. Admin Portal & System Operations | Name: Update role description or assigned permissions
+[43] [DELETE] {{baseUrl}}/api/v1/admin/roles/:id | Folder: 04. Admin Portal & System Operations | Name: Delete custom role (core roles protected)
+[44] [GET] {{baseUrl}}/api/v1/admin/permissions | Folder: 04. Admin Portal & System Operations | Name: List all system permissions
+[45] [POST] {{baseUrl}}/api/v1/admin/permissions | Folder: 04. Admin Portal & System Operations | Name: Create a new granular permission
+[46] [GET] {{baseUrl}}/api/v1/admin/permission-groups | Folder: 04. Admin Portal & System Operations | Name: List permission groups with permissions
+[47] [POST] {{baseUrl}}/api/v1/admin/permission-groups | Folder: 04. Admin Portal & System Operations | Name: Create a new permission group
+[48] [PUT] {{baseUrl}}/api/v1/admin/roles/:id/permissions | Folder: 04. Admin Portal & System Operations | Name: Assign permissions to a role
+[49] [GET] {{baseUrl}}/api/v1/admin/permission-matrix | Folder: 04. Admin Portal & System Operations | Name: Get complete Role-Permission matrix
+[50] [POST] {{baseUrl}}/api/v1/admin/organizations | Folder: 04. Admin Portal & System Operations | Name: Create an organization profile
+[51] [GET] {{baseUrl}}/api/v1/admin/organizations | Folder: 04. Admin Portal & System Operations | Name: List all registered organizations
+[52] [GET] {{baseUrl}}/api/v1/admin/organizations/:id | Folder: 04. Admin Portal & System Operations | Name: Get organization details
+[53] [PUT] {{baseUrl}}/api/v1/admin/organizations/:id | Folder: 04. Admin Portal & System Operations | Name: Update organization details and settings
+[54] [DELETE] {{baseUrl}}/api/v1/admin/organizations/:id | Folder: 04. Admin Portal & System Operations | Name: Soft-delete an organization
+[55] [GET] {{baseUrl}}/api/v1/admin/settings?category=STORAGE | Folder: 04. Admin Portal & System Operations | Name: Get system settings by category or all
+[56] [PUT] {{baseUrl}}/api/v1/admin/settings | Folder: 04. Admin Portal & System Operations | Name: Upsert platform configuration setting
+[57] [GET] {{baseUrl}}/api/v1/admin/audit-logs/export?format=csv&userId=string&action=string&startDate=string&endDate=string | Folder: 04. Admin Portal & System Operations | Name: Export system audit logs as CSV or JSON
+[58] [GET] {{baseUrl}}/api/v1/admin/audit-logs/:id | Folder: 04. Admin Portal & System Operations | Name: Get single audit log entry by ID
+[59] [GET] {{baseUrl}}/api/v1/admin/audit-logs?userId=string&action=string&startDate=string&endDate=string&page=1&limit=50 | Folder: 04. Admin Portal & System Operations | Name: Get global system audit trail with filtering and pagination
+[60] [POST] {{baseUrl}}/api/v1/doctors/treatment-offers | Folder: 05. Doctor Portal | Name: Create a new draft treatment proposal
+[61] [GET] {{baseUrl}}/api/v1/doctors/treatment-offers?status=EXPIRED&patientId=string&search=string&page=1&limit=20 | Folder: 05. Doctor Portal | Name: List authored treatment proposals
+[62] [GET] {{baseUrl}}/api/v1/doctors/treatment-offers/:offerId | Folder: 05. Doctor Portal | Name: Get treatment offer details
+[63] [PUT] {{baseUrl}}/api/v1/doctors/treatment-offers/:offerId | Folder: 05. Doctor Portal | Name: Update draft treatment offer
+[64] [POST] {{baseUrl}}/api/v1/doctors/treatment-offers/:offerId/dispatch | Folder: 05. Doctor Portal | Name: Lock draft and dispatch treatment offer to patient
+[65] [GET] {{baseUrl}}/api/v1/doctors/treatment-offers/:offerId/status | Folder: 05. Doctor Portal | Name: Inspect live offer lifecycle status and review timestamps
+[66] [POST] {{baseUrl}}/api/v1/doctors/treatment-offers/:offerId/cancel | Folder: 05. Doctor Portal | Name: Doctor cancels active treatment proposal with clinical justification
+[67] [POST] {{baseUrl}}/api/v1/doctors | Folder: 05. Doctor Portal | Name: Register/Create a doctor profile in Master Registry
+[68] [GET] {{baseUrl}}/api/v1/doctors?page=3467.616117677217&limit=3467.616117677217 | Folder: 05. Doctor Portal | Name: List all registered doctor profiles in Master Registry
+[69] [GET] {{baseUrl}}/api/v1/doctors/search?q=string | Folder: 05. Doctor Portal | Name: Enterprise doctor search (by name, registration, license, dept, specialization)
+[70] [GET] {{baseUrl}}/api/v1/doctors/statistics | Folder: 05. Doctor Portal | Name: Get platform-wide doctor directory statistics
+[71] [GET] {{baseUrl}}/api/v1/doctors/verification/pending | Folder: 05. Doctor Portal | Name: List doctor profiles pending admin verification
+[72] [GET] {{baseUrl}}/api/v1/doctors/me | Folder: 05. Doctor Portal | Name: Get current authenticated doctor profile
+[73] [GET] {{baseUrl}}/api/v1/doctors/patients?page=1&limit=20&search=string&q=string&gender=string&bloodGroup=string&status=string | Folder: 05. Doctor Portal | Name: List patients the authenticated doctor is authorized to treat
+[74] [GET] {{baseUrl}}/api/v1/doctors/patients/:patientProfileId/medical-records/timeline?page=1&limit=20 | Folder: 05. Doctor Portal | Name: Get authorized patient medical record timeline
+[75] [GET] {{baseUrl}}/api/v1/doctors/patients/:patientProfileId/medical-records?page=1&limit=20&status=string&startDate=string&endDate=string&includeArchived=true | Folder: 05. Doctor Portal | Name: Get authorized patient medical records with pagination
+[76] [POST] {{baseUrl}}/api/v1/doctors/patients/:patientProfileId/medical-records | Folder: 05. Doctor Portal | Name: Create medical record for an authorized patient
+[77] [POST] {{baseUrl}}/api/v1/doctors/patients/:patientProfileId/encounters | Folder: 05. Doctor Portal | Name: Document clinical encounter, diagnoses, vitals, procedures for an authorized patient
+[78] [PUT] {{baseUrl}}/api/v1/doctors/patients/:patientProfileId/medical-records/:recordId | Folder: 05. Doctor Portal | Name: Update clinical notes/record documented by doctor
+[79] [GET] {{baseUrl}}/api/v1/doctors/patients/:patientProfileId/prescriptions?page=1&limit=20 | Folder: 05. Doctor Portal | Name: List prescriptions for an authorized patient
+[80] [POST] {{baseUrl}}/api/v1/doctors/patients/:patientProfileId/prescriptions | Folder: 05. Doctor Portal | Name: Create a new prescription for an authorized patient
+[81] [GET] {{baseUrl}}/api/v1/doctors/patients/:patientProfileId/vitals?page=1&limit=20 | Folder: 05. Doctor Portal | Name: List vital signs records for an authorized patient
+[82] [POST] {{baseUrl}}/api/v1/doctors/patients/:patientProfileId/vitals | Folder: 05. Doctor Portal | Name: Record vital signs for an authorized patient
+[83] [GET] {{baseUrl}}/api/v1/doctors/patients/:patientProfileId/admissions?page=1&limit=20 | Folder: 05. Doctor Portal | Name: List hospital admission records for an authorized patient
+[84] [POST] {{baseUrl}}/api/v1/doctors/patients/:patientProfileId/admissions | Folder: 05. Doctor Portal | Name: Record a hospital admission for an authorized patient
+[85] [GET] {{baseUrl}}/api/v1/doctors/patients/:patientProfileId | Folder: 05. Doctor Portal | Name: Get complete demographic information for an authorized patient
+[86] [GET] {{baseUrl}}/api/v1/doctors/:id | Folder: 05. Doctor Portal | Name: Get complete doctor profile details
+[87] [PUT] {{baseUrl}}/api/v1/doctors/:id | Folder: 05. Doctor Portal | Name: Update doctor profile details
+[88] [DELETE] {{baseUrl}}/api/v1/doctors/:id | Folder: 05. Doctor Portal | Name: Soft-delete a doctor profile
+[89] [POST] {{baseUrl}}/api/v1/doctors/:id/verify | Folder: 05. Doctor Portal | Name: Approve & verify doctor registration
+[90] [POST] {{baseUrl}}/api/v1/doctors/:id/reject | Folder: 05. Doctor Portal | Name: Reject doctor verification with reason
+[91] [POST] {{baseUrl}}/api/v1/doctors/:id/suspend | Folder: 05. Doctor Portal | Name: Suspend doctor registration
+[92] [POST] {{baseUrl}}/api/v1/doctors/:id/restore | Folder: 05. Doctor Portal | Name: Restore suspended doctor registration
+[93] [POST] {{baseUrl}}/api/v1/doctors/:id/renew-license | Folder: 05. Doctor Portal | Name: Renew medical registration license (extends expiry)
+[94] [POST] {{baseUrl}}/api/v1/doctors/:id/generate-qr | Folder: 05. Doctor Portal | Name: Generate/Issue Doctor Digital Verification QR token
+[95] [GET] {{baseUrl}}/api/v1/doctors/:id/documents | Folder: 05. Doctor Portal | Name: List attached doctor credential documents
+[96] [POST] {{baseUrl}}/api/v1/doctors/:id/documents | Folder: 05. Doctor Portal | Name: Attach credential document (reusing MedicalAttachment)
+[97] [GET] {{baseUrl}}/api/v1/doctors/:id/history | Folder: 05. Doctor Portal | Name: Get complete verification & status lifecycle history
+[98] [GET] {{baseUrl}}/api/v1/doctors/:id/slots | Folder: 05. Doctor Portal | Name: Get Doctor Availability Schedule Slots
+[99] [POST] {{baseUrl}}/api/v1/patients/register | Folder: 06. Patient App | Name: Step 1: Initialize Patient Draft Registration
+[100] [GET] {{baseUrl}}/api/v1/patients/register/status | Folder: 06. Patient App | Name: Check Draft Registration Progress Status
+[101] [PATCH] {{baseUrl}}/api/v1/patients/register/resume?step=string | Folder: 06. Patient App | Name: Resume and update registration progress
+[102] [POST] {{baseUrl}}/api/v1/patients/onboarding/demographics | Folder: 06. Patient App | Name: Step 2: Patient Demographic Registration
+[103] [PUT] {{baseUrl}}/api/v1/patients/onboarding/demographics | Folder: 06. Patient App | Name: Step 2: Update Demographics Details
+[104] [POST] {{baseUrl}}/api/v1/patients/onboarding/emergency-contact | Folder: 06. Patient App | Name: Step 3: Save Emergency Contact
+[105] [PUT] {{baseUrl}}/api/v1/patients/onboarding/emergency-contact | Folder: 06. Patient App | Name: Step 3: Update Emergency Contact
+[106] [POST] {{baseUrl}}/api/v1/patients/onboarding/insurance | Folder: 06. Patient App | Name: Step 4: Save Primary/Secondary Insurance Link
+[107] [PUT] {{baseUrl}}/api/v1/patients/onboarding/insurance | Folder: 06. Patient App | Name: Step 4: Update Insurance Details
+[108] [POST] {{baseUrl}}/api/v1/patients/onboarding/health-card | Folder: 06. Patient App | Name: Step 5: Initialize Secure Digital Health Card
+[109] [POST] {{baseUrl}}/api/v1/patients/onboarding/family-invite | Folder: 06. Patient App | Name: Step 6: Family Account Linkage Request
+[110] [GET] {{baseUrl}}/api/v1/patients/onboarding/progress | Folder: 06. Patient App | Name: Get Step-by-Step Onboarding Progress Checklist
+[111] [POST] {{baseUrl}}/api/v1/patients/onboarding/complete | Folder: 06. Patient App | Name: Finalize and Complete Onboarding Registration
+[112] [GET] {{baseUrl}}/api/v1/patients/onboarding/completion | Folder: 06. Patient App | Name: Get overall Patient Onboarding Completion percentage
+[113] [GET] {{baseUrl}}/api/v1/patients/me | Folder: 06. Patient App | Name: Get Patient Profile Details
+[114] [PUT] {{baseUrl}}/api/v1/patients/me | Folder: 06. Patient App | Name: Update Patient Profile
+[115] [PATCH] {{baseUrl}}/api/v1/patients/family-consents/:id | Folder: 06. Patient App | Name: Accept / Reject Family Linkage Consent
+[116] [GET] {{baseUrl}}/api/v1/patients/me/full | Folder: 06. Patient App | Name: Get Full Patient Profile with all extended fields
+[117] [PATCH] {{baseUrl}}/api/v1/patients/me/basic | Folder: 06. Patient App | Name: Update Basic Patient Information (name, DOB, gender, nationality, etc.)
+[118] [PATCH] {{baseUrl}}/api/v1/patients/me/contact | Folder: 06. Patient App | Name: Update Contact Preferences
+[119] [PATCH] {{baseUrl}}/api/v1/patients/me/address | Folder: 06. Patient App | Name: Update Current and Permanent Address
+[120] [PATCH] {{baseUrl}}/api/v1/patients/me/preferences | Folder: 06. Patient App | Name: Update Communication Preferences and Privacy Settings
+[121] [PATCH] {{baseUrl}}/api/v1/patients/me/medical-summary | Folder: 06. Patient App | Name: Update Medical Summary (blood group, allergies, conditions, disabilities)
+[122] [POST] {{baseUrl}}/api/v1/patients/me/photo | Folder: 06. Patient App | Name: Upload or Replace Profile Photo (supports multipart/form-data image or JSON photoUrl)
+[123] [DELETE] {{baseUrl}}/api/v1/patients/me/photo | Folder: 06. Patient App | Name: Delete Profile Photo
+[124] [GET] {{baseUrl}}/api/v1/patients/me/photo/file/:filename | Folder: 06. Patient App | Name: Serve locally uploaded profile photo
+[125] [GET] {{baseUrl}}/api/v1/patients/profile/completion | Folder: 06. Patient App | Name: Get Patient Profile Completion Status with section breakdown
+[126] [GET] {{baseUrl}}/api/v1/patients/profile/timeline | Folder: 06. Patient App | Name: Get Patient Profile Change Timeline
+[127] [GET] {{baseUrl}}/api/v1/patients/profile/activity | Folder: 06. Patient App | Name: Get Patient Profile Activity Summary
+[128] [GET] {{baseUrl}}/api/v1/patients/treatment-offers?status=EXPIRED&patientId=string&search=string&page=1&limit=20 | Folder: 06. Patient App | Name: List received treatment offers for authenticated patient
+[129] [GET] {{baseUrl}}/api/v1/patients/treatment-offers/:offerId | Folder: 06. Patient App | Name: Patient view of treatment offer (Triggers PATIENT_REVIEWING state)
+[130] [POST] {{baseUrl}}/api/v1/patients/treatment-offers/:offerId/accept | Folder: 06. Patient App | Name: Patient ratifies and accepts treatment offer (RATIFIED_ACCEPTED)
+[131] [POST] {{baseUrl}}/api/v1/patients/treatment-offers/:offerId/reject | Folder: 06. Patient App | Name: Patient declines treatment offer proposal (DECLINED)
+[132] [POST] {{baseUrl}}/api/v1/health-cards | Folder: 07. Digital Health Cards & Passes | Name: Issue a new Health Card for authenticated patient
+[133] [GET] {{baseUrl}}/api/v1/health-cards | Folder: 07. Digital Health Cards & Passes | Name: Get active Health Card details for current patient
+[134] [GET] {{baseUrl}}/api/v1/health-cards/search?q=string | Folder: 07. Digital Health Cards & Passes | Name: Search Health Cards by card number or patient name
+[135] [GET] {{baseUrl}}/api/v1/health-cards/:id | Folder: 07. Digital Health Cards & Passes | Name: Get specific Health Card details by ID
+[136] [PUT] {{baseUrl}}/api/v1/health-cards/:id | Folder: 07. Digital Health Cards & Passes | Name: Update Health Card emergency flag or metadata
+[137] [POST] {{baseUrl}}/api/v1/health-cards/:id/activate | Folder: 07. Digital Health Cards & Passes | Name: Activate an ISSUED or DEACTIVATED Health Card
+[138] [POST] {{baseUrl}}/api/v1/health-cards/:id/deactivate | Folder: 07. Digital Health Cards & Passes | Name: Deactivate Health Card
+[139] [POST] {{baseUrl}}/api/v1/health-cards/:id/suspend | Folder: 07. Digital Health Cards & Passes | Name: Suspend Health Card
+[140] [POST] {{baseUrl}}/api/v1/health-cards/:id/block | Folder: 07. Digital Health Cards & Passes | Name: Block Health Card for security or lost card reasons
+[141] [POST] {{baseUrl}}/api/v1/health-cards/:id/unblock | Folder: 07. Digital Health Cards & Passes | Name: Unblock a BLOCKED Health Card
+[142] [POST] {{baseUrl}}/api/v1/health-cards/:id/replace | Folder: 07. Digital Health Cards & Passes | Name: Replace Health Card — generates a new card number and increments version
+[143] [POST] {{baseUrl}}/api/v1/health-cards/:id/renew | Folder: 07. Digital Health Cards & Passes | Name: Renew Health Card — extends validity period by 1 year
+[144] [POST] {{baseUrl}}/api/v1/health-cards/:id/archive | Folder: 07. Digital Health Cards & Passes | Name: Archive Health Card
+[145] [POST] {{baseUrl}}/api/v1/health-cards/:id/restore | Folder: 07. Digital Health Cards & Passes | Name: Restore an ARCHIVED Health Card
+[146] [GET] {{baseUrl}}/api/v1/health-cards/:id/history | Folder: 07. Digital Health Cards & Passes | Name: Get complete status lifecycle audit history for Health Card
+[147] [POST] {{baseUrl}}/api/v1/health-cards/verify-qr | Folder: 07. Digital Health Cards & Passes | Name: Verify digital Health Card QR payload
+[148] [GET] {{baseUrl}}/api/v1/prescriptions/:prescriptionId | Folder: 08. Medical Records (General, Dental & Vision) | Name: Get detailed prescription with medications and refill history
+[149] [PUT] {{baseUrl}}/api/v1/prescriptions/:prescriptionId | Folder: 08. Medical Records (General, Dental & Vision) | Name: Update prescription instructions or medication items
+[150] [POST] {{baseUrl}}/api/v1/prescriptions/:prescriptionId/refill | Folder: 08. Medical Records (General, Dental & Vision) | Name: Authorize and record a prescription refill
+[151] [PATCH] {{baseUrl}}/api/v1/prescriptions/:prescriptionId/discontinue | Folder: 08. Medical Records (General, Dental & Vision) | Name: Discontinue an active prescription with clinical justification
+[152] [GET] {{baseUrl}}/api/v1/prescriptions/:prescriptionId/export | Folder: 08. Medical Records (General, Dental & Vision) | Name: Export clinical prescription summary for printing or pharmacy fulfillment
+[153] [GET] {{baseUrl}}/api/v1/prescriptions/:prescriptionId/refills | Folder: 08. Medical Records (General, Dental & Vision) | Name: Get refill history and audit log for a prescription
+[154] [POST] {{baseUrl}}/api/v1/medical-records | Folder: 08. Medical Records (General, Dental & Vision) | Name: Create a new medical record with encounter, vitals, diagnosis, and procedures
+[155] [GET] {{baseUrl}}/api/v1/medical-records | Folder: 08. Medical Records (General, Dental & Vision) | Name: Get all medical records for the authenticated patient
+[156] [POST] {{baseUrl}}/api/v1/records | Folder: 08. Medical Records (General, Dental & Vision) | Name: Create a new medical record with encounter, vitals, diagnosis, and procedures
+[157] [GET] {{baseUrl}}/api/v1/records | Folder: 08. Medical Records (General, Dental & Vision) | Name: Get all medical records for the authenticated patient
+[158] [GET] {{baseUrl}}/api/v1/medical-records/timeline | Folder: 08. Medical Records (General, Dental & Vision) | Name: Get unified medical timeline combining records and attachments
+[159] [GET] {{baseUrl}}/api/v1/records/timeline | Folder: 08. Medical Records (General, Dental & Vision) | Name: Get unified medical timeline combining records and attachments
+[160] [GET] {{baseUrl}}/api/v1/medical-records/search?q=string | Folder: 08. Medical Records (General, Dental & Vision) | Name: Search medical records by title, complaints, notes, diagnosis, or plan
+[161] [GET] {{baseUrl}}/api/v1/records/search?q=string | Folder: 08. Medical Records (General, Dental & Vision) | Name: Search medical records by title, complaints, notes, diagnosis, or plan
+[162] [GET] {{baseUrl}}/api/v1/medical-records/:id | Folder: 08. Medical Records (General, Dental & Vision) | Name: Get a specific medical record by ID
+[163] [PUT] {{baseUrl}}/api/v1/medical-records/:id | Folder: 08. Medical Records (General, Dental & Vision) | Name: Update an existing medical record (blocked if ARCHIVED)
+[164] [DELETE] {{baseUrl}}/api/v1/medical-records/:id | Folder: 08. Medical Records (General, Dental & Vision) | Name: Soft delete a medical record
+[165] [GET] {{baseUrl}}/api/v1/records/:id | Folder: 08. Medical Records (General, Dental & Vision) | Name: Get a specific medical record by ID
+[166] [PUT] {{baseUrl}}/api/v1/records/:id | Folder: 08. Medical Records (General, Dental & Vision) | Name: Update an existing medical record (blocked if ARCHIVED)
+[167] [DELETE] {{baseUrl}}/api/v1/records/:id | Folder: 08. Medical Records (General, Dental & Vision) | Name: Soft delete a medical record
+[168] [POST] {{baseUrl}}/api/v1/medical-records/:id/archive | Folder: 08. Medical Records (General, Dental & Vision) | Name: Archive a medical record (makes record immutable)
+[169] [POST] {{baseUrl}}/api/v1/records/:id/archive | Folder: 08. Medical Records (General, Dental & Vision) | Name: Archive a medical record (makes record immutable)
+[170] [POST] {{baseUrl}}/api/v1/medical-records/:id/restore | Folder: 08. Medical Records (General, Dental & Vision) | Name: Restore a soft-deleted or archived medical record
+[171] [POST] {{baseUrl}}/api/v1/records/:id/restore | Folder: 08. Medical Records (General, Dental & Vision) | Name: Restore a soft-deleted or archived medical record
+[172] [POST] {{baseUrl}}/api/v1/medical-records/:id/attachments | Folder: 08. Medical Records (General, Dental & Vision) | Name: Upload and link an attachment to a specific medical record
+[173] [GET] {{baseUrl}}/api/v1/medical-records/:id/attachments | Folder: 08. Medical Records (General, Dental & Vision) | Name: List all attachments linked to a specific medical record
+[174] [POST] {{baseUrl}}/api/v1/records/:id/attachments | Folder: 08. Medical Records (General, Dental & Vision) | Name: Upload and link an attachment to a specific medical record
+[175] [GET] {{baseUrl}}/api/v1/records/:id/attachments | Folder: 08. Medical Records (General, Dental & Vision) | Name: List all attachments linked to a specific medical record
+[176] [POST] {{baseUrl}}/api/v1/facilities | Folder: 09. Facilities & Branches | Name: Register/Create a facility profile in Master Registry
+[177] [GET] {{baseUrl}}/api/v1/facilities?page=3467.616117677217&limit=3467.616117677217 | Folder: 09. Facilities & Branches | Name: List all registered facility profiles
+[178] [GET] {{baseUrl}}/api/v1/facilities/search?q=string | Folder: 09. Facilities & Branches | Name: Enterprise facility search (by name, code, city, type)
+[179] [GET] {{baseUrl}}/api/v1/facilities/statistics | Folder: 09. Facilities & Branches | Name: Get platform-wide facility directory statistics
+[180] [GET] {{baseUrl}}/api/v1/facilities/:id | Folder: 09. Facilities & Branches | Name: Get complete facility details
+[181] [PUT] {{baseUrl}}/api/v1/facilities/:id | Folder: 09. Facilities & Branches | Name: Update facility details
+[182] [DELETE] {{baseUrl}}/api/v1/facilities/:id | Folder: 09. Facilities & Branches | Name: Soft-delete a facility
+[183] [POST] {{baseUrl}}/api/v1/facilities/:id/verify | Folder: 09. Facilities & Branches | Name: Approve & verify facility registration
+[184] [POST] {{baseUrl}}/api/v1/facilities/:id/suspend | Folder: 09. Facilities & Branches | Name: Suspend facility registration
+[185] [POST] {{baseUrl}}/api/v1/facilities/:id/restore | Folder: 09. Facilities & Branches | Name: Restore suspended facility registration
+[186] [POST] {{baseUrl}}/api/v1/facilities/:id/generate-qr | Folder: 09. Facilities & Branches | Name: Generate Facility Digital Identity QR token
+[187] [GET] {{baseUrl}}/api/v1/facilities/:id/departments | Folder: 09. Facilities & Branches | Name: List facility departments
+[188] [POST] {{baseUrl}}/api/v1/facilities/:id/departments | Folder: 09. Facilities & Branches | Name: Create facility department
+[189] [GET] {{baseUrl}}/api/v1/facilities/:id/rooms | Folder: 09. Facilities & Branches | Name: List facility rooms
+[190] [POST] {{baseUrl}}/api/v1/facilities/:id/rooms | Folder: 09. Facilities & Branches | Name: Create facility room
+[191] [POST] {{baseUrl}}/api/v1/facilities/:id/assign-doctor | Folder: 09. Facilities & Branches | Name: Assign doctor to facility
+[192] [GET] {{baseUrl}}/api/v1/facilities/:id/doctors | Folder: 09. Facilities & Branches | Name: List associated facility doctors
+[193] [GET] {{baseUrl}}/api/v1/facilities/:id/documents | Folder: 09. Facilities & Branches | Name: List attached facility credential documents
+[194] [POST] {{baseUrl}}/api/v1/facilities/:id/documents | Folder: 09. Facilities & Branches | Name: Attach credential document (reusing MedicalAttachment)
+[195] [GET] {{baseUrl}}/api/v1/facilities/:id/history | Folder: 09. Facilities & Branches | Name: Get complete verification & status lifecycle history
+[196] [POST] {{baseUrl}}/api/v1/appointments | Folder: 10. Appointments, Schedules & Shifts | Name: Book a new appointment
+[197] [GET] {{baseUrl}}/api/v1/appointments?page=1&limit=20&patientProfileId=string&doctorProfileId=string&facilityId=string&status=SCHEDULED&type=IN_PERSON&fromDate=string&toDate=string | Folder: 10. Appointments, Schedules & Shifts | Name: List appointments with filtering and pagination
+[198] [GET] {{baseUrl}}/api/v1/appointments/doctor/my-appointments?page=1&limit=20&patientProfileId=string&doctorProfileId=string&facilityId=string&status=SCHEDULED&type=IN_PERSON&fromDate=string&toDate=string | Folder: 10. Appointments, Schedules & Shifts | Name: Get appointments scheduled for authenticated doctor
+[199] [GET] {{baseUrl}}/api/v1/appointments/doctor/me?page=1&limit=20&patientProfileId=string&doctorProfileId=string&facilityId=string&status=SCHEDULED&type=IN_PERSON&fromDate=string&toDate=string | Folder: 10. Appointments, Schedules & Shifts | Name: Get appointments scheduled for authenticated doctor
+[200] [GET] {{baseUrl}}/api/v1/appointments/patient/my-appointments?page=1&limit=20&patientProfileId=string&doctorProfileId=string&facilityId=string&status=SCHEDULED&type=IN_PERSON&fromDate=string&toDate=string | Folder: 10. Appointments, Schedules & Shifts | Name: Get appointments scheduled for authenticated patient
+[201] [GET] {{baseUrl}}/api/v1/appointments/patient/me?page=1&limit=20&patientProfileId=string&doctorProfileId=string&facilityId=string&status=SCHEDULED&type=IN_PERSON&fromDate=string&toDate=string | Folder: 10. Appointments, Schedules & Shifts | Name: Get appointments scheduled for authenticated patient
+[202] [GET] {{baseUrl}}/api/v1/appointments/:id | Folder: 10. Appointments, Schedules & Shifts | Name: Get appointment details by ID
+[203] [PUT] {{baseUrl}}/api/v1/appointments/:id/reschedule | Folder: 10. Appointments, Schedules & Shifts | Name: Reschedule an existing appointment
+[204] [PUT] {{baseUrl}}/api/v1/appointments/:id/cancel | Folder: 10. Appointments, Schedules & Shifts | Name: Cancel an appointment
+[205] [PUT] {{baseUrl}}/api/v1/appointments/:id/status | Folder: 10. Appointments, Schedules & Shifts | Name: Update appointment status (clinical & operational staff)
+[206] [POST] {{baseUrl}}/api/v1/schedules | Folder: 10. Appointments, Schedules & Shifts | Name: Create a schedule profile (doctor / staff / facility)
+[207] [GET] {{baseUrl}}/api/v1/schedules | Folder: 10. Appointments, Schedules & Shifts | Name: List all schedule profiles
+[208] [GET] {{baseUrl}}/api/v1/schedules/search?q=string | Folder: 10. Appointments, Schedules & Shifts | Name: Search schedules by owner type, title, facility or doctor
+[209] [GET] {{baseUrl}}/api/v1/schedules/statistics | Folder: 10. Appointments, Schedules & Shifts | Name: Platform-wide scheduling engine statistics
+[210] [GET] {{baseUrl}}/api/v1/schedules/:id | Folder: 10. Appointments, Schedules & Shifts | Name: Get schedule detail with working hours, exceptions, leave blocks
+[211] [PUT] {{baseUrl}}/api/v1/schedules/:id | Folder: 10. Appointments, Schedules & Shifts | Name: Update schedule profile and/or working hours
+[212] [DELETE] {{baseUrl}}/api/v1/schedules/:id | Folder: 10. Appointments, Schedules & Shifts | Name: Soft-delete a schedule profile
+[213] [POST] {{baseUrl}}/api/v1/schedules/:id/generate-slots | Folder: 10. Appointments, Schedules & Shifts | Name: Run slot generation engine for a date range
+[214] [GET] {{baseUrl}}/api/v1/schedules/:id/slots?fromDate=2025-08-01&toDate=2025-08-31 | Folder: 10. Appointments, Schedules & Shifts | Name: Get generated slots for a schedule in a date range
+[215] [POST] {{baseUrl}}/api/v1/schedules/:id/block | Folder: 10. Appointments, Schedules & Shifts | Name: Add schedule exception (vacation, conference, emergency, etc.)
+[216] [POST] {{baseUrl}}/api/v1/schedules/:id/unblock?exceptionId=string | Folder: 10. Appointments, Schedules & Shifts | Name: Remove a schedule exception by its ID
+[217] [POST] {{baseUrl}}/api/v1/schedules/:id/leave | Folder: 10. Appointments, Schedules & Shifts | Name: Add leave block (sick, casual, earned, emergency) to schedule
+[218] [GET] {{baseUrl}}/api/v1/schedules/:id/history | Folder: 10. Appointments, Schedules & Shifts | Name: Get full schedule audit & modification history
+[219] [POST] {{baseUrl}}/api/v1/shifts | Folder: 10. Appointments, Schedules & Shifts | Name: Create shift definition (Morning / Evening / Night / Split / Custom)
+[220] [GET] {{baseUrl}}/api/v1/shifts?facilityId=string | Folder: 10. Appointments, Schedules & Shifts | Name: List shift definitions, optionally filtered by facility
+[221] [POST] {{baseUrl}}/api/v1/shifts/:id/assign | Folder: 10. Appointments, Schedules & Shifts | Name: Assign a staff member to a shift for a specific date
+[222] [GET] {{baseUrl}}/api/v1/shifts/:id/assignments | Folder: 10. Appointments, Schedules & Shifts | Name: Get all staff assignments for a specific shift
+[223] [POST] {{baseUrl}}/api/v1/holidays | Folder: 10. Appointments, Schedules & Shifts | Name: Add a holiday to the calendar (global or facility-specific)
+[224] [GET] {{baseUrl}}/api/v1/holidays?facilityId=string | Folder: 10. Appointments, Schedules & Shifts | Name: List holidays (global + optional facility-specific)
+[225] [POST] {{baseUrl}}/api/v1/referrals | Folder: 11. Referrals & Care Coordination | Name: Create patient care referral
+[226] [GET] {{baseUrl}}/api/v1/referrals | Folder: 11. Referrals & Care Coordination | Name: List patient care referrals with optional filters
+[227] [GET] {{baseUrl}}/api/v1/referrals/my-incoming | Folder: 11. Referrals & Care Coordination | Name: List incoming referrals for current doctor/facility
+[228] [GET] {{baseUrl}}/api/v1/referrals/my-outgoing | Folder: 11. Referrals & Care Coordination | Name: List outgoing referrals created by current doctor
+[229] [GET] {{baseUrl}}/api/v1/referrals/dashboard/stats?facilityId=string | Folder: 11. Referrals & Care Coordination | Name: Get referral dashboard metrics and SLA performance analytics
+[230] [GET] {{baseUrl}}/api/v1/referrals/:id | Folder: 11. Referrals & Care Coordination | Name: Get referral details by ID
+[231] [PUT] {{baseUrl}}/api/v1/referrals/:id | Folder: 11. Referrals & Care Coordination | Name: Update referral clinical details
+[232] [DELETE] {{baseUrl}}/api/v1/referrals/:id | Folder: 11. Referrals & Care Coordination | Name: Soft-delete referral
+[233] [PUT] {{baseUrl}}/api/v1/referrals/:id/triage | Folder: 11. Referrals & Care Coordination | Name: Triage patient referral (Approve/Decline/Redirect)
+[234] [PUT] {{baseUrl}}/api/v1/referrals/:id/status | Folder: 11. Referrals & Care Coordination | Name: Update referral status (IN_PROGRESS, COMPLETED, CANCELLED)
+[235] [PATCH] {{baseUrl}}/api/v1/referrals/:id/status | Folder: 11. Referrals & Care Coordination | Name: Update referral status (alias for PUT :id/status)
+[236] [POST] {{baseUrl}}/api/v1/referrals/:id/notes | Folder: 11. Referrals & Care Coordination | Name: Add clinical coordination note to referral
+[237] [GET] {{baseUrl}}/api/v1/referrals/:id/notes | Folder: 11. Referrals & Care Coordination | Name: List clinical notes for referral
+[238] [POST] {{baseUrl}}/api/v1/referrals/:id/attachments | Folder: 11. Referrals & Care Coordination | Name: Link medical attachment to referral
+[239] [GET] {{baseUrl}}/api/v1/referrals/:id/attachments | Folder: 11. Referrals & Care Coordination | Name: List linked medical attachments for referral
+[240] [GET] {{baseUrl}}/api/v1/referrals/:id/history | Folder: 11. Referrals & Care Coordination | Name: Get immutable status transition history for referral
+[241] [POST] {{baseUrl}}/api/v1/family/invitations | Folder: 12. Family Members & Relationships | Name: Create a family invitation
+[242] [GET] {{baseUrl}}/api/v1/family/invitations | Folder: 12. Family Members & Relationships | Name: List all invitations sent by the patient
+[243] [POST] {{baseUrl}}/api/v1/family/invitations/:id/resend | Folder: 12. Family Members & Relationships | Name: Resend a pending family invitation (max 5 times)
+[244] [POST] {{baseUrl}}/api/v1/family/invitations/:id/accept | Folder: 12. Family Members & Relationships | Name: Accept a family invitation — auto-creates family member record
+[245] [POST] {{baseUrl}}/api/v1/family/invitations/:id/reject | Folder: 12. Family Members & Relationships | Name: Reject a family invitation
+[246] [DELETE] {{baseUrl}}/api/v1/family/invitations/:id | Folder: 12. Family Members & Relationships | Name: Cancel a pending family invitation
+[247] [GET] {{baseUrl}}/api/v1/family/members | Folder: 12. Family Members & Relationships | Name: List all active family members
+[248] [GET] {{baseUrl}}/api/v1/family/members/:id | Folder: 12. Family Members & Relationships | Name: Get a specific family member
+[249] [PATCH] {{baseUrl}}/api/v1/family/members/:id | Folder: 12. Family Members & Relationships | Name: Update family member details or status
+[250] [DELETE] {{baseUrl}}/api/v1/family/members/:id | Folder: 12. Family Members & Relationships | Name: Remove (archive) a family member
+[251] [POST] {{baseUrl}}/api/v1/family/consents | Folder: 12. Family Members & Relationships | Name: Grant a consent category to a family member
+[252] [GET] {{baseUrl}}/api/v1/family/consents | Folder: 12. Family Members & Relationships | Name: List all active consents granted by the patient
+[253] [PUT] {{baseUrl}}/api/v1/family/consents/:id | Folder: 12. Family Members & Relationships | Name: Update consent (expiry date, notes)
+[254] [DELETE] {{baseUrl}}/api/v1/family/consents/:id | Folder: 12. Family Members & Relationships | Name: Revoke a granted consent — blocks access immediately
+[255] [GET] {{baseUrl}}/api/v1/family/consents/history | Folder: 12. Family Members & Relationships | Name: Get full consent audit history for the patient
+[256] [GET] {{baseUrl}}/api/v1/family/guardians | Folder: 12. Family Members & Relationships | Name: List all guardians assigned to the patient
+[257] [POST] {{baseUrl}}/api/v1/family/guardians | Folder: 12. Family Members & Relationships | Name: Assign a guardian to the patient
+[258] [PATCH] {{baseUrl}}/api/v1/family/guardians/:id | Folder: 12. Family Members & Relationships | Name: Update guardian verification status or primary flag
+[259] [GET] {{baseUrl}}/api/v1/family/dependents | Folder: 12. Family Members & Relationships | Name: List all dependents registered under this patient
+[260] [POST] {{baseUrl}}/api/v1/family/dependents | Folder: 12. Family Members & Relationships | Name: Register a dependent (minor, senior, or care patient)
+[261] [PATCH] {{baseUrl}}/api/v1/family/dependents/:id | Folder: 12. Family Members & Relationships | Name: Update dependent details
+[262] [DELETE] {{baseUrl}}/api/v1/family/dependents/:id | Folder: 12. Family Members & Relationships | Name: Remove a dependent
+[263] [POST] {{baseUrl}}/api/v1/staff | Folder: 13. Staff Management | Name: Register/Create a staff member profile in Master Workforce Registry
+[264] [GET] {{baseUrl}}/api/v1/staff?page=3467.616117677217&limit=3467.616117677217 | Folder: 13. Staff Management | Name: List all registered staff members in Master Workforce Registry
+[265] [GET] {{baseUrl}}/api/v1/staff/search?q=string | Folder: 13. Staff Management | Name: Enterprise staff search (by name, code, designation, staff type)
+[266] [GET] {{baseUrl}}/api/v1/staff/statistics | Folder: 13. Staff Management | Name: Get platform-wide workforce directory statistics
+[267] [GET] {{baseUrl}}/api/v1/staff/:id | Folder: 13. Staff Management | Name: Get complete staff member details
+[268] [PUT] {{baseUrl}}/api/v1/staff/:id | Folder: 13. Staff Management | Name: Update staff member profile details
+[269] [DELETE] {{baseUrl}}/api/v1/staff/:id | Folder: 13. Staff Management | Name: Soft-delete a staff member profile
+[270] [POST] {{baseUrl}}/api/v1/staff/:id/verify | Folder: 13. Staff Management | Name: Approve & verify staff registration
+[271] [POST] {{baseUrl}}/api/v1/staff/:id/suspend | Folder: 13. Staff Management | Name: Suspend staff registration
+[272] [POST] {{baseUrl}}/api/v1/staff/:id/restore | Folder: 13. Staff Management | Name: Restore suspended staff registration
+[273] [POST] {{baseUrl}}/api/v1/staff/:id/generate-qr | Folder: 13. Staff Management | Name: Generate Staff Digital Identity QR token
+[274] [POST] {{baseUrl}}/api/v1/staff/:id/assign-facility | Folder: 13. Staff Management | Name: Assign staff member to primary / secondary facilities
+[275] [POST] {{baseUrl}}/api/v1/staff/:id/assign-department | Folder: 13. Staff Management | Name: Assign staff member to primary / secondary departments
+[276] [GET] {{baseUrl}}/api/v1/staff/:id/documents | Folder: 13. Staff Management | Name: List attached staff credential documents
+[277] [POST] {{baseUrl}}/api/v1/staff/:id/documents | Folder: 13. Staff Management | Name: Attach credential document (reusing MedicalAttachment)
+[278] [GET] {{baseUrl}}/api/v1/staff/:id/history | Folder: 13. Staff Management | Name: Get complete verification & employment status history
+[279] [POST] {{baseUrl}}/api/v1/notifications/templates | Folder: 14. Notifications & Alerts | Name: Create a new notification template with variable placeholders
+[280] [GET] {{baseUrl}}/api/v1/notifications/templates | Folder: 14. Notifications & Alerts | Name: List all notification templates
+[281] [GET] {{baseUrl}}/api/v1/notifications/templates/:id | Folder: 14. Notifications & Alerts | Name: Get notification template by ID
+[282] [PUT] {{baseUrl}}/api/v1/notifications/templates/:id | Folder: 14. Notifications & Alerts | Name: Update template body or subject and increment version
+[283] [DELETE] {{baseUrl}}/api/v1/notifications/templates/:id | Folder: 14. Notifications & Alerts | Name: Soft-delete a notification template
+[284] [GET] {{baseUrl}}/api/v1/notifications/dashboard/stats | Folder: 14. Notifications & Alerts | Name: Get Enterprise Notification Platform stats & queue summary
+[285] [GET] {{baseUrl}}/api/v1/notification/dashboard/stats | Folder: 14. Notifications & Alerts | Name: Get Enterprise Notification Platform stats & queue summary
+[286] [GET] {{baseUrl}}/api/v1/notifications/preferences | Folder: 14. Notifications & Alerts | Name: Get current user notification preferences
+[287] [PUT] {{baseUrl}}/api/v1/notifications/preferences | Folder: 14. Notifications & Alerts | Name: Update current user notification channel preferences
+[288] [GET] {{baseUrl}}/api/v1/notification/preferences | Folder: 14. Notifications & Alerts | Name: Get current user notification preferences
+[289] [PUT] {{baseUrl}}/api/v1/notification/preferences | Folder: 14. Notifications & Alerts | Name: Update current user notification channel preferences
+[290] [GET] {{baseUrl}}/api/v1/notifications/queue?status=string&notificationType=string&dateFrom=string&dateTo=string&page=3467.616117677217&limit=3467.616117677217 | Folder: 14. Notifications & Alerts | Name: List pending/queued notification delivery items with optional filters
+[291] [GET] {{baseUrl}}/api/v1/notification/queue?status=string&notificationType=string&dateFrom=string&dateTo=string&page=3467.616117677217&limit=3467.616117677217 | Folder: 14. Notifications & Alerts | Name: List pending/queued notification delivery items with optional filters
+[292] [POST] {{baseUrl}}/api/v1/notifications/queue/retry | Folder: 14. Notifications & Alerts | Name: Retry queued/failed notification delivery attempts
+[293] [POST] {{baseUrl}}/api/v1/notification/queue/retry | Folder: 14. Notifications & Alerts | Name: Retry queued/failed notification delivery attempts
+[294] [POST] {{baseUrl}}/api/v1/notifications/queue/process | Folder: 14. Notifications & Alerts | Name: Process pending notification queue and dispatch via gateways
+[295] [POST] {{baseUrl}}/api/v1/notification/queue/process | Folder: 14. Notifications & Alerts | Name: Process pending notification queue and dispatch via gateways
+[296] [GET] {{baseUrl}}/api/v1/notifications/audit | Folder: 14. Notifications & Alerts | Name: List notification audit logs
+[297] [GET] {{baseUrl}}/api/v1/notification/audit | Folder: 14. Notifications & Alerts | Name: List notification audit logs
+[298] [POST] {{baseUrl}}/api/v1/notifications | Folder: 14. Notifications & Alerts | Name: Publish/dispatch a notification across channels
+[299] [GET] {{baseUrl}}/api/v1/notifications?recipientUserId=string&status=READ | Folder: 14. Notifications & Alerts | Name: List notifications for recipient or platform
+[300] [POST] {{baseUrl}}/api/v1/notification | Folder: 14. Notifications & Alerts | Name: Publish/dispatch a notification across channels
+[301] [GET] {{baseUrl}}/api/v1/notification?recipientUserId=string&status=READ | Folder: 14. Notifications & Alerts | Name: List notifications for recipient or platform
+[302] [GET] {{baseUrl}}/api/v1/notifications/:id | Folder: 14. Notifications & Alerts | Name: Get notification details by ID
+[303] [DELETE] {{baseUrl}}/api/v1/notifications/:id | Folder: 14. Notifications & Alerts | Name: Soft-delete a notification
+[304] [GET] {{baseUrl}}/api/v1/notification/:id | Folder: 14. Notifications & Alerts | Name: Get notification details by ID
+[305] [DELETE] {{baseUrl}}/api/v1/notification/:id | Folder: 14. Notifications & Alerts | Name: Soft-delete a notification
+[306] [PUT] {{baseUrl}}/api/v1/notifications/:id/read | Folder: 14. Notifications & Alerts | Name: Mark notification as READ
+[307] [PUT] {{baseUrl}}/api/v1/notification/:id/read | Folder: 14. Notifications & Alerts | Name: Mark notification as READ
+[308] [GET] {{baseUrl}}/api/v1/ocr/dashboard | Folder: 15. OCR & Document Verification | Name: Get Enterprise OCR Platform analytics dashboard summary
+[309] [GET] {{baseUrl}}/api/v1/ocr/statistics | Folder: 15. OCR & Document Verification | Name: Get Enterprise OCR accuracy & throughput statistics
+[310] [POST] {{baseUrl}}/api/v1/ocr/jobs | Folder: 15. OCR & Document Verification | Name: Submit medical attachment for local CPU OCR processing
+[311] [GET] {{baseUrl}}/api/v1/ocr/jobs?status=string&documentType=string&page=3467.616117677217&limit=3467.616117677217 | Folder: 15. OCR & Document Verification | Name: List all OCR jobs with optional status, document type and pagination filters
+[312] [POST] {{baseUrl}}/api/v1/ocr/reprocess/:jobId | Folder: 15. OCR & Document Verification | Name: Reprocess a completed, failed, or review-required OCR job
+[313] [POST] {{baseUrl}}/api/v1/ocr/jobs/:jobId/reprocess | Folder: 15. OCR & Document Verification | Name: Reprocess a completed, failed, or review-required OCR job
+[314] [GET] {{baseUrl}}/api/v1/ocr/jobs/:id | Folder: 15. OCR & Document Verification | Name: Get OCR job status and details by ID
+[315] [GET] {{baseUrl}}/api/v1/ocr/jobs/:id/text | Folder: 15. OCR & Document Verification | Name: Get extracted raw OCR text for job
+[316] [GET] {{baseUrl}}/api/v1/ocr/jobs/:id/fields | Folder: 15. OCR & Document Verification | Name: Get extracted structured fields with confidence scores
+[317] [GET] {{baseUrl}}/api/v1/ocr/jobs/:id/json | Folder: 15. OCR & Document Verification | Name: Get formatted structured JSON output of OCR job
+[318] [POST] {{baseUrl}}/api/v1/ocr/templates | Folder: 15. OCR & Document Verification | Name: Create an OCR Document Template with field definitions
+[319] [GET] {{baseUrl}}/api/v1/ocr/templates | Folder: 15. OCR & Document Verification | Name: List all OCR Document Templates
+[320] [PUT] {{baseUrl}}/api/v1/ocr/templates/:id | Folder: 15. OCR & Document Verification | Name: Update OCR Document Template and increment version
+[321] [DELETE] {{baseUrl}}/api/v1/ocr/templates/:id | Folder: 15. OCR & Document Verification | Name: Soft-delete an OCR Document Template
+[322] [GET] {{baseUrl}}/api/v1/ocr/reviews/history?page=1&limit=20&status=APPROVED&reviewerId=string&startDate=string&endDate=string | Folder: 15. OCR & Document Verification | Name: Get paginated audit history of completed human OCR reviews
+[323] [GET] {{baseUrl}}/api/v1/ocr/review | Folder: 15. OCR & Document Verification | Name: List OCR jobs requiring manual human verification
+[324] [POST] {{baseUrl}}/api/v1/ocr/review/:jobId | Folder: 15. OCR & Document Verification | Name: Submit human verification review for low-confidence OCR job
+[325] [POST] {{baseUrl}}/api/v1/ai/ocr/extract | Folder: 15. OCR & Document Verification | Name: Image Scan & Candidate Metadata Extraction
+[326] [POST] {{baseUrl}}/api/v1/ai/ocr/confirm | Folder: 15. OCR & Document Verification | Name: OCR Candidate Field Review & Manual Confirmation
+[327] [POST] {{baseUrl}}/api/v1/attachments | Folder: 16. File Uploads & Attachments | Name: Upload an unlinked or global attachment (supports binary file upload and JSON metadata)
+[328] [GET] {{baseUrl}}/api/v1/attachments/file/:filename | Folder: 16. File Uploads & Attachments | Name: Stream private attachment file with security headers
+[329] [GET] {{baseUrl}}/api/v1/attachments/:id | Folder: 16. File Uploads & Attachments | Name: Get attachment metadata by ID
+[330] [PATCH] {{baseUrl}}/api/v1/attachments/:id | Folder: 16. File Uploads & Attachments | Name: Update attachment category, metadata, or upload a new file version
+[331] [DELETE] {{baseUrl}}/api/v1/attachments/:id | Folder: 16. File Uploads & Attachments | Name: Soft-delete an attachment
+[332] [GET] {{baseUrl}}/api/v1/attachments/:id/download-url?expiresIn=3467.616117677217 | Folder: 16. File Uploads & Attachments | Name: Generate secure pre-signed download URL for private attachment
+[333] [POST] {{baseUrl}}/api/v1/attachments/:id/restore | Folder: 16. File Uploads & Attachments | Name: Restore a soft-deleted attachment
+[334] [GET] {{baseUrl}}/api/v1/attachments/:id/versions | Folder: 16. File Uploads & Attachments | Name: Get file version history for an attachment
+[335] [GET] {{baseUrl}}/api/v1/governance/dashboard | Folder: 17. Governance, Legal & Compliance | Name: Get Enterprise Governance Dashboard summary
+[336] [POST] {{baseUrl}}/api/v1/governance/configurations | Folder: 17. Governance, Legal & Compliance | Name: Create a new system configuration key-value entry
+[337] [GET] {{baseUrl}}/api/v1/governance/configurations?category=string | Folder: 17. Governance, Legal & Compliance | Name: List all system configurations, optionally filtered by category
+[338] [GET] {{baseUrl}}/api/v1/governance/configurations/export?category=string | Folder: 17. Governance, Legal & Compliance | Name: Export system configurations in JSON format
+[339] [POST] {{baseUrl}}/api/v1/governance/configurations/import | Folder: 17. Governance, Legal & Compliance | Name: Bulk import system configurations
+[340] [GET] {{baseUrl}}/api/v1/governance/configurations/:id | Folder: 17. Governance, Legal & Compliance | Name: Get system configuration by ID
+[341] [PUT] {{baseUrl}}/api/v1/governance/configurations/:id | Folder: 17. Governance, Legal & Compliance | Name: Update system configuration value and increment version
+[342] [DELETE] {{baseUrl}}/api/v1/governance/configurations/:id | Folder: 17. Governance, Legal & Compliance | Name: Soft-delete system configuration entry
+[343] [POST] {{baseUrl}}/api/v1/governance/features | Folder: 17. Governance, Legal & Compliance | Name: Create a new feature flag with rollout rules
+[344] [GET] {{baseUrl}}/api/v1/governance/features | Folder: 17. Governance, Legal & Compliance | Name: List all feature flags
+[345] [GET] {{baseUrl}}/api/v1/governance/features/:id | Folder: 17. Governance, Legal & Compliance | Name: Get feature flag details by ID
+[346] [PUT] {{baseUrl}}/api/v1/governance/features/:id | Folder: 17. Governance, Legal & Compliance | Name: Update feature flag status, roles, or rollout percentage
+[347] [DELETE] {{baseUrl}}/api/v1/governance/features/:id | Folder: 17. Governance, Legal & Compliance | Name: Soft-delete a feature flag
+[348] [POST] {{baseUrl}}/api/v1/governance/master-data/categories | Folder: 17. Governance, Legal & Compliance | Name: Create a master data category
+[349] [GET] {{baseUrl}}/api/v1/governance/master-data/categories | Folder: 17. Governance, Legal & Compliance | Name: List all master data categories with items
+[350] [POST] {{baseUrl}}/api/v1/governance/master-data/items | Folder: 17. Governance, Legal & Compliance | Name: Create a master data item under a category
+[351] [GET] {{baseUrl}}/api/v1/governance/master-data/items?categoryId=string | Folder: 17. Governance, Legal & Compliance | Name: List master data items, optionally filtered by category
+[352] [PUT] {{baseUrl}}/api/v1/governance/master-data/items/:id | Folder: 17. Governance, Legal & Compliance | Name: Update master data item
+[353] [DELETE] {{baseUrl}}/api/v1/governance/master-data/items/:id | Folder: 17. Governance, Legal & Compliance | Name: Soft-delete a master data item
+[354] [POST] {{baseUrl}}/api/v1/governance/policies | Folder: 17. Governance, Legal & Compliance | Name: Create a new platform governance policy
+[355] [GET] {{baseUrl}}/api/v1/governance/policies | Folder: 17. Governance, Legal & Compliance | Name: List all platform governance policies
+[356] [GET] {{baseUrl}}/api/v1/governance/policies/:id | Folder: 17. Governance, Legal & Compliance | Name: Get policy details by ID
+[357] [PUT] {{baseUrl}}/api/v1/governance/policies/:id | Folder: 17. Governance, Legal & Compliance | Name: Update policy title, content, or version
+[358] [DELETE] {{baseUrl}}/api/v1/governance/policies/:id | Folder: 17. Governance, Legal & Compliance | Name: Soft-delete a platform policy
+[359] [GET] {{baseUrl}}/api/v1/governance/maintenance | Folder: 17. Governance, Legal & Compliance | Name: Get active platform maintenance configuration
+[360] [PUT] {{baseUrl}}/api/v1/governance/maintenance | Folder: 17. Governance, Legal & Compliance | Name: Set or update platform maintenance mode (OFF / READ_ONLY / FULL)
+[361] [GET] {{baseUrl}}/api/v1/governance/audit?entityType=string | Folder: 17. Governance, Legal & Compliance | Name: List governance audit logs
+[362] [GET] {{baseUrl}}/api/v1/governance/audit/:id | Folder: 17. Governance, Legal & Compliance | Name: Get governance audit log detail by ID
+[363] [GET] {{baseUrl}}/api/v1/security/dashboard | Folder: 18. Security, Threat Detection & Sessions | Name: Get Enterprise Security & Compliance Dashboard summary
+[364] [POST] {{baseUrl}}/api/v1/security/consents | Folder: 18. Security, Threat Detection & Sessions | Name: Capture patient consent record
+[365] [GET] {{baseUrl}}/api/v1/security/consents?patientId=string&status=string&consentType=string&startDate=string&endDate=string&page=string&limit=string | Folder: 18. Security, Threat Detection & Sessions | Name: List patient consents with optional filters
+[366] [POST] {{baseUrl}}/api/v1/security/consents/grant | Folder: 18. Security, Threat Detection & Sessions | Name: Capture patient consent record
+[367] [GET] {{baseUrl}}/api/v1/security/consents/active | Folder: 18. Security, Threat Detection & Sessions | Name: Get active consents for current patient
+[368] [GET] {{baseUrl}}/api/v1/security/consents/:id | Folder: 18. Security, Threat Detection & Sessions | Name: Get consent record details by ID
+[369] [POST] {{baseUrl}}/api/v1/security/consents/:id/withdraw | Folder: 18. Security, Threat Detection & Sessions | Name: Withdraw patient consent
+[370] [POST] {{baseUrl}}/api/v1/security/consents/:id/confirm | Folder: 18. Security, Threat Detection & Sessions | Name: Confirm and grant a pending patient consent record
+[371] [POST] {{baseUrl}}/api/v1/security/retention | Folder: 18. Security, Threat Detection & Sessions | Name: Create data retention policy
+[372] [GET] {{baseUrl}}/api/v1/security/retention | Folder: 18. Security, Threat Detection & Sessions | Name: List all retention policies
+[373] [PUT] {{baseUrl}}/api/v1/security/retention/:id | Folder: 18. Security, Threat Detection & Sessions | Name: Update retention policy parameters
+[374] [DELETE] {{baseUrl}}/api/v1/security/retention/:id | Folder: 18. Security, Threat Detection & Sessions | Name: Deactivate / soft-delete retention policy
+[375] [POST] {{baseUrl}}/api/v1/security/incidents | Folder: 18. Security, Threat Detection & Sessions | Name: Log new security incident
+[376] [GET] {{baseUrl}}/api/v1/security/incidents?severity=MEDIUM&status=string | Folder: 18. Security, Threat Detection & Sessions | Name: List security incidents with severity/status filters
+[377] [PUT] {{baseUrl}}/api/v1/security/incidents/:id/resolve | Folder: 18. Security, Threat Detection & Sessions | Name: Resolve an open security incident
+[378] [GET] {{baseUrl}}/api/v1/security/keys/active | Folder: 18. Security, Threat Detection & Sessions | Name: Get active KMS encryption key metadata
+[379] [POST] {{baseUrl}}/api/v1/security/keys/rotate | Folder: 18. Security, Threat Detection & Sessions | Name: Trigger KMS encryption key rotation
+[380] [POST] {{baseUrl}}/api/v1/security/compliance/report | Folder: 18. Security, Threat Detection & Sessions | Name: Generate automated compliance assessment report
+[381] [GET] {{baseUrl}}/api/v1/security/compliance/reports | Folder: 18. Security, Threat Detection & Sessions | Name: List generated compliance reports
+[382] [GET] {{baseUrl}}/api/v1/security/audit?userId=string&resource=string | Folder: 18. Security, Threat Detection & Sessions | Name: List security audit logs
+[383] [POST] {{baseUrl}}/api/v1/security/api-keys | Folder: 18. Security, Threat Detection & Sessions | Name: Create API key for developer / partner system integration
+[384] [GET] {{baseUrl}}/api/v1/security/api-keys | Folder: 18. Security, Threat Detection & Sessions | Name: List all active and revoked API keys
+[385] [GET] {{baseUrl}}/api/v1/security/api-keys/:id | Folder: 18. Security, Threat Detection & Sessions | Name: Get API key metadata by ID
+[386] [DELETE] {{baseUrl}}/api/v1/security/api-keys/:id | Folder: 18. Security, Threat Detection & Sessions | Name: Delete an API key
+[387] [PATCH] {{baseUrl}}/api/v1/security/api-keys/:id/revoke | Folder: 18. Security, Threat Detection & Sessions | Name: Revoke an active API key
+[388] [POST] {{baseUrl}}/api/v1/insurance/providers | Folder: 19. Insurance Platform & Claims | Name: Create an insurance provider
+[389] [GET] {{baseUrl}}/api/v1/insurance/providers | Folder: 19. Insurance Platform & Claims | Name: List active insurance providers
+[390] [POST] {{baseUrl}}/api/v1/insurance/plans | Folder: 19. Insurance Platform & Claims | Name: Create an insurance plan
+[391] [GET] {{baseUrl}}/api/v1/insurance/plans?providerId=string | Folder: 19. Insurance Platform & Claims | Name: List insurance plans (supports providerId filter)
+[392] [POST] {{baseUrl}}/api/v1/insurance/policies | Folder: 19. Insurance Platform & Claims | Name: Issue/Register a full insurance policy for patient
+[393] [GET] {{baseUrl}}/api/v1/insurance/policies | Folder: 19. Insurance Platform & Claims | Name: Get all insurance policies for current patient
+[394] [GET] {{baseUrl}}/api/v1/insurance/search?q=string | Folder: 19. Insurance Platform & Claims | Name: Search insurance policies by provider or policy number
+[395] [GET] {{baseUrl}}/api/v1/insurance/statistics | Folder: 19. Insurance Platform & Claims | Name: Get platform-wide insurance statistics
+[396] [GET] {{baseUrl}}/api/v1/insurance/policies/:id | Folder: 19. Insurance Platform & Claims | Name: Get specific insurance policy details
+[397] [PUT] {{baseUrl}}/api/v1/insurance/policies/:id | Folder: 19. Insurance Platform & Claims | Name: Update insurance policy details (blocked if ARCHIVED)
+[398] [POST] {{baseUrl}}/api/v1/insurance/policies/:id/activate | Folder: 19. Insurance Platform & Claims | Name: Activate an insurance policy
+[399] [POST] {{baseUrl}}/api/v1/insurance/policies/:id/renew | Folder: 19. Insurance Platform & Claims | Name: Renew an insurance policy (extends validity by 1 year)
+[400] [POST] {{baseUrl}}/api/v1/insurance/policies/:id/suspend | Folder: 19. Insurance Platform & Claims | Name: Suspend an insurance policy
+[401] [POST] {{baseUrl}}/api/v1/insurance/policies/:id/cancel | Folder: 19. Insurance Platform & Claims | Name: Cancel an insurance policy
+[402] [POST] {{baseUrl}}/api/v1/insurance/policies/:id/archive | Folder: 19. Insurance Platform & Claims | Name: Archive an insurance policy
+[403] [POST] {{baseUrl}}/api/v1/insurance/policies/:id/restore | Folder: 19. Insurance Platform & Claims | Name: Restore an archived insurance policy
+[404] [POST] {{baseUrl}}/api/v1/insurance/policies/:id/verify | Folder: 19. Insurance Platform & Claims | Name: Verify coverage status for an insurance policy
+[405] [POST] {{baseUrl}}/api/v1/insurance/claims | Folder: 19. Insurance Platform & Claims | Name: Create a claim draft attaching medical records and reports
+[406] [GET] {{baseUrl}}/api/v1/insurance/claims | Folder: 19. Insurance Platform & Claims | Name: List all claim drafts for current patient
+[407] [POST] {{baseUrl}}/api/v1/insurance/onboard | Folder: 19. Insurance Platform & Claims | Name: Save insurance details during 6-step patient onboarding (Step 4)
+[408] [POST] {{baseUrl}}/api/v1/insurance/ocr | Folder: 19. Insurance Platform & Claims | Name: Scan insurance card image via OCR extraction (standard endpoint)
+[409] [GET] {{baseUrl}}/api/v1/insurance/ocr/file/:filename | Folder: 19. Insurance Platform & Claims | Name: Serve uploaded insurance card file
+[410] [GET] {{baseUrl}}/api/v1/insurance/ocr/:id | Folder: 19. Insurance Platform & Claims | Name: Get insurance card OCR scan record details by ID
+[411] [POST] {{baseUrl}}/api/v1/insurance/ocr/scan | Folder: 19. Insurance Platform & Claims | Name: Scan or extract insurance card image via OCR
+[412] [POST] {{baseUrl}}/api/v1/insurance/ocr/extract | Folder: 19. Insurance Platform & Claims | Name: Scan or extract insurance card image via OCR
+[413] [POST] {{baseUrl}}/api/v1/insurance/manual-review | Folder: 19. Insurance Platform & Claims | Name: Submit manual verification review for insurance card OCR record
+[414] [POST] {{baseUrl}}/api/v1/insurance/ocr/confirm | Folder: 19. Insurance Platform & Claims | Name: Confirm extracted OCR data to create insurance policy
+[415] [GET] {{baseUrl}}/api/v1/patients/:patientId/insurance-cards | Folder: 19. Insurance Platform & Claims | Name: Get all insurance cards for a specific patient
+[416] [POST] {{baseUrl}}/api/v1/patients/:patientId/insurance-cards | Folder: 19. Insurance Platform & Claims | Name: Create / add an insurance card for a specific patient
+[417] [GET] {{baseUrl}}/api/v1/insurance-cards/:id | Folder: 19. Insurance Platform & Claims | Name: Get insurance card details by ID
+[418] [PUT] {{baseUrl}}/api/v1/insurance-cards/:id | Folder: 19. Insurance Platform & Claims | Name: Update insurance card details
+[419] [DELETE] {{baseUrl}}/api/v1/insurance-cards/:id | Folder: 19. Insurance Platform & Claims | Name: Remove / soft-delete an insurance card
+[420] [GET] {{baseUrl}}/api/v1/reports/dashboard/executive?startDate=string&endDate=string&facilityId=string | Folder: 20. Clinical Reports & Analytics | Name: Get Executive Dashboard platform summary statistics
+[421] [GET] {{baseUrl}}/api/v1/reports/analytics/modules/:module?startDate=string&endDate=string | Folder: 20. Clinical Reports & Analytics | Name: Get domain analytics for a specific module
+[422] [POST] {{baseUrl}}/api/v1/reports/definitions | Folder: 20. Clinical Reports & Analytics | Name: Create a new Report Definition
+[423] [GET] {{baseUrl}}/api/v1/reports/definitions?module=string | Folder: 20. Clinical Reports & Analytics | Name: List Report Definitions, optionally filtered by module
+[424] [GET] {{baseUrl}}/api/v1/reports/definitions/:id | Folder: 20. Clinical Reports & Analytics | Name: Get Report Definition by ID
+[425] [PUT] {{baseUrl}}/api/v1/reports/definitions/:id | Folder: 20. Clinical Reports & Analytics | Name: Update a Report Definition
+[426] [DELETE] {{baseUrl}}/api/v1/reports/definitions/:id | Folder: 20. Clinical Reports & Analytics | Name: Soft-delete a Report Definition
+[427] [POST] {{baseUrl}}/api/v1/reports/generate | Folder: 20. Clinical Reports & Analytics | Name: Generate a report based on a Report Definition or custom filters
+[428] [GET] {{baseUrl}}/api/v1/reports/generated | Folder: 20. Clinical Reports & Analytics | Name: List generated reports for user or platform
+[429] [GET] {{baseUrl}}/api/v1/reports/generated/:id | Folder: 20. Clinical Reports & Analytics | Name: Get generated report details
+[430] [POST] {{baseUrl}}/api/v1/reports/generated/:id/export?format=XLSX | Folder: 20. Clinical Reports & Analytics | Name: Export a generated report to PDF, CSV, XLSX, or JSON
+[431] [POST] {{baseUrl}}/api/v1/reports/widgets | Folder: 20. Clinical Reports & Analytics | Name: Create a new configurable Dashboard Widget
+[432] [GET] {{baseUrl}}/api/v1/reports/widgets?isEnabledOnly=true | Folder: 20. Clinical Reports & Analytics | Name: List configured Dashboard Widgets
+[433] [PUT] {{baseUrl}}/api/v1/reports/widgets/:id | Folder: 20. Clinical Reports & Analytics | Name: Update a Dashboard Widget configuration
+[434] [POST] {{baseUrl}}/api/v1/reports/widgets/reorder | Folder: 20. Clinical Reports & Analytics | Name: Reorder Dashboard Widgets display order
+[435] [POST] {{baseUrl}}/api/v1/reports/snapshots | Folder: 20. Clinical Reports & Analytics | Name: Record an immutable Analytics Snapshot
+[436] [GET] {{baseUrl}}/api/v1/reports/snapshots?module=string&metric=string&startDate=string&endDate=string | Folder: 20. Clinical Reports & Analytics | Name: Get Analytics Snapshots for a module and metric
+[437] [POST] {{baseUrl}}/api/v1/reports | Folder: 20. Clinical Reports & Analytics | Name: Upload and register a diagnostic medical report
+[438] [GET] {{baseUrl}}/api/v1/reports?category=string | Folder: 20. Clinical Reports & Analytics | Name: Get all diagnostic reports for the patient (supports category filtering)
+[439] [GET] {{baseUrl}}/api/v1/reports/categories | Folder: 20. Clinical Reports & Analytics | Name: Get report categories list with record count breakdown
+[440] [GET] {{baseUrl}}/api/v1/reports/search?q=string | Folder: 20. Clinical Reports & Analytics | Name: Search diagnostic reports by title, description, doctor, provider, or tags
+[441] [GET] {{baseUrl}}/api/v1/reports/timeline | Folder: 20. Clinical Reports & Analytics | Name: Get diagnostic reports timeline ordered by report date
+[442] [GET] {{baseUrl}}/api/v1/reports/:id | Folder: 20. Clinical Reports & Analytics | Name: Get specific diagnostic report details by ID
+[443] [PUT] {{baseUrl}}/api/v1/reports/:id | Folder: 20. Clinical Reports & Analytics | Name: Update diagnostic report metadata (blocked if ARCHIVED)
+[444] [DELETE] {{baseUrl}}/api/v1/reports/:id | Folder: 20. Clinical Reports & Analytics | Name: Soft-delete a diagnostic report
+[445] [POST] {{baseUrl}}/api/v1/reports/:id/archive | Folder: 20. Clinical Reports & Analytics | Name: Archive a report (makes report read-only)
+[446] [POST] {{baseUrl}}/api/v1/reports/:id/restore | Folder: 20. Clinical Reports & Analytics | Name: Restore a soft-deleted or archived report
+[447] [POST] {{baseUrl}}/api/v1/reports/:id/replace | Folder: 20. Clinical Reports & Analytics | Name: Replace PDF file for report — creates a new immutable version snapshot
+[448] [GET] {{baseUrl}}/api/v1/reports/:id/versions | Folder: 20. Clinical Reports & Analytics | Name: Get full version history for a diagnostic report
+[449] [POST] {{baseUrl}}/api/v1/reports/:id/verify | Folder: 20. Clinical Reports & Analytics | Name: Mark diagnostic report as VERIFIED with verification notes
+[450] [GET] {{baseUrl}}/api/v1/reports/download/:id | Folder: 20. Clinical Reports & Analytics | Name: Generate a secure timed download URL/token for a report file
+[451] [GET] {{baseUrl}}/api/v1/reports/download/:id/file?token=string | Folder: 20. Clinical Reports & Analytics | Name: Execute verified secure download of a report attachment
+[452] [GET] {{baseUrl}}/api/v1/reports/:id/file?token=string | Folder: 20. Clinical Reports & Analytics | Name: Execute verified secure download of a report attachment (alias)
+[453] [GET] {{baseUrl}}/api/v1/reports/preview/:id | Folder: 20. Clinical Reports & Analytics | Name: Get PDF preview metadata (page count, size, MIME type, storage URL)
+[454] [GET] {{baseUrl}}/api/v1/cms/statistics | Folder: 21. Content Management System (CMS) | Name: Get platform-wide CMS content statistics
+[455] [POST] {{baseUrl}}/api/v1/cms/pages | Folder: 21. Content Management System (CMS) | Name: Create a new CMS page
+[456] [GET] {{baseUrl}}/api/v1/cms/pages?status=ARCHIVED | Folder: 21. Content Management System (CMS) | Name: List published CMS pages
+[457] [GET] {{baseUrl}}/api/v1/cms/pages/search?q=string | Folder: 21. Content Management System (CMS) | Name: Search published CMS pages by title, slug, content, or summary
+[458] [GET] {{baseUrl}}/api/v1/cms/pages/:id | Folder: 21. Content Management System (CMS) | Name: Get published CMS page by ID or slug
+[459] [PUT] {{baseUrl}}/api/v1/cms/pages/:id | Folder: 21. Content Management System (CMS) | Name: Update CMS page details or publication status
+[460] [DELETE] {{baseUrl}}/api/v1/cms/pages/:id | Folder: 21. Content Management System (CMS) | Name: Soft-delete a CMS page
+[461] [POST] {{baseUrl}}/api/v1/cms/faqs | Folder: 21. Content Management System (CMS) | Name: Create a new FAQ item
+[462] [GET] {{baseUrl}}/api/v1/cms/faqs?category=string | Folder: 21. Content Management System (CMS) | Name: List published FAQs, optionally filtered by category
+[463] [PUT] {{baseUrl}}/api/v1/cms/faqs/:id | Folder: 21. Content Management System (CMS) | Name: Update FAQ question, answer, category or display order
+[464] [DELETE] {{baseUrl}}/api/v1/cms/faqs/:id | Folder: 21. Content Management System (CMS) | Name: Soft-delete a FAQ item
+[465] [POST] {{baseUrl}}/api/v1/cms/announcements | Folder: 21. Content Management System (CMS) | Name: Create a new system announcement
+[466] [GET] {{baseUrl}}/api/v1/cms/announcements?activeOnly=true | Folder: 21. Content Management System (CMS) | Name: List active announcements
+[467] [PUT] {{baseUrl}}/api/v1/cms/announcements/:id | Folder: 21. Content Management System (CMS) | Name: Update announcement
+[468] [DELETE] {{baseUrl}}/api/v1/cms/announcements/:id | Folder: 21. Content Management System (CMS) | Name: Soft-delete an announcement
+[469] [POST] {{baseUrl}}/api/v1/cms/policies | Folder: 21. Content Management System (CMS) | Name: Create a new platform policy
+[470] [GET] {{baseUrl}}/api/v1/cms/policies?policyType=string | Folder: 21. Content Management System (CMS) | Name: List published platform policies
+[471] [PUT] {{baseUrl}}/api/v1/cms/policies/:id | Folder: 21. Content Management System (CMS) | Name: Update policy details or version
+[472] [DELETE] {{baseUrl}}/api/v1/cms/policies/:id | Folder: 21. Content Management System (CMS) | Name: Soft-delete a policy
+[473] [POST] {{baseUrl}}/api/v1/cms/banners | Folder: 21. Content Management System (CMS) | Name: Create a new promotional banner
+[474] [GET] {{baseUrl}}/api/v1/cms/banners?activeOnly=true | Folder: 21. Content Management System (CMS) | Name: List active promotional banners
+[475] [PUT] {{baseUrl}}/api/v1/cms/banners/:id | Folder: 21. Content Management System (CMS) | Name: Update banner image, redirect URL or display order
+[476] [DELETE] {{baseUrl}}/api/v1/cms/banners/:id | Folder: 21. Content Management System (CMS) | Name: Soft-delete a banner
+[477] [POST] {{baseUrl}}/api/v1/cms/media | Folder: 21. Content Management System (CMS) | Name: Register a media item in Media Library
+[478] [GET] {{baseUrl}}/api/v1/cms/media?mediaType=VIDEO | Folder: 21. Content Management System (CMS) | Name: List media items in library
+[479] [GET] {{baseUrl}}/api/v1/cms/media/search?q=string | Folder: 21. Content Management System (CMS) | Name: Search media library by file name or mime type
+[480] [DELETE] {{baseUrl}}/api/v1/cms/media/:id | Folder: 21. Content Management System (CMS) | Name: Soft-delete a media item
+[481] [POST] {{baseUrl}}/api/v1/cms/blocks | Folder: 21. Content Management System (CMS) | Name: Create a reusable content block
+[482] [GET] {{baseUrl}}/api/v1/cms/blocks | Folder: 21. Content Management System (CMS) | Name: List all content blocks
+[483] [PUT] {{baseUrl}}/api/v1/cms/blocks/:id | Folder: 21. Content Management System (CMS) | Name: Update a reusable content block
+[484] [DELETE] {{baseUrl}}/api/v1/cms/blocks/:id | Folder: 21. Content Management System (CMS) | Name: Soft-delete a content block
+[485] [POST] {{baseUrl}}/api/v1/qr | Folder: 22. Enterprise QR Subsystem | Name: Generate a cryptographically signed QR token for any business entity
+[486] [GET] {{baseUrl}}/api/v1/qr?entityType=string | Folder: 22. Enterprise QR Subsystem | Name: List all QR tokens owned by current user (supports entityType filtering)
+[487] [POST] {{baseUrl}}/api/v1/qr/generate | Folder: 22. Enterprise QR Subsystem | Name: Alias for generating a signed QR identity
+[488] [POST] {{baseUrl}}/api/v1/qr/verify | Folder: 22. Enterprise QR Subsystem | Name: Verify QR token signature, check validity status, and log scan details
+[489] [POST] {{baseUrl}}/api/v1/qr/rotate | Folder: 22. Enterprise QR Subsystem | Name: Rotate QR token by ID
+[490] [POST] {{baseUrl}}/api/v1/qr/:id/rotate | Folder: 22. Enterprise QR Subsystem | Name: Rotate QR token (invalidates old token, generates new version)
+[491] [POST] {{baseUrl}}/api/v1/qr/revoke | Folder: 22. Enterprise QR Subsystem | Name: Revoke QR token by ID
+[492] [POST] {{baseUrl}}/api/v1/qr/:id/revoke | Folder: 22. Enterprise QR Subsystem | Name: Revoke a QR token
+[493] [POST] {{baseUrl}}/api/v1/qr/:id/restore | Folder: 22. Enterprise QR Subsystem | Name: Restore a revoked or archived QR token
+[494] [POST] {{baseUrl}}/api/v1/qr/:id/archive | Folder: 22. Enterprise QR Subsystem | Name: Archive a QR token
+[495] [GET] {{baseUrl}}/api/v1/qr/search?q=string | Folder: 22. Enterprise QR Subsystem | Name: Search QR tokens directory by token or entity ID
+[496] [GET] {{baseUrl}}/api/v1/qr/statistics | Folder: 22. Enterprise QR Subsystem | Name: Get QR scan and usage analytics
+[497] [GET] {{baseUrl}}/api/v1/qr/:id | Folder: 22. Enterprise QR Subsystem | Name: Get QR details by ID
+[498] [PUT] {{baseUrl}}/api/v1/qr/:id | Folder: 22. Enterprise QR Subsystem | Name: Update QR code validity or parameters
+[499] [DELETE] {{baseUrl}}/api/v1/qr/:id | Folder: 22. Enterprise QR Subsystem | Name: Soft-delete a QR token
+[500] [GET] {{baseUrl}}/api/v1/qr/:id/history | Folder: 22. Enterprise QR Subsystem | Name: Get complete status lifecycle history for a QR code
+[501] [GET] {{baseUrl}}/api/v1/qr/:id/scans | Folder: 22. Enterprise QR Subsystem | Name: Get scan audit log history for a QR code
+[502] [POST] {{baseUrl}}/api/v1/qr/bulk-generate | Folder: 22. Enterprise QR Subsystem | Name: Bulk generate QR tokens for multiple entities
+[503] [POST] {{baseUrl}}/api/v1/qr/bulk-rotate | Folder: 22. Enterprise QR Subsystem | Name: Bulk rotate multiple QR tokens
+[504] [POST] {{baseUrl}}/api/v1/qr/bulk-revoke | Folder: 22. Enterprise QR Subsystem | Name: Bulk revoke multiple QR tokens
+[505] [GET] {{baseUrl}}/api/v1/observability/dashboard | Folder: 23. Observability & Performance Probes | Name: Get Enterprise Observability Platform operational dashboard
+[506] [GET] {{baseUrl}}/api/v1/observability/health | Folder: 23. Observability & Performance Probes | Name: Get full component health diagnostics status
+[507] [GET] {{baseUrl}}/api/v1/observability/health/live | Folder: 23. Observability & Performance Probes | Name: Liveness probe endpoint
+[508] [GET] {{baseUrl}}/api/v1/observability/health/ready | Folder: 23. Observability & Performance Probes | Name: Readiness probe endpoint
+[509] [POST] {{baseUrl}}/api/v1/observability/metrics | Folder: 23. Observability & Performance Probes | Name: Record custom system/application metric
+[510] [GET] {{baseUrl}}/api/v1/observability/metrics?category=string&name=string | Folder: 23. Observability & Performance Probes | Name: List recorded metrics
+[511] [GET] {{baseUrl}}/api/v1/observability/metrics/:category | Folder: 23. Observability & Performance Probes | Name: Get metrics by category
+[512] [GET] {{baseUrl}}/api/v1/observability/logs?severity=string&requestId=string&traceId=string | Folder: 23. Observability & Performance Probes | Name: Query structured application logs
+[513] [GET] {{baseUrl}}/api/v1/observability/logs/:requestId | Folder: 23. Observability & Performance Probes | Name: Get all logs for a specific Request ID
+[514] [GET] {{baseUrl}}/api/v1/observability/traces?traceId=string&status=string | Folder: 23. Observability & Performance Probes | Name: List distributed trace executions
+[515] [GET] {{baseUrl}}/api/v1/observability/traces/:traceId | Folder: 23. Observability & Performance Probes | Name: Get distributed trace by Trace ID
+[516] [GET] {{baseUrl}}/api/v1/observability/jobs?status=string | Folder: 23. Observability & Performance Probes | Name: List background job execution history
+[517] [GET] {{baseUrl}}/api/v1/observability/jobs/:id | Folder: 23. Observability & Performance Probes | Name: Get background job execution details by ID
+[518] [GET] {{baseUrl}}/api/v1/observability/performance | Folder: 23. Observability & Performance Probes | Name: Get latest application performance snapshot
+[519] [GET] {{baseUrl}}/api/v1/observability/statistics | Folder: 23. Observability & Performance Probes | Name: Get platform operational throughput & latency statistics
+[520] [POST] {{baseUrl}}/api/v1/immunisation/vaccines | Folder: 24. Immunisation Platform & Vaccines | Name: Register a vaccine in directory
+[521] [GET] {{baseUrl}}/api/v1/immunisation/vaccines | Folder: 24. Immunisation Platform & Vaccines | Name: List all available vaccines
+[522] [POST] {{baseUrl}}/api/v1/immunisation/schedules | Folder: 24. Immunisation Platform & Vaccines | Name: Create a vaccination schedule / dose rule
+[523] [GET] {{baseUrl}}/api/v1/immunisation/schedules?vaccineId=string | Folder: 24. Immunisation Platform & Vaccines | Name: List vaccination schedules (supports vaccineId filter)
+[524] [POST] {{baseUrl}}/api/v1/immunisation/records | Folder: 24. Immunisation Platform & Vaccines | Name: Create/Schedule a patient vaccination record
+[525] [GET] {{baseUrl}}/api/v1/immunisation/records | Folder: 24. Immunisation Platform & Vaccines | Name: List all vaccination records for current patient
+[526] [GET] {{baseUrl}}/api/v1/immunisation/search?q=string | Folder: 24. Immunisation Platform & Vaccines | Name: Search immunisation directory by vaccine, batch, or facility
+[527] [GET] {{baseUrl}}/api/v1/immunisation/statistics | Folder: 24. Immunisation Platform & Vaccines | Name: Get immunisation platform statistics
+[528] [GET] {{baseUrl}}/api/v1/immunisation/records/:id | Folder: 24. Immunisation Platform & Vaccines | Name: Get specific vaccination record details
+[529] [PUT] {{baseUrl}}/api/v1/immunisation/records/:id | Folder: 24. Immunisation Platform & Vaccines | Name: Update vaccination record details (blocked if ARCHIVED)
+[530] [POST] {{baseUrl}}/api/v1/immunisation/records/:id/administer | Folder: 24. Immunisation Platform & Vaccines | Name: Administer a dose (captures batch, lot, site, administrator)
+[531] [POST] {{baseUrl}}/api/v1/immunisation/records/:id/complete | Folder: 24. Immunisation Platform & Vaccines | Name: Mark vaccination record / series as completed
+[532] [POST] {{baseUrl}}/api/v1/immunisation/records/:id/defer | Folder: 24. Immunisation Platform & Vaccines | Name: Defer a dose with clinical reason and rescheduled date
+[533] [POST] {{baseUrl}}/api/v1/immunisation/records/:id/archive | Folder: 24. Immunisation Platform & Vaccines | Name: Archive a vaccination record
+[534] [POST] {{baseUrl}}/api/v1/immunisation/records/:id/restore | Folder: 24. Immunisation Platform & Vaccines | Name: Restore an archived vaccination record
+[535] [POST] {{baseUrl}}/api/v1/immunisation/certificates | Folder: 24. Immunisation Platform & Vaccines | Name: Generate digital vaccine certificate with QR token & PDF link
+[536] [GET] {{baseUrl}}/api/v1/immunisation/certificates | Folder: 24. Immunisation Platform & Vaccines | Name: List all digital vaccine certificates for current patient
+[537] [POST] {{baseUrl}}/api/v1/immunisation/reminders/config | Folder: 24. Immunisation Platform & Vaccines | Name: Configure vaccination reminder metadata & preferences
+[538] [POST] {{baseUrl}}/api/v1/support/tickets | Folder: 25. Support Tickets & Helpdesk | Name: Create support ticket
+[539] [GET] {{baseUrl}}/api/v1/support/tickets?status=string&priority=string&category=string&search=string&page=1&limit=20 | Folder: 25. Support Tickets & Helpdesk | Name: List support tickets (filtered by user ownership or admin/staff access)
+[540] [GET] {{baseUrl}}/api/v1/support/tickets/:id | Folder: 25. Support Tickets & Helpdesk | Name: Get support ticket details by ID
+[541] [PUT] {{baseUrl}}/api/v1/support/tickets/:id | Folder: 25. Support Tickets & Helpdesk | Name: Update support ticket status, priority or assignment (Admin/Staff)
+[542] [POST] {{baseUrl}}/api/v1/support/tickets/:id/reply | Folder: 25. Support Tickets & Helpdesk | Name: Add message reply to support ticket
+[543] [GET] {{baseUrl}}/api/v1/support/tickets/:id/replies | Folder: 25. Support Tickets & Helpdesk | Name: Get all replies for support ticket
+[544] [POST] {{baseUrl}}/api/v1/pets | Folder: 26. Pet Health Records | Name: Register a new pet profile
+[545] [GET] {{baseUrl}}/api/v1/pets?species=string&search=string&page=3467.616117677217&limit=3467.616117677217 | Folder: 26. Pet Health Records | Name: List pets (filtered by user ownership or admin/staff access)
+[546] [GET] {{baseUrl}}/api/v1/pets/:id | Folder: 26. Pet Health Records | Name: Get pet profile by ID
+[547] [PUT] {{baseUrl}}/api/v1/pets/:id | Folder: 26. Pet Health Records | Name: Update pet profile
+[548] [DELETE] {{baseUrl}}/api/v1/pets/:id | Folder: 26. Pet Health Records | Name: Delete pet profile
+[549] [POST] {{baseUrl}}/api/v1/pets/:id/vaccinations | Folder: 26. Pet Health Records | Name: Add vaccination record to pet
+[550] [GET] {{baseUrl}}/api/v1/pets/:id/vaccinations | Folder: 26. Pet Health Records | Name: Get all vaccination records for pet
+[551] [GET] {{baseUrl}}/api/v1/financing/options | Folder: 27. Healthcare Financing & Financial Assistance | Name: List available healthcare financing options and partners
+[552] [GET] {{baseUrl}}/api/v1/financing/offers | Folder: 27. Healthcare Financing & Financial Assistance | Name: List pre-approved healthcare financing offers for current patient
+[553] [GET] {{baseUrl}}/api/v1/financing/offers/:id | Folder: 27. Healthcare Financing & Financial Assistance | Name: Get details of specific healthcare financing offer or treatment proposal
+[554] [POST] {{baseUrl}}/api/v1/financing/offers/:id/accept | Folder: 27. Healthcare Financing & Financial Assistance | Name: Accept pre-approved healthcare financing offer (Initiates partner underwriting review)
+[555] [POST] {{baseUrl}}/api/v1/financing/offers/:id/reject | Folder: 27. Healthcare Financing & Financial Assistance | Name: Reject healthcare financing offer
+[556] [POST] {{baseUrl}}/api/v1/financing/apply | Folder: 27. Healthcare Financing & Financial Assistance | Name: Submit application for healthcare financing / EMI assistance
+[557] [GET] {{baseUrl}}/api/v1/financing/applications?status=string&partnerName=string&search=string&page=3467.616117677217&limit=3467.616117677217 | Folder: 27. Healthcare Financing & Financial Assistance | Name: List financing applications (scoped to patient or global for admin/staff)
+[558] [GET] {{baseUrl}}/api/v1/financing/applications/:id | Folder: 27. Healthcare Financing & Financial Assistance | Name: Get financing application details by ID
+[559] [PATCH] {{baseUrl}}/api/v1/financing/applications/:id/status | Folder: 27. Healthcare Financing & Financial Assistance | Name: Update financing application review status (Admin/Staff)

@@ -1,0 +1,813 @@
+/* ==========================================================================
+   CareID Admin Portal - System Health & Export (Figma 20:6239)
+   Bento Grid Layout (Span 8 + Span 4, Span 12), Fluid Screen Fit, Pure Styling
+   ========================================================================== */
+
+.system-health-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: #f8f9fb;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #191c1e;
+  position: relative;
+}
+
+.system-health-main-wrapper {
+  flex: 1 1 0%;
+  min-width: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  background-color: #f8f9fb;
+}
+
+/* ==========================================================================
+   1. Stationary Top Global Navigation Bar (Figma 20:6241)
+   ========================================================================== */
+.system-health-top-navbar {
+  height: 64px;
+  flex-shrink: 0;
+  background-color: #f8f9fb;
+  border-bottom: 1px solid #cbc4d4;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 20;
+  box-sizing: border-box;
+}
+
+.system-health-top-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: 1 1 0%;
+  max-width: 600px;
+}
+
+.system-health-header-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #191c1e;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.system-health-search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #edeef0;
+  border-radius: 9999px;
+  padding: 8px 16px 8px 40px;
+  flex: 1 1 0%;
+  max-width: 448px;
+  box-sizing: border-box;
+}
+
+.system-health-search-icon {
+  position: absolute;
+  left: 12px;
+  color: #494552;
+  pointer-events: none;
+}
+
+.system-health-search-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  color: #191c1e;
+  font-family: inherit;
+}
+
+.system-health-search-input::placeholder {
+  color: #494552;
+}
+
+.system-health-top-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.system-health-icon-btn {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #494552;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.system-health-icon-btn:hover {
+  background-color: #edeef0;
+  color: #28006d;
+}
+
+.system-health-notification-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  background-color: #ba1a1a;
+  border-radius: 9999px;
+  border: 1.5px solid #f8f9fb;
+}
+
+.system-health-divider {
+  width: 1px;
+  height: 32px;
+  background-color: #cbc4d4;
+  margin: 0 4px;
+}
+
+.system-health-admin-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  border: 1px solid #cbc4d4;
+  overflow: hidden;
+  background-color: #3f1d8b;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease;
+}
+
+.system-health-admin-avatar:hover {
+  border-color: #28006d;
+}
+
+.system-health-admin-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   2. Main Scrollable Canvas (Figma 20:6268)
+   ========================================================================== */
+.system-health-canvas {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 32px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.system-health-canvas::-webkit-scrollbar {
+  width: 6px;
+}
+.system-health-canvas::-webkit-scrollbar-track {
+  background: transparent;
+}
+.system-health-canvas::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+
+/* Breadcrumbs & Header (Figma 20:6269) */
+.system-health-header-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.system-health-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.system-health-breadcrumb-link {
+  font-size: 11px;
+  font-weight: 500;
+  color: #494552;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.system-health-breadcrumb-link:hover {
+  color: #28006d;
+  text-decoration: underline;
+}
+
+.system-health-breadcrumb-current {
+  font-size: 11px;
+  font-weight: 500;
+  color: #28006d;
+}
+
+.system-health-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.64px;
+  color: #191c1e;
+  margin: 0;
+}
+
+.system-health-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #494552;
+  margin: 0;
+}
+
+/* ==========================================================================
+   3. Bento Grid Layout (Figma 20:6281)
+   ========================================================================== */
+.system-health-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Base Bento Card */
+.system-health-card {
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 20px;
+  padding: 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  position: relative;
+}
+
+/* Card 1: Infrastructure Health (Span 8) (Figma 20:6282) */
+.system-health-card-infra {
+  grid-column: span 8 / span 8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.system-health-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.system-health-card-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.system-health-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #191c1e;
+  margin: 0;
+}
+
+.system-health-last-updated {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #494552;
+}
+
+.system-health-infra-grid {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.system-health-status-subcard {
+  flex: 1 1 0%;
+  min-width: 0;
+  background-color: #f8f9fb;
+  border: 1px solid #cbc4d4;
+  border-radius: 12px;
+  padding: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.system-health-subcard-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.system-health-icon-bubble {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background-color: rgba(63, 29, 139, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #28006d;
+  flex-shrink: 0;
+}
+
+.system-health-healthy-badge {
+  background-color: #85f6e5;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #007166;
+  white-space: nowrap;
+}
+
+.system-health-healthy-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: #006a60;
+}
+
+.system-health-subcard-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.system-health-subcard-label {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.6px;
+  color: #494552;
+  white-space: nowrap;
+}
+
+.system-health-subcard-metric {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #191c1e;
+}
+
+.system-health-subcard-metric-desc {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #494552;
+}
+
+/* Card 2: Workload & Storage (Span 4) (Figma 20:6337) */
+.system-health-card-workload {
+  grid-column: span 4 / span 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.system-health-workload-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.system-health-workload-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.system-health-workload-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 4px;
+}
+
+.system-health-workload-label {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.6px;
+  color: #494552;
+}
+
+.system-health-workload-val {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #191c1e;
+  white-space: nowrap;
+}
+
+.system-health-workload-unit {
+  font-size: 12px;
+  font-weight: 400;
+  color: #494552;
+}
+
+.system-health-progress-track {
+  height: 6px;
+  width: 100%;
+  background-color: #e1e2e4;
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.system-health-progress-fill-green {
+  height: 100%;
+  background-color: #006a60;
+  border-radius: 9999px;
+}
+
+.system-health-progress-fill-purple {
+  height: 100%;
+  background-color: #28006d;
+  border-radius: 9999px;
+}
+
+.system-health-progress-fill-amber {
+  height: 100%;
+  background-color: #fabd00;
+  border-radius: 9999px;
+}
+
+.system-health-workload-status-label {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #494552;
+  text-align: right;
+}
+
+.system-health-storage-divider {
+  border-top: 1px solid rgba(203, 196, 212, 0.5);
+  padding-top: 10px;
+}
+
+/* Card 3: Data Export Engine (Span 12) (Figma 20:6380) */
+.system-health-card-export {
+  grid-column: span 12 / span 12;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.system-health-card-export-desc {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #494552;
+  margin: 2px 0 0 0;
+}
+
+.system-health-export-columns {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.system-health-export-left-col {
+  flex: 1 1 0%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.system-health-export-right-col {
+  flex: 1 1 0%;
+  min-width: 0;
+  border-left: 1px solid #cbc4d4;
+  padding-left: 33px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Export Form Controls */
+.system-health-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.system-health-form-label {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.6px;
+  color: #191c1e;
+}
+
+.system-health-format-options {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.system-health-format-btn {
+  flex: 1 1 0%;
+  min-width: 0;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.system-health-format-btn.active {
+  background-color: rgba(232, 221, 255, 0.1);
+  border: 2px solid #28006d;
+  color: #28006d;
+}
+
+.system-health-format-btn:not(.active) {
+  background-color: #f8f9fb;
+  border: 1px solid #cbc4d4;
+  color: #494552;
+}
+
+.system-health-format-btn:not(.active):hover {
+  border-color: #28006d;
+  color: #28006d;
+}
+
+.system-health-format-text {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+/* Frequency Radio Row */
+.system-health-frequency-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 20px;
+}
+
+.system-health-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.system-health-radio-dot-outer {
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+}
+
+.system-health-radio-dot-outer.selected {
+  background-color: #28006d;
+  border: 1px solid transparent;
+}
+
+.system-health-radio-dot-outer:not(.selected) {
+  background-color: #ffffff;
+  border: 1px solid #7a7583;
+}
+
+.system-health-radio-dot-inner {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: #ffffff;
+}
+
+.system-health-radio-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #191c1e;
+}
+
+/* Generate Export CTA Button */
+.system-health-export-btn {
+  width: 100%;
+  height: 42px;
+  background-color: #28006d;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.system-health-export-btn:hover {
+  background-color: #3b0a94;
+  box-shadow: 0 4px 12px rgba(40, 0, 109, 0.2);
+}
+
+.system-health-export-btn:active {
+  transform: scale(0.99);
+}
+
+/* Notice Banner */
+.system-health-notice-banner {
+  background-color: #f3f0f7;
+  border: 1px solid #cbc4d4;
+  border-left: 4px solid #28006d;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #28006d;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Right Column: Recent Exports */
+.system-health-recent-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 8px;
+}
+
+.system-health-empty-state-box {
+  background-color: #f8f9fb;
+  border: 1px dashed #cbc4d4;
+  border-radius: 12px;
+  min-height: 200px;
+  padding: 33px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.system-health-empty-bubble {
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  background-color: #edeef0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #494552;
+  margin-bottom: 12px;
+}
+
+.system-health-empty-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #191c1e;
+  margin: 0 0 4px 0;
+}
+
+.system-health-empty-desc {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #494552;
+  max-width: 260px;
+  margin: 0;
+}
+
+.system-health-clear-btn {
+  margin-top: 16px;
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #28006d;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.system-health-clear-btn:hover {
+  text-decoration: underline;
+  background-color: rgba(40, 0, 109, 0.05);
+}
+
+/* ==========================================================================
+   4. Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .system-health-card-infra {
+    grid-column: span 12 / span 12;
+  }
+  .system-health-card-workload {
+    grid-column: span 12 / span 12;
+  }
+}
+
+@media (max-width: 840px) {
+  .system-health-canvas {
+    padding: 16px;
+    gap: 20px;
+  }
+  .system-health-top-navbar {
+    padding: 0 16px;
+  }
+  .system-health-infra-grid {
+    flex-direction: column;
+  }
+  .system-health-export-columns {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .system-health-export-right-col {
+    border-left: none;
+    border-top: 1px solid #cbc4d4;
+    padding-left: 0;
+    padding-top: 24px;
+  }
+}
+
+@media (max-width: 580px) {
+  .system-health-format-options {
+    flex-direction: column;
+  }
+  .system-health-frequency-row {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    gap: 12px;
+  }
+}
+

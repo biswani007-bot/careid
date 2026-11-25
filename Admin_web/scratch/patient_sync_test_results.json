@@ -1,0 +1,59 @@
+{
+  "allPassed": true,
+  "testResults": [
+    {
+      "test": "Test 4: Non-fallback Names for Existing Patients",
+      "pass": true,
+      "details": "9/10 rows have resolved actual names."
+    },
+    {
+      "test": "Test 5: Pending Verification Accounts Handled Correctly",
+      "pass": true,
+      "details": "1 pending accounts present on page 1."
+    },
+    {
+      "test": "Test 8: Search by Patient Name (\"Sarah\")",
+      "pass": true,
+      "details": "Returned 2 matching rows. Sarah found: true"
+    },
+    {
+      "test": "Test 1: Patient Name Sync (+16505550004)",
+      "pass": true,
+      "details": "Displayed Name: \"Sarah yo\""
+    },
+    {
+      "test": "Test 2: Mobile Number Preserved (+16505550004)",
+      "pass": true,
+      "details": "Displayed Phone: \"+16505550004\""
+    },
+    {
+      "test": "Test 3: Vault ID Preserved (PT-CAREID-2026-0004)",
+      "pass": true,
+      "details": "Displayed Vault ID: \"PT-CAREID-2026-0004\""
+    },
+    {
+      "test": "Test 6: Inactive/Blocked Accounts Display Actual Names",
+      "pass": true,
+      "details": "Lucas Vance (BLOCKED/INACTIVE) resolved to actual name \"Lucas Vance\""
+    },
+    {
+      "test": "Test 9: Browser Refresh Name Persistence",
+      "pass": true,
+      "details": "9/10 names persisted after full browser reload."
+    }
+  ],
+  "targetPatient": {
+    "name": "Sarah yo",
+    "phone": "+16505550004",
+    "vaultId": "PT-CAREID-2026-0004",
+    "demographics": "Female, 34",
+    "registered": "28 Oct 2026",
+    "verification": "Verified",
+    "status": "Active"
+  },
+  "profileData": {
+    "name": "Sarah yo",
+    "vaultId": "PT-CAREID-2026-0004",
+    "status": "Active Verified"
+  }
+}

@@ -1,0 +1,132 @@
+<USER_REQUEST>
+# CAREID BACKEND — AUTHENTICATION FIX, COMPLETE VALIDATION & PRODUCTION DEPLOYMENT
+
+Act as a senior NestJS backend engineer, security engineer and DevOps engineer.
+
+Your task is to investigate and fix the CareID backend authentication failure, verify the existing backend implementation, resolve all related issues, and deploy the verified application to the production aaPanel server.
+
+Do not stop after producing an audit report. Implement the necessary fixes, test them, and complete deployment if all release gates pass.
+
+## 1. Project and deployment details
+
+Production project:
+`/www/wwwroot/360api.vnvision.in`
+
+Technology:
+- NestJS 11
+- TypeScript 5.7
+- Prisma 7
+- PostgreSQL 17
+- Node.js 22
+- JWT authentication
+
+Production API:
+`https://360api.vnvision.in`
+
+API prefix:
+`/api/v1`
+
+Production application port:
+`3073`
+
+Local repository:
+`C:\Users\PABANI\Downloads\hvapi-main\hvapi-main`
+
+Frontend currently requests:
+
+`POST /api/v1/auth/password/login`
+
+Current production error:
+
+`404 NotFoundException: Cannot POST /api/v1/auth/password/login`
+
+Health endpoint:
+`GET /api/v1/health` returns HTTP 200.
+
+## 2. Confirmed authentication findings
+
+The deployed authentication controller currently contains:
+
+- POST `/auth/otp/request`
+- POST `/auth/otp/verify`
+- POST `/auth/otp/resend`
+- POST `/auth/token/refresh`
+- POST `/auth/logout`
+- POST `/auth/logout-all`
+- GET `/auth/me`
+- GET `/auth/sessions`
+- GET `/auth/roles`
+- GET `/auth/permissions`
+
+There is no registered `POST /auth/password/login` route.
+
+The existing `AuthService` implements OTP-based authentication, JWT issuance, refresh-token rotation and session management. It does not currently expose a password-login method.
+
+Relevant files:
+
+- `src/modules/auth/presentation/controllers/auth.controller.ts`
+- `src/modules/auth/application/use-cases/auth.service.ts`
+- `src/modules/auth/infrastructure/`
+- `src/modules/auth/presentation/dto/`
+- `prisma/schema.prisma`
+
+An authentication bac
+<truncated 8473 bytes>
+nvalidates the session.
+- Existing OTP login remains functional.
+- Existing API routes continue working.
+- No unexpected 404, 500 or startup errors occur.
+
+Never expose access or refresh tokens in the final report.
+
+## 11. Deployment rollback plan
+
+Before deployment, preserve the previous known-good build and configuration.
+
+If the new deployment fails:
+
+- Restore the previous build.
+- Restore the previous application startup configuration.
+- Restart only the CareID application.
+- Verify the health endpoint.
+- Report the failure and rollback result.
+
+Do not attempt destructive database rollback.
+
+## 12. Final completion report
+
+Provide a factual report containing:
+
+1. Exact root cause of the original 404.
+2. Files changed.
+3. Password-login implementation details.
+4. Authentication security improvements.
+5. Test counts and actual results.
+6. Migration verification.
+7. Build and lint results.
+8. Deployment timestamp.
+9. Actual process manager and runtime mode.
+10. Production health-check result.
+11. Password-login HTTP test result.
+12. Rollback status.
+13. Remaining blockers, if any.
+
+Clearly distinguish between:
+- Implemented.
+- Locally tested.
+- Deployed.
+- Verified on production.
+
+## FINAL EXECUTION RULE
+
+Complete the work in one coordinated implementation and deployment workflow. Avoid unnecessary separate phases or repeated audit-only reports.
+
+Do not stop after finding the missing route.
+
+However, production deployment is permitted only after the security, test, backup and migration gates pass. If a critical security defect, missing credential, unverified migration or failed test prevents safe deployment, fix it where possible and clearly report what still blocks release.
+
+The final objective is a working, secure CareID backend with a functioning password-login API and all existing authentication and clinical authorization workflows preserved.
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-10-30T16:28:51+05:30.
+</ADDITIONAL_METADATA>

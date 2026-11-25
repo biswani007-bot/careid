@@ -1,0 +1,2054 @@
+[
+  {
+    id: '4f6e73c6-6711-407e-9823-79d433d887fd',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'E2E Cath Lab Procedure Summary (Attested)',
+    chiefComplaint: 'Diagnostic Left Heart Catheterization',
+    clinicalNotes: 'Attested by physician in Stage 19 E2E verification.',
+    treatmentPlan: 'Proceed with coronary angiography',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [ [Object] ],
+    procedures: [ [Object] ],
+    attachments: [ [Object] ],
+    createdAt: '2026-11-12T11:33:25.259Z',
+    updatedAt: '2026-11-12T11:33:41.475Z'
+  },
+  {
+    id: '583aeef9-d9b0-48b8-aa5d-ce8cfd6d5142',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'E2E Cath Lab Procedure Summary (Attested)',
+    chiefComplaint: 'Diagnostic Left Heart Catheterization',
+    clinicalNotes: 'Attested by physician in Stage 19 E2E verification.',
+    treatmentPlan: 'Proceed with coronary angiography',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [ [Object] ],
+    procedures: [ [Object] ],
+    attachments: [],
+    createdAt: '2026-11-12T11:32:03.327Z',
+    updatedAt: '2026-11-12T11:32:10.779Z'
+  },
+  {
+    id: 'f85e21f8-d27f-4abd-9d80-a865ca60dd61',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'E2E Cath Lab Procedure Summary (Attested)',
+    chiefComplaint: 'Diagnostic Left Heart Catheterization',
+    clinicalNotes: 'Attested by physician in Stage 19 E2E verification.',
+    treatmentPlan: 'Proceed with coronary angiography',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [ [Object] ],
+    procedures: [ [Object] ],
+    attachments: [],
+    createdAt: '2026-11-12T11:31:03.853Z',
+    updatedAt: '2026-11-12T11:31:12.347Z'
+  },
+  {
+    id: 'c35c13fb-a5d8-4d57-8d9c-e7692d46c704',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'E2E Cath Lab Procedure Summary (Attested)',
+    chiefComplaint: 'Diagnostic Left Heart Catheterization',
+    clinicalNotes: 'Attested by physician in Stage 19 E2E verification.',
+    treatmentPlan: 'Proceed with coronary angiography',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-12T11:29:35.042Z',
+    updatedAt: '2026-11-12T11:29:44.716Z'
+  },
+  {
+    id: '333c0f4a-2928-4937-ac65-bcde1cd26d9e',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Routine Consultation',
+    chiefComplaint: 'Annual wellness check',
+    clinicalNotes: 'Vitals normal',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-12T09:55:30.612Z',
+    updatedAt: '2026-11-12T09:55:30.612Z'
+  },
+  {
+    id: 'f1fe4902-e7ef-4459-836b-6910bac7323a',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Preliminary Diagnostic Ultrasound Evaluation 1794384527780',
+    chiefComplaint: 'Right upper quadrant ultrasound screening',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [ [Object] ],
+    createdAt: '2026-11-11T08:08:51.143Z',
+    updatedAt: '2026-11-11T08:08:51.944Z'
+  },
+  {
+    id: '74246afa-17d6-4ce5-ac17-bbb2ec669eb5',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'PA/Lateral Chest Radiograph Forensic Verification 1794384520554',
+    chiefComplaint: 'Pre-procedural pulmonary diagnostic clearance',
+    clinicalNotes: 'PRIMARY DIAGNOSTIC IMPRESSION (Radiology PA/Lateral Chest):\n' +
+      '1. Bilateral pulmonary parenchyma demonstrates normal aeration without focal airspace opacity.\n' +
+      '2. Cardiothoracic ratio is normal (< 0.48). Mediastinal and hilar contours are unremarkable.\n' +
+      '3. Pleural spaces are clear; no blunting of costophrenic angles.\n' +
+      '4. Visualized osseous structures demonstrate no acute traumatic fracture or aggressive focal lytic lesion.\n' +
+      'ASSESSMENT: No acute cardiopulmonary disease. Diagnostic examination complete.',
+    treatmentPlan: 'Clearance granted for scheduled procedural intervention.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-11T08:08:44.866Z',
+    updatedAt: '2026-11-11T08:08:49.337Z'
+  },
+  {
+    id: '3cb30488-a0e7-47b6-8879-46ec3772657b',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Preliminary Diagnostic Ultrasound Evaluation 1794384351814',
+    chiefComplaint: 'Right upper quadrant ultrasound screening',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-11T08:05:56.170Z',
+    updatedAt: '2026-11-11T08:05:57.933Z'
+  },
+  {
+    id: 'e8667211-3b52-4dd8-9add-6190be4f2767',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'PA/Lateral Chest Radiograph Forensic Verification 1794384343834',
+    chiefComplaint: 'Pre-procedural pulmonary diagnostic clearance',
+    clinicalNotes: 'PRIMARY DIAGNOSTIC IMPRESSION (Radiology PA/Lateral Chest):\n' +
+      '1. Bilateral pulmonary parenchyma demonstrates normal aeration without focal airspace opacity.\n' +
+      '2. Cardiothoracic ratio is normal (< 0.48). Mediastinal and hilar contours are unremarkable.\n' +
+      '3. Pleural spaces are clear; no blunting of costophrenic angles.\n' +
+      '4. Visualized osseous structures demonstrate no acute traumatic fracture or aggressive focal lytic lesion.\n' +
+      'ASSESSMENT: No acute cardiopulmonary disease. Diagnostic examination complete.',
+    treatmentPlan: 'Clearance granted for scheduled procedural intervention.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-11T08:05:47.170Z',
+    updatedAt: '2026-11-11T08:05:53.482Z'
+  },
+  {
+    id: '9854cab6-4218-4788-b01b-9bd4b9687e37',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Preliminary Diagnostic Ultrasound Evaluation 1794336904153',
+    chiefComplaint: 'Right upper quadrant ultrasound screening',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:55:04.677Z',
+    updatedAt: '2026-11-10T18:55:05.387Z'
+  },
+  {
+    id: '70f3f5de-de04-4489-9d62-b81bfc48dfe9',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'PA/Lateral Chest Radiograph Forensic Verification 1794336894398',
+    chiefComplaint: 'Pre-procedural pulmonary diagnostic clearance',
+    clinicalNotes: 'PRIMARY DIAGNOSTIC IMPRESSION (Radiology PA/Lateral Chest):\n' +
+      '1. Bilateral pulmonary parenchyma demonstrates normal aeration without focal airspace opacity.\n' +
+      '2. Cardiothoracic ratio is normal (< 0.48). Mediastinal and hilar contours are unremarkable.\n' +
+      '3. Pleural spaces are clear; no blunting of costophrenic angles.\n' +
+      '4. Visualized osseous structures demonstrate no acute traumatic fracture or aggressive focal lytic lesion.\n' +
+      'ASSESSMENT: No acute cardiopulmonary disease. Diagnostic examination complete.',
+    treatmentPlan: 'Clearance granted for scheduled procedural intervention.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:54:55.889Z',
+    updatedAt: '2026-11-10T18:55:02.648Z'
+  },
+  {
+    id: '9755cd3a-c0bf-4791-b350-ed28624440aa',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Emergency Cardiac Biomarker STAT Panel - 1794336808714',
+    chiefComplaint: 'Atypical chest discomfort rule-out',
+    clinicalNotes: 'Emergency Cardiac Protocol: Emergency Cardiac Biomarker STAT Panel\n' +
+      'Facility: CareID Emergency Medicine Lab\n' +
+      'Collection Date: 2026-11-07\n' +
+      '--- STAT Serum Biomarkers ---\n' +
+      'High-Sensitivity Troponin I: 0.012 ng/mL (Ref: < 0.034 ng/mL)\n' +
+      'CK-MB (Creatine Kinase-MB): 2.8 ng/mL (Ref: 0.0 - 5.0 ng/mL)\n' +
+      'Myoglobin: 38 ng/mL (Ref: 25 - 72 ng/mL)\n' +
+      'NT-proBNP: 64 pg/mL (Ref: < 125 pg/mL)\n' +
+      'Cardiology Evaluation: Negative myocardial necrosis markers. Troponin I below cutoff. Low acute risk.',
+    treatmentPlan: 'Serial troponin completed and negative. Safe for outpatient discharge with cardiology follow-up.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:53:30.948Z',
+    updatedAt: '2026-11-10T18:53:30.948Z'
+  },
+  {
+    id: 'a0ce2336-43bf-43c5-bb04-b1ad2e6cb3f0',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Automated Complete Urinalysis with Microscopic Examination - 1794336803700',
+    chiefComplaint: 'Routine nephrological and urological screening',
+    clinicalNotes: 'Urinalysis Protocol: Automated Complete Urinalysis with Microscopic Examination\n' +
+      'Facility: CareID Outpatient Diagnostic Lab\n' +
+      'Collection Date: 2026-11-06\n' +
+      '--- Physical, Chemical & Microscopic Findings ---\n' +
+      'Color: Yellow (Ref: Yellow / Straw)\n' +
+      'Clarity: Clear (Ref: Clear)\n' +
+      'Specific Gravity: 1.018 (Ref: 1.005 - 1.030)\n' +
+      'pH: 6.0 (Ref: 4.6 - 8.0)\n' +
+      'Protein: Negative (Ref: Negative)\n' +
+      'Glucose: Negative (Ref: Negative)\n' +
+      'Ketones: Negative (Ref: Negative)\n' +
+      'Microscopic RBC: 0 - 2 (Ref: 0 - 3 /HPF)\n' +
+      'Microscopic WBC: 1 - 2 (Ref: 0 - 5 /HPF)\n' +
+      'Interpretation: Normal urinalysis. No evidence of proteinuria, hematuria, or bacteriuria.',
+    treatmentPlan: 'Maintain current fluid intake. Normal renal status.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:53:25.932Z',
+    updatedAt: '2026-11-10T18:53:25.932Z'
+  },
+  {
+    id: '4750d6be-0bd8-48ac-ab01-3d9db961dd5d',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Surgical Pathology Summary (Dermatopathology Biopsy) - 1794336798388',
+    chiefComplaint: 'Histological verification of excisional biopsy',
+    clinicalNotes: 'Histopathology Diagnostic Protocol: Surgical Pathology Summary (Dermatopathology Biopsy)\n' +
+      'Facility: University Histopathology Institute\n' +
+      'Procedure Date: 2026-11-05\n' +
+      '--- Pathological & Histological Parameters ---\n' +
+      'Specimen Dimensions: 0.4 x 0.3 x 0.2 [Biopsy punch]\n' +
+      'Epidermal Keratinization: Intact [Unremarkable]\n' +
+      'Melanocytic Proliferation: Benign Intradermal Nevus [No atypia]\n' +
+      'Surgical Margins: Negative / Clear (> 2mm) [Clear]\n' +
+      'Diagnostic Conclusion: Benign intradermal melanocytic lesion with complete surgical margin clearance.',
+    treatmentPlan: 'Excision site healing well. Routine dermatological surveillance.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:53:19.878Z',
+    updatedAt: '2026-11-10T18:53:19.878Z'
+  },
+  {
+    id: '4df3cdf8-a7f4-437b-af1a-fca9ccddf207',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Digital Chest Radiography (2-View PA & Lateral) - 1794336794033',
+    chiefComplaint: 'Pre-operative cardiopulmonary clearance',
+    clinicalNotes: 'Radiological Study Report: Digital Chest Radiography (2-View PA & Lateral)\n' +
+      'Facility: CareID Advanced Imaging Pavilion\n' +
+      'Exam Date: 2026-11-04\n' +
+      'Impression: No acute cardiopulmonary disease. Lungs are clear without focal consolidation or pneumothorax.\n' +
+      '--- Anatomical Findings ---\n' +
+      'Cardiothoracic Ratio: 0.44 (Normal: < 0.50 ratio)\n' +
+      'Pulmonary Vasculature: Normal (Normal: Normal caliber)\n' +
+      'Pleural Spaces: Clear (Normal: No effusion)\n' +
+      'Bony Thorax: Intact (Normal: No fractures)',
+    treatmentPlan: 'Clear for non-cardiac procedural intervention.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:53:16.194Z',
+    updatedAt: '2026-11-10T18:53:16.194Z'
+  },
+  {
+    id: '97f7ce2e-8aea-47bf-8617-83db65913403',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Thyroid Function Evaluation Panel - 1794336789079',
+    chiefComplaint: 'Endocrine panel follow-up',
+    clinicalNotes: 'Endocrinology Diagnostic Report: Thyroid Panel\n' +
+      'Facility: Endocrine Diagnostic Reference Laboratory\n' +
+      'Collection Date: 2026-11-04\n' +
+      '--- Thyroid Hormone & Antibody Indices ---\n' +
+      'TSH (Thyroid Stimulating Hormone): 1.85 uIU/mL (Ref: 0.45 - 4.50 uIU/mL)\n' +
+      'Free T4 (Thyroxine): 1.24 ng/dL (Ref: 0.82 - 1.77 ng/dL)\n' +
+      'Free T3 (Triiodothyronine): 3.1 pg/mL (Ref: 2.0 - 4.4 pg/mL)\n' +
+      'Total T3: 115 ng/dL (Ref: 71 - 180 ng/dL)\n' +
+      'Thyroid Peroxidase Antibodies (Anti-TPO): < 9.0 IU/mL (Ref: < 35.0 IU/mL)\n' +
+      'Assessment: Euthyroid state confirmed. Negative autoimmune thyroid antibodies.',
+    treatmentPlan: 'No hormone therapy required. Re-evaluate annually.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:53:10.577Z',
+    updatedAt: '2026-11-10T18:53:10.577Z'
+  },
+  {
+    id: '07543fe3-7dc0-4f19-bf6e-11bef815d148',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Comprehensive Metabolic Panel (CMP-14) - 1794336784067',
+    chiefComplaint: 'Comprehensive metabolic health monitoring',
+    clinicalNotes: 'Diagnostic Laboratory Panel: Comprehensive Metabolic Panel\n' +
+      'Facility: City General Clinical Chemistry\n' +
+      'Collection Date: 2026-11-03\n' +
+      '--- Renal, Hepatic & Electrolyte Parameters ---\n' +
+      'Glucose (Fasting): 94 mg/dL (Ref: 70 - 99 mg/dL)\n' +
+      'BUN (Blood Urea Nitrogen): 14 mg/dL (Ref: 7 - 20 mg/dL)\n' +
+      'Creatinine: 0.92 mg/dL (Ref: 0.70 - 1.30 mg/dL)\n' +
+      'eGFR: 98 mL/min/1.73m2 (Ref: > 60 mL/min/1.73m2)\n' +
+      'Sodium: 140 mEq/L (Ref: 136 - 145 mEq/L)\n' +
+      'Potassium: 4.2 mEq/L (Ref: 3.5 - 5.1 mEq/L)\n' +
+      'Chloride: 102 mEq/L (Ref: 98 - 107 mEq/L)\n' +
+      'Carbon Dioxide (CO2): 26 mEq/L (Ref: 22 - 29 mEq/L)\n' +
+      'Calcium: 9.4 mg/dL (Ref: 8.6 - 10.2 mg/dL)\n' +
+      'Total Protein: 7.1 g/dL (Ref: 6.4 - 8.3 g/dL)\n' +
+      'Albumin: 4.4 g/dL (Ref: 3.5 - 5.0 g/dL)\n' +
+      'Bilirubin (Total): 0.6 mg/dL (Ref: 0.2 - 1.2 mg/dL)\n' +
+      'Alkaline Phosphatase (ALP): 68 U/L (Ref: 44 - 147 U/L)\n' +
+      'AST (SGOT): 22 U/L (Ref: 10 - 40 U/L)\n' +
+      'ALT (SGPT): 24 U/L (Ref: 7 - 56 U/L)\n' +
+      'Clinical Summary: Renal and hepatic indices show intact excretory and synthetic functions. Electrolytes balanced.',
+    treatmentPlan: 'Maintain adequate hydration. Continue baseline health regimen.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [ [Object] ],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:53:05.310Z',
+    updatedAt: '2026-11-10T18:53:05.310Z'
+  },
+  {
+    id: '3eb75f18-383d-4152-99c4-9e6387a90081',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Comprehensive Lipid Profile Panel - 1794336779176',
+    chiefComplaint: 'Cardiovascular risk stratification',
+    clinicalNotes: 'Diagnostic Laboratory Panel: Lipid Panel\n' +
+      'Facility: CareID Cardiovascular Diagnostics\n' +
+      'Collection Date: 2026-11-02\n' +
+      '--- Lipid Subfractions ---\n' +
+      'Total Cholesterol: 185 mg/dL (Ref: < 200 mg/dL) [NORMAL]\n' +
+      'HDL Cholesterol: 52 mg/dL (Ref: > 40 mg/dL) [NORMAL]\n' +
+      'LDL Cholesterol: 108 mg/dL (Ref: < 100 mg/dL) [HIGH]\n' +
+      'Triglycerides: 125 mg/dL (Ref: < 150 mg/dL) [NORMAL]\n' +
+      'VLDL Cholesterol: 25 mg/dL (Ref: 5 - 40 mg/dL) [NORMAL]\n' +
+      'Total / HDL Ratio: 3.56 ratio (Ref: < 5.0 ratio) [NORMAL]\n' +
+      'Cardiovascular Assessment: Moderate LDL elevation. Recommend low-saturated fat diet and aerobic exercise.',
+    treatmentPlan: 'Dietary counseling; follow-up fasting lipid panel in 6 months.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [ [Object] ],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:53:00.576Z',
+    updatedAt: '2026-11-10T18:53:00.576Z'
+  },
+  {
+    id: '45c7917c-bdef-4db3-a274-69bb9323b717',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Complete Blood Count (CBC) with Differential - 1794336774575',
+    chiefComplaint: 'Routine annual hematological evaluation',
+    clinicalNotes: 'Digitized Diagnostic Laboratory Report: Complete Blood Count (CBC)\n' +
+      'Facility: CareID Central Hematology Laboratory\n' +
+      'Collection Date: 2026-11-01\n' +
+      '--- Hematological Parameters ---\n' +
+      'Hemoglobin: 14.2 g/dL (Ref: 13.8 - 17.2 g/dL) [NORMAL]\n' +
+      'Hematocrit: 42.5 % (Ref: 40.7 - 50.3 %) [NORMAL]\n' +
+      'RBC Count: 4.85 x10^6/uL (Ref: 4.50 - 5.90 x10^6/uL) [NORMAL]\n' +
+      'WBC Count: 6.40 x10^3/uL (Ref: 4.50 - 11.00 x10^3/uL) [NORMAL]\n' +
+      'Platelet Count: 255 x10^3/uL (Ref: 150 - 450 x10^3/uL) [NORMAL]\n' +
+      'MCV: 87.6 fL (Ref: 80.0 - 100.0 fL) [NORMAL]\n' +
+      'MCH: 29.3 pg (Ref: 27.0 - 33.0 pg) [NORMAL]\n' +
+      'MCHC: 33.4 g/dL (Ref: 32.0 - 36.0 g/dL) [NORMAL]\n' +
+      'RDW: 12.8 % (Ref: 11.5 - 14.5 %) [NORMAL]\n' +
+      'Neutrophils: 58.2 % (Ref: 40.0 - 70.0 %) [NORMAL]\n' +
+      'Lymphocytes: 31.4 % (Ref: 20.0 - 40.0 %) [NORMAL]\n' +
+      'Clinical Interpretation: Erythrocyte and leukocyte indices within standard physiological limits.',
+    treatmentPlan: 'Maintain current preventative lifestyle. Repeat panel in 12 months.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [ [Object] ],
+    vitalSigns: [],
+    procedures: [ [Object] ],
+    attachments: [],
+    createdAt: '2026-11-10T18:52:55.888Z',
+    updatedAt: '2026-11-10T18:52:55.888Z'
+  },
+  {
+    id: 'c187ff1b-232e-49bd-8cad-34cef38cb1b5',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Preliminary Diagnostic Ultrasound Evaluation 1794336715991',
+    chiefComplaint: 'Right upper quadrant ultrasound screening',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:51:56.331Z',
+    updatedAt: '2026-11-10T18:51:57.131Z'
+  },
+  {
+    id: '71f153e4-684a-429b-a793-67b491d61039',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'PA/Lateral Chest Radiograph Forensic Verification 1794336705759',
+    chiefComplaint: 'Pre-procedural pulmonary diagnostic clearance',
+    clinicalNotes: 'PRIMARY DIAGNOSTIC IMPRESSION (Radiology PA/Lateral Chest):\n' +
+      '1. Bilateral pulmonary parenchyma demonstrates normal aeration without focal airspace opacity.\n' +
+      '2. Cardiothoracic ratio is normal (< 0.48). Mediastinal and hilar contours are unremarkable.\n' +
+      '3. Pleural spaces are clear; no blunting of costophrenic angles.\n' +
+      '4. Visualized osseous structures demonstrate no acute traumatic fracture or aggressive focal lytic lesion.\n' +
+      'ASSESSMENT: No acute cardiopulmonary disease. Diagnostic examination complete.',
+    treatmentPlan: 'Clearance granted for scheduled procedural intervention.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:51:49.528Z',
+    updatedAt: '2026-11-10T18:51:54.325Z'
+  },
+  {
+    id: 'bf79f96d-4eaf-4df9-8b54-6b8cbcda45f2',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Emergency Cardiac Biomarker STAT Panel - 1794336659214',
+    chiefComplaint: 'Atypical chest discomfort rule-out',
+    clinicalNotes: 'Emergency Cardiac Protocol: Emergency Cardiac Biomarker STAT Panel\n' +
+      'Facility: CareID Emergency Medicine Lab\n' +
+      'Collection Date: 2026-11-07\n' +
+      '--- STAT Serum Biomarkers ---\n' +
+      'High-Sensitivity Troponin I: 0.012 ng/mL (Ref: < 0.034 ng/mL)\n' +
+      'CK-MB (Creatine Kinase-MB): 2.8 ng/mL (Ref: 0.0 - 5.0 ng/mL)\n' +
+      'Myoglobin: 38 ng/mL (Ref: 25 - 72 ng/mL)\n' +
+      'NT-proBNP: 64 pg/mL (Ref: < 125 pg/mL)\n' +
+      'Cardiology Evaluation: Negative myocardial necrosis markers. Troponin I below cutoff. Low acute risk.',
+    treatmentPlan: 'Serial troponin completed and negative. Safe for outpatient discharge with cardiology follow-up.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:51:00.925Z',
+    updatedAt: '2026-11-10T18:51:00.925Z'
+  },
+  {
+    id: '9862fe76-74ab-4ded-82cc-ef9343f90cad',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Automated Complete Urinalysis with Microscopic Examination - 1794336650328',
+    chiefComplaint: 'Routine nephrological and urological screening',
+    clinicalNotes: 'Urinalysis Protocol: Automated Complete Urinalysis with Microscopic Examination\n' +
+      'Facility: CareID Outpatient Diagnostic Lab\n' +
+      'Collection Date: 2026-11-06\n' +
+      '--- Physical, Chemical & Microscopic Findings ---\n' +
+      'Color: Yellow (Ref: Yellow / Straw)\n' +
+      'Clarity: Clear (Ref: Clear)\n' +
+      'Specific Gravity: 1.018 (Ref: 1.005 - 1.030)\n' +
+      'pH: 6.0 (Ref: 4.6 - 8.0)\n' +
+      'Protein: Negative (Ref: Negative)\n' +
+      'Glucose: Negative (Ref: Negative)\n' +
+      'Ketones: Negative (Ref: Negative)\n' +
+      'Microscopic RBC: 0 - 2 (Ref: 0 - 3 /HPF)\n' +
+      'Microscopic WBC: 1 - 2 (Ref: 0 - 5 /HPF)\n' +
+      'Interpretation: Normal urinalysis. No evidence of proteinuria, hematuria, or bacteriuria.',
+    treatmentPlan: 'Maintain current fluid intake. Normal renal status.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:50:56.023Z',
+    updatedAt: '2026-11-10T18:50:56.023Z'
+  },
+  {
+    id: 'b4993736-c879-4560-a0a2-5f93c23bde61',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Surgical Pathology Summary (Dermatopathology Biopsy) - 1794336645813',
+    chiefComplaint: 'Histological verification of excisional biopsy',
+    clinicalNotes: 'Histopathology Diagnostic Protocol: Surgical Pathology Summary (Dermatopathology Biopsy)\n' +
+      'Facility: University Histopathology Institute\n' +
+      'Procedure Date: 2026-11-05\n' +
+      '--- Pathological & Histological Parameters ---\n' +
+      'Specimen Dimensions: 0.4 x 0.3 x 0.2 [Biopsy punch]\n' +
+      'Epidermal Keratinization: Intact [Unremarkable]\n' +
+      'Melanocytic Proliferation: Benign Intradermal Nevus [No atypia]\n' +
+      'Surgical Margins: Negative / Clear (> 2mm) [Clear]\n' +
+      'Diagnostic Conclusion: Benign intradermal melanocytic lesion with complete surgical margin clearance.',
+    treatmentPlan: 'Excision site healing well. Routine dermatological surveillance.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:50:47.107Z',
+    updatedAt: '2026-11-10T18:50:47.107Z'
+  },
+  {
+    id: '150680d5-7da8-4d2d-95cb-a76e8016922a',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Digital Chest Radiography (2-View PA & Lateral) - 1794336634456',
+    chiefComplaint: 'Pre-operative cardiopulmonary clearance',
+    clinicalNotes: 'Radiological Study Report: Digital Chest Radiography (2-View PA & Lateral)\n' +
+      'Facility: CareID Advanced Imaging Pavilion\n' +
+      'Exam Date: 2026-11-04\n' +
+      'Impression: No acute cardiopulmonary disease. Lungs are clear without focal consolidation or pneumothorax.\n' +
+      '--- Anatomical Findings ---\n' +
+      'Cardiothoracic Ratio: 0.44 (Normal: < 0.50 ratio)\n' +
+      'Pulmonary Vasculature: Normal (Normal: Normal caliber)\n' +
+      'Pleural Spaces: Clear (Normal: No effusion)\n' +
+      'Bony Thorax: Intact (Normal: No fractures)',
+    treatmentPlan: 'Clear for non-cardiac procedural intervention.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:50:35.716Z',
+    updatedAt: '2026-11-10T18:50:35.716Z'
+  },
+  {
+    id: '2b920275-866d-4973-af25-c72c2755fdc4',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Thyroid Function Evaluation Panel - 1794336630678',
+    chiefComplaint: 'Endocrine panel follow-up',
+    clinicalNotes: 'Endocrinology Diagnostic Report: Thyroid Panel\n' +
+      'Facility: Endocrine Diagnostic Reference Laboratory\n' +
+      'Collection Date: 2026-11-04\n' +
+      '--- Thyroid Hormone & Antibody Indices ---\n' +
+      'TSH (Thyroid Stimulating Hormone): 1.85 uIU/mL (Ref: 0.45 - 4.50 uIU/mL)\n' +
+      'Free T4 (Thyroxine): 1.24 ng/dL (Ref: 0.82 - 1.77 ng/dL)\n' +
+      'Free T3 (Triiodothyronine): 3.1 pg/mL (Ref: 2.0 - 4.4 pg/mL)\n' +
+      'Total T3: 115 ng/dL (Ref: 71 - 180 ng/dL)\n' +
+      'Thyroid Peroxidase Antibodies (Anti-TPO): < 9.0 IU/mL (Ref: < 35.0 IU/mL)\n' +
+      'Assessment: Euthyroid state confirmed. Negative autoimmune thyroid antibodies.',
+    treatmentPlan: 'No hormone therapy required. Re-evaluate annually.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:50:31.833Z',
+    updatedAt: '2026-11-10T18:50:31.833Z'
+  },
+  {
+    id: '82d4b7eb-5a28-4f3d-a812-e7fce9cb3108',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Comprehensive Metabolic Panel (CMP-14) - 1794336627174',
+    chiefComplaint: 'Comprehensive metabolic health monitoring',
+    clinicalNotes: 'Diagnostic Laboratory Panel: Comprehensive Metabolic Panel\n' +
+      'Facility: City General Clinical Chemistry\n' +
+      'Collection Date: 2026-11-03\n' +
+      '--- Renal, Hepatic & Electrolyte Parameters ---\n' +
+      'Glucose (Fasting): 94 mg/dL (Ref: 70 - 99 mg/dL)\n' +
+      'BUN (Blood Urea Nitrogen): 14 mg/dL (Ref: 7 - 20 mg/dL)\n' +
+      'Creatinine: 0.92 mg/dL (Ref: 0.70 - 1.30 mg/dL)\n' +
+      'eGFR: 98 mL/min/1.73m2 (Ref: > 60 mL/min/1.73m2)\n' +
+      'Sodium: 140 mEq/L (Ref: 136 - 145 mEq/L)\n' +
+      'Potassium: 4.2 mEq/L (Ref: 3.5 - 5.1 mEq/L)\n' +
+      'Chloride: 102 mEq/L (Ref: 98 - 107 mEq/L)\n' +
+      'Carbon Dioxide (CO2): 26 mEq/L (Ref: 22 - 29 mEq/L)\n' +
+      'Calcium: 9.4 mg/dL (Ref: 8.6 - 10.2 mg/dL)\n' +
+      'Total Protein: 7.1 g/dL (Ref: 6.4 - 8.3 g/dL)\n' +
+      'Albumin: 4.4 g/dL (Ref: 3.5 - 5.0 g/dL)\n' +
+      'Bilirubin (Total): 0.6 mg/dL (Ref: 0.2 - 1.2 mg/dL)\n' +
+      'Alkaline Phosphatase (ALP): 68 U/L (Ref: 44 - 147 U/L)\n' +
+      'AST (SGOT): 22 U/L (Ref: 10 - 40 U/L)\n' +
+      'ALT (SGPT): 24 U/L (Ref: 7 - 56 U/L)\n' +
+      'Clinical Summary: Renal and hepatic indices show intact excretory and synthetic functions. Electrolytes balanced.',
+    treatmentPlan: 'Maintain adequate hydration. Continue baseline health regimen.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [ [Object] ],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:50:28.643Z',
+    updatedAt: '2026-11-10T18:50:28.643Z'
+  },
+  {
+    id: '910d53a5-72e2-47de-97a1-c7f7f2ea5da7',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Comprehensive Lipid Profile Panel - 1794336621844',
+    chiefComplaint: 'Cardiovascular risk stratification',
+    clinicalNotes: 'Diagnostic Laboratory Panel: Lipid Panel\n' +
+      'Facility: CareID Cardiovascular Diagnostics\n' +
+      'Collection Date: 2026-11-02\n' +
+      '--- Lipid Subfractions ---\n' +
+      'Total Cholesterol: 185 mg/dL (Ref: < 200 mg/dL) [NORMAL]\n' +
+      'HDL Cholesterol: 52 mg/dL (Ref: > 40 mg/dL) [NORMAL]\n' +
+      'LDL Cholesterol: 108 mg/dL (Ref: < 100 mg/dL) [HIGH]\n' +
+      'Triglycerides: 125 mg/dL (Ref: < 150 mg/dL) [NORMAL]\n' +
+      'VLDL Cholesterol: 25 mg/dL (Ref: 5 - 40 mg/dL) [NORMAL]\n' +
+      'Total / HDL Ratio: 3.56 ratio (Ref: < 5.0 ratio) [NORMAL]\n' +
+      'Cardiovascular Assessment: Moderate LDL elevation. Recommend low-saturated fat diet and aerobic exercise.',
+    treatmentPlan: 'Dietary counseling; follow-up fasting lipid panel in 6 months.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [ [Object] ],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:50:23.440Z',
+    updatedAt: '2026-11-10T18:50:23.440Z'
+  },
+  {
+    id: '2ab2f0c8-71f0-4d51-8a3e-5de94db0d184',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Complete Blood Count (CBC) with Differential - 1794336617859',
+    chiefComplaint: 'Routine annual hematological evaluation',
+    clinicalNotes: 'Digitized Diagnostic Laboratory Report: Complete Blood Count (CBC)\n' +
+      'Facility: CareID Central Hematology Laboratory\n' +
+      'Collection Date: 2026-11-01\n' +
+      '--- Hematological Parameters ---\n' +
+      'Hemoglobin: 14.2 g/dL (Ref: 13.8 - 17.2 g/dL) [NORMAL]\n' +
+      'Hematocrit: 42.5 % (Ref: 40.7 - 50.3 %) [NORMAL]\n' +
+      'RBC Count: 4.85 x10^6/uL (Ref: 4.50 - 5.90 x10^6/uL) [NORMAL]\n' +
+      'WBC Count: 6.40 x10^3/uL (Ref: 4.50 - 11.00 x10^3/uL) [NORMAL]\n' +
+      'Platelet Count: 255 x10^3/uL (Ref: 150 - 450 x10^3/uL) [NORMAL]\n' +
+      'MCV: 87.6 fL (Ref: 80.0 - 100.0 fL) [NORMAL]\n' +
+      'MCH: 29.3 pg (Ref: 27.0 - 33.0 pg) [NORMAL]\n' +
+      'MCHC: 33.4 g/dL (Ref: 32.0 - 36.0 g/dL) [NORMAL]\n' +
+      'RDW: 12.8 % (Ref: 11.5 - 14.5 %) [NORMAL]\n' +
+      'Neutrophils: 58.2 % (Ref: 40.0 - 70.0 %) [NORMAL]\n' +
+      'Lymphocytes: 31.4 % (Ref: 20.0 - 40.0 %) [NORMAL]\n' +
+      'Clinical Interpretation: Erythrocyte and leukocyte indices within standard physiological limits.',
+    treatmentPlan: 'Maintain current preventative lifestyle. Repeat panel in 12 months.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [ [Object] ],
+    vitalSigns: [],
+    procedures: [ [Object] ],
+    attachments: [],
+    createdAt: '2026-11-10T18:50:19.046Z',
+    updatedAt: '2026-11-10T18:50:19.046Z'
+  },
+  {
+    id: '2b1ecea8-5610-41e0-8bf4-515161881b98',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Composite Multi-Modal Panel - 1794336610456',
+    chiefComplaint: 'Multi-modal diagnostic review',
+    clinicalNotes: 'Unified record combining laboratory scan, radiology imaging, and pathology PDF.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:50:15.813Z',
+    updatedAt: '2026-11-10T18:50:15.813Z'
+  },
+  {
+    id: '024e11c3-3b72-4959-9b00-0b151420167a',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Manual Recovery Record - 1794336598198',
+    chiefComplaint: 'Manual laboratory record documentation following OCR retry',
+    clinicalNotes: 'Diagnostic Report: Complete Metabolic Panel (Manual Entry Fallback)\n' +
+      'Reason: OCR scanning encountered low-resolution source raster.\n' +
+      'Hemoglobin: 13.8 g/dL\n' +
+      'Glucose: 92 mg/dL',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:50:00.595Z',
+    updatedAt: '2026-11-10T18:50:00.595Z'
+  },
+  {
+    id: '9d5b4067-06fe-48ac-9e5a-a69a9ca480b7',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Multi-Page Sync Record - 1794336591517',
+    chiefComplaint: 'Multi-Page Comprehensive Summary',
+    clinicalNotes: 'Patient: Marcus Doe\nStatus: Verified\nPages: 2',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:49:52.761Z',
+    updatedAt: '2026-11-10T18:49:52.761Z'
+  },
+  {
+    id: '030bf874-f028-4b1b-8b35-a6f210eed796',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Camera CBC Scan Review - 1794336571006',
+    chiefComplaint: 'Post-capture laboratory verification',
+    clinicalNotes: 'Digitized Diagnostic Laboratory Report: Complete Blood Count (CBC)\n' +
+      'Facility: CareID Emergency Diagnostics\n' +
+      'Collection Date: 2026-11-08\n' +
+      '--- Clinical Lab Values ---\n' +
+      'Hemoglobin: 14.8 g/dL (13.5 - 17.5 g/dL)\n' +
+      'WBC Count: 6,900 /uL (4,500 - 11,000 /uL)\n' +
+      'Platelet Count: 260,000 /uL (150,000 - 450,000 /uL)\n' +
+      'Hematocrit: 43.2 % (41.0 - 50.0 %)\n' +
+      'RBC Count: 4.95 x10^6/uL (4.50 - 5.90 x10^6/uL)',
+    treatmentPlan: 'Standard monitoring protocol.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:49:33.448Z',
+    updatedAt: '2026-11-10T18:49:33.448Z'
+  },
+  {
+    id: 'f15cb547-54da-4c92-8a95-b45a56589bb8',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Large Notes Test 1794336560675',
+    clinicalNotes: 'Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summ'... 87500 more characters,
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:49:22.896Z',
+    updatedAt: '2026-11-10T18:49:22.896Z'
+  },
+  {
+    id: 'd0f4dc07-aa43-49ac-984e-a7f723f06cbb',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Record with Empty Storage URL',
+    chiefComplaint: 'Testing empty storageUrl',
+    clinicalNotes: 'Safe handling',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:48:50.485Z',
+    updatedAt: '2026-11-10T18:48:50.485Z'
+  },
+  {
+    id: '58973b6b-14c2-403a-b0ae-131d591e64f4',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Local File Scheme Injection',
+    chiefComplaint: 'Security Audit',
+    clinicalNotes: 'Testing file:/// protocol',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:48:47.610Z',
+    updatedAt: '2026-11-10T18:48:47.610Z'
+  },
+  {
+    id: 'cf6b9e31-edc0-4023-b61e-a9d85f0516f2',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'HTML Injection via Attachment URL',
+    chiefComplaint: 'Security Audit',
+    clinicalNotes: 'Testing data: URI',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:48:45.194Z',
+    updatedAt: '2026-11-10T18:48:45.194Z'
+  },
+  {
+    id: 'beab78f6-6777-477b-9a5e-7f9a7c0ea478',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'XSS Injection Attempt via Attachment URL',
+    chiefComplaint: 'Security Audit',
+    clinicalNotes: 'Testing javascript: URI filter',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:48:43.114Z',
+    updatedAt: '2026-11-10T18:48:43.114Z'
+  },
+  {
+    id: '601c0c9c-05df-4db7-857f-9e5cb3ea9dbd',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Sync Test Record 1794336457821',
+    chiefComplaint: 'Testing list synchronization',
+    clinicalNotes: 'Auto-sync verification',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:47:40.133Z',
+    updatedAt: '2026-11-10T18:47:40.133Z'
+  },
+  {
+    id: '6815a571-87a5-414d-bd80-2fa7c8095ecf',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Idempotency Check - 1794336452369',
+    chiefComplaint: 'Routine Check',
+    clinicalNotes: 'Test idempotency',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:47:34.713Z',
+    updatedAt: '2026-11-10T18:47:34.713Z'
+  },
+  {
+    id: 'a4758ea7-f3ff-4674-875c-474e1da99d6b',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Encounter Metadata Test - 1794336449077',
+    chiefComplaint: 'Clinical Consultation',
+    clinicalNotes: 'Attending physician notes',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:47:30.394Z',
+    updatedAt: '2026-11-10T18:47:30.394Z'
+  },
+  {
+    id: 'a00f8d90-caab-4375-a5e8-33c3d46a3d45',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Attachment Linkage Test - 1794336443678',
+    chiefComplaint: 'Attachment Verification',
+    clinicalNotes: 'Testing document linkage for attachment att-787e5187-7859-4320-bb1a-465a57dd086a-1794336442831-record_attachment.png',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [ [Object] ],
+    createdAt: '2026-11-10T18:47:25.052Z',
+    updatedAt: '2026-11-10T18:47:25.052Z'
+  },
+  {
+    id: 'ed23a95a-bbd9-4346-90e8-1719438620ee',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Final Diagnostic Summary - 1794336435886',
+    chiefComplaint: 'Comprehensive Health Check',
+    clinicalNotes: 'Vitals and labs verified.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:47:20.737Z',
+    updatedAt: '2026-11-10T18:47:20.737Z'
+  },
+  {
+    id: 'fb081774-1765-4b05-9641-19f90fc46ff3',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'E2E CBC Review - 1794336434163',
+    chiefComplaint: 'Routine Blood Panel Evaluation',
+    clinicalNotes: 'Digitized Diagnostic Laboratory Report: Complete Blood Count\n' +
+      'Hemoglobin: 14.5 g/dL',
+    treatmentPlan: 'Maintain current therapeutic protocol.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:47:15.528Z',
+    updatedAt: '2026-11-10T18:47:15.528Z'
+  },
+  {
+    id: '9654decd-9db6-4d97-b70b-802369d213b6',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Lab Report with Fake Object URL',
+    chiefComplaint: 'Diagnostic Review',
+    clinicalNotes: 'Test eliminating blob url',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:45:34.730Z',
+    updatedAt: '2026-11-10T18:45:34.730Z'
+  },
+  {
+    id: 'a6e0bdb8-9c63-49ca-b459-11d1f466f7d1',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'PA Chest Radiograph Diagnostic Impression Audit - 1794336162051',
+    chiefComplaint: 'Routine pre-operative radiographic chest imaging evaluation',
+    clinicalNotes: 'Bilateral clear lung fields with normal cardiothoracic ratio (<0.50). No active infiltrate, consolidation, pneumothorax, or pleural effusion. Normal diagnostic study.',
+    treatmentPlan: 'Cleared for scheduled procedure. No cardiopulmonary intervention required.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:42:43.578Z',
+    updatedAt: '2026-11-10T18:42:49.346Z'
+  },
+  {
+    id: 'ea3e5e65-80d2-4bf6-9dcd-ba2cc88ad379',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'PA Chest Radiograph Diagnostic Impression Audit - 1794336015702',
+    chiefComplaint: 'Routine pre-operative radiographic chest imaging evaluation',
+    clinicalNotes: 'Bilateral clear lung fields with normal cardiothoracic ratio (<0.50). No active infiltrate, consolidation, pneumothorax, or pleural effusion. Normal diagnostic study.',
+    treatmentPlan: 'Cleared for scheduled procedure. No cardiopulmonary intervention required.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:40:16.227Z',
+    updatedAt: '2026-11-10T18:40:21.142Z'
+  },
+  {
+    id: '0caa7b7e-453d-497f-8487-ecc8ec41ca53',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Emergency Cardiac Biomarker STAT Panel - 1794335982468',
+    chiefComplaint: 'Atypical chest discomfort rule-out',
+    clinicalNotes: 'Emergency Cardiac Protocol: Emergency Cardiac Biomarker STAT Panel\n' +
+      'Facility: CareID Emergency Medicine Lab\n' +
+      'Collection Date: 2026-11-07\n' +
+      '--- STAT Serum Biomarkers ---\n' +
+      'High-Sensitivity Troponin I: 0.012 ng/mL (Ref: < 0.034 ng/mL)\n' +
+      'CK-MB (Creatine Kinase-MB): 2.8 ng/mL (Ref: 0.0 - 5.0 ng/mL)\n' +
+      'Myoglobin: 38 ng/mL (Ref: 25 - 72 ng/mL)\n' +
+      'NT-proBNP: 64 pg/mL (Ref: < 125 pg/mL)\n' +
+      'Cardiology Evaluation: Negative myocardial necrosis markers. Troponin I below cutoff. Low acute risk.',
+    treatmentPlan: 'Serial troponin completed and negative. Safe for outpatient discharge with cardiology follow-up.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:39:44.862Z',
+    updatedAt: '2026-11-10T18:39:44.862Z'
+  },
+  {
+    id: '691fe550-8603-42b3-a460-2bf697165ee0',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Automated Complete Urinalysis with Microscopic Examination - 1794335975614',
+    chiefComplaint: 'Routine nephrological and urological screening',
+    clinicalNotes: 'Urinalysis Protocol: Automated Complete Urinalysis with Microscopic Examination\n' +
+      'Facility: CareID Outpatient Diagnostic Lab\n' +
+      'Collection Date: 2026-11-06\n' +
+      '--- Physical, Chemical & Microscopic Findings ---\n' +
+      'Color: Yellow (Ref: Yellow / Straw)\n' +
+      'Clarity: Clear (Ref: Clear)\n' +
+      'Specific Gravity: 1.018 (Ref: 1.005 - 1.030)\n' +
+      'pH: 6.0 (Ref: 4.6 - 8.0)\n' +
+      'Protein: Negative (Ref: Negative)\n' +
+      'Glucose: Negative (Ref: Negative)\n' +
+      'Ketones: Negative (Ref: Negative)\n' +
+      'Microscopic RBC: 0 - 2 (Ref: 0 - 3 /HPF)\n' +
+      'Microscopic WBC: 1 - 2 (Ref: 0 - 5 /HPF)\n' +
+      'Interpretation: Normal urinalysis. No evidence of proteinuria, hematuria, or bacteriuria.',
+    treatmentPlan: 'Maintain current fluid intake. Normal renal status.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:39:36.974Z',
+    updatedAt: '2026-11-10T18:39:36.974Z'
+  },
+  {
+    id: '5bb7f9b9-4381-4903-8421-d259d6d6f19a',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Surgical Pathology Summary (Dermatopathology Biopsy) - 1794335967299',
+    chiefComplaint: 'Histological verification of excisional biopsy',
+    clinicalNotes: 'Histopathology Diagnostic Protocol: Surgical Pathology Summary (Dermatopathology Biopsy)\n' +
+      'Facility: University Histopathology Institute\n' +
+      'Procedure Date: 2026-11-05\n' +
+      '--- Pathological & Histological Parameters ---\n' +
+      'Specimen Dimensions: 0.4 x 0.3 x 0.2 [Biopsy punch]\n' +
+      'Epidermal Keratinization: Intact [Unremarkable]\n' +
+      'Melanocytic Proliferation: Benign Intradermal Nevus [No atypia]\n' +
+      'Surgical Margins: Negative / Clear (> 2mm) [Clear]\n' +
+      'Diagnostic Conclusion: Benign intradermal melanocytic lesion with complete surgical margin clearance.',
+    treatmentPlan: 'Excision site healing well. Routine dermatological surveillance.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:39:28.618Z',
+    updatedAt: '2026-11-10T18:39:28.618Z'
+  },
+  {
+    id: '6f2fd6c6-a25f-4aef-8c38-09fdd72dd99a',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Digital Chest Radiography (2-View PA & Lateral) - 1794335960768',
+    chiefComplaint: 'Pre-operative cardiopulmonary clearance',
+    clinicalNotes: 'Radiological Study Report: Digital Chest Radiography (2-View PA & Lateral)\n' +
+      'Facility: CareID Advanced Imaging Pavilion\n' +
+      'Exam Date: 2026-11-04\n' +
+      'Impression: No acute cardiopulmonary disease. Lungs are clear without focal consolidation or pneumothorax.\n' +
+      '--- Anatomical Findings ---\n' +
+      'Cardiothoracic Ratio: 0.44 (Normal: < 0.50 ratio)\n' +
+      'Pulmonary Vasculature: Normal (Normal: Normal caliber)\n' +
+      'Pleural Spaces: Clear (Normal: No effusion)\n' +
+      'Bony Thorax: Intact (Normal: No fractures)',
+    treatmentPlan: 'Clear for non-cardiac procedural intervention.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:39:24.682Z',
+    updatedAt: '2026-11-10T18:39:24.682Z'
+  },
+  {
+    id: 'a982abff-9e83-47f5-8417-f5f7b485cd95',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Thyroid Function Evaluation Panel - 1794335956529',
+    chiefComplaint: 'Endocrine panel follow-up',
+    clinicalNotes: 'Endocrinology Diagnostic Report: Thyroid Panel\n' +
+      'Facility: Endocrine Diagnostic Reference Laboratory\n' +
+      'Collection Date: 2026-11-04\n' +
+      '--- Thyroid Hormone & Antibody Indices ---\n' +
+      'TSH (Thyroid Stimulating Hormone): 1.85 uIU/mL (Ref: 0.45 - 4.50 uIU/mL)\n' +
+      'Free T4 (Thyroxine): 1.24 ng/dL (Ref: 0.82 - 1.77 ng/dL)\n' +
+      'Free T3 (Triiodothyronine): 3.1 pg/mL (Ref: 2.0 - 4.4 pg/mL)\n' +
+      'Total T3: 115 ng/dL (Ref: 71 - 180 ng/dL)\n' +
+      'Thyroid Peroxidase Antibodies (Anti-TPO): < 9.0 IU/mL (Ref: < 35.0 IU/mL)\n' +
+      'Assessment: Euthyroid state confirmed. Negative autoimmune thyroid antibodies.',
+    treatmentPlan: 'No hormone therapy required. Re-evaluate annually.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:39:17.857Z',
+    updatedAt: '2026-11-10T18:39:17.857Z'
+  },
+  {
+    id: '2133a4e2-a56e-4601-85c6-a5cc36688c9a',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Comprehensive Metabolic Panel (CMP-14) - 1794335949732',
+    chiefComplaint: 'Comprehensive metabolic health monitoring',
+    clinicalNotes: 'Diagnostic Laboratory Panel: Comprehensive Metabolic Panel\n' +
+      'Facility: City General Clinical Chemistry\n' +
+      'Collection Date: 2026-11-03\n' +
+      '--- Renal, Hepatic & Electrolyte Parameters ---\n' +
+      'Glucose (Fasting): 94 mg/dL (Ref: 70 - 99 mg/dL)\n' +
+      'BUN (Blood Urea Nitrogen): 14 mg/dL (Ref: 7 - 20 mg/dL)\n' +
+      'Creatinine: 0.92 mg/dL (Ref: 0.70 - 1.30 mg/dL)\n' +
+      'eGFR: 98 mL/min/1.73m2 (Ref: > 60 mL/min/1.73m2)\n' +
+      'Sodium: 140 mEq/L (Ref: 136 - 145 mEq/L)\n' +
+      'Potassium: 4.2 mEq/L (Ref: 3.5 - 5.1 mEq/L)\n' +
+      'Chloride: 102 mEq/L (Ref: 98 - 107 mEq/L)\n' +
+      'Carbon Dioxide (CO2): 26 mEq/L (Ref: 22 - 29 mEq/L)\n' +
+      'Calcium: 9.4 mg/dL (Ref: 8.6 - 10.2 mg/dL)\n' +
+      'Total Protein: 7.1 g/dL (Ref: 6.4 - 8.3 g/dL)\n' +
+      'Albumin: 4.4 g/dL (Ref: 3.5 - 5.0 g/dL)\n' +
+      'Bilirubin (Total): 0.6 mg/dL (Ref: 0.2 - 1.2 mg/dL)\n' +
+      'Alkaline Phosphatase (ALP): 68 U/L (Ref: 44 - 147 U/L)\n' +
+      'AST (SGOT): 22 U/L (Ref: 10 - 40 U/L)\n' +
+      'ALT (SGPT): 24 U/L (Ref: 7 - 56 U/L)\n' +
+      'Clinical Summary: Renal and hepatic indices show intact excretory and synthetic functions. Electrolytes balanced.',
+    treatmentPlan: 'Maintain adequate hydration. Continue baseline health regimen.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [ [Object] ],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:39:12.463Z',
+    updatedAt: '2026-11-10T18:39:12.463Z'
+  },
+  {
+    id: '8fafd17b-8fa0-4068-babe-1370a8b2a559',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Comprehensive Lipid Profile Panel - 1794335945810',
+    chiefComplaint: 'Cardiovascular risk stratification',
+    clinicalNotes: 'Diagnostic Laboratory Panel: Lipid Panel\n' +
+      'Facility: CareID Cardiovascular Diagnostics\n' +
+      'Collection Date: 2026-11-02\n' +
+      '--- Lipid Subfractions ---\n' +
+      'Total Cholesterol: 185 mg/dL (Ref: < 200 mg/dL) [NORMAL]\n' +
+      'HDL Cholesterol: 52 mg/dL (Ref: > 40 mg/dL) [NORMAL]\n' +
+      'LDL Cholesterol: 108 mg/dL (Ref: < 100 mg/dL) [HIGH]\n' +
+      'Triglycerides: 125 mg/dL (Ref: < 150 mg/dL) [NORMAL]\n' +
+      'VLDL Cholesterol: 25 mg/dL (Ref: 5 - 40 mg/dL) [NORMAL]\n' +
+      'Total / HDL Ratio: 3.56 ratio (Ref: < 5.0 ratio) [NORMAL]\n' +
+      'Cardiovascular Assessment: Moderate LDL elevation. Recommend low-saturated fat diet and aerobic exercise.',
+    treatmentPlan: 'Dietary counseling; follow-up fasting lipid panel in 6 months.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [ [Object] ],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:39:07.382Z',
+    updatedAt: '2026-11-10T18:39:07.382Z'
+  },
+  {
+    id: '89c1552b-7e7d-4ea8-97e1-8660d86c166a',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Complete Blood Count (CBC) with Differential - 1794335940716',
+    chiefComplaint: 'Routine annual hematological evaluation',
+    clinicalNotes: 'Digitized Diagnostic Laboratory Report: Complete Blood Count (CBC)\n' +
+      'Facility: CareID Central Hematology Laboratory\n' +
+      'Collection Date: 2026-11-01\n' +
+      '--- Hematological Parameters ---\n' +
+      'Hemoglobin: 14.2 g/dL (Ref: 13.8 - 17.2 g/dL) [NORMAL]\n' +
+      'Hematocrit: 42.5 % (Ref: 40.7 - 50.3 %) [NORMAL]\n' +
+      'RBC Count: 4.85 x10^6/uL (Ref: 4.50 - 5.90 x10^6/uL) [NORMAL]\n' +
+      'WBC Count: 6.40 x10^3/uL (Ref: 4.50 - 11.00 x10^3/uL) [NORMAL]\n' +
+      'Platelet Count: 255 x10^3/uL (Ref: 150 - 450 x10^3/uL) [NORMAL]\n' +
+      'MCV: 87.6 fL (Ref: 80.0 - 100.0 fL) [NORMAL]\n' +
+      'MCH: 29.3 pg (Ref: 27.0 - 33.0 pg) [NORMAL]\n' +
+      'MCHC: 33.4 g/dL (Ref: 32.0 - 36.0 g/dL) [NORMAL]\n' +
+      'RDW: 12.8 % (Ref: 11.5 - 14.5 %) [NORMAL]\n' +
+      'Neutrophils: 58.2 % (Ref: 40.0 - 70.0 %) [NORMAL]\n' +
+      'Lymphocytes: 31.4 % (Ref: 20.0 - 40.0 %) [NORMAL]\n' +
+      'Clinical Interpretation: Erythrocyte and leukocyte indices within standard physiological limits.',
+    treatmentPlan: 'Maintain current preventative lifestyle. Repeat panel in 12 months.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [ [Object] ],
+    vitalSigns: [],
+    procedures: [ [Object] ],
+    attachments: [],
+    createdAt: '2026-11-10T18:39:02.669Z',
+    updatedAt: '2026-11-10T18:39:02.669Z'
+  },
+  {
+    id: '4df1f7d7-9c99-41ba-acf6-455f74da54c9',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'PA Chest Radiograph Diagnostic Impression Audit - 1794335905223',
+    chiefComplaint: 'Routine pre-operative radiographic chest imaging evaluation',
+    clinicalNotes: 'Bilateral clear lung fields with normal cardiothoracic ratio (<0.50). No active infiltrate, consolidation, pneumothorax, or pleural effusion. Normal diagnostic study.',
+    treatmentPlan: 'Cleared for scheduled procedure. No cardiopulmonary intervention required.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T18:38:26.715Z',
+    updatedAt: '2026-11-10T18:38:31.751Z'
+  },
+  {
+    id: '9125c3b8-e9f1-42e9-ac32-827f649ee7bc',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Inpatient Admission - Coronary Angiography',
+    chiefComplaint: 'Pre-planned diagnostic catheterization for exertional angina',
+    clinicalNotes: 'Patient tolerated admission well. Stable vitals throughout stay.',
+    treatmentPlan: 'Post-radial recovery, discharge with dual antiplatelet regimen.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [ [Object] ],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-10T07:11:23.104Z',
+    updatedAt: '2026-11-10T07:11:23.104Z'
+  },
+  {
+    id: '103941ad-08e6-455e-8f67-d9202bc7b8f2',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Diagnostic Left Heart Catheterization — Attested Report',
+    chiefComplaint: 'CCS Class II Angina on exertion with anterolateral ST-depression',
+    clinicalNotes: 'Amended with physician intra-operative seal and TR Band weaning verification.',
+    treatmentPlan: 'Atorvastatin 40mg daily, Aspirin 81mg daily. Cardiac rehabilitation. Follow-up in 4 weeks.',
+    followUpInstructions: 'Bedrest 4 hours in Recovery Bay #04. Monitor right radial puncture site.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [ [Object] ],
+    vitalSigns: [ [Object] ],
+    procedures: [ [Object] ],
+    attachments: [],
+    createdAt: '2026-11-10T06:19:32.609Z',
+    updatedAt: '2026-11-10T06:19:33.369Z'
+  },
+  {
+    id: '60a54272-ecd1-4f3c-bfd9-74ecb6534265',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Sync Test Record 1794245116043',
+    chiefComplaint: 'Testing list synchronization',
+    clinicalNotes: 'Auto-sync verification',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T17:25:16.921Z',
+    updatedAt: '2026-11-09T17:25:16.921Z'
+  },
+  {
+    id: 'ddc50f53-454d-4537-8130-32eeb3b76eed',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Idempotency Check - 1794245111494',
+    chiefComplaint: 'Routine Check',
+    clinicalNotes: 'Test idempotency',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T17:25:12.529Z',
+    updatedAt: '2026-11-09T17:25:12.529Z'
+  },
+  {
+    id: '91a28a68-249e-44a8-bb52-18e2db142798',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Encounter Metadata Test - 1794245105799',
+    chiefComplaint: 'Clinical Consultation',
+    clinicalNotes: 'Attending physician notes',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T17:25:08.310Z',
+    updatedAt: '2026-11-09T17:25:08.310Z'
+  },
+  {
+    id: 'e0f8c72a-2b07-4c8d-874d-27d721b18d64',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Attachment Linkage Test - 1794245098830',
+    chiefComplaint: 'Attachment Verification',
+    clinicalNotes: 'Testing document linkage for attachment att-787e5187-7859-4320-bb1a-465a57dd086a-1794245097221-record_attachment.png (Verified by Attending Clinician)',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [ [Object] ],
+    createdAt: '2026-11-09T17:25:00.335Z',
+    updatedAt: '2026-11-11T08:08:43.117Z'
+  },
+  {
+    id: '4f68dc4d-7d5c-42eb-b45a-7ceb37bb187e',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Final Diagnostic Summary - 1794245093871',
+    chiefComplaint: 'Comprehensive Health Check',
+    clinicalNotes: 'Vitals and labs verified.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T17:24:55.112Z',
+    updatedAt: '2026-11-09T17:24:55.112Z'
+  },
+  {
+    id: 'c038c71f-48c0-4ee2-8b1f-8b075365064d',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'E2E CBC Review - 1794245092392',
+    chiefComplaint: 'Routine Blood Panel Evaluation',
+    clinicalNotes: 'Digitized Diagnostic Laboratory Report: Complete Blood Count\n' +
+      'Hemoglobin: 14.5 g/dL',
+    treatmentPlan: 'Maintain current therapeutic protocol.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T17:24:53.341Z',
+    updatedAt: '2026-11-09T17:24:53.341Z'
+  },
+  {
+    id: '88082520-999f-4dc6-b3b4-10c8889a323f',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Lab Report with Fake Object URL',
+    chiefComplaint: 'Diagnostic Review',
+    clinicalNotes: 'Test eliminating blob url',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T17:23:22.201Z',
+    updatedAt: '2026-11-09T17:23:22.201Z'
+  },
+  {
+    id: 'd6a7927e-5c47-4cd2-a1b1-bf084c72c077',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Emergency Cardiac Biomarker STAT Panel - 1794241772906',
+    chiefComplaint: 'Atypical chest discomfort rule-out',
+    clinicalNotes: 'Emergency Cardiac Protocol: Emergency Cardiac Biomarker STAT Panel\n' +
+      'Facility: CareID Emergency Medicine Lab\n' +
+      'Collection Date: 2026-11-07\n' +
+      '--- STAT Serum Biomarkers ---\n' +
+      'High-Sensitivity Troponin I: 0.012 ng/mL (Ref: < 0.034 ng/mL)\n' +
+      'CK-MB (Creatine Kinase-MB): 2.8 ng/mL (Ref: 0.0 - 5.0 ng/mL)\n' +
+      'Myoglobin: 38 ng/mL (Ref: 25 - 72 ng/mL)\n' +
+      'NT-proBNP: 64 pg/mL (Ref: < 125 pg/mL)\n' +
+      'Cardiology Evaluation: Negative myocardial necrosis markers. Troponin I below cutoff. Low acute risk.',
+    treatmentPlan: 'Serial troponin completed and negative. Safe for outpatient discharge with cardiology follow-up.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:29:34.903Z',
+    updatedAt: '2026-11-09T16:29:34.903Z'
+  },
+  {
+    id: '42cc88c2-fc0f-43ab-a099-85d26195156d',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Automated Complete Urinalysis with Microscopic Examination - 1794241768099',
+    chiefComplaint: 'Routine nephrological and urological screening',
+    clinicalNotes: 'Urinalysis Protocol: Automated Complete Urinalysis with Microscopic Examination\n' +
+      'Facility: CareID Outpatient Diagnostic Lab\n' +
+      'Collection Date: 2026-11-06\n' +
+      '--- Physical, Chemical & Microscopic Findings ---\n' +
+      'Color: Yellow (Ref: Yellow / Straw)\n' +
+      'Clarity: Clear (Ref: Clear)\n' +
+      'Specific Gravity: 1.018 (Ref: 1.005 - 1.030)\n' +
+      'pH: 6.0 (Ref: 4.6 - 8.0)\n' +
+      'Protein: Negative (Ref: Negative)\n' +
+      'Glucose: Negative (Ref: Negative)\n' +
+      'Ketones: Negative (Ref: Negative)\n' +
+      'Microscopic RBC: 0 - 2 (Ref: 0 - 3 /HPF)\n' +
+      'Microscopic WBC: 1 - 2 (Ref: 0 - 5 /HPF)\n' +
+      'Interpretation: Normal urinalysis. No evidence of proteinuria, hematuria, or bacteriuria.',
+    treatmentPlan: 'Maintain current fluid intake. Normal renal status.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:29:30.573Z',
+    updatedAt: '2026-11-09T16:29:30.573Z'
+  },
+  {
+    id: '16a50cd6-e42a-4f86-a257-a6b36633d9a9',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Surgical Pathology Summary (Dermatopathology Biopsy) - 1794241763793',
+    chiefComplaint: 'Histological verification of excisional biopsy',
+    clinicalNotes: 'Histopathology Diagnostic Protocol: Surgical Pathology Summary (Dermatopathology Biopsy)\n' +
+      'Facility: University Histopathology Institute\n' +
+      'Procedure Date: 2026-11-05\n' +
+      '--- Pathological & Histological Parameters ---\n' +
+      'Specimen Dimensions: 0.4 x 0.3 x 0.2 [Biopsy punch]\n' +
+      'Epidermal Keratinization: Intact [Unremarkable]\n' +
+      'Melanocytic Proliferation: Benign Intradermal Nevus [No atypia]\n' +
+      'Surgical Margins: Negative / Clear (> 2mm) [Clear]\n' +
+      'Diagnostic Conclusion: Benign intradermal melanocytic lesion with complete surgical margin clearance.',
+    treatmentPlan: 'Excision site healing well. Routine dermatological surveillance.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:29:25.531Z',
+    updatedAt: '2026-11-09T16:29:25.531Z'
+  },
+  {
+    id: 'afe9cfb5-b449-4809-9be7-75c3ba0b7d7a',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Digital Chest Radiography (2-View PA & Lateral) - 1794241756288',
+    chiefComplaint: 'Pre-operative cardiopulmonary clearance',
+    clinicalNotes: 'Radiological Study Report: Digital Chest Radiography (2-View PA & Lateral)\n' +
+      'Facility: CareID Advanced Imaging Pavilion\n' +
+      'Exam Date: 2026-11-04\n' +
+      'Impression: No acute cardiopulmonary disease. Lungs are clear without focal consolidation or pneumothorax.\n' +
+      '--- Anatomical Findings ---\n' +
+      'Cardiothoracic Ratio: 0.44 (Normal: < 0.50 ratio)\n' +
+      'Pulmonary Vasculature: Normal (Normal: Normal caliber)\n' +
+      'Pleural Spaces: Clear (Normal: No effusion)\n' +
+      'Bony Thorax: Intact (Normal: No fractures)',
+    treatmentPlan: 'Clear for non-cardiac procedural intervention.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:29:17.601Z',
+    updatedAt: '2026-11-09T16:29:17.601Z'
+  },
+  {
+    id: '584fdc05-ee92-4116-948a-cb9a90f36eeb',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Thyroid Function Evaluation Panel - 1794241751639',
+    chiefComplaint: 'Endocrine panel follow-up',
+    clinicalNotes: 'Endocrinology Diagnostic Report: Thyroid Panel\n' +
+      'Facility: Endocrine Diagnostic Reference Laboratory\n' +
+      'Collection Date: 2026-11-04\n' +
+      '--- Thyroid Hormone & Antibody Indices ---\n' +
+      'TSH (Thyroid Stimulating Hormone): 1.85 uIU/mL (Ref: 0.45 - 4.50 uIU/mL)\n' +
+      'Free T4 (Thyroxine): 1.24 ng/dL (Ref: 0.82 - 1.77 ng/dL)\n' +
+      'Free T3 (Triiodothyronine): 3.1 pg/mL (Ref: 2.0 - 4.4 pg/mL)\n' +
+      'Total T3: 115 ng/dL (Ref: 71 - 180 ng/dL)\n' +
+      'Thyroid Peroxidase Antibodies (Anti-TPO): < 9.0 IU/mL (Ref: < 35.0 IU/mL)\n' +
+      'Assessment: Euthyroid state confirmed. Negative autoimmune thyroid antibodies.',
+    treatmentPlan: 'No hormone therapy required. Re-evaluate annually.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:29:12.872Z',
+    updatedAt: '2026-11-09T16:29:12.872Z'
+  },
+  {
+    id: 'bccf99f6-a4e5-4ed5-83a1-ee0053d97710',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Comprehensive Metabolic Panel (CMP-14) - 1794241747299',
+    chiefComplaint: 'Comprehensive metabolic health monitoring',
+    clinicalNotes: 'Diagnostic Laboratory Panel: Comprehensive Metabolic Panel\n' +
+      'Facility: City General Clinical Chemistry\n' +
+      'Collection Date: 2026-11-03\n' +
+      '--- Renal, Hepatic & Electrolyte Parameters ---\n' +
+      'Glucose (Fasting): 94 mg/dL (Ref: 70 - 99 mg/dL)\n' +
+      'BUN (Blood Urea Nitrogen): 14 mg/dL (Ref: 7 - 20 mg/dL)\n' +
+      'Creatinine: 0.92 mg/dL (Ref: 0.70 - 1.30 mg/dL)\n' +
+      'eGFR: 98 mL/min/1.73m2 (Ref: > 60 mL/min/1.73m2)\n' +
+      'Sodium: 140 mEq/L (Ref: 136 - 145 mEq/L)\n' +
+      'Potassium: 4.2 mEq/L (Ref: 3.5 - 5.1 mEq/L)\n' +
+      'Chloride: 102 mEq/L (Ref: 98 - 107 mEq/L)\n' +
+      'Carbon Dioxide (CO2): 26 mEq/L (Ref: 22 - 29 mEq/L)\n' +
+      'Calcium: 9.4 mg/dL (Ref: 8.6 - 10.2 mg/dL)\n' +
+      'Total Protein: 7.1 g/dL (Ref: 6.4 - 8.3 g/dL)\n' +
+      'Albumin: 4.4 g/dL (Ref: 3.5 - 5.0 g/dL)\n' +
+      'Bilirubin (Total): 0.6 mg/dL (Ref: 0.2 - 1.2 mg/dL)\n' +
+      'Alkaline Phosphatase (ALP): 68 U/L (Ref: 44 - 147 U/L)\n' +
+      'AST (SGOT): 22 U/L (Ref: 10 - 40 U/L)\n' +
+      'ALT (SGPT): 24 U/L (Ref: 7 - 56 U/L)\n' +
+      'Clinical Summary: Renal and hepatic indices show intact excretory and synthetic functions. Electrolytes balanced.',
+    treatmentPlan: 'Maintain adequate hydration. Continue baseline health regimen.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [ [Object] ],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:29:08.859Z',
+    updatedAt: '2026-11-09T16:29:08.859Z'
+  },
+  {
+    id: '830bee2a-667d-4e75-bb23-d1c56c1bb12c',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Comprehensive Lipid Profile Panel - 1794241740972',
+    chiefComplaint: 'Cardiovascular risk stratification',
+    clinicalNotes: 'Diagnostic Laboratory Panel: Lipid Panel\n' +
+      'Facility: CareID Cardiovascular Diagnostics\n' +
+      'Collection Date: 2026-11-02\n' +
+      '--- Lipid Subfractions ---\n' +
+      'Total Cholesterol: 185 mg/dL (Ref: < 200 mg/dL) [NORMAL]\n' +
+      'HDL Cholesterol: 52 mg/dL (Ref: > 40 mg/dL) [NORMAL]\n' +
+      'LDL Cholesterol: 108 mg/dL (Ref: < 100 mg/dL) [HIGH]\n' +
+      'Triglycerides: 125 mg/dL (Ref: < 150 mg/dL) [NORMAL]\n' +
+      'VLDL Cholesterol: 25 mg/dL (Ref: 5 - 40 mg/dL) [NORMAL]\n' +
+      'Total / HDL Ratio: 3.56 ratio (Ref: < 5.0 ratio) [NORMAL]\n' +
+      'Cardiovascular Assessment: Moderate LDL elevation. Recommend low-saturated fat diet and aerobic exercise.',
+    treatmentPlan: 'Dietary counseling; follow-up fasting lipid panel in 6 months.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [ [Object] ],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:29:03.718Z',
+    updatedAt: '2026-11-09T16:29:03.718Z'
+  },
+  {
+    id: 'e808da9d-2a8e-48cb-9ea8-1121afb11253',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Complete Blood Count (CBC) with Differential - 1794241735812',
+    chiefComplaint: 'Routine annual hematological evaluation',
+    clinicalNotes: 'Digitized Diagnostic Laboratory Report: Complete Blood Count (CBC)\n' +
+      'Facility: CareID Central Hematology Laboratory\n' +
+      'Collection Date: 2026-11-01\n' +
+      '--- Hematological Parameters ---\n' +
+      'Hemoglobin: 14.2 g/dL (Ref: 13.8 - 17.2 g/dL) [NORMAL]\n' +
+      'Hematocrit: 42.5 % (Ref: 40.7 - 50.3 %) [NORMAL]\n' +
+      'RBC Count: 4.85 x10^6/uL (Ref: 4.50 - 5.90 x10^6/uL) [NORMAL]\n' +
+      'WBC Count: 6.40 x10^3/uL (Ref: 4.50 - 11.00 x10^3/uL) [NORMAL]\n' +
+      'Platelet Count: 255 x10^3/uL (Ref: 150 - 450 x10^3/uL) [NORMAL]\n' +
+      'MCV: 87.6 fL (Ref: 80.0 - 100.0 fL) [NORMAL]\n' +
+      'MCH: 29.3 pg (Ref: 27.0 - 33.0 pg) [NORMAL]\n' +
+      'MCHC: 33.4 g/dL (Ref: 32.0 - 36.0 g/dL) [NORMAL]\n' +
+      'RDW: 12.8 % (Ref: 11.5 - 14.5 %) [NORMAL]\n' +
+      'Neutrophils: 58.2 % (Ref: 40.0 - 70.0 %) [NORMAL]\n' +
+      'Lymphocytes: 31.4 % (Ref: 20.0 - 40.0 %) [NORMAL]\n' +
+      'Clinical Interpretation: Erythrocyte and leukocyte indices within standard physiological limits.',
+    treatmentPlan: 'Maintain current preventative lifestyle. Repeat panel in 12 months.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [ [Object] ],
+    vitalSigns: [],
+    procedures: [ [Object] ],
+    attachments: [],
+    createdAt: '2026-11-09T16:28:56.699Z',
+    updatedAt: '2026-11-09T16:28:56.699Z'
+  },
+  {
+    id: '3502152f-9d14-48e6-a89b-d6fafcb07052',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Composite Multi-Modal Panel - 1794241731103',
+    chiefComplaint: 'Multi-modal diagnostic review',
+    clinicalNotes: 'Unified record combining laboratory scan, radiology imaging, and pathology PDF.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:28:53.441Z',
+    updatedAt: '2026-11-09T16:28:53.441Z'
+  },
+  {
+    id: 'a6d83a82-ffd3-4ad2-bcd0-d4274618810e',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Manual Recovery Record - 1794241713812',
+    chiefComplaint: 'Manual laboratory record documentation following OCR retry',
+    clinicalNotes: 'Diagnostic Report: Complete Metabolic Panel (Manual Entry Fallback)\n' +
+      'Reason: OCR scanning encountered low-resolution source raster.\n' +
+      'Hemoglobin: 13.8 g/dL\n' +
+      'Glucose: 92 mg/dL',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:28:35.831Z',
+    updatedAt: '2026-11-09T16:28:35.831Z'
+  },
+  {
+    id: '6fea8c21-b6dd-43a1-b95c-c4cb367565c6',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Multi-Page Sync Record - 1794241699552',
+    chiefComplaint: 'Multi-Page Comprehensive Summary',
+    clinicalNotes: 'Patient: Marcus Doe\nStatus: Verified\nPages: 2',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:28:21.739Z',
+    updatedAt: '2026-11-09T16:28:21.739Z'
+  },
+  {
+    id: 'fb24b3f8-a53b-4f04-975d-78c43ced5f1e',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Camera CBC Scan Review - 1794241673797',
+    chiefComplaint: 'Post-capture laboratory verification',
+    clinicalNotes: 'Digitized Diagnostic Laboratory Report: Complete Blood Count (CBC)\n' +
+      'Facility: CareID Emergency Diagnostics\n' +
+      'Collection Date: 2026-11-08\n' +
+      '--- Clinical Lab Values ---\n' +
+      'Hemoglobin: 14.8 g/dL (13.5 - 17.5 g/dL)\n' +
+      'WBC Count: 6,900 /uL (4,500 - 11,000 /uL)\n' +
+      'Platelet Count: 260,000 /uL (150,000 - 450,000 /uL)\n' +
+      'Hematocrit: 43.2 % (41.0 - 50.0 %)\n' +
+      'RBC Count: 4.95 x10^6/uL (4.50 - 5.90 x10^6/uL)',
+    treatmentPlan: 'Standard monitoring protocol.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:27:54.933Z',
+    updatedAt: '2026-11-09T16:27:54.933Z'
+  },
+  {
+    id: '5b900393-6f63-4b9d-b7c6-210c23337742',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Large Notes Test 1794241661636',
+    clinicalNotes: 'Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summ'... 87500 more characters,
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:27:44.642Z',
+    updatedAt: '2026-11-09T16:27:44.642Z'
+  },
+  {
+    id: '709c3207-9f24-4a8d-8ed9-d896a102d3c3',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Record with Empty Storage URL',
+    chiefComplaint: 'Testing empty storageUrl',
+    clinicalNotes: 'Safe handling',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:27:10.365Z',
+    updatedAt: '2026-11-09T16:27:10.365Z'
+  },
+  {
+    id: 'a36c4f9a-db90-4735-9339-53361014f172',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Local File Scheme Injection',
+    chiefComplaint: 'Security Audit',
+    clinicalNotes: 'Testing file:/// protocol',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:27:08.615Z',
+    updatedAt: '2026-11-09T16:27:08.615Z'
+  },
+  {
+    id: 'ac5eb3df-ce0c-4504-84c5-bcc08f15a3d4',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'HTML Injection via Attachment URL',
+    chiefComplaint: 'Security Audit',
+    clinicalNotes: 'Testing data: URI',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:27:06.754Z',
+    updatedAt: '2026-11-09T16:27:06.754Z'
+  },
+  {
+    id: '6638571a-a1c2-46ce-b692-e6b6cf8cb746',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'XSS Injection Attempt via Attachment URL',
+    chiefComplaint: 'Security Audit',
+    clinicalNotes: 'Testing javascript: URI filter',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:27:03.857Z',
+    updatedAt: '2026-11-09T16:27:03.857Z'
+  },
+  {
+    id: '8d6c3fdf-fcd8-483e-a857-ca569787d96a',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Sync Test Record 1794241536908',
+    chiefComplaint: 'Testing list synchronization',
+    clinicalNotes: 'Auto-sync verification',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:25:37.925Z',
+    updatedAt: '2026-11-09T16:25:37.925Z'
+  },
+  {
+    id: '526585ec-c24c-44a1-9102-20fa829ea09b',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Idempotency Check - 1794241532713',
+    chiefComplaint: 'Routine Check',
+    clinicalNotes: 'Test idempotency',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:25:33.800Z',
+    updatedAt: '2026-11-09T16:25:33.800Z'
+  },
+  {
+    id: 'a329083e-d067-4b37-b15b-4a69a702ce9b',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Encounter Metadata Test - 1794241528567',
+    chiefComplaint: 'Clinical Consultation',
+    clinicalNotes: 'Attending physician notes',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:25:29.666Z',
+    updatedAt: '2026-11-09T16:25:29.666Z'
+  },
+  {
+    id: 'a6b41cbd-2e69-4de7-bc4f-91bf256c7165',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Attachment Linkage Test - 1794241522405',
+    chiefComplaint: 'Attachment Verification',
+    clinicalNotes: 'Testing document linkage for attachment att-787e5187-7859-4320-bb1a-465a57dd086a-1794241521166-record_attachment.png',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [ [Object] ],
+    createdAt: '2026-11-09T16:25:25.015Z',
+    updatedAt: '2026-11-09T16:25:25.015Z'
+  },
+  {
+    id: 'c53f8e59-d752-4c21-b1f1-5bf0f6900d80',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Final Diagnostic Summary - 1794241515985',
+    chiefComplaint: 'Comprehensive Health Check',
+    clinicalNotes: 'Vitals and labs verified.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:25:18.074Z',
+    updatedAt: '2026-11-09T16:25:18.074Z'
+  },
+  {
+    id: '0018534f-c6c2-45a3-8380-73bed0cbcb56',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'E2E CBC Review - 1794241513316',
+    chiefComplaint: 'Routine Blood Panel Evaluation',
+    clinicalNotes: 'Digitized Diagnostic Laboratory Report: Complete Blood Count\n' +
+      'Hemoglobin: 14.5 g/dL',
+    treatmentPlan: 'Maintain current therapeutic protocol.',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:25:15.432Z',
+    updatedAt: '2026-11-09T16:25:15.432Z'
+  },
+  {
+    id: '77ac2b2e-771c-45ee-8eef-11d659e12ece',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Lab Report with Fake Object URL',
+    chiefComplaint: 'Diagnostic Review',
+    clinicalNotes: 'Test eliminating blob url',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T16:23:39.759Z',
+    updatedAt: '2026-11-09T16:23:39.759Z'
+  },
+  {
+    id: '09d73554-0fdc-49b0-b576-f81d270b4576',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Lab Report with Fake Object URL',
+    chiefComplaint: 'Diagnostic Review',
+    clinicalNotes: 'Test eliminating blob url',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T15:10:42.491Z',
+    updatedAt: '2026-11-09T15:10:42.491Z'
+  },
+  {
+    id: '776f3b96-88e9-435c-9aa3-2e6ff108a066',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Victory Auditor Independent Verification Record',
+    chiefComplaint: 'Post-victory audit independent clinical verification',
+    clinicalNotes: 'Verified independently by Victory Auditor under strict audit protocol',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [ [Object] ],
+    vitalSigns: [ [Object] ],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T12:53:22.486Z',
+    updatedAt: '2026-11-09T12:53:22.486Z'
+  },
+  {
+    id: '0b6f2080-3b6f-4499-870b-a09a8268d398',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Audit Verification Medical Record',
+    chiefComplaint: 'Routine clinical verification follow-up',
+    clinicalNotes: 'Forensic integrity audit test record verified by auditor_1',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [ [Object] ],
+    vitalSigns: [ [Object] ],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T12:42:49.220Z',
+    updatedAt: '2026-11-09T12:42:49.220Z'
+  },
+  {
+    id: 'dec25303-5f95-4418-ba01-83ef40b487b0',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Routine Health Checkup',
+    chiefComplaint: 'Mild fatigue',
+    clinicalNotes: 'Patient appears well nourished.',
+    treatmentPlan: 'Hydration and balanced diet',
+    followUpInstructions: 'Review in 2 weeks',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [ [Object] ],
+    vitalSigns: [ [Object] ],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T12:35:03.127Z',
+    updatedAt: '2026-11-09T12:35:03.127Z'
+  },
+  {
+    id: '10ba43d3-587c-4231-b6bf-ff42f9d8932a',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Large Notes Test 1794216849823',
+    clinicalNotes: 'Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summary observation notes. Patient lab summ'... 87500 more characters,
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T09:34:15.512Z',
+    updatedAt: '2026-11-09T09:34:15.512Z'
+  },
+  {
+    id: 'ea59411d-27b3-4d70-bb17-ffd9d33c409a',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Record with Empty Storage URL',
+    chiefComplaint: 'Testing empty storageUrl',
+    clinicalNotes: 'Safe handling',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T09:33:33.151Z',
+    updatedAt: '2026-11-09T09:33:33.151Z'
+  },
+  {
+    id: 'b346f915-1d62-4727-bb9b-d546768a0307',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Local File Scheme Injection',
+    chiefComplaint: 'Security Audit',
+    clinicalNotes: 'Testing file:/// protocol',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T09:33:31.189Z',
+    updatedAt: '2026-11-09T09:33:31.189Z'
+  },
+  {
+    id: '03ebe374-00b3-40c5-a1cc-54606ec85a17',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'HTML Injection via Attachment URL',
+    chiefComplaint: 'Security Audit',
+    clinicalNotes: 'Testing data: URI',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T09:33:29.779Z',
+    updatedAt: '2026-11-09T09:33:29.779Z'
+  },
+  {
+    id: '4c96797b-7aa8-4bbb-afa7-39b25fa584ae',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'XSS Injection Attempt via Attachment URL',
+    chiefComplaint: 'Security Audit',
+    clinicalNotes: 'Testing javascript: URI filter',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T09:33:26.711Z',
+    updatedAt: '2026-11-09T09:33:26.711Z'
+  },
+  {
+    id: 'f76a0626-0a00-42a2-88d3-9cdee70bdef3',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Sync Test Record 1794215768165',
+    chiefComplaint: 'Testing list synchronization',
+    clinicalNotes: 'Auto-sync verification',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T09:16:13.482Z',
+    updatedAt: '2026-11-09T09:16:13.482Z'
+  },
+  {
+    id: '711f4f8c-044a-4bc2-a907-6929f3e9c99f',
+    patientProfileId: '787e5187-7859-4320-bb1a-465a57dd086a',
+    title: 'Idempotency Check - 1794215763147',
+    chiefComplaint: 'Routine Check',
+    clinicalNotes: 'Test idempotency',
+    status: 'FINAL',
+    isDeleted: false,
+    encounters: [ [Object] ],
+    diagnoses: [],
+    vitalSigns: [],
+    procedures: [],
+    attachments: [],
+    createdAt: '2026-11-09T09:16:07.903Z',
+    updatedAt: '2026-11-09T09:16:07.903Z'
+  },
+  ... 205 more items
+]

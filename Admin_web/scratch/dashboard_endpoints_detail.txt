@@ -1,0 +1,1561 @@
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/health
+NAME: Platform Health Check
+FOLDER: 01. Environment & Health Checks
+DESCRIPTION: 
+RESPONSE EXAMPLES (1):
+--- Example #1 (Application is operating normally. - 200) ---
+No body
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/admin/dashboard/stats
+NAME: Get quick legacy dashboard statistics
+FOLDER: 04. Admin Portal & System Operations
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "totalPatients": 329.9126470619218,
+  "totalDoctors": 7129.898168823163,
+  "pendingOcrReviews": 7494.555848793948,
+  "systemLogsCount": 1643.4383824203126
+}
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/admin/dashboard/summary
+NAME: Get platform-wide aggregated summary & growth metrics
+FOLDER: 04. Admin Portal & System Operations
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "totalPatients": 1091.9044807324485,
+  "totalDoctors": 6938.012348475032,
+  "totalFacilities": 9368.931101672079,
+  "totalStaff": 9072.69429920844,
+  "totalHealthCards": 8003.998784590941,
+  "totalInsurancePolicies": 9004.337031443163,
+  "totalImmunisationRecords": 9787.363863037262,
+  "totalActiveSchedules": 9345.219181153692,
+  "recentActivities": [],
+  "growthMetrics": {}
+}
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/admin/users?q=string&status=BLOCKED&page=7043.494767911134&limit=7043.494767911134
+NAME: Search and list platform users with filter & roles
+FOLDER: 04. Admin Portal & System Operations
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+[
+  {
+    "id": "string",
+    "phone": "string",
+    "status": "string",
+    "roles": [
+      "string",
+      "string"
+    ],
+    "patientProfileId": "string",
+    "doctorProfileId": "string",
+    "staffMemberId": "string",
+    "createdAt": "string",
+    "updatedAt": "string"
+  },
+  {
+    "id": "string",
+    "phone": "string",
+    "status": "string",
+    "roles": [
+      "string",
+      "string"
+    ],
+    "patientProfileId": "string",
+    "doctorProfileId": "string",
+    "staffMemberId": "string",
+    "createdAt": "string",
+    "updatedAt": "string"
+  }
+]
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/admin/users/:id
+NAME: Get user details by ID
+FOLDER: 04. Admin Portal & System Operations
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "id": "string",
+  "phone": "string",
+  "status": "string",
+  "roles": [
+    "string",
+    "string"
+  ],
+  "patientProfileId": "string",
+  "doctorProfileId": "string",
+  "staffMemberId": "string",
+  "createdAt": "string",
+  "updatedAt": "string"
+}
+================================================================
+ENDPOINT: [DELETE] {{baseUrl}}/api/v1/admin/users/:id
+NAME: Soft-delete / block a user account
+FOLDER: 04. Admin Portal & System Operations
+DESCRIPTION: 
+RESPONSE EXAMPLES (1):
+--- Example #1 (User blocked - 200) ---
+No body
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/admin/patients?page=1&limit=20&q=string&status=string&gender=string&bloodGroup=string
+NAME: Search and list patients with server-side pagination and filters
+FOLDER: 04. Admin Portal & System Operations
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+[
+  {
+    "id": "patient-profile-uuid",
+    "userId": "user-uuid",
+    "patientNumber": {},
+    "firstName": {},
+    "lastName": {},
+    "dateOfBirth": {},
+    "gender": {},
+    "bloodGroup": {},
+    "nationality": {},
+    "phone": "+923001234567",
+    "email": {},
+    "userStatus": "ACTIVE",
+    "profileStatus": "COMPLETED",
+    "onboardingStep": 6,
+    "createdAt": "2026-01-10T12:00:00.000Z",
+    "updatedAt": "2026-01-15T12:00:00.000Z"
+  },
+  {
+    "id": "patient-profile-uuid",
+    "userId": "user-uuid",
+    "patientNumber": {},
+    "firstName": {},
+    "lastName": {},
+    "dateOfBirth": {},
+    "gender": {},
+    "bloodGroup": {},
+    "nationality": {},
+    "phone": "+923001234567",
+    "email": {},
+    "userStatus": "ACTIVE",
+    "profileStatus": "COMPLETED",
+    "onboardingStep": 6,
+    "createdAt": "2026-01-10T12:00:00.000Z",
+    "updatedAt": "2026-01-15T12:00:00.000Z"
+  }
+]
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/admin/patients/:patientId/medical-records/timeline?page=1&limit=20
+NAME: Get unified medical timeline for a specific patient
+FOLDER: 04. Admin Portal & System Operations
+DESCRIPTION: 
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+No body
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/admin/patients/:patientId/medical-records?page=1&limit=20&status=string&startDate=string&endDate=string&includeArchived=true
+NAME: List medical records for a specific patient with pagination
+FOLDER: 04. Admin Portal & System Operations
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+[
+  {
+    "id": "string",
+    "patientProfileId": "string",
+    "title": "string",
+    "chiefComplaint": "string",
+    "clinicalNotes": "string",
+    "treatmentPlan": "string",
+    "followUpInstructions": "string",
+    "status": "string",
+    "isDeleted": false,
+    "deletedAt": "string",
+    "patient": {
+      "id": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "patientNumber": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "firstName": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "lastName": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "phone": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      }
+    },
+    "encounters": [
+      [],
+      []
+    ],
+    "diagnoses": [
+      [],
+      []
+    ],
+    "vitalSigns": [
+      [],
+      []
+    ],
+    "procedures": [
+      [],
+      []
+    ],
+    "attachments": [
+      {
+        "id": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "fileName": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "originalName": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "fileSize": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "mimeType": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "category": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "virusScanStatus": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "createdAt": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        }
+      },
+      {
+        "id": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "fileName": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "originalName": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "fileSize": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "mimeType": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "category": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "virusScanStatus": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "createdAt": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        }
+      }
+    ],
+    "createdAt": "string",
+    "updatedAt": "string"
+  },
+  {
+    "id": "string",
+    "patientProfileId": "string",
+    "title": "string",
+    "chiefComplaint": "string",
+    "clinicalNotes": "string",
+    "treatmentPlan": "string",
+    "followUpInstructions": "string",
+    "status": "string",
+    "isDeleted": false,
+    "deletedAt": "string",
+    "patient": {
+      "id": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "patientNumber": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "firstName": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "lastName": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      },
+      "phone": {
+        "value": "<Error: Too many levels of nesting to fake this schema>"
+      }
+    },
+    "encounters": [
+      [],
+      []
+    ],
+    "diagnoses": [
+      [],
+      []
+    ],
+    "vitalSigns": [
+      [],
+      []
+    ],
+    "procedures": [
+      [],
+      []
+    ],
+    "attachments": [
+      {
+        "id": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "fileName": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "originalName": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "fileSize": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "mimeType": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "category": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "virusScanStatus": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "createdAt": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        }
+      },
+      {
+        "id": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "fileName": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "originalName": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "fileSize": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "mimeType": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "category": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "virusScanStatus": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "createdAt": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        }
+      }
+    ],
+    "createdAt": "string",
+    "updatedAt": "string"
+  }
+]
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/admin/patients/:patientId
+NAME: Get comprehensive patient details by ID or User ID
+FOLDER: 04. Admin Portal & System Operations
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "id": "patient-profile-uuid",
+  "userId": "user-uuid",
+  "patientNumber": {},
+  "firstName": {},
+  "lastName": {},
+  "dateOfBirth": {},
+  "gender": {},
+  "bloodGroup": {},
+  "nationality": {},
+  "phone": "+923001234567",
+  "email": {},
+  "userStatus": "ACTIVE",
+  "profileStatus": "COMPLETED",
+  "onboardingStep": 6,
+  "createdAt": "2026-01-10T12:00:00.000Z",
+  "updatedAt": "2026-01-15T12:00:00.000Z",
+  "occupation": {},
+  "maritalStatus": {},
+  "languages": [
+    [],
+    []
+  ],
+  "address": {},
+  "currentAddressLine1": {},
+  "currentAddressLine2": {},
+  "currentCity": {},
+  "currentState": {},
+  "currentDistrict": {},
+  "currentPostalCode": {},
+  "currentCountry": {},
+  "permanentAddressLine1": {},
+  "permanentCity": {},
+  "permanentState": {},
+  "permanentPostalCode": {},
+  "permanentCountry": {},
+  "photoUrl": {},
+  "knownAllergies": [
+    [],
+    []
+  ],
+  "chronicConditions": [
+    [],
+    []
+  ],
+  "disabilities": [
+    [],
+    []
+  ],
+  "prefContactMethod": {},
+  "emergencyContact": {
+    "id": "string",
+    "name": "string",
+    "relationship": "string",
+    "phone": "string"
+  },
+  "insurancePolicy": {},
+  "healthCard": {}
+}
+================================================================
+ENDPOINT: [PUT] {{baseUrl}}/api/v1/admin/users/:id/status
+NAME: Activate, deactivate, or lock/block user account
+FOLDER: 04. Admin Portal & System Operations
+DESCRIPTION: 
+HEADERS: Content-Type: application/json, Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "id": "string",
+  "phone": "string",
+  "status": "string",
+  "roles": [
+    "string",
+    "string"
+  ],
+  "patientProfileId": "string",
+  "doctorProfileId": "string",
+  "staffMemberId": "string",
+  "createdAt": "string",
+  "updatedAt": "string"
+}
+================================================================
+ENDPOINT: [PUT] {{baseUrl}}/api/v1/admin/users/:id/roles
+NAME: Assign RBAC roles to user
+FOLDER: 04. Admin Portal & System Operations
+DESCRIPTION: 
+HEADERS: Content-Type: application/json, Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "id": "string",
+  "phone": "string",
+  "status": "string",
+  "roles": [
+    "string",
+    "string"
+  ],
+  "patientProfileId": "string",
+  "doctorProfileId": "string",
+  "staffMemberId": "string",
+  "createdAt": "string",
+  "updatedAt": "string"
+}
+================================================================
+ENDPOINT: [POST] {{baseUrl}}/api/v1/admin/users/:id/restore
+NAME: Restore a blocked/soft-deleted user account
+FOLDER: 04. Admin Portal & System Operations
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "id": "string",
+  "phone": "string",
+  "status": "string",
+  "roles": [
+    "string",
+    "string"
+  ],
+  "patientProfileId": "string",
+  "doctorProfileId": "string",
+  "staffMemberId": "string",
+  "createdAt": "string",
+  "updatedAt": "string"
+}
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/admin/audit-logs
+NAME: Get global system audit trail
+FOLDER: 04. Admin Portal & System Operations
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+[
+  {
+    "id": "string",
+    "userId": "string",
+    "action": "string",
+    "details": "string",
+    "ipAddress": "string",
+    "createdAt": "2022-05-10T22:03:50.003Z"
+  },
+  {
+    "id": "string",
+    "userId": "string",
+    "action": "string",
+    "details": "string",
+    "ipAddress": "string",
+    "createdAt": "2021-08-23T02:51:25.177Z"
+  }
+]
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/doctors/statistics
+NAME: Get platform-wide doctor directory statistics
+FOLDER: 05. Doctor Portal
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "totalDoctors": 643.2637848984513,
+  "verifiedDoctors": 4781.880103319999,
+  "pendingDoctors": 4538.547550302104,
+  "suspendedDoctors": 7085.885696037544
+}
+================================================================
+ENDPOINT: [POST] {{baseUrl}}/api/v1/patients/onboarding/health-card
+NAME: Step 5: Initialize Secure Digital Health Card
+FOLDER: 06. Patient App
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "cardId": "card-uuid-v4",
+  "cardNumber": "HC-2026-00001",
+  "message": "Digital Health Card initialized successfully",
+  "nextStep": 6
+}
+================================================================
+ENDPOINT: [POST] {{baseUrl}}/api/v1/health-cards
+NAME: Issue a new Health Card for authenticated patient
+FOLDER: 07. Digital Health Cards & Passes
+DESCRIPTION: 
+HEADERS: Content-Type: application/json, Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (Created - 201) ---
+{
+  "id": "string",
+  "patientProfileId": "string",
+  "cardNumber": "string",
+  "status": "string",
+  "version": 5965.913073436404,
+  "emergencyFlag": false,
+  "metadata": "string",
+  "issuedAt": "string",
+  "expiresAt": "string",
+  "suspendedAt": "string",
+  "blockedAt": "string",
+  "archivedAt": "string",
+  "replacedAt": "string",
+  "previousCardNumber": "string",
+  "isDeleted": false,
+  "qrPayload": "string",
+  "createdAt": "string",
+  "updatedAt": "string",
+  "history": [
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    },
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    }
+  ]
+}
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/health-cards
+NAME: Get active Health Card details for current patient
+FOLDER: 07. Digital Health Cards & Passes
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "id": "string",
+  "patientProfileId": "string",
+  "cardNumber": "string",
+  "status": "string",
+  "version": 4715.670792282272,
+  "emergencyFlag": false,
+  "metadata": "string",
+  "issuedAt": "string",
+  "expiresAt": "string",
+  "suspendedAt": "string",
+  "blockedAt": "string",
+  "archivedAt": "string",
+  "replacedAt": "string",
+  "previousCardNumber": "string",
+  "isDeleted": true,
+  "qrPayload": "string",
+  "createdAt": "string",
+  "updatedAt": "string",
+  "history": [
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    },
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    }
+  ]
+}
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/health-cards/search?q=string
+NAME: Search Health Cards by card number or patient name
+FOLDER: 07. Digital Health Cards & Passes
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+[
+  {
+    "id": "string",
+    "patientProfileId": "string",
+    "cardNumber": "string",
+    "status": "string",
+    "version": 7428.329280584284,
+    "emergencyFlag": true,
+    "metadata": "string",
+    "issuedAt": "string",
+    "expiresAt": "string",
+    "suspendedAt": "string",
+    "blockedAt": "string",
+    "archivedAt": "string",
+    "replacedAt": "string",
+    "previousCardNumber": "string",
+    "isDeleted": false,
+    "qrPayload": "string",
+    "createdAt": "string",
+    "updatedAt": "string",
+    "history": [
+      {
+        "id": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "healthCardId": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "action": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "previousStatus": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "newStatus": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "reason": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "performedBy": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "createdAt": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        }
+      },
+      {
+        "id": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "healthCardId": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "action": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "previousStatus": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "newStatus": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "reason": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "performedBy": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "createdAt": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        }
+      }
+    ]
+  },
+  {
+    "id": "string",
+    "patientProfileId": "string",
+    "cardNumber": "string",
+    "status": "string",
+    "version": 299.31071994520164,
+    "emergencyFlag": false,
+    "metadata": "string",
+    "issuedAt": "string",
+    "expiresAt": "string",
+    "suspendedAt": "string",
+    "blockedAt": "string",
+    "archivedAt": "string",
+    "replacedAt": "string",
+    "previousCardNumber": "string",
+    "isDeleted": true,
+    "qrPayload": "string",
+    "createdAt": "string",
+    "updatedAt": "string",
+    "history": [
+      {
+        "id": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "healthCardId": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "action": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "previousStatus": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "newStatus": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "reason": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "performedBy": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "createdAt": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        }
+      },
+      {
+        "id": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "healthCardId": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "action": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "previousStatus": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "newStatus": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "reason": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "performedBy": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        },
+        "createdAt": {
+          "value": "<Error: Too many levels of nesting to fake this schema>"
+        }
+      }
+    ]
+  }
+]
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/health-cards/:id
+NAME: Get specific Health Card details by ID
+FOLDER: 07. Digital Health Cards & Passes
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "id": "string",
+  "patientProfileId": "string",
+  "cardNumber": "string",
+  "status": "string",
+  "version": 4715.670792282272,
+  "emergencyFlag": false,
+  "metadata": "string",
+  "issuedAt": "string",
+  "expiresAt": "string",
+  "suspendedAt": "string",
+  "blockedAt": "string",
+  "archivedAt": "string",
+  "replacedAt": "string",
+  "previousCardNumber": "string",
+  "isDeleted": true,
+  "qrPayload": "string",
+  "createdAt": "string",
+  "updatedAt": "string",
+  "history": [
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    },
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    }
+  ]
+}
+================================================================
+ENDPOINT: [PUT] {{baseUrl}}/api/v1/health-cards/:id
+NAME: Update Health Card emergency flag or metadata
+FOLDER: 07. Digital Health Cards & Passes
+DESCRIPTION: 
+HEADERS: Content-Type: application/json, Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "id": "string",
+  "patientProfileId": "string",
+  "cardNumber": "string",
+  "status": "string",
+  "version": 4715.670792282272,
+  "emergencyFlag": false,
+  "metadata": "string",
+  "issuedAt": "string",
+  "expiresAt": "string",
+  "suspendedAt": "string",
+  "blockedAt": "string",
+  "archivedAt": "string",
+  "replacedAt": "string",
+  "previousCardNumber": "string",
+  "isDeleted": true,
+  "qrPayload": "string",
+  "createdAt": "string",
+  "updatedAt": "string",
+  "history": [
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    },
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    }
+  ]
+}
+================================================================
+ENDPOINT: [POST] {{baseUrl}}/api/v1/health-cards/:id/activate
+NAME: Activate an ISSUED or DEACTIVATED Health Card
+FOLDER: 07. Digital Health Cards & Passes
+DESCRIPTION: 
+HEADERS: Content-Type: application/json, Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "id": "string",
+  "patientProfileId": "string",
+  "cardNumber": "string",
+  "status": "string",
+  "version": 4715.670792282272,
+  "emergencyFlag": false,
+  "metadata": "string",
+  "issuedAt": "string",
+  "expiresAt": "string",
+  "suspendedAt": "string",
+  "blockedAt": "string",
+  "archivedAt": "string",
+  "replacedAt": "string",
+  "previousCardNumber": "string",
+  "isDeleted": true,
+  "qrPayload": "string",
+  "createdAt": "string",
+  "updatedAt": "string",
+  "history": [
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    },
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    }
+  ]
+}
+================================================================
+ENDPOINT: [POST] {{baseUrl}}/api/v1/health-cards/:id/deactivate
+NAME: Deactivate Health Card
+FOLDER: 07. Digital Health Cards & Passes
+DESCRIPTION: 
+HEADERS: Content-Type: application/json, Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "id": "string",
+  "patientProfileId": "string",
+  "cardNumber": "string",
+  "status": "string",
+  "version": 4715.670792282272,
+  "emergencyFlag": false,
+  "metadata": "string",
+  "issuedAt": "string",
+  "expiresAt": "string",
+  "suspendedAt": "string",
+  "blockedAt": "string",
+  "archivedAt": "string",
+  "replacedAt": "string",
+  "previousCardNumber": "string",
+  "isDeleted": true,
+  "qrPayload": "string",
+  "createdAt": "string",
+  "updatedAt": "string",
+  "history": [
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    },
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    }
+  ]
+}
+================================================================
+ENDPOINT: [POST] {{baseUrl}}/api/v1/health-cards/:id/suspend
+NAME: Suspend Health Card
+FOLDER: 07. Digital Health Cards & Passes
+DESCRIPTION: 
+HEADERS: Content-Type: application/json, Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "id": "string",
+  "patientProfileId": "string",
+  "cardNumber": "string",
+  "status": "string",
+  "version": 4715.670792282272,
+  "emergencyFlag": false,
+  "metadata": "string",
+  "issuedAt": "string",
+  "expiresAt": "string",
+  "suspendedAt": "string",
+  "blockedAt": "string",
+  "archivedAt": "string",
+  "replacedAt": "string",
+  "previousCardNumber": "string",
+  "isDeleted": true,
+  "qrPayload": "string",
+  "createdAt": "string",
+  "updatedAt": "string",
+  "history": [
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    },
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    }
+  ]
+}
+================================================================
+ENDPOINT: [POST] {{baseUrl}}/api/v1/health-cards/:id/block
+NAME: Block Health Card for security or lost card reasons
+FOLDER: 07. Digital Health Cards & Passes
+DESCRIPTION: 
+HEADERS: Content-Type: application/json, Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "id": "string",
+  "patientProfileId": "string",
+  "cardNumber": "string",
+  "status": "string",
+  "version": 4715.670792282272,
+  "emergencyFlag": false,
+  "metadata": "string",
+  "issuedAt": "string",
+  "expiresAt": "string",
+  "suspendedAt": "string",
+  "blockedAt": "string",
+  "archivedAt": "string",
+  "replacedAt": "string",
+  "previousCardNumber": "string",
+  "isDeleted": true,
+  "qrPayload": "string",
+  "createdAt": "string",
+  "updatedAt": "string",
+  "history": [
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    },
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    }
+  ]
+}
+================================================================
+ENDPOINT: [POST] {{baseUrl}}/api/v1/health-cards/:id/unblock
+NAME: Unblock a BLOCKED Health Card
+FOLDER: 07. Digital Health Cards & Passes
+DESCRIPTION: 
+HEADERS: Content-Type: application/json, Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "id": "string",
+  "patientProfileId": "string",
+  "cardNumber": "string",
+  "status": "string",
+  "version": 4715.670792282272,
+  "emergencyFlag": false,
+  "metadata": "string",
+  "issuedAt": "string",
+  "expiresAt": "string",
+  "suspendedAt": "string",
+  "blockedAt": "string",
+  "archivedAt": "string",
+  "replacedAt": "string",
+  "previousCardNumber": "string",
+  "isDeleted": true,
+  "qrPayload": "string",
+  "createdAt": "string",
+  "updatedAt": "string",
+  "history": [
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    },
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    }
+  ]
+}
+================================================================
+ENDPOINT: [POST] {{baseUrl}}/api/v1/health-cards/:id/replace
+NAME: Replace Health Card — generates a new card number and increments version
+FOLDER: 07. Digital Health Cards & Passes
+DESCRIPTION: 
+HEADERS: Content-Type: application/json, Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "id": "string",
+  "patientProfileId": "string",
+  "cardNumber": "string",
+  "status": "string",
+  "version": 4715.670792282272,
+  "emergencyFlag": false,
+  "metadata": "string",
+  "issuedAt": "string",
+  "expiresAt": "string",
+  "suspendedAt": "string",
+  "blockedAt": "string",
+  "archivedAt": "string",
+  "replacedAt": "string",
+  "previousCardNumber": "string",
+  "isDeleted": true,
+  "qrPayload": "string",
+  "createdAt": "string",
+  "updatedAt": "string",
+  "history": [
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    },
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    }
+  ]
+}
+================================================================
+ENDPOINT: [POST] {{baseUrl}}/api/v1/health-cards/:id/renew
+NAME: Renew Health Card — extends validity period by 1 year
+FOLDER: 07. Digital Health Cards & Passes
+DESCRIPTION: 
+HEADERS: Content-Type: application/json, Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "id": "string",
+  "patientProfileId": "string",
+  "cardNumber": "string",
+  "status": "string",
+  "version": 4715.670792282272,
+  "emergencyFlag": false,
+  "metadata": "string",
+  "issuedAt": "string",
+  "expiresAt": "string",
+  "suspendedAt": "string",
+  "blockedAt": "string",
+  "archivedAt": "string",
+  "replacedAt": "string",
+  "previousCardNumber": "string",
+  "isDeleted": true,
+  "qrPayload": "string",
+  "createdAt": "string",
+  "updatedAt": "string",
+  "history": [
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    },
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    }
+  ]
+}
+================================================================
+ENDPOINT: [POST] {{baseUrl}}/api/v1/health-cards/:id/archive
+NAME: Archive Health Card
+FOLDER: 07. Digital Health Cards & Passes
+DESCRIPTION: 
+HEADERS: Content-Type: application/json, Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "id": "string",
+  "patientProfileId": "string",
+  "cardNumber": "string",
+  "status": "string",
+  "version": 4715.670792282272,
+  "emergencyFlag": false,
+  "metadata": "string",
+  "issuedAt": "string",
+  "expiresAt": "string",
+  "suspendedAt": "string",
+  "blockedAt": "string",
+  "archivedAt": "string",
+  "replacedAt": "string",
+  "previousCardNumber": "string",
+  "isDeleted": true,
+  "qrPayload": "string",
+  "createdAt": "string",
+  "updatedAt": "string",
+  "history": [
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    },
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    }
+  ]
+}
+================================================================
+ENDPOINT: [POST] {{baseUrl}}/api/v1/health-cards/:id/restore
+NAME: Restore an ARCHIVED Health Card
+FOLDER: 07. Digital Health Cards & Passes
+DESCRIPTION: 
+HEADERS: Content-Type: application/json, Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "id": "string",
+  "patientProfileId": "string",
+  "cardNumber": "string",
+  "status": "string",
+  "version": 4715.670792282272,
+  "emergencyFlag": false,
+  "metadata": "string",
+  "issuedAt": "string",
+  "expiresAt": "string",
+  "suspendedAt": "string",
+  "blockedAt": "string",
+  "archivedAt": "string",
+  "replacedAt": "string",
+  "previousCardNumber": "string",
+  "isDeleted": true,
+  "qrPayload": "string",
+  "createdAt": "string",
+  "updatedAt": "string",
+  "history": [
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    },
+    {
+      "id": "string",
+      "healthCardId": "string",
+      "action": "string",
+      "previousStatus": "string",
+      "newStatus": "string",
+      "reason": "string",
+      "performedBy": "string",
+      "createdAt": "string"
+    }
+  ]
+}
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/health-cards/:id/history
+NAME: Get complete status lifecycle audit history for Health Card
+FOLDER: 07. Digital Health Cards & Passes
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+[
+  {
+    "id": "string",
+    "healthCardId": "string",
+    "action": "string",
+    "previousStatus": "string",
+    "newStatus": "string",
+    "reason": "string",
+    "performedBy": "string",
+    "createdAt": "string"
+  },
+  {
+    "id": "string",
+    "healthCardId": "string",
+    "action": "string",
+    "previousStatus": "string",
+    "newStatus": "string",
+    "reason": "string",
+    "performedBy": "string",
+    "createdAt": "string"
+  }
+]
+================================================================
+ENDPOINT: [POST] {{baseUrl}}/api/v1/health-cards/verify-qr
+NAME: Verify digital Health Card QR payload
+FOLDER: 07. Digital Health Cards & Passes
+DESCRIPTION: 
+HEADERS: Content-Type: application/json, Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "isValid": true,
+  "status": "VERIFIED",
+  "patientName": "John Doe",
+  "cardNumber": "HV360-1234-5678-9012",
+  "message": "QR verification completed successfully",
+  "patientDetails": {
+    "patientNumber": "PT-12345",
+    "firstName": "John",
+    "lastName": "Doe",
+    "dateOfBirth": "1990-01-01",
+    "bloodGroup": "O+"
+  }
+}
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/referrals/dashboard/stats?facilityId=string
+NAME: Get referral dashboard metrics and SLA performance analytics
+FOLDER: 11. Referrals & Care Coordination
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "totalReferrals": 6445.631475448663,
+  "pendingTriageCount": 1533.7677315362253,
+  "acceptedCount": 6619.09596622375,
+  "completedCount": 990.9939167131654,
+  "avgCompletionTimeHours": 5412.636578256952
+}
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/notifications/dashboard/stats
+NAME: Get Enterprise Notification Platform stats & queue summary
+FOLDER: 14. Notifications & Alerts
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "totalNotifications": 194.01532542861477,
+  "pendingCount": 9207.826484062329,
+  "sentCount": 5845.414040838752,
+  "deliveredCount": 1885.4113153586216,
+  "failedCount": 7470.236851038374,
+  "readCount": 5494.759977851031,
+  "activeTemplatesCount": 2078.1530633570146,
+  "queuePendingCount": 391.1663280341871
+}
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/ocr/dashboard
+NAME: Get Enterprise OCR Platform analytics dashboard summary
+FOLDER: 15. OCR & Document Verification
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "totalJobs": 6337.625422004237,
+  "completedJobs": 3234.306003640516,
+  "reviewRequiredJobs": 3694.0682430664574,
+  "failedJobs": 14.963563231621402,
+  "averageConfidence": 2255.739656876542,
+  "activeTemplatesCount": 4390.935961641448
+}
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/governance/dashboard
+NAME: Get Enterprise Governance Dashboard summary
+FOLDER: 17. Governance, Legal & Compliance
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "totalConfigurations": 260.8315975610298,
+  "activeFeatureFlags": 4387.366541742111,
+  "masterDataCategoriesCount": 5667.965904575406,
+  "masterDataItemsCount": 2467.910754035595,
+  "activePoliciesCount": 702.5699408068964,
+  "maintenanceMode": "string",
+  "recentAuditLogsCount": 7166.083850149487
+}
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/security/dashboard
+NAME: Get Enterprise Security & Compliance Dashboard summary
+FOLDER: 18. Security, Threat Detection & Sessions
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "activeConsentsCount": 5432.467346819419,
+  "activeRetentionPoliciesCount": 6542.757705722183,
+  "openIncidentsCount": 4183.509745436947,
+  "criticalIncidentsCount": 8104.477598363667,
+  "activeEncryptionKeyVersion": 2430.290199517713,
+  "complianceReportsCount": 5773.191446629537,
+  "totalAuditLogsCount": 1291.8335496038003
+}
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/reports/dashboard/executive?startDate=string&endDate=string
+NAME: Get Executive Dashboard platform summary statistics
+FOLDER: 20. Clinical Reports & Analytics
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "platformOverview": {}
+}
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/observability/dashboard
+NAME: Get Enterprise Observability Platform operational dashboard
+FOLDER: 23. Observability & Performance Probes
+DESCRIPTION: 
+HEADERS: Accept: application/json
+RESPONSE EXAMPLES (1):
+--- Example #1 (OK - 200) ---
+{
+  "overallStatus": "string",
+  "totalRequests24h": 511.6720804318864,
+  "avgResponseTimeMs": 7144.988791490655,
+  "errorRatePercentage": 4675.225312912654,
+  "cacheHitRatePercentage": 1415.5353782744962,
+  "queueDepth": 5677.917319780966,
+  "activeUsers": 2888.1849399983885,
+  "unhealthyComponentsCount": 6647.12431870063
+}
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/observability/health
+NAME: Get full component health diagnostics status
+FOLDER: 23. Observability & Performance Probes
+DESCRIPTION: 
+RESPONSE EXAMPLES (1):
+--- Example #1 (Component health map - 200) ---
+No body
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/observability/health/live
+NAME: Liveness probe endpoint
+FOLDER: 23. Observability & Performance Probes
+DESCRIPTION: 
+RESPONSE EXAMPLES (1):
+--- Example #1 (Service is live - 200) ---
+No body
+================================================================
+ENDPOINT: [GET] {{baseUrl}}/api/v1/observability/health/ready
+NAME: Readiness probe endpoint
+FOLDER: 23. Observability & Performance Probes
+DESCRIPTION: 
+RESPONSE EXAMPLES (2):
+--- Example #1 (Service is ready to handle traffic - 200) ---
+No body
+--- Example #2 (Subsystem components degraded; not ready - 503) ---
+No body

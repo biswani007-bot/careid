@@ -1,0 +1,830 @@
+[
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Create a new draft treatment proposal",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "POST",
+    "rawUrl": "{{baseUrl}}/api/v1/doctors/treatment-offers",
+    "path": [
+      "api",
+      "v1",
+      "doctors",
+      "treatment-offers"
+    ],
+    "query": [],
+    "variable": [],
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"patientProfileId\": \"string\",\n  \"facilityId\": \"string\",\n  \"clinicalIndication\": \"string\",\n  \"procedures\": [\n    {\n      \"procedureCode\": \"string\",\n      \"procedureName\": \"string\",\n      \"unitCost\": 9075.247776047214,\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"isOptional\": false,\n      \"clinicalJustification\": \"string\"\n    },\n    {\n      \"procedureCode\": \"string\",\n      \"procedureName\": \"string\",\n      \"unitCost\": 1736.0278869047875,\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"isOptional\": false,\n      \"clinicalJustification\": \"string\"\n    }\n  ],\n  \"validUntil\": \"string\",\n  \"encounterId\": \"string\",\n  \"discountAmount\": 0,\n  \"financingEligible\": false,\n  \"recommendedTenureMonths\": 2734.589294109142,\n  \"clinicalNotes\": \"string\",\n  \"termsAndConditions\": \"string\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  \"validUntil\": \"2026-12-31T23:59:59.000Z\",\n  \"version\": 1,\n  \"createdAt\": \"2026-11-06T11:55:00.000Z\",\n  \"updatedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"procedures\": [\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    },\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    }\n  ],\n  \"history\": [\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    },\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    }\n  ],\n  \"doctorName\": \"Dr. Sarah Jenkins\",\n  \"patientName\": \"John Doe\",\n  \"facilityName\": \"Metro General Hospital\",\n  \"recommendedTenureMonths\": 12,\n  \"dispatchedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"patientViewedAt\": \"2026-11-06T12:05:00.000Z\",\n  \"patientRespondedAt\": \"2026-11-06T12:10:00.000Z\",\n  \"cancellationReason\": \"Patient clinical condition changed\",\n  \"encounterId\": \"encounter-uuid-001\",\n  \"clinicalNotes\": \"Patient assessed as stable for elective intervention.\",\n  \"termsAndConditions\": \"Package includes 2 nights stay in standard room suite.\",\n  \"patientResponseNotes\": \"Patient ratified proposal with informed consent.\"\n}"
+      }
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "List authored treatment proposals",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "rawUrl": "{{baseUrl}}/api/v1/doctors/treatment-offers?status=EXPIRED&patientId=string&search=string&page=1&limit=20",
+    "path": [
+      "api",
+      "v1",
+      "doctors",
+      "treatment-offers"
+    ],
+    "query": [
+      {
+        "disabled": false,
+        "key": "status",
+        "value": "EXPIRED"
+      },
+      {
+        "disabled": false,
+        "key": "patientId",
+        "value": "string"
+      },
+      {
+        "disabled": false,
+        "key": "search",
+        "value": "string"
+      },
+      {
+        "disabled": false,
+        "key": "page",
+        "value": "1"
+      },
+      {
+        "disabled": false,
+        "key": "limit",
+        "value": "20"
+      }
+    ],
+    "variable": [],
+    "headers": [],
+    "bodyMode": null,
+    "bodyRaw": null,
+    "responses": [
+      {
+        "name": "Paginated list of authored treatment offers",
+        "code": 200,
+        "status": "OK",
+        "body": ""
+      }
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Get treatment offer details",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "rawUrl": "{{baseUrl}}/api/v1/doctors/treatment-offers/:offerId",
+    "path": [
+      "api",
+      "v1",
+      "doctors",
+      "treatment-offers",
+      ":offerId"
+    ],
+    "query": [],
+    "variable": [
+      {
+        "disabled": false,
+        "type": "any",
+        "value": "{{offerId}}",
+        "key": "offerId",
+        "description": "(Required) Treatment offer UUID"
+      }
+    ],
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "bodyMode": null,
+    "bodyRaw": null,
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  \"validUntil\": \"2026-12-31T23:59:59.000Z\",\n  \"version\": 1,\n  \"createdAt\": \"2026-11-06T11:55:00.000Z\",\n  \"updatedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"procedures\": [\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    },\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    }\n  ],\n  \"history\": [\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    },\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    }\n  ],\n  \"doctorName\": \"Dr. Sarah Jenkins\",\n  \"patientName\": \"John Doe\",\n  \"facilityName\": \"Metro General Hospital\",\n  \"recommendedTenureMonths\": 12,\n  \"dispatchedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"patientViewedAt\": \"2026-11-06T12:05:00.000Z\",\n  \"patientRespondedAt\": \"2026-11-06T12:10:00.000Z\",\n  \"cancellationReason\": \"Patient clinical condition changed\",\n  \"encounterId\": \"encounter-uuid-001\",\n  \"clinicalNotes\": \"Patient assessed as stable for elective intervention.\",\n  \"termsAndConditions\": \"Package includes 2 nights stay in standard room suite.\",\n  \"patientResponseNotes\": \"Patient ratified proposal with informed consent.\"\n}"
+      }
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Update draft treatment offer",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "PUT",
+    "rawUrl": "{{baseUrl}}/api/v1/doctors/treatment-offers/:offerId",
+    "path": [
+      "api",
+      "v1",
+      "doctors",
+      "treatment-offers",
+      ":offerId"
+    ],
+    "query": [],
+    "variable": [
+      {
+        "disabled": false,
+        "type": "any",
+        "value": "{{offerId}}",
+        "key": "offerId",
+        "description": "(Required) Treatment offer UUID"
+      }
+    ],
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"clinicalIndication\": \"string\",\n  \"procedures\": [\n    {\n      \"procedureCode\": \"string\",\n      \"procedureName\": \"string\",\n      \"unitCost\": 4018.8680365558093,\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"isOptional\": false,\n      \"clinicalJustification\": \"string\"\n    },\n    {\n      \"procedureCode\": \"string\",\n      \"procedureName\": \"string\",\n      \"unitCost\": 6506.738656644382,\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"isOptional\": false,\n      \"clinicalJustification\": \"string\"\n    }\n  ],\n  \"discountAmount\": 4807.219522303252,\n  \"financingEligible\": true,\n  \"recommendedTenureMonths\": 2573.025151074737,\n  \"validUntil\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"termsAndConditions\": \"string\",\n  \"expectedVersion\": 1753.1245021832665\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  \"validUntil\": \"2026-12-31T23:59:59.000Z\",\n  \"version\": 1,\n  \"createdAt\": \"2026-11-06T11:55:00.000Z\",\n  \"updatedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"procedures\": [\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    },\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    }\n  ],\n  \"history\": [\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    },\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    }\n  ],\n  \"doctorName\": \"Dr. Sarah Jenkins\",\n  \"patientName\": \"John Doe\",\n  \"facilityName\": \"Metro General Hospital\",\n  \"recommendedTenureMonths\": 12,\n  \"dispatchedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"patientViewedAt\": \"2026-11-06T12:05:00.000Z\",\n  \"patientRespondedAt\": \"2026-11-06T12:10:00.000Z\",\n  \"cancellationReason\": \"Patient clinical condition changed\",\n  \"encounterId\": \"encounter-uuid-001\",\n  \"clinicalNotes\": \"Patient assessed as stable for elective intervention.\",\n  \"termsAndConditions\": \"Package includes 2 nights stay in standard room suite.\",\n  \"patientResponseNotes\": \"Patient ratified proposal with informed consent.\"\n}"
+      }
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Lock draft and dispatch treatment offer to patient",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "POST",
+    "rawUrl": "{{baseUrl}}/api/v1/doctors/treatment-offers/:offerId/dispatch",
+    "path": [
+      "api",
+      "v1",
+      "doctors",
+      "treatment-offers",
+      ":offerId",
+      "dispatch"
+    ],
+    "query": [],
+    "variable": [
+      {
+        "disabled": false,
+        "type": "any",
+        "value": "{{offerId}}",
+        "key": "offerId",
+        "description": "(Required) Treatment offer UUID"
+      }
+    ],
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"expectedVersion\": 51.68578073745378\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  \"validUntil\": \"2026-12-31T23:59:59.000Z\",\n  \"version\": 1,\n  \"createdAt\": \"2026-11-06T11:55:00.000Z\",\n  \"updatedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"procedures\": [\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    },\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    }\n  ],\n  \"history\": [\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    },\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    }\n  ],\n  \"doctorName\": \"Dr. Sarah Jenkins\",\n  \"patientName\": \"John Doe\",\n  \"facilityName\": \"Metro General Hospital\",\n  \"recommendedTenureMonths\": 12,\n  \"dispatchedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"patientViewedAt\": \"2026-11-06T12:05:00.000Z\",\n  \"patientRespondedAt\": \"2026-11-06T12:10:00.000Z\",\n  \"cancellationReason\": \"Patient clinical condition changed\",\n  \"encounterId\": \"encounter-uuid-001\",\n  \"clinicalNotes\": \"Patient assessed as stable for elective intervention.\",\n  \"termsAndConditions\": \"Package includes 2 nights stay in standard room suite.\",\n  \"patientResponseNotes\": \"Patient ratified proposal with informed consent.\"\n}"
+      }
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Inspect live offer lifecycle status and review timestamps",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "rawUrl": "{{baseUrl}}/api/v1/doctors/treatment-offers/:offerId/status",
+    "path": [
+      "api",
+      "v1",
+      "doctors",
+      "treatment-offers",
+      ":offerId",
+      "status"
+    ],
+    "query": [],
+    "variable": [
+      {
+        "disabled": false,
+        "type": "any",
+        "value": "{{offerId}}",
+        "key": "offerId",
+        "description": "(Required) Treatment offer UUID"
+      }
+    ],
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "bodyMode": null,
+    "bodyRaw": null,
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"status\": \"DISPATCHED\",\n  \"isExpired\": false,\n  \"validUntil\": \"2026-12-31T23:59:59.000Z\",\n  \"version\": 1,\n  \"dispatchedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"patientViewedAt\": \"2026-11-06T12:05:00.000Z\",\n  \"patientRespondedAt\": \"2026-11-06T12:10:00.000Z\",\n  \"patientResponseNotes\": \"Accepted with informed consent\",\n  \"cancellationReason\": \"Elective procedure deferred\"\n}"
+      }
+    ]
+  },
+  {
+    "folder": "05. Doctor Portal",
+    "name": "Doctor cancels active treatment proposal with clinical justification",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "POST",
+    "rawUrl": "{{baseUrl}}/api/v1/doctors/treatment-offers/:offerId/cancel",
+    "path": [
+      "api",
+      "v1",
+      "doctors",
+      "treatment-offers",
+      ":offerId",
+      "cancel"
+    ],
+    "query": [],
+    "variable": [
+      {
+        "disabled": false,
+        "type": "any",
+        "value": "{{offerId}}",
+        "key": "offerId",
+        "description": "(Required) Treatment offer UUID"
+      }
+    ],
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"cancellationReason\": \"string\",\n  \"expectedVersion\": 8285.85026418029\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  \"validUntil\": \"2026-12-31T23:59:59.000Z\",\n  \"version\": 1,\n  \"createdAt\": \"2026-11-06T11:55:00.000Z\",\n  \"updatedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"procedures\": [\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    },\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    }\n  ],\n  \"history\": [\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    },\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    }\n  ],\n  \"doctorName\": \"Dr. Sarah Jenkins\",\n  \"patientName\": \"John Doe\",\n  \"facilityName\": \"Metro General Hospital\",\n  \"recommendedTenureMonths\": 12,\n  \"dispatchedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"patientViewedAt\": \"2026-11-06T12:05:00.000Z\",\n  \"patientRespondedAt\": \"2026-11-06T12:10:00.000Z\",\n  \"cancellationReason\": \"Patient clinical condition changed\",\n  \"encounterId\": \"encounter-uuid-001\",\n  \"clinicalNotes\": \"Patient assessed as stable for elective intervention.\",\n  \"termsAndConditions\": \"Package includes 2 nights stay in standard room suite.\",\n  \"patientResponseNotes\": \"Patient ratified proposal with informed consent.\"\n}"
+      }
+    ]
+  },
+  {
+    "folder": "06. Patient App",
+    "name": "List received treatment offers for authenticated patient",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "rawUrl": "{{baseUrl}}/api/v1/patients/treatment-offers?status=EXPIRED&patientId=string&search=string&page=1&limit=20",
+    "path": [
+      "api",
+      "v1",
+      "patients",
+      "treatment-offers"
+    ],
+    "query": [
+      {
+        "disabled": false,
+        "key": "status",
+        "value": "EXPIRED"
+      },
+      {
+        "disabled": false,
+        "key": "patientId",
+        "value": "string"
+      },
+      {
+        "disabled": false,
+        "key": "search",
+        "value": "string"
+      },
+      {
+        "disabled": false,
+        "key": "page",
+        "value": "1"
+      },
+      {
+        "disabled": false,
+        "key": "limit",
+        "value": "20"
+      }
+    ],
+    "variable": [],
+    "headers": [],
+    "bodyMode": null,
+    "bodyRaw": null,
+    "responses": [
+      {
+        "name": "Paginated list of received treatment proposals",
+        "code": 200,
+        "status": "OK",
+        "body": ""
+      }
+    ]
+  },
+  {
+    "folder": "06. Patient App",
+    "name": "Patient view of treatment offer (Triggers PATIENT_REVIEWING state)",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "rawUrl": "{{baseUrl}}/api/v1/patients/treatment-offers/:offerId",
+    "path": [
+      "api",
+      "v1",
+      "patients",
+      "treatment-offers",
+      ":offerId"
+    ],
+    "query": [],
+    "variable": [
+      {
+        "disabled": false,
+        "type": "any",
+        "value": "{{offerId}}",
+        "key": "offerId",
+        "description": "(Required) Treatment offer UUID"
+      }
+    ],
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "bodyMode": null,
+    "bodyRaw": null,
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  \"validUntil\": \"2026-12-31T23:59:59.000Z\",\n  \"version\": 1,\n  \"createdAt\": \"2026-11-06T11:55:00.000Z\",\n  \"updatedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"procedures\": [\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    },\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    }\n  ],\n  \"history\": [\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    },\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    }\n  ],\n  \"doctorName\": \"Dr. Sarah Jenkins\",\n  \"patientName\": \"John Doe\",\n  \"facilityName\": \"Metro General Hospital\",\n  \"recommendedTenureMonths\": 12,\n  \"dispatchedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"patientViewedAt\": \"2026-11-06T12:05:00.000Z\",\n  \"patientRespondedAt\": \"2026-11-06T12:10:00.000Z\",\n  \"cancellationReason\": \"Patient clinical condition changed\",\n  \"encounterId\": \"encounter-uuid-001\",\n  \"clinicalNotes\": \"Patient assessed as stable for elective intervention.\",\n  \"termsAndConditions\": \"Package includes 2 nights stay in standard room suite.\",\n  \"patientResponseNotes\": \"Patient ratified proposal with informed consent.\"\n}"
+      }
+    ]
+  },
+  {
+    "folder": "06. Patient App",
+    "name": "Patient ratifies and accepts treatment offer (RATIFIED_ACCEPTED)",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "POST",
+    "rawUrl": "{{baseUrl}}/api/v1/patients/treatment-offers/:offerId/accept",
+    "path": [
+      "api",
+      "v1",
+      "patients",
+      "treatment-offers",
+      ":offerId",
+      "accept"
+    ],
+    "query": [],
+    "variable": [
+      {
+        "disabled": false,
+        "type": "any",
+        "value": "{{offerId}}",
+        "key": "offerId",
+        "description": "(Required) Treatment offer UUID"
+      }
+    ],
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"signatureConsent\": true,\n  \"patientResponseNotes\": \"string\",\n  \"expectedVersion\": 1885.198472948083\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  \"validUntil\": \"2026-12-31T23:59:59.000Z\",\n  \"version\": 1,\n  \"createdAt\": \"2026-11-06T11:55:00.000Z\",\n  \"updatedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"procedures\": [\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    },\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    }\n  ],\n  \"history\": [\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    },\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    }\n  ],\n  \"doctorName\": \"Dr. Sarah Jenkins\",\n  \"patientName\": \"John Doe\",\n  \"facilityName\": \"Metro General Hospital\",\n  \"recommendedTenureMonths\": 12,\n  \"dispatchedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"patientViewedAt\": \"2026-11-06T12:05:00.000Z\",\n  \"patientRespondedAt\": \"2026-11-06T12:10:00.000Z\",\n  \"cancellationReason\": \"Patient clinical condition changed\",\n  \"encounterId\": \"encounter-uuid-001\",\n  \"clinicalNotes\": \"Patient assessed as stable for elective intervention.\",\n  \"termsAndConditions\": \"Package includes 2 nights stay in standard room suite.\",\n  \"patientResponseNotes\": \"Patient ratified proposal with informed consent.\"\n}"
+      }
+    ]
+  },
+  {
+    "folder": "06. Patient App",
+    "name": "Patient declines treatment offer proposal (DECLINED)",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "POST",
+    "rawUrl": "{{baseUrl}}/api/v1/patients/treatment-offers/:offerId/reject",
+    "path": [
+      "api",
+      "v1",
+      "patients",
+      "treatment-offers",
+      ":offerId",
+      "reject"
+    ],
+    "query": [],
+    "variable": [
+      {
+        "disabled": false,
+        "type": "any",
+        "value": "{{offerId}}",
+        "key": "offerId",
+        "description": "(Required) Treatment offer UUID"
+      }
+    ],
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"declineReason\": \"Seeking second opinion\",\n  \"expectedVersion\": 492.45563914452896\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  \"validUntil\": \"2026-12-31T23:59:59.000Z\",\n  \"version\": 1,\n  \"createdAt\": \"2026-11-06T11:55:00.000Z\",\n  \"updatedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"procedures\": [\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    },\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    }\n  ],\n  \"history\": [\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    },\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    }\n  ],\n  \"doctorName\": \"Dr. Sarah Jenkins\",\n  \"patientName\": \"John Doe\",\n  \"facilityName\": \"Metro General Hospital\",\n  \"recommendedTenureMonths\": 12,\n  \"dispatchedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"patientViewedAt\": \"2026-11-06T12:05:00.000Z\",\n  \"patientRespondedAt\": \"2026-11-06T12:10:00.000Z\",\n  \"cancellationReason\": \"Patient clinical condition changed\",\n  \"encounterId\": \"encounter-uuid-001\",\n  \"clinicalNotes\": \"Patient assessed as stable for elective intervention.\",\n  \"termsAndConditions\": \"Package includes 2 nights stay in standard room suite.\",\n  \"patientResponseNotes\": \"Patient ratified proposal with informed consent.\"\n}"
+      }
+    ]
+  },
+  {
+    "folder": "27. Healthcare Financing & Financial Assistance",
+    "name": "List available healthcare financing options and partners",
+    "description": "**[Classification: Implemented — source verified]**  \nBacked by PostgreSQL persistence (financing_applications & financing_history) with AES-256-GCM field-level encryption.\n\n---\n[object Object]",
+    "method": "GET",
+    "rawUrl": "{{baseUrl}}/api/v1/financing/options",
+    "path": [
+      "api",
+      "v1",
+      "financing",
+      "options"
+    ],
+    "query": [],
+    "variable": [],
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "bodyMode": null,
+    "bodyRaw": null,
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"partnerName\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"minAmount\": 8206.841331793696,\n    \"maxAmount\": 2165.3721213802846,\n    \"tenureMonths\": [\n      4514.056877201674,\n      8027.091770981997\n    ],\n    \"interestRate\": 4802.488029617769,\n    \"processingFee\": 8097.646380862996,\n    \"features\": [\n      \"string\",\n      \"string\"\n    ],\n    \"isDemonstrationCatalog\": true,\n    \"disclaimer\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"partnerName\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"minAmount\": 2289.9201580933113,\n    \"maxAmount\": 2164.662270660348,\n    \"tenureMonths\": [\n      254.16664221174167,\n      4611.648981749231\n    ],\n    \"interestRate\": 1355.0591849069338,\n    \"processingFee\": 5532.381177841958,\n    \"features\": [\n      \"string\",\n      \"string\"\n    ],\n    \"isDemonstrationCatalog\": true,\n    \"disclaimer\": \"string\"\n  }\n]"
+      }
+    ]
+  },
+  {
+    "folder": "27. Healthcare Financing & Financial Assistance",
+    "name": "List pre-approved healthcare financing offers for current patient",
+    "description": "**[Classification: Implemented — source verified]**  \nBacked by PostgreSQL persistence (financing_applications & financing_history) with AES-256-GCM field-level encryption.\n\n---\n[object Object]",
+    "method": "GET",
+    "rawUrl": "{{baseUrl}}/api/v1/financing/offers",
+    "path": [
+      "api",
+      "v1",
+      "financing",
+      "offers"
+    ],
+    "query": [],
+    "variable": [],
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "bodyMode": null,
+    "bodyRaw": null,
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"partnerName\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"minAmount\": 9997.100389157375,\n    \"maxAmount\": 6858.896083250117,\n    \"tenureMonths\": [\n      9514.972781932003,\n      5471.405582830157\n    ],\n    \"interestRate\": 8897.92072826692,\n    \"processingFee\": 931.8228784339577,\n    \"features\": [\n      \"string\",\n      \"string\"\n    ],\n    \"isDemonstrationCatalog\": false,\n    \"disclaimer\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"partnerName\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"minAmount\": 5161.490336909569,\n    \"maxAmount\": 4267.197701245759,\n    \"tenureMonths\": [\n      7938.645766091963,\n      6335.2919611298175\n    ],\n    \"interestRate\": 188.53586421249568,\n    \"processingFee\": 9375.633989471675,\n    \"features\": [\n      \"string\",\n      \"string\"\n    ],\n    \"isDemonstrationCatalog\": false,\n    \"disclaimer\": \"string\"\n  }\n]"
+      }
+    ]
+  },
+  {
+    "folder": "27. Healthcare Financing & Financial Assistance",
+    "name": "Get details of specific healthcare financing offer or treatment proposal",
+    "description": "**[Classification: Implemented — source verified]**  \nBacked by PostgreSQL persistence (financing_applications & financing_history) with AES-256-GCM field-level encryption.\n\n---\n[object Object]",
+    "method": "GET",
+    "rawUrl": "{{baseUrl}}/api/v1/financing/offers/:id",
+    "path": [
+      "api",
+      "v1",
+      "financing",
+      "offers",
+      ":id"
+    ],
+    "query": [],
+    "variable": [
+      {
+        "disabled": false,
+        "type": "any",
+        "value": "{{applicationId}}",
+        "key": "id",
+        "description": "Financing Application ID"
+      }
+    ],
+    "headers": [],
+    "bodyMode": null,
+    "bodyRaw": null,
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": ""
+      }
+    ]
+  },
+  {
+    "folder": "27. Healthcare Financing & Financial Assistance",
+    "name": "Accept pre-approved healthcare financing offer (Initiates partner underwriting review)",
+    "description": "**[Classification: Implemented — source verified]**  \nBacked by PostgreSQL persistence (financing_applications & financing_history) with AES-256-GCM field-level encryption.\n\n---\n[object Object]",
+    "method": "POST",
+    "rawUrl": "{{baseUrl}}/api/v1/financing/offers/:id/accept",
+    "path": [
+      "api",
+      "v1",
+      "financing",
+      "offers",
+      ":id",
+      "accept"
+    ],
+    "query": [],
+    "variable": [
+      {
+        "disabled": false,
+        "type": "any",
+        "value": "{{applicationId}}",
+        "key": "id",
+        "description": "Financing Application ID"
+      }
+    ],
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"notes\": \"Patient accepts verified partner financing terms. Initiate credit underwriting review.\",\n  \"signatureConsent\": true\n}",
+    "responses": [
+      {
+        "name": "Financing application under review",
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"applicationNumber\": \"string\",\n  \"userId\": \"string\",\n  \"optionId\": \"string\",\n  \"partnerName\": \"string\",\n  \"treatmentName\": \"string\",\n  \"requestedAmount\": 2472.811227304057,\n  \"tenureMonths\": 3931.693074332745,\n  \"monthlyEstimatedEmi\": 3747.5439895760755,\n  \"status\": \"string\",\n  \"adminNotes\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"isDemonstrationStorage\": true,\n  \"storageNotice\": \"string\"\n}"
+      }
+    ]
+  },
+  {
+    "folder": "27. Healthcare Financing & Financial Assistance",
+    "name": "Reject healthcare financing offer",
+    "description": "**[Classification: Implemented — source verified]**  \nBacked by PostgreSQL persistence (financing_applications & financing_history) with AES-256-GCM field-level encryption.\n\n---\n[object Object]",
+    "method": "POST",
+    "rawUrl": "{{baseUrl}}/api/v1/financing/offers/:id/reject",
+    "path": [
+      "api",
+      "v1",
+      "financing",
+      "offers",
+      ":id",
+      "reject"
+    ],
+    "query": [],
+    "variable": [
+      {
+        "disabled": false,
+        "type": "any",
+        "value": "{{applicationId}}",
+        "key": "id",
+        "description": "Financing Application ID"
+      }
+    ],
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"reason\": \"Patient declined financing assistance; choosing self-pay.\",\n  \"declineReason\": \"Patient declined financing assistance; choosing self-pay.\"\n}",
+    "responses": [
+      {
+        "name": "Financing application marked rejected",
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"applicationNumber\": \"string\",\n  \"userId\": \"string\",\n  \"optionId\": \"string\",\n  \"partnerName\": \"string\",\n  \"treatmentName\": \"string\",\n  \"requestedAmount\": 2472.811227304057,\n  \"tenureMonths\": 3931.693074332745,\n  \"monthlyEstimatedEmi\": 3747.5439895760755,\n  \"status\": \"string\",\n  \"adminNotes\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"isDemonstrationStorage\": true,\n  \"storageNotice\": \"string\"\n}"
+      }
+    ]
+  },
+  {
+    "folder": "27. Healthcare Financing & Financial Assistance",
+    "name": "Submit application for healthcare financing / EMI assistance",
+    "description": "**[Classification: Implemented — source verified]**  \nBacked by PostgreSQL persistence (financing_applications & financing_history) with AES-256-GCM field-level encryption.\n\n---\n[object Object]",
+    "method": "POST",
+    "rawUrl": "{{baseUrl}}/api/v1/financing/apply",
+    "path": [
+      "api",
+      "v1",
+      "financing",
+      "apply"
+    ],
+    "query": [],
+    "variable": [],
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"optionId\": \"opt-zerocost-care\",\n  \"facilityId\": \"{{facilityId}}\",\n  \"treatmentName\": \"Orthopedic Knee Replacement Surgery\",\n  \"requestedAmount\": 50000,\n  \"tenureMonths\": 6,\n  \"monthlyIncome\": 65000,\n  \"employmentType\": \"SALARIED\",\n  \"panOrNationalId\": \"ABCDE1234F\",\n  \"notes\": \"Planned surgery next month\"\n}",
+    "responses": [
+      {
+        "code": 201,
+        "status": "Created",
+        "body": "{\n  \"id\": \"string\",\n  \"applicationNumber\": \"string\",\n  \"userId\": \"string\",\n  \"optionId\": \"string\",\n  \"partnerName\": \"string\",\n  \"treatmentName\": \"string\",\n  \"requestedAmount\": 2472.811227304057,\n  \"tenureMonths\": 3931.693074332745,\n  \"monthlyEstimatedEmi\": 3747.5439895760755,\n  \"status\": \"string\",\n  \"adminNotes\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"isDemonstrationStorage\": true,\n  \"storageNotice\": \"string\"\n}"
+      }
+    ]
+  },
+  {
+    "folder": "27. Healthcare Financing & Financial Assistance",
+    "name": "List financing applications (scoped to patient or global for admin/staff)",
+    "description": "**[Classification: Implemented — source verified]**  \nBacked by PostgreSQL persistence (financing_applications & financing_history) with AES-256-GCM field-level encryption.\n\n---\n[object Object]",
+    "method": "GET",
+    "rawUrl": "{{baseUrl}}/api/v1/financing/applications?status=string&partnerName=string&search=string&page=3467.616117677217&limit=3467.616117677217",
+    "path": [
+      "api",
+      "v1",
+      "financing",
+      "applications"
+    ],
+    "query": [
+      {
+        "disabled": false,
+        "key": "status",
+        "value": "string"
+      },
+      {
+        "disabled": false,
+        "key": "partnerName",
+        "value": "string"
+      },
+      {
+        "disabled": false,
+        "key": "search",
+        "value": "string"
+      },
+      {
+        "disabled": false,
+        "key": "page",
+        "value": "3467.616117677217"
+      },
+      {
+        "disabled": false,
+        "key": "limit",
+        "value": "3467.616117677217"
+      }
+    ],
+    "variable": [],
+    "headers": [],
+    "bodyMode": null,
+    "bodyRaw": null,
+    "responses": [
+      {
+        "name": "Paginated list of financing applications",
+        "code": 200,
+        "status": "OK",
+        "body": ""
+      }
+    ]
+  },
+  {
+    "folder": "27. Healthcare Financing & Financial Assistance",
+    "name": "Get financing application details by ID",
+    "description": "**[Classification: Implemented — source verified]**  \nBacked by PostgreSQL persistence (financing_applications & financing_history) with AES-256-GCM field-level encryption.\n\n---\n[object Object]",
+    "method": "GET",
+    "rawUrl": "{{baseUrl}}/api/v1/financing/applications/:id",
+    "path": [
+      "api",
+      "v1",
+      "financing",
+      "applications",
+      ":id"
+    ],
+    "query": [],
+    "variable": [
+      {
+        "disabled": false,
+        "type": "any",
+        "value": "{{applicationId}}",
+        "key": "id",
+        "description": "Financing Application ID"
+      }
+    ],
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "bodyMode": null,
+    "bodyRaw": null,
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"applicationNumber\": \"string\",\n  \"userId\": \"string\",\n  \"optionId\": \"string\",\n  \"partnerName\": \"string\",\n  \"treatmentName\": \"string\",\n  \"requestedAmount\": 2472.811227304057,\n  \"tenureMonths\": 3931.693074332745,\n  \"monthlyEstimatedEmi\": 3747.5439895760755,\n  \"status\": \"string\",\n  \"adminNotes\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"isDemonstrationStorage\": true,\n  \"storageNotice\": \"string\"\n}"
+      }
+    ]
+  },
+  {
+    "folder": "27. Healthcare Financing & Financial Assistance",
+    "name": "Update financing application review status (Admin/Staff)",
+    "description": "**[Classification: Implemented — source verified]**  \nBacked by PostgreSQL persistence (financing_applications & financing_history) with AES-256-GCM field-level encryption.\n\n---\n[object Object]",
+    "method": "PATCH",
+    "rawUrl": "{{baseUrl}}/api/v1/financing/applications/:id/status",
+    "path": [
+      "api",
+      "v1",
+      "financing",
+      "applications",
+      ":id",
+      "status"
+    ],
+    "query": [],
+    "variable": [
+      {
+        "disabled": false,
+        "type": "any",
+        "value": "{{applicationId}}",
+        "key": "id",
+        "description": "Financing Application ID"
+      }
+    ],
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "bodyMode": "raw",
+    "bodyRaw": "{\n  \"status\": \"APPROVED\",\n  \"notes\": \"Credit underwriting check passed, approved for disbursement\"\n}",
+    "responses": [
+      {
+        "code": 200,
+        "status": "OK",
+        "body": "{\n  \"id\": \"string\",\n  \"applicationNumber\": \"string\",\n  \"userId\": \"string\",\n  \"optionId\": \"string\",\n  \"partnerName\": \"string\",\n  \"treatmentName\": \"string\",\n  \"requestedAmount\": 2472.811227304057,\n  \"tenureMonths\": 3931.693074332745,\n  \"monthlyEstimatedEmi\": 3747.5439895760755,\n  \"status\": \"string\",\n  \"adminNotes\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"isDemonstrationStorage\": true,\n  \"storageNotice\": \"string\"\n}"
+      }
+    ]
+  }
+]

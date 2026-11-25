@@ -1,0 +1,46 @@
+{
+  "D1": {
+    "status": "PASS",
+    "rxId": "913b2c74-3868-41a0-8393-735f8bd09b8a",
+    "scheduleId": "a0ab66c2-2346-46ab-a1f5-6636d299fbf5",
+    "interval": "1",
+    "nextDueAt": "2026-11-23 14:35:41.052"
+  },
+  "D2": {
+    "status": "PASS",
+    "eventId": "0b1b9060-8c9e-4e44-bca3-8f96f3ae16e2",
+    "notificationId": "32e6918f-f564-4456-b155-d9839549928d",
+    "advancedNextDue": "2026-11-23 15:35:41.052"
+  },
+  "D3": {
+    "status": "PASS",
+    "event1Id": "0b1b9060-8c9e-4e44-bca3-8f96f3ae16e2",
+    "event2Id": "db6bf167-19e7-47c4-893f-58a946910d13",
+    "notif1Id": "32e6918f-f564-4456-b155-d9839549928d",
+    "notif2Id": "2f51c8cb-05a1-4eee-8e01-854643ddc85f",
+    "nextDueAt": "2026-11-23 16:35:41.052"
+  },
+  "D4": {
+    "status": "PASS",
+    "collectedAt": "2026-11-23 13:35:54.895",
+    "statusAfterCollect": "CANCELLED"
+  },
+  "D5": {
+    "status": "PASS",
+    "pausedState": "PAUSED||f",
+    "eventsFiredWhilePaused": 0
+  },
+  "D6": {
+    "status": "PASS",
+    "scheduleCount": "44"
+  },
+  "D7": {
+    "status": "PASS",
+    "isolation": "FOR UPDATE SKIP LOCKED",
+    "workerStatuses": [
+      "LOCKED_BY_ANOTHER_WORKER",
+      "PROCESSED"
+    ],
+    "eventCount": "1"
+  }
+}

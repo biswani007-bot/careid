@@ -1,0 +1,52 @@
+[
+  {
+    "name": "blur_radius_4",
+    "status": 200,
+    "confidence": 0.1242,
+    "fields": {
+      "providerName": "Blue Shield Premier Health",
+      "policyNumber": "BS-88492019",
+      "coverageDetails": "Office $20, Specialist $40, ER $150"
+    }
+  },
+  {
+    "name": "blur_radius_6",
+    "status": 200,
+    "confidence": null,
+    "fields": {
+      "providerName": "Blue Shield Premier Health",
+      "policyNumber": "BS-88492019",
+      "coverageDetails": "Office $20, Specialist $40, ER $150"
+    }
+  },
+  {
+    "name": "low_contrast_blur",
+    "status": 200,
+    "confidence": 0.8013,
+    "fields": {
+      "providerName": "Blue Shield Premier Health",
+      "policyNumber": "BS-88492019",
+      "coverageDetails": "Office $20, Specialist $40, ER $150"
+    }
+  },
+  {
+    "name": "noisy_blurred",
+    "status": 200,
+    "confidence": 0.1163,
+    "fields": {
+      "providerName": "Blue Shield Premier Health",
+      "policyNumber": "BS-88492019",
+      "coverageDetails": "Office $20, Specialist $40, ER $150"
+    }
+  },
+  {
+    "name": "heavy_blur_contrast",
+    "status": 200,
+    "confidence": null,
+    "fields": {
+      "providerName": "Blue Shield Premier Health",
+      "policyNumber": "BS-88492019",
+      "coverageDetails": "Office $20, Specialist $40, ER $150"
+    }
+  }
+]

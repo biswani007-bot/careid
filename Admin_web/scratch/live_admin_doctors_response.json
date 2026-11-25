@@ -1,0 +1,14 @@
+{
+  "path": "/api/v1/admin/doctors?limit=50",
+  "status": 404,
+  "json": {
+    "success": false,
+    "statusCode": 404,
+    "error": "NotFoundException",
+    "message": "Cannot GET /api/v1/admin/doctors?limit=50",
+    "meta": {
+      "timestamp": "2026-11-03T12:25:33.934Z",
+      "path": "/api/v1/admin/doctors?limit=50"
+    }
+  }
+}

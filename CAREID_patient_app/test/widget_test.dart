@@ -1,0 +1,1889 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:care_id_patient_app/main.dart';
+import 'package:care_id_patient_app/core/routing/app_routes.dart';
+import 'package:care_id_patient_app/features/auth/presentation/pages/account_recovery_page.dart';
+import 'package:care_id_patient_app/features/auth/presentation/pages/biometric_setup_page.dart';
+import 'package:care_id_patient_app/features/auth/presentation/pages/create_account_page.dart';
+import 'package:care_id_patient_app/features/auth/presentation/pages/login_page.dart';
+import 'package:care_id_patient_app/features/auth/presentation/pages/mobile_number_page.dart';
+import 'package:care_id_patient_app/features/auth/presentation/pages/otp_verification_page.dart';
+import 'package:care_id_patient_app/features/auth/presentation/pages/splash_page.dart';
+import 'package:care_id_patient_app/features/auth/presentation/pages/welcome_page.dart';
+import 'package:care_id_patient_app/features/home/presentation/pages/home_page.dart';
+import 'package:care_id_patient_app/features/home/presentation/pages/smart_digital_health_card_page.dart';
+import 'package:care_id_patient_app/features/medication/presentation/pages/medication_reminder_detail_page.dart';
+import 'package:care_id_patient_app/features/onboarding/presentation/pages/add_insurance_page.dart';
+import 'package:care_id_patient_app/features/qr/presentation/pages/access_history_page.dart';
+import 'package:care_id_patient_app/features/qr/presentation/pages/manage_shared_access_page.dart';
+import 'package:care_id_patient_app/features/qr/presentation/pages/qr_dashboard_page.dart';
+import 'package:care_id_patient_app/features/qr/presentation/pages/qr_preview_page.dart';
+import 'package:care_id_patient_app/features/qr/presentation/pages/share_options_page.dart';
+import 'package:care_id_patient_app/features/onboarding/presentation/pages/health_info_page.dart';
+import 'package:care_id_patient_app/features/onboarding/presentation/pages/privacy_consents_page.dart';
+import 'package:care_id_patient_app/features/onboarding/presentation/pages/confirmed_screen_page.dart';
+import 'package:care_id_patient_app/features/records/presentation/pages/add_health_record_page.dart';
+import 'package:care_id_patient_app/features/records/presentation/pages/dental_record_detail_page.dart';
+import 'package:care_id_patient_app/features/records/presentation/pages/dental_records_page.dart';
+import 'package:care_id_patient_app/features/records/presentation/pages/document_viewer_page.dart';
+import 'package:care_id_patient_app/features/records/presentation/pages/health_records_landing_page.dart';
+import 'package:care_id_patient_app/features/records/presentation/pages/medical_records_page.dart';
+import 'package:care_id_patient_app/features/records/presentation/pages/ocr_processing_report_page.dart';
+import 'package:care_id_patient_app/features/records/presentation/pages/record_details_hub_page.dart';
+import 'package:care_id_patient_app/features/records/presentation/pages/record_saved_success_page.dart';
+import 'package:care_id_patient_app/features/records/presentation/pages/review_health_record_page.dart';
+import 'package:care_id_patient_app/features/records/presentation/pages/scan_reports_page.dart';
+import 'package:care_id_patient_app/features/records/presentation/pages/upload_medical_record_page.dart';
+import 'package:care_id_patient_app/features/records/presentation/pages/vision_record_detail_page.dart';
+import 'package:care_id_patient_app/features/records/presentation/pages/vision_records_page.dart';
+import 'package:care_id_patient_app/features/family/presentation/pages/add_family_member_access_page.dart';
+import 'package:care_id_patient_app/features/family/presentation/pages/add_family_member_form_page.dart';
+import 'package:care_id_patient_app/features/family/presentation/pages/add_family_member_review_page.dart';
+import 'package:care_id_patient_app/features/family/presentation/pages/family_consent_requests_page.dart';
+import 'package:care_id_patient_app/features/family/presentation/pages/family_dashboard_page.dart';
+import 'package:care_id_patient_app/features/family/presentation/pages/family_member_list_page.dart';
+import 'package:care_id_patient_app/features/family/presentation/pages/invitation_sent_page.dart';
+import 'package:care_id_patient_app/features/family/presentation/pages/member_permissions_sharing_page.dart';
+import 'package:care_id_patient_app/features/family/presentation/pages/shared_health_card_dependent_page.dart';
+import 'package:care_id_patient_app/features/family/presentation/pages/shared_medical_records_page.dart';
+import 'package:care_id_patient_app/features/profile/data/demo_patient_profile_store.dart';
+import 'package:care_id_patient_app/features/records/data/health_records_service.dart';
+import 'package:care_id_patient_app/features/appointments/data/mock_appointments_repository.dart';
+
+void main() {
+  setUp(() {
+    DemoPatientProfileStore.instance.resetToDefault();
+    DemoPatientProfileStore.instance.isTestMode = true;
+    HealthRecordsService.isTestMode = true;
+    MockAppointmentsRepository.isTestMode = true;
+  });
+  testWidgets('Splash page renders smoke test', (WidgetTester tester) async {
+    await tester.pumpWidget(const CareIDPatientApp());
+    expect(find.byType(SplashPage), findsOneWidget);
+  });
+
+  testWidgets('Welcome page renders all cards and actions', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: WelcomePage(),
+      ),
+    );
+
+    // Verify key titles
+    expect(find.text('Your Health\nAll In One Place'), findsOneWidget);
+    expect(find.text('Medical'), findsOneWidget);
+    expect(find.text('Dental'), findsOneWidget);
+    expect(find.text('Vision'), findsOneWidget);
+    expect(find.text('Pets'), findsOneWidget);
+    expect(find.text('Get Started'), findsOneWidget);
+    expect(find.text('I already have an account'), findsOneWidget);
+
+    // Verify Language toggle
+    expect(find.text('EN'), findsOneWidget);
+    expect(find.text('ESP'), findsOneWidget);
+
+    // Tap ESP
+    await tester.tap(find.text('ESP'));
+    await tester.pumpAndSettle();
+  });
+
+  testWidgets('CreateAccountPage renders all form inputs, checkbox and button', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: CreateAccountPage(),
+      ),
+    );
+
+    // Verify Title & Subtitle
+    expect(find.text('Create your Care ID'), findsOneWidget);
+    expect(
+      find.text('Create your secure account to access and manage your\nhealth information in one place.'),
+      findsOneWidget,
+    );
+
+    // Verify Fields
+    expect(find.text('Full Name'), findsOneWidget);
+    expect(find.text('Enter your full name'), findsOneWidget);
+
+    expect(find.text('Mobile Number'), findsOneWidget);
+    expect(find.text('+1'), findsOneWidget);
+    expect(find.text('Enter your mobile number'), findsOneWidget);
+
+    expect(find.text('Email Address'), findsOneWidget);
+    expect(find.text('Enter your email address'), findsOneWidget);
+
+    expect(find.text('Password'), findsOneWidget);
+    expect(find.text('Create a password'), findsOneWidget);
+    expect(find.text('Strong security standard'), findsOneWidget);
+
+    expect(find.text('Confirm Password'), findsOneWidget);
+    expect(find.text('Re-enter your password'), findsOneWidget);
+
+    // Verify Agreement and CTA
+    expect(find.text('Create Account'), findsOneWidget);
+    expect(find.text('Already have a Care ID account? '), findsOneWidget);
+    expect(find.text('Sign In'), findsOneWidget);
+
+    // Enter full name
+    await tester.enterText(find.widgetWithText(TextField, 'Enter your full name'), 'Kaushik Doe');
+    expect(find.text('Kaushik Doe'), findsOneWidget);
+  });
+
+  testWidgets('MobileNumberPage renders step indicator, OTP cells, cards, and autofill', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: MobileNumberPage(),
+      ),
+    );
+
+    // Header & Step Indicator
+    final logoFinder = find.byWidgetPredicate(
+      (widget) =>
+          widget is Image &&
+          widget.image is AssetImage &&
+          (widget.image as AssetImage).assetName ==
+              'assets/images/care_id_logo_wordmark.png',
+    );
+    expect(logoFinder, findsOneWidget);
+    final logoCenter = tester.getCenter(logoFinder);
+    expect(logoCenter.dx, equals(400.0)); // Default tester surface width is 800.0
+
+    expect(find.text('VERIFICATION STEP'), findsOneWidget);
+    expect(find.text('Step 2 of 6'), findsOneWidget);
+    expect(find.text('Verify your mobile number'), findsOneWidget);
+
+    // Masked phone card
+    expect(find.text('Recipient Number'), findsOneWidget);
+    expect(find.text('+91 ••••• ••890'), findsOneWidget);
+    expect(find.text('Change'), findsOneWidget);
+
+    // Autofill Chip
+    final autofillFinder = find.byWidgetPredicate(
+      (widget) => widget is RichText && widget.text.toPlainText().contains('Autofill code: 482910'),
+    );
+    expect(autofillFinder, findsOneWidget);
+
+    // OTP Header & Encrypted text
+    expect(find.text('Enter verification code'), findsOneWidget);
+    expect(find.text('Encrypted OTP'), findsOneWidget);
+
+    // Error Alert Banner
+    expect(find.text('Incorrect verification code'), findsOneWidget);
+    expect(find.text('Please check the SMS code received and try again.'), findsOneWidget);
+
+    // Resend & Call buttons
+    expect(find.text("Didn't receive the code?"), findsOneWidget);
+    expect(find.text('Resend SMS'), findsOneWidget);
+    expect(find.text('Call me with code'), findsOneWidget);
+
+    // Primary Action
+    expect(find.text('Verify & Continue'), findsOneWidget);
+    expect(find.text('Preview Verified Confirmation Screen →'), findsOneWidget);
+
+    // Clinical Safeguard Card & Footer
+    expect(find.text('Two-Step Clinical Safeguard'), findsOneWidget);
+    expect(find.text('Having trouble? '), findsOneWidget);
+    expect(find.text('Contact Care ID Support'), findsOneWidget);
+
+    // Tap Autofill code
+    await tester.tap(autofillFinder);
+    await tester.pump();
+  });
+
+  testWidgets('HealthInfoPage renders all 7 clinical sections, unit toggles, and CTAs', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: HealthInfoPage(),
+      ),
+    );
+
+    // Verify Centered Logo
+    final logoFinder = find.byWidgetPredicate(
+      (widget) =>
+          widget is Image &&
+          widget.image is AssetImage &&
+          (widget.image as AssetImage).assetName ==
+              'assets/images/care_id_logo_wordmark.png',
+    );
+    expect(logoFinder, findsOneWidget);
+    final logoCenter = tester.getCenter(logoFinder);
+    expect(logoCenter.dx, equals(400.0));
+
+    // Step Indicator & Heading
+    expect(find.text('VERIFICATION STEP'), findsOneWidget);
+    expect(find.text('Step 3 of 6'), findsOneWidget);
+    expect(find.text('Tell us about your health'), findsOneWidget);
+
+    // Section 1: Basic Health Information
+    expect(find.text('Basic Health Information'), findsOneWidget);
+    expect(find.text('Blood Group'), findsOneWidget);
+    expect(find.text('O+'), findsOneWidget);
+    expect(find.text('Unknown / Not sure'), findsOneWidget);
+    expect(find.text('Height'), findsOneWidget);
+    expect(find.text('Weight'), findsOneWidget);
+
+    // Section 2: Medical History
+    expect(find.text('Medical History'), findsOneWidget);
+    expect(find.text('High Blood Pressure'), findsWidgets); // Can appear in both sections
+    expect(find.text('Diabetes'), findsWidgets);
+
+    // Section 3: Allergies
+    expect(find.text('Allergies'), findsOneWidget);
+    expect(find.text('1 Recorded'), findsOneWidget);
+    expect(find.text('Penicillin (Mild rash)'), findsOneWidget);
+    expect(find.text('Add another allergy'), findsOneWidget);
+
+    // Section 4: Current Medications
+    expect(find.text('Current Medications'), findsOneWidget);
+    expect(find.text('Atorvastatin 20mg'), findsOneWidget);
+    expect(find.text("I don't currently take any medication"), findsOneWidget);
+
+    // Section 5: Previous Surgeries
+    expect(find.text('Previous Surgeries or Major Procedures'), findsOneWidget);
+    expect(find.text('Add Procedure'), findsOneWidget);
+    expect(find.text('I have no previous surgeries or major procedures'), findsOneWidget);
+
+    // Section 6: Family Health History
+    expect(find.text('Family Health History'), findsOneWidget);
+
+    // Section 7: Documents Notice
+    expect(find.text('Already have health documents?'), findsOneWidget);
+
+    // Actions & Reassurance
+    expect(find.text('Save & Continue'), findsOneWidget);
+    expect(find.text('Skip for now'), findsOneWidget);
+    expect(find.text('Your health information is encrypted and securely stored in your Care ID Vault.'), findsOneWidget);
+  });
+
+  testWidgets('AddInsurancePage renders camera scan card, form fields, and navigation', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: AddInsurancePage(),
+      ),
+    );
+
+    // Verify Centered Logo
+    final logoFinder = find.byWidgetPredicate(
+      (widget) =>
+          widget is Image &&
+          widget.image is AssetImage &&
+          (widget.image as AssetImage).assetName ==
+              'assets/images/care_id_logo_wordmark.png',
+    );
+    expect(logoFinder, findsOneWidget);
+    final logoCenter = tester.getCenter(logoFinder);
+    expect(logoCenter.dx, equals(400.0));
+
+    // Step Indicator & Heading
+    expect(find.text('VERIFICATION STEP'), findsOneWidget);
+    expect(find.text('Step 4 of 6'), findsOneWidget);
+    expect(find.text('Add your insurance'), findsOneWidget);
+
+    // Scan Insurance Card Hero Card
+    expect(find.text('Scan Insurance Card'), findsOneWidget);
+    expect(find.text('Quickly capture your card details'), findsOneWidget);
+    expect(find.text('Open Camera'), findsOneWidget);
+
+    // Manual Insurance Details Form Card
+    expect(find.text('Insurance Details'), findsOneWidget);
+    expect(find.text('Insurance Provider'), findsOneWidget);
+    expect(find.text('Member ID'), findsOneWidget);
+    expect(find.text('Group Number (Optional)'), findsOneWidget);
+
+    // Action CTAs & Vault Note
+    expect(find.text('Save & Continue'), findsOneWidget);
+    expect(find.text("I'll do this later"), findsOneWidget);
+    expect(
+      find.text('Your insurance data is encrypted and stored in your private Care ID Vault.'),
+      findsOneWidget,
+    );
+
+    // Tap Open Camera simulator and verify auto-fill
+    await tester.tap(find.text('Open Camera'));
+    await tester.pump();
+    expect(find.text('Blue Cross Blue Shield'), findsOneWidget);
+    expect(find.text('BCBS-98421049'), findsOneWidget);
+    expect(find.text('GRP-00482'), findsOneWidget);
+  });
+
+  testWidgets('PrivacyConsentsPage renders all 6 sections, validates mandatory checkboxes, and reflects consent summary', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: PrivacyConsentsPage(),
+      ),
+    );
+
+    // Verify Centered Logo
+    final logoFinder = find.byWidgetPredicate(
+      (widget) =>
+          widget is Image &&
+          widget.image is AssetImage &&
+          (widget.image as AssetImage).assetName ==
+              'assets/images/care_id_logo_wordmark.png',
+    );
+    expect(logoFinder, findsOneWidget);
+    final logoCenter = tester.getCenter(logoFinder);
+    expect(logoCenter.dx, equals(400.0));
+
+    // Step Indicator & Heading
+    expect(find.text('VERIFICATION STEP'), findsOneWidget);
+    expect(find.text('Step 5 of 6'), findsOneWidget);
+    expect(find.text('Privacy & Consents'), findsOneWidget);
+    expect(
+      find.text('Review and customize how your health information is protected and managed in your private Care ID Vault.'),
+      findsOneWidget,
+    );
+
+    // Section 1: Required for Your Care ID
+    expect(find.text('Required for Your Care ID'), findsOneWidget);
+    expect(find.text('MANDATORY'), findsOneWidget);
+    expect(find.text('Terms of Service'), findsOneWidget);
+    expect(find.text('Privacy Policy'), findsOneWidget);
+
+    // Section 2: Health Information
+    expect(find.text('Health Information'), findsOneWidget);
+    expect(find.text('End-to-End Encrypted'), findsOneWidget);
+    expect(find.text('Zero-Knowledge Storage'), findsOneWidget);
+
+    // Section 3: Healthcare Sharing Permission
+    expect(find.text('Healthcare Sharing Permission'), findsOneWidget);
+    expect(find.text('Explicit Clinical Authorization'), findsOneWidget);
+
+    // Section 4: Communication Preferences
+    expect(find.text('Communication Preferences'), findsOneWidget);
+    expect(find.text('Service & Product Updates'), findsOneWidget);
+    expect(find.text('Appointment & Clinical Reminders'), findsOneWidget);
+    expect(find.text('Account Security Alerts'), findsOneWidget);
+    expect(find.text('REQUIRED'), findsOneWidget);
+
+    // Section 5: Data Control Information
+    expect(find.text("You're always in control"), findsOneWidget);
+
+    // Section 6: Consent Summary Card
+    expect(find.text('Consent Summary'), findsOneWidget);
+    expect(find.text('ACTIVE SESSION'), findsOneWidget);
+    // Initially, Terms and Privacy are Pending
+    expect(find.text('Pending'), findsNWidgets(2));
+
+    // Verify Checkboxes can be toggled
+    // Find checkboxes for Terms & Privacy
+    final checkBoxes = find.byType(Checkbox);
+    expect(checkBoxes, findsNWidgets(4)); // Terms, Privacy, Service Updates, Reminders
+
+    // Tap Terms checkbox
+    await tester.tap(checkBoxes.at(0));
+    await tester.pump();
+
+    // Now only 1 Pending (Privacy is still pending)
+    expect(find.text('Pending'), findsOneWidget);
+    expect(find.text('Accepted'), findsOneWidget);
+
+    // Tap Privacy checkbox
+    await tester.tap(checkBoxes.at(1));
+    await tester.pump();
+
+    // Both are now Accepted
+    expect(find.text('Accepted'), findsNWidgets(2));
+    expect(find.text('Pending'), findsNothing);
+
+    // Actions & Security footnote
+    expect(find.text('Accept & Continue'), findsOneWidget);
+    expect(find.text('Review later'), findsOneWidget);
+    expect(
+      find.text('Bank-grade 256-bit AES encryption • HIPAA compliant architecture'),
+      findsOneWidget,
+    );
+  });
+
+  testWidgets('ConfirmedScreenPage renders profile credential, disciplines, completion meter, and CTAs', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: ConfirmedScreenPage(),
+      ),
+    );
+
+    // Verify Centered Logo
+    final logoFinder = find.byWidgetPredicate(
+      (widget) =>
+          widget is Image &&
+          widget.image is AssetImage &&
+          (widget.image as AssetImage).assetName ==
+              'assets/images/care_id_logo_wordmark.png',
+    );
+    expect(logoFinder, findsOneWidget);
+    final logoCenter = tester.getCenter(logoFinder);
+    expect(logoCenter.dx, equals(400.0));
+
+    // Stepper Card: Step 6 of 6
+    expect(find.text('Step 6 of 6'), findsOneWidget);
+    expect(find.text('Setup Finished'), findsOneWidget);
+    expect(find.text('Account'), findsOneWidget);
+    expect(find.text('Mobile'), findsOneWidget);
+    expect(find.text('History'), findsOneWidget);
+    expect(find.text('Consents'), findsOneWidget);
+    expect(find.text('Vault'), findsOneWidget);
+
+    // Hero Status Header
+    expect(find.text('Onboarding Complete • Vault Activated'), findsOneWidget);
+    expect(find.text('Your Care ID Vault is ready'), findsOneWidget);
+
+    // Section 1: Digital Credential Card
+    expect(find.text('CARE ID CREDENTIAL'), findsOneWidget);
+    expect(find.text('Secure Vault ID'), findsOneWidget);
+    expect(find.text('Sarah Jenkins'), findsOneWidget);
+    expect(find.text('O+'), findsOneWidget);
+    expect(find.text('#CI-920512'), findsOneWidget);
+    expect(find.text('Date of Birth'), findsOneWidget);
+    expect(find.text('12/05/1992'), findsOneWidget);
+    expect(find.text('Blood Group'), findsOneWidget);
+    expect(find.text('O Positive (O+)'), findsOneWidget);
+    expect(find.text('Mobile Contact'), findsOneWidget);
+    expect(find.text('+91 ••••• ••890'), findsOneWidget);
+    expect(find.text('Registered Email'), findsOneWidget);
+    expect(find.text('sarah.j@email.com'), findsOneWidget);
+    expect(find.text('Edit Profile Details'), findsOneWidget);
+
+    // Tap #CI-920512 to test copy feedback
+    await tester.tap(find.text('#CI-920512'));
+    await tester.pump();
+    expect(find.text('Copied'), findsOneWidget);
+    await tester.pump(const Duration(seconds: 4));
+
+    // Section 2: Vault Disciplines
+    expect(find.text('Your Care ID Vault'), findsOneWidget);
+    expect(find.text('Medical Records'), findsOneWidget);
+    expect(find.text('Dental Records'), findsOneWidget);
+    expect(find.text('Vision Records'), findsOneWidget);
+    expect(find.text('Pet Records'), findsOneWidget);
+    expect(find.text('Insurance Records'), findsOneWidget);
+    expect(find.text('Pet ready'), findsOneWidget);
+    expect(find.text('AI OCR ready'), findsOneWidget);
+
+    // Section 3: Health Profile Completion Meter
+    expect(find.text('Health Profile Status'), findsOneWidget);
+    expect(find.text('90% Configured'), findsOneWidget);
+    expect(find.text('Personal details'), findsOneWidget);
+    expect(find.text('Health history'), findsOneWidget);
+    expect(find.text('Known allergies'), findsOneWidget);
+    expect(find.text('Medications list'), findsOneWidget);
+    expect(find.text('Health sharing consents'), findsOneWidget);
+    expect(find.text('Complete 100%'), findsOneWidget);
+
+    // Section 4: Privacy & Ownership Control
+    expect(find.text('Your information, your control'), findsOneWidget);
+    expect(find.text('Manage Privacy & Consents'), findsOneWidget);
+
+    // Section 5: Security Trust Badge
+    expect(find.text('Care ID Vault Protection'), findsOneWidget);
+
+    // Primary Call-to-Actions
+    expect(find.text('Enter Care ID'), findsOneWidget);
+    expect(find.text('Complete Later'), findsOneWidget);
+  });
+
+  testWidgets('BiometricSetupPage renders hero composition, typography, and actions', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: BiometricSetupPage(),
+      ),
+    );
+
+    // Verify Centered Logo
+    final logoFinder = find.byWidgetPredicate(
+      (widget) =>
+          widget is Image &&
+          widget.image is AssetImage &&
+          (widget.image as AssetImage).assetName ==
+              'assets/images/care_id_logo_wordmark.png',
+    );
+    expect(logoFinder, findsOneWidget);
+    final logoCenter = tester.getCenter(logoFinder);
+    expect(logoCenter.dx, equals(400.0));
+
+    // Verify Hero Illustration Asset
+    final heroFinder = find.byWidgetPredicate(
+      (widget) =>
+          widget is Image &&
+          widget.image is AssetImage &&
+          (widget.image as AssetImage).assetName ==
+              'assets/images/biometric_shield_hero.png',
+    );
+    expect(heroFinder, findsOneWidget);
+
+    // Verify Button Fingerprint Icon Asset
+    final fpIconFinder = find.byWidgetPredicate(
+      (widget) =>
+          widget is Image &&
+          widget.image is AssetImage &&
+          (widget.image as AssetImage).assetName ==
+              'assets/images/figma_button_fingerprint.png',
+    );
+    expect(fpIconFinder, findsOneWidget);
+
+    // Verify Security Shield Icon Asset
+    final shieldIconFinder = find.byWidgetPredicate(
+      (widget) =>
+          widget is Image &&
+          widget.image is AssetImage &&
+          (widget.image as AssetImage).assetName ==
+              'assets/images/figma_security_shield.png',
+    );
+    expect(shieldIconFinder, findsOneWidget);
+
+    // Verify Value Proposition
+    expect(find.text('Secure Your CareID Vault'), findsOneWidget);
+    expect(
+      find.text('Enable Biometrics for instant, secure\naccess to your health records.'),
+      findsOneWidget,
+    );
+
+    // Verify Action Buttons
+    expect(find.text('Enable Biometrics'), findsOneWidget);
+    expect(find.text('Maybe Later'), findsOneWidget);
+    expect(find.text('Skip for Now'), findsOneWidget);
+
+    // Verify Security Badge
+    expect(find.text('MILITARY-GRADE ENCRYPTION'), findsOneWidget);
+
+    // Tap "Enable Biometrics" to test dialog interaction
+    await tester.tap(find.text('Enable Biometrics'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Biometrics Activated'), findsOneWidget);
+    expect(find.text('Enter Care ID Vault'), findsOneWidget);
+
+    // Tap Enter Care ID Vault in dialog
+    await tester.tap(find.text('Enter Care ID Vault'));
+    await tester.pumpAndSettle();
+  });
+
+  testWidgets('LoginPage renders header, inputs, buttons, security badge, and handles interactions', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: LoginPage(),
+      ),
+    );
+
+    // Verify Centered Logo
+    final logoFinder = find.byWidgetPredicate(
+      (widget) =>
+          widget is Image &&
+          widget.image is AssetImage &&
+          (widget.image as AssetImage).assetName ==
+              'assets/images/care_id_logo_wordmark.png',
+    );
+    expect(logoFinder, findsOneWidget);
+    final logoCenter = tester.getCenter(logoFinder);
+    expect(logoCenter.dx, equals(400.0));
+
+    // Verify Typography
+    expect(find.text('Welcome Back'), findsOneWidget);
+    expect(
+      find.text('Secure access to your medical\necosystem.'),
+      findsOneWidget,
+    );
+
+    // Verify Form Fields
+    expect(find.text('Mobile Number'), findsOneWidget);
+    expect(find.text('+1'), findsOneWidget);
+    expect(find.text('(555) 000-0000'), findsOneWidget);
+    expect(find.text('Need help?'), findsOneWidget);
+    expect(find.text('Send OTP'), findsOneWidget);
+    expect(find.text('OR'), findsOneWidget);
+    expect(find.text('Login with Biometrics'), findsOneWidget);
+
+    // Verify Sign Up footer
+    expect(find.textContaining("Don't have a vault?"), findsOneWidget);
+    expect(find.textContaining('Create Account'), findsOneWidget);
+
+    // Verify AES-256 Security Card
+    expect(
+      find.text('Your health information is protected using AES-256 encryption.'),
+      findsOneWidget,
+    );
+
+    // Verify Security Badge & Links
+    expect(find.text('END-TO-END ENCRYPTED STORAGE'), findsOneWidget);
+    expect(find.text('Privacy Policy'), findsOneWidget);
+    expect(find.text('Terms of Service'), findsOneWidget);
+    expect(find.text('Compliance'), findsOneWidget);
+
+    // Enter a valid phone number
+    await tester.enterText(find.byType(TextField), '5551234567');
+    await tester.pump();
+    expect(find.text('5551234567'), findsOneWidget);
+
+    // Tap Login with Biometrics
+    await tester.tap(find.text('Login with Biometrics'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Biometrics Recognized'), findsOneWidget);
+    expect(find.text('Continue to Vault'), findsOneWidget);
+
+    // Tap Continue to Vault in dialog
+    await tester.tap(find.text('Continue to Vault'));
+    await tester.pumpAndSettle();
+  });
+
+  testWidgets('OtpVerificationPage renders cells, timer, cards, error state, and success overlay', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: OtpVerificationPage(phoneNumber: '+1 555-123-4567'),
+      ),
+    );
+
+    // Verify Centered Logo
+    final logoFinder = find.byWidgetPredicate(
+      (widget) =>
+          widget is Image &&
+          widget.image is AssetImage &&
+          (widget.image as AssetImage).assetName ==
+              'assets/images/care_id_logo_wordmark.png',
+    );
+    expect(logoFinder, findsOneWidget);
+    final logoCenter = tester.getCenter(logoFinder);
+    expect(logoCenter.dx, equals(400.0));
+
+    // Verify Heading & Subtitle
+    expect(find.text('Verify Account'), findsOneWidget);
+    expect(find.textContaining('+1 555-123-4567'), findsOneWidget);
+
+    // Verify 4 OTP input fields
+    final textFields = find.byType(TextField);
+    expect(textFields, findsNWidgets(4));
+
+    // Verify Timer and Verify CTA
+    expect(find.textContaining('Resend in 00:'), findsOneWidget);
+    expect(find.text('Verify'), findsOneWidget);
+
+    // Verify Contextual Cards
+    expect(find.text('Secure Vault'), findsOneWidget);
+    expect(find.text('Your data is encrypted with AES-256 standard.'), findsOneWidget);
+    expect(find.text('Need Help?'), findsOneWidget);
+    expect(find.text('Contact our 24/7 clinical support team.'), findsOneWidget);
+
+    // Tap Need Help? Card to open Clinical Support modal
+    await tester.tap(find.text('Need Help?'));
+    await tester.pumpAndSettle();
+    expect(find.text('Clinical Support Team'), findsOneWidget);
+    await tester.tap(find.text('Close'));
+    await tester.pumpAndSettle();
+
+    // Trigger Connection Error State by entering '0000'
+    for (int i = 0; i < 4; i++) {
+      await tester.enterText(textFields.at(i), '0');
+    }
+    await tester.pump();
+    await tester.tap(find.text('Verify'));
+    await tester.pump();
+    expect(find.text('Connection error. Please try again.'), findsOneWidget);
+    expect(find.text('Retry'), findsOneWidget);
+
+    // Enter valid code '1234' and verify
+    await tester.enterText(textFields.at(0), '1');
+    await tester.enterText(textFields.at(1), '2');
+    await tester.enterText(textFields.at(2), '3');
+    await tester.enterText(textFields.at(3), '4');
+    await tester.pump();
+
+    await tester.tap(find.text('Verify'));
+    await tester.pump();
+
+    // Verify Success Overlay appears
+    expect(find.text('Identity Verified'), findsOneWidget);
+    expect(find.text('Redirecting to your Health Vault...'), findsOneWidget);
+  });
+
+  testWidgets('AccountRecoveryPage renders centered logo, form, error validation, and AES indicator', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: AccountRecoveryPage(),
+      ),
+    );
+
+    // Verify Centered Logo
+    final logoFinder = find.byWidgetPredicate(
+      (widget) =>
+          widget is Image &&
+          widget.image is AssetImage &&
+          (widget.image as AssetImage).assetName ==
+              'assets/images/care_id_logo_wordmark.png',
+    );
+    expect(logoFinder, findsOneWidget);
+    final logoCenter = tester.getCenter(logoFinder);
+    expect(logoCenter.dx, equals(400.0));
+
+    // Verify Titles
+    expect(find.text('Recover Mobile\nAccess'), findsOneWidget);
+    expect(find.text('Enter your registered mobile number.'), findsOneWidget);
+
+    // Verify Input Fields
+    expect(find.text('+1'), findsOneWidget);
+    expect(find.text('(555) 000-0000'), findsOneWidget);
+    expect(find.text('Send Recovery Code'), findsOneWidget);
+    expect(find.text('Back to Login'), findsOneWidget);
+
+    // Verify Footer Compliance
+    expect(find.text('PROTECTED BY AES-256 ENCRYPTION'), findsOneWidget);
+
+    // Tap Send Recovery Code when empty -> shows SnackBar
+    await tester.tap(find.text('Send Recovery Code'));
+    await tester.pump();
+    expect(find.text('Please enter a valid 10-digit mobile number'), findsOneWidget);
+
+    // Enter 10 digits
+    await tester.enterText(find.byType(TextField), '5559876543');
+    await tester.pump();
+    expect(find.text('5559876543'), findsOneWidget);
+  });
+
+  testWidgets('HomePage renders top bar, hero health card, bento grids, upcoming activity, and bottom nav', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: HomePage(),
+      ),
+    );
+
+    // Top App Bar Logo
+    final logoFinder = find.byWidgetPredicate(
+      (widget) =>
+          widget is Image &&
+          widget.image is AssetImage &&
+          (widget.image as AssetImage).assetName ==
+              'assets/images/care_id_logo_wordmark.png',
+    );
+    expect(logoFinder, findsOneWidget);
+
+    // Hero Digital Health Card details
+    expect(find.text('DIGITAL HEALTH ID'), findsOneWidget);
+    expect(find.text('Richard\nMalouf'), findsOneWidget);
+    expect(find.text('Member since 2021'), findsOneWidget);
+    expect(find.text('ICE Active'), findsOneWidget);
+    expect(find.text('DOB'), findsOneWidget);
+    expect(find.text('15 May 1985'), findsOneWidget);
+    expect(find.text('BLOOD GROUP'), findsOneWidget);
+    expect(find.text('O Positive'), findsOneWidget);
+    expect(find.text('Add to Wallet'), findsOneWidget);
+
+    // Provider invitation link
+    expect(find.text('Provider not registered?'), findsOneWidget);
+    expect(find.text('Click here to invite your provider to CareID'), findsOneWidget);
+
+    // Health Records 2x2 Bento Grid
+    expect(find.text('Health Records'), findsOneWidget);
+    expect(find.text('Medical'), findsOneWidget);
+    expect(find.text('Lab result & scans'), findsOneWidget);
+    expect(find.text('Dental'), findsOneWidget);
+    expect(find.text('Checkup & X-rays'), findsOneWidget);
+    expect(find.text('Vision'), findsOneWidget);
+    expect(find.text('Eye Checkups'), findsOneWidget);
+    expect(find.text('Pets'), findsOneWidget);
+    expect(find.text('Pet Checkups'), findsOneWidget);
+
+    // Quick Actions 2x2 Grid
+    expect(find.text('Quick Actions'), findsOneWidget);
+    expect(find.text('Insurance Card'), findsOneWidget);
+    expect(find.text('Add Family Member'), findsOneWidget);
+    expect(find.text('Book Appointment'), findsOneWidget);
+    expect(find.text('PRIMARY'), findsOneWidget);
+    expect(find.text('Emergency'), findsOneWidget);
+    expect(find.text('SOS'), findsOneWidget);
+
+    // Upcoming Section
+    expect(find.text('Upcoming'), findsOneWidget);
+    expect(find.text('View All'), findsOneWidget);
+    expect(find.text('Dental Appointment'), findsOneWidget);
+    expect(find.text('City Hospital · 9:00 AM'), findsOneWidget);
+    expect(find.text('Prescription Collection'), findsOneWidget);
+    expect(find.text('Dr. Smith · 11:30 AM'), findsOneWidget);
+
+    // Bottom Navigation Bar
+    expect(find.text('Home'), findsOneWidget);
+    expect(find.text('Records'), findsOneWidget);
+    expect(find.text('Doctor'), findsOneWidget);
+    expect(find.text('Profile'), findsOneWidget);
+
+    // Tap Records tab in bottom nav
+    await tester.tap(find.text('Records'));
+    await tester.pump();
+  });
+
+  testWidgets('Bottom nav bar tapping Records navigates to RecordDetailsHubPage', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        initialRoute: AppRoutes.home,
+        routes: AppRoutes.routes,
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Record Details'), findsNothing);
+
+    // Tap Records tab in bottom nav
+    await tester.tap(find.text('Records'));
+    await tester.pumpAndSettle();
+
+    // Verify RecordDetailsHubPage is displayed
+    expect(find.text('Record Details'), findsOneWidget);
+    expect(find.text('CARE ID VERIFIED DIRECTORY'), findsOneWidget);
+    expect(find.text('My Health Records'), findsOneWidget);
+  });
+
+  testWidgets('SmartDigitalHealthCardPage renders card, credentials, wallet buttons, and actions',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: SmartDigitalHealthCardPage(),
+      ),
+    );
+
+    // Verify Patient Name & ID
+    expect(find.text('Richard'), findsOneWidget);
+    expect(find.text('CI-882-0911'), findsOneWidget);
+    expect(find.text('DIGITAL HEALTH SIGNATURE'), findsOneWidget);
+    expect(find.text('ENCRYPTED CAREID'), findsOneWidget);
+
+    // Verify Wallet Action Buttons
+    expect(find.text('Add to Apple Wallet'), findsOneWidget);
+    expect(find.text('Add to Google Wallet'), findsOneWidget);
+
+    // Verify Patient Credentials Bento Card
+    expect(find.text('Patient Credentials'), findsOneWidget);
+    expect(find.text('CareID VERIFIED'), findsOneWidget);
+    expect(find.text('DATE OF BIRTH'), findsOneWidget);
+    expect(find.text('12 May 1992'), findsOneWidget);
+    expect(find.text('BLOOD GROUP'), findsOneWidget);
+    expect(find.text('O Positive (O+)'), findsOneWidget);
+    expect(find.text('INSURANCE STATUS'), findsOneWidget);
+    expect(find.text('Active'), findsOneWidget);
+    expect(find.text('EMERGENCY CONTACT'), findsOneWidget);
+    expect(find.text('John Doe (+1 555-0123)'), findsOneWidget);
+    expect(find.text('KNOWN ALLERGIES'), findsOneWidget);
+    expect(find.text('Penicillin, Peanuts, Latex'), findsOneWidget);
+
+    // Verify Last Updated & Refresh QR
+    expect(find.textContaining('Last Updated:'), findsOneWidget);
+    expect(find.text('Refresh QR'), findsOneWidget);
+
+    // Verify Secondary Actions
+    expect(find.text('Download PDF'), findsOneWidget);
+    expect(find.text('Share QR Code'), findsOneWidget);
+    expect(find.text('Encrypted Access'), findsOneWidget);
+
+    // Verify Persistent Bottom Navigation Bar
+    expect(find.text('Home'), findsOneWidget);
+    expect(find.text('Records'), findsOneWidget);
+    expect(find.text('Doctor'), findsOneWidget);
+    expect(find.text('Profile'), findsOneWidget);
+
+    // Interact with Refresh QR
+    await tester.tap(find.text('Refresh QR'));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 700));
+
+    // Interact with Wallet buttons
+    await tester.tap(find.text('Add to Apple Wallet'));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 300));
+
+    await tester.tap(find.text('Add to Google Wallet'));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 300));
+  });
+
+  testWidgets('QrDashboardPage renders card, refreshed layout, bento grid, and bottom nav',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: QrDashboardPage(),
+      ),
+    );
+
+    // Verify Header
+    expect(find.text('QR Sharing'), findsOneWidget);
+
+    // Verify Main QR Card
+    expect(find.text('Active & Encrypted'), findsOneWidget);
+    expect(find.text('Eliza V. Reed'), findsOneWidget);
+    expect(find.text('CID-9928'), findsOneWidget);
+    expect(find.textContaining('Last Updated:'), findsOneWidget);
+
+    // Verify 2x2 Bento Quick Action Grid
+    expect(find.text('Generate New'), findsOneWidget);
+    expect(find.text('Share QR'), findsWidgets);
+    expect(find.text('Download PDF'), findsOneWidget);
+    expect(find.text('Access History'), findsOneWidget);
+
+    // Verify Informational Banner
+    expect(find.text('Data Privacy Guard'), findsOneWidget);
+    expect(
+      find.text('Your QR code expires automatically every 24 hours to ensure your health data stays secure.'),
+      findsOneWidget,
+    );
+
+    // Verify Unified Bottom Navigation Bar
+    expect(find.text('Home'), findsOneWidget);
+    expect(find.text('Records'), findsOneWidget);
+    expect(find.text('Doctor'), findsOneWidget);
+    expect(find.text('Profile'), findsOneWidget);
+
+    // Tap Bento Quick Actions
+    await tester.tap(find.text('Generate New'), warnIfMissed: false);
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 800));
+
+    await tester.tap(find.text('Share QR').first, warnIfMissed: false);
+    await tester.pump();
+
+    await tester.tap(find.text('Download PDF'), warnIfMissed: false);
+    await tester.pump();
+
+    await tester.tap(find.text('Access History'), warnIfMissed: false);
+    await tester.pump();
+
+    // Verify Bottom Nav Bar QR FAB toggles Scan/Share QR bubbles
+    final fabFinder = find.byType(AnimatedContainer);
+    if (fabFinder.evaluate().isNotEmpty) {
+      await tester.tap(fabFinder.first);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      expect(find.text('Scan Health Record'), findsOneWidget);
+      expect(find.text('Scan Insurance'), findsOneWidget);
+    }
+  });
+
+  testWidgets('ShareOptionsPage renders 7 module cards, duration selector, and CTA',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: ShareOptionsPage(),
+      ),
+    );
+
+    // Verify Header
+    expect(find.text('Choose Sharing Type'), findsOneWidget);
+    expect(find.textContaining('What would you like to'), findsOneWidget);
+    expect(
+      find.textContaining('Select the data modules you wish to include in'),
+      findsOneWidget,
+    );
+
+    // Verify 7 Module Cards
+    expect(find.text('Entire Health Card'), findsOneWidget);
+    expect(find.text('Medical Records'), findsOneWidget);
+    expect(find.text('Dental Records'), findsOneWidget);
+    expect(find.text('Vision Records'), findsOneWidget);
+    expect(find.text('Insurance Information'), findsOneWidget);
+    expect(find.text('Family Member Access'), findsOneWidget);
+    expect(find.text('Pet Records'), findsOneWidget);
+
+    // Verify Duration Selector
+    expect(find.text('ACCESS DURATION'), findsOneWidget);
+    expect(find.text('Temporary (24h)'), findsOneWidget);
+    expect(find.text('Permanent'), findsOneWidget);
+
+    // Tap Duration toggle
+    await tester.tap(find.text('Permanent'));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Temporary (24h)'));
+    await tester.pumpAndSettle();
+
+    // Toggle a card (Medical Records)
+    await tester.tap(find.text('Medical Records'));
+    await tester.pumpAndSettle();
+
+    // Verify Primary Action Button & Footnote
+    expect(find.text('Generate Secure QR'), findsOneWidget);
+    expect(
+      find.text('End-to-end encrypted sharing protocol active'),
+      findsOneWidget,
+    );
+
+    // Tap CTA
+    await tester.tap(find.text('Generate Secure QR'));
+    await tester.pump();
+  });
+
+  testWidgets('QrPreviewPage renders vault access card, details, buttons, and bottom nav', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        onGenerateRoute: (settings) {
+          if (settings.name == AppRoutes.accessVerification) {
+            return MaterialPageRoute(builder: (_) => const SizedBox());
+          }
+          return MaterialPageRoute(
+            builder: (_) => const QrPreviewPage(
+              arguments: QrPreviewArguments(
+                sharingType: 'Full Medical Record',
+                expiryText: 'Expires in 23h 58m 58s',
+              ),
+            ),
+          );
+        },
+      ),
+    );
+
+    // Verify App Bar
+    expect(find.text('QR Preview'), findsOneWidget);
+
+    // Verify Premium QR Card
+    expect(find.text('SECURE VAULT ACCESS'), findsOneWidget);
+    expect(find.text('End-to-End Encrypted'), findsOneWidget);
+
+    // Verify Details Section
+    expect(find.text('Sharing Type'), findsOneWidget);
+    expect(find.text('Full Medical Record'), findsOneWidget);
+    expect(find.text('Expiry'), findsOneWidget);
+    expect(find.text('Expires in 23h 58m 58s'), findsOneWidget);
+
+    // Verify Action Buttons
+    expect(find.text('Share Secure Link'), findsOneWidget);
+    expect(find.text('Download Image'), findsOneWidget);
+
+    // Verify Security Notice Footer
+    expect(find.textContaining('This QR is temporary and will rotate'), findsOneWidget);
+
+    // Scroll and tap Share Secure Link and Download Image
+    await tester.ensureVisible(find.text('Share Secure Link'));
+    await tester.tap(find.text('Share Secure Link'), warnIfMissed: false);
+    await tester.pump();
+
+    await tester.ensureVisible(find.text('Download Image'));
+    await tester.tap(find.text('Download Image'), warnIfMissed: false);
+    await tester.pump();
+  });
+
+  testWidgets('AccessHistoryPage renders search, filters, timeline items, and stats bento', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: AccessHistoryPage(),
+      ),
+    );
+
+    // Verify App Bar
+    expect(find.text('Access History'), findsOneWidget);
+
+    // Verify Search Box & Filters
+    expect(find.text('Search access logs...'), findsOneWidget);
+    expect(find.text('All'), findsOneWidget);
+    expect(find.text('Doctors'), findsOneWidget);
+    expect(find.text('Facilities'), findsOneWidget);
+
+    // Verify Timeline Section & Logs
+    expect(find.text('Recent Activity'), findsOneWidget);
+    expect(find.text('Dr. Marcus Thorne'), findsOneWidget);
+    expect(find.text('Cardiology Dept'), findsOneWidget);
+    expect(find.text('ACTIVE'), findsOneWidget);
+
+    expect(find.text('City General Hospital'), findsOneWidget);
+    expect(find.text('Admissions'), findsOneWidget);
+    expect(find.text('EXPIRED'), findsOneWidget);
+
+    expect(find.text('Dr. Sarah Chen'), findsOneWidget);
+    expect(find.text('General Clinic'), findsOneWidget);
+    expect(find.text('REVOKED'), findsOneWidget);
+
+    // Verify Bento Stats Section
+    expect(find.text('Total Shared Records'), findsOneWidget);
+    expect(find.text('12'), findsOneWidget);
+    expect(find.text('Privacy Score'), findsOneWidget);
+    expect(find.text('98%'), findsOneWidget);
+
+    // Tap Doctors filter
+    await tester.tap(find.text('Doctors'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Dr. Marcus Thorne'), findsOneWidget);
+    expect(find.text('City General Hospital'), findsNothing);
+
+    // Tap Facilities filter
+    await tester.tap(find.text('Facilities'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('City General Hospital'), findsOneWidget);
+    expect(find.text('Dr. Marcus Thorne'), findsNothing);
+
+    // Reset to All
+    await tester.tap(find.text('All'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Dr. Marcus Thorne'), findsOneWidget);
+    expect(find.text('City General Hospital'), findsOneWidget);
+  });
+
+  testWidgets('ManageSharedAccessPage renders hero banner, active card, pending requests, and sessions', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: ManageSharedAccessPage(),
+      ),
+    );
+
+    // Verify App Bar
+    expect(find.text('Manage Access'), findsOneWidget);
+
+    // Verify Hero Banner
+    expect(find.text('Secure Sharing Hub'), findsOneWidget);
+    expect(find.textContaining('Control who sees your medical history'), findsOneWidget);
+
+    // Verify Currently Shared Section
+    expect(find.text('CURRENTLY SHARED'), findsOneWidget);
+    expect(find.text('1 Active'), findsOneWidget);
+    expect(find.text('Dr. Marcus Thorne'), findsOneWidget);
+    expect(find.text('Cardiology Specialist'), findsOneWidget);
+    expect(find.text('Live'), findsOneWidget);
+    expect(find.text('Full Access'), findsOneWidget);
+    expect(find.text('Active for 18h'), findsOneWidget);
+    expect(find.text('Revoke Access'), findsOneWidget);
+
+    // Verify Pending Requests Section
+    expect(find.text('PENDING REQUESTS'), findsOneWidget);
+    expect(find.text('Metro General Lab'), findsOneWidget);
+    expect(find.text('Requested: Lab Results Only'), findsOneWidget);
+    expect(find.text('Approve'), findsOneWidget);
+    expect(find.text('Decline'), findsOneWidget);
+
+    // Verify Recent Sessions Section
+    expect(find.text('RECENT SESSIONS'), findsOneWidget);
+    expect(find.text('St. Jude Radiology'), findsOneWidget);
+    expect(find.text('Dr. Sarah Jenkins'), findsOneWidget);
+    expect(find.text('PhysioCare Clinic'), findsOneWidget);
+    expect(find.text('Extend'), findsNWidgets(3));
+
+    // Scroll so Pending Requests and Revoke Access are well above bottom nav bar
+    await tester.drag(find.byType(SingleChildScrollView), const Offset(0, -450));
+    await tester.pumpAndSettle();
+
+    // Tap Approve on Metro General Lab
+    await tester.tap(find.text('Approve'), warnIfMissed: false);
+    await tester.pumpAndSettle();
+
+    expect(find.text('Metro General Lab'), findsNothing);
+
+    // Tap Revoke Access on Dr. Marcus Thorne -> shows dialog
+    await tester.tap(find.text('Revoke Access'), warnIfMissed: false);
+    await tester.pumpAndSettle();
+
+    expect(find.text('Revoke Access?'), findsOneWidget);
+    await tester.tap(find.text('Revoke'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('0 Active'), findsOneWidget);
+    expect(find.text('No active sharing sessions.'), findsOneWidget);
+  });
+
+  testWidgets('AccessVerificationPage renders hero shield, text hierarchy, badges, and Done CTA', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        initialRoute: AppRoutes.accessVerification,
+        routes: AppRoutes.routes,
+      ),
+    );
+
+    // Verify Hero Shield composition and floating badge
+    expect(find.text('SECURE'), findsOneWidget);
+
+    // Verify Title & Personalized Subtitle
+    expect(find.text('Verified'), findsOneWidget);
+    expect(find.textContaining('Your health records have been'), findsOneWidget);
+    expect(find.textContaining('Dr. Marcus Thorne'), findsOneWidget);
+
+    // Verify Encrypted Session ID Card
+    expect(find.text('Encrypted Session ID: HV-90210-X'), findsOneWidget);
+
+    // Verify 3 Verification Badges
+    expect(find.text('Identity Verified'), findsOneWidget);
+    expect(find.text('Doctor Verified'), findsOneWidget);
+    expect(find.text('Secure Encryption'), findsOneWidget);
+
+    // Scroll down to reveal Done CTA & Security Footnote
+    await tester.drag(find.byType(SingleChildScrollView), const Offset(0, -600));
+    await tester.pumpAndSettle();
+
+    // Verify Done CTA & Security Footnote
+    expect(find.text('Done'), findsOneWidget);
+    expect(find.textContaining('This session is protected by end-to-end medical grade encryption'), findsOneWidget);
+
+    // Tap Done CTA
+    await tester.tap(find.text('Done'), warnIfMissed: false);
+    await tester.pumpAndSettle();
+  });
+
+  testWidgets('NotificationCenterPage renders top bar, filters, Today cards, Recent cards, and bottom nav', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        initialRoute: AppRoutes.notificationCenter,
+        routes: AppRoutes.routes,
+      ),
+    );
+
+    // Verify Top App Bar
+    expect(find.text('Notifications'), findsOneWidget);
+    expect(find.text('5'), findsOneWidget); // Unread badge counter
+
+    // Verify Category Filter Chips
+    expect(find.text('All'), findsOneWidget);
+    expect(find.text('Unread'), findsOneWidget);
+    expect(find.text('Medication'), findsOneWidget);
+    expect(find.text('Appointments'), findsOneWidget);
+    expect(find.text('Insurance'), findsOneWidget);
+    expect(find.text('Family'), findsOneWidget);
+    expect(find.text('Emergency'), findsOneWidget);
+
+    // Test Category Filter Selection
+    await tester.tap(find.text('Medication'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Medication Reminder'), findsOneWidget);
+    expect(find.text('Emergency Alert'), findsNothing);
+    expect(find.text('Medical Record Added'), findsNothing);
+
+    // Switch back to All filter
+    await tester.tap(find.text('All'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Medication Reminder'), findsOneWidget);
+    expect(find.text('Emergency Alert'), findsOneWidget);
+
+    // Verify Today Section
+    expect(find.text('Today'), findsOneWidget);
+    expect(find.text('2 NEW'), findsOneWidget);
+
+    // Verify Medication Reminder Card
+    expect(find.text('Medication Reminder'), findsOneWidget);
+    expect(find.text('8:30 AM'), findsOneWidget);
+    expect(find.textContaining('Lisinopril 10mg'), findsOneWidget);
+    expect(find.text('Mark as Taken'), findsOneWidget);
+    expect(find.text('Snooze 15m'), findsOneWidget);
+
+    // Verify Emergency Alert Card
+    expect(find.text('Emergency Alert'), findsOneWidget);
+    expect(find.text('11:15 AM'), findsOneWidget);
+    expect(find.textContaining('Security Update:'), findsOneWidget);
+    expect(find.text('Review Activity Details'), findsOneWidget);
+
+    // Tap "Mark as Taken"
+    await tester.tap(find.text('Mark as Taken'));
+    await tester.pump();
+    expect(find.text('Taken today at 8:30 AM'), findsOneWidget);
+
+    // Scroll "Review Activity Details" above bottom nav bar into center and tap it
+    await tester.drag(find.byKey(const Key('notification_scroll_view')), const Offset(0, -450));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Review Activity Details'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Unrecognized Login Attempt'), findsOneWidget);
+    expect(find.text('Secure Account'), findsOneWidget);
+
+    // Close bottom sheet
+    await tester.tap(find.text('It Was Me'));
+    await tester.pumpAndSettle();
+
+    // Scroll down further to see Recent Section
+    await tester.drag(find.byKey(const Key('notification_scroll_view')), const Offset(0, -350));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Recent'), findsOneWidget);
+    expect(find.text('Medical Record Added'), findsOneWidget);
+    expect(find.text('Yesterday'), findsOneWidget);
+    expect(find.text('Family Consent Approved'), findsOneWidget);
+    expect(find.text('2 days ago'), findsOneWidget);
+    expect(find.text('Insurance Policy Notice'), findsOneWidget);
+    expect(find.text('3 days ago'), findsOneWidget);
+  });
+
+  testWidgets('EmergencyCenterPage renders SOS button, Medical ID, ICE contacts, hospital widget, and actions', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        initialRoute: AppRoutes.emergencyCenter,
+        routes: AppRoutes.routes,
+      ),
+    );
+
+    // Verify Top App Bar
+    expect(find.text('Emergency Center'), findsOneWidget);
+
+    // Verify Hero SOS Section
+    expect(find.text('SOS'), findsOneWidget);
+    expect(
+      find.textContaining('Tap once to trigger emergency'),
+      findsOneWidget,
+    );
+
+    // Verify Medical ID Quick View Card
+    expect(find.text('Sarah Jenkins'), findsWidgets); // Appears in card & Primary ICE
+    expect(find.text('DOB: 12/05/1992'), findsOneWidget);
+    expect(find.text('Blood: O+'), findsOneWidget);
+    expect(find.text('Penicillin'), findsOneWidget);
+    expect(find.text('Peanuts'), findsOneWidget);
+    expect(find.textContaining('Organ Donor:'), findsOneWidget);
+    expect(find.textContaining('Type 1 Diabetes'), findsOneWidget);
+
+    // Verify Emergency Contacts Section
+    expect(find.text('Emergency Contacts'), findsOneWidget);
+    expect(find.text('Primary ICE (Spouse)'), findsOneWidget);
+    expect(find.text('Arthur Thompson'), findsOneWidget);
+    expect(find.text('Secondary ICE (Father)'), findsOneWidget);
+
+    // Tap SOS button -> opens bottom sheet
+    await tester.tap(find.text('SOS'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Emergency SOS Triggered'), findsOneWidget);
+    expect(find.textContaining('Alerting emergency contacts'), findsOneWidget);
+
+    // Cancel SOS Alert
+    await tester.tap(find.textContaining('Cancel Alert'));
+    await tester.pumpAndSettle();
+
+    // Scroll down to see Nearby Hospitals Map Widget & Share Emergency QR
+    await tester.drag(find.byKey(const Key('emergency_scroll_view')), const Offset(0, -1500));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Closest Facility'), findsOneWidget);
+    expect(find.text('City General Hospital'), findsOneWidget);
+    expect(find.textContaining('0.8 miles away • Open 24/7'), findsOneWidget);
+    expect(find.text('ER Waiting: 12 min'), findsOneWidget);
+    expect(find.text('Get Directions'), findsOneWidget);
+
+    // Tap "Get Directions" -> opens routing dialog
+    await tester.tap(find.text('Get Directions'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Start Route'), findsOneWidget);
+    await tester.tap(find.text('Close'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Share Emergency QR'), findsOneWidget);
+    expect(
+      find.textContaining('Grants instant, temporary access to your'),
+      findsOneWidget,
+    );
+
+    // Scroll down to bring Share Emergency QR into view
+    await tester.drag(find.byKey(const Key('emergency_scroll_view')), const Offset(0, -300));
+    await tester.pumpAndSettle();
+
+    // Tap "Share Emergency QR" -> opens bottom sheet
+    await tester.tap(find.text('Share Emergency QR'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Emergency Offline QR Pass'), findsOneWidget);
+    expect(find.text('Done'), findsOneWidget);
+
+    // Close bottom sheet
+    await tester.tap(find.text('Done'));
+    await tester.pumpAndSettle();
+  });
+
+  testWidgets('MedicationReminderDetailPage renders hero card, actions, pharmacy card, and handles interactions', (WidgetTester tester) async {
+    tester.view.physicalSize = const Size(800, 1200);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: MedicationReminderDetailPage(),
+      ),
+    );
+
+    // Verify Top App Bar
+    expect(find.text('Medication Reminder'), findsOneWidget);
+
+    // Verify Hero Medication Card
+    expect(find.text('Dr. Sarah Jenkins'), findsOneWidget);
+    expect(find.text('Cardiology & Internal Medicine'), findsOneWidget);
+    expect(find.textContaining('Collect by: 12/06'), findsOneWidget);
+    expect(find.text('Pending'), findsOneWidget);
+
+    // Verify Action Buttons
+    expect(find.text('Reschedule'), findsOneWidget);
+    expect(find.text('Skip Dose'), findsOneWidget);
+    expect(find.text('Mark as Taken'), findsOneWidget);
+
+    // Verify Pharmacy Info Card
+    expect(find.text('Pharmacy Info'), findsOneWidget);
+    expect(find.text('City Health Apothecary'), findsOneWidget);
+    expect(find.text('425 Clinical Way, Suite 200'), findsOneWidget);
+    expect(find.text('Request Refill'), findsOneWidget);
+
+    // Test Reschedule Bottom Sheet
+    await tester.tap(find.byKey(const Key('medication_reschedule_button')));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Reschedule Dose Reminder'), findsOneWidget);
+    expect(find.text('Confirm Reschedule'), findsOneWidget);
+
+    await tester.tap(find.text('Confirm Reschedule'));
+    await tester.pumpAndSettle();
+
+    // Test Request Refill modal
+    await tester.tap(find.byKey(const Key('medication_request_refill_button')));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Request Prescription Refill'), findsOneWidget);
+    expect(find.text('Submit Refill Request'), findsOneWidget);
+
+    await tester.tap(find.text('Submit Refill Request'));
+    await tester.pumpAndSettle();
+
+    // Test Skip Dose Dialog
+    await tester.tap(find.byKey(const Key('medication_skip_dose_button')));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Skip This Dose?'), findsOneWidget);
+    expect(find.text('Cancel'), findsOneWidget);
+
+    // Dismiss dialog with Cancel
+    await tester.tap(find.text('Cancel'));
+    await tester.pumpAndSettle();
+
+    // Test Directions button -> opens route dialog
+    await tester.ensureVisible(find.byKey(const Key('medication_pharmacy_directions_button')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('medication_pharmacy_directions_button')));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Pharmacy Route Navigation'), findsOneWidget);
+    expect(find.text('Start Navigation'), findsOneWidget);
+
+    await tester.tap(find.text('Cancel'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Pharmacy Route Navigation'), findsNothing);
+
+    // Test Call Pharmacy button
+    await tester.ensureVisible(find.byKey(const Key('medication_call_pharmacy_button')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('medication_call_pharmacy_button')));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 300));
+    expect(find.textContaining('Dialing City Health Apothecary'), findsOneWidget);
+
+    // Test Mark as Taken Primary CTA
+    await tester.ensureVisible(find.byKey(const Key('medication_mark_as_taken_button')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('medication_mark_as_taken_button')));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 300));
+
+    expect(find.text('Taken Today'), findsOneWidget);
+    expect(find.text('Dose marked as taken successfully!'), findsOneWidget);
+  });
+
+  // ==========================================
+  // PHASE 3: HEALTH RECORDS & VAULT (8 SCREENS)
+  // ==========================================
+
+  testWidgets('Page 24: RecordDetailsHubPage renders all cards and verified strip', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: RecordDetailsHubPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Record Details'), findsOneWidget);
+    expect(find.text('CARE ID VERIFIED DIRECTORY'), findsOneWidget);
+    expect(find.text('My Health Records'), findsOneWidget);
+    expect(find.text('Family Health Records'), findsOneWidget);
+    expect(find.text('Pet Records'), findsOneWidget);
+
+    // Verify continue button key
+    expect(find.byKey(const Key('record_hub_continue_my_health_records')), findsOneWidget);
+  });
+
+  testWidgets('Page 25: HealthRecordsLandingPage renders vault status and categories', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: HealthRecordsLandingPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('YOUR PROTECTED VITALITY'), findsOneWidget);
+    expect(find.text('My Health Records'), findsOneWidget);
+    expect(find.text('Care ID Encrypted Vault Status'), findsOneWidget);
+    expect(find.text('142'), findsOneWidget);
+    expect(find.text('CATEGORY 01'), findsOneWidget);
+    expect(find.text('CATEGORY 02'), findsOneWidget);
+    expect(find.text('CATEGORY 03'), findsOneWidget);
+    expect(find.text('Upload Record'), findsOneWidget);
+  });
+
+  testWidgets('Page 26: MedicalRecordsPage renders vault status, timeline and PDF actions', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: MedicalRecordsPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Medical Records'), findsOneWidget);
+    expect(find.text('CARE ID VAULT'), findsOneWidget);
+    expect(find.text('Recent History'), findsOneWidget);
+    expect(find.text('Full Blood Count Analysis'), findsOneWidget);
+    expect(find.text('Chronic Allergy Prescription'), findsOneWidget);
+    expect(find.text('View PDF'), findsOneWidget);
+    expect(find.text('View Refill'), findsOneWidget);
+  });
+
+  testWidgets('Page 27: DentalRecordsPage renders dental visits and imaging links', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: DentalRecordsPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Dental Records'), findsOneWidget);
+    expect(find.text('Dental Panoramic X-Ray'), findsOneWidget);
+    expect(find.text('RCT Prescription'), findsOneWidget);
+    expect(find.text('View Imaging'), findsOneWidget);
+    expect(find.text('View Document'), findsOneWidget);
+  });
+
+  testWidgets('Page 28: DentalRecordDetailPage renders provider, clinical table, attachments and doctor notes', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: DentalRecordDetailPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Record Details'), findsOneWidget);
+    expect(find.text('Dental X-Ray'), findsOneWidget);
+    expect(find.text('Share Record'), findsOneWidget);
+    expect(find.text('Download PDF'), findsOneWidget);
+    expect(find.text('Dr. Michael Vance'), findsOneWidget);
+    expect(find.text('Dental Care Specialists'), findsOneWidget);
+    expect(find.text('Clinical Details'), findsOneWidget);
+    expect(find.text('Dental X-Ray Observations.pdf'), findsOneWidget);
+    expect(find.text("Doctor's Observations"), findsOneWidget);
+  });
+
+  testWidgets('Page 29: VisionRecordsPage renders OCT timeline and vault', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: VisionRecordsPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Vision Records'), findsOneWidget);
+    expect(find.text('Retinal Fundus OCT Scan'), findsOneWidget);
+    expect(find.text('VisionCare Optometry'), findsOneWidget);
+    expect(find.text('OCT Report'), findsOneWidget);
+  });
+
+  testWidgets('Page 30: VisionRecordDetailPage renders provider, dual scan and attachments', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: VisionRecordDetailPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Record Details'), findsOneWidget);
+    expect(find.text('Retinal Fundus\nOCT Scan'), findsOneWidget);
+    expect(find.text('Dr. Laura Zhao, OD'), findsOneWidget);
+    expect(find.text('VisionCare Eye Specialists'), findsOneWidget);
+    expect(find.text('Clinical Details'), findsOneWidget);
+    expect(find.text('Retinal_Scan_HighRes_OCT.pdf'), findsOneWidget);
+    expect(find.text("Doctor's Observations"), findsOneWidget);
+  });
+
+  testWidgets('Page 31: DocumentViewerPage renders controls, canvas, badge, and done button', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: DocumentViewerPage(
+          documentTitle: 'Dental X-Ray Report.pdf',
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Dental X-Ray Report.pdf'), findsNWidgets(2)); // header and bottom badge
+    expect(find.text('Done'), findsOneWidget);
+    expect(find.text('100%'), findsOneWidget);
+    expect(find.byKey(const Key('document_viewer_download_fab')), findsOneWidget);
+
+    // Tap zoom in
+    await tester.tap(find.byIcon(Icons.add_rounded));
+    await tester.pumpAndSettle();
+    expect(find.text('125%'), findsOneWidget);
+
+    // Tap zoom out
+    await tester.tap(find.byIcon(Icons.remove_rounded));
+    await tester.pumpAndSettle();
+    expect(find.text('100%'), findsOneWidget);
+  });
+
+  testWidgets('UploadMedicalRecordPage renders categories and source options', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: UploadMedicalRecordPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Upload Health Record'), findsOneWidget);
+    expect(find.text('Select Record Category'), findsOneWidget);
+    expect(find.text('Medical Record'), findsOneWidget);
+    expect(find.text('Dental Record'), findsOneWidget);
+    expect(find.text('Vision Record'), findsOneWidget);
+    expect(find.text('Pet Record'), findsOneWidget);
+    expect(find.text('Document Source'), findsOneWidget);
+    expect(find.text('Scan Camera'), findsOneWidget);
+    expect(find.text('Gallery'), findsOneWidget);
+    expect(find.text('PDF / DICOM'), findsOneWidget);
+    expect(find.byKey(const Key('upload_continue_to_ocr_button')), findsOneWidget);
+  });
+
+  testWidgets('ScanReportsPage renders viewport guides and controls', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: ScanReportsPage(),
+      ),
+    );
+    await tester.pump(const Duration(milliseconds: 100));
+
+    expect(find.text('Scan Report'), findsOneWidget);
+    expect(find.text('Align report within the frame'), findsOneWidget);
+    expect(find.text('Flash'), findsOneWidget);
+    expect(find.text('Gallery'), findsOneWidget);
+    expect(find.text('SECURE OCR PROCESSING'), findsOneWidget);
+    expect(find.byKey(const Key('scan_report_shutter_button')), findsOneWidget);
+  });
+
+  testWidgets('OcrProcessingReportPage renders scanning animation and status', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: OcrProcessingReportPage(),
+      ),
+    );
+    await tester.pump(const Duration(milliseconds: 500));
+
+    expect(find.text('Extracting Report Information...'), findsOneWidget);
+    expect(find.text('AES-256 Encrypted'), findsOneWidget);
+    expect(find.text('Cloud Sync Active'), findsOneWidget);
+    expect(find.byKey(const Key('ocr_processing_proceed_button')), findsOneWidget);
+  });
+
+  testWidgets('ReviewHealthRecordPage renders vitals, symptoms, and actions', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: ReviewHealthRecordPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Oct 24, 2023 • 09:45 AM'), findsOneWidget);
+    expect(find.text('REVIEW'), findsOneWidget);
+    expect(find.text('Vitals Summary'), findsOneWidget);
+    expect(find.text('120/80'), findsOneWidget);
+    expect(find.text('72'), findsOneWidget);
+    expect(find.text('36.6'), findsOneWidget);
+    expect(find.text('Logged Symptoms'), findsOneWidget);
+    expect(find.text('Headache'), findsOneWidget);
+    expect(find.text('Fever'), findsOneWidget);
+    expect(find.text('Personal Notes'), findsOneWidget);
+    expect(find.text('ATTACHMENTS (1)'), findsOneWidget);
+    expect(find.byKey(const Key('review_record_save_button')), findsOneWidget);
+    expect(find.byKey(const Key('review_record_edit_button')), findsOneWidget);
+  });
+
+  testWidgets('AddHealthRecordPage renders interactive editable fields', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: AddHealthRecordPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Add to Records'), findsOneWidget);
+    expect(find.text('UNIT: METRIC'), findsOneWidget);
+    expect(find.text('Blood Pressure'), findsOneWidget);
+    expect(find.text('Heart Rate'), findsOneWidget);
+    expect(find.text('Temperature'), findsOneWidget);
+    expect(find.text('Symptoms'), findsOneWidget);
+    expect(find.text('Notes'), findsOneWidget);
+    expect(find.text('Attachments'), findsOneWidget);
+    expect(find.byKey(const Key('add_health_record_save_button')), findsOneWidget);
+  });
+
+  testWidgets('RecordSavedSuccessPage renders success screen and navigation buttons', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: RecordSavedSuccessPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Record Saved\nSuccessfully'), findsOneWidget);
+    expect(find.text('#RX-99421'), findsOneWidget);
+    expect(find.byKey(const Key('record_saved_view_all_button')), findsOneWidget);
+    expect(find.byKey(const Key('record_saved_back_home_button')), findsOneWidget);
+    expect(find.text('END-TO-END ENCRYPTED'), findsOneWidget);
+  });
+
+  // Phase 4: Family Health & Dependents tests
+  testWidgets('FamilyDashboardPage renders hero vault card and family circle', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: FamilyDashboardPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Family Health Circle'), findsOneWidget);
+    expect(find.text('Family Health 360°'), findsOneWidget);
+    expect(find.text('Family Members (4)'), findsOneWidget);
+    expect(find.text('Leo (Son)'), findsOneWidget);
+    expect(find.text('Recent Family Activity'), findsOneWidget);
+  });
+
+  testWidgets('FamilyMemberListPage renders filter chips and member cards', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: FamilyMemberListPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Family & Dependents'), findsOneWidget);
+    expect(find.text('All (4)'), findsOneWidget);
+    expect(find.text('Dependents (2)'), findsOneWidget);
+    expect(find.text('Adults (2)'), findsOneWidget);
+    expect(find.text('Leo (Son)'), findsOneWidget);
+  });
+
+  testWidgets('AddFamilyMemberFormPage renders 6-field form inputs', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: AddFamilyMemberFormPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Add Family Member'), findsOneWidget);
+    expect(find.text('Legal Full Name'), findsOneWidget);
+    expect(find.text('Relationship'), findsOneWidget);
+    expect(find.text('Date of Birth'), findsOneWidget);
+    expect(find.text('Gender'), findsOneWidget);
+    expect(find.text('Blood Type'), findsOneWidget);
+    expect(find.text('Emergency Contact Phone'), findsOneWidget);
+  });
+
+  testWidgets('AddFamilyMemberAccessPage renders access tiers and granular domain switches', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: AddFamilyMemberAccessPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Permissions & Access Tier'), findsOneWidget);
+    expect(find.text('Full Management'), findsOneWidget);
+    expect(find.text('View Only Access'), findsOneWidget);
+    expect(find.text('Emergency SOS Only'), findsOneWidget);
+    expect(find.text('Granular Domain Sharing'), findsOneWidget);
+  });
+
+  testWidgets('AddFamilyMemberReviewPage renders summary card and consent check', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: AddFamilyMemberReviewPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Review & Confirm Member'), findsOneWidget);
+    expect(find.text('Legal & HIPAA Data Delegation Notice'), findsOneWidget);
+    expect(find.text('Send Invitation & Activate Key'), findsOneWidget);
+  });
+
+  testWidgets('InvitationSentPage renders pairing code and invitation link buttons', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: InvitationSentPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Invitation Sent!'), findsOneWidget);
+    expect(find.text('CARE-FAM-8821'), findsOneWidget);
+    expect(find.text('View Health Card'), findsOneWidget);
+    expect(find.text('Back to Family Dashboard'), findsOneWidget);
+  });
+
+  testWidgets('FamilyConsentRequestsPage renders 3 tabs (Pending, Active, History)', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: FamilyConsentRequestsPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Consent & Requests'), findsOneWidget);
+    expect(find.text('Pending (1)'), findsOneWidget);
+    expect(find.text('Active Grants (4)'), findsOneWidget);
+    expect(find.text('Audit History'), findsOneWidget);
+  });
+
+  testWidgets('MemberPermissionsSharingPage renders member permissions header and danger zone', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: MemberPermissionsSharingPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Sharing Permissions'), findsOneWidget);
+    expect(find.text('Leo (Son)'), findsOneWidget);
+    expect(find.text('Category Level Access Controls'), findsOneWidget);
+    expect(find.text('Danger Zone'), findsOneWidget);
+  });
+
+  testWidgets('SharedHealthCardDependentPage renders pediatric card and bento items', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: SharedHealthCardDependentPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Benjamin Harrison'), findsAtLeastNWidgets(1));
+    expect(find.text('CARE ID PEDIATRIC PASSPORT'), findsOneWidget);
+    expect(find.text('CRITICAL PEDIATRIC ALERTS'), findsOneWidget);
+    expect(find.text('View Shared Medical Records'), findsOneWidget);
+    expect(find.text('Primary Pediatrician'), findsOneWidget);
+  });
+
+  testWidgets('SharedMedicalRecordsPage renders vault hero card and records timeline', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: SharedMedicalRecordsPage(),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Leo (Son)'), findsOneWidget);
+    expect(find.text('AES-256 DEPENDENT VAULT'), findsOneWidget);
+    expect(find.text('Leo\'s Pediatric Health Records'), findsOneWidget);
+    expect(find.text('MMR Booster & Pediatric Wellness Exam'), findsOneWidget);
+    expect(find.text('Upload for Leo'), findsOneWidget);
+  });
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+name: careid-local
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: careid-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-hvapi_db}
+    ports:
+      - "5432:5432"
+    volumes:
+      - careid_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-hvapi_db}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+    networks:
+      - careid-network
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: careid-backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-hvapi_db}?schema=public
+      PORT: 3000
+      HOST: 0.0.0.0
+      NODE_ENV: development
+      GLOBAL_PREFIX: api
+      SWAGGER_PATH: docs
+      ENABLE_SWAGGER: "true"
+      JWT_SECRET: ${JWT_SECRET:-super_secret_hvapi_jwt_key_2026_change_in_production}
+      JWT_EXPIRATION: 15m
+      REFRESH_TOKEN_EXPIRATION: 7d
+      ENABLE_TEST_OTP: "true"
+      TEST_PHONE_NUMBERS: "+16505550001,+16505550002,+16505550003,+16505550004,+16505550005,+16505550006,+16505550007"
+      TEST_OTP_CODE: "123456"
+      SEED_ADMIN_PASSWORD: ${SEED_ADMIN_PASSWORD:-AdminPassword123!}
+      CORS_ALLOWED_ORIGINS: "http://localhost:5173,http://localhost:5174,http://localhost:5175,http://127.0.0.1:5173,http://127.0.0.1:5174,http://127.0.0.1:5175,http://localhost:3000,http://127.0.0.1:3000"
+      LOG_LEVEL: debug
+      FINANCING_ENCRYPTION_KEY: ${FINANCING_ENCRYPTION_KEY:-7856d94042d48b934f44080caa74c9425f84ed4e466af32e0f34487a29db0eca}
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/api/v1/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 20s
+    networks:
+      - careid-network
+
+volumes:
+  careid_postgres_data:
+    name: careid_postgres_data
+
+networks:
+  careid-network:
+    name: careid-network
+    driver: bridge

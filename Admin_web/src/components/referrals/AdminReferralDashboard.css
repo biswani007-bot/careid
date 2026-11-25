@@ -1,0 +1,869 @@
+/* CareID Admin Portal — Referral Dashboard CSS
+ * Reference Figma Frame: 20:4755 (1280 x 1024)
+ * Strict adherence to design tokens, typography, borders, and status accents
+ */
+
+.referral-dashboard-wrapper {
+  display: flex;
+  height: 100vh;
+  max-height: 100dvh;
+  width: 100%;
+  background: #f8f9fb;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #191c1e;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Main content wrapper filling space after sidebar in flex layout */
+.referral-main-wrapper {
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100dvh;
+  max-height: 100dvh;
+  background-color: #f8f9fb;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Top App Navigation Bar matching Figma 20:4758 */
+.referral-top-navbar {
+  height: 64px;
+  min-height: 64px;
+  background-color: #f8f9fb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  border-bottom: 1px solid rgba(203, 196, 212, 0.4);
+  flex-shrink: 0;
+  z-index: 20;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.referral-top-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #191c1e;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.referral-header-search-box {
+  position: relative;
+  width: 256px;
+}
+
+.referral-header-search-input {
+  width: 100%;
+  height: 38px;
+  background-color: #f2f4f6;
+  border: 1px solid #cbc4d4;
+  border-radius: 9999px;
+  padding: 0 17px 0 41px;
+  font-size: 14px;
+  color: #191c1e;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.referral-header-search-input::placeholder {
+  color: #6b7280;
+}
+
+.referral-header-search-input:focus {
+  border-color: #28006d;
+  box-shadow: 0 0 0 3px rgba(40, 0, 109, 0.1);
+  background-color: #ffffff;
+}
+
+.referral-header-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  pointer-events: none;
+}
+
+.referral-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.referral-header-icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #494552;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  position: relative;
+}
+
+.referral-header-icon-btn:hover {
+  background-color: #e7e8ea;
+  color: #28006d;
+}
+
+.referral-header-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  background: #3f1d8b;
+  border: 1px solid #cbc4d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrollable Dashboard Canvas matching Figma 20:4781 */
+.referral-canvas {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 24px;
+  background-color: #f8f9fb;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.referral-canvas::-webkit-scrollbar {
+  width: 6px;
+}
+.referral-canvas::-webkit-scrollbar-track {
+  background: transparent;
+}
+.referral-canvas::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+.referral-canvas::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Page Heading and Primary Action matching Figma 20:4783 */
+.referral-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.referral-heading-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #191c1e;
+  line-height: 32px;
+  margin: 0;
+}
+
+.referral-heading-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: #494552;
+  line-height: 20px;
+  margin: 4px 0 0 0;
+}
+
+/* Overview Action Buttons Group */
+.referral-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.referral-create-btn {
+  background-color: #28006d;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(40, 0, 109, 0.2);
+  transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  white-space: nowrap !important;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  line-height: 1.2;
+}
+
+.referral-create-btn:hover {
+  background-color: #3b009e;
+  box-shadow: 0px 4px 8px rgba(40, 0, 109, 0.3);
+}
+
+.referral-create-btn:active {
+  transform: translateY(1px);
+}
+
+.referral-export-btn {
+  background-color: #ffffff;
+  color: #28006d;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 9px 20px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1.5px solid #28006d;
+  cursor: pointer;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.15s ease, transform 0.1s ease, border-color 0.15s ease;
+  white-space: nowrap !important;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  line-height: 1.2;
+}
+
+.referral-export-btn:hover {
+  background-color: #f3f0f9;
+  border-color: #3b009e;
+  color: #3b009e;
+}
+
+.referral-export-btn:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 640px) {
+  .referral-heading-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .referral-actions-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-left: 0;
+  }
+  .referral-create-btn,
+  .referral-export-btn {
+    flex: 1 1 50%;
+    min-width: 0;
+    padding: 10px 12px;
+    font-size: 12px;
+    justify-content: center;
+  }
+}
+
+/* Summary Cards Bento Grid matching Figma 20:4793 */
+.referral-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .referral-bento-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .referral-bento-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.referral-metric-card {
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 20px;
+  padding: 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.referral-metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Left colored accent bar on cards 2-6 */
+.referral-metric-accent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+}
+
+.referral-metric-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #494552;
+  margin: 0;
+  line-height: 16px;
+  white-space: normal;
+}
+
+.referral-metric-value {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  margin: 0;
+  color: #191c1e;
+}
+
+.referral-metric-value.total {
+  color: #28006d;
+}
+
+.referral-metric-value.escalated {
+  color: #ba1a1a;
+}
+
+/* Main Data Section matching Figma 20:4829 */
+.referral-table-card {
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Search and Filter Toolbar matching Figma 20:4830 */
+.referral-toolbar {
+  background-color: #f2f4f6;
+  border-bottom: 1px solid #cbc4d4;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.referral-toolbar-search {
+  position: relative;
+  flex: 1;
+  max-width: 448px;
+  min-width: 240px;
+}
+
+.referral-toolbar-search-input {
+  width: 100%;
+  height: 44px;
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 8px;
+  padding: 0 16px 0 41px;
+  font-size: 14px;
+  color: #191c1e;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.referral-toolbar-search-input::placeholder {
+  color: #6b7280;
+}
+
+.referral-toolbar-search-input:focus {
+  border-color: #28006d;
+  box-shadow: 0 0 0 3px rgba(40, 0, 109, 0.1);
+}
+
+.referral-toolbar-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  pointer-events: none;
+}
+
+.referral-toolbar-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Dropdown filter buttons */
+.referral-filter-btn {
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 8px;
+  padding: 9px 17px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #191c1e;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.referral-filter-btn:hover {
+  background-color: #f8f9fb;
+  border-color: #a39cb0;
+}
+
+.referral-filter-btn.active {
+  background-color: #e8ddff;
+  border-color: #28006d;
+  color: #28006d;
+}
+
+.referral-filter-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  min-width: 200px;
+  z-index: 30;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  animation: filterDropdownFade 0.15s ease-out;
+}
+
+@keyframes filterDropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.referral-filter-option {
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #191c1e;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.12s ease;
+}
+
+.referral-filter-option:hover {
+  background-color: #f2f4f6;
+}
+
+.referral-filter-option.selected {
+  background-color: #e8ddff;
+  color: #28006d;
+  font-weight: 600;
+}
+
+.referral-clear-btn {
+  background: transparent;
+  border: 1px dashed #cbc4d4;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #7a7583;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.referral-clear-btn:hover {
+  border-color: #ba1a1a;
+  color: #ba1a1a;
+  background-color: #ffdad6/20;
+}
+
+/* High Density Table matching Figma 20:4850 */
+.referral-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
+.referral-table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+.referral-table-wrapper::-webkit-scrollbar-track {
+  background: #f2f4f6;
+}
+.referral-table-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+.referral-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.referral-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+}
+
+.referral-table th {
+  padding: 12px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: #494552;
+  border-bottom: 1px solid #cbc4d4;
+  white-space: nowrap;
+  background-color: #ffffff;
+}
+
+.referral-table td {
+  padding: 11px 8px;
+  border-bottom: 1px solid #cbc4d4;
+  vertical-align: middle;
+  color: #494552;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.referral-row {
+  transition: background-color 0.15s ease;
+}
+
+.referral-row:hover {
+  background-color: #f8f9fb;
+}
+
+/* Columns specific formatting */
+.referral-cell-id {
+  font-family: 'Plus Jakarta Sans', monospace;
+  font-weight: 600;
+  color: #28006d;
+  white-space: nowrap;
+}
+
+.referral-cell-patient {
+  font-weight: 500;
+  color: #191c1e;
+  white-space: nowrap;
+}
+
+.referral-cell-doctor {
+  color: #494552;
+  white-space: nowrap;
+}
+
+.referral-cell-hospital {
+  color: #494552;
+  white-space: nowrap;
+}
+
+.referral-cell-date {
+  color: #494552;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+/* Badges matching Figma reference colors */
+.referral-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 14px;
+  white-space: nowrap;
+}
+
+.referral-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+/* Priority Badges */
+.referral-badge-priority-high {
+  background-color: #ffdad6;
+  color: #93000a;
+}
+.referral-badge-priority-high .referral-badge-dot {
+  background-color: #ba1a1a;
+}
+
+.referral-badge-priority-routine {
+  background-color: #e7e8ea;
+  color: #494552;
+}
+.referral-badge-priority-routine .referral-badge-dot {
+  background-color: #7a7583;
+}
+
+.referral-badge-priority-urgent {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+.referral-badge-priority-urgent .referral-badge-dot {
+  background-color: #dc2626;
+}
+
+/* Status Badges */
+.referral-badge-status-pending {
+  background-color: #ffdf9e;
+  color: #261a00;
+}
+.referral-badge-status-pending .referral-badge-dot {
+  background-color: #fabd00;
+}
+
+.referral-badge-status-accepted {
+  background-color: #85f6e5;
+  color: #00201c;
+}
+.referral-badge-status-accepted .referral-badge-dot {
+  background-color: #006a60;
+}
+
+.referral-badge-status-completed {
+  background-color: #e6f4ea;
+  color: #1e7e34;
+}
+.referral-badge-status-completed .referral-badge-dot {
+  background-color: #1e7e34;
+}
+
+.referral-badge-status-cancelled {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+.referral-badge-status-cancelled .referral-badge-dot {
+  background-color: #64748b;
+}
+
+.referral-badge-status-escalated {
+  background-color: #ffdad6;
+  color: #ba1a1a;
+}
+.referral-badge-status-escalated .referral-badge-dot {
+  background-color: #ba1a1a;
+}
+
+/* Row Action Buttons */
+.referral-action-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  opacity: 0.85;
+  transition: opacity 0.15s ease;
+}
+
+.referral-row:hover .referral-action-group {
+  opacity: 1;
+}
+
+.referral-action-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: #494552;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+
+.referral-action-btn:hover {
+  background-color: #f2f4f6;
+  border-color: #cbc4d4;
+  color: #28006d;
+}
+
+.referral-action-btn.escalate:hover {
+  background-color: #ffdad6;
+  border-color: #ffb4ab;
+  color: #ba1a1a;
+}
+
+/* Pagination Footer matching Figma 20:4933 */
+.referral-pagination-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #cbc4d4;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.referral-pagination-text {
+  font-size: 12px;
+  font-weight: 400;
+  color: #494552;
+  line-height: 16px;
+  margin: 0;
+}
+
+.referral-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.referral-page-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #cbc4d4;
+  background-color: #ffffff;
+  color: #494552;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+
+.referral-page-btn:hover:not(:disabled) {
+  background-color: #f2f4f6;
+  border-color: #28006d;
+  color: #28006d;
+}
+
+.referral-page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  border-color: #e0dbe6;
+}
+
+.referral-page-indicator {
+  font-size: 12px;
+  font-weight: 600;
+  color: #191c1e;
+  padding: 0 4px;
+}
+
+/* Modal and Detail Dialog Styles */
+.referral-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 16px;
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.referral-modal-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid #cbc4d4;
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.referral-modal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #cbc4d4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.referral-modal-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.referral-modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #cbc4d4;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  background-color: #f8f9fb;
+  border-radius: 0 0 20px 20px;
+}

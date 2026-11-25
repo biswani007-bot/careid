@@ -1,0 +1,176 @@
+# Frontend Endpoints vs Postman Cross-Audit
+
+**Total Unique Frontend Endpoints**: 55
+**Matched in Postman**: 48
+**Missing / Not in Postman**: 7
+
+## 1. Endpoints Present in Postman
+
+- `/api/v1/attachments/file/${encodeURIComponent(fileName)}`
+  - Postman: `GET /api/v1/attachments/file/:filename (16. File Uploads & Attachments > Stream private attachment file with security headers)`
+  - Referenced in: `services/attachmentService.ts:100`
+- `/api/v1/attachments`
+  - Postman: `POST /api/v1/attachments (16. File Uploads & Attachments > Upload an unlinked or global attachment (supports binary file upload and JSON metadata))`
+  - Referenced in: `services/attachmentService.ts:146`
+- `/api/v1/auth/otp/request`
+  - Postman: `POST /api/v1/auth/otp/request (02. Authentication & OTP > Request Phone OTP)`
+  - Referenced in: `services/authService.ts:88`
+- `/api/v1/auth/otp/verify`
+  - Postman: `POST /api/v1/auth/otp/verify (02. Authentication & OTP > Verify Phone OTP & Login)`
+  - Referenced in: `services/authService.ts:101`
+- `/api/v1/auth/otp/resend`
+  - Postman: `POST /api/v1/auth/otp/resend (02. Authentication & OTP > Resend OTP to registered phone number)`
+  - Referenced in: `services/authService.ts:117`
+- `/api/v1/auth/token/refresh`
+  - Postman: `POST /api/v1/auth/token/refresh (02. Authentication & OTP > Refresh JWT Access Token)`
+  - Referenced in: `services/authService.ts:134`
+- `/api/v1/auth/me`
+  - Postman: `GET /api/v1/auth/me (03. User Profile & Account > Get current user profile and claims)`
+  - Referenced in: `services/authService.ts:150`
+- `/api/v1/doctors/me`
+  - Postman: `GET /api/v1/doctors/me (05. Doctor Portal > Get current authenticated doctor profile)`
+  - Referenced in: `services/authService.ts:163`, `services/dashboardService.ts:138`
+- `/api/v1/auth/logout`
+  - Postman: `POST /api/v1/auth/logout (02. Authentication & OTP > User Session Logout)`
+  - Referenced in: `services/authService.ts:177`
+- `/api/v1/appointments/doctor/me`
+  - Postman: `GET /api/v1/appointments/doctor/me (10. Appointments, Schedules & Shifts > Get appointments scheduled for authenticated doctor)`
+  - Referenced in: `services/consultationService.ts:145`, `services/patientService.ts:832`, `services/patientService.ts:1136`, `services/patientService.ts:1365`
+- `/api/v1/doctors/treatment-offers`
+  - Postman: `POST /api/v1/doctors/treatment-offers (05. Doctor Portal > Create a new draft treatment proposal)`
+  - Referenced in: `services/consultationService.ts:167`, `services/treatmentOfferService.ts:249`
+- `/api/v1/doctors/patients/${encodeURIComponent(pId)}/medical-records`
+  - Postman: `GET /api/v1/doctors/patients/:patientProfileId/medical-records (05. Doctor Portal > Get authorized patient medical records with pagination)`
+  - Referenced in: `services/consultationService.ts:327`
+- `/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/encounters`
+  - Postman: `POST /api/v1/doctors/patients/:patientProfileId/encounters (05. Doctor Portal > Document clinical encounter, diagnoses, vitals, procedures for an authorized patient)`
+  - Referenced in: `services/consultationService.ts:391`, `services/prescriptionService.ts:200`
+- `/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/medical-records`
+  - Postman: `GET /api/v1/doctors/patients/:patientProfileId/medical-records (05. Doctor Portal > Get authorized patient medical records with pagination)`
+  - Referenced in: `services/consultationService.ts:406`, `services/patientService.ts:1069`, `services/prescriptionService.ts:126`
+- `/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/medical-records/${encodeURIComponent(recordId)}`
+  - Postman: `PUT /api/v1/doctors/patients/:patientProfileId/medical-records/:recordId (05. Doctor Portal > Update clinical notes/record documented by doctor)`
+  - Referenced in: `services/consultationService.ts:429`, `services/prescriptionService.ts:221`
+- `/api/v1/financing/options`
+  - Postman: `GET /api/v1/financing/options (27. Healthcare Financing & Financial Assistance > List available healthcare financing options and partners)`
+  - Referenced in: `services/consultationService.ts:441`
+- `/api/v1/financing/offers`
+  - Postman: `GET /api/v1/financing/offers (27. Healthcare Financing & Financial Assistance > List pre-approved healthcare financing offers for current patient)`
+  - Referenced in: `services/consultationService.ts:460`
+- `/api/v1/financing/apply`
+  - Postman: `POST /api/v1/financing/apply (27. Healthcare Financing & Financial Assistance > Submit application for healthcare financing / EMI assistance)`
+  - Referenced in: `services/consultationService.ts:478`
+- `/api/v1/financing/applications`
+  - Postman: `GET /api/v1/financing/applications (27. Healthcare Financing & Financial Assistance > List financing applications (scoped to patient or global for admin/staff))`
+  - Referenced in: `services/consultationService.ts:488`
+- `/api/v1/appointments/${encodeURIComponent(appointmentId)}/status`
+  - Postman: `PUT /api/v1/appointments/:id/status (10. Appointments, Schedules & Shifts > Update appointment status (clinical & operational staff))`
+  - Referenced in: `services/consultationService.ts:514`
+- `/api/v1/appointments/${appointmentId}/status`
+  - Postman: `PUT /api/v1/appointments/:id/status (10. Appointments, Schedules & Shifts > Update appointment status (clinical & operational staff))`
+  - Referenced in: `services/dashboardService.ts:201`
+- `/api/v1/reports/${reportId}/verify`
+  - Postman: `POST /api/v1/reports/:id/verify (20. Clinical Reports & Analytics > Mark diagnostic report as VERIFIED with verification notes)`
+  - Referenced in: `services/dashboardService.ts:225`
+- `/api/v1/notifications/${notificationId}/read`
+  - Postman: `PUT /api/v1/notifications/:id/read (14. Notifications & Alerts > Mark notification as READ)`
+  - Referenced in: `services/dashboardService.ts:249`
+- `/api/v1/doctors/statistics`
+  - Postman: `GET /api/v1/doctors/statistics (05. Doctor Portal > Get platform-wide doctor directory statistics)`
+  - Referenced in: `services/dashboardService.ts:257`
+- `/api/v1/ocr/jobs`
+  - Postman: `POST /api/v1/ocr/jobs (15. OCR & Document Verification > Submit medical attachment for local CPU OCR processing)`
+  - Referenced in: `services/ocrService.ts:163`
+- `/api/v1/ocr/jobs/${encodeURIComponent(jobId)}`
+  - Postman: `GET /api/v1/ocr/jobs/:id (15. OCR & Document Verification > Get OCR job status and details by ID)`
+  - Referenced in: `services/ocrService.ts:175`
+- `/api/v1/ocr/jobs/${encodeURIComponent(jobId)}/fields`
+  - Postman: `GET /api/v1/ocr/jobs/:id/fields (15. OCR & Document Verification > Get extracted structured fields with confidence scores)`
+  - Referenced in: `services/ocrService.ts:194`
+- `/api/v1/ocr/jobs/${encodeURIComponent(jobId)}/text`
+  - Postman: `GET /api/v1/ocr/jobs/:id/text (15. OCR & Document Verification > Get extracted raw OCR text for job)`
+  - Referenced in: `services/ocrService.ts:213`
+- `/api/v1/ocr/jobs/${encodeURIComponent(jobId)}/json`
+  - Postman: `GET /api/v1/ocr/jobs/:id/json (15. OCR & Document Verification > Get formatted structured JSON output of OCR job)`
+  - Referenced in: `services/ocrService.ts:238`
+- `/api/v1/ocr/dashboard`
+  - Postman: `GET /api/v1/ocr/dashboard (15. OCR & Document Verification > Get Enterprise OCR Platform analytics dashboard summary)`
+  - Referenced in: `services/ocrService.ts:276`
+- `/api/v1/ocr/jobs/${encodeURIComponent(jobId)}/reprocess`
+  - Postman: `POST /api/v1/ocr/jobs/:jobId/reprocess (15. OCR & Document Verification > Reprocess a completed, failed, or review-required OCR job)`
+  - Referenced in: `services/ocrService.ts:290`
+- `/api/v1/ocr/reprocess/${encodeURIComponent(jobId)}`
+  - Postman: `POST /api/v1/ocr/reprocess/:jobId (15. OCR & Document Verification > Reprocess a completed, failed, or review-required OCR job)`
+  - Referenced in: `services/ocrService.ts:294`
+- `/api/v1/ai/ocr/extract`
+  - Postman: `POST /api/v1/ai/ocr/extract (15. OCR & Document Verification > Image Scan & Candidate Metadata Extraction)`
+  - Referenced in: `services/ocrService.ts:306`
+- `/api/v1/ai/ocr/confirm`
+  - Postman: `POST /api/v1/ai/ocr/confirm (15. OCR & Document Verification > OCR Candidate Field Review & Manual Confirmation)`
+  - Referenced in: `services/ocrService.ts:315`
+- `/api/v1/admin/patients`
+  - Postman: `GET /api/v1/admin/patients (04. Admin Portal & System Operations > Search and list patients with server-side pagination and filters)`
+  - Referenced in: `services/patientService.ts:764`
+- `/api/v1/doctors/patients/${encodeURIComponent(cleanId)}`
+  - Postman: `GET /api/v1/doctors/patients/:patientProfileId (05. Doctor Portal > Get complete demographic information for an authorized patient)`
+  - Referenced in: `services/patientService.ts:936`
+- `/api/v1/patients/${encodeURIComponent(cleanId)}/insurance-cards`
+  - Postman: `GET /api/v1/patients/:patientId/insurance-cards (19. Insurance Platform & Claims > Get all insurance cards for a specific patient)`
+  - Referenced in: `services/patientService.ts:980`
+- `/api/v1/doctors/patients/${encodeURIComponent(patientId)}/medical-records/timeline${qs}`
+  - Postman: `PUT /api/v1/doctors/patients/:patientProfileId/medical-records/:recordId (05. Doctor Portal > Update clinical notes/record documented by doctor)`
+  - Referenced in: `services/patientService.ts:1097`
+- `/api/v1/admin/medical-records/${encodeURIComponent(recordId)}`
+  - Postman: `GET /api/v1/admin/medical-records/:recordId (04. Admin Portal & System Operations > Get clinical details of a specific medical record)`
+  - Referenced in: `services/patientService.ts:1124`
+- `/api/v1/facilities`
+  - Postman: `POST /api/v1/facilities (09. Facilities & Branches > Register/Create a facility profile in Master Registry)`
+  - Referenced in: `services/patientService.ts:1356`
+- `/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/medical-records/timeline`
+  - Postman: `GET /api/v1/doctors/patients/:patientProfileId/medical-records/timeline (05. Doctor Portal > Get authorized patient medical record timeline)`
+  - Referenced in: `services/prescriptionService.ts:240`
+- `/api/v1/doctors/treatment-offers${qs `
+  - Postman: `GET /api/v1/doctors/:id (05. Doctor Portal > Get complete doctor profile details)`
+  - Referenced in: `services/treatmentOfferService.ts:268`
+- `/api/v1/doctors/treatment-offers/${encodeURIComponent(id)}`
+  - Postman: `GET /api/v1/doctors/treatment-offers/:offerId (05. Doctor Portal > Get treatment offer details)`
+  - Referenced in: `services/treatmentOfferService.ts:280`, `services/treatmentOfferService.ts:291`
+- `/api/v1/doctors/treatment-offers/${encodeURIComponent(id)}/dispatch`
+  - Postman: `POST /api/v1/doctors/treatment-offers/:offerId/dispatch (05. Doctor Portal > Lock draft and dispatch treatment offer to patient)`
+  - Referenced in: `services/treatmentOfferService.ts:303`
+- `/api/v1/doctors/treatment-offers/${encodeURIComponent(id)}/status`
+  - Postman: `GET /api/v1/doctors/treatment-offers/:offerId/status (05. Doctor Portal > Inspect live offer lifecycle status and review timestamps)`
+  - Referenced in: `services/treatmentOfferService.ts:315`
+- `/api/v1/doctors/treatment-offers/${encodeURIComponent(id)}/cancel`
+  - Postman: `POST /api/v1/doctors/treatment-offers/:offerId/cancel (05. Doctor Portal > Doctor cancels active treatment proposal with clinical justification)`
+  - Referenced in: `services/treatmentOfferService.ts:330`
+- `/api/v1/patients/treatment-offers/${encodeURIComponent(id)}/accept`
+  - Postman: `POST /api/v1/patients/treatment-offers/:offerId/accept (06. Patient App > Patient ratifies and accepts treatment offer (RATIFIED_ACCEPTED))`
+  - Referenced in: `services/treatmentOfferService.ts:349`
+- `/api/v1/patients/treatment-offers/${encodeURIComponent(id)}/reject`
+  - Postman: `POST /api/v1/patients/treatment-offers/:offerId/reject (06. Patient App > Patient declines treatment offer proposal (DECLINED))`
+  - Referenced in: `services/treatmentOfferService.ts:367`
+
+## 2. Endpoints Missing in Postman (Not in Backend Contract)
+
+- `/api/v1/appointments/doctor/me${qs `
+  - Postman: **MISSING**
+  - Referenced in: `services/dashboardService.ts:156`
+- `/api/v1/appointments/doctor/my-appointments${qs `
+  - Postman: **MISSING**
+  - Referenced in: `services/dashboardService.ts:175`
+- `/api/v1/reports${qs}`
+  - Postman: **MISSING**
+  - Referenced in: `services/dashboardService.ts:213`
+- `/api/v1/notifications${qs}`
+  - Postman: **MISSING**
+  - Referenced in: `services/dashboardService.ts:237`
+- `/api/v1/ocr/jobs${queryString `
+  - Postman: **MISSING**
+  - Referenced in: `services/ocrService.ts:266`
+- `/api/v1/doctors/patients/${encodeURIComponent(patientId)}/medical-records${qs}`
+  - Postman: **MISSING**
+  - Referenced in: `services/patientService.ts:1049`
+- `/api/v1/admin/patients/${encodeURIComponent(patientId)}/medical-records/timeline${qs}`
+  - Postman: **MISSING**
+  - Referenced in: `services/patientService.ts:1084`

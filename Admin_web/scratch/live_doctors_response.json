@@ -1,0 +1,115 @@
+{
+  "path": "/api/v1/doctors?limit=50",
+  "status": 200,
+  "json": {
+    "success": true,
+    "statusCode": 200,
+    "message": "Operation executed successfully",
+    "data": [
+      {
+        "id": "7c8fd004-cba1-4a72-9db6-437fc6d2baed",
+        "userId": "8e8ede62-bb00-41fe-af08-06d707805434",
+        "fullName": "Dr. Julian Vance, MD",
+        "gender": "MALE",
+        "dateOfBirth": "1982-11-14",
+        "yearsOfExperience": 10,
+        "primarySpecialization": "Cardiology",
+        "secondarySpecializations": [
+          "General Practice"
+        ],
+        "medicalCouncil": "State Medical Board",
+        "registrationNumber": "MED-REG-2026-3950",
+        "licenseNumber": "NY-55193",
+        "providerIdentifier": "DOC-360-071553",
+        "verificationStatus": "VERIFIED",
+        "verificationNotes": "Credentials verified against registry by administrator",
+        "verifiedBy": "bc6f6875-434c-4050-b893-07343cc27986",
+        "verifiedAt": "2026-11-03T11:57:17.504Z",
+        "department": "Outpatient Care",
+        "subSpecializations": [],
+        "clinicalInterests": [],
+        "servicesOffered": [],
+        "languagesSpoken": [
+          "English"
+        ],
+        "isDeleted": false,
+        "qualifications": [],
+        "certifications": [],
+        "experiences": [],
+        "documents": [],
+        "createdAt": "2026-10-29T05:01:11.561Z",
+        "updatedAt": "2026-11-03T11:57:17.509Z"
+      },
+      {
+        "id": "5ab2e715-bf8f-4fd4-98bb-c5166dd7157b",
+        "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+        "fullName": "Dr. Robert Chen",
+        "gender": "MALE",
+        "dateOfBirth": "1978-05-12",
+        "yearsOfExperience": 16,
+        "primarySpecialization": "Cardiology",
+        "secondarySpecializations": [],
+        "medicalCouncil": "State Medical Board",
+        "registrationNumber": "MED-REG-2026-1192",
+        "licenseNumber": "MD-119284",
+        "providerIdentifier": "DOC-360-912162",
+        "verificationStatus": "VERIFIED",
+        "verificationNotes": "Medical board credentialing audit verified",
+        "verifiedBy": "bc6f6875-434c-4050-b893-07343cc27986",
+        "verifiedAt": "2026-10-29T05:45:03.498Z",
+        "department": "Cardiovascular Surgery Division",
+        "subSpecializations": [],
+        "clinicalInterests": [],
+        "servicesOffered": [],
+        "languagesSpoken": [
+          "English"
+        ],
+        "isDeleted": false,
+        "qualifications": [],
+        "certifications": [],
+        "experiences": [],
+        "documents": [],
+        "createdAt": "2026-10-29T04:58:32.167Z",
+        "updatedAt": "2026-10-29T05:45:06.001Z"
+      },
+      {
+        "id": "1f06067b-e229-4707-84e2-afa27da2e4cd",
+        "userId": "fa502f2e-332c-4ec0-b6aa-83713216ec88",
+        "fullName": "Dr. Sarah Jenkins, MD",
+        "gender": "Female",
+        "dateOfBirth": "1980-08-20",
+        "professionalSummary": "Board-certified cardiologist specializing in preventive and diagnostic cardiovascular medicine.",
+        "yearsOfExperience": 14,
+        "primarySpecialization": "Cardiology",
+        "secondarySpecializations": [
+          "Interventional Cardiology",
+          "Echocardiography"
+        ],
+        "medicalCouncil": "State Medical Board",
+        "registrationNumber": "MED-REG-2026-9081",
+        "licenseNumber": "LIC-MD-2026-9081",
+        "providerIdentifier": "NPI-DOC-2026-9081",
+        "verificationStatus": "VERIFIED",
+        "verificationNotes": "Compliance audit test",
+        "department": "Cardiovascular Medicine",
+        "subSpecializations": [],
+        "clinicalInterests": [],
+        "servicesOffered": [],
+        "languagesSpoken": [
+          "English",
+          "Spanish"
+        ],
+        "isDeleted": false,
+        "qualifications": [],
+        "certifications": [],
+        "experiences": [],
+        "documents": [],
+        "createdAt": "2026-10-28T07:40:44.362Z",
+        "updatedAt": "2026-10-29T04:58:22.556Z"
+      }
+    ],
+    "meta": {
+      "timestamp": "2026-11-03T12:25:32.692Z"
+    }
+  }
+}

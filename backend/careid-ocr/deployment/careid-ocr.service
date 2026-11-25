@@ -1,0 +1,27 @@
+[Unit]
+Description=CareID Enterprise OCR Microservice
+After=network.target
+
+[Service]
+Type=simple
+User=www
+Group=www
+WorkingDirectory=/opt/careid-ocr
+EnvironmentFile=-/opt/careid-ocr/.env
+ExecStart=/opt/careid-ocr/venv/bin/python -m uvicorn app.main:app --host 127.0.0.1 --port 5050 --workers 1
+Restart=always
+RestartSec=5s
+
+# Process & Resource Governance
+LimitNOFILE=65535
+MemoryHigh=3500M
+MemoryMax=4000M
+CPUWeight=100
+
+# Security Hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target

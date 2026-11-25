@@ -1,0 +1,425 @@
+{
+  "timestamp": "2026-11-06T07:37:18.289Z",
+  "database": {
+    "host": "172.17.0.2",
+    "port": 5432,
+    "database": "hvapi_db",
+    "disposable": true,
+    "container": "careid-test-postgres"
+  },
+  "backendUrl": "http://127.0.0.1:3000/api/v1",
+  "summary": {
+    "total": 43,
+    "passed": 43,
+    "failed": 0,
+    "successRate": "100.0"
+  },
+  "tests": [
+    {
+      "suite": "Suite 1: Database Safety",
+      "name": "Verify database host is local Docker container (careid-test-postgres)",
+      "status": "PASS",
+      "durationMs": 42,
+      "details": {
+        "db_name": "hvapi_db",
+        "server_ip": "172.17.0.2",
+        "server_port": 5432
+      }
+    },
+    {
+      "suite": "Suite 1: Database Safety",
+      "name": "Verify backend HTTP server running on port 3073",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 35,
+      "details": {
+        "success": true,
+        "statusCode": 200,
+        "message": "Operation executed successfully",
+        "data": {
+          "status": "ok",
+          "timestamp": "2026-11-06T07:37:16.133Z",
+          "service": "HVAPI Backend"
+        },
+        "meta": {
+          "timestamp": "2026-11-06T07:37:16.133Z"
+        }
+      }
+    },
+    {
+      "suite": "Suite 2: Auth",
+      "name": "Admin password login (/auth/password/login)",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 173
+    },
+    {
+      "suite": "Suite 2: Auth",
+      "name": "Doctor A OTP verification (+16505550003)",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 219
+    },
+    {
+      "suite": "Suite 2: Auth",
+      "name": "Staff A OTP verification (+16505550006)",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 211
+    },
+    {
+      "suite": "Suite 2: Auth",
+      "name": "Patient OTP verification (+16505550004)",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 180
+    },
+    {
+      "suite": "Suite 2: Auth",
+      "name": "Doctor B OTP verification (+16505550007)",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 187
+    },
+    {
+      "suite": "Suite A: Timeline Pagination",
+      "name": "Page 1 boundary verification (items 1-20, totalItems=1040, totalPages=52)",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 37,
+      "details": {
+        "count": 20,
+        "meta": {
+          "timestamp": "2026-11-06T07:37:17.604Z",
+          "totalItems": 1040,
+          "page": 1,
+          "limit": 20,
+          "totalPages": 52,
+          "hasNextPage": true,
+          "hasPreviousPage": false
+        }
+      }
+    },
+    {
+      "suite": "Suite A: Timeline Pagination",
+      "name": "Secondary tie-breaker deterministic ordering (item_date DESC, id DESC)",
+      "status": "PASS",
+      "durationMs": 5
+    },
+    {
+      "suite": "Suite A: Timeline Pagination",
+      "name": "Page 50 boundary (items 981-1000, hasNextPage=true)",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 16
+    },
+    {
+      "suite": "Suite A: Timeline Pagination",
+      "name": "Deep Pagination Page 51 (items 1001-1020) — Proves 1000-item truncation completely eliminated",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 14,
+      "details": {
+        "p51Count": 20,
+        "overlapCount": 0,
+        "firstP51Id": "079eb500-60f9-4ab9-9f81-da48add84f1c"
+      }
+    },
+    {
+      "suite": "Suite A: Timeline Pagination",
+      "name": "Page 52 terminal boundary (items 1021-1040, hasNextPage=false, hasPreviousPage=true)",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 19
+    },
+    {
+      "suite": "Suite A: Timeline Pagination",
+      "name": "Page 999 out-of-range graceful empty response (data=[], totalItems=1040)",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 9
+    },
+    {
+      "suite": "Suite A: Timeline Pagination",
+      "name": "Timeline response envelope schema validation",
+      "status": "PASS",
+      "durationMs": 2
+    },
+    {
+      "suite": "Suite B: OCR Authorization",
+      "name": "B1.1: Doctor A (Facility A) can access OCR job linked to patient with ACTIVE referral to Facility A",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 39,
+      "details": {
+        "foundJob": true,
+        "totalInQueue": 1
+      }
+    },
+    {
+      "suite": "Suite B: OCR Authorization",
+      "name": "B1.2: Doctor B (Facility B) is REJECTED with 403 Forbidden for Job Active",
+      "status": "PASS",
+      "httpStatus": 403,
+      "durationMs": 36,
+      "details": {
+        "success": false,
+        "statusCode": 403,
+        "error": "ForbiddenException",
+        "message": "You are not authorized to review OCR jobs outside your affiliated facility",
+        "meta": {
+          "timestamp": "2026-11-06T07:37:17.775Z",
+          "path": "/api/v1/ocr/review/2553c46e-8671-4c14-b7c7-b6ff53ad2c83"
+        }
+      }
+    },
+    {
+      "suite": "Suite B: OCR Authorization",
+      "name": "B2: Completed referral to Facility A does NOT grant access (403 Forbidden)",
+      "status": "PASS",
+      "httpStatus": 403,
+      "durationMs": 23,
+      "details": {
+        "success": false,
+        "statusCode": 403,
+        "error": "ForbiddenException",
+        "message": "You are not authorized to review OCR jobs outside your affiliated facility",
+        "meta": {
+          "timestamp": "2026-11-06T07:37:17.814Z",
+          "path": "/api/v1/ocr/review/6641c7d2-8e34-47c7-991e-68ff7dee157f"
+        }
+      }
+    },
+    {
+      "suite": "Suite B: OCR Authorization",
+      "name": "B3: Cancelled referral to Facility A does NOT grant access (403 Forbidden)",
+      "status": "PASS",
+      "httpStatus": 403,
+      "durationMs": 19
+    },
+    {
+      "suite": "Suite B: OCR Authorization",
+      "name": "B4: Soft-deleted referral (isDeleted=true) does NOT grant access (403 Forbidden)",
+      "status": "PASS",
+      "httpStatus": 403,
+      "durationMs": 19
+    },
+    {
+      "suite": "Suite B: OCR Authorization",
+      "name": "B5: Expired referral (expiresAt < now) does NOT grant access (403 Forbidden)",
+      "status": "PASS",
+      "httpStatus": 403,
+      "durationMs": 30
+    },
+    {
+      "suite": "Suite B: OCR Authorization",
+      "name": "B6.1: Direct ReferralAttachment on ACTIVE referral grants Facility A review access (200 OK)",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 36,
+      "details": {
+        "success": true,
+        "statusCode": 200,
+        "message": "Operation executed successfully",
+        "data": {
+          "id": "b12ca84a-1448-4062-b008-2af7c200a691",
+          "ocrJobId": "9e68c7e2-b282-4c8c-b6eb-694025423749",
+          "reviewedBy": "dbe69fae-cdc9-4069-8a7a-ede8d4040f5e",
+          "reviewStatus": "APPROVED",
+          "reviewNotes": "Direct active referral attachment verified",
+          "completedAt": "2026-11-06T07:37:17.959Z",
+          "createdAt": "2026-11-06T07:37:17.960Z"
+        },
+        "meta": {
+          "timestamp": "2026-11-06T07:37:17.966Z"
+        }
+      }
+    },
+    {
+      "suite": "Suite B: OCR Authorization",
+      "name": "B6.2: Direct ReferralAttachment on ACTIVE referral to Facility A rejects Facility B (403 Forbidden)",
+      "status": "PASS",
+      "httpStatus": 403,
+      "durationMs": 17
+    },
+    {
+      "suite": "Suite B: OCR Authorization",
+      "name": "B7: Direct ReferralAttachment on COMPLETED referral does NOT grant access (403 Forbidden)",
+      "status": "PASS",
+      "httpStatus": 403,
+      "durationMs": 14
+    },
+    {
+      "suite": "Suite B: OCR Authorization",
+      "name": "B8: Platform ADMIN has global scope to review any OCR job (200 OK)",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 15
+    },
+    {
+      "suite": "Suite C: OCR Transaction & Concurrency",
+      "name": "C1.1: Missing field corrections for reviewStatus CORRECTED fails with 400 Bad Request",
+      "status": "PASS",
+      "httpStatus": 400,
+      "durationMs": 3
+    },
+    {
+      "suite": "Suite C: OCR Transaction & Concurrency",
+      "name": "C1.2: Transaction rollbacks on validation error (Job status remains REVIEW_REQUIRED)",
+      "status": "PASS",
+      "durationMs": 5
+    },
+    {
+      "suite": "Suite C: OCR Transaction & Concurrency",
+      "name": "C1.3: Duplicate field correction rejected with 400 Bad Request",
+      "status": "PASS",
+      "httpStatus": 400,
+      "durationMs": 21
+    },
+    {
+      "suite": "Suite C: OCR Transaction & Concurrency",
+      "name": "C2.1: Concurrent review race condition — Exactly 1 succeeds (200 OK) and 1 is rejected (409 Conflict)",
+      "status": "PASS",
+      "durationMs": 42,
+      "details": {
+        "statuses": [
+          200,
+          409
+        ],
+        "res1": {
+          "success": true,
+          "statusCode": 200,
+          "message": "Operation executed successfully",
+          "data": {
+            "id": "69a81e03-ea99-48a1-b712-0bdd4e598016",
+            "ocrJobId": "5796a726-0adb-4f60-8b05-d4fa9a9a0fe7",
+            "reviewedBy": "dbe69fae-cdc9-4069-8a7a-ede8d4040f5e",
+            "reviewStatus": "CORRECTED",
+            "reviewNotes": "Worker 1 submission",
+            "completedAt": "2026-11-06T07:37:18.104Z",
+            "createdAt": "2026-11-06T07:37:18.104Z"
+          },
+          "meta": {
+            "timestamp": "2026-11-06T07:37:18.108Z"
+          }
+        },
+        "res2": {
+          "success": false,
+          "statusCode": 409,
+          "error": "ConflictException",
+          "message": "OCR job was reviewed concurrently by another user. Review aborted.",
+          "meta": {
+            "timestamp": "2026-11-06T07:37:18.112Z",
+            "path": "/api/v1/ocr/review/5796a726-0adb-4f60-8b05-d4fa9a9a0fe7"
+          }
+        }
+      }
+    },
+    {
+      "suite": "Suite C: OCR Transaction & Concurrency",
+      "name": "C2.2: Database integrity — Exactly 1 verification persisted and job marked COMPLETED",
+      "status": "PASS",
+      "durationMs": 5,
+      "details": {
+        "verificationsCount": 1,
+        "finalStatus": "COMPLETED"
+      }
+    },
+    {
+      "suite": "Suite D: Directory Pagination",
+      "name": "D1.1: Facilities directory pagination limit=3 & page continuity (disjoint sets)",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 17
+    },
+    {
+      "suite": "Suite D: Directory Pagination",
+      "name": "D1.2: Facilities response contract preserves raw array in data field",
+      "status": "PASS",
+      "durationMs": 2
+    },
+    {
+      "suite": "Suite D: Directory Pagination",
+      "name": "D1.3: Facilities limit upper clamp (limit=500 safely clamped to <=100)",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 12
+    },
+    {
+      "suite": "Suite D: Directory Pagination",
+      "name": "D2.1: Doctors directory pagination & upper clamp (limit=500 clamped <=100)",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 19
+    },
+    {
+      "suite": "Suite D: Directory Pagination",
+      "name": "D3.1: Staff directory pagination & upper clamp (limit=500 clamped <=100)",
+      "status": "PASS",
+      "httpStatus": 200,
+      "durationMs": 20
+    },
+    {
+      "suite": "Suite E: Security & RBAC",
+      "name": "E1.1: Unauthenticated request to Timeline returns 401 Unauthorized",
+      "status": "PASS",
+      "httpStatus": 401,
+      "durationMs": 2
+    },
+    {
+      "suite": "Suite E: Security & RBAC",
+      "name": "E1.2: Unauthenticated request to OCR review returns 401 Unauthorized",
+      "status": "PASS",
+      "httpStatus": 401,
+      "durationMs": 2
+    },
+    {
+      "suite": "Suite E: Security & RBAC",
+      "name": "E1.3: Unauthenticated request to Doctors returns 401 Unauthorized",
+      "status": "PASS",
+      "httpStatus": 401,
+      "durationMs": 3
+    },
+    {
+      "suite": "Suite E: Security & RBAC",
+      "name": "E2.1: PATIENT role attempting Admin Timeline returns 403 Forbidden",
+      "status": "PASS",
+      "httpStatus": 403,
+      "durationMs": 2
+    },
+    {
+      "suite": "Suite E: Security & RBAC",
+      "name": "E2.2: PATIENT role attempting OCR Review returns 403 Forbidden",
+      "status": "PASS",
+      "httpStatus": 403,
+      "durationMs": 2
+    },
+    {
+      "suite": "Suite E: Security & RBAC",
+      "name": "E2.3: DOCTOR role attempting Staff directory returns 403 Forbidden",
+      "status": "PASS",
+      "httpStatus": 403,
+      "durationMs": 2
+    },
+    {
+      "suite": "Suite E: Security & RBAC",
+      "name": "E3.1: SQL injection string in pagination param safely rejected (400 Bad Request)",
+      "status": "PASS",
+      "httpStatus": 400,
+      "durationMs": 4
+    },
+    {
+      "suite": "Suite E: Security & RBAC",
+      "name": "E3.2: Negative limit rejected by class-validator (400 Bad Request)",
+      "status": "PASS",
+      "httpStatus": 400,
+      "durationMs": 3
+    },
+    {
+      "suite": "Suite E: Security & RBAC",
+      "name": "E4.1: Zero internal stack traces, SQL syntax, or schema names leaked in error payloads",
+      "status": "PASS",
+      "durationMs": 2
+    }
+  ]
+}

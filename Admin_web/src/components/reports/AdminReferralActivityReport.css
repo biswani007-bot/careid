@@ -1,0 +1,815 @@
+/* ==========================================================================
+   CareID Admin Portal - Referral Activity Report (Figma 20:6510)
+   Full Viewport Responsive Bento Grid, Canonical Proportions & Styling
+   ========================================================================== */
+
+.referral-activity-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: #f2f4f6;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #191c1e;
+  position: relative;
+}
+
+.referral-activity-main {
+  flex: 1 1 0%;
+  min-width: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  background-color: #f2f4f6;
+}
+
+/* ==========================================================================
+   1. Stationary Top Navigation Bar (Figma 20:6512)
+   ========================================================================== */
+.referral-activity-top-navbar {
+  height: 64px;
+  flex-shrink: 0;
+  background-color: #f8f9fb;
+  border-bottom: 1px solid #cbc4d4;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 20;
+  box-sizing: border-box;
+}
+
+.referral-activity-top-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex: 1 1 0%;
+  max-width: 650px;
+}
+
+.referral-activity-header-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #191c1e;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.referral-activity-search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #e7e8ea;
+  border-radius: 9999px;
+  padding: 9px 16px 9px 40px;
+  width: 100%;
+  max-width: 448px;
+  box-sizing: border-box;
+}
+
+.referral-activity-search-icon {
+  position: absolute;
+  left: 12px;
+  color: #494552;
+  pointer-events: none;
+}
+
+.referral-activity-search-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #191c1e;
+  font-family: inherit;
+}
+
+.referral-activity-search-input::placeholder {
+  color: #494552;
+}
+
+.referral-activity-top-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.referral-activity-icon-btn {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #494552;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.referral-activity-icon-btn:hover {
+  background-color: #edeef0;
+  color: #28006d;
+}
+
+.referral-activity-divider {
+  width: 1px;
+  height: 32px;
+  background-color: #cbc4d4;
+  margin: 0 8px;
+}
+
+.referral-activity-avatar-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px 4px 4px;
+  border-radius: 9999px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.referral-activity-avatar-btn:hover {
+  background-color: #edeef0;
+}
+
+.referral-activity-avatar-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  border: 1px solid #cbc4d4;
+  overflow: hidden;
+  background-color: #e1e2e4;
+  flex-shrink: 0;
+}
+
+.referral-activity-avatar-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   2. Main Scrollable Canvas (Figma 20:6538)
+   ========================================================================== */
+.referral-activity-canvas {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 32px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.referral-activity-canvas::-webkit-scrollbar {
+  width: 6px;
+}
+.referral-activity-canvas::-webkit-scrollbar-track {
+  background: transparent;
+}
+.referral-activity-canvas::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+
+/* Header Section (Figma 20:6539) */
+.referral-activity-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.referral-activity-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.referral-activity-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.64px;
+  color: #191c1e;
+  margin: 0;
+}
+
+.referral-activity-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #494552;
+  margin: 0;
+}
+
+.referral-activity-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.referral-activity-date-btn {
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 8px;
+  padding: 9px 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #191c1e;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.referral-activity-date-btn:hover {
+  border-color: #28006d;
+}
+
+.referral-activity-export-btn {
+  background-color: #28006d;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  padding: 8px 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.15s ease;
+}
+
+.referral-activity-export-btn:hover {
+  background-color: #3b0a94;
+  box-shadow: 0 4px 12px rgba(40, 0, 109, 0.2);
+}
+
+.referral-activity-export-btn:active {
+  transform: scale(0.99);
+}
+
+/* ==========================================================================
+   3. Top Metrics Bento Grid (Figma 20:6559)
+   ========================================================================== */
+.referral-activity-top-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Highlight Card: Total Referral Volume (Spans 2) (Figma 20:6588) */
+.referral-activity-card-volume {
+  grid-column: span 2 / span 2;
+  background-color: #3f1d8b;
+  border-radius: 20px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 209px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.referral-activity-volume-glow {
+  position: absolute;
+  top: -48px;
+  right: -48px;
+  width: 192px;
+  height: 192px;
+  border-radius: 9999px;
+  background-color: #28006d;
+  filter: blur(20px);
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.referral-activity-volume-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.referral-activity-volume-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #ab8efd;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.referral-activity-volume-badge {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  border-radius: 9999px;
+  padding: 4px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #ab8efd;
+}
+
+.referral-activity-volume-metric {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.referral-activity-volume-number {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.64px;
+  color: #ab8efd;
+}
+
+.referral-activity-volume-subtext {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #ab8efd;
+  opacity: 0.8;
+}
+
+/* Sparkline Bar Visualization */
+.referral-activity-sparkline {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 4px;
+  height: 64px;
+  width: 100%;
+  margin-top: 24px;
+  box-sizing: border-box;
+}
+
+.referral-activity-spark-bar {
+  flex: 1 1 0%;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  transition: opacity 0.15s ease;
+}
+
+/* Secondary KPI Cards (Figma 20:6560, 20:6574) */
+.referral-activity-kpi-card {
+  grid-column: span 1 / span 1;
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 209px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.referral-activity-kpi-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.referral-activity-icon-bubble-yellow {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background-color: #ffdf9e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #191c1e;
+  flex-shrink: 0;
+}
+
+.referral-activity-icon-bubble-red {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background-color: #ffdad6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ba1a1a;
+  flex-shrink: 0;
+}
+
+.referral-activity-badge-teal {
+  background-color: rgba(133, 246, 229, 0.3);
+  color: #007166;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.referral-activity-badge-red {
+  background-color: rgba(255, 218, 214, 0.5);
+  color: #ba1a1a;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.referral-activity-kpi-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.referral-activity-kpi-label {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #494552;
+}
+
+.referral-activity-kpi-val {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  color: #191c1e;
+}
+
+.referral-activity-kpi-unit {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #494552;
+}
+
+/* ==========================================================================
+   4. Status Breakdown & Charts Bento Grid (Figma 20:6612)
+   ========================================================================== */
+.referral-activity-bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Column 1: Pipeline Status (Span 4) (Figma 20:6613) */
+.referral-activity-pipeline-col {
+  grid-column: span 4 / span 4;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.referral-activity-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #191c1e;
+  margin: 0;
+  padding: 0 4px 4px 4px;
+}
+
+.referral-activity-status-card {
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 20px;
+  padding: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.referral-activity-status-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.referral-activity-status-indicator {
+  width: 8px;
+  height: 40px;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+.referral-activity-status-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.referral-activity-status-name {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.6px;
+  color: #494552;
+}
+
+.referral-activity-status-num {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  color: #191c1e;
+}
+
+.referral-activity-percent-badge {
+  background-color: #e7e8ea;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #494552;
+  white-space: nowrap;
+}
+
+/* Column 2: Hospital Distribution (Span 4) (Figma 20:6647) */
+.referral-activity-hospital-col {
+  grid-column: span 4 / span 4;
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.referral-activity-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.referral-activity-barchart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.referral-activity-barchart-stage {
+  height: 192px;
+  border-bottom: 1px solid rgba(203, 196, 212, 0.5);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding-bottom: 9px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.referral-activity-bar-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+  position: relative;
+  width: 40px;
+}
+
+.referral-activity-bar-fill {
+  width: 40px;
+  background-color: #28006d;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.referral-activity-bar-fill:hover {
+  background-color: #3f1d8b;
+  transform: scaleY(1.02);
+}
+
+.referral-activity-bar-tooltip {
+  position: absolute;
+  top: -34px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2e3132;
+  color: #f0f1f3;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.referral-activity-bar-fill:hover .referral-activity-bar-tooltip {
+  opacity: 1;
+}
+
+.referral-activity-barchart-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.referral-activity-x-label {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #494552;
+  text-align: center;
+  width: 40px;
+}
+
+/* Column 3: Top Departments (Span 4) (Figma 20:6683) */
+.referral-activity-dept-col {
+  grid-column: span 4 / span 4;
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.referral-activity-view-all {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #28006d;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.referral-activity-view-all:hover {
+  text-decoration: underline;
+}
+
+.referral-activity-dept-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.referral-activity-dept-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.referral-activity-dept-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.referral-activity-dept-name {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #191c1e;
+}
+
+.referral-activity-dept-count {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #494552;
+}
+
+.referral-activity-dept-bar-track {
+  height: 8px;
+  background-color: #e7e8ea;
+  border-radius: 9999px;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.referral-activity-dept-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+}
+
+/* ==========================================================================
+   5. Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .referral-activity-top-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .referral-activity-card-volume {
+    grid-column: span 2 / span 2;
+  }
+  .referral-activity-bottom-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .referral-activity-pipeline-col {
+    grid-column: span 1 / span 1;
+  }
+  .referral-activity-hospital-col {
+    grid-column: span 1 / span 1;
+  }
+  .referral-activity-dept-col {
+    grid-column: span 2 / span 2;
+  }
+}
+
+@media (max-width: 840px) {
+  .referral-activity-canvas {
+    padding: 16px;
+    gap: 16px;
+  }
+  .referral-activity-top-navbar {
+    padding: 0 16px;
+  }
+  .referral-activity-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .referral-activity-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .referral-activity-top-grid {
+    grid-template-columns: 1fr;
+  }
+  .referral-activity-card-volume {
+    grid-column: span 1 / span 1;
+  }
+  .referral-activity-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+  .referral-activity-pipeline-col,
+  .referral-activity-hospital-col,
+  .referral-activity-dept-col {
+    grid-column: span 1 / span 1;
+  }
+}
+

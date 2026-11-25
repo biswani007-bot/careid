@@ -1,0 +1,31 @@
+{
+  "sidebar_items": {
+    "hasDashboard": true,
+    "hasPatients": true,
+    "hasReferrals": true,
+    "hasOfficeChat": true,
+    "hasReports": true,
+    "hasProfile": true
+  },
+  "url_after_click": "http://localhost:5173/chat",
+  "active_nav_styling": {
+    "className": "w-full h-11 flex items-center gap-3 px-4 rounded-full text-sm transition-colors bg-[#3f1d8b] text-[#ab8efd] font-semibold active",
+    "computedColor": "rgb(171, 142, 253)",
+    "computedBg": "rgb(63, 29, 139)"
+  },
+  "searchable_patient_selection": {
+    "searchInputFound": true,
+    "optionsCount": 1,
+    "patients": [
+      {
+        "text": "John Doe (PT-CAREID-2026-0004)",
+        "value": "3896bc97-bd3b-40ae-80c1-0cc0455ca3a4"
+      }
+    ]
+  },
+  "templates_accessible": true,
+  "history_persists_after_refresh": true,
+  "veterinary_sidebar_has_chat": true,
+  "access_boundary_enforced": true,
+  "test_status": "ALL_PASSED"
+}

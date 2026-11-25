@@ -1,0 +1,115 @@
+name: careid-local-integration
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: careid-integration-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-careid_test_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB:-careid_integration_db}
+    ports:
+      - "5433:5432"
+    volumes:
+      - careid_integration_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+    networks:
+      - careid-integration-net
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: careid-integration-backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}?schema=public
+      PORT: 3000
+      HOST: 0.0.0.0
+      NODE_ENV: staging
+      GLOBAL_PREFIX: api
+      SWAGGER_PATH: docs
+      ENABLE_SWAGGER: "true"
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_EXPIRATION: 15m
+      REFRESH_TOKEN_EXPIRATION: 7d
+      ENABLE_TEST_OTP: ${ENABLE_TEST_OTP:-false}
+      TEST_OTP_CODE: ${TEST_OTP_CODE:-123456}
+      TEST_PHONE_NUMBERS: ${TEST_PHONE_NUMBERS:-}
+      ENABLE_LOCAL_SMS_INBOX: ${ENABLE_LOCAL_SMS_INBOX:-false}
+      AUTO_MIGRATE: ${AUTO_MIGRATE:-false}
+      AUTO_SEED: ${AUTO_SEED:-false}
+      CORS_ALLOWED_ORIGINS: "http://localhost:5173,http://localhost:5174,http://127.0.0.1:5173,http://127.0.0.1:5174,http://localhost:3001,http://127.0.0.1:3001,http://localhost:3000,http://127.0.0.1:3000"
+      STRICT_PET_PERSISTENCE: "true"
+      LOG_LEVEL: debug
+      FINANCING_ENCRYPTION_KEY: ${FINANCING_ENCRYPTION_KEY}
+    ports:
+      - "3001:3000"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/api/v1/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 20s
+    networks:
+      - careid-integration-net
+
+  doctor-web:
+    build:
+      context: ./doctor_web
+      dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: http://localhost:3001
+    container_name: careid-integration-doctor-web
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "5173:80"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:80/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - careid-integration-net
+
+  admin-web:
+    build:
+      context: ./Admin_web
+      dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: http://localhost:3001
+    container_name: careid-integration-admin-web
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "5174:80"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:80/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - careid-integration-net
+
+volumes:
+  careid_integration_postgres_data:
+    name: careid_integration_postgres_data
+
+networks:
+  careid-integration-net:
+    name: careid-integration-net
+    driver: bridge

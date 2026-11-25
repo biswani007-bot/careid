@@ -1,0 +1,1872 @@
+[
+  {
+    "path": "/api/v1/reports/dashboard/executive",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:30:47 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "640",
+      "etag": "W/\"280-oY+00Zgi//PJCKo++lPi3TRG1J0\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "platformOverview": {
+          "totalPatients": 0,
+          "totalDoctors": 3,
+          "totalFacilities": 2,
+          "totalStaff": 1,
+          "totalHealthCards": 1,
+          "totalInsurancePolicies": 1,
+          "totalImmunisations": 0,
+          "totalReports": 0,
+          "totalAuditLogs": 3090,
+          "totalAppointments": 0,
+          "totalReferrals": 1,
+          "pendingReferrals": 0,
+          "completedReferrals": 0,
+          "totalMedicalRecords": 1,
+          "totalOcrJobs": 1
+        },
+        "isPartialData": true,
+        "unavailableMetrics": [
+          "totalPatients",
+          "totalAppointments"
+        ],
+        "systemHealth": {
+          "status": "DEGRADED",
+          "database": "CONNECTED",
+          "timestamp": "2026-11-03T11:30:47.681Z"
+        }
+      },
+      "meta": {
+        "timestamp": "2026-11-03T11:30:47.681Z"
+      }
+    },
+    "responseTimeMs": 688
+  },
+  {
+    "path": "/api/v1/reports/dashboard/executive?startDate=2026-01-01&endDate=2026-11-03",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:30:48 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "640",
+      "etag": "W/\"280-mEUG92EygrId9D+uM/6WF4Ah+sU\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "platformOverview": {
+          "totalPatients": 0,
+          "totalDoctors": 3,
+          "totalFacilities": 2,
+          "totalStaff": 1,
+          "totalHealthCards": 1,
+          "totalInsurancePolicies": 1,
+          "totalImmunisations": 0,
+          "totalReports": 0,
+          "totalAuditLogs": 2906,
+          "totalAppointments": 0,
+          "totalReferrals": 1,
+          "pendingReferrals": 0,
+          "completedReferrals": 0,
+          "totalMedicalRecords": 1,
+          "totalOcrJobs": 1
+        },
+        "isPartialData": true,
+        "unavailableMetrics": [
+          "totalPatients",
+          "totalAppointments"
+        ],
+        "systemHealth": {
+          "status": "DEGRADED",
+          "database": "CONNECTED",
+          "timestamp": "2026-11-03T11:30:48.406Z"
+        }
+      },
+      "meta": {
+        "timestamp": "2026-11-03T11:30:48.407Z"
+      }
+    },
+    "responseTimeMs": 696
+  },
+  {
+    "path": "/api/v1/reports/analytics/modules/PATIENT",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:30:49 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "216",
+      "etag": "W/\"d8-wxPRRKoxmJcvsVqqirKssfGILy0\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "module": "patient",
+        "total": 0,
+        "genderDistribution": {
+          "male": 0,
+          "female": 0,
+          "other": 0
+        }
+      },
+      "meta": {
+        "timestamp": "2026-11-03T11:30:49.726Z"
+      }
+    },
+    "responseTimeMs": 1328
+  },
+  {
+    "path": "/api/v1/reports/analytics/modules/REFERRALS",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:30:50 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "165",
+      "etag": "W/\"a5-Cfd6yDbuJWkA+kd9TS/vaKqLrM8\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "module": "REFERRALS",
+        "count": 0
+      },
+      "meta": {
+        "timestamp": "2026-11-03T11:30:50.551Z"
+      }
+    },
+    "responseTimeMs": 856
+  },
+  {
+    "path": "/api/v1/reports/analytics/modules/FACILITY",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:30:51 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "177",
+      "etag": "W/\"b1-9DWqGk0M2wx4q4w/7ftX6kn4SxU\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "module": "facility",
+        "total": 2,
+        "verified": 2
+      },
+      "meta": {
+        "timestamp": "2026-11-03T11:30:51.326Z"
+      }
+    },
+    "responseTimeMs": 747
+  },
+  {
+    "path": "/api/v1/reports/analytics/modules/OCR",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:30:52 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "184",
+      "etag": "W/\"b8-vM+t6tu4+J9Q3XTx6HjOQa93KFs\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "module": "ocr",
+        "total": 1,
+        "completed": 1,
+        "failed": 0
+      },
+      "meta": {
+        "timestamp": "2026-11-03T11:30:52.093Z"
+      }
+    },
+    "responseTimeMs": 773
+  },
+  {
+    "path": "/api/v1/reports/definitions",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:30:52 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "135",
+      "etag": "W/\"87-O/pZ4osG9Qjlm3b3USrOoByK61s\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [],
+      "meta": {
+        "timestamp": "2026-11-03T11:30:52.790Z"
+      }
+    },
+    "responseTimeMs": 731
+  },
+  {
+    "path": "/api/v1/reports/generated",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:30:53 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "135",
+      "etag": "W/\"87-vvQKoveu1VmUhhL2hmNmuF61utE\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [],
+      "meta": {
+        "timestamp": "2026-11-03T11:30:53.439Z"
+      }
+    },
+    "responseTimeMs": 638
+  },
+  {
+    "path": "/api/v1/reports/widgets",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:30:54 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "135",
+      "etag": "W/\"87-orSNGV17f/7m57ByVyDxQVj1EHI\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [],
+      "meta": {
+        "timestamp": "2026-11-03T11:30:54.153Z"
+      }
+    },
+    "responseTimeMs": 675
+  },
+  {
+    "path": "/api/v1/reports/widgets?isEnabledOnly=true",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:30:54 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "135",
+      "etag": "W/\"87-pBz0z/C6/sd7I1KTsXfzmy5v8X0\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [],
+      "meta": {
+        "timestamp": "2026-11-03T11:30:54.729Z"
+      }
+    },
+    "responseTimeMs": 643
+  },
+  {
+    "path": "/api/v1/reports/snapshots",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:30:55 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "135",
+      "etag": "W/\"87-LjzkOY/0UgRNpoAoJmrs5lEEfAk\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [],
+      "meta": {
+        "timestamp": "2026-11-03T11:30:55.376Z"
+      }
+    },
+    "responseTimeMs": 575
+  },
+  {
+    "path": "/api/v1/reports",
+    "method": "GET",
+    "status": 404,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:30:55 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "210",
+      "etag": "W/\"d2-pl3rQQg4I5VgGgXYrHrdISGBKik\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": false,
+      "statusCode": 404,
+      "error": "NotFoundException",
+      "message": "Patient profile not found. Please complete registration first.",
+      "meta": {
+        "timestamp": "2026-11-03T11:30:56.041Z",
+        "path": "/api/v1/reports"
+      }
+    },
+    "responseTimeMs": 687
+  },
+  {
+    "path": "/api/v1/reports/categories",
+    "method": "GET",
+    "status": 404,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:30:56 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "221",
+      "etag": "W/\"dd-ZpzjoLQydMgBn2wh7Zprx/sSxL8\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": false,
+      "statusCode": 404,
+      "error": "NotFoundException",
+      "message": "Patient profile not found. Please complete registration first.",
+      "meta": {
+        "timestamp": "2026-11-03T11:30:56.724Z",
+        "path": "/api/v1/reports/categories"
+      }
+    },
+    "responseTimeMs": 715
+  },
+  {
+    "path": "/api/v1/reports/search?q=cardiology",
+    "method": "GET",
+    "status": 404,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:30:59 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "230",
+      "etag": "W/\"e6-uHXXj2DXf8pCvVYc2FnvVnmgTzQ\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": false,
+      "statusCode": 404,
+      "error": "NotFoundException",
+      "message": "Patient profile not found. Please complete registration first.",
+      "meta": {
+        "timestamp": "2026-11-03T11:30:59.742Z",
+        "path": "/api/v1/reports/search?q=cardiology"
+      }
+    },
+    "responseTimeMs": 3007
+  },
+  {
+    "path": "/api/v1/reports/timeline",
+    "method": "GET",
+    "status": 404,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:00 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "219",
+      "etag": "W/\"db-GMl30H+ZAvDcBkX/PNwJfPpkSi8\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": false,
+      "statusCode": 404,
+      "error": "NotFoundException",
+      "message": "Patient profile not found. Please complete registration first.",
+      "meta": {
+        "timestamp": "2026-11-03T11:31:00.650Z",
+        "path": "/api/v1/reports/timeline"
+      }
+    },
+    "responseTimeMs": 882
+  },
+  {
+    "path": "/api/v1/admin/dashboard/stats",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:01 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "212",
+      "etag": "W/\"d4-ONfyt13b/kFNY9k2GbCNrpkc/R0\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "totalPatients": 1,
+        "totalDoctors": 3,
+        "pendingOcrReviews": 0,
+        "systemLogsCount": 10
+      },
+      "meta": {
+        "timestamp": "2026-11-03T11:31:01.448Z"
+      }
+    },
+    "responseTimeMs": 800
+  },
+  {
+    "path": "/api/v1/admin/dashboard/summary",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:02 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "2821",
+      "etag": "W/\"b05-E9vwOHMB5yW1lOOhCBtvnmoIvd8\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "totalPatients": 1,
+        "totalDoctors": 3,
+        "totalFacilities": 2,
+        "totalStaff": 1,
+        "totalHealthCards": 1,
+        "totalInsurancePolicies": 1,
+        "totalImmunisationRecords": 0,
+        "totalActiveSchedules": 0,
+        "recentActivities": [
+          {
+            "id": "90f3c6ac-9df6-441a-be4c-e329323f667b",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:14.463Z"
+          },
+          {
+            "id": "fb562ade-b97f-4e2a-b891-4d3f4c99dde4",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:13.871Z"
+          },
+          {
+            "id": "0cf4561c-ce4e-4847-9cb6-2db6d5f11d65",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:09.863Z"
+          },
+          {
+            "id": "b15b199b-ba44-4a75-8caf-849835b6959c",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:09.506Z"
+          },
+          {
+            "id": "ea664058-fb54-40c6-96eb-905e493f706c",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:05.836Z"
+          },
+          {
+            "id": "4cec1658-9a8d-4e80-85b8-e0c085004302",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:05.634Z"
+          },
+          {
+            "id": "7e61182b-7ade-4751-9db3-dc093fbd8824",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:02.753Z"
+          },
+          {
+            "id": "0e4d2dc0-f951-406a-a353-a96e3f98f157",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:02.481Z"
+          },
+          {
+            "id": "8e36d0a8-8ad2-4c9d-b349-63a492af97e1",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:01.808Z"
+          },
+          {
+            "id": "47ed7c43-7747-429d-adab-9fe7d3e4d6a8",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:01.568Z"
+          }
+        ],
+        "growthMetrics": {
+          "newPatientsThisMonth": 0,
+          "newDoctorsThisMonth": 0,
+          "newFacilitiesThisMonth": 0
+        }
+      },
+      "meta": {
+        "timestamp": "2026-11-03T11:31:02.173Z"
+      }
+    },
+    "responseTimeMs": 727
+  },
+  {
+    "path": "/api/v1/admin/medical-records",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:02 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "1374",
+      "etag": "W/\"55e-/HuXQ/t+XaLuz8tDyDhgCmvwL3w\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [
+        {
+          "id": "45d5ba2a-05bd-4a7f-ad34-fe9e677cff78",
+          "patientProfileId": "787e5187-7859-4320-bb1a-465a57dd086a",
+          "title": "Comprehensive Cardiology Consultation",
+          "chiefComplaint": "Routine annual cardiovascular checkup",
+          "clinicalNotes": "Resting BP 118/78 mmHg. Normal sinus rhythm. Clear breath sounds. No cardiac murmurs.",
+          "treatmentPlan": "Maintain current diet and aerobic exercise 150 mins weekly. Follow-up in 12 months.",
+          "followUpInstructions": "Return sooner if experiencing exertional chest discomfort or shortness of breath.",
+          "status": "FINAL",
+          "isDeleted": false,
+          "createdAt": "2026-10-28T07:40:44.463Z",
+          "updatedAt": "2026-10-28T07:40:44.463Z",
+          "patient": {
+            "id": "787e5187-7859-4320-bb1a-465a57dd086a",
+            "patientNumber": "PT-CAREID-2026-0004",
+            "firstName": "Marcus",
+            "lastName": "Mishra",
+            "phone": "+16505550004"
+          },
+          "encounters": [],
+          "diagnoses": [],
+          "vitalSigns": [],
+          "procedures": [],
+          "attachments": [
+            {
+              "id": "a7da7ea4-c0a5-434b-89ff-b984fac250d4",
+              "fileName": "cardiology_ecg_report_2026.pdf",
+              "originalName": "cardiology_ecg_report_2026.pdf",
+              "fileSize": 245800,
+              "mimeType": "application/pdf",
+              "category": "LAB_RESULT",
+              "virusScanStatus": "CLEAN",
+              "createdAt": "2026-10-28T07:40:44.472Z"
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "timestamp": "2026-11-03T11:31:02.852Z",
+        "totalItems": 1,
+        "page": 1,
+        "limit": 20,
+        "totalPages": 1,
+        "hasNextPage": false,
+        "hasPreviousPage": false
+      }
+    },
+    "responseTimeMs": 718
+  },
+  {
+    "path": "/api/v1/facilities",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:03 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "1972",
+      "etag": "W/\"7b4-xvBOpRirWtfULXgyMDUfO3nyWIU\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [
+        {
+          "id": "ffd6cadd-4a74-4129-86c0-35e643fd3205",
+          "name": "CareID Apex Diagnostic Center",
+          "legalName": "Apex Health Partners LLC",
+          "facilityCode": "FAC-360-973345",
+          "registrationNumber": "REG-FAC-2026-099",
+          "facilityType": "DIAGNOSTIC_CENTER",
+          "ownershipType": "PRIVATE",
+          "streetAddress": "742 Evergreen Terrace",
+          "city": "Springfield",
+          "state": "Oregon",
+          "country": "United States",
+          "timezone": "Asia/Karachi",
+          "phone": "+16505559876",
+          "emergencyPhone": "+16505559877",
+          "email": "apex@careid.health",
+          "verificationStatus": "VERIFIED",
+          "verificationNotes": "Compliance audit pending",
+          "isDeleted": false,
+          "branches": [],
+          "departments": [],
+          "rooms": [],
+          "licenses": [],
+          "accreditations": [],
+          "documents": [],
+          "createdAt": "2026-10-31T10:36:13.352Z",
+          "updatedAt": "2026-10-31T10:36:39.711Z"
+        },
+        {
+          "id": "3b6a3f47-ed9c-4010-bb1a-e0fdea5f4abb",
+          "name": "Metro General Hospital",
+          "legalName": "Metro Healthcare Systems Inc.",
+          "facilityCode": "FAC-METRO-001",
+          "registrationNumber": "REG-FAC-2026-001",
+          "facilityType": "HOSPITAL",
+          "ownershipType": "PRIVATE",
+          "streetAddress": "100 Medical Center Boulevard",
+          "city": "Metro City",
+          "state": "Central",
+          "country": "United States",
+          "timezone": "America/New_York",
+          "phone": "+16505559000",
+          "email": "contact@metrogeneral.org",
+          "verificationStatus": "VERIFIED",
+          "verificationNotes": "Test verification by Super Admin",
+          "verifiedBy": "bc6f6875-434c-4050-b893-07343cc27986",
+          "verifiedAt": "2026-10-31T10:35:56.357Z",
+          "isDeleted": false,
+          "branches": [],
+          "departments": [
+            {
+              "id": "7c718d5b-a26d-462a-92ef-886bf8331a13",
+              "facilityId": "3b6a3f47-ed9c-4010-bb1a-e0fdea5f4abb",
+              "name": "Cardiology Department",
+              "code": "CARD-01",
+              "description": "Comprehensive Cardiovascular Diagnostics and Care",
+              "departmentHead": "Dr. Sarah Jenkins, MD",
+              "createdAt": "2026-10-28T07:40:44.352Z"
+            }
+          ],
+          "rooms": [],
+          "licenses": [],
+          "accreditations": [],
+          "documents": [],
+          "createdAt": "2026-10-28T07:40:44.329Z",
+          "updatedAt": "2026-10-31T10:35:56.362Z"
+        }
+      ],
+      "meta": {
+        "timestamp": "2026-11-03T11:31:03.604Z"
+      }
+    },
+    "responseTimeMs": 750
+  },
+  {
+    "path": "/api/v1/doctors",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:04 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "2767",
+      "etag": "W/\"acf-Q/6B+VX1xUGykYXg8W63ngyfGtE\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [
+        {
+          "id": "7c8fd004-cba1-4a72-9db6-437fc6d2baed",
+          "userId": "8e8ede62-bb00-41fe-af08-06d707805434",
+          "fullName": "Dr. Julian Vance, MD",
+          "gender": "MALE",
+          "dateOfBirth": "1982-11-14",
+          "yearsOfExperience": 10,
+          "primarySpecialization": "Cardiology",
+          "secondarySpecializations": [
+            "General Practice"
+          ],
+          "medicalCouncil": "State Medical Board",
+          "registrationNumber": "MED-REG-2026-3950",
+          "licenseNumber": "NY-55193",
+          "providerIdentifier": "DOC-360-071553",
+          "verificationStatus": "PENDING",
+          "department": "Outpatient Care",
+          "subSpecializations": [],
+          "clinicalInterests": [],
+          "servicesOffered": [],
+          "languagesSpoken": [
+            "English"
+          ],
+          "isDeleted": false,
+          "qualifications": [],
+          "certifications": [],
+          "experiences": [],
+          "documents": [],
+          "createdAt": "2026-10-29T05:01:11.561Z",
+          "updatedAt": "2026-10-29T05:01:11.561Z"
+        },
+        {
+          "id": "5ab2e715-bf8f-4fd4-98bb-c5166dd7157b",
+          "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+          "fullName": "Dr. Robert Chen",
+          "gender": "MALE",
+          "dateOfBirth": "1978-05-12",
+          "yearsOfExperience": 16,
+          "primarySpecialization": "Cardiology",
+          "secondarySpecializations": [],
+          "medicalCouncil": "State Medical Board",
+          "registrationNumber": "MED-REG-2026-1192",
+          "licenseNumber": "MD-119284",
+          "providerIdentifier": "DOC-360-912162",
+          "verificationStatus": "VERIFIED",
+          "verificationNotes": "Medical board credentialing audit verified",
+          "verifiedBy": "bc6f6875-434c-4050-b893-07343cc27986",
+          "verifiedAt": "2026-10-29T05:45:03.498Z",
+          "department": "Cardiovascular Surgery Division",
+          "subSpecializations": [],
+          "clinicalInterests": [],
+          "servicesOffered": [],
+          "languagesSpoken": [
+            "English"
+          ],
+          "isDeleted": false,
+          "qualifications": [],
+          "certifications": [],
+          "experiences": [],
+          "documents": [],
+          "createdAt": "2026-10-29T04:58:32.167Z",
+          "updatedAt": "2026-10-29T05:45:06.001Z"
+        },
+        {
+          "id": "1f06067b-e229-4707-84e2-afa27da2e4cd",
+          "userId": "fa502f2e-332c-4ec0-b6aa-83713216ec88",
+          "fullName": "Dr. Sarah Jenkins, MD",
+          "gender": "Female",
+          "dateOfBirth": "1980-08-20",
+          "professionalSummary": "Board-certified cardiologist specializing in preventive and diagnostic cardiovascular medicine.",
+          "yearsOfExperience": 14,
+          "primarySpecialization": "Cardiology",
+          "secondarySpecializations": [
+            "Interventional Cardiology",
+            "Echocardiography"
+          ],
+          "medicalCouncil": "State Medical Board",
+          "registrationNumber": "MED-REG-2026-9081",
+          "licenseNumber": "LIC-MD-2026-9081",
+          "providerIdentifier": "NPI-DOC-2026-9081",
+          "verificationStatus": "VERIFIED",
+          "verificationNotes": "Compliance audit test",
+          "department": "Cardiovascular Medicine",
+          "subSpecializations": [],
+          "clinicalInterests": [],
+          "servicesOffered": [],
+          "languagesSpoken": [
+            "English",
+            "Spanish"
+          ],
+          "isDeleted": false,
+          "qualifications": [],
+          "certifications": [],
+          "experiences": [],
+          "documents": [],
+          "createdAt": "2026-10-28T07:40:44.362Z",
+          "updatedAt": "2026-10-29T04:58:22.556Z"
+        }
+      ],
+      "meta": {
+        "timestamp": "2026-11-03T11:31:04.313Z"
+      }
+    },
+    "responseTimeMs": 691
+  },
+  {
+    "path": "/api/v1/admin/patients",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:05 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "1225",
+      "etag": "W/\"4c9-h+uzoYbjZ7wiuBciYW1HEZ1uAl8\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [
+        {
+          "id": "787e5187-7859-4320-bb1a-465a57dd086a",
+          "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+          "patientNumber": "PT-CAREID-2026-0004",
+          "firstName": "Marcus",
+          "lastName": "Mishra",
+          "dateOfBirth": "1988-04-12T00:00:00.000Z",
+          "gender": "Female",
+          "bloodGroup": "O+",
+          "nationality": "American",
+          "phone": "+16505550004",
+          "email": null,
+          "userStatus": "ACTIVE",
+          "profileStatus": "COMPLETED",
+          "onboardingStep": 7,
+          "createdAt": "2026-10-28T07:40:44.397Z",
+          "updatedAt": "2026-11-02T12:00:55.412Z",
+          "emergencyContact": {
+            "id": "fbe7008f-4636-4726-8206-d11d9455ee07",
+            "patientProfileId": "787e5187-7859-4320-bb1a-465a57dd086a",
+            "name": "Jane Doe",
+            "relationship": "Spouse",
+            "phone": "+16505550099",
+            "createdAt": "2026-10-28T07:40:44.406Z",
+            "updatedAt": "2026-10-28T09:26:28.448Z"
+          },
+          "insurancePolicy": {
+            "id": "209d32e5-f924-4f87-8325-fb1d51e56cce",
+            "policyNumber": "POL-CAREID-2026-001",
+            "providerName": "BlueCross Premier Health",
+            "status": "ACTIVE"
+          },
+          "healthCard": {
+            "id": "85d5a9aa-0f01-4f1c-9671-d67bfa9d35b6",
+            "cardNumber": "HC-CAREID-2026-0004",
+            "status": "ACTIVE"
+          }
+        }
+      ],
+      "meta": {
+        "timestamp": "2026-11-03T11:31:05.971Z",
+        "totalItems": 1,
+        "page": 1,
+        "limit": 20,
+        "totalPages": 1,
+        "hasNextPage": false,
+        "hasPreviousPage": false
+      }
+    },
+    "responseTimeMs": 1673
+  },
+  {
+    "path": "/api/v1/referrals/dashboard/stats",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:06 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "243",
+      "etag": "W/\"f3-PQERSakWKYTURVTWniHtV1WAORg\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "totalReferrals": 1,
+        "pendingTriageCount": 0,
+        "acceptedCount": 1,
+        "completedCount": 0,
+        "avgCompletionTimeHours": 18.5
+      },
+      "meta": {
+        "timestamp": "2026-11-03T11:31:06.642Z"
+      }
+    },
+    "responseTimeMs": 619
+  },
+  {
+    "path": "/api/v1/referrals/dashboard/stats?facilityId=3b6a3f47-ed9c-4010-bb1a-e0fdea5f4abb",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:07 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "243",
+      "etag": "W/\"f3-eJXvqt7VlZVAOM8IvkIiZxFdJcg\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "totalReferrals": 1,
+        "pendingTriageCount": 0,
+        "acceptedCount": 1,
+        "completedCount": 0,
+        "avgCompletionTimeHours": 18.5
+      },
+      "meta": {
+        "timestamp": "2026-11-03T11:31:07.391Z"
+      }
+    },
+    "responseTimeMs": 765
+  },
+  {
+    "path": "/api/v1/ocr/dashboard",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:07 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "268",
+      "etag": "W/\"10c-k77UBbd77FjsHFWOjECKRKPCB08\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "totalJobs": 1,
+        "completedJobs": 1,
+        "reviewRequiredJobs": 0,
+        "failedJobs": 0,
+        "averageConfidence": 0.9333333333333332,
+        "activeTemplatesCount": 0
+      },
+      "meta": {
+        "timestamp": "2026-11-03T11:31:07.986Z"
+      }
+    },
+    "responseTimeMs": 576
+  },
+  {
+    "path": "/api/v1/ocr/statistics",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:08 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "268",
+      "etag": "W/\"10c-DL9FdcV6uLl3FxOnMk2/gP1FN1c\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "totalJobs": 1,
+        "completedJobs": 1,
+        "reviewRequiredJobs": 0,
+        "failedJobs": 0,
+        "averageConfidence": 0.9333333333333332,
+        "activeTemplatesCount": 0
+      },
+      "meta": {
+        "timestamp": "2026-11-03T11:31:08.688Z"
+      }
+    },
+    "responseTimeMs": 703
+  },
+  {
+    "path": "/api/v1/observability/dashboard",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:09 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "319",
+      "etag": "W/\"13f-0YqUQaKKNtc/ViD00YWbpra4xLA\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "overallStatus": "HEALTHY",
+        "totalRequests24h": 1240,
+        "avgResponseTimeMs": 11,
+        "errorRatePercentage": 0,
+        "cacheHitRatePercentage": 99,
+        "queueDepth": 0,
+        "activeUsers": 8,
+        "unhealthyComponentsCount": 0
+      },
+      "meta": {
+        "timestamp": "2026-11-03T11:31:09.265Z"
+      }
+    },
+    "responseTimeMs": 566
+  },
+  {
+    "path": "/api/v1/observability/health",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:09 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "1060",
+      "etag": "W/\"424-HY+x62mJoho8QZGtIx+q2ZxmGQs\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "status": "HEALTHY",
+        "components": [
+          {
+            "id": "hc-postgresql",
+            "component": "postgresql",
+            "status": "HEALTHY",
+            "checkedAt": "2026-11-03T11:31:09.910Z",
+            "responseTimeMs": 5,
+            "details": {
+              "status": "Operational (Simulated)"
+            }
+          },
+          {
+            "id": "hc-cache-engine",
+            "component": "cache-engine",
+            "status": "HEALTHY",
+            "checkedAt": "2026-11-03T11:31:09.912Z",
+            "responseTimeMs": 7,
+            "details": {
+              "status": "Operational (Simulated)"
+            }
+          },
+          {
+            "id": "hc-notification-queue",
+            "component": "notification-queue",
+            "status": "HEALTHY",
+            "checkedAt": "2026-11-03T11:31:09.915Z",
+            "responseTimeMs": 6,
+            "details": {
+              "status": "Operational (Simulated)"
+            }
+          },
+          {
+            "id": "hc-ocr-cpu-engine",
+            "component": "ocr-cpu-engine",
+            "status": "HEALTHY",
+            "checkedAt": "2026-11-03T11:31:09.917Z",
+            "responseTimeMs": 8,
+            "details": {
+              "status": "Operational (Simulated)"
+            }
+          },
+          {
+            "id": "hc-kms-security",
+            "component": "kms-security",
+            "status": "HEALTHY",
+            "checkedAt": "2026-11-03T11:31:09.918Z",
+            "responseTimeMs": 5,
+            "details": {
+              "status": "Operational (Simulated)"
+            }
+          }
+        ]
+      },
+      "meta": {
+        "timestamp": "2026-11-03T11:31:09.918Z"
+      }
+    },
+    "responseTimeMs": 695
+  },
+  {
+    "path": "/api/v1/observability/performance",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:10 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "336",
+      "etag": "W/\"150-iYxOSZu/047IfutTEd9dQjatUfM\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "id": "default-snapshot",
+        "cpuUsage": 12.4,
+        "memoryUsage": 38.6,
+        "databaseLatency": 2.8,
+        "cacheHitRate": 0.99,
+        "queueDepth": 0,
+        "activeUsers": 8,
+        "requestRate": 50,
+        "errorRate": 0,
+        "createdAt": "2026-11-03T11:31:10.521Z"
+      },
+      "meta": {
+        "timestamp": "2026-11-03T11:31:10.521Z"
+      }
+    },
+    "responseTimeMs": 584
+  },
+  {
+    "path": "/api/v1/observability/statistics",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:11 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "319",
+      "etag": "W/\"13f-nZUf0xHnRVtG0TsKWycZzlEPmQk\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "overallStatus": "HEALTHY",
+        "totalRequests24h": 1240,
+        "avgResponseTimeMs": 11,
+        "errorRatePercentage": 0,
+        "cacheHitRatePercentage": 99,
+        "queueDepth": 0,
+        "activeUsers": 8,
+        "unhealthyComponentsCount": 0
+      },
+      "meta": {
+        "timestamp": "2026-11-03T11:31:11.198Z"
+      }
+    },
+    "responseTimeMs": 693
+  },
+  {
+    "path": "/api/v1/observability/metrics",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:12 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "135",
+      "etag": "W/\"87-RZFJOjCnLgGlYYraDVZeUKARKE8\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [],
+      "meta": {
+        "timestamp": "2026-11-03T11:31:12.054Z"
+      }
+    },
+    "responseTimeMs": 824
+  },
+  {
+    "path": "/api/v1/health",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:12 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "213",
+      "etag": "W/\"d5-ZsHbNzGivjpk43Sjp/pWrYt3abo\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "status": "ok",
+        "timestamp": "2026-11-03T11:31:12.629Z",
+        "service": "HVAPI Backend"
+      },
+      "meta": {
+        "timestamp": "2026-11-03T11:31:12.629Z"
+      }
+    },
+    "responseTimeMs": 581
+  },
+  {
+    "path": "/api/v1/ready",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:13 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "213",
+      "etag": "W/\"d5-VAkTbpFW+wO/BkpvHsoMybsmeQ4\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "status": "ready",
+        "database": "connected",
+        "timestamp": "2026-11-03T11:31:13.675Z"
+      },
+      "meta": {
+        "timestamp": "2026-11-03T11:31:13.675Z"
+      }
+    },
+    "responseTimeMs": 1046
+  },
+  {
+    "path": "/api/v1/live",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:14 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "221",
+      "etag": "W/\"dd-nMYCpSKLFIpuBZqF4dWakiruVRc\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "status": "live",
+        "uptimeSeconds": 14988.560533444,
+        "timestamp": "2026-11-03T11:31:14.555Z"
+      },
+      "meta": {
+        "timestamp": "2026-11-03T11:31:14.556Z"
+      }
+    },
+    "responseTimeMs": 863
+  },
+  {
+    "path": "/api/v1/security/compliance/reports",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:15 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "586",
+      "etag": "W/\"24a-fhDXvjqdAgQCIPSD75y6u4l4sUE\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [
+        {
+          "id": "54bd558b-d249-4ee9-89c2-a0f01ace8730",
+          "reportName": "CareID SOC2 & HIPAA Audit 2026-Q4",
+          "reportType": "HIPAA_SOC2_ASSESSMENT",
+          "generatedBy": "bc6f6875-434c-4050-b893-07343cc27986",
+          "generatedAt": "2026-11-02T08:14:57.026Z",
+          "summary": "Health Vault 360 Compliance Assessment: Active Consents (0), Retention Policies (0), Open Incidents (0), Critical Incidents (0), KMS Version (1). Compliance Status: COMPLIANT",
+          "createdAt": "2026-11-02T08:14:57.026Z"
+        }
+      ],
+      "meta": {
+        "timestamp": "2026-11-03T11:31:15.135Z"
+      }
+    },
+    "responseTimeMs": 581
+  },
+  {
+    "path": "/api/v1/qr/statistics",
+    "method": "GET",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 11:31:15 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "246",
+      "etag": "W/\"f6-zgeh1ypwDxSn0wHKhQusDJo3h8U\"",
+      "connection": "close"
+    },
+    "body": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "totalQrs": 1,
+        "activeQrs": 1,
+        "revokedQrs": 0,
+        "totalScans": 0,
+        "successfulScans": 0,
+        "failedScans": 0,
+        "scansByEntity": {}
+      },
+      "meta": {
+        "timestamp": "2026-11-03T11:31:15.858Z"
+      }
+    },
+    "responseTimeMs": 727
+  }
+]

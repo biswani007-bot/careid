@@ -1,0 +1,770 @@
+[
+  {
+    "path": "/",
+    "element": "<LoginPage />"
+  },
+  {
+    "path": "/admin/login",
+    "element": "<Navigate to=\"/\" replace />"
+  },
+  {
+    "path": "/admin/dashboard",
+    "element": "<DashboardPage />"
+  },
+  {
+    "path": "/dashboard",
+    "element": "<Navigate to=\"/admin/dashboard\" replace />"
+  },
+  {
+    "path": "/admin/users",
+    "element": "<UserDirectoryPage />"
+  },
+  {
+    "path": "/admin/users/create",
+    "element": "<CreateUserPage />"
+  },
+  {
+    "path": "/admin/users/new",
+    "element": "<Navigate to=\"/admin/users/create\" replace />"
+  },
+  {
+    "path": "/admin/users/add",
+    "element": "<Navigate to=\"/admin/users/create\" replace />"
+  },
+  {
+    "path": "/admin/users/dialogs",
+    "element": "<UserActionDialogsPage />"
+  },
+  {
+    "path": "/admin/users/actions",
+    "element": "<Navigate to=\"/admin/users/dialogs\" replace />"
+  },
+  {
+    "path": "/admin/users/:userId",
+    "element": "<UserDetailsPage />"
+  },
+  {
+    "path": "/admin/users/details",
+    "element": "<Navigate to=\"/admin/users/user-1\" replace />"
+  },
+  {
+    "path": "/users",
+    "element": "<Navigate to=\"/admin/users\" replace />"
+  },
+  {
+    "path": "/admin/patients",
+    "element": "<PatientDirectoryPage />"
+  },
+  {
+    "path": "/admin/patients/directory",
+    "element": "<Navigate to=\"/admin/patients\" replace />"
+  },
+  {
+    "path": "/admin/patients/create",
+    "element": "<PatientRegistrationPage />"
+  },
+  {
+    "path": "/admin/patients/register",
+    "element": "<Navigate to=\"/admin/patients/create\" replace />"
+  },
+  {
+    "path": "/admin/patients/new",
+    "element": "<Navigate to=\"/admin/patients/create\" replace />"
+  },
+  {
+    "path": "/admin/patients/dialogs",
+    "element": "<PatientActionDialogsPage />"
+  },
+  {
+    "path": "/admin/patients/actions",
+    "element": "<Navigate to=\"/admin/patients/dialogs\" replace />"
+  },
+  {
+    "path": "/admin/patients/profile",
+    "element": "<Navigate to=\"/admin/patients\" replace />"
+  },
+  {
+    "path": "/admin/patients/:patientId",
+    "element": "<PatientProfilePage />"
+  },
+  {
+    "path": "/patients",
+    "element": "<Navigate to=\"/admin/patients\" replace />"
+  },
+  {
+    "path": "/admin/doctors",
+    "element": "<DoctorDirectoryPage />"
+  },
+  {
+    "path": "/admin/doctors/directory",
+    "element": "<Navigate to=\"/admin/doctors\" replace />"
+  },
+  {
+    "path": "/admin/doctors/create",
+    "element": "<CreateDoctorPage />"
+  },
+  {
+    "path": "/admin/doctors/add",
+    "element": "<Navigate to=\"/admin/doctors/create\" replace />"
+  },
+  {
+    "path": "/admin/doctors/new",
+    "element": "<Navigate to=\"/admin/doctors/create\" replace />"
+  },
+  {
+    "path": "/admin/doctors/actions",
+    "element": "<DoctorActionDialogsPage />"
+  },
+  {
+    "path": "/admin/doctors/dialogs",
+    "element": "<Navigate to=\"/admin/doctors/actions\" replace />"
+  },
+  {
+    "path": "/admin/doctors/states",
+    "element": "<Navigate to=\"/admin/doctors/actions\" replace />"
+  },
+  {
+    "path": "/admin/doctors/profile",
+    "element": "<Navigate to=\"/admin/doctors\" replace />"
+  },
+  {
+    "path": "/admin/doctors/:doctorId",
+    "element": "<DoctorProfilePage />"
+  },
+  {
+    "path": "/admin/doctors/:doctorId/map-facility",
+    "element": "<MapDoctorPage />"
+  },
+  {
+    "path": "/doctors",
+    "element": "<Navigate to=\"/admin/doctors\" replace />"
+  },
+  {
+    "path": "/admin/facilities",
+    "element": "<FacilityDirectoryPage />"
+  },
+  {
+    "path": "/admin/facilities/directory",
+    "element": "<Navigate to=\"/admin/facilities\" replace />"
+  },
+  {
+    "path": "/admin/facilities/create",
+    "element": "<CreateFacilityPage />"
+  },
+  {
+    "path": "/admin/facilities/add",
+    "element": "<Navigate to=\"/admin/facilities/create\" replace />"
+  },
+  {
+    "path": "/admin/facilities/new",
+    "element": "<Navigate to=\"/admin/facilities/create\" replace />"
+  },
+  {
+    "path": "/admin/facilities/details",
+    "element": "<Navigate to=\"/admin/facilities\" replace />"
+  },
+  {
+    "path": "/admin/facilities/:facilityId/staff-mapping",
+    "element": "<StaffMappingPage />"
+  },
+  {
+    "path": "/admin/facilities/:facilityId/staff",
+    "element": "<StaffMappingPage />"
+  },
+  {
+    "path": "/admin/facilities/staff-mapping",
+    "element": "<Navigate to=\"/admin/facilities\" replace />"
+  },
+  {
+    "path": "/admin/staff-mapping",
+    "element": "<Navigate to=\"/admin/facilities\" replace />"
+  },
+  {
+    "path": "/admin/facilities/:facilityId/map-doctor",
+    "element": "<MapDoctorPage />"
+  },
+  {
+    "path": "/admin/facilities/:facilityId/map",
+    "element": "<MapDoctorPage />"
+  },
+  {
+    "path": "/admin/facilities/map-doctor",
+    "element": "<Navigate to=\"/admin/facilities\" replace />"
+  },
+  {
+    "path": "/admin/map-doctor",
+    "element": "<Navigate to=\"/admin/facilities\" replace />"
+  },
+  {
+    "path": "/admin/facilities/:facilityId/edit",
+    "element": "<EditFacilityPage />"
+  },
+  {
+    "path": "/admin/facilities/edit/:facilityId",
+    "element": "<EditFacilityPage />"
+  },
+  {
+    "path": "/admin/facilities/:facilityId",
+    "element": "<FacilityDetailsPage />"
+  },
+  {
+    "path": "/facilities",
+    "element": "<Navigate to=\"/admin/facilities\" replace />"
+  },
+  {
+    "path": "/admin/records",
+    "element": "<HealthRecordsPage />"
+  },
+  {
+    "path": "/admin/health-records",
+    "element": "<HealthRecordsPage />"
+  },
+  {
+    "path": "/admin/records/all",
+    "element": "<HealthRecordsPage />"
+  },
+  {
+    "path": "/admin/health-records/all",
+    "element": "<Navigate to=\"/admin/health-records\" replace />"
+  },
+  {
+    "path": "/admin/records/overview",
+    "element": "<Navigate to=\"/admin/records\" replace />"
+  },
+  {
+    "path": "/admin/records/upload",
+    "element": "<UploadRecordPage />"
+  },
+  {
+    "path": "/admin/records/new",
+    "element": "<Navigate to=\"/admin/records/upload\" replace />"
+  },
+  {
+    "path": "/admin/health-records/upload",
+    "element": "<Navigate to=\"/admin/records/upload\" replace />"
+  },
+  {
+    "path": "/admin/records/medical",
+    "element": "<MedicalRecordsPage />"
+  },
+  {
+    "path": "/admin/health-records/medical",
+    "element": "<Navigate to=\"/admin/records/medical\" replace />"
+  },
+  {
+    "path": "/admin/records/dental",
+    "element": "<DentalRecordsPage />"
+  },
+  {
+    "path": "/admin/health-records/dental",
+    "element": "<Navigate to=\"/admin/records/dental\" replace />"
+  },
+  {
+    "path": "/admin/records/vision",
+    "element": "<VisionRecordsPage />"
+  },
+  {
+    "path": "/admin/health-records/vision",
+    "element": "<Navigate to=\"/admin/records/vision\" replace />"
+  },
+  {
+    "path": "/admin/records/:recordId",
+    "element": "<RecordDetailsPage />"
+  },
+  {
+    "path": "/admin/records/:recordId/details",
+    "element": "<RecordDetailsPage />"
+  },
+  {
+    "path": "/admin/health-records/:recordId",
+    "element": "<RecordDetailsPage />"
+  },
+  {
+    "path": "/records",
+    "element": "<Navigate to=\"/admin/records\" replace />"
+  },
+  {
+    "path": "/health-records",
+    "element": "<Navigate to=\"/admin/health-records\" replace />"
+  },
+  {
+    "path": "/admin/ocr",
+    "element": "<Navigate to=\"/admin/ocr/queue\" replace />"
+  },
+  {
+    "path": "/admin/ocr/queue",
+    "element": "<OcrQueuePage />"
+  },
+  {
+    "path": "/admin/ocr/analytics",
+    "element": "<OcrAnalyticsPage />"
+  },
+  {
+    "path": "/admin/ocr/performance",
+    "element": "<Navigate to=\"/admin/reports/ocr-performance\" replace />"
+  },
+  {
+    "path": "/admin/ocr/performance-report",
+    "element": "<Navigate to=\"/admin/reports/ocr-performance\" replace />"
+  },
+  {
+    "path": "/admin/ocr/report",
+    "element": "<Navigate to=\"/admin/reports/ocr-performance\" replace />"
+  },
+  {
+    "path": "/admin/reports/ocr",
+    "element": "<Navigate to=\"/admin/reports/ocr-performance\" replace />"
+  },
+  {
+    "path": "/admin/reports/ocr-performance",
+    "element": "<OcrPerformanceReportPage />"
+  },
+  {
+    "path": "/reports/ocr-performance",
+    "element": "<Navigate to=\"/admin/reports/ocr-performance\" replace />"
+  },
+  {
+    "path": "/admin/ocr/rejected",
+    "element": "<OcrRejectedPage />"
+  },
+  {
+    "path": "/admin/ocr/history",
+    "element": "<OcrRejectedPage />"
+  },
+  {
+    "path": "/admin/ocr/rejected-history",
+    "element": "<Navigate to=\"/admin/ocr/rejected\" replace />"
+  },
+  {
+    "path": "/admin/ocr/verify/:id",
+    "element": "<OcrVerificationWorkspacePage />"
+  },
+  {
+    "path": "/admin/ocr/verify",
+    "element": "<OcrVerificationWorkspacePage />"
+  },
+  {
+    "path": "/admin/ocr/workspace/:id",
+    "element": "<OcrVerificationWorkspacePage />"
+  },
+  {
+    "path": "/admin/ocr/workspace",
+    "element": "<OcrVerificationWorkspacePage />"
+  },
+  {
+    "path": "/admin/ocr-verification",
+    "element": "<Navigate to=\"/admin/ocr/queue\" replace />"
+  },
+  {
+    "path": "/admin/ocr-verification/queue",
+    "element": "<Navigate to=\"/admin/ocr/queue\" replace />"
+  },
+  {
+    "path": "/admin/ocr-verification/analytics",
+    "element": "<Navigate to=\"/admin/ocr/analytics\" replace />"
+  },
+  {
+    "path": "/admin/ocr-verification/rejected",
+    "element": "<Navigate to=\"/admin/ocr/rejected\" replace />"
+  },
+  {
+    "path": "/admin/ocr-verification/history",
+    "element": "<Navigate to=\"/admin/ocr/history\" replace />"
+  },
+  {
+    "path": "/admin/ocr-verification/workspace/:id",
+    "element": "<OcrVerificationWorkspacePage />"
+  },
+  {
+    "path": "/admin/ocr-verification/workspace",
+    "element": "<OcrVerificationWorkspacePage />"
+  },
+  {
+    "path": "/admin/referrals",
+    "element": "<ReferralDashboardPage />"
+  },
+  {
+    "path": "/admin/referrals/overview",
+    "element": "<Navigate to=\"/admin/referrals\" replace />"
+  },
+  {
+    "path": "/admin/referral-dashboard",
+    "element": "<Navigate to=\"/admin/referrals\" replace />"
+  },
+  {
+    "path": "/admin/referrals/escalations",
+    "element": "<ReferralMonitoringPage />"
+  },
+  {
+    "path": "/admin/referrals/monitoring",
+    "element": "<Navigate to=\"/admin/referrals/escalations\" replace />"
+  },
+  {
+    "path": "/admin/referrals/queue",
+    "element": "<Navigate to=\"/admin/referrals/escalations\" replace />"
+  },
+  {
+    "path": "/admin/referral-monitoring",
+    "element": "<Navigate to=\"/admin/referrals/escalations\" replace />"
+  },
+  {
+    "path": "/admin/referrals/audit",
+    "element": "<ReferralAuditPage />"
+  },
+  {
+    "path": "/admin/referrals/audit-history",
+    "element": "<Navigate to=\"/admin/referrals/audit\" replace />"
+  },
+  {
+    "path": "/admin/referrals/history",
+    "element": "<Navigate to=\"/admin/referrals/audit\" replace />"
+  },
+  {
+    "path": "/admin/referrals/details",
+    "element": "<Navigate to=\"/admin/referrals\" replace />"
+  },
+  {
+    "path": "/admin/referrals/details/:referralId",
+    "element": "<ReferralDetailsPage />"
+  },
+  {
+    "path": "/admin/referrals/:referralId",
+    "element": "<ReferralDetailsPage />"
+  },
+  {
+    "path": "/admin/referral-details/:referralId",
+    "element": "<ReferralDetailsPage />"
+  },
+  {
+    "path": "/admin/referral-details",
+    "element": "<Navigate to=\"/admin/referrals\" replace />"
+  },
+  {
+    "path": "/referrals",
+    "element": "<Navigate to=\"/admin/referrals\" replace />"
+  },
+  {
+    "path": "/admin/reports",
+    "element": "<ReportsDashboardPage />"
+  },
+  {
+    "path": "/admin/reports/dashboard",
+    "element": "<Navigate to=\"/admin/reports\" replace />"
+  },
+  {
+    "path": "/admin/reports-dashboard",
+    "element": "<Navigate to=\"/admin/reports\" replace />"
+  },
+  {
+    "path": "/reports",
+    "element": "<Navigate to=\"/admin/reports\" replace />"
+  },
+  {
+    "path": "/admin/reports/system-health",
+    "element": "<SystemHealthExportPage />"
+  },
+  {
+    "path": "/admin/reports/system-health-export",
+    "element": "<Navigate to=\"/admin/reports/system-health\" replace />"
+  },
+  {
+    "path": "/admin/reports/health",
+    "element": "<Navigate to=\"/admin/reports/system-health\" replace />"
+  },
+  {
+    "path": "/admin/reports/export",
+    "element": "<Navigate to=\"/admin/reports/system-health\" replace />"
+  },
+  {
+    "path": "/admin/reports/referral-activity",
+    "element": "<ReferralActivityReportPage />"
+  },
+  {
+    "path": "/admin/reports/referrals",
+    "element": "<Navigate to=\"/admin/reports/referral-activity\" replace />"
+  },
+  {
+    "path": "/admin/referrals/report",
+    "element": "<Navigate to=\"/admin/reports/referral-activity\" replace />"
+  },
+  {
+    "path": "/admin/referrals/activity-report",
+    "element": "<Navigate to=\"/admin/reports/referral-activity\" replace />"
+  },
+  {
+    "path": "/admin/settings",
+    "element": "<Navigate to=\"/admin/settings/general\" replace />"
+  },
+  {
+    "path": "/admin/settings/general",
+    "element": "<SystemSettingsGeneralPage />"
+  },
+  {
+    "path": "/admin/settings/organization",
+    "element": "<Navigate to=\"/admin/settings/general\" replace />"
+  },
+  {
+    "path": "/settings",
+    "element": "<Navigate to=\"/admin/settings/general\" replace />"
+  },
+  {
+    "path": "/settings/general",
+    "element": "<Navigate to=\"/admin/settings/general\" replace />"
+  },
+  {
+    "path": "/admin/settings/branding",
+    "element": "<SystemSettingsBrandingPage />"
+  },
+  {
+    "path": "/admin/settings/branding-identity",
+    "element": "<Navigate to=\"/admin/settings/branding\" replace />"
+  },
+  {
+    "path": "/settings/branding",
+    "element": "<Navigate to=\"/admin/settings/branding\" replace />"
+  },
+  {
+    "path": "/admin/settings/security",
+    "element": "<SettingsSecurityPage />"
+  },
+  {
+    "path": "/admin/settings/security-policies",
+    "element": "<Navigate to=\"/admin/settings/security\" replace />"
+  },
+  {
+    "path": "/settings/security",
+    "element": "<Navigate to=\"/admin/settings/security\" replace />"
+  },
+  {
+    "path": "/admin/settings/roles",
+    "element": "<SettingsRolesPage />"
+  },
+  {
+    "path": "/admin/settings/roles-permissions",
+    "element": "<Navigate to=\"/admin/settings/roles\" replace />"
+  },
+  {
+    "path": "/admin/settings/permissions",
+    "element": "<Navigate to=\"/admin/settings/roles\" replace />"
+  },
+  {
+    "path": "/admin/settings/rbac",
+    "element": "<Navigate to=\"/admin/settings/roles\" replace />"
+  },
+  {
+    "path": "/settings/roles",
+    "element": "<Navigate to=\"/admin/settings/roles\" replace />"
+  },
+  {
+    "path": "/settings/roles-permissions",
+    "element": "<Navigate to=\"/admin/settings/roles\" replace />"
+  },
+  {
+    "path": "/settings/rbac",
+    "element": "<Navigate to=\"/admin/settings/roles\" replace />"
+  },
+  {
+    "path": "/admin/settings/ocr",
+    "element": "<SettingsOcrPage />"
+  },
+  {
+    "path": "/admin/settings/ocr-notifications",
+    "element": "<Navigate to=\"/admin/settings/ocr\" replace />"
+  },
+  {
+    "path": "/settings/ocr",
+    "element": "<Navigate to=\"/admin/settings/ocr\" replace />"
+  },
+  {
+    "path": "/settings/ocr-notifications",
+    "element": "<Navigate to=\"/admin/settings/ocr\" replace />"
+  },
+  {
+    "path": "/admin/settings/integrations",
+    "element": "<SettingsIntegrationsPage />"
+  },
+  {
+    "path": "/admin/settings/integrations-backup",
+    "element": "<Navigate to=\"/admin/settings/integrations\" replace />"
+  },
+  {
+    "path": "/settings/integrations",
+    "element": "<Navigate to=\"/admin/settings/integrations\" replace />"
+  },
+  {
+    "path": "/admin/announcements",
+    "element": "<SettingsAnnouncementsPage />"
+  },
+  {
+    "path": "/admin/announcements-preferences",
+    "element": "<Navigate to=\"/admin/announcements\" replace />"
+  },
+  {
+    "path": "/admin/notifications/announcements",
+    "element": "<Navigate to=\"/admin/announcements\" replace />"
+  },
+  {
+    "path": "/announcements",
+    "element": "<Navigate to=\"/admin/announcements\" replace />"
+  },
+  {
+    "path": "/admin/settings/announcements",
+    "element": "<SettingsAnnouncementsPage />"
+  },
+  {
+    "path": "/admin/settings/announcements-preferences",
+    "element": "<Navigate to=\"/admin/settings/announcements\" replace />"
+  },
+  {
+    "path": "/admin/settings/preferences",
+    "element": "<Navigate to=\"/admin/settings/announcements\" replace />"
+  },
+  {
+    "path": "/settings/announcements",
+    "element": "<Navigate to=\"/admin/settings/announcements\" replace />"
+  },
+  {
+    "path": "/settings/announcements-preferences",
+    "element": "<Navigate to=\"/admin/settings/announcements\" replace />"
+  },
+  {
+    "path": "/admin/audit-dashboard",
+    "element": "<AuditDashboardPage />"
+  },
+  {
+    "path": "/admin/audit-log-explorer",
+    "element": "<AuditLogExplorerPage />"
+  },
+  {
+    "path": "/admin/audit-events/:eventId",
+    "element": "<AuditEventDetailsPage />"
+  },
+  {
+    "path": "/admin/audit-events",
+    "element": "<Navigate to=\"/admin/audit-events/EVT-9921\" replace />"
+  },
+  {
+    "path": "/admin/audit/events/:eventId",
+    "element": "<Navigate to=\"/admin/audit-events/:eventId\" replace />"
+  },
+  {
+    "path": "/admin/audit-event-details/:eventId",
+    "element": "<Navigate to=\"/admin/audit-events/:eventId\" replace />"
+  },
+  {
+    "path": "/admin/audit-event-details",
+    "element": "<Navigate to=\"/admin/audit-events/EVT-9921\" replace />"
+  },
+  {
+    "path": "/admin/audit-explorer",
+    "element": "<Navigate to=\"/admin/audit-log-explorer\" replace />"
+  },
+  {
+    "path": "/admin/logs",
+    "element": "<Navigate to=\"/admin/audit-log-explorer\" replace />"
+  },
+  {
+    "path": "/audit-log-explorer",
+    "element": "<Navigate to=\"/admin/audit-log-explorer\" replace />"
+  },
+  {
+    "path": "/admin/audit",
+    "element": "<Navigate to=\"/admin/audit-dashboard\" replace />"
+  },
+  {
+    "path": "/admin/audit-logs",
+    "element": "<Navigate to=\"/admin/audit-log-explorer\" replace />"
+  },
+  {
+    "path": "/audit",
+    "element": "<Navigate to=\"/admin/audit-dashboard\" replace />"
+  },
+  {
+    "path": "/audit-dashboard",
+    "element": "<Navigate to=\"/admin/audit-dashboard\" replace />"
+  },
+  {
+    "path": "/admin/security-compliance",
+    "element": "<SecurityCompliancePage />"
+  },
+  {
+    "path": "/admin/compliance",
+    "element": "<Navigate to=\"/admin/security-compliance\" replace />"
+  },
+  {
+    "path": "/admin/security",
+    "element": "<Navigate to=\"/admin/security-compliance\" replace />"
+  },
+  {
+    "path": "/security-compliance",
+    "element": "<Navigate to=\"/admin/security-compliance\" replace />"
+  },
+  {
+    "path": "/compliance",
+    "element": "<Navigate to=\"/admin/security-compliance\" replace />"
+  },
+  {
+    "path": "/admin/security-session-management",
+    "element": "<SecuritySessionManagementPage />"
+  },
+  {
+    "path": "/admin/security-sessions",
+    "element": "<Navigate to=\"/admin/security-session-management\" replace />"
+  },
+  {
+    "path": "/admin/sessions",
+    "element": "<Navigate to=\"/admin/security-session-management\" replace />"
+  },
+  {
+    "path": "/security-session-management",
+    "element": "<Navigate to=\"/admin/security-session-management\" replace />"
+  },
+  {
+    "path": "/security-sessions",
+    "element": "<Navigate to=\"/admin/security-session-management\" replace />"
+  },
+  {
+    "path": "/admin/support",
+    "element": "<SupportPage />"
+  },
+  {
+    "path": "/support",
+    "element": "<Navigate to=\"/admin/notifications\" replace />"
+  },
+  {
+    "path": "/admin/notifications",
+    "element": "<NotificationDashboardPage />"
+  },
+  {
+    "path": "/admin/notification-dashboard",
+    "element": "<Navigate to=\"/admin/notifications\" replace />"
+  },
+  {
+    "path": "/admin/support/notifications",
+    "element": "<Navigate to=\"/admin/notifications\" replace />"
+  },
+  {
+    "path": "/notifications",
+    "element": "<Navigate to=\"/admin/notifications\" replace />"
+  },
+  {
+    "path": "/admin/profile",
+    "element": "<AdminProfilePage />"
+  },
+  {
+    "path": "/admin/my-profile",
+    "element": "<Navigate to=\"/admin/profile\" replace />"
+  },
+  {
+    "path": "/admin/profile-information",
+    "element": "<Navigate to=\"/admin/profile\" replace />"
+  },
+  {
+    "path": "/profile",
+    "element": "<Navigate to=\"/admin/profile\" replace />"
+  },
+  {
+    "path": "*",
+    "element": "<Navigate to=\"/\" replace />"
+  }
+]

@@ -1,0 +1,115 @@
+{
+  "suite": "CAREID-DOCTOR-CLINICAL-REVIEW-DISPATCH-MISMATCH-FIX-018",
+  "executedAt": "2026-11-25T06:49:52.397Z",
+  "summary": {
+    "total": 13,
+    "passed": 13,
+    "failed": 0
+  },
+  "results": [
+    {
+      "testNumber": "TEST-01",
+      "name": "Clinical Review Initial State",
+      "status": "PASS",
+      "details": "Status is PENDING, eligibleForDispatch: false, reason: \"Treatment offer cannot be dispatched: Clinical review is missing. A multidisciplinary clinical review (APPROVED) must be documented prior to patient dispatch.\"",
+      "evidence": "",
+      "timestamp": "2026-11-25T06:49:33.461Z"
+    },
+    {
+      "testNumber": "TEST-02",
+      "name": "Dispatch Blocked On Missing Review",
+      "status": "PASS",
+      "details": "Rejected with HTTP 409 Conflict: \"Treatment offer cannot be dispatched: Clinical review is missing. A multidisciplinary clinical review (APPROVED) must be documented prior to patient dispatch.\"",
+      "evidence": "",
+      "timestamp": "2026-11-25T06:49:33.507Z"
+    },
+    {
+      "testNumber": "TEST-03",
+      "name": "Dispatch Blocked On REJECTED Review",
+      "status": "PASS",
+      "details": "Review status REJECTED persisted, dispatch returned HTTP 409: \"Treatment offer cannot be dispatched because clinical review was REJECTED\"",
+      "evidence": "",
+      "timestamp": "2026-11-25T06:49:33.560Z"
+    },
+    {
+      "testNumber": "TEST-04",
+      "name": "Clinician Role Authorization",
+      "status": "PASS",
+      "details": "Authorized clinician Dr. Jenkins successfully verified with DOCTOR role check.",
+      "evidence": "",
+      "timestamp": "2026-11-25T06:49:33.561Z"
+    },
+    {
+      "testNumber": "TEST-05",
+      "name": "Clinical Review APPROVED & Dispatch Permitted",
+      "status": "PASS",
+      "details": "Status is APPROVED, eligibleForDispatch: true, reviewer: \"5cb9e3a5-6dab-4757-9143-524e317c1aaa\"",
+      "evidence": "",
+      "timestamp": "2026-11-25T06:49:33.586Z"
+    },
+    {
+      "testNumber": "TEST-06",
+      "name": "Offer Version Invalidation",
+      "status": "PASS",
+      "details": "Modification incremented version; review flagged outdated (Treatment offer cannot be dispatched: Prior clinical review was approved for offer version 1, but current offer is at version 2. Re-review is required for the modified proposal.); dispatch blocked HTTP 409.",
+      "evidence": "",
+      "timestamp": "2026-11-25T06:49:33.640Z"
+    },
+    {
+      "testNumber": "TEST-07",
+      "name": "Re-approval For Updated Version",
+      "status": "PASS",
+      "details": "Successfully re-approved for version 2; eligibleForDispatch: true.",
+      "evidence": "",
+      "timestamp": "2026-11-25T06:49:33.662Z"
+    },
+    {
+      "testNumber": "TEST-08",
+      "name": "Treatment Offer Dispatch Execution",
+      "status": "PASS",
+      "details": "Offer 2e9f5823-da33-438e-96c1-3e7f0abb1508 transitioned to DISPATCHED; dispatchedAt: 2026-11-25T06:49:33.691Z",
+      "evidence": "",
+      "timestamp": "2026-11-25T06:49:33.713Z"
+    },
+    {
+      "testNumber": "TEST-09",
+      "name": "Post-Dispatch Immutability",
+      "status": "PASS",
+      "details": "Re-dispatch returned 409 (\"Offer cannot be dispatched from status 'DISPATCHED'. Must be DRAFT.\"); review returned 409 (\"Clinical review can only be recorded for offers in DRAFT status (current status: DISPATCHED)\").",
+      "evidence": "",
+      "timestamp": "2026-11-25T06:49:33.730Z"
+    },
+    {
+      "testNumber": "VISUAL-01",
+      "name": "Doctor Web Review UI - Review Pending",
+      "status": "PASS",
+      "details": "Clinical Review shows PENDING/Required with action button; dispatch blocked.",
+      "evidence": "D:\\careid\\Admin_web\\docs\\evidence\\CAREID_DOCTOR_CLINICAL_REVIEW_DISPATCH_018\\01_doctor_web_clinical_review_pending.png",
+      "timestamp": "2026-11-25T06:49:38.915Z"
+    },
+    {
+      "testNumber": "VISUAL-02",
+      "name": "Doctor Web Review UI - Review Approved",
+      "status": "PASS",
+      "details": "Clinical Review shows APPROVED (emerald badge), reviewer Dr. Sarah Jenkins, dispatch enabled.",
+      "evidence": "D:\\careid\\Admin_web\\docs\\evidence\\CAREID_DOCTOR_CLINICAL_REVIEW_DISPATCH_018\\02_doctor_web_clinical_review_approved.png",
+      "timestamp": "2026-11-25T06:49:43.102Z"
+    },
+    {
+      "testNumber": "VISUAL-03",
+      "name": "Doctor Web Review UI - Dispatched",
+      "status": "PASS",
+      "details": "Treatment Offer successfully dispatched to patient.",
+      "evidence": "D:\\careid\\Admin_web\\docs\\evidence\\CAREID_DOCTOR_CLINICAL_REVIEW_DISPATCH_018\\03_doctor_web_treatment_offer_dispatched.png",
+      "timestamp": "2026-11-25T06:49:48.273Z"
+    },
+    {
+      "testNumber": "VISUAL-04",
+      "name": "Original Reproduction Offer Resolved",
+      "status": "PASS",
+      "details": "Original offer fc09c21e-a929-45aa-95d7-fde9c9350279 correctly displays Clinical Review Required with record action button (synthetic baseline approval resolved without record tampering).",
+      "evidence": "D:\\careid\\Admin_web\\docs\\evidence\\CAREID_DOCTOR_CLINICAL_REVIEW_DISPATCH_018\\04_original_reproduction_offer_resolved.png",
+      "timestamp": "2026-11-25T06:49:52.397Z"
+    }
+  ]
+}

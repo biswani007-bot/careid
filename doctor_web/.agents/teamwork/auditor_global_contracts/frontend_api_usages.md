@@ -1,0 +1,232 @@
+# Frontend API Usages across src/
+
+- `hooks/useDashboard.ts:351` — `// Action: Start Consultation (PUT /api/v1/appointments/:id/status)`
+- `hooks/useDashboard.ts:375` — `// Action: End Consultation (PUT /api/v1/appointments/:id/status)`
+- `hooks/useDashboard.ts:399` — `// Action: Verify Lab Report (POST /api/v1/reports/:id/verify)`
+- `pages/ocr/MedicalRecordUploadPage.tsx:429` — `// POST /api/v1/ocr/jobs`
+- `services/apiClient.ts:87` — `const refreshUrl = `${baseUrl}/api/v1/auth/token/refresh`;`
+- `services/attachmentService.ts:5` — `* against https://360api.vnvision.in/api/v1/attachments.`
+- `services/attachmentService.ts:100` — `return `/api/v1/attachments/file/${encodeURIComponent(fileName)}`;`
+- `services/attachmentService.ts:104` — `* Upload binary document via multipart/form-data to POST /api/v1/attachments`
+- `services/attachmentService.ts:145` — `await apiClient.postFormData<AttachmentUploadResponse>(`
+- `services/attachmentService.ts:146` — `'/api/v1/attachments',`
+- `services/authService.ts:4` — `* - POST /api/v1/auth/otp/request`
+- `services/authService.ts:5` — `* - POST /api/v1/auth/otp/verify`
+- `services/authService.ts:6` — `* - POST /api/v1/auth/otp/resend`
+- `services/authService.ts:7` — `* - POST /api/v1/auth/token/refresh`
+- `services/authService.ts:8` — `* - POST /api/v1/auth/logout`
+- `services/authService.ts:9` — `* - GET /api/v1/auth/me`
+- `services/authService.ts:10` — `* - GET /api/v1/doctors/me`
+- `services/authService.ts:82` — `* Endpoint: POST /api/v1/auth/otp/request`
+- `services/authService.ts:87` — `const response: ApiResponse<OtpRequestData> = await apiClient.post<OtpRequestData>(`
+- `services/authService.ts:88` — `'/api/v1/auth/otp/request',`
+- `services/authService.ts:96` — `* Endpoint: POST /api/v1/auth/otp/verify`
+- `services/authService.ts:100` — `const response: ApiResponse<OtpVerifyData> = await apiClient.post<OtpVerifyData>(`
+- `services/authService.ts:101` — `'/api/v1/auth/otp/verify',`
+- `services/authService.ts:112` — `* Endpoint: POST /api/v1/auth/otp/resend`
+- `services/authService.ts:116` — `const response: ApiResponse<OtpRequestData> = await apiClient.post<OtpRequestData>(`
+- `services/authService.ts:117` — `'/api/v1/auth/otp/resend',`
+- `services/authService.ts:125` — `* Endpoint: POST /api/v1/auth/token/refresh`
+- `services/authService.ts:133` — `const response: ApiResponse<OtpVerifyData> = await apiClient.post<OtpVerifyData>(`
+- `services/authService.ts:134` — `'/api/v1/auth/token/refresh',`
+- `services/authService.ts:145` — `* Endpoint: GET /api/v1/auth/me`
+- `services/authService.ts:149` — `const response: ApiResponse<AuthMeData> = await apiClient.get<AuthMeData>(`
+- `services/authService.ts:150` — `'/api/v1/auth/me',`
+- `services/authService.ts:158` — `* Endpoint: GET /api/v1/doctors/me`
+- `services/authService.ts:162` — `const response: ApiResponse<DoctorMeData> = await apiClient.get<DoctorMeData>(`
+- `services/authService.ts:163` — `'/api/v1/doctors/me',`
+- `services/authService.ts:171` — `* Endpoint: POST /api/v1/auth/logout`
+- `services/authService.ts:177` — `await apiClient.post('/api/v1/auth/logout', { refreshToken });`
+- `services/consultationService.ts:6` — `*   - GET /api/v1/doctors/treatment-offers (List authored treatment proposals)`
+- `services/consultationService.ts:7` — `*   - POST /api/v1/doctors/patients/:patientProfileId/encounters (Document clinical encounter)`
+- `services/consultationService.ts:8` — `*   - POST /api/v1/doctors/patients/:patientProfileId/medical-records (Create medical record)`
+- `services/consultationService.ts:9` — `*   - PUT /api/v1/doctors/patients/:patientProfileId/medical-records/:recordId (Update clinical record)`
+- `services/consultationService.ts:10` — `*   - GET /api/v1/doctors/patients/:patientProfileId/medical-records (Get patient records with pagination)`
+- `services/consultationService.ts:11` — `*   - GET /api/v1/doctors/patients/:patientProfileId/medical-records/timeline (Get timeline)`
+- `services/consultationService.ts:13` — `*   - GET /api/v1/appointments/doctor/me (Appointments scheduled for authenticated doctor)`
+- `services/consultationService.ts:14` — `*   - GET /api/v1/appointments/:id (Get appointment details)`
+- `services/consultationService.ts:15` — `*   - PUT /api/v1/appointments/:id/status (Update appointment status)`
+- `services/consultationService.ts:17` — `*   - GET /api/v1/financing/options (List available healthcare financing options and partners)`
+- `services/consultationService.ts:18` — `*   - GET /api/v1/financing/offers (List pre-approved healthcare financing offers)`
+- `services/consultationService.ts:19` — `*   - POST /api/v1/financing/apply (Submit application for healthcare financing / EMI assistance)`
+- `services/consultationService.ts:20` — `*   - GET /api/v1/financing/applications (List financing applications)`
+- `services/consultationService.ts:136` — `* Merges live appointments (`GET /api/v1/appointments/doctor/me`) with live`
+- `services/consultationService.ts:137` — `* authored treatment proposals (`GET /api/v1/doctors/treatment-offers`).`
+- `services/consultationService.ts:145` — `const apptRes = await apiClient.get<unknown>('/api/v1/appointments/doctor/me');`
+- `services/consultationService.ts:167` — `const toRes = await apiClient.get<unknown>('/api/v1/doctors/treatment-offers');`
+- `services/consultationService.ts:326` — `const recRes = await apiClient.get<Array<Record<string, unknown>>>(`
+- `services/consultationService.ts:327` — ``/api/v1/doctors/patients/${encodeURIComponent(pId)}/medical-records``
+- `services/consultationService.ts:384` — `* Endpoint: POST /api/v1/doctors/patients/:patientProfileId/encounters`
+- `services/consultationService.ts:390` — `const response = await apiClient.post<Record<string, unknown>>(`
+- `services/consultationService.ts:391` — ``/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/encounters`,`
+- `services/consultationService.ts:399` — `* Endpoint: POST /api/v1/doctors/patients/:patientProfileId/medical-records`
+- `services/consultationService.ts:405` — `const response = await apiClient.post<Record<string, unknown>>(`
+- `services/consultationService.ts:406` — ``/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/medical-records`,`
+- `services/consultationService.ts:414` — `* Endpoint: PUT /api/v1/doctors/patients/:patientProfileId/medical-records/:recordId`
+- `services/consultationService.ts:428` — `const response = await apiClient.put<Record<string, unknown>>(`
+- `services/consultationService.ts:429` — ``/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/medical-records/${encodeURIComponent(recordId)}`,`
+- `services/consultationService.ts:437` — `* Endpoint: GET /api/v1/financing/options`
+- `services/consultationService.ts:441` — `const response = await apiClient.get<FinancingOption[] | { data: FinancingOption[] }>('/api/v1/financing/options');`
+- `services/consultationService.ts:456` — `* Endpoint: GET /api/v1/financing/offers`
+- `services/consultationService.ts:460` — `const response = await apiClient.get<FinancingOption[] | { data: FinancingOption[] }>('/api/v1/financing/offers');`
+- `services/consultationService.ts:475` — `* Endpoint: POST /api/v1/financing/apply`
+- `services/consultationService.ts:478` — `const response = await apiClient.post<Record<string, unknown>>('/api/v1/financing/apply', payload);`
+- `services/consultationService.ts:484` — `* Endpoint: GET /api/v1/financing/applications`
+- `services/consultationService.ts:488` — `const response = await apiClient.get<{ data?: Array<Record<string, unknown>> }>('/api/v1/financing/applications');`
+- `services/consultationService.ts:507` — `* Endpoint: PUT /api/v1/appointments/:id/status`
+- `services/consultationService.ts:514` — `await apiClient.put(`/api/v1/appointments/${encodeURIComponent(appointmentId)}/status`, {`
+- `services/dashboardService.ts:5` — `* - 05. Doctor Portal: GET /api/v1/doctors/me, GET /api/v1/doctors/statistics`
+- `services/dashboardService.ts:6` — `* - 10. Appointments: GET /api/v1/appointments/doctor/me, PUT /api/v1/appointments/:id/status`
+- `services/dashboardService.ts:7` — `* - 20. Reports & Labs: GET /api/v1/reports, POST /api/v1/reports/:id/verify`
+- `services/dashboardService.ts:8` — `* - 14. Notifications: GET /api/v1/notifications`
+- `services/dashboardService.ts:135` — `* GET /api/v1/doctors/me (Postman folder: 05. Doctor Portal)`
+- `services/dashboardService.ts:138` — `const res = await apiClient.get<DoctorProfile>('/api/v1/doctors/me');`
+- `services/dashboardService.ts:144` — `* GET /api/v1/appointments/doctor/me (Postman folder: 10. Appointments, Schedules & Shifts)`
+- `services/dashboardService.ts:156` — `const endpoint = `/api/v1/appointments/doctor/me${qs ? `?${qs}` : ''}`;`
+- `services/dashboardService.ts:159` — `const res = await apiClient.get<AppointmentListResponse | Appointment[]>(endpoint);`
+- `services/dashboardService.ts:175` — `const aliasEndpoint = `/api/v1/appointments/doctor/my-appointments${qs ? `?${qs}` : ''}`;`
+- `services/dashboardService.ts:176` — `const res = await apiClient.get<AppointmentListResponse | Appointment[]>(aliasEndpoint);`
+- `services/dashboardService.ts:194` — `* PUT /api/v1/appointments/:id/status (Postman folder: 10. Appointments, Schedules & Shifts)`
+- `services/dashboardService.ts:201` — `return apiClient.put<Appointment>(`/api/v1/appointments/${appointmentId}/status`, {`
+- `services/dashboardService.ts:209` — `* GET /api/v1/reports (Postman folder: 20. Clinical Reports & Analytics)`
+- `services/dashboardService.ts:213` — `const res = await apiClient.get<DiagnosticLabReport[] | { data: DiagnosticLabReport[] }>(`/api/v1/reports${qs}`);`
+- `services/dashboardService.ts:222` — `* POST /api/v1/reports/:id/verify (Postman folder: 20. Clinical Reports & Analytics)`
+- `services/dashboardService.ts:225` — `const res = await apiClient.post<DiagnosticLabReport>(`/api/v1/reports/${reportId}/verify`, {`
+- `services/dashboardService.ts:233` — `* GET /api/v1/notifications (Postman folder: 14. Notifications & Alerts)`
+- `services/dashboardService.ts:237` — `const res = await apiClient.get<DashboardNotification[] | { data: DashboardNotification[] }>(`/api/v1/notifications${qs}`);`
+- `services/dashboardService.ts:246` — `* PUT /api/v1/notifications/:id/read (Postman folder: 14. Notifications & Alerts)`
+- `services/dashboardService.ts:249` — `await apiClient.put(`/api/v1/notifications/${notificationId}/read`);`
+- `services/dashboardService.ts:254` — `* GET /api/v1/doctors/statistics (Postman folder: 05. Doctor Portal)`
+- `services/dashboardService.ts:257` — `const res = await apiClient.get<DoctorStatistics>('/api/v1/doctors/statistics');`
+- `services/ocrService.ts:6` — `* - POST /api/v1/ocr/jobs`
+- `services/ocrService.ts:7` — `* - GET  /api/v1/ocr/jobs`
+- `services/ocrService.ts:8` — `* - GET  /api/v1/ocr/jobs/:id`
+- `services/ocrService.ts:9` — `* - GET  /api/v1/ocr/jobs/:id/fields`
+- `services/ocrService.ts:10` — `* - GET  /api/v1/ocr/jobs/:id/text`
+- `services/ocrService.ts:11` — `* - GET  /api/v1/ocr/jobs/:id/json`
+- `services/ocrService.ts:12` — `* - GET  /api/v1/ocr/dashboard`
+- `services/ocrService.ts:13` — `* - GET  /api/v1/ocr/statistics`
+- `services/ocrService.ts:14` — `* - POST /api/v1/ocr/reprocess/:jobId`
+- `services/ocrService.ts:15` — `* - POST /api/v1/ai/ocr/extract`
+- `services/ocrService.ts:16` — `* - POST /api/v1/ai/ocr/confirm`
+- `services/ocrService.ts:146` — `* POST /api/v1/ocr/jobs`
+- `services/ocrService.ts:163` — `const res = await apiClient.post<BackendOcrJob>('/api/v1/ocr/jobs', payload);`
+- `services/ocrService.ts:169` — `* GET /api/v1/ocr/jobs/:id`
+- `services/ocrService.ts:175` — `const res = await apiClient.get<BackendOcrJob>(`/api/v1/ocr/jobs/${encodeURIComponent(jobId)}`);`
+- `services/ocrService.ts:188` — `* GET /api/v1/ocr/jobs/:id/fields`
+- `services/ocrService.ts:194` — `const res = await apiClient.get<ExtractedOcrField[]>(`/api/v1/ocr/jobs/${encodeURIComponent(jobId)}/fields`);`
+- `services/ocrService.ts:207` — `* GET /api/v1/ocr/jobs/:id/text`
+- `services/ocrService.ts:213` — `const res = await apiClient.get<string | { text: string }>(`/api/v1/ocr/jobs/${encodeURIComponent(jobId)}/text`);`
+- `services/ocrService.ts:232` — `* GET /api/v1/ocr/jobs/:id/json`
+- `services/ocrService.ts:238` — `const res = await apiClient.get<BackendOcrStructuredJson>(`/api/v1/ocr/jobs/${encodeURIComponent(jobId)}/json`);`
+- `services/ocrService.ts:251` — `* GET /api/v1/ocr/jobs`
+- `services/ocrService.ts:266` — `const endpoint = `/api/v1/ocr/jobs${queryString ? `?${queryString}` : ''}`;`
+- `services/ocrService.ts:267` — `const res = await apiClient.get<OcrJobListResponse | BackendOcrJob[]>(endpoint);`
+- `services/ocrService.ts:273` — `* GET /api/v1/ocr/dashboard`
+- `services/ocrService.ts:276` — `const res = await apiClient.get<OcrDashboardSummary>('/api/v1/ocr/dashboard');`
+- `services/ocrService.ts:282` — `* Primary route: POST /api/v1/ocr/jobs/:jobId/reprocess`
+- `services/ocrService.ts:283` — `* Fallback route: POST /api/v1/ocr/reprocess/:jobId`
+- `services/ocrService.ts:290` — `const res = await apiClient.post<BackendOcrJob>(`/api/v1/ocr/jobs/${encodeURIComponent(jobId)}/reprocess`);`
+- `services/ocrService.ts:294` — `const fallback = await apiClient.post<BackendOcrJob>(`/api/v1/ocr/reprocess/${encodeURIComponent(jobId)}`);`
+- `services/ocrService.ts:303` — `* POST /api/v1/ai/ocr/extract`
+- `services/ocrService.ts:306` — `const res = await apiClient.post<AiOcrExtractResponse>('/api/v1/ai/ocr/extract', { imageUrl });`
+- `services/ocrService.ts:312` — `* POST /api/v1/ai/ocr/confirm`
+- `services/ocrService.ts:315` — `const res = await apiClient.post<AiOcrConfirmResponse>('/api/v1/ai/ocr/confirm', {`
+- `services/patientService.ts:6` — `*   - GET /api/v1/admin/patients`
+- `services/patientService.ts:7` — `*   - GET /api/v1/admin/patients/:patientId`
+- `services/patientService.ts:8` — `*   - GET /api/v1/admin/patients/:patientId/medical-records`
+- `services/patientService.ts:9` — `*   - GET /api/v1/admin/patients/:patientId/medical-records/timeline`
+- `services/patientService.ts:11` — `*   - GET /api/v1/doctors/patients/:patientProfileId/medical-records`
+- `services/patientService.ts:12` — `*   - GET /api/v1/doctors/patients/:patientProfileId/medical-records/timeline`
+- `services/patientService.ts:13` — `*   - POST /api/v1/doctors/patients/:patientProfileId/medical-records`
+- `services/patientService.ts:14` — `*   - POST /api/v1/doctors/patients/:patientProfileId/encounters`
+- `services/patientService.ts:15` — `*   - PUT /api/v1/doctors/patients/:patientProfileId/medical-records/:recordId`
+- `services/patientService.ts:17` — `*   - GET /api/v1/appointments/doctor/me`
+- `services/patientService.ts:18` — `*   - GET /api/v1/appointments`
+- `services/patientService.ts:20` — `*   - GET /api/v1/patients/:patientId/insurance-cards`
+- `services/patientService.ts:22` — `*   - GET /api/v1/reports`
+- `services/patientService.ts:44` — `* - Relative paths (e.g. /api/v1/patients/me/photo/file/...)`
+- `services/patientService.ts:76` — `const isBackendProtected = resolved.includes('/api/v1/') || resolved.startsWith(apiBase);`
+- `services/patientService.ts:739` — `* Priority 1: GET /api/v1/admin/patients (with server-side filters & pagination)`
+- `services/patientService.ts:740` — `* Priority 2: Fallback for Doctor role via GET /api/v1/appointments/doctor/me (extracts assigned patients)`
+- `services/patientService.ts:763` — `const response: ApiResponse<unknown> = await apiClient.get<unknown>(`
+- `services/patientService.ts:764` — ``/api/v1/admin/patients?${queryParts.join('&')}``
+- `services/patientService.ts:821` — `// Canonical Doctor Route: Queries doctor's assigned patient panel via /api/v1/appointments/doctor/me`
+- `services/patientService.ts:826` — `* Doctor-authorized patient listing: Aggregates real patients assigned to doctor via /api/v1/appointments/doctor/me`
+- `services/patientService.ts:832` — `const response = await apiClient.get<unknown>('/api/v1/appointments/doctor/me');`
+- `services/patientService.ts:911` — `* Primary route: GET /api/v1/doctors/patients/:patientProfileId`
+- `services/patientService.ts:922` — `* Endpoint: GET /api/v1/doctors/patients/:patientProfileId`
+- `services/patientService.ts:932` — `// 1. Authoritative Doctor Endpoint: GET /api/v1/doctors/patients/:patientProfileId`
+- `services/patientService.ts:935` — `const response = await apiClient.get<PatientProfileResponse | { data: PatientProfileResponse }>(`
+- `services/patientService.ts:936` — ``/api/v1/doctors/patients/${encodeURIComponent(cleanId)}``
+- `services/patientService.ts:980` — `apiClient.get<Array<Record<string, unknown>>>(`/api/v1/patients/${encodeURIComponent(cleanId)}/insurance-cards`),`
+- `services/patientService.ts:1031` — `* Endpoint: GET /api/v1/doctors/patients/:patientProfileId/medical-records`
+- `services/patientService.ts:1046` — `// Authoritative Doctor Portal endpoint: /api/v1/doctors/patients/:patientProfileId/medical-records`
+- `services/patientService.ts:1048` — `const response = await apiClient.get<unknown>(`
+- `services/patientService.ts:1049` — ``/api/v1/doctors/patients/${encodeURIComponent(patientId)}/medical-records${qs}``
+- `services/patientService.ts:1062` — `* Endpoint: POST /api/v1/doctors/patients/:patientProfileId/medical-records`
+- `services/patientService.ts:1068` — `const response = await apiClient.post<MedicalRecord>(`
+- `services/patientService.ts:1069` — ``/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/medical-records`,`
+- `services/patientService.ts:1077` — `* Endpoint: GET /api/v1/doctors/patients/:patientProfileId/medical-records/timeline`
+- `services/patientService.ts:1083` — `const adminRes = await apiClient.get<unknown>(`
+- `services/patientService.ts:1084` — ``/api/v1/admin/patients/${encodeURIComponent(patientId)}/medical-records/timeline${qs}``
+- `services/patientService.ts:1096` — `const response = await apiClient.get<unknown>(`
+- `services/patientService.ts:1097` — ``/api/v1/doctors/patients/${encodeURIComponent(patientId)}/medical-records/timeline${qs}``
+- `services/patientService.ts:1124` — `const response = await apiClient.get<unknown>(`/api/v1/admin/medical-records/${encodeURIComponent(recordId)}`);`
+- `services/patientService.ts:1136` — `const apptRes = await apiClient.get<unknown>('/api/v1/appointments/doctor/me');`
+- `services/patientService.ts:1352` — `* Endpoint: GET /api/v1/facilities with appointment fallback`
+- `services/patientService.ts:1356` — `const response = await apiClient.get<Array<{ id?: string; name?: string }>>('/api/v1/facilities');`
+- `services/patientService.ts:1365` — `const apptRes = await apiClient.get<unknown>('/api/v1/appointments/doctor/me');`
+- `services/prescriptionService.ts:6` — `*   - GET /api/v1/doctors/patients/:patientProfileId/medical-records (Fetch medical records & treatment plans)`
+- `services/prescriptionService.ts:7` — `*   - GET /api/v1/doctors/patients/:patientProfileId/medical-records/timeline (Fetch unified patient clinical timeline)`
+- `services/prescriptionService.ts:8` — `*   - POST /api/v1/doctors/patients/:patientProfileId/encounters (Document clinical prescription encounter, vitals, diagnoses)`
+- `services/prescriptionService.ts:9` — `*   - POST /api/v1/doctors/patients/:patientProfileId/medical-records (Create medical record)`
+- `services/prescriptionService.ts:10` — `*   - PUT /api/v1/doctors/patients/:patientProfileId/medical-records/:recordId (Update record notes & refill authorizations)`
+- `services/prescriptionService.ts:116` — `* Endpoint: GET /api/v1/doctors/patients/:patientProfileId/medical-records`
+- `services/prescriptionService.ts:125` — `const response: ApiResponse<MedicalRecord[]> = await apiClient.get<MedicalRecord[]>(`
+- `services/prescriptionService.ts:126` — ``/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/medical-records?includeArchived=false``
+- `services/prescriptionService.ts:170` — `* Endpoint: POST /api/v1/doctors/patients/:patientProfileId/encounters`
+- `services/prescriptionService.ts:199` — `const response = await apiClient.post<Record<string, unknown>>(`
+- `services/prescriptionService.ts:200` — ``/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/encounters`,`
+- `services/prescriptionService.ts:209` — `* Endpoint: PUT /api/v1/doctors/patients/:patientProfileId/medical-records/:recordId`
+- `services/prescriptionService.ts:220` — `const response = await apiClient.put<Record<string, unknown>>(`
+- `services/prescriptionService.ts:221` — ``/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/medical-records/${encodeURIComponent(recordId)}`,`
+- `services/prescriptionService.ts:233` — `* Endpoint: GET /api/v1/doctors/patients/:patientProfileId/medical-records/timeline`
+- `services/prescriptionService.ts:239` — `const response = await apiClient.get<TimelineEvent[]>(`
+- `services/prescriptionService.ts:240` — ``/api/v1/doctors/patients/${encodeURIComponent(patientProfileId)}/medical-records/timeline?page=1&limit=50``
+- `services/treatmentOfferService.ts:6` — `*   1. POST /api/v1/doctors/treatment-offers (Create a new draft treatment proposal)`
+- `services/treatmentOfferService.ts:7` — `*   2. GET /api/v1/doctors/treatment-offers (List authored treatment proposals)`
+- `services/treatmentOfferService.ts:8` — `*   3. GET /api/v1/doctors/treatment-offers/:id (Get treatment offer details)`
+- `services/treatmentOfferService.ts:9` — `*   4. PUT /api/v1/doctors/treatment-offers/:id (Update draft treatment offer)`
+- `services/treatmentOfferService.ts:10` — `*   5. POST /api/v1/doctors/treatment-offers/:id/dispatch (Lock draft and dispatch to patient)`
+- `services/treatmentOfferService.ts:11` — `*   6. GET /api/v1/doctors/treatment-offers/:id/status (Inspect live offer lifecycle status)`
+- `services/treatmentOfferService.ts:12` — `*   7. POST /api/v1/doctors/treatment-offers/:id/cancel (Doctor cancels active treatment proposal)`
+- `services/treatmentOfferService.ts:14` — `*   8. POST /api/v1/patients/treatment-offers/:id/accept (Patient ratifies/accepts offer)`
+- `services/treatmentOfferService.ts:15` — `*   9. POST /api/v1/patients/treatment-offers/:id/reject (Patient declines offer)`
+- `services/treatmentOfferService.ts:245` — `* Endpoint: POST /api/v1/doctors/treatment-offers`
+- `services/treatmentOfferService.ts:248` — `const res = await apiClient.post<TreatmentOfferDTO | { data: TreatmentOfferDTO }>(`
+- `services/treatmentOfferService.ts:249` — `'/api/v1/doctors/treatment-offers',`
+- `services/treatmentOfferService.ts:257` — `* Endpoint: GET /api/v1/doctors/treatment-offers`
+- `services/treatmentOfferService.ts:268` — `const endpoint = `/api/v1/doctors/treatment-offers${qs ? `?${qs}` : ''}`;`
+- `services/treatmentOfferService.ts:270` — `const res = await apiClient.get<PaginatedTreatmentOffers | TreatmentOfferDTO[]>(endpoint);`
+- `services/treatmentOfferService.ts:276` — `* Endpoint: GET /api/v1/doctors/treatment-offers/:id`
+- `services/treatmentOfferService.ts:279` — `const res = await apiClient.get<TreatmentOfferDTO | { data: TreatmentOfferDTO }>(`
+- `services/treatmentOfferService.ts:280` — ``/api/v1/doctors/treatment-offers/${encodeURIComponent(id)}``
+- `services/treatmentOfferService.ts:287` — `* Endpoint: PUT /api/v1/doctors/treatment-offers/:id`
+- `services/treatmentOfferService.ts:290` — `const res = await apiClient.put<TreatmentOfferDTO | { data: TreatmentOfferDTO }>(`
+- `services/treatmentOfferService.ts:291` — ``/api/v1/doctors/treatment-offers/${encodeURIComponent(id)}`,`
+- `services/treatmentOfferService.ts:299` — `* Endpoint: POST /api/v1/doctors/treatment-offers/:id/dispatch`
+- `services/treatmentOfferService.ts:302` — `const res = await apiClient.post<TreatmentOfferDTO | { data: TreatmentOfferDTO }>(`
+- `services/treatmentOfferService.ts:303` — ``/api/v1/doctors/treatment-offers/${encodeURIComponent(id)}/dispatch`,`
+- `services/treatmentOfferService.ts:311` — `* Endpoint: GET /api/v1/doctors/treatment-offers/:id/status`
+- `services/treatmentOfferService.ts:314` — `const res = await apiClient.get<TreatmentOfferStatusResponse | { data: TreatmentOfferStatusResponse }>(`
+- `services/treatmentOfferService.ts:315` — ``/api/v1/doctors/treatment-offers/${encodeURIComponent(id)}/status``
+- `services/treatmentOfferService.ts:322` — `* Endpoint: POST /api/v1/doctors/treatment-offers/:id/cancel`
+- `services/treatmentOfferService.ts:329` — `const res = await apiClient.post<TreatmentOfferDTO | { data: TreatmentOfferDTO }>(`
+- `services/treatmentOfferService.ts:330` — ``/api/v1/doctors/treatment-offers/${encodeURIComponent(id)}/cancel`,`
+- `services/treatmentOfferService.ts:338` — `* Endpoint: POST /api/v1/patients/treatment-offers/:id/accept`
+- `services/treatmentOfferService.ts:348` — `const res = await apiClient.post<TreatmentOfferDTO | { data: TreatmentOfferDTO }>(`
+- `services/treatmentOfferService.ts:349` — ``/api/v1/patients/treatment-offers/${encodeURIComponent(id)}/accept`,`
+- `services/treatmentOfferService.ts:357` — `* Endpoint: POST /api/v1/patients/treatment-offers/:id/reject`
+- `services/treatmentOfferService.ts:366` — `const res = await apiClient.post<TreatmentOfferDTO | { data: TreatmentOfferDTO }>(`
+- `services/treatmentOfferService.ts:367` — ``/api/v1/patients/treatment-offers/${encodeURIComponent(id)}/reject`,`

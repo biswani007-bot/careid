@@ -1,0 +1,265 @@
+import { Test, TestingModule } from '@nestjs/testing';
+import { HealthCardService } from '../application/use-cases/health-card.service';
+import { NotFoundException, BadRequestException, ForbiddenException } from '@nestjs/common';
+import { Logger } from 'nestjs-pino';
+
+const mockProfileId = 'profile-uuid-1';
+const mockUserId = 'user-uuid-1';
+const mockCardId = 'card-uuid-1';
+
+const mockRepo = {
+  findProfileByUserId: jest.fn(),
+  createCard: jest.fn(),
+  findCardById: jest.fn(),
+  findCardByProfileId: jest.fn(),
+  findCardByNumber: jest.fn(),
+  updateCard: jest.fn(),
+  searchCards: jest.fn(),
+  createQr: jest.fn(),
+  findQrByCardId: jest.fn(),
+  updateQrPayload: jest.fn(),
+  createHistory: jest.fn(),
+  findHistoryByCardId: jest.fn(),
+  createAuditLog: jest.fn(),
+  recordQrScanLog: jest.fn(),
+};
+
+const mockLogger = {
+  log: jest.fn(),
+  error: jest.fn(),
+  warn: jest.fn(),
+};
+
+import { QrService } from '@modules/qr/application/use-cases/qr.service';
+
+const mockQrService = {
+  generateQr: jest.fn(),
+  verifyQrPayload: jest.fn(),
+  rotateQr: jest.fn(),
+  revokeQr: jest.fn(),
+};
+
+describe('HealthCardService', () => {
+  let service: HealthCardService;
+
+  beforeEach(async () => {
+    jest.clearAllMocks();
+    const module: TestingModule = await Test.createTestingModule({
+      providers: [
+        HealthCardService,
+        { provide: 'IHealthCardRepository', useValue: mockRepo },
+        { provide: QrService, useValue: mockQrService },
+        { provide: Logger, useValue: mockLogger },
+      ],
+    }).compile();
+    service = module.get<HealthCardService>(HealthCardService);
+  });
+
+
+  describe('issueCard', () => {
+    it('should throw if patient profile is not found', async () => {
+      mockRepo.findProfileByUserId.mockResolvedValue(null);
+      await expect(service.issueCard(mockUserId, {})).rejects.toThrow(NotFoundException);
+    });
+
+    it('should throw if patient already has an active card', async () => {
+      mockRepo.findProfileByUserId.mockResolvedValue({ id: mockProfileId });
+      mockRepo.findCardByProfileId.mockResolvedValue({
+        id: mockCardId,
+        status: 'ACTIVE',
+        cardNumber: 'HV360-1234-5678-9012',
+      });
+
+      await expect(service.issueCard(mockUserId, {})).rejects.toThrow(BadRequestException);
+    });
+
+    it('should issue new card and create QR record', async () => {
+      mockRepo.findProfileByUserId.mockResolvedValue({ id: mockProfileId });
+      mockRepo.findCardByProfileId.mockResolvedValue(null);
+      const mockCard = {
+        id: mockCardId,
+        patientProfileId: mockProfileId,
+        cardNumber: 'HV360-9999-8888-7777',
+        status: 'ISSUED',
+        version: 1,
+        emergencyFlag: false,
+        issuedAt: new Date(),
+        expiresAt: new Date(),
+        isDeleted: false,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      };
+      mockRepo.createCard.mockResolvedValue(mockCard);
+      mockRepo.createQr.mockResolvedValue({});
+      mockRepo.createAuditLog.mockResolvedValue({});
+
+      const result = await service.issueCard(mockUserId, {});
+      expect(result.id).toBe(mockCardId);
+      expect(result.status).toBe('ISSUED');
+      expect(mockRepo.createQr).toHaveBeenCalled();
+    });
+  });
+
+  describe('status transitions (suspend / block / replace / renew)', () => {
+    it('should suspend an active card', async () => {
+      mockRepo.findProfileByUserId.mockResolvedValue({ id: mockProfileId });
+      mockRepo.findCardById.mockResolvedValue({
+        id: mockCardId,
+        patientProfileId: mockProfileId,
+        status: 'ACTIVE',
+        version: 1,
+        emergencyFlag: false,
+        issuedAt: new Date(),
+        expiresAt: new Date(),
+        isDeleted: false,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
+
+      mockRepo.updateCard.mockResolvedValue({
+        id: mockCardId,
+        patientProfileId: mockProfileId,
+        cardNumber: 'HV360-1234',
+        status: 'SUSPENDED',
+        version: 1,
+        emergencyFlag: false,
+        issuedAt: new Date(),
+        expiresAt: new Date(),
+        isDeleted: false,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
+
+      const result = await service.suspendCard(mockUserId, mockCardId, { reason: 'Lost temporarily' });
+      expect(result.status).toBe('SUSPENDED');
+      expect(mockRepo.createHistory).toHaveBeenCalledWith(mockCardId, expect.objectContaining({
+        action: 'SUSPENDED',
+        newStatus: 'SUSPENDED',
+      }));
+    });
+
+    it('should replace a card and bump version', async () => {
+      mockRepo.findProfileByUserId.mockResolvedValue({ id: mockProfileId });
+      mockRepo.findCardById.mockResolvedValue({
+        id: mockCardId,
+        patientProfileId: mockProfileId,
+        cardNumber: 'HV360-OLD-CARD',
+        status: 'ACTIVE',
+        version: 1,
+        emergencyFlag: false,
+        issuedAt: new Date(),
+        expiresAt: new Date(),
+        isDeleted: false,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
+
+      mockRepo.updateCard.mockResolvedValue({
+        id: mockCardId,
+        patientProfileId: mockProfileId,
+        cardNumber: 'HV360-NEW-CARD',
+        status: 'ACTIVE',
+        version: 2,
+        emergencyFlag: false,
+        issuedAt: new Date(),
+        expiresAt: new Date(),
+        isDeleted: false,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
+      mockRepo.createQr.mockResolvedValue({});
+
+      const result = await service.replaceCard(mockUserId, mockCardId, { reason: 'Damaged card' });
+      expect(result.version).toBe(2);
+      expect(mockRepo.createHistory).toHaveBeenCalledWith(mockCardId, expect.objectContaining({
+        action: 'REPLACED',
+        newStatus: 'ACTIVE',
+      }));
+    });
+  });
+
+  describe('verifyQr', () => {
+    it('should return isValid = false for non-existing or inactive card', async () => {
+      mockRepo.findCardByNumber.mockResolvedValue(null);
+      const result = await service.verifyQr({ qrPayload: 'INVALID' }, 'verifier-1');
+      expect(result.isValid).toBe(false);
+    });
+
+    it('should return isValid = true for active valid card', async () => {
+      const mockCard = {
+        id: mockCardId,
+        cardNumber: 'HV360-VALID-CARD',
+        status: 'ACTIVE',
+        expiresAt: new Date(Date.now() + 1000000),
+        patientProfile: {
+          patientNumber: 'PT-100',
+          firstName: 'John',
+          lastName: 'Doe',
+          dateOfBirth: new Date('1992-05-15'),
+          bloodGroup: 'O+',
+        },
+      };
+      mockRepo.findCardByNumber.mockResolvedValue(mockCard);
+      mockRepo.recordQrScanLog.mockResolvedValue({});
+
+      const result = await service.verifyQr({ qrPayload: 'HV360-VALID-CARD' }, 'verifier-1');
+      expect(result.isValid).toBe(true);
+      expect(result.status).toBe('VERIFIED');
+      expect(result.patientDetails?.firstName).toBe('John');
+    });
+  });
+
+  describe('Wallet Passes & Monthly Reminders (PRD Compliant)', () => {
+    const mockActiveCard = {
+      id: mockCardId,
+      patientProfileId: mockProfileId,
+      cardNumber: 'HV360-WALLET-PASS',
+      status: 'ACTIVE',
+      version: 1,
+      emergencyFlag: false,
+      issuedAt: new Date(),
+      expiresAt: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000),
+      isDeleted: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      qrPayload: 'qr-sample-payload',
+    };
+
+    beforeEach(() => {
+      mockRepo.findProfileByUserId.mockResolvedValue({ id: mockProfileId });
+      mockRepo.findCardByProfileId.mockResolvedValue(mockActiveCard);
+      mockRepo.findCardById.mockResolvedValue(mockActiveCard);
+    });
+
+    it('should generate an Apple Wallet PKPass payload with base64 data and mimeType', async () => {
+      const applePass = await service.getAppleWalletPass(mockUserId);
+      expect(applePass.passType).toBe('PKPass');
+      expect(applePass.platform).toBe('APPLE_WALLET');
+      expect(applePass.mimeType).toBe('application/vnd.apple.pkpass');
+      expect(applePass.passPayload).toBeDefined();
+      const decoded = JSON.parse(Buffer.from(applePass.passPayload, 'base64').toString('utf8'));
+      expect(decoded.passTypeIdentifier).toBe('pass.com.careid.healthcard');
+      expect(decoded.description).toBe('CareID Digital Health Card');
+    });
+
+    it('should generate a Google Wallet pass object with save URL', async () => {
+      const googlePass = await service.getGoogleWalletPass(mockUserId);
+      expect(googlePass.passType).toBe('GOOGLE_WALLET');
+      expect(googlePass.platform).toBe('GOOGLE_WALLET');
+      expect(googlePass.saveUrl).toContain(mockCardId);
+      expect(googlePass.classId).toBe('careid_health_pass_class');
+    });
+
+    it('should trigger a monthly health card review reminder and write to audit log', async () => {
+      mockRepo.createAuditLog.mockResolvedValue({});
+      const reminder = await service.triggerMonthlyReminder(mockUserId);
+      expect(reminder.success).toBe(true);
+      expect(reminder.reminderType).toBe('MONTHLY_HEALTH_REVIEW');
+      expect(reminder.deepLink).toBe('careid://patient/health-profile');
+      expect(mockRepo.createAuditLog).toHaveBeenCalledWith(expect.objectContaining({
+        healthCardId: mockCardId,
+        action: 'MONTHLY_REVIEW_REMINDER_SENT',
+      }));
+    });
+  });
+});

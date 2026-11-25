@@ -1,0 +1,2436 @@
+{
+  "r1": {
+    "path": "/api/v1/admin/audit-logs",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 12:06:04 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "12278",
+      "etag": "W/\"2ff6-GWVVEalVgrxOAyoFVtFt0CnIcqw\"",
+      "connection": "close"
+    },
+    "duration": 999,
+    "data": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "data": [
+          {
+            "id": "c3938912-b2e1-4f6f-852b-924c7080296c",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "USER_LOGIN",
+            "details": "Logged in successfully from session 4296812f-82f5-4c56-ae37-7d46fcb238e0",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:06:03.308Z"
+          },
+          {
+            "id": "8eb2e105-ed75-4113-8f06-aa6e593ef30d",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "OTP_REQUESTED",
+            "details": "OTP requested for phone: +16505550001",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:06:02.509Z"
+          },
+          {
+            "id": "1f04a000-9992-4659-bdc9-d943bd509e6b",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "TOKEN_REFRESH",
+            "details": "Tokens rotated successfully",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:05:31.298Z"
+          },
+          {
+            "id": "16e33171-c36f-494c-b933-ed8d99fcbb25",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "USER_LOGIN",
+            "details": "Logged in successfully from session dd21574f-9dff-43f6-99e1-8f4081663d4c",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:02:47.140Z"
+          },
+          {
+            "id": "3757e658-f3f4-49e1-9f0c-6ac815338740",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "OTP_VERIFICATION_FAILED",
+            "details": "Incorrect OTP entered",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:02:46.334Z"
+          },
+          {
+            "id": "62cdd610-c06e-4bf6-a845-b3080e010f1e",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "OTP_REQUESTED",
+            "details": "OTP requested for phone: +16505550004",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:02:45.600Z"
+          },
+          {
+            "id": "164e04be-e83c-44a7-b032-96b6eb05d2db",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "TOKEN_REFRESH",
+            "details": "Tokens rotated successfully",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:00:27.059Z"
+          },
+          {
+            "id": "b6fcb3d4-0376-4474-8bd9-6007630a92d8",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "TOKEN_REFRESH",
+            "details": "Tokens rotated successfully",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:00:25.542Z"
+          },
+          {
+            "id": "778a8161-7f07-4307-b1d3-dbd658622412",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "SESSIONS_VIEW",
+            "details": "Active sessions view retrieved",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:49:37.774Z"
+          },
+          {
+            "id": "d58df91a-a99b-4680-ac10-3172fba9f688",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ADMIN_PASSWORD_LOGIN",
+            "details": "Admin logged in successfully via password from session 37640e2b-81d2-4bee-83ae-cc7bb8b9030f",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:49:37.142Z"
+          },
+          {
+            "id": "4aff1ed2-46ab-438a-b3de-e255113f808e",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:57.992Z"
+          },
+          {
+            "id": "ad3c905c-68db-4b7e-bef2-dd098601767a",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:57.717Z"
+          },
+          {
+            "id": "2de97b89-e415-4a85-bb31-d14ab1d0fbfb",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:52.411Z"
+          },
+          {
+            "id": "a99c31ab-172a-46c1-b806-d2439d06fe11",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:51.693Z"
+          },
+          {
+            "id": "ccf47a5d-43a7-436e-bd42-17fe918036a4",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:46.642Z"
+          },
+          {
+            "id": "a8fe4d11-5183-4d24-a622-6e41f3c127d2",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:46.451Z"
+          },
+          {
+            "id": "4b657078-2c3b-45c2-818c-cff5890aa668",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:43.153Z"
+          },
+          {
+            "id": "1fbd71f4-e0be-4f44-9cd1-5620981152c1",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:42.938Z"
+          },
+          {
+            "id": "c9e6ced3-16da-4c83-ac57-6f1f5ecf37c1",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "USER_LOGIN",
+            "details": "Logged in successfully from session f050f4da-0421-4d03-902a-191d4ad09358",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:18.993Z"
+          },
+          {
+            "id": "0a468da5-81c0-442a-b82e-95542874e89b",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "OTP_VERIFICATION_FAILED",
+            "details": "Incorrect OTP entered",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:18.186Z"
+          },
+          {
+            "id": "d8a29c63-4820-4c0c-971e-c89807861500",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "OTP_REQUESTED",
+            "details": "OTP requested for phone: +16505550004",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:17.379Z"
+          },
+          {
+            "id": "d2655c1c-2b07-44c4-a124-a7a116e37b2f",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:23.029Z"
+          },
+          {
+            "id": "692fdcbb-d6f5-409f-987b-8df6b3795fef",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:22.831Z"
+          },
+          {
+            "id": "dc164b64-cd75-4503-81db-e3796f75dd5a",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:21.286Z"
+          },
+          {
+            "id": "e89ece48-f74a-4b3c-8166-efb1726e5235",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:20.867Z"
+          },
+          {
+            "id": "40ed68cf-cc0f-4c2c-8153-dc8e358dafdb",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:16.088Z"
+          },
+          {
+            "id": "3d3dd490-e4f7-4987-984a-68d9e214f30d",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:15.850Z"
+          },
+          {
+            "id": "51bfbc24-8753-4756-b551-58bf0ed465f0",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:13.839Z"
+          },
+          {
+            "id": "e3e77232-1fb1-4270-9b8d-7037d8100e13",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:13.647Z"
+          },
+          {
+            "id": "2665a69d-2da3-4616-9ace-d0d59df9d144",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:10.371Z"
+          },
+          {
+            "id": "df9887d6-fc2b-4d64-80c7-946fbf959ee5",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:10.168Z"
+          },
+          {
+            "id": "6d260daf-e609-47f5-b760-774d9dc802e1",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:07.972Z"
+          },
+          {
+            "id": "6b93768e-a5a2-4e48-904d-d249d36f80e0",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:07.692Z"
+          },
+          {
+            "id": "62f996c3-5e86-480a-b304-1d7d07542cf3",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "SESSIONS_VIEW",
+            "details": "Active sessions view retrieved",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:04.673Z"
+          },
+          {
+            "id": "2e0eda67-cf91-4d73-add3-e9fbd0c5b844",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:04.268Z"
+          },
+          {
+            "id": "fc09b7b3-1cff-4369-98ff-66fc450bd303",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:04.056Z"
+          },
+          {
+            "id": "14c81dd9-cf2b-467d-92d8-6f52c41802ca",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "USER_LOGIN",
+            "details": "Logged in successfully from session 66aa568f-a098-4fac-ba93-2b0cc5d76c60",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:41:55.540Z"
+          },
+          {
+            "id": "27ba6097-7570-4b15-9f98-b14d71bfb6d1",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "OTP_REQUESTED",
+            "details": "OTP requested for phone: +16505550001",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:41:54.614Z"
+          },
+          {
+            "id": "8370aaff-d242-44bd-9f8e-3fd3e14b3ad8",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "USER_LOGIN",
+            "details": "Logged in successfully from session 52a077c0-90e3-46b2-a414-3ade0535eef1",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:33:44.522Z"
+          },
+          {
+            "id": "2d89c43d-c35b-4732-a197-41e2f27a390a",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "OTP_VERIFICATION_FAILED",
+            "details": "Incorrect OTP entered",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:33:43.730Z"
+          },
+          {
+            "id": "3e4138c3-f05a-4917-b2f1-cd43c6a75f24",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "OTP_REQUESTED",
+            "details": "OTP requested for phone: +16505550004",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:33:42.737Z"
+          },
+          {
+            "id": "90f3c6ac-9df6-441a-be4c-e329323f667b",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:14.463Z"
+          },
+          {
+            "id": "fb562ade-b97f-4e2a-b891-4d3f4c99dde4",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:13.871Z"
+          },
+          {
+            "id": "0cf4561c-ce4e-4847-9cb6-2db6d5f11d65",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:09.863Z"
+          },
+          {
+            "id": "b15b199b-ba44-4a75-8caf-849835b6959c",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:09.506Z"
+          },
+          {
+            "id": "ea664058-fb54-40c6-96eb-905e493f706c",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:05.836Z"
+          },
+          {
+            "id": "4cec1658-9a8d-4e80-85b8-e0c085004302",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:05.634Z"
+          },
+          {
+            "id": "7e61182b-7ade-4751-9db3-dc093fbd8824",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:02.753Z"
+          },
+          {
+            "id": "0e4d2dc0-f951-406a-a353-a96e3f98f157",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:02.481Z"
+          },
+          {
+            "id": "8e36d0a8-8ad2-4c9d-b349-63a492af97e1",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:01.808Z"
+          }
+        ],
+        "total": 3131,
+        "page": 1,
+        "limit": 50
+      },
+      "meta": {
+        "timestamp": "2026-11-03T12:06:04.182Z"
+      }
+    }
+  },
+  "r2": {
+    "path": "/api/v1/admin/audit-logs?page=1&limit=5",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 12:06:05 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "1408",
+      "etag": "W/\"580-Ms9TLmar6DJ+MPX4UZyP3BnQL7A\"",
+      "connection": "close"
+    },
+    "duration": 705,
+    "data": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "data": [
+          {
+            "id": "c3938912-b2e1-4f6f-852b-924c7080296c",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "USER_LOGIN",
+            "details": "Logged in successfully from session 4296812f-82f5-4c56-ae37-7d46fcb238e0",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:06:03.308Z"
+          },
+          {
+            "id": "8eb2e105-ed75-4113-8f06-aa6e593ef30d",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "OTP_REQUESTED",
+            "details": "OTP requested for phone: +16505550001",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:06:02.509Z"
+          },
+          {
+            "id": "1f04a000-9992-4659-bdc9-d943bd509e6b",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "TOKEN_REFRESH",
+            "details": "Tokens rotated successfully",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:05:31.298Z"
+          },
+          {
+            "id": "16e33171-c36f-494c-b933-ed8d99fcbb25",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "USER_LOGIN",
+            "details": "Logged in successfully from session dd21574f-9dff-43f6-99e1-8f4081663d4c",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:02:47.140Z"
+          },
+          {
+            "id": "3757e658-f3f4-49e1-9f0c-6ac815338740",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "OTP_VERIFICATION_FAILED",
+            "details": "Incorrect OTP entered",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:02:46.334Z"
+          }
+        ],
+        "total": 3131,
+        "page": 1,
+        "limit": 5
+      },
+      "meta": {
+        "timestamp": "2026-11-03T12:06:05.057Z"
+      }
+    }
+  },
+  "sampleId": null,
+  "r4": {
+    "path": "/api/v1/admin/audit-logs/export?format=csv",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 12:06:05 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "19844",
+      "etag": "W/\"4d84-MZRqgFc0MnzDtroLkbAFq4peqLw\"",
+      "connection": "close"
+    },
+    "duration": 785,
+    "data": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "format": "csv",
+        "data": "id,userId,action,ipAddress,createdAt,details\n\"c3938912-b2e1-4f6f-852b-924c7080296c\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"USER_LOGIN\",\"110.225.227.72\",\"2026-11-03T12:06:03.308Z\",\"Logged in successfully from session 4296812f-82f5-4c56-ae37-7d46fcb238e0\"\n\"8eb2e105-ed75-4113-8f06-aa6e593ef30d\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"OTP_REQUESTED\",\"110.225.227.72\",\"2026-11-03T12:06:02.509Z\",\"OTP requested for phone: +16505550001\"\n\"1f04a000-9992-4659-bdc9-d943bd509e6b\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"TOKEN_REFRESH\",\"110.225.227.72\",\"2026-11-03T12:05:31.298Z\",\"Tokens rotated successfully\"\n\"16e33171-c36f-494c-b933-ed8d99fcbb25\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"USER_LOGIN\",\"110.225.227.72\",\"2026-11-03T12:02:47.140Z\",\"Logged in successfully from session dd21574f-9dff-43f6-99e1-8f4081663d4c\"\n\"3757e658-f3f4-49e1-9f0c-6ac815338740\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"OTP_VERIFICATION_FAILED\",\"110.225.227.72\",\"2026-11-03T12:02:46.334Z\",\"Incorrect OTP entered\"\n\"62cdd610-c06e-4bf6-a845-b3080e010f1e\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"OTP_REQUESTED\",\"110.225.227.72\",\"2026-11-03T12:02:45.600Z\",\"OTP requested for phone: +16505550004\"\n\"164e04be-e83c-44a7-b032-96b6eb05d2db\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"TOKEN_REFRESH\",\"110.225.227.72\",\"2026-11-03T12:00:27.059Z\",\"Tokens rotated successfully\"\n\"b6fcb3d4-0376-4474-8bd9-6007630a92d8\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"TOKEN_REFRESH\",\"110.225.227.72\",\"2026-11-03T12:00:25.542Z\",\"Tokens rotated successfully\"\n\"778a8161-7f07-4307-b1d3-dbd658622412\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"SESSIONS_VIEW\",\"110.225.227.72\",\"2026-11-03T11:49:37.774Z\",\"Active sessions view retrieved\"\n\"d58df91a-a99b-4680-ac10-3172fba9f688\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ADMIN_PASSWORD_LOGIN\",\"110.225.227.72\",\"2026-11-03T11:49:37.142Z\",\"Admin logged in successfully via password from session 37640e2b-81d2-4bee-83ae-cc7bb8b9030f\"\n\"4aff1ed2-46ab-438a-b3de-e255113f808e\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:43:57.992Z\",\"Retrieved current user profile details\"\n\"ad3c905c-68db-4b7e-bef2-dd098601767a\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:43:57.717Z\",\"Retrieved current user profile details\"\n\"2de97b89-e415-4a85-bb31-d14ab1d0fbfb\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:43:52.411Z\",\"Retrieved current user profile details\"\n\"a99c31ab-172a-46c1-b806-d2439d06fe11\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:43:51.693Z\",\"Retrieved current user profile details\"\n\"ccf47a5d-43a7-436e-bd42-17fe918036a4\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:43:46.642Z\",\"Retrieved current user profile details\"\n\"a8fe4d11-5183-4d24-a622-6e41f3c127d2\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:43:46.451Z\",\"Retrieved current user profile details\"\n\"4b657078-2c3b-45c2-818c-cff5890aa668\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:43:43.153Z\",\"Retrieved current user profile details\"\n\"1fbd71f4-e0be-4f44-9cd1-5620981152c1\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:43:42.938Z\",\"Retrieved current user profile details\"\n\"c9e6ced3-16da-4c83-ac57-6f1f5ecf37c1\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"USER_LOGIN\",\"110.225.227.72\",\"2026-11-03T11:43:18.993Z\",\"Logged in successfully from session f050f4da-0421-4d03-902a-191d4ad09358\"\n\"0a468da5-81c0-442a-b82e-95542874e89b\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"OTP_VERIFICATION_FAILED\",\"110.225.227.72\",\"2026-11-03T11:43:18.186Z\",\"Incorrect OTP entered\"\n\"d8a29c63-4820-4c0c-971e-c89807861500\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"OTP_REQUESTED\",\"110.225.227.72\",\"2026-11-03T11:43:17.379Z\",\"OTP requested for phone: +16505550004\"\n\"d2655c1c-2b07-44c4-a124-a7a116e37b2f\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:42:23.029Z\",\"Retrieved current user profile details\"\n\"692fdcbb-d6f5-409f-987b-8df6b3795fef\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:42:22.831Z\",\"Retrieved current user profile details\"\n\"dc164b64-cd75-4503-81db-e3796f75dd5a\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:42:21.286Z\",\"Retrieved current user profile details\"\n\"e89ece48-f74a-4b3c-8166-efb1726e5235\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:42:20.867Z\",\"Retrieved current user profile details\"\n\"40ed68cf-cc0f-4c2c-8153-dc8e358dafdb\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:42:16.088Z\",\"Retrieved current user profile details\"\n\"3d3dd490-e4f7-4987-984a-68d9e214f30d\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:42:15.850Z\",\"Retrieved current user profile details\"\n\"51bfbc24-8753-4756-b551-58bf0ed465f0\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:42:13.839Z\",\"Retrieved current user profile details\"\n\"e3e77232-1fb1-4270-9b8d-7037d8100e13\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:42:13.647Z\",\"Retrieved current user profile details\"\n\"2665a69d-2da3-4616-9ace-d0d59df9d144\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:42:10.371Z\",\"Retrieved current user profile details\"\n\"df9887d6-fc2b-4d64-80c7-946fbf959ee5\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:42:10.168Z\",\"Retrieved current user profile details\"\n\"6d260daf-e609-47f5-b760-774d9dc802e1\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:42:07.972Z\",\"Retrieved current user profile details\"\n\"6b93768e-a5a2-4e48-904d-d249d36f80e0\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:42:07.692Z\",\"Retrieved current user profile details\"\n\"62f996c3-5e86-480a-b304-1d7d07542cf3\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"SESSIONS_VIEW\",\"110.225.227.72\",\"2026-11-03T11:42:04.673Z\",\"Active sessions view retrieved\"\n\"2e0eda67-cf91-4d73-add3-e9fbd0c5b844\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:42:04.268Z\",\"Retrieved current user profile details\"\n\"fc09b7b3-1cff-4369-98ff-66fc450bd303\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:42:04.056Z\",\"Retrieved current user profile details\"\n\"14c81dd9-cf2b-467d-92d8-6f52c41802ca\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"USER_LOGIN\",\"110.225.227.72\",\"2026-11-03T11:41:55.540Z\",\"Logged in successfully from session 66aa568f-a098-4fac-ba93-2b0cc5d76c60\"\n\"27ba6097-7570-4b15-9f98-b14d71bfb6d1\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"OTP_REQUESTED\",\"110.225.227.72\",\"2026-11-03T11:41:54.614Z\",\"OTP requested for phone: +16505550001\"\n\"8370aaff-d242-44bd-9f8e-3fd3e14b3ad8\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"USER_LOGIN\",\"110.225.227.72\",\"2026-11-03T11:33:44.522Z\",\"Logged in successfully from session 52a077c0-90e3-46b2-a414-3ade0535eef1\"\n\"2d89c43d-c35b-4732-a197-41e2f27a390a\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"OTP_VERIFICATION_FAILED\",\"110.225.227.72\",\"2026-11-03T11:33:43.730Z\",\"Incorrect OTP entered\"\n\"3e4138c3-f05a-4917-b2f1-cd43c6a75f24\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"OTP_REQUESTED\",\"110.225.227.72\",\"2026-11-03T11:33:42.737Z\",\"OTP requested for phone: +16505550004\"\n\"90f3c6ac-9df6-441a-be4c-e329323f667b\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:24:14.463Z\",\"Retrieved current user profile details\"\n\"fb562ade-b97f-4e2a-b891-4d3f4c99dde4\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:24:13.871Z\",\"Retrieved current user profile details\"\n\"0cf4561c-ce4e-4847-9cb6-2db6d5f11d65\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:24:09.863Z\",\"Retrieved current user profile details\"\n\"b15b199b-ba44-4a75-8caf-849835b6959c\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:24:09.506Z\",\"Retrieved current user profile details\"\n\"ea664058-fb54-40c6-96eb-905e493f706c\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:24:05.836Z\",\"Retrieved current user profile details\"\n\"4cec1658-9a8d-4e80-85b8-e0c085004302\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:24:05.634Z\",\"Retrieved current user profile details\"\n\"7e61182b-7ade-4751-9db3-dc093fbd8824\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:24:02.753Z\",\"Retrieved current user profile details\"\n\"0e4d2dc0-f951-406a-a353-a96e3f98f157\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:24:02.481Z\",\"Retrieved current user profile details\"\n\"8e36d0a8-8ad2-4c9d-b349-63a492af97e1\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:24:01.808Z\",\"Retrieved current user profile details\"\n\"47ed7c43-7747-429d-adab-9fe7d3e4d6a8\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:24:01.568Z\",\"Retrieved current user profile details\"\n\"fbe16a33-0dac-41b0-a6d3-ffbcaa099a6f\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"USER_LOGIN\",\"110.225.227.72\",\"2026-11-03T11:23:29.867Z\",\"Logged in successfully from session c14ab53c-1fa7-4b71-bd15-6fed0bf88427\"\n\"99e35caf-850d-4375-b9f1-43c41d9c196f\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"OTP_REQUESTED\",\"110.225.227.72\",\"2026-11-03T11:23:29.033Z\",\"OTP requested for phone: +16505550001\"\n\"95865a21-1584-4a1f-adb3-ea0453127f95\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"REFRESH_TOKEN_REPLAY_ATTACK\",\"110.225.227.72\",\"2026-11-03T11:22:43.732Z\",\"Token replay attack detected\"\n\"3fd59b96-5aac-4eb0-bb1c-eb630b590d92\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"TOKEN_REFRESH\",\"110.225.227.72\",\"2026-11-03T11:20:44.484Z\",\"Tokens rotated successfully\"\n\"5464fc28-9462-4e2a-b67d-2ea493e901bb\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:18:25.236Z\",\"Retrieved current user profile details\"\n\"46968cfe-9608-4ca9-b3a6-1a5120e696db\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T11:18:24.918Z\",\"Retrieved current user profile details\"\n\"c208b8a9-5014-4c77-9363-ed1d026b3e76\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"TOKEN_REFRESH\",\"110.225.227.72\",\"2026-11-03T11:18:24.302Z\",\"Tokens rotated successfully\"\n\"e0121c65-f92d-446b-b3ac-ea1de8274607\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"USER_LOGIN\",\"110.225.227.72\",\"2026-11-03T10:54:34.762Z\",\"Logged in successfully from session 019e0192-0107-4834-8485-d3f340841376\"\n\"fb583c8b-0670-420e-a5f1-aa5836248273\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"OTP_VERIFICATION_FAILED\",\"110.225.227.72\",\"2026-11-03T10:54:33.919Z\",\"Incorrect OTP entered\"\n\"9c5fb5d4-d7b8-46f8-a48a-ecd95fddd53f\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"OTP_REQUESTED\",\"110.225.227.72\",\"2026-11-03T10:54:33.273Z\",\"OTP requested for phone: +16505550004\"\n\"61677236-e7be-42ef-abfe-803c2dcfbb33\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"USER_LOGIN\",\"110.225.227.72\",\"2026-11-03T10:52:26.082Z\",\"Logged in successfully from session 49595dd1-6a7b-49df-b255-8697f130b073\"\n\"fa9f927b-7a88-43ab-b036-84dcc9657efa\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"OTP_VERIFICATION_FAILED\",\"110.225.227.72\",\"2026-11-03T10:52:24.625Z\",\"Incorrect OTP entered\"\n\"19dc1dca-678f-4f49-bcc2-25d4b6bea91a\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"OTP_REQUESTED\",\"110.225.227.72\",\"2026-11-03T10:52:23.798Z\",\"OTP requested for phone: +16505550004\"\n\"d00de0ff-f996-4992-88fc-751c9f1c035e\",\"fa502f2e-332c-4ec0-b6aa-83713216ec88\",\"USER_LOGIN\",\"110.225.227.72\",\"2026-11-03T10:51:45.553Z\",\"Logged in successfully from session a92eba10-64f7-4794-99ab-3b9e1c9b32df\"\n\"3bc3db96-da25-4942-b720-174bb2d43907\",\"fa502f2e-332c-4ec0-b6aa-83713216ec88\",\"OTP_REQUESTED\",\"110.225.227.72\",\"2026-11-03T10:51:44.814Z\",\"OTP requested for phone: +16505550003\"\n\"2253474e-0bf9-4769-8342-08de97e77add\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"USER_LOGIN\",\"110.225.227.72\",\"2026-11-03T10:47:35.327Z\",\"Logged in successfully from session 1964992e-faae-4ae9-a7d7-8eca78dac965\"\n\"78151223-9c8d-4061-8cfb-b81bc2829c4c\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"OTP_REQUESTED\",\"110.225.227.72\",\"2026-11-03T10:47:34.503Z\",\"OTP requested for phone: +16505550001\"\n\"e25b69de-8ace-44b9-a599-81b86173da80\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T10:43:23.254Z\",\"Retrieved current user profile details\"\n\"57b3fe1c-1056-487a-8830-735392473843\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T10:43:23.250Z\",\"Retrieved current user profile details\"\n\"36715b5c-b43c-461b-84a7-2bca3c6972ae\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"TOKEN_REFRESH\",\"110.225.227.72\",\"2026-11-03T10:43:17.347Z\",\"Tokens rotated successfully\"\n\"074b2c56-7296-4fab-a8e1-bbe52317bd1b\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T10:27:40.151Z\",\"Retrieved current user profile details\"\n\"d0aeee3b-50c7-4509-ac11-6748cd603de8\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T10:27:39.433Z\",\"Retrieved current user profile details\"\n\"e905d05b-0a45-4cb9-ba75-936bff16ab6d\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T10:27:36.027Z\",\"Retrieved current user profile details\"\n\"4cf6372c-9149-437b-9040-1caf841a887b\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T10:27:35.709Z\",\"Retrieved current user profile details\"\n\"bfbdca44-1b9c-437d-8158-686387c6081f\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T10:27:32.041Z\",\"Retrieved current user profile details\"\n\"3462fbc8-419a-47e4-8d9c-4e67159c16cd\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T10:27:31.758Z\",\"Retrieved current user profile details\"\n\"6cc83a7b-edb3-4ac3-b996-cf0c8a7d4333\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T10:27:27.827Z\",\"Retrieved current user profile details\"\n\"60430e18-a24b-4bfc-bde0-66aa6bd2021d\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T10:27:27.588Z\",\"Retrieved current user profile details\"\n\"ef000dde-49da-4171-a9d0-f7dcadb88500\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T10:27:23.753Z\",\"Retrieved current user profile details\"\n\"40e247d4-89c4-4ef2-adfb-69ffbf96f14f\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T10:27:23.533Z\",\"Retrieved current user profile details\"\n\"72b0f6d6-93df-44ae-a6aa-409affdc4366\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T10:27:23.229Z\",\"Retrieved current user profile details\"\n\"a2330231-e2ad-4ceb-b832-d453d6a10edd\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T10:27:22.995Z\",\"Retrieved current user profile details\"\n\"0f163e68-f866-454d-a2fb-e3b3dfe8c7cc\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"USER_LOGIN\",\"110.225.227.72\",\"2026-11-03T10:26:35.203Z\",\"Logged in successfully from session 1c4ceacd-d07e-43a9-870e-ed8001738412\"\n\"502e1095-59eb-441d-826d-6103ff6e57ed\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"OTP_REQUESTED\",\"110.225.227.72\",\"2026-11-03T10:26:34.417Z\",\"OTP requested for phone: +16505550001\"\n\"1755c293-c39c-407d-9839-7f7259d41dd5\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"TOKEN_REFRESH\",\"110.225.227.72\",\"2026-11-03T10:18:45.523Z\",\"Tokens rotated successfully\"\n\"8a3ccc20-59e2-43ea-99f6-fd6c56034826\",\"fa502f2e-332c-4ec0-b6aa-83713216ec88\",\"USER_LOGIN\",\"110.225.227.72\",\"2026-11-03T10:11:20.221Z\",\"Logged in successfully from session 1a05865d-2bff-4e61-b52d-6e9cad0175be\"\n\"f2822cdd-349f-40e2-a1cd-6a83649d0012\",\"fa502f2e-332c-4ec0-b6aa-83713216ec88\",\"OTP_REQUESTED\",\"110.225.227.72\",\"2026-11-03T10:11:19.428Z\",\"OTP requested for phone: +16505550003\"\n\"b08152da-4283-4c8a-b49b-6a2f6d25ec2e\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"USER_LOGIN\",\"110.225.227.72\",\"2026-11-03T10:02:53.598Z\",\"Logged in successfully from session 011af0c5-f0a6-4194-bc12-59d307ec4eb4\"\n\"5e8a11cb-dd35-4215-9d81-a665a0ac48d2\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"OTP_VERIFICATION_FAILED\",\"110.225.227.72\",\"2026-11-03T10:02:52.795Z\",\"Incorrect OTP entered\"\n\"bf3e7745-ba88-4a1b-9e0e-32e43c7206d6\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"OTP_REQUESTED\",\"110.225.227.72\",\"2026-11-03T10:02:52.004Z\",\"OTP requested for phone: +16505550004\"\n\"31aadbe8-a814-4023-a07e-9006b756a55a\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"SESSIONS_VIEW\",\"110.225.227.72\",\"2026-11-03T10:02:10.411Z\",\"Active sessions view retrieved\"\n\"9cb08714-08e0-4753-9c76-2058f2aa08c0\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"SESSIONS_VIEW\",\"110.225.227.72\",\"2026-11-03T10:02:00.895Z\",\"Active sessions view retrieved\"\n\"d499cafa-998f-419f-b2f2-aea637087e22\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ADMIN_PASSWORD_LOGIN\",\"110.225.227.72\",\"2026-11-03T10:01:59.904Z\",\"Admin logged in successfully via password from session 3f52e1f2-885c-4685-90d3-87b21ae8cf8a\"\n\"76a67307-b9b1-43cf-bec7-2c561ead4f5c\",\"fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6\",\"SESSIONS_VIEW\",\"110.225.227.72\",\"2026-11-03T10:00:53.363Z\",\"Active sessions view retrieved\"\n\"39a255bb-cfd9-4368-afb1-507079828512\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"SESSIONS_VIEW\",\"110.225.227.72\",\"2026-11-03T09:59:57.599Z\",\"Active sessions view retrieved\"\n\"574535c7-fefb-4db4-91ab-892e78097cce\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T09:59:57.581Z\",\"Retrieved current user profile details\"\n\"a42000b1-f3b9-4681-93db-5843c4663d0e\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T09:59:57.319Z\",\"Retrieved current user profile details\"\n\"945b8a42-2f22-4f7a-861e-ee6fff2223db\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"SESSIONS_VIEW\",\"110.225.227.72\",\"2026-11-03T09:59:54.942Z\",\"Active sessions view retrieved\"\n\"e96ed5ad-87de-427f-919f-978d79e5c1d0\",\"bc6f6875-434c-4050-b893-07343cc27986\",\"ME_PROFILE_VIEW\",\"110.225.227.72\",\"2026-11-03T09:59:54.898Z\",\"Retrieved current user profile details\""
+      },
+      "meta": {
+        "timestamp": "2026-11-03T12:06:05.694Z"
+      }
+    }
+  },
+  "r5": {
+    "path": "/api/v1/admin/audit-logs/export?format=json",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 12:06:06 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "50762",
+      "etag": "W/\"c64a-mnCuYjLhsbmrkIB0Dl+BJNC4shA\"",
+      "connection": "close"
+    },
+    "duration": 1147,
+    "data": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": {
+        "format": "json",
+        "total": 100,
+        "data": [
+          {
+            "id": "c3938912-b2e1-4f6f-852b-924c7080296c",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "USER_LOGIN",
+            "details": "Logged in successfully from session 4296812f-82f5-4c56-ae37-7d46fcb238e0",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:06:03.308Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "8eb2e105-ed75-4113-8f06-aa6e593ef30d",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "OTP_REQUESTED",
+            "details": "OTP requested for phone: +16505550001",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:06:02.509Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "1f04a000-9992-4659-bdc9-d943bd509e6b",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "TOKEN_REFRESH",
+            "details": "Tokens rotated successfully",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:05:31.298Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "16e33171-c36f-494c-b933-ed8d99fcbb25",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "USER_LOGIN",
+            "details": "Logged in successfully from session dd21574f-9dff-43f6-99e1-8f4081663d4c",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:02:47.140Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "3757e658-f3f4-49e1-9f0c-6ac815338740",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "OTP_VERIFICATION_FAILED",
+            "details": "Incorrect OTP entered",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:02:46.334Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "62cdd610-c06e-4bf6-a845-b3080e010f1e",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "OTP_REQUESTED",
+            "details": "OTP requested for phone: +16505550004",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:02:45.600Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "164e04be-e83c-44a7-b032-96b6eb05d2db",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "TOKEN_REFRESH",
+            "details": "Tokens rotated successfully",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:00:27.059Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "b6fcb3d4-0376-4474-8bd9-6007630a92d8",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "TOKEN_REFRESH",
+            "details": "Tokens rotated successfully",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T12:00:25.542Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "778a8161-7f07-4307-b1d3-dbd658622412",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "SESSIONS_VIEW",
+            "details": "Active sessions view retrieved",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:49:37.774Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "d58df91a-a99b-4680-ac10-3172fba9f688",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ADMIN_PASSWORD_LOGIN",
+            "details": "Admin logged in successfully via password from session 37640e2b-81d2-4bee-83ae-cc7bb8b9030f",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:49:37.142Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "4aff1ed2-46ab-438a-b3de-e255113f808e",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:57.992Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "ad3c905c-68db-4b7e-bef2-dd098601767a",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:57.717Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "2de97b89-e415-4a85-bb31-d14ab1d0fbfb",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:52.411Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "a99c31ab-172a-46c1-b806-d2439d06fe11",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:51.693Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "ccf47a5d-43a7-436e-bd42-17fe918036a4",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:46.642Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "a8fe4d11-5183-4d24-a622-6e41f3c127d2",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:46.451Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "4b657078-2c3b-45c2-818c-cff5890aa668",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:43.153Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "1fbd71f4-e0be-4f44-9cd1-5620981152c1",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:42.938Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "c9e6ced3-16da-4c83-ac57-6f1f5ecf37c1",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "USER_LOGIN",
+            "details": "Logged in successfully from session f050f4da-0421-4d03-902a-191d4ad09358",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:18.993Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "0a468da5-81c0-442a-b82e-95542874e89b",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "OTP_VERIFICATION_FAILED",
+            "details": "Incorrect OTP entered",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:18.186Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "d8a29c63-4820-4c0c-971e-c89807861500",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "OTP_REQUESTED",
+            "details": "OTP requested for phone: +16505550004",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:43:17.379Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "d2655c1c-2b07-44c4-a124-a7a116e37b2f",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:23.029Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "692fdcbb-d6f5-409f-987b-8df6b3795fef",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:22.831Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "dc164b64-cd75-4503-81db-e3796f75dd5a",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:21.286Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "e89ece48-f74a-4b3c-8166-efb1726e5235",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:20.867Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "40ed68cf-cc0f-4c2c-8153-dc8e358dafdb",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:16.088Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "3d3dd490-e4f7-4987-984a-68d9e214f30d",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:15.850Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "51bfbc24-8753-4756-b551-58bf0ed465f0",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:13.839Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "e3e77232-1fb1-4270-9b8d-7037d8100e13",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:13.647Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "2665a69d-2da3-4616-9ace-d0d59df9d144",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:10.371Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "df9887d6-fc2b-4d64-80c7-946fbf959ee5",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:10.168Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "6d260daf-e609-47f5-b760-774d9dc802e1",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:07.972Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "6b93768e-a5a2-4e48-904d-d249d36f80e0",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:07.692Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "62f996c3-5e86-480a-b304-1d7d07542cf3",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "SESSIONS_VIEW",
+            "details": "Active sessions view retrieved",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:04.673Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "2e0eda67-cf91-4d73-add3-e9fbd0c5b844",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:04.268Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "fc09b7b3-1cff-4369-98ff-66fc450bd303",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:42:04.056Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "14c81dd9-cf2b-467d-92d8-6f52c41802ca",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "USER_LOGIN",
+            "details": "Logged in successfully from session 66aa568f-a098-4fac-ba93-2b0cc5d76c60",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:41:55.540Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "27ba6097-7570-4b15-9f98-b14d71bfb6d1",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "OTP_REQUESTED",
+            "details": "OTP requested for phone: +16505550001",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:41:54.614Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "8370aaff-d242-44bd-9f8e-3fd3e14b3ad8",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "USER_LOGIN",
+            "details": "Logged in successfully from session 52a077c0-90e3-46b2-a414-3ade0535eef1",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:33:44.522Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "2d89c43d-c35b-4732-a197-41e2f27a390a",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "OTP_VERIFICATION_FAILED",
+            "details": "Incorrect OTP entered",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:33:43.730Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "3e4138c3-f05a-4917-b2f1-cd43c6a75f24",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "OTP_REQUESTED",
+            "details": "OTP requested for phone: +16505550004",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:33:42.737Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "90f3c6ac-9df6-441a-be4c-e329323f667b",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:14.463Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "fb562ade-b97f-4e2a-b891-4d3f4c99dde4",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:13.871Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "0cf4561c-ce4e-4847-9cb6-2db6d5f11d65",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:09.863Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "b15b199b-ba44-4a75-8caf-849835b6959c",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:09.506Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "ea664058-fb54-40c6-96eb-905e493f706c",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:05.836Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "4cec1658-9a8d-4e80-85b8-e0c085004302",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:05.634Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "7e61182b-7ade-4751-9db3-dc093fbd8824",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:02.753Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "0e4d2dc0-f951-406a-a353-a96e3f98f157",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:02.481Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "8e36d0a8-8ad2-4c9d-b349-63a492af97e1",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:01.808Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "47ed7c43-7747-429d-adab-9fe7d3e4d6a8",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:24:01.568Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "fbe16a33-0dac-41b0-a6d3-ffbcaa099a6f",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "USER_LOGIN",
+            "details": "Logged in successfully from session c14ab53c-1fa7-4b71-bd15-6fed0bf88427",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:23:29.867Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "99e35caf-850d-4375-b9f1-43c41d9c196f",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "OTP_REQUESTED",
+            "details": "OTP requested for phone: +16505550001",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:23:29.033Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "95865a21-1584-4a1f-adb3-ea0453127f95",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "REFRESH_TOKEN_REPLAY_ATTACK",
+            "details": "Token replay attack detected",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:22:43.732Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "3fd59b96-5aac-4eb0-bb1c-eb630b590d92",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "TOKEN_REFRESH",
+            "details": "Tokens rotated successfully",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:20:44.484Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "5464fc28-9462-4e2a-b67d-2ea493e901bb",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:18:25.236Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "46968cfe-9608-4ca9-b3a6-1a5120e696db",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:18:24.918Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "c208b8a9-5014-4c77-9363-ed1d026b3e76",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "TOKEN_REFRESH",
+            "details": "Tokens rotated successfully",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T11:18:24.302Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "e0121c65-f92d-446b-b3ac-ea1de8274607",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "USER_LOGIN",
+            "details": "Logged in successfully from session 019e0192-0107-4834-8485-d3f340841376",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:54:34.762Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "fb583c8b-0670-420e-a5f1-aa5836248273",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "OTP_VERIFICATION_FAILED",
+            "details": "Incorrect OTP entered",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:54:33.919Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "9c5fb5d4-d7b8-46f8-a48a-ecd95fddd53f",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "OTP_REQUESTED",
+            "details": "OTP requested for phone: +16505550004",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:54:33.273Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "61677236-e7be-42ef-abfe-803c2dcfbb33",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "USER_LOGIN",
+            "details": "Logged in successfully from session 49595dd1-6a7b-49df-b255-8697f130b073",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:52:26.082Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "fa9f927b-7a88-43ab-b036-84dcc9657efa",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "OTP_VERIFICATION_FAILED",
+            "details": "Incorrect OTP entered",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:52:24.625Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "19dc1dca-678f-4f49-bcc2-25d4b6bea91a",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "OTP_REQUESTED",
+            "details": "OTP requested for phone: +16505550004",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:52:23.798Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "d00de0ff-f996-4992-88fc-751c9f1c035e",
+            "userId": "fa502f2e-332c-4ec0-b6aa-83713216ec88",
+            "action": "USER_LOGIN",
+            "details": "Logged in successfully from session a92eba10-64f7-4794-99ab-3b9e1c9b32df",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:51:45.553Z",
+            "user": {
+              "id": "fa502f2e-332c-4ec0-b6aa-83713216ec88",
+              "phone": "+16505550003",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.272Z",
+              "updatedAt": "2026-10-28T09:26:28.328Z"
+            }
+          },
+          {
+            "id": "3bc3db96-da25-4942-b720-174bb2d43907",
+            "userId": "fa502f2e-332c-4ec0-b6aa-83713216ec88",
+            "action": "OTP_REQUESTED",
+            "details": "OTP requested for phone: +16505550003",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:51:44.814Z",
+            "user": {
+              "id": "fa502f2e-332c-4ec0-b6aa-83713216ec88",
+              "phone": "+16505550003",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.272Z",
+              "updatedAt": "2026-10-28T09:26:28.328Z"
+            }
+          },
+          {
+            "id": "2253474e-0bf9-4769-8342-08de97e77add",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "USER_LOGIN",
+            "details": "Logged in successfully from session 1964992e-faae-4ae9-a7d7-8eca78dac965",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:47:35.327Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "78151223-9c8d-4061-8cfb-b81bc2829c4c",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "OTP_REQUESTED",
+            "details": "OTP requested for phone: +16505550001",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:47:34.503Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "e25b69de-8ace-44b9-a599-81b86173da80",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:43:23.254Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "57b3fe1c-1056-487a-8830-735392473843",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:43:23.250Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "36715b5c-b43c-461b-84a7-2bca3c6972ae",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "TOKEN_REFRESH",
+            "details": "Tokens rotated successfully",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:43:17.347Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "074b2c56-7296-4fab-a8e1-bbe52317bd1b",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:27:40.151Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "d0aeee3b-50c7-4509-ac11-6748cd603de8",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:27:39.433Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "e905d05b-0a45-4cb9-ba75-936bff16ab6d",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:27:36.027Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "4cf6372c-9149-437b-9040-1caf841a887b",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:27:35.709Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "bfbdca44-1b9c-437d-8158-686387c6081f",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:27:32.041Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "3462fbc8-419a-47e4-8d9c-4e67159c16cd",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:27:31.758Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "6cc83a7b-edb3-4ac3-b996-cf0c8a7d4333",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:27:27.827Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "60430e18-a24b-4bfc-bde0-66aa6bd2021d",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:27:27.588Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "ef000dde-49da-4171-a9d0-f7dcadb88500",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:27:23.753Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "40e247d4-89c4-4ef2-adfb-69ffbf96f14f",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:27:23.533Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "72b0f6d6-93df-44ae-a6aa-409affdc4366",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:27:23.229Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "a2330231-e2ad-4ceb-b832-d453d6a10edd",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:27:22.995Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "0f163e68-f866-454d-a2fb-e3b3dfe8c7cc",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "USER_LOGIN",
+            "details": "Logged in successfully from session 1c4ceacd-d07e-43a9-870e-ed8001738412",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:26:35.203Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "502e1095-59eb-441d-826d-6103ff6e57ed",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "OTP_REQUESTED",
+            "details": "OTP requested for phone: +16505550001",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:26:34.417Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "1755c293-c39c-407d-9839-7f7259d41dd5",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "TOKEN_REFRESH",
+            "details": "Tokens rotated successfully",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:18:45.523Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "8a3ccc20-59e2-43ea-99f6-fd6c56034826",
+            "userId": "fa502f2e-332c-4ec0-b6aa-83713216ec88",
+            "action": "USER_LOGIN",
+            "details": "Logged in successfully from session 1a05865d-2bff-4e61-b52d-6e9cad0175be",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:11:20.221Z",
+            "user": {
+              "id": "fa502f2e-332c-4ec0-b6aa-83713216ec88",
+              "phone": "+16505550003",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.272Z",
+              "updatedAt": "2026-10-28T09:26:28.328Z"
+            }
+          },
+          {
+            "id": "f2822cdd-349f-40e2-a1cd-6a83649d0012",
+            "userId": "fa502f2e-332c-4ec0-b6aa-83713216ec88",
+            "action": "OTP_REQUESTED",
+            "details": "OTP requested for phone: +16505550003",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:11:19.428Z",
+            "user": {
+              "id": "fa502f2e-332c-4ec0-b6aa-83713216ec88",
+              "phone": "+16505550003",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.272Z",
+              "updatedAt": "2026-10-28T09:26:28.328Z"
+            }
+          },
+          {
+            "id": "b08152da-4283-4c8a-b49b-6a2f6d25ec2e",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "USER_LOGIN",
+            "details": "Logged in successfully from session 011af0c5-f0a6-4194-bc12-59d307ec4eb4",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:02:53.598Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "5e8a11cb-dd35-4215-9d81-a665a0ac48d2",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "OTP_VERIFICATION_FAILED",
+            "details": "Incorrect OTP entered",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:02:52.795Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "bf3e7745-ba88-4a1b-9e0e-32e43c7206d6",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "OTP_REQUESTED",
+            "details": "OTP requested for phone: +16505550004",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:02:52.004Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "31aadbe8-a814-4023-a07e-9006b756a55a",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "SESSIONS_VIEW",
+            "details": "Active sessions view retrieved",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:02:10.411Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "9cb08714-08e0-4753-9c76-2058f2aa08c0",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "SESSIONS_VIEW",
+            "details": "Active sessions view retrieved",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:02:00.895Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "d499cafa-998f-419f-b2f2-aea637087e22",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ADMIN_PASSWORD_LOGIN",
+            "details": "Admin logged in successfully via password from session 3f52e1f2-885c-4685-90d3-87b21ae8cf8a",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:01:59.904Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "76a67307-b9b1-43cf-bec7-2c561ead4f5c",
+            "userId": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+            "action": "SESSIONS_VIEW",
+            "details": "Active sessions view retrieved",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T10:00:53.363Z",
+            "user": {
+              "id": "fd2a7ed3-7c81-496e-82b8-beefbdc9a8e6",
+              "phone": "+16505550004",
+              "email": null,
+              "passwordHash": null,
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.284Z",
+              "updatedAt": "2026-10-31T12:48:58.947Z"
+            }
+          },
+          {
+            "id": "39a255bb-cfd9-4368-afb1-507079828512",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "SESSIONS_VIEW",
+            "details": "Active sessions view retrieved",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T09:59:57.599Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "574535c7-fefb-4db4-91ab-892e78097cce",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T09:59:57.581Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "a42000b1-f3b9-4681-93db-5843c4663d0e",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T09:59:57.319Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "945b8a42-2f22-4f7a-861e-ee6fff2223db",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "SESSIONS_VIEW",
+            "details": "Active sessions view retrieved",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T09:59:54.942Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          },
+          {
+            "id": "e96ed5ad-87de-427f-919f-978d79e5c1d0",
+            "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+            "action": "ME_PROFILE_VIEW",
+            "details": "Retrieved current user profile details",
+            "ipAddress": "110.225.227.72",
+            "createdAt": "2026-11-03T09:59:54.898Z",
+            "user": {
+              "id": "bc6f6875-434c-4050-b893-07343cc27986",
+              "phone": "+16505550001",
+              "email": "superadmin@careid.test",
+              "passwordHash": "$2b$10$fRuUP59HMiUtKlAFiVBdqOi82I6eq9IpXQPGVGWLTrjOvUpeiP4wG",
+              "status": "ACTIVE",
+              "createdAt": "2026-10-28T07:40:44.227Z",
+              "updatedAt": "2026-10-28T09:26:28.231Z"
+            }
+          }
+        ]
+      },
+      "meta": {
+        "timestamp": "2026-11-03T12:06:06.477Z"
+      }
+    }
+  },
+  "r6": {
+    "path": "/api/v1/security/audit",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 12:06:08 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "813",
+      "etag": "W/\"32d-Wf5Z/FuC9D333Gy4WkMf5ZNzmHE\"",
+      "connection": "close"
+    },
+    "duration": 1688,
+    "data": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [
+        {
+          "id": "57e3949f-f287-43d9-9bd5-3ddc74676792",
+          "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+          "action": "ENCRYPTION_KEY_ROTATED",
+          "resource": "KMS_KEY",
+          "resourceId": "7c6665e7-2eca-4985-abe5-b3ff5391dbc1",
+          "result": "SUCCESS",
+          "details": "Rotated KMS encryption key to version 2 (HV360-KMS-KEY-v2)",
+          "createdAt": "2026-11-02T08:14:58.384Z"
+        },
+        {
+          "id": "39664cbd-c344-4b67-bbc5-6d46653c8de3",
+          "userId": "bc6f6875-434c-4050-b893-07343cc27986",
+          "action": "COMPLIANCE_REPORT_GENERATED",
+          "resource": "COMPLIANCE_REPORT",
+          "resourceId": "54bd558b-d249-4ee9-89c2-a0f01ace8730",
+          "result": "SUCCESS",
+          "details": "Generated compliance report: CareID SOC2 & HIPAA Audit 2026-Q4",
+          "createdAt": "2026-11-02T08:14:57.031Z"
+        }
+      ],
+      "meta": {
+        "timestamp": "2026-11-03T12:06:08.677Z"
+      }
+    }
+  },
+  "r7": {
+    "path": "/api/v1/governance/audit",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 12:06:09 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "135",
+      "etag": "W/\"87-yCVEnutxLsclutdmVuQg/Ic8GKg\"",
+      "connection": "close"
+    },
+    "duration": 560,
+    "data": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [],
+      "meta": {
+        "timestamp": "2026-11-03T12:06:09.280Z"
+      }
+    }
+  },
+  "r8": {
+    "path": "/api/v1/observability/logs",
+    "status": 200,
+    "headers": {
+      "date": "Tue, 03 Nov 2026 12:06:09 GMT",
+      "server": "Apache",
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "origin-agent-cluster": "?1",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-content-type-options": "nosniff",
+      "x-dns-prefetch-control": "off",
+      "x-download-options": "noopen",
+      "x-frame-options": "SAMEORIGIN",
+      "x-permitted-cross-domain-policies": "none",
+      "x-xss-protection": "0",
+      "vary": "Origin,Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "135",
+      "etag": "W/\"87-l6R1vEGvQiitVOAxzmfdKxkIq+Y\"",
+      "connection": "close"
+    },
+    "duration": 846,
+    "data": {
+      "success": true,
+      "statusCode": 200,
+      "message": "Operation executed successfully",
+      "data": [],
+      "meta": {
+        "timestamp": "2026-11-03T12:06:09.951Z"
+      }
+    }
+  }
+}

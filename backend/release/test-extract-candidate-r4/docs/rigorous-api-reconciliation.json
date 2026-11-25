@@ -1,0 +1,164 @@
+{
+  "total": 519,
+  "categorized": {
+    "HTTP_E2E_VERIFIED": 19,
+    "UNIT_MOCK_VERIFIED": 474,
+    "SYNTHETIC_SIMULATED": 22,
+    "FILE_FALLBACK": 4,
+    "IN_MEMORY_LOCK": 0,
+    "SCHEMA_BLOCKED": 0,
+    "ARCHITECTURAL_BLOCKED": 0
+  },
+  "sample": [
+    {
+      "folder": "01. Environment & Health Checks",
+      "name": "Platform Health Check",
+      "method": "GET",
+      "path": "/api/v1/health",
+      "controller": "health.controller.ts",
+      "service": "HealthCheckService",
+      "status": "UNIT_MOCK_VERIFIED",
+      "evidence": "Unit tested with Prisma mock"
+    },
+    {
+      "folder": "01. Environment & Health Checks",
+      "name": "Platform Readiness Probe",
+      "method": "GET",
+      "path": "/api/v1/ready",
+      "controller": "health.controller.ts",
+      "service": "HealthCheckService",
+      "status": "UNIT_MOCK_VERIFIED",
+      "evidence": "Unit tested with Prisma mock"
+    },
+    {
+      "folder": "01. Environment & Health Checks",
+      "name": "Platform Liveness Probe",
+      "method": "GET",
+      "path": "/api/v1/live",
+      "controller": "health.controller.ts",
+      "service": "HealthCheckService",
+      "status": "UNIT_MOCK_VERIFIED",
+      "evidence": "Unit tested with Prisma mock"
+    },
+    {
+      "folder": "02. Authentication & OTP",
+      "name": "CareID Admin/Super Admin Password Login",
+      "method": "POST",
+      "path": "/api/v1/auth/password/login",
+      "controller": "auth.controller.ts",
+      "service": "AuthService",
+      "status": "UNIT_MOCK_VERIFIED",
+      "evidence": "Unit tested with Prisma mock"
+    },
+    {
+      "folder": "02. Authentication & OTP",
+      "name": "Admin Email/Password Login (Legacy Alias)",
+      "method": "POST",
+      "path": "/api/v1/auth/admin/login",
+      "controller": "auth.controller.ts",
+      "service": "AuthService",
+      "status": "UNIT_MOCK_VERIFIED",
+      "evidence": "Unit tested with Prisma mock"
+    },
+    {
+      "folder": "02. Authentication & OTP",
+      "name": "Request Phone OTP",
+      "method": "POST",
+      "path": "/api/v1/auth/otp/request",
+      "controller": "auth.controller.ts",
+      "service": "AuthService",
+      "status": "UNIT_MOCK_VERIFIED",
+      "evidence": "Unit tested with Prisma mock"
+    },
+    {
+      "folder": "02. Authentication & OTP",
+      "name": "Verify Phone OTP & Login",
+      "method": "POST",
+      "path": "/api/v1/auth/otp/verify",
+      "controller": "auth.controller.ts",
+      "service": "AuthService",
+      "status": "UNIT_MOCK_VERIFIED",
+      "evidence": "Unit tested with Prisma mock"
+    },
+    {
+      "folder": "02. Authentication & OTP",
+      "name": "Resend OTP to registered phone number",
+      "method": "POST",
+      "path": "/api/v1/auth/otp/resend",
+      "controller": "auth.controller.ts",
+      "service": "AuthService",
+      "status": "UNIT_MOCK_VERIFIED",
+      "evidence": "Unit tested with Prisma mock"
+    },
+    {
+      "folder": "02. Authentication & OTP",
+      "name": "Refresh JWT Access Token",
+      "method": "POST",
+      "path": "/api/v1/auth/token/refresh",
+      "controller": "auth.controller.ts",
+      "service": "AuthService",
+      "status": "UNIT_MOCK_VERIFIED",
+      "evidence": "Unit tested with Prisma mock"
+    },
+    {
+      "folder": "02. Authentication & OTP",
+      "name": "User Session Logout",
+      "method": "POST",
+      "path": "/api/v1/auth/logout",
+      "controller": "auth.controller.ts",
+      "service": "AuthService",
+      "status": "UNIT_MOCK_VERIFIED",
+      "evidence": "Unit tested with Prisma mock"
+    },
+    {
+      "folder": "02. Authentication & OTP",
+      "name": "Logout all devices and revoke all tokens",
+      "method": "POST",
+      "path": "/api/v1/auth/logout-all",
+      "controller": "auth.controller.ts",
+      "service": "AuthService",
+      "status": "UNIT_MOCK_VERIFIED",
+      "evidence": "Unit tested with Prisma mock"
+    },
+    {
+      "folder": "02. Authentication & OTP",
+      "name": "Change authenticated user password",
+      "method": "POST",
+      "path": "/api/v1/auth/password/change",
+      "controller": "auth.controller.ts",
+      "service": "AuthService",
+      "status": "UNIT_MOCK_VERIFIED",
+      "evidence": "Unit tested with Prisma mock"
+    },
+    {
+      "folder": "03. User Profile & Account",
+      "name": "Get current user profile and claims",
+      "method": "GET",
+      "path": "/api/v1/auth/me",
+      "controller": "auth.controller.ts",
+      "service": "AuthService",
+      "status": "UNIT_MOCK_VERIFIED",
+      "evidence": "Unit tested with Prisma mock"
+    },
+    {
+      "folder": "03. User Profile & Account",
+      "name": "Update current user profile",
+      "method": "PUT",
+      "path": "/api/v1/auth/me",
+      "controller": "auth.controller.ts",
+      "service": "AuthService",
+      "status": "UNIT_MOCK_VERIFIED",
+      "evidence": "Unit tested with Prisma mock"
+    },
+    {
+      "folder": "03. User Profile & Account",
+      "name": "Partially update current user profile",
+      "method": "PATCH",
+      "path": "/api/v1/auth/me",
+      "controller": "auth.controller.ts",
+      "service": "AuthService",
+      "status": "UNIT_MOCK_VERIFIED",
+      "evidence": "Unit tested with Prisma mock"
+    }
+  ]
+}

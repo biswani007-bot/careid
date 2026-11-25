@@ -1,0 +1,112 @@
+{
+  "total": 519,
+  "byMethod": {
+    "GET": 232,
+    "POST": 179,
+    "PUT": 54,
+    "PATCH": 15,
+    "DELETE": 39
+  },
+  "sample": [
+    {
+      "id": "42b2f560-c47f-42bf-b07d-5cfd714990ed",
+      "name": "Platform Health Check",
+      "folder": "01. Environment & Health Checks",
+      "method": "GET",
+      "rawUrl": "{{baseUrl}}/api/v1/health",
+      "cleanPath": "/api/v1/health",
+      "hasBody": false,
+      "auth": "noauth"
+    },
+    {
+      "id": "869bef2f-5193-4dd9-b3ae-fa56dba8f2c1",
+      "name": "Platform Readiness Probe",
+      "folder": "01. Environment & Health Checks",
+      "method": "GET",
+      "rawUrl": "{{baseUrl}}/api/v1/ready",
+      "cleanPath": "/api/v1/ready",
+      "hasBody": false,
+      "auth": "noauth"
+    },
+    {
+      "id": "4dd34a7e-cec4-420e-b646-2bcbe4957933",
+      "name": "Platform Liveness Probe",
+      "folder": "01. Environment & Health Checks",
+      "method": "GET",
+      "rawUrl": "{{baseUrl}}/api/v1/live",
+      "cleanPath": "/api/v1/live",
+      "hasBody": false,
+      "auth": "noauth"
+    },
+    {
+      "id": "61252c6f-e837-4427-83d2-fa117fcee7da",
+      "name": "CareID Admin/Super Admin Password Login",
+      "folder": "02. Authentication & OTP",
+      "method": "POST",
+      "rawUrl": "{{baseUrl}}/api/v1/auth/password/login",
+      "cleanPath": "/api/v1/auth/password/login",
+      "hasBody": true,
+      "auth": "noauth"
+    },
+    {
+      "id": "469138d8-18c6-46e1-9469-f828e93731c1",
+      "name": "Admin Email/Password Login (Legacy Alias)",
+      "folder": "02. Authentication & OTP",
+      "method": "POST",
+      "rawUrl": "{{baseUrl}}/api/v1/auth/admin/login",
+      "cleanPath": "/api/v1/auth/admin/login",
+      "hasBody": true,
+      "auth": "noauth"
+    },
+    {
+      "id": "02c58c99-5f85-4c97-901b-aca8f839d10f",
+      "name": "Request Phone OTP",
+      "folder": "02. Authentication & OTP",
+      "method": "POST",
+      "rawUrl": "{{baseUrl}}/api/v1/auth/otp/request",
+      "cleanPath": "/api/v1/auth/otp/request",
+      "hasBody": true,
+      "auth": "noauth"
+    },
+    {
+      "id": "1c43c503-0ce7-4d44-bbf6-8f953ccc5bd1",
+      "name": "Verify Phone OTP & Login",
+      "folder": "02. Authentication & OTP",
+      "method": "POST",
+      "rawUrl": "{{baseUrl}}/api/v1/auth/otp/verify",
+      "cleanPath": "/api/v1/auth/otp/verify",
+      "hasBody": true,
+      "auth": "noauth"
+    },
+    {
+      "id": "b1baeb3d-49d2-495e-ba03-770cd5bfd826",
+      "name": "Resend OTP to registered phone number",
+      "folder": "02. Authentication & OTP",
+      "method": "POST",
+      "rawUrl": "{{baseUrl}}/api/v1/auth/otp/resend",
+      "cleanPath": "/api/v1/auth/otp/resend",
+      "hasBody": true,
+      "auth": "noauth"
+    },
+    {
+      "id": "bbb80a22-4096-4da6-92f4-e958e710149d",
+      "name": "Refresh JWT Access Token",
+      "folder": "02. Authentication & OTP",
+      "method": "POST",
+      "rawUrl": "{{baseUrl}}/api/v1/auth/token/refresh",
+      "cleanPath": "/api/v1/auth/token/refresh",
+      "hasBody": true,
+      "auth": "noauth"
+    },
+    {
+      "id": "fecb8519-5fc0-46bf-9fba-c3c383d64784",
+      "name": "User Session Logout",
+      "folder": "02. Authentication & OTP",
+      "method": "POST",
+      "rawUrl": "{{baseUrl}}/api/v1/auth/logout",
+      "cleanPath": "/api/v1/auth/logout",
+      "hasBody": true,
+      "auth": "noauth"
+    }
+  ]
+}

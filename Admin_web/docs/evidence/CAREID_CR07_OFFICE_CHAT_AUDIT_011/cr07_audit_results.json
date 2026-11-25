@@ -1,0 +1,8 @@
+{
+  "test1_navigation": "PASS",
+  "test2_profile_cta": "PASS",
+  "test3_twoway_messaging": "PASS",
+  "test4_templates": "PASS",
+  "test5_persistence": "PASS",
+  "test6_admin_oversight": "PASS"
+}

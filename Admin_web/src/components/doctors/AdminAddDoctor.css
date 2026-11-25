@@ -1,0 +1,644 @@
+/* ==========================================================================
+   CareID Admin Portal — Add Doctor Form Styles
+   Figma Reference: Node 20:2510 (Admin Portal - Add Doctor Form)
+   1280px x 1493px Canvas
+   Enhanced: Responsive Viewport Fit, Fluid Grid, Robust Height & No Overflow
+   ========================================================================== */
+
+/* Main Scrollable Canvas */
+.add-doctor-canvas {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  padding: clamp(24px, 2.5vw, 36px) clamp(16px, 2.5vw, 40px) 96px;
+  background-color: #f8f9fb;
+  box-sizing: border-box;
+}
+
+.add-doctor-canvas::-webkit-scrollbar {
+  width: 6px;
+}
+.add-doctor-canvas::-webkit-scrollbar-track {
+  background: transparent;
+}
+.add-doctor-canvas::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+.add-doctor-canvas::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Content Wrapper (Fluid up to 1080px for balanced widescreen desktop layout) */
+.add-doctor-content-wrapper {
+  width: 100%;
+  max-width: 1080px;
+  min-width: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  box-sizing: border-box;
+}
+
+/* Page Header & Back Navigation (Figma Node 20:2532) */
+.add-doctor-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+}
+
+.add-doctor-back-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+  flex-shrink: 0;
+}
+
+.add-doctor-back-btn:hover {
+  background-color: #edeef0;
+  transform: translateX(-2px);
+}
+
+.add-doctor-back-btn img {
+  width: 16px;
+  height: 16px;
+}
+
+.add-doctor-title-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  flex: 1;
+}
+
+.add-doctor-heading {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.64px;
+  color: #191c1e;
+  margin: 0;
+  word-break: break-word;
+}
+
+.add-doctor-subheading {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #494552;
+  margin: 0;
+}
+
+/* Form Container (Figma Node 20:2541) */
+.add-doctor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Form Section Styling */
+.add-doctor-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  min-width: 0;
+}
+
+.add-doctor-section-header {
+  border-bottom: 1px solid #e1e2e4;
+  padding-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.add-doctor-section-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.add-doctor-section-icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.add-doctor-section-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.add-doctor-section-title {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #191c1e;
+  margin: 0;
+}
+
+.add-doctor-section-subtitle {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #494552;
+  margin: 0;
+}
+
+/* Section 1: Personal Details Grid (Figma Node 20:2548) */
+.add-doctor-personal-row {
+  display: flex;
+  gap: clamp(20px, 2.5vw, 32px);
+  align-items: flex-start;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Avatar Photo Upload Container (Node 20:2549) */
+.add-doctor-avatar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 180px;
+  flex-shrink: 0;
+}
+
+.add-doctor-avatar-circle {
+  width: 128px;
+  height: 128px;
+  border-radius: 9999px;
+  background-color: #e7e8ea;
+  border: 2px dashed #7a7583;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.add-doctor-avatar-circle:hover {
+  background-color: #dedfe2;
+  border-color: #28006d;
+}
+
+.add-doctor-avatar-circle img.preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.add-doctor-avatar-upload-icon {
+  width: 33px;
+  height: 34px;
+  margin-bottom: 6px;
+}
+
+.add-doctor-avatar-label {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #494552;
+  text-align: center;
+}
+
+.add-doctor-avatar-hint {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #494552;
+  text-align: center;
+}
+
+/* Personal Grid Inputs */
+.add-doctor-personal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 24px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Standard Field Group */
+.add-doctor-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  min-width: 0;
+  width: 100%;
+}
+
+.add-doctor-field-group.full-width {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.add-doctor-label {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #191c1e;
+}
+
+.add-doctor-label .req {
+  color: #ba1a1a;
+  margin-left: 2px;
+}
+
+.add-doctor-input-wrap {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.add-doctor-input {
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+  padding: 0 14px;
+  background-color: #ffffff;
+  border: 1px solid #6b7280;
+  border-radius: 6px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  color: #191c1e;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.add-doctor-input:focus {
+  outline: none;
+  border-color: #28006d;
+  box-shadow: 0 0 0 3px rgba(40, 0, 109, 0.1);
+}
+
+.add-doctor-input.error {
+  border-color: #ba1a1a;
+}
+
+.add-doctor-select {
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+  padding: 0 36px 0 14px;
+  background-color: #ffffff;
+  border: 1px solid #6b7280;
+  border-radius: 6px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  color: #191c1e;
+  box-sizing: border-box;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%236B7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  cursor: pointer;
+}
+
+.add-doctor-select:focus {
+  outline: none;
+  border-color: #28006d;
+  box-shadow: 0 0 0 3px rgba(40, 0, 109, 0.1);
+}
+
+.add-doctor-select.error {
+  border-color: #ba1a1a;
+}
+
+.add-doctor-select:disabled {
+  background-color: #f2f4f6;
+  border-color: #d1d5db;
+  color: #7a7583;
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+/* 2-Column and 3-Column Grids */
+.add-doctor-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 24px;
+  width: 100%;
+  min-width: 0;
+}
+
+.add-doctor-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px 24px;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Section 4: Document Upload Cards (Figma Node 20:2663) */
+.add-doctor-docs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+}
+
+.add-doctor-doc-card {
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 8px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  min-height: 120px;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.add-doctor-doc-card:hover {
+  border-color: #28006d;
+  background-color: #fdfdfd;
+  box-shadow: 0 2px 8px rgba(40, 0, 109, 0.05);
+}
+
+.add-doctor-doc-card.has-file {
+  border-color: #006a60;
+  background-color: rgba(0, 106, 96, 0.04);
+}
+
+.add-doctor-doc-icon {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-doctor-doc-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.add-doctor-doc-title {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #191c1e;
+  margin: 0;
+}
+
+.add-doctor-doc-subtitle {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #494552;
+  margin: 0;
+}
+
+.add-doctor-doc-file-name {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #006a60;
+  word-break: break-all;
+  margin-top: 4px;
+}
+
+/* Section 5: Password Field */
+.add-doctor-password-wrap {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.add-doctor-password-input {
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+  padding: 0 44px 0 14px;
+  background-color: #d9dadc;
+  border: 1px solid #6b7280;
+  border-radius: 6px;
+  font-family: 'Liberation Mono', Menlo, Consolas, monospace;
+  font-size: 14px;
+  color: #494552;
+  box-sizing: border-box;
+}
+
+.add-doctor-copy-btn {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
+}
+
+.add-doctor-copy-btn:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.add-doctor-copy-btn img {
+  width: 17px;
+  height: 20px;
+}
+
+/* Footer Actions (Figma Node 20:2718) */
+.add-doctor-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-top: 24px;
+  width: 100%;
+}
+
+.add-doctor-cancel-btn {
+  padding: 10px 24px;
+  background: transparent;
+  border: none;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #28006d;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.add-doctor-cancel-btn:hover {
+  background-color: rgba(40, 0, 109, 0.06);
+}
+
+.add-doctor-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 32px;
+  background-color: #3f1d8b;
+  border: none;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(63, 29, 139, 0.25);
+}
+
+.add-doctor-submit-btn:hover:not(:disabled) {
+  background-color: #30146e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(63, 29, 139, 0.35);
+}
+
+.add-doctor-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.add-doctor-submit-btn img {
+  width: 10px;
+  height: 10px;
+}
+
+/* Error message */
+.add-doctor-error-msg {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  color: #ba1a1a;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   - 1920x1080: balanced desktop layout via max-width: 1080px
+   - 1440x900: comfortable 2-col/3-col layout, zero overflow
+   - 1366x768: natural vertical scrolling, zero overflow
+   - 1024x768: compact 2-column layout with readable inputs
+   - <= 768px: single-column form with no horizontal overflow
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .add-doctor-personal-row {
+    gap: 20px;
+  }
+  .add-doctor-avatar-col {
+    width: 160px;
+  }
+  .add-doctor-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .add-doctor-docs-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 860px) {
+  .add-doctor-personal-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .add-doctor-avatar-col {
+    width: 100%;
+  }
+  .add-doctor-personal-grid {
+    width: 100%;
+  }
+  .add-doctor-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .add-doctor-docs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .add-doctor-canvas {
+    padding: 20px 16px 64px;
+  }
+  .add-doctor-personal-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .add-doctor-avatar-col {
+    width: 100%;
+  }
+  .add-doctor-personal-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .add-doctor-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .add-doctor-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .add-doctor-docs-grid {
+    grid-template-columns: 1fr;
+  }
+  .add-doctor-footer-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .add-doctor-submit-btn,
+  .add-doctor-cancel-btn {
+    width: 100%;
+  }
+}

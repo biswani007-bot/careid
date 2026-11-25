@@ -1,0 +1,27 @@
+# ==============================================================================
+# CareID Standalone OCR Microservice — Pinned Production Dependencies
+# Target Python Version: 3.11 (Linux x86_64 CPU)
+# ==============================================================================
+
+# Web Framework & Async Server
+fastapi>=0.115.0,<1.0.0
+uvicorn[standard]>=0.30.0,<1.0.0
+python-multipart>=0.0.18
+pydantic>=2.8.0,<3.0.0
+
+# Process Governance & Telemetry
+psutil>=5.9.0
+
+# Document & Computer Vision Processing
+Pillow>=10.0.0
+numpy>=1.24.0,<2.0.0
+pymupdf>=1.23.0
+
+# Deep Learning OCR Engine (CPU)
+paddlepaddle>=2.5.0,<=3.0.0
+paddleocr>=2.7.0
+
+# Testing & Client Verification
+pytest>=8.0.0
+httpx>=0.27.0
+

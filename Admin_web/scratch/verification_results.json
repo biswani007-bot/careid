@@ -1,0 +1,90 @@
+[
+  {
+    "viewport": "1920x1080",
+    "desc": "Full HD Desktop",
+    "sidebarRight": 280,
+    "mainLeft": 280,
+    "cardLeft": 412,
+    "cardWidth": 442.65625,
+    "noOverlap": true,
+    "hasHorizScroll": false,
+    "screenshot": "user_profile_1920x1080.png"
+  },
+  {
+    "viewport": "1440x900",
+    "desc": "Standard Desktop",
+    "sidebarRight": 280,
+    "mainLeft": 280,
+    "cardLeft": 312,
+    "cardWidth": 349.328125,
+    "noOverlap": true,
+    "hasHorizScroll": false,
+    "screenshot": "user_profile_1440x900.png"
+  },
+  {
+    "viewport": "1366x768",
+    "desc": "Common Laptop",
+    "sidebarRight": 280,
+    "mainLeft": 280,
+    "cardLeft": 312,
+    "cardWidth": 324.65625,
+    "noOverlap": true,
+    "hasHorizScroll": false,
+    "screenshot": "user_profile_1366x768.png"
+  },
+  {
+    "viewport": "1280x800",
+    "desc": "Small Laptop",
+    "sidebarRight": 280,
+    "mainLeft": 280,
+    "cardLeft": 312,
+    "cardWidth": 296,
+    "noOverlap": true,
+    "hasHorizScroll": false,
+    "screenshot": "user_profile_1280x800.png"
+  },
+  {
+    "viewport": "1024x768",
+    "desc": "Compact / Tablet Landscape",
+    "sidebarRight": 280,
+    "mainLeft": 280,
+    "cardLeft": 300,
+    "cardWidth": 300,
+    "noOverlap": true,
+    "hasHorizScroll": false,
+    "screenshot": "user_profile_1024x768.png"
+  },
+  {
+    "viewport": "768x1024",
+    "desc": "Tablet Portrait",
+    "sidebarRight": 0,
+    "mainLeft": 0,
+    "cardLeft": 20,
+    "cardWidth": 728,
+    "noOverlap": true,
+    "hasHorizScroll": false,
+    "screenshot": "user_profile_768x1024.png"
+  },
+  {
+    "viewport": "390x844",
+    "desc": "Standard Mobile (iPhone 14)",
+    "sidebarRight": 0,
+    "mainLeft": 0,
+    "cardLeft": 14,
+    "cardWidth": 362,
+    "noOverlap": true,
+    "hasHorizScroll": false,
+    "screenshot": "user_profile_390x844.png"
+  },
+  {
+    "viewport": "375x812",
+    "desc": "Small Mobile (iPhone SE/Mini)",
+    "sidebarRight": 0,
+    "mainLeft": 0,
+    "cardLeft": 10,
+    "cardWidth": 355,
+    "noOverlap": true,
+    "hasHorizScroll": false,
+    "screenshot": "user_profile_375x812.png"
+  }
+]

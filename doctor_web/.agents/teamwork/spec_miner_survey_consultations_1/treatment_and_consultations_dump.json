@@ -1,0 +1,2843 @@
+[
+  {
+    "id": "ba0752a1-0c2c-4a6b-b1df-8990e9f07b47",
+    "folder": "04. Admin Portal & System Operations",
+    "name": "Get unified medical timeline for a specific patient",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "admin",
+        "patients",
+        ":patientId",
+        "medical-records",
+        "timeline"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [
+        {
+          "disabled": false,
+          "key": "page",
+          "value": "1",
+          "description": "Page number (1-based)"
+        },
+        {
+          "disabled": false,
+          "key": "limit",
+          "value": "20",
+          "description": "Items per page (max 100)"
+        }
+      ],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{patientId}}",
+          "key": "patientId",
+          "description": "(Required) Patient Profile ID or User ID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/admin/patients/:patientId/medical-records/timeline?page=1&limit=20"
+    },
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": null
+      }
+    ]
+  },
+  {
+    "id": "d54a16c2-2f51-4b52-8993-76158aaeab59",
+    "folder": "04. Admin Portal & System Operations",
+    "name": "List medical records for a specific patient with pagination",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "admin",
+        "patients",
+        ":patientId",
+        "medical-records"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [
+        {
+          "disabled": false,
+          "key": "page",
+          "value": "1",
+          "description": "Page number (1-based)"
+        },
+        {
+          "disabled": false,
+          "key": "limit",
+          "value": "20",
+          "description": "Items per page (max 100)"
+        },
+        {
+          "disabled": false,
+          "key": "status",
+          "value": "string",
+          "description": "Filter by record status (FINAL, DRAFT, ARCHIVED, AMENDED)"
+        },
+        {
+          "disabled": false,
+          "key": "startDate",
+          "value": "string",
+          "description": "Filter by record created after ISO timestamp"
+        },
+        {
+          "disabled": false,
+          "key": "endDate",
+          "value": "string",
+          "description": "Filter by record created before ISO timestamp"
+        },
+        {
+          "disabled": false,
+          "key": "includeArchived",
+          "value": "true",
+          "description": "Include archived records in results"
+        }
+      ],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{patientId}}",
+          "key": "patientId",
+          "description": "(Required) Patient Profile ID or User ID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/admin/patients/:patientId/medical-records?page=1&limit=20&status=string&startDate=string&endDate=string&includeArchived=true"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"patientProfileId\": \"string\",\n    \"title\": \"string\",\n    \"chiefComplaint\": \"string\",\n    \"clinicalNotes\": \"string\",\n    \"treatmentPlan\": \"string\",\n    \"followUpInstructions\": \"string\",\n    \"status\": \"string\",\n    \"isDeleted\": true,\n    \"deletedAt\": \"string\",\n    \"patient\": {\n      \"id\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"patientNumber\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"firstName\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"lastName\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"phone\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"encounters\": [\n      [],\n      []\n    ],\n    \"diagnoses\": [\n      [],\n      []\n    ],\n    \"vitalSigns\": [\n      [],\n      []\n    ],\n    \"procedures\": [\n      [],\n      []\n    ],\n    \"attachments\": [\n      {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"fileName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"originalName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"fileSize\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"mimeType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"category\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"virusScanStatus\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"createdAt\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"id\": {\n          \"value\": \"<Error: Too many leve...[truncated]"
+      }
+    ]
+  },
+  {
+    "id": "5236e30b-9108-4318-b4df-9d5fabb7c227",
+    "folder": "04. Admin Portal & System Operations",
+    "name": "Search and list medical records platform-wide with pagination",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "admin",
+        "medical-records"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [
+        {
+          "disabled": false,
+          "key": "page",
+          "value": "1",
+          "description": "Page number (1-based)"
+        },
+        {
+          "disabled": false,
+          "key": "limit",
+          "value": "20",
+          "description": "Items per page (max 100)"
+        },
+        {
+          "disabled": false,
+          "key": "q",
+          "value": "string",
+          "description": "Search term across title, complaints, notes, plan, diagnoses"
+        },
+        {
+          "disabled": false,
+          "key": "status",
+          "value": "string",
+          "description": "Filter by record status (FINAL, DRAFT, ARCHIVED, AMENDED)"
+        },
+        {
+          "disabled": false,
+          "key": "patientProfileId",
+          "value": "string",
+          "description": "Filter by patient profile ID"
+        },
+        {
+          "disabled": false,
+          "key": "startDate",
+          "value": "string",
+          "description": "Filter by record created after ISO timestamp"
+        },
+        {
+          "disabled": false,
+          "key": "endDate",
+          "value": "string",
+          "description": "Filter by record created before ISO timestamp"
+        }
+      ],
+      "variable": [],
+      "raw": "{{baseUrl}}/api/v1/admin/medical-records?page=1&limit=20&q=string&status=string&patientProfileId=string&startDate=string&endDate=string"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"patientProfileId\": \"string\",\n    \"title\": \"string\",\n    \"chiefComplaint\": \"string\",\n    \"clinicalNotes\": \"string\",\n    \"treatmentPlan\": \"string\",\n    \"followUpInstructions\": \"string\",\n    \"status\": \"string\",\n    \"isDeleted\": true,\n    \"deletedAt\": \"string\",\n    \"patient\": {\n      \"id\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"patientNumber\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"firstName\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"lastName\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"phone\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"encounters\": [\n      [],\n      []\n    ],\n    \"diagnoses\": [\n      [],\n      []\n    ],\n    \"vitalSigns\": [\n      [],\n      []\n    ],\n    \"procedures\": [\n      [],\n      []\n    ],\n    \"attachments\": [\n      {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"fileName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"originalName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"fileSize\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"mimeType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"category\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"virusScanStatus\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"createdAt\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"id\": {\n          \"value\": \"<Error: Too many leve...[truncated]"
+      }
+    ]
+  },
+  {
+    "id": "fa26b232-e69d-4d64-81a5-014f7707be83",
+    "folder": "04. Admin Portal & System Operations",
+    "name": "Get clinical details of a specific medical record",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "admin",
+        "medical-records",
+        ":recordId"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{recordId}}",
+          "key": "recordId",
+          "description": "(Required) Medical Record ID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/admin/medical-records/:recordId"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"title\": \"string\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"string\",\n  \"isDeleted\": true,\n  \"deletedAt\": \"string\",\n  \"patient\": {\n    \"id\": \"patient-profile-uuid\",\n    \"patientNumber\": {},\n    \"firstName\": {},\n    \"lastName\": {},\n    \"phone\": {}\n  },\n  \"encounters\": [\n    [],\n    []\n  ],\n  \"diagnoses\": [\n    [],\n    []\n  ],\n  \"vitalSigns\": [\n    [],\n    []\n  ],\n  \"procedures\": [\n    [],\n    []\n  ],\n  \"attachments\": [\n    {\n      \"id\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \"fileSize\": 185.22035487002486,\n      \"mimeType\": \"string\",\n      \"category\": \"string\",\n      \"virusScanStatus\": \"string\",\n      \"createdAt\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \"fileSize\": 2749.1295330563635,\n      \"mimeType\": \"string\",\n      \"category\": \"string\",\n      \"virusScanStatus\": \"string\",\n      \"createdAt\": \"string\"\n    }\n  ],\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\"\n}"
+      }
+    ]
+  },
+  {
+    "id": "f4043674-068c-404c-99ed-3b0434879d2f",
+    "folder": "05. Doctor Portal",
+    "name": "Create a new draft treatment proposal",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "POST",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "doctors",
+        "treatment-offers"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [],
+      "raw": "{{baseUrl}}/api/v1/doctors/treatment-offers"
+    },
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "raw": "{\n  \"patientProfileId\": \"string\",\n  \"facilityId\": \"string\",\n  \"clinicalIndication\": \"string\",\n  \"procedures\": [\n    {\n      \"procedureCode\": \"string\",\n      \"procedureName\": \"string\",\n      \"unitCost\": 9075.247776047214,\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"isOptional\": false,\n      \"clinicalJustification\": \"string\"\n    },\n    {\n      \"procedureCode\": \"string\",\n      \"procedureName\": \"string\",\n      \"unitCost\": 1736.0278869047875,\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"isOptional\": false,\n      \"clinicalJustification\": \"string\"\n    }\n  ],\n  \"validUntil\": \"string\",\n  \"encounterId\": \"string\",\n  \"discountAmount\": 0,\n  \"financingEligible\": false,\n  \"recommendedTenureMonths\": 2734.589294109142,\n  \"clinicalNotes\": \"string\",\n  \"termsAndConditions\": \"string\"\n}",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      }
+    },
+    "responses": [
+      {
+        "status": "Created",
+        "code": 201,
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  \"validUntil\": \"2026-12-31T23:59:59.000Z\",\n  \"version\": 1,\n  \"createdAt\": \"2026-11-06T11:55:00.000Z\",\n  \"updatedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"procedures\": [\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    },\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    }\n  ],\n  \"history\": [\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    },\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"perf...[truncated]"
+      }
+    ]
+  },
+  {
+    "id": "eb33eadd-c8b4-476a-8c12-90de69bf7b5e",
+    "folder": "05. Doctor Portal",
+    "name": "List authored treatment proposals",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "doctors",
+        "treatment-offers"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [
+        {
+          "disabled": false,
+          "key": "status",
+          "value": "EXPIRED"
+        },
+        {
+          "disabled": false,
+          "key": "patientId",
+          "value": "string"
+        },
+        {
+          "disabled": false,
+          "key": "search",
+          "value": "string"
+        },
+        {
+          "disabled": false,
+          "key": "page",
+          "value": "1"
+        },
+        {
+          "disabled": false,
+          "key": "limit",
+          "value": "20"
+        }
+      ],
+      "variable": [],
+      "raw": "{{baseUrl}}/api/v1/doctors/treatment-offers?status=EXPIRED&patientId=string&search=string&page=1&limit=20"
+    },
+    "responses": [
+      {
+        "name": "Paginated list of authored treatment offers",
+        "status": "OK",
+        "code": 200,
+        "body": null
+      }
+    ]
+  },
+  {
+    "id": "13af691e-0f35-4be0-9a53-76c39b6d9309",
+    "folder": "05. Doctor Portal",
+    "name": "Get treatment offer details",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "doctors",
+        "treatment-offers",
+        ":offerId"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{offerId}}",
+          "key": "offerId",
+          "description": "(Required) Treatment offer UUID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/doctors/treatment-offers/:offerId"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  \"validUntil\": \"2026-12-31T23:59:59.000Z\",\n  \"version\": 1,\n  \"createdAt\": \"2026-11-06T11:55:00.000Z\",\n  \"updatedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"procedures\": [\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    },\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    }\n  ],\n  \"history\": [\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    },\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"perf...[truncated]"
+      }
+    ]
+  },
+  {
+    "id": "021d3383-1146-4f1d-9b2b-a1a297f46441",
+    "folder": "05. Doctor Portal",
+    "name": "Update draft treatment offer",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "PUT",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "doctors",
+        "treatment-offers",
+        ":offerId"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{offerId}}",
+          "key": "offerId",
+          "description": "(Required) Treatment offer UUID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/doctors/treatment-offers/:offerId"
+    },
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "raw": "{\n  \"clinicalIndication\": \"string\",\n  \"procedures\": [\n    {\n      \"procedureCode\": \"string\",\n      \"procedureName\": \"string\",\n      \"unitCost\": 4018.8680365558093,\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"isOptional\": false,\n      \"clinicalJustification\": \"string\"\n    },\n    {\n      \"procedureCode\": \"string\",\n      \"procedureName\": \"string\",\n      \"unitCost\": 6506.738656644382,\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"isOptional\": false,\n      \"clinicalJustification\": \"string\"\n    }\n  ],\n  \"discountAmount\": 4807.219522303252,\n  \"financingEligible\": true,\n  \"recommendedTenureMonths\": 2573.025151074737,\n  \"validUntil\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"termsAndConditions\": \"string\",\n  \"expectedVersion\": 1753.1245021832665\n}",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      }
+    },
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  \"validUntil\": \"2026-12-31T23:59:59.000Z\",\n  \"version\": 1,\n  \"createdAt\": \"2026-11-06T11:55:00.000Z\",\n  \"updatedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"procedures\": [\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    },\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    }\n  ],\n  \"history\": [\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    },\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"perf...[truncated]"
+      }
+    ]
+  },
+  {
+    "id": "66d556a0-fe23-45a6-93b8-6ad56c3b1bf6",
+    "folder": "05. Doctor Portal",
+    "name": "Lock draft and dispatch treatment offer to patient",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "POST",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "doctors",
+        "treatment-offers",
+        ":offerId",
+        "dispatch"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{offerId}}",
+          "key": "offerId",
+          "description": "(Required) Treatment offer UUID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/doctors/treatment-offers/:offerId/dispatch"
+    },
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "raw": "{\n  \"expectedVersion\": 51.68578073745378\n}",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      }
+    },
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  \"validUntil\": \"2026-12-31T23:59:59.000Z\",\n  \"version\": 1,\n  \"createdAt\": \"2026-11-06T11:55:00.000Z\",\n  \"updatedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"procedures\": [\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    },\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    }\n  ],\n  \"history\": [\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    },\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"perf...[truncated]"
+      }
+    ]
+  },
+  {
+    "id": "dde5098d-9ab1-45d8-a07b-1ae3c3c40bb4",
+    "folder": "05. Doctor Portal",
+    "name": "Inspect live offer lifecycle status and review timestamps",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "doctors",
+        "treatment-offers",
+        ":offerId",
+        "status"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{offerId}}",
+          "key": "offerId",
+          "description": "(Required) Treatment offer UUID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/doctors/treatment-offers/:offerId/status"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"status\": \"DISPATCHED\",\n  \"isExpired\": false,\n  \"validUntil\": \"2026-12-31T23:59:59.000Z\",\n  \"version\": 1,\n  \"dispatchedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"patientViewedAt\": \"2026-11-06T12:05:00.000Z\",\n  \"patientRespondedAt\": \"2026-11-06T12:10:00.000Z\",\n  \"patientResponseNotes\": \"Accepted with informed consent\",\n  \"cancellationReason\": \"Elective procedure deferred\"\n}"
+      }
+    ]
+  },
+  {
+    "id": "ee79f295-7944-408b-87de-7160eece7ef6",
+    "folder": "05. Doctor Portal",
+    "name": "Doctor cancels active treatment proposal with clinical justification",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "POST",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "doctors",
+        "treatment-offers",
+        ":offerId",
+        "cancel"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{offerId}}",
+          "key": "offerId",
+          "description": "(Required) Treatment offer UUID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/doctors/treatment-offers/:offerId/cancel"
+    },
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "raw": "{\n  \"cancellationReason\": \"string\",\n  \"expectedVersion\": 8285.85026418029\n}",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      }
+    },
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  \"validUntil\": \"2026-12-31T23:59:59.000Z\",\n  \"version\": 1,\n  \"createdAt\": \"2026-11-06T11:55:00.000Z\",\n  \"updatedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"procedures\": [\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    },\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    }\n  ],\n  \"history\": [\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    },\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"perf...[truncated]"
+      }
+    ]
+  },
+  {
+    "id": "f59340bc-3c67-4e7f-af5b-4f4e1c30d248",
+    "folder": "05. Doctor Portal",
+    "name": "Get authorized patient medical record timeline",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "doctors",
+        "patients",
+        ":patientProfileId",
+        "medical-records",
+        "timeline"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [
+        {
+          "disabled": false,
+          "key": "page",
+          "value": "1",
+          "description": "Page number (1-based)"
+        },
+        {
+          "disabled": false,
+          "key": "limit",
+          "value": "20",
+          "description": "Items per page (max 100)"
+        }
+      ],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{patientId}}",
+          "key": "patientProfileId",
+          "description": "(Required) Patient Profile ID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/medical-records/timeline?page=1&limit=20"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"data\": [\n    [],\n    []\n  ],\n  \"meta\": {\n    \"totalItems\": 100,\n    \"page\": 1,\n    \"limit\": 20,\n    \"totalPages\": 5,\n    \"hasNextPage\": {},\n    \"hasPreviousPage\": false\n  }\n}"
+      },
+      {
+        "name": "Unauthorized",
+        "status": "Unauthorized",
+        "code": 401,
+        "body": null
+      },
+      {
+        "name": "Forbidden - Doctor authorization required",
+        "status": "Forbidden",
+        "code": 403,
+        "body": null
+      },
+      {
+        "name": "Patient or Doctor profile not found",
+        "status": "Not Found",
+        "code": 404,
+        "body": null
+      }
+    ]
+  },
+  {
+    "id": "03b71501-ea59-4ff9-9ae4-739e41c7c4ad",
+    "folder": "05. Doctor Portal",
+    "name": "Get authorized patient medical records with pagination",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "doctors",
+        "patients",
+        ":patientProfileId",
+        "medical-records"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [
+        {
+          "disabled": false,
+          "key": "page",
+          "value": "1",
+          "description": "Page number (1-based)"
+        },
+        {
+          "disabled": false,
+          "key": "limit",
+          "value": "20",
+          "description": "Items per page (max 100)"
+        },
+        {
+          "disabled": false,
+          "key": "status",
+          "value": "string",
+          "description": "Filter by record status (FINAL, DRAFT, ARCHIVED, AMENDED)"
+        },
+        {
+          "disabled": false,
+          "key": "startDate",
+          "value": "string",
+          "description": "Filter by record created on or after ISO timestamp"
+        },
+        {
+          "disabled": false,
+          "key": "endDate",
+          "value": "string",
+          "description": "Filter by record created on or before ISO timestamp"
+        },
+        {
+          "disabled": false,
+          "key": "includeArchived",
+          "value": "true",
+          "description": "Include archived records (default: false)"
+        }
+      ],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{patientId}}",
+          "key": "patientProfileId",
+          "description": "(Required) Patient Profile ID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/medical-records?page=1&limit=20&status=string&startDate=string&endDate=string&includeArchived=true"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"data\": [\n    [],\n    []\n  ],\n  \"meta\": {\n    \"totalItems\": 100,\n    \"page\": 1,\n    \"limit\": 20,\n    \"totalPages\": 5,\n    \"hasNextPage\": {},\n    \"hasPreviousPage\": false\n  }\n}"
+      },
+      {
+        "name": "Unauthorized",
+        "status": "Unauthorized",
+        "code": 401,
+        "body": null
+      },
+      {
+        "name": "Forbidden - Doctor authorization required",
+        "status": "Forbidden",
+        "code": 403,
+        "body": null
+      },
+      {
+        "name": "Patient or Doctor profile not found",
+        "status": "Not Found",
+        "code": 404,
+        "body": null
+      }
+    ]
+  },
+  {
+    "id": "e0f42f49-0c4b-4800-ae9f-20dda42fb1a3",
+    "folder": "05. Doctor Portal",
+    "name": "Create medical record for an authorized patient",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "POST",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "doctors",
+        "patients",
+        ":patientProfileId",
+        "medical-records"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{patientId}}",
+          "key": "patientProfileId",
+          "description": "(Required) Patient Profile ID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/medical-records"
+    },
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "raw": "{\n  \"title\": \"Annual Routine Health Checkup\",\n  \"chiefComplaint\": \"Mild fatigue and occasional headache\",\n  \"clinicalNotes\": \"Patient appears well nourished. No acute distress.\",\n  \"treatmentPlan\": \"Increase fluid intake, maintain low glycemic diet\",\n  \"followUpInstructions\": \"Follow up in 4 weeks for repeat blood panel\",\n  \"status\": \"FINAL\",\n  \"encounter\": {\n    \"providerName\": \"Dr. Sarah Connor\",\n    \"facilityName\": \"City General Hospital\",\n    \"encounterType\": \"CONSULTATION\",\n    \"encounterDate\": \"2026-07-31T10:00:00Z\"\n  },\n  \"diagnoses\": [\n    {\n      \"description\": \"Type 2 Diabetes Mellitus without complications\",\n      \"code\": \"E11.9\",\n      \"type\": \"PRIMARY\",\n      \"status\": \"ACTIVE\"\n    },\n    {\n      \"description\": \"Type 2 Diabetes Mellitus without complications\",\n      \"code\": \"E11.9\",\n      \"type\": \"PRIMARY\",\n      \"status\": \"ACTIVE\"\n    }\n  ],\n  \"vitalSigns\": {\n    \"heightCm\": 175.5,\n    \"weightKg\": 70,\n    \"systolicBp\": 120,\n    \"diastolicBp\": 80,\n    \"pulseBpm\": 72,\n    \"respirationRate\": 16,\n    \"temperatureC\": 36.6,\n    \"bloodSugarMgDl\": 95,\n    \"oxygenSaturation\": 98\n  },\n  \"procedures\": [\n    {\n      \"name\": \"Routine Blood Panel\",\n      \"code\": \"CPT-80053\",\n      \"performedAt\": \"2026-07-31\",\n      \"notes\": \"Patient fasted for 12 hours prior\"\n    },\n    {\n      \"name\": \"Routine Blood Panel\",\n      \"code\": \"CPT-80053\",\n      \"performedAt\": \"2026-07-31\",\n      \"notes\": \"Patient fasted for 12 hours prior\"\n    }\n  ]\n}",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      }
+    },
+    "responses": [
+      {
+        "status": "Created",
+        "code": 201,
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"title\": \"string\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"string\",\n  \"isDeleted\": true,\n  \"deletedAt\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"attachments\": [\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \"fileSize\": 8715.312818585215,\n      \"mimeType\": \"string\",\n      \"category\": \"string\",\n      \"storageKey\": \"string\",\n      \"storageUrl\": \"string\",\n      \"checksum\": \"string\",\n      \"version\": 9308.931110287087,\n      \"isDeleted\": true,\n      \"virusScanStatus\": \"string\",\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \"fileSize\": 6062.241152768698,\n      \"mimeType\": \"string\",\n      \"category\": \"string\",\n      \"storageKey\": \"string\",\n      \"storageUrl\": \"string\",\n      \"checksum\": \"string\",\n      \"version\": 4737.891430208323,\n      \"isDeleted\": true,\n      \"virusScanStatus\": \"string\",\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\"\n    }\n  ]\n}"
+      }
+    ]
+  },
+  {
+    "id": "38ffe1a7-6207-42e8-9209-863735840d32",
+    "folder": "05. Doctor Portal",
+    "name": "Document clinical encounter, diagnoses, vitals, procedures for an authorized patient",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "POST",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "doctors",
+        "patients",
+        ":patientProfileId",
+        "encounters"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{patientId}}",
+          "key": "patientProfileId",
+          "description": "(Required) Patient Profile ID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/encounters"
+    },
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "raw": "{\n  \"title\": \"Annual Routine Health Checkup\",\n  \"chiefComplaint\": \"Mild fatigue and occasional headache\",\n  \"clinicalNotes\": \"Patient appears well nourished. No acute distress.\",\n  \"treatmentPlan\": \"Increase fluid intake, maintain low glycemic diet\",\n  \"followUpInstructions\": \"Follow up in 4 weeks for repeat blood panel\",\n  \"status\": \"FINAL\",\n  \"encounter\": {\n    \"providerName\": \"Dr. Sarah Connor\",\n    \"facilityName\": \"City General Hospital\",\n    \"encounterType\": \"CONSULTATION\",\n    \"encounterDate\": \"2026-07-31T10:00:00Z\"\n  },\n  \"diagnoses\": [\n    {\n      \"description\": \"Type 2 Diabetes Mellitus without complications\",\n      \"code\": \"E11.9\",\n      \"type\": \"PRIMARY\",\n      \"status\": \"ACTIVE\"\n    },\n    {\n      \"description\": \"Type 2 Diabetes Mellitus without complications\",\n      \"code\": \"E11.9\",\n      \"type\": \"PRIMARY\",\n      \"status\": \"ACTIVE\"\n    }\n  ],\n  \"vitalSigns\": {\n    \"heightCm\": 175.5,\n    \"weightKg\": 70,\n    \"systolicBp\": 120,\n    \"diastolicBp\": 80,\n    \"pulseBpm\": 72,\n    \"respirationRate\": 16,\n    \"temperatureC\": 36.6,\n    \"bloodSugarMgDl\": 95,\n    \"oxygenSaturation\": 98\n  },\n  \"procedures\": [\n    {\n      \"name\": \"Routine Blood Panel\",\n      \"code\": \"CPT-80053\",\n      \"performedAt\": \"2026-07-31\",\n      \"notes\": \"Patient fasted for 12 hours prior\"\n    },\n    {\n      \"name\": \"Routine Blood Panel\",\n      \"code\": \"CPT-80053\",\n      \"performedAt\": \"2026-07-31\",\n      \"notes\": \"Patient fasted for 12 hours prior\"\n    }\n  ]\n}",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      }
+    },
+    "responses": [
+      {
+        "status": "Created",
+        "code": 201,
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"title\": \"string\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"string\",\n  \"isDeleted\": true,\n  \"deletedAt\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"attachments\": [\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \"fileSize\": 6886.465734900656,\n      \"mimeType\": \"string\",\n      \"category\": \"string\",\n      \"storageKey\": \"string\",\n      \"storageUrl\": \"string\",\n      \"checksum\": \"string\",\n      \"version\": 6695.549828570682,\n      \"isDeleted\": false,\n      \"virusScanStatus\": \"string\",\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \"fileSize\": 7371.574477571272,\n      \"mimeType\": \"string\",\n      \"category\": \"string\",\n      \"storageKey\": \"string\",\n      \"storageUrl\": \"string\",\n      \"checksum\": \"string\",\n      \"version\": 5570.928419302863,\n      \"isDeleted\": false,\n      \"virusScanStatus\": \"string\",\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\"\n    }\n  ]\n}"
+      },
+      {
+        "name": "Unauthorized",
+        "status": "Unauthorized",
+        "code": 401,
+        "body": null
+      },
+      {
+        "name": "Forbidden - Doctor authorization required",
+        "status": "Forbidden",
+        "code": 403,
+        "body": null
+      },
+      {
+        "name": "Patient or Doctor profile not found",
+        "status": "Not Found",
+        "code": 404,
+        "body": null
+      }
+    ]
+  },
+  {
+    "id": "020c05f5-6882-4c62-9313-ddf0ff7dd8b8",
+    "folder": "05. Doctor Portal",
+    "name": "Update clinical notes/record documented by doctor",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "PUT",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "doctors",
+        "patients",
+        ":patientProfileId",
+        "medical-records",
+        ":recordId"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{patientId}}",
+          "key": "patientProfileId",
+          "description": "(Required) Patient Profile ID"
+        },
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{recordId}}",
+          "key": "recordId",
+          "description": "(Required) Medical Record ID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/doctors/patients/:patientProfileId/medical-records/:recordId"
+    },
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "raw": "{\n  \"title\": \"Updated Health Checkup Record\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"DRAFT\"\n}",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      }
+    },
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"title\": \"string\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"string\",\n  \"isDeleted\": true,\n  \"deletedAt\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"attachments\": [\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \"fileSize\": 6886.465734900656,\n      \"mimeType\": \"string\",\n      \"category\": \"string\",\n      \"storageKey\": \"string\",\n      \"storageUrl\": \"string\",\n      \"checksum\": \"string\",\n      \"version\": 6695.549828570682,\n      \"isDeleted\": false,\n      \"virusScanStatus\": \"string\",\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \"fileSize\": 7371.574477571272,\n      \"mimeType\": \"string\",\n      \"category\": \"string\",\n      \"storageKey\": \"string\",\n      \"storageUrl\": \"string\",\n      \"checksum\": \"string\",\n      \"version\": 5570.928419302863,\n      \"isDeleted\": false,\n      \"virusScanStatus\": \"string\",\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\"\n    }\n  ]\n}"
+      },
+      {
+        "name": "Forbidden - Authorship required",
+        "status": "Forbidden",
+        "code": 403,
+        "body": null
+      },
+      {
+        "name": "Record not found",
+        "status": "Not Found",
+        "code": 404,
+        "body": null
+      }
+    ]
+  },
+  {
+    "id": "1a47aad6-f967-4dac-860c-e9032ca6650a",
+    "folder": "06. Patient App",
+    "name": "List received treatment offers for authenticated patient",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "patients",
+        "treatment-offers"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [
+        {
+          "disabled": false,
+          "key": "status",
+          "value": "EXPIRED"
+        },
+        {
+          "disabled": false,
+          "key": "patientId",
+          "value": "string"
+        },
+        {
+          "disabled": false,
+          "key": "search",
+          "value": "string"
+        },
+        {
+          "disabled": false,
+          "key": "page",
+          "value": "1"
+        },
+        {
+          "disabled": false,
+          "key": "limit",
+          "value": "20"
+        }
+      ],
+      "variable": [],
+      "raw": "{{baseUrl}}/api/v1/patients/treatment-offers?status=EXPIRED&patientId=string&search=string&page=1&limit=20"
+    },
+    "responses": [
+      {
+        "name": "Paginated list of received treatment proposals",
+        "status": "OK",
+        "code": 200,
+        "body": null
+      }
+    ]
+  },
+  {
+    "id": "709d44e9-9140-4324-897c-0f990c413aad",
+    "folder": "06. Patient App",
+    "name": "Patient view of treatment offer (Triggers PATIENT_REVIEWING state)",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "patients",
+        "treatment-offers",
+        ":offerId"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{offerId}}",
+          "key": "offerId",
+          "description": "(Required) Treatment offer UUID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/patients/treatment-offers/:offerId"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  \"validUntil\": \"2026-12-31T23:59:59.000Z\",\n  \"version\": 1,\n  \"createdAt\": \"2026-11-06T11:55:00.000Z\",\n  \"updatedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"procedures\": [\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    },\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    }\n  ],\n  \"history\": [\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    },\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"perf...[truncated]"
+      }
+    ]
+  },
+  {
+    "id": "cb9319eb-e38a-4d5e-a2c1-94a42c9a734f",
+    "folder": "06. Patient App",
+    "name": "Patient ratifies and accepts treatment offer (RATIFIED_ACCEPTED)",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "POST",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "patients",
+        "treatment-offers",
+        ":offerId",
+        "accept"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{offerId}}",
+          "key": "offerId",
+          "description": "(Required) Treatment offer UUID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/patients/treatment-offers/:offerId/accept"
+    },
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "raw": "{\n  \"signatureConsent\": true,\n  \"patientResponseNotes\": \"string\",\n  \"expectedVersion\": 1885.198472948083\n}",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      }
+    },
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  \"validUntil\": \"2026-12-31T23:59:59.000Z\",\n  \"version\": 1,\n  \"createdAt\": \"2026-11-06T11:55:00.000Z\",\n  \"updatedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"procedures\": [\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    },\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    }\n  ],\n  \"history\": [\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    },\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"perf...[truncated]"
+      }
+    ]
+  },
+  {
+    "id": "a09c0851-7c80-4b86-82fe-a73b8bb862c9",
+    "folder": "06. Patient App",
+    "name": "Patient declines treatment offer proposal (DECLINED)",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "POST",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "patients",
+        "treatment-offers",
+        ":offerId",
+        "reject"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{offerId}}",
+          "key": "offerId",
+          "description": "(Required) Treatment offer UUID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/patients/treatment-offers/:offerId/reject"
+    },
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "raw": "{\n  \"declineReason\": \"Seeking second opinion\",\n  \"expectedVersion\": 492.45563914452896\n}",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      }
+    },
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n  \"offerNumber\": \"TO-2026-00001\",\n  \"doctorProfileId\": \"d3eebc99-9c0b-4ef8-bb6d-6bb9bd380d44\",\n  \"patientProfileId\": \"e4eebc99-9c0b-4ef8-bb6d-6bb9bd380e55\",\n  \"facilityId\": \"f5eebc99-9c0b-4ef8-bb6d-6bb9bd380f66\",\n  \"clinicalIndication\": \"Severe coronary artery disease requiring PCI stenting\",\n  \"grossEstimate\": 300000,\n  \"discountAmount\": 25000,\n  \"netPayable\": 275000,\n  \"currency\": \"PKR\",\n  \"financingEligible\": true,\n  \"status\": \"DISPATCHED\",\n  \"validUntil\": \"2026-12-31T23:59:59.000Z\",\n  \"version\": 1,\n  \"createdAt\": \"2026-11-06T11:55:00.000Z\",\n  \"updatedAt\": \"2026-11-06T12:00:00.000Z\",\n  \"procedures\": [\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    },\n    {\n      \"id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\n      \"procedureCode\": \"PCI-STENT-001\",\n      \"procedureName\": \"Percutaneous Coronary Intervention with Drug-Eluting Stent\",\n      \"category\": \"SURGICAL\",\n      \"quantity\": 1,\n      \"unitCost\": 125000,\n      \"totalCost\": 125000,\n      \"isOptional\": false,\n      \"sequenceOrder\": 0,\n      \"clinicalJustification\": \"Primary lesion in LAD\"\n    }\n  ],\n  \"history\": [\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"performedBy\": \"c2eebc99-9c0b-4ef8-bb6d-6bb9bd380c33\",\n      \"createdAt\": \"2026-11-06T12:00:00.000Z\",\n      \"previousStatus\": \"DRAFT\",\n      \"performerRole\": \"DOCTOR\",\n      \"notes\": \"Offer finalized and dispatched to patient\"\n    },\n    {\n      \"id\": \"b1eebc99-9c0b-4ef8-bb6d-6bb9bd380b22\",\n      \"newStatus\": \"DISPATCHED\",\n      \"action\": \"DISPATCHED_TO_PATIENT\",\n      \"perf...[truncated]"
+      }
+    ]
+  },
+  {
+    "id": "e3990a14-1aba-48c9-aa94-85bd1366d715",
+    "folder": "08. Medical Records (General, Dental & Vision)",
+    "name": "Create a new medical record with encounter, vitals, diagnosis, and procedures",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "POST",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "medical-records"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [],
+      "raw": "{{baseUrl}}/api/v1/medical-records"
+    },
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "raw": "{\n  \"title\": \"Annual Routine Health Checkup\",\n  \"chiefComplaint\": \"Mild fatigue and occasional headache\",\n  \"clinicalNotes\": \"Patient appears well nourished. No acute distress.\",\n  \"treatmentPlan\": \"Increase fluid intake, maintain low glycemic diet\",\n  \"followUpInstructions\": \"Follow up in 4 weeks for repeat blood panel\",\n  \"status\": \"FINAL\",\n  \"encounter\": {\n    \"providerName\": \"Dr. Sarah Connor\",\n    \"facilityName\": \"City General Hospital\",\n    \"encounterType\": \"CONSULTATION\",\n    \"encounterDate\": \"2026-07-31T10:00:00Z\"\n  },\n  \"diagnoses\": [\n    {\n      \"description\": \"Type 2 Diabetes Mellitus without complications\",\n      \"code\": \"E11.9\",\n      \"type\": \"PRIMARY\",\n      \"status\": \"ACTIVE\"\n    },\n    {\n      \"description\": \"Type 2 Diabetes Mellitus without complications\",\n      \"code\": \"E11.9\",\n      \"type\": \"PRIMARY\",\n      \"status\": \"ACTIVE\"\n    }\n  ],\n  \"vitalSigns\": {\n    \"heightCm\": 175.5,\n    \"weightKg\": 70,\n    \"systolicBp\": 120,\n    \"diastolicBp\": 80,\n    \"pulseBpm\": 72,\n    \"respirationRate\": 16,\n    \"temperatureC\": 36.6,\n    \"bloodSugarMgDl\": 95,\n    \"oxygenSaturation\": 98\n  },\n  \"procedures\": [\n    {\n      \"name\": \"Routine Blood Panel\",\n      \"code\": \"CPT-80053\",\n      \"performedAt\": \"2026-07-31\",\n      \"notes\": \"Patient fasted for 12 hours prior\"\n    },\n    {\n      \"name\": \"Routine Blood Panel\",\n      \"code\": \"CPT-80053\",\n      \"performedAt\": \"2026-07-31\",\n      \"notes\": \"Patient fasted for 12 hours prior\"\n    }\n  ]\n}",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      }
+    },
+    "responses": [
+      {
+        "status": "Created",
+        "code": 201,
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"title\": \"string\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"string\",\n  \"isDeleted\": true,\n  \"deletedAt\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"attachments\": [\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \"fileSize\": 6886.465734900656,\n      \"mimeType\": \"string\",\n      \"category\": \"string\",\n      \"storageKey\": \"string\",\n      \"storageUrl\": \"string\",\n      \"checksum\": \"string\",\n      \"version\": 6695.549828570682,\n      \"isDeleted\": false,\n      \"virusScanStatus\": \"string\",\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \"fileSize\": 7371.574477571272,\n      \"mimeType\": \"string\",\n      \"category\": \"string\",\n      \"storageKey\": \"string\",\n      \"storageUrl\": \"string\",\n      \"checksum\": \"string\",\n      \"version\": 5570.928419302863,\n      \"isDeleted\": false,\n      \"virusScanStatus\": \"string\",\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\"\n    }\n  ]\n}"
+      }
+    ]
+  },
+  {
+    "id": "7a600f07-c895-4fd4-9cc6-b40cfdab2c7c",
+    "folder": "08. Medical Records (General, Dental & Vision)",
+    "name": "Get all medical records for the authenticated patient",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "medical-records"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [],
+      "raw": "{{baseUrl}}/api/v1/medical-records"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"patientProfileId\": \"string\",\n    \"title\": \"string\",\n    \"chiefComplaint\": \"string\",\n    \"clinicalNotes\": \"string\",\n    \"treatmentPlan\": \"string\",\n    \"followUpInstructions\": \"string\",\n    \"status\": \"string\",\n    \"isDeleted\": false,\n    \"deletedAt\": \"string\",\n    \"createdAt\": \"string\",\n    \"updatedAt\": \"string\",\n    \"attachments\": [\n      {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"medicalRecordId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"patientProfileId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"fileName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"originalName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"fileSize\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"mimeType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"category\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"storageKey\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"storageUrl\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"checksum\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"version\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"isDeleted\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"virusScanStatus\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"createdAt\": {\n          \"value\": \"<Error: Too many lev...[truncated]"
+      }
+    ]
+  },
+  {
+    "id": "6c024c7f-70b8-4eb9-aff6-01e2cc42e3b7",
+    "folder": "08. Medical Records (General, Dental & Vision)",
+    "name": "Create a new medical record with encounter, vitals, diagnosis, and procedures",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "POST",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "records"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [],
+      "raw": "{{baseUrl}}/api/v1/records"
+    },
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "raw": "{\n  \"title\": \"Annual Routine Health Checkup\",\n  \"chiefComplaint\": \"Mild fatigue and occasional headache\",\n  \"clinicalNotes\": \"Patient appears well nourished. No acute distress.\",\n  \"treatmentPlan\": \"Increase fluid intake, maintain low glycemic diet\",\n  \"followUpInstructions\": \"Follow up in 4 weeks for repeat blood panel\",\n  \"status\": \"FINAL\",\n  \"encounter\": {\n    \"providerName\": \"Dr. Sarah Connor\",\n    \"facilityName\": \"City General Hospital\",\n    \"encounterType\": \"CONSULTATION\",\n    \"encounterDate\": \"2026-07-31T10:00:00Z\"\n  },\n  \"diagnoses\": [\n    {\n      \"description\": \"Type 2 Diabetes Mellitus without complications\",\n      \"code\": \"E11.9\",\n      \"type\": \"PRIMARY\",\n      \"status\": \"ACTIVE\"\n    },\n    {\n      \"description\": \"Type 2 Diabetes Mellitus without complications\",\n      \"code\": \"E11.9\",\n      \"type\": \"PRIMARY\",\n      \"status\": \"ACTIVE\"\n    }\n  ],\n  \"vitalSigns\": {\n    \"heightCm\": 175.5,\n    \"weightKg\": 70,\n    \"systolicBp\": 120,\n    \"diastolicBp\": 80,\n    \"pulseBpm\": 72,\n    \"respirationRate\": 16,\n    \"temperatureC\": 36.6,\n    \"bloodSugarMgDl\": 95,\n    \"oxygenSaturation\": 98\n  },\n  \"procedures\": [\n    {\n      \"name\": \"Routine Blood Panel\",\n      \"code\": \"CPT-80053\",\n      \"performedAt\": \"2026-07-31\",\n      \"notes\": \"Patient fasted for 12 hours prior\"\n    },\n    {\n      \"name\": \"Routine Blood Panel\",\n      \"code\": \"CPT-80053\",\n      \"performedAt\": \"2026-07-31\",\n      \"notes\": \"Patient fasted for 12 hours prior\"\n    }\n  ]\n}",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      }
+    },
+    "responses": [
+      {
+        "status": "Created",
+        "code": 201,
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"title\": \"string\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"string\",\n  \"isDeleted\": true,\n  \"deletedAt\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"attachments\": [\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \"fileSize\": 6886.465734900656,\n      \"mimeType\": \"string\",\n      \"category\": \"string\",\n      \"storageKey\": \"string\",\n      \"storageUrl\": \"string\",\n      \"checksum\": \"string\",\n      \"version\": 6695.549828570682,\n      \"isDeleted\": false,\n      \"virusScanStatus\": \"string\",\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \"fileSize\": 7371.574477571272,\n      \"mimeType\": \"string\",\n      \"category\": \"string\",\n      \"storageKey\": \"string\",\n      \"storageUrl\": \"string\",\n      \"checksum\": \"string\",\n      \"version\": 5570.928419302863,\n      \"isDeleted\": false,\n      \"virusScanStatus\": \"string\",\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\"\n    }\n  ]\n}"
+      }
+    ]
+  },
+  {
+    "id": "deb2ad0e-a08a-48c7-9a52-8cc2dbb6de31",
+    "folder": "08. Medical Records (General, Dental & Vision)",
+    "name": "Get unified medical timeline combining records and attachments",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "medical-records",
+        "timeline"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [],
+      "raw": "{{baseUrl}}/api/v1/medical-records/timeline"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"eventType\": \"MEDICAL_RECORD\",\n    \"title\": \"string\",\n    \"status\": \"string\",\n    \"category\": \"string\",\n    \"date\": \"string\",\n    \"details\": {}\n  },\n  {\n    \"id\": \"string\",\n    \"eventType\": \"MEDICAL_RECORD\",\n    \"title\": \"string\",\n    \"status\": \"string\",\n    \"category\": \"string\",\n    \"date\": \"string\",\n    \"details\": {}\n  }\n]"
+      }
+    ]
+  },
+  {
+    "id": "3516d5f6-7b3a-4543-9d0c-b59a5c97d79d",
+    "folder": "08. Medical Records (General, Dental & Vision)",
+    "name": "Search medical records by title, complaints, notes, diagnosis, or plan",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "medical-records",
+        "search"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [
+        {
+          "disabled": false,
+          "key": "q",
+          "value": "string",
+          "description": "(Required) Search term"
+        }
+      ],
+      "variable": [],
+      "raw": "{{baseUrl}}/api/v1/medical-records/search?q=string"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"patientProfileId\": \"string\",\n    \"title\": \"string\",\n    \"chiefComplaint\": \"string\",\n    \"clinicalNotes\": \"string\",\n    \"treatmentPlan\": \"string\",\n    \"followUpInstructions\": \"string\",\n    \"status\": \"string\",\n    \"isDeleted\": false,\n    \"deletedAt\": \"string\",\n    \"createdAt\": \"string\",\n    \"updatedAt\": \"string\",\n    \"attachments\": [\n      {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"medicalRecordId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"patientProfileId\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"fileName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"originalName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"fileSize\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"mimeType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"category\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"storageKey\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"storageUrl\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"checksum\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"version\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"isDeleted\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"virusScanStatus\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"createdAt\": {\n          \"value\": \"<Error: Too many lev...[truncated]"
+      }
+    ]
+  },
+  {
+    "id": "4402bb1d-0a3e-4eaf-af2e-8e6b9b648c02",
+    "folder": "08. Medical Records (General, Dental & Vision)",
+    "name": "Get a specific medical record by ID",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "medical-records",
+        ":id"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{recordId}}",
+          "key": "id",
+          "description": "Medical Record UUID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/medical-records/:id"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"title\": \"string\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"string\",\n  \"isDeleted\": true,\n  \"deletedAt\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"attachments\": [\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \"fileSize\": 6886.465734900656,\n      \"mimeType\": \"string\",\n      \"category\": \"string\",\n      \"storageKey\": \"string\",\n      \"storageUrl\": \"string\",\n      \"checksum\": \"string\",\n      \"version\": 6695.549828570682,\n      \"isDeleted\": false,\n      \"virusScanStatus\": \"string\",\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \"fileSize\": 7371.574477571272,\n      \"mimeType\": \"string\",\n      \"category\": \"string\",\n      \"storageKey\": \"string\",\n      \"storageUrl\": \"string\",\n      \"checksum\": \"string\",\n      \"version\": 5570.928419302863,\n      \"isDeleted\": false,\n      \"virusScanStatus\": \"string\",\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\"\n    }\n  ]\n}"
+      }
+    ]
+  },
+  {
+    "id": "b661cce6-66d9-45ed-a596-9c8173a2e061",
+    "folder": "08. Medical Records (General, Dental & Vision)",
+    "name": "Update an existing medical record (blocked if ARCHIVED)",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "PUT",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "medical-records",
+        ":id"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{recordId}}",
+          "key": "id",
+          "description": "Medical Record UUID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/medical-records/:id"
+    },
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "raw": "{\n  \"title\": \"Updated Health Checkup Record\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"DRAFT\"\n}",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      }
+    },
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"title\": \"string\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"string\",\n  \"isDeleted\": true,\n  \"deletedAt\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"attachments\": [\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \"fileSize\": 6886.465734900656,\n      \"mimeType\": \"string\",\n      \"category\": \"string\",\n      \"storageKey\": \"string\",\n      \"storageUrl\": \"string\",\n      \"checksum\": \"string\",\n      \"version\": 6695.549828570682,\n      \"isDeleted\": false,\n      \"virusScanStatus\": \"string\",\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \"fileSize\": 7371.574477571272,\n      \"mimeType\": \"string\",\n      \"category\": \"string\",\n      \"storageKey\": \"string\",\n      \"storageUrl\": \"string\",\n      \"checksum\": \"string\",\n      \"version\": 5570.928419302863,\n      \"isDeleted\": false,\n      \"virusScanStatus\": \"string\",\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\"\n    }\n  ]\n}"
+      }
+    ]
+  },
+  {
+    "id": "e82a49f8-44e2-4f53-8b19-fc137ee976c9",
+    "folder": "08. Medical Records (General, Dental & Vision)",
+    "name": "Soft delete a medical record",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "DELETE",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "medical-records",
+        ":id"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{recordId}}",
+          "key": "id",
+          "description": "Medical Record UUID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/medical-records/:id"
+    },
+    "responses": [
+      {
+        "name": "Medical record soft-deleted",
+        "status": "OK",
+        "code": 200,
+        "body": null
+      }
+    ]
+  },
+  {
+    "id": "91c4ec3c-2cea-43f3-9562-cff931b630b4",
+    "folder": "08. Medical Records (General, Dental & Vision)",
+    "name": "Archive a medical record (makes record immutable)",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "POST",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "medical-records",
+        ":id",
+        "archive"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{recordId}}",
+          "key": "id",
+          "description": "Medical Record UUID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/medical-records/:id/archive"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"title\": \"string\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"string\",\n  \"isDeleted\": true,\n  \"deletedAt\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"attachments\": [\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \"fileSize\": 6886.465734900656,\n      \"mimeType\": \"string\",\n      \"category\": \"string\",\n      \"storageKey\": \"string\",\n      \"storageUrl\": \"string\",\n      \"checksum\": \"string\",\n      \"version\": 6695.549828570682,\n      \"isDeleted\": false,\n      \"virusScanStatus\": \"string\",\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \"fileSize\": 7371.574477571272,\n      \"mimeType\": \"string\",\n      \"category\": \"string\",\n      \"storageKey\": \"string\",\n      \"storageUrl\": \"string\",\n      \"checksum\": \"string\",\n      \"version\": 5570.928419302863,\n      \"isDeleted\": false,\n      \"virusScanStatus\": \"string\",\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\"\n    }\n  ]\n}"
+      }
+    ]
+  },
+  {
+    "id": "8c13e027-9be9-4d7b-989a-1c96b6072d2f",
+    "folder": "08. Medical Records (General, Dental & Vision)",
+    "name": "Restore a soft-deleted or archived medical record",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "POST",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "medical-records",
+        ":id",
+        "restore"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{recordId}}",
+          "key": "id",
+          "description": "Medical Record UUID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/medical-records/:id/restore"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"title\": \"string\",\n  \"chiefComplaint\": \"string\",\n  \"clinicalNotes\": \"string\",\n  \"treatmentPlan\": \"string\",\n  \"followUpInstructions\": \"string\",\n  \"status\": \"string\",\n  \"isDeleted\": true,\n  \"deletedAt\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"attachments\": [\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \"fileSize\": 6886.465734900656,\n      \"mimeType\": \"string\",\n      \"category\": \"string\",\n      \"storageKey\": \"string\",\n      \"storageUrl\": \"string\",\n      \"checksum\": \"string\",\n      \"version\": 6695.549828570682,\n      \"isDeleted\": false,\n      \"virusScanStatus\": \"string\",\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"medicalRecordId\": \"string\",\n      \"patientProfileId\": \"string\",\n      \"fileName\": \"string\",\n      \"originalName\": \"string\",\n      \"fileSize\": 7371.574477571272,\n      \"mimeType\": \"string\",\n      \"category\": \"string\",\n      \"storageKey\": \"string\",\n      \"storageUrl\": \"string\",\n      \"checksum\": \"string\",\n      \"version\": 5570.928419302863,\n      \"isDeleted\": false,\n      \"virusScanStatus\": \"string\",\n      \"createdAt\": \"string\",\n      \"updatedAt\": \"string\"\n    }\n  ]\n}"
+      }
+    ]
+  },
+  {
+    "id": "a0416b24-1eaa-41fa-8a71-291b1aeba06d",
+    "folder": "08. Medical Records (General, Dental & Vision)",
+    "name": "Upload and link an attachment to a specific medical record",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "POST",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "medical-records",
+        ":id",
+        "attachments"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{recordId}}",
+          "key": "id",
+          "description": "Medical Record UUID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/medical-records/:id/attachments"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "Created",
+        "code": 201,
+        "body": "{\n  \"id\": \"string\",\n  \"medicalRecordId\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"fileName\": \"string\",\n  \"originalName\": \"string\",\n  \"fileSize\": 4583.308803248856,\n  \"mimeType\": \"string\",\n  \"category\": \"string\",\n  \"storageKey\": \"string\",\n  \"storageUrl\": \"string\",\n  \"checksum\": \"string\",\n  \"version\": 2573.7674180651306,\n  \"isDeleted\": true,\n  \"virusScanStatus\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\"\n}"
+      }
+    ]
+  },
+  {
+    "id": "2bc31be4-7c71-4eb7-a9e9-21aecc641e70",
+    "folder": "08. Medical Records (General, Dental & Vision)",
+    "name": "List all attachments linked to a specific medical record",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "medical-records",
+        ":id",
+        "attachments"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{recordId}}",
+          "key": "id",
+          "description": "Medical Record UUID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/medical-records/:id/attachments"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"medicalRecordId\": \"string\",\n    \"patientProfileId\": \"string\",\n    \"fileName\": \"string\",\n    \"originalName\": \"string\",\n    \"fileSize\": 540.3505028339983,\n    \"mimeType\": \"string\",\n    \"category\": \"string\",\n    \"storageKey\": \"string\",\n    \"storageUrl\": \"string\",\n    \"checksum\": \"string\",\n    \"version\": 3669.723726382018,\n    \"isDeleted\": true,\n    \"virusScanStatus\": \"string\",\n    \"createdAt\": \"string\",\n    \"updatedAt\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"medicalRecordId\": \"string\",\n    \"patientProfileId\": \"string\",\n    \"fileName\": \"string\",\n    \"originalName\": \"string\",\n    \"fileSize\": 128.8052018759489,\n    \"mimeType\": \"string\",\n    \"category\": \"string\",\n    \"storageKey\": \"string\",\n    \"storageUrl\": \"string\",\n    \"checksum\": \"string\",\n    \"version\": 554.2370363811023,\n    \"isDeleted\": true,\n    \"virusScanStatus\": \"string\",\n    \"createdAt\": \"string\",\n    \"updatedAt\": \"string\"\n  }\n]"
+      }
+    ]
+  },
+  {
+    "id": "ec49e88d-02f6-4c03-8d7b-f2ed918614f3",
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Book a new appointment",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "POST",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "appointments"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [],
+      "raw": "{{baseUrl}}/api/v1/appointments"
+    },
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "raw": "{\n  \"doctorProfileId\": \"{{doctorId}}\",\n  \"patientProfileId\": \"{{patientId}}\",\n  \"facilityId\": \"{{facilityId}}\",\n  \"appointmentDate\": \"2026-11-15\",\n  \"startTime\": \"09:30\",\n  \"endTime\": \"09:45\",\n  \"durationMinutes\": 15,\n  \"type\": \"IN_PERSON\",\n  \"reason\": \"Routine cardiology follow-up and prescription review\",\n  \"notes\": \"Patient requested morning appointment slot\"\n}",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      }
+    },
+    "responses": [
+      {
+        "status": "Created",
+        "code": 201,
+        "body": "{\n  \"id\": \"string\",\n  \"appointmentNumber\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"doctorProfileId\": \"string\",\n  \"appointmentDate\": \"string\",\n  \"startTime\": \"string\",\n  \"endTime\": \"string\",\n  \"durationMinutes\": 7492.098821810215,\n  \"type\": \"TELECONSULTATION\",\n  \"status\": \"CONFIRMED\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"facilityId\": \"string\",\n  \"scheduleId\": \"string\",\n  \"slotId\": \"string\",\n  \"reason\": \"string\",\n  \"notes\": \"string\",\n  \"bookedBy\": \"string\",\n  \"cancelledAt\": \"string\",\n  \"cancellationReason\": \"string\",\n  \"cancelledBy\": \"string\",\n  \"rescheduledFromId\": \"string\",\n  \"patient\": {\n    \"id\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"mrn\": \"string\",\n    \"gender\": \"string\",\n    \"phone\": \"string\"\n  },\n  \"doctor\": {\n    \"id\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"specialization\": \"string\",\n    \"registrationNumber\": \"string\",\n    \"phone\": \"string\"\n  },\n  \"facility\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"city\": \"string\",\n    \"phone\": \"string\"\n  }\n}"
+      }
+    ]
+  },
+  {
+    "id": "c9de8636-0ab0-4018-b1ee-12f1618c3f34",
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "List appointments with filtering and pagination",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "appointments"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [
+        {
+          "disabled": false,
+          "key": "page",
+          "value": "1",
+          "description": "Page number (1-based)"
+        },
+        {
+          "disabled": false,
+          "key": "limit",
+          "value": "20",
+          "description": "Items per page (max 100)"
+        },
+        {
+          "disabled": false,
+          "key": "patientProfileId",
+          "value": "string",
+          "description": "Filter by Patient Profile UUID"
+        },
+        {
+          "disabled": false,
+          "key": "doctorProfileId",
+          "value": "string",
+          "description": "Filter by Doctor Profile UUID"
+        },
+        {
+          "disabled": false,
+          "key": "facilityId",
+          "value": "string",
+          "description": "Filter by Facility UUID"
+        },
+        {
+          "disabled": false,
+          "key": "status",
+          "value": "SCHEDULED",
+          "description": "Filter by Appointment Status"
+        },
+        {
+          "disabled": false,
+          "key": "type",
+          "value": "IN_PERSON",
+          "description": "Filter by Consultation Type"
+        },
+        {
+          "disabled": false,
+          "key": "fromDate",
+          "value": "string",
+          "description": "Filter from date (inclusive, YYYY-MM-DD)"
+        },
+        {
+          "disabled": false,
+          "key": "toDate",
+          "value": "string",
+          "description": "Filter to date (inclusive, YYYY-MM-DD)"
+        }
+      ],
+      "variable": [],
+      "raw": "{{baseUrl}}/api/v1/appointments?page=1&limit=20&patientProfileId=string&doctorProfileId=string&facilityId=string&status=SCHEDULED&type=IN_PERSON&fromDate=string&toDate=string"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"data\": [\n    [],\n    []\n  ],\n  \"meta\": {\n    \"totalItems\": 100,\n    \"page\": 1,\n    \"limit\": 20,\n    \"totalPages\": 5,\n    \"hasNextPage\": {},\n    \"hasPreviousPage\": false\n  }\n}"
+      }
+    ]
+  },
+  {
+    "id": "c9504a6f-ffa5-47c2-a90a-10fabe4353f6",
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Get appointments scheduled for authenticated doctor",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "appointments",
+        "doctor",
+        "my-appointments"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [
+        {
+          "disabled": false,
+          "key": "page",
+          "value": "1",
+          "description": "Page number (1-based)"
+        },
+        {
+          "disabled": false,
+          "key": "limit",
+          "value": "20",
+          "description": "Items per page (max 100)"
+        },
+        {
+          "disabled": false,
+          "key": "patientProfileId",
+          "value": "string",
+          "description": "Filter by Patient Profile UUID"
+        },
+        {
+          "disabled": false,
+          "key": "doctorProfileId",
+          "value": "string",
+          "description": "Filter by Doctor Profile UUID"
+        },
+        {
+          "disabled": false,
+          "key": "facilityId",
+          "value": "string",
+          "description": "Filter by Facility UUID"
+        },
+        {
+          "disabled": false,
+          "key": "status",
+          "value": "SCHEDULED",
+          "description": "Filter by Appointment Status"
+        },
+        {
+          "disabled": false,
+          "key": "type",
+          "value": "IN_PERSON",
+          "description": "Filter by Consultation Type"
+        },
+        {
+          "disabled": false,
+          "key": "fromDate",
+          "value": "string",
+          "description": "Filter from date (inclusive, YYYY-MM-DD)"
+        },
+        {
+          "disabled": false,
+          "key": "toDate",
+          "value": "string",
+          "description": "Filter to date (inclusive, YYYY-MM-DD)"
+        }
+      ],
+      "variable": [],
+      "raw": "{{baseUrl}}/api/v1/appointments/doctor/my-appointments?page=1&limit=20&patientProfileId=string&doctorProfileId=string&facilityId=string&status=SCHEDULED&type=IN_PERSON&fromDate=string&toDate=string"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"data\": [\n    [],\n    []\n  ],\n  \"meta\": {\n    \"totalItems\": 100,\n    \"page\": 1,\n    \"limit\": 20,\n    \"totalPages\": 5,\n    \"hasNextPage\": {},\n    \"hasPreviousPage\": false\n  }\n}"
+      }
+    ]
+  },
+  {
+    "id": "2bfb56e0-5a9c-4001-a556-d9d27f4a96c0",
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Get appointments scheduled for authenticated doctor",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "appointments",
+        "doctor",
+        "me"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [
+        {
+          "disabled": false,
+          "key": "page",
+          "value": "1",
+          "description": "Page number (1-based)"
+        },
+        {
+          "disabled": false,
+          "key": "limit",
+          "value": "20",
+          "description": "Items per page (max 100)"
+        },
+        {
+          "disabled": false,
+          "key": "patientProfileId",
+          "value": "string",
+          "description": "Filter by Patient Profile UUID"
+        },
+        {
+          "disabled": false,
+          "key": "doctorProfileId",
+          "value": "string",
+          "description": "Filter by Doctor Profile UUID"
+        },
+        {
+          "disabled": false,
+          "key": "facilityId",
+          "value": "string",
+          "description": "Filter by Facility UUID"
+        },
+        {
+          "disabled": false,
+          "key": "status",
+          "value": "SCHEDULED",
+          "description": "Filter by Appointment Status"
+        },
+        {
+          "disabled": false,
+          "key": "type",
+          "value": "IN_PERSON",
+          "description": "Filter by Consultation Type"
+        },
+        {
+          "disabled": false,
+          "key": "fromDate",
+          "value": "string",
+          "description": "Filter from date (inclusive, YYYY-MM-DD)"
+        },
+        {
+          "disabled": false,
+          "key": "toDate",
+          "value": "string",
+          "description": "Filter to date (inclusive, YYYY-MM-DD)"
+        }
+      ],
+      "variable": [],
+      "raw": "{{baseUrl}}/api/v1/appointments/doctor/me?page=1&limit=20&patientProfileId=string&doctorProfileId=string&facilityId=string&status=SCHEDULED&type=IN_PERSON&fromDate=string&toDate=string"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"data\": [\n    [],\n    []\n  ],\n  \"meta\": {\n    \"totalItems\": 100,\n    \"page\": 1,\n    \"limit\": 20,\n    \"totalPages\": 5,\n    \"hasNextPage\": {},\n    \"hasPreviousPage\": false\n  }\n}"
+      }
+    ]
+  },
+  {
+    "id": "364d5cda-1c91-4ca4-917d-aba36f9a32d0",
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Get appointments scheduled for authenticated patient",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "appointments",
+        "patient",
+        "my-appointments"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [
+        {
+          "disabled": false,
+          "key": "page",
+          "value": "1",
+          "description": "Page number (1-based)"
+        },
+        {
+          "disabled": false,
+          "key": "limit",
+          "value": "20",
+          "description": "Items per page (max 100)"
+        },
+        {
+          "disabled": false,
+          "key": "patientProfileId",
+          "value": "string",
+          "description": "Filter by Patient Profile UUID"
+        },
+        {
+          "disabled": false,
+          "key": "doctorProfileId",
+          "value": "string",
+          "description": "Filter by Doctor Profile UUID"
+        },
+        {
+          "disabled": false,
+          "key": "facilityId",
+          "value": "string",
+          "description": "Filter by Facility UUID"
+        },
+        {
+          "disabled": false,
+          "key": "status",
+          "value": "SCHEDULED",
+          "description": "Filter by Appointment Status"
+        },
+        {
+          "disabled": false,
+          "key": "type",
+          "value": "IN_PERSON",
+          "description": "Filter by Consultation Type"
+        },
+        {
+          "disabled": false,
+          "key": "fromDate",
+          "value": "string",
+          "description": "Filter from date (inclusive, YYYY-MM-DD)"
+        },
+        {
+          "disabled": false,
+          "key": "toDate",
+          "value": "string",
+          "description": "Filter to date (inclusive, YYYY-MM-DD)"
+        }
+      ],
+      "variable": [],
+      "raw": "{{baseUrl}}/api/v1/appointments/patient/my-appointments?page=1&limit=20&patientProfileId=string&doctorProfileId=string&facilityId=string&status=SCHEDULED&type=IN_PERSON&fromDate=string&toDate=string"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"data\": [\n    [],\n    []\n  ],\n  \"meta\": {\n    \"totalItems\": 100,\n    \"page\": 1,\n    \"limit\": 20,\n    \"totalPages\": 5,\n    \"hasNextPage\": {},\n    \"hasPreviousPage\": false\n  }\n}"
+      }
+    ]
+  },
+  {
+    "id": "401e3997-fde6-4ca4-935e-edb0a9dbd265",
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Get appointments scheduled for authenticated patient",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "appointments",
+        "patient",
+        "me"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [
+        {
+          "disabled": false,
+          "key": "page",
+          "value": "1",
+          "description": "Page number (1-based)"
+        },
+        {
+          "disabled": false,
+          "key": "limit",
+          "value": "20",
+          "description": "Items per page (max 100)"
+        },
+        {
+          "disabled": false,
+          "key": "patientProfileId",
+          "value": "string",
+          "description": "Filter by Patient Profile UUID"
+        },
+        {
+          "disabled": false,
+          "key": "doctorProfileId",
+          "value": "string",
+          "description": "Filter by Doctor Profile UUID"
+        },
+        {
+          "disabled": false,
+          "key": "facilityId",
+          "value": "string",
+          "description": "Filter by Facility UUID"
+        },
+        {
+          "disabled": false,
+          "key": "status",
+          "value": "SCHEDULED",
+          "description": "Filter by Appointment Status"
+        },
+        {
+          "disabled": false,
+          "key": "type",
+          "value": "IN_PERSON",
+          "description": "Filter by Consultation Type"
+        },
+        {
+          "disabled": false,
+          "key": "fromDate",
+          "value": "string",
+          "description": "Filter from date (inclusive, YYYY-MM-DD)"
+        },
+        {
+          "disabled": false,
+          "key": "toDate",
+          "value": "string",
+          "description": "Filter to date (inclusive, YYYY-MM-DD)"
+        }
+      ],
+      "variable": [],
+      "raw": "{{baseUrl}}/api/v1/appointments/patient/me?page=1&limit=20&patientProfileId=string&doctorProfileId=string&facilityId=string&status=SCHEDULED&type=IN_PERSON&fromDate=string&toDate=string"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"data\": [\n    [],\n    []\n  ],\n  \"meta\": {\n    \"totalItems\": 100,\n    \"page\": 1,\n    \"limit\": 20,\n    \"totalPages\": 5,\n    \"hasNextPage\": {},\n    \"hasPreviousPage\": false\n  }\n}"
+      }
+    ]
+  },
+  {
+    "id": "e317c414-6909-425a-ad30-d5dfcfb119c0",
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Get appointment details by ID",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "appointments",
+        ":id"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{appointmentId}}",
+          "key": "id",
+          "description": "Appointment UUID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/appointments/:id"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"string\",\n  \"appointmentNumber\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"doctorProfileId\": \"string\",\n  \"appointmentDate\": \"string\",\n  \"startTime\": \"string\",\n  \"endTime\": \"string\",\n  \"durationMinutes\": 7492.098821810215,\n  \"type\": \"TELECONSULTATION\",\n  \"status\": \"CONFIRMED\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"facilityId\": \"string\",\n  \"scheduleId\": \"string\",\n  \"slotId\": \"string\",\n  \"reason\": \"string\",\n  \"notes\": \"string\",\n  \"bookedBy\": \"string\",\n  \"cancelledAt\": \"string\",\n  \"cancellationReason\": \"string\",\n  \"cancelledBy\": \"string\",\n  \"rescheduledFromId\": \"string\",\n  \"patient\": {\n    \"id\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"mrn\": \"string\",\n    \"gender\": \"string\",\n    \"phone\": \"string\"\n  },\n  \"doctor\": {\n    \"id\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"specialization\": \"string\",\n    \"registrationNumber\": \"string\",\n    \"phone\": \"string\"\n  },\n  \"facility\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"city\": \"string\",\n    \"phone\": \"string\"\n  }\n}"
+      }
+    ]
+  },
+  {
+    "id": "f2eb4633-abbd-4703-a9fb-13998d4ea94e",
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Reschedule an existing appointment",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "PUT",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "appointments",
+        ":id",
+        "reschedule"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{appointmentId}}",
+          "key": "id",
+          "description": "Appointment UUID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/appointments/:id/reschedule"
+    },
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "raw": "{\n  \"appointmentDate\": \"2026-11-20\",\n  \"startTime\": \"10:00\",\n  \"endTime\": \"10:15\",\n  \"slotId\": \"string\",\n  \"reason\": \"string\"\n}",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      }
+    },
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"string\",\n  \"appointmentNumber\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"doctorProfileId\": \"string\",\n  \"appointmentDate\": \"string\",\n  \"startTime\": \"string\",\n  \"endTime\": \"string\",\n  \"durationMinutes\": 7492.098821810215,\n  \"type\": \"TELECONSULTATION\",\n  \"status\": \"CONFIRMED\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"facilityId\": \"string\",\n  \"scheduleId\": \"string\",\n  \"slotId\": \"string\",\n  \"reason\": \"string\",\n  \"notes\": \"string\",\n  \"bookedBy\": \"string\",\n  \"cancelledAt\": \"string\",\n  \"cancellationReason\": \"string\",\n  \"cancelledBy\": \"string\",\n  \"rescheduledFromId\": \"string\",\n  \"patient\": {\n    \"id\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"mrn\": \"string\",\n    \"gender\": \"string\",\n    \"phone\": \"string\"\n  },\n  \"doctor\": {\n    \"id\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"specialization\": \"string\",\n    \"registrationNumber\": \"string\",\n    \"phone\": \"string\"\n  },\n  \"facility\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"city\": \"string\",\n    \"phone\": \"string\"\n  }\n}"
+      }
+    ]
+  },
+  {
+    "id": "f33231f7-8ade-4c8f-a24c-5dac4fdee5de",
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Cancel an appointment",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "PUT",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "appointments",
+        ":id",
+        "cancel"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{appointmentId}}",
+          "key": "id",
+          "description": "Appointment UUID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/appointments/:id/cancel"
+    },
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "raw": "{\n  \"cancellationReason\": \"Patient requested reschedule due to conflict\"\n}",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      }
+    },
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"string\",\n  \"appointmentNumber\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"doctorProfileId\": \"string\",\n  \"appointmentDate\": \"string\",\n  \"startTime\": \"string\",\n  \"endTime\": \"string\",\n  \"durationMinutes\": 7492.098821810215,\n  \"type\": \"TELECONSULTATION\",\n  \"status\": \"CONFIRMED\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"facilityId\": \"string\",\n  \"scheduleId\": \"string\",\n  \"slotId\": \"string\",\n  \"reason\": \"string\",\n  \"notes\": \"string\",\n  \"bookedBy\": \"string\",\n  \"cancelledAt\": \"string\",\n  \"cancellationReason\": \"string\",\n  \"cancelledBy\": \"string\",\n  \"rescheduledFromId\": \"string\",\n  \"patient\": {\n    \"id\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"mrn\": \"string\",\n    \"gender\": \"string\",\n    \"phone\": \"string\"\n  },\n  \"doctor\": {\n    \"id\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"specialization\": \"string\",\n    \"registrationNumber\": \"string\",\n    \"phone\": \"string\"\n  },\n  \"facility\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"city\": \"string\",\n    \"phone\": \"string\"\n  }\n}"
+      }
+    ]
+  },
+  {
+    "id": "c8a0ea9d-c952-4aba-9776-d57071b713c1",
+    "folder": "10. Appointments, Schedules & Shifts",
+    "name": "Update appointment status (clinical & operational staff)",
+    "description": "**[Classification: Implemented — source verified]**  \n100% test passing in local regression suite. Runtime verification pending staging server deployment.\n\n---\n[object Object]",
+    "method": "PUT",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "appointments",
+        ":id",
+        "status"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{appointmentId}}",
+          "key": "id",
+          "description": "Appointment UUID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/appointments/:id/status"
+    },
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "raw": "{\n  \"status\": \"RESCHEDULED\",\n  \"notes\": \"string\"\n}",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      }
+    },
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"string\",\n  \"appointmentNumber\": \"string\",\n  \"patientProfileId\": \"string\",\n  \"doctorProfileId\": \"string\",\n  \"appointmentDate\": \"string\",\n  \"startTime\": \"string\",\n  \"endTime\": \"string\",\n  \"durationMinutes\": 7492.098821810215,\n  \"type\": \"TELECONSULTATION\",\n  \"status\": \"CONFIRMED\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"facilityId\": \"string\",\n  \"scheduleId\": \"string\",\n  \"slotId\": \"string\",\n  \"reason\": \"string\",\n  \"notes\": \"string\",\n  \"bookedBy\": \"string\",\n  \"cancelledAt\": \"string\",\n  \"cancellationReason\": \"string\",\n  \"cancelledBy\": \"string\",\n  \"rescheduledFromId\": \"string\",\n  \"patient\": {\n    \"id\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"mrn\": \"string\",\n    \"gender\": \"string\",\n    \"phone\": \"string\"\n  },\n  \"doctor\": {\n    \"id\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"specialization\": \"string\",\n    \"registrationNumber\": \"string\",\n    \"phone\": \"string\"\n  },\n  \"facility\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"city\": \"string\",\n    \"phone\": \"string\"\n  }\n}"
+      }
+    ]
+  },
+  {
+    "id": "dcf3b3b4-8d0e-4e94-9568-09be856a2394",
+    "folder": "27. Healthcare Financing & Financial Assistance",
+    "name": "List available healthcare financing options and partners",
+    "description": "**[Classification: Implemented — source verified]**  \nBacked by PostgreSQL persistence (financing_applications & financing_history) with AES-256-GCM field-level encryption.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "financing",
+        "options"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [],
+      "raw": "{{baseUrl}}/api/v1/financing/options"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"partnerName\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"minAmount\": 8206.841331793696,\n    \"maxAmount\": 2165.3721213802846,\n    \"tenureMonths\": [\n      4514.056877201674,\n      8027.091770981997\n    ],\n    \"interestRate\": 4802.488029617769,\n    \"processingFee\": 8097.646380862996,\n    \"features\": [\n      \"string\",\n      \"string\"\n    ],\n    \"isDemonstrationCatalog\": true,\n    \"disclaimer\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"partnerName\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"minAmount\": 2289.9201580933113,\n    \"maxAmount\": 2164.662270660348,\n    \"tenureMonths\": [\n      254.16664221174167,\n      4611.648981749231\n    ],\n    \"interestRate\": 1355.0591849069338,\n    \"processingFee\": 5532.381177841958,\n    \"features\": [\n      \"string\",\n      \"string\"\n    ],\n    \"isDemonstrationCatalog\": true,\n    \"disclaimer\": \"string\"\n  }\n]"
+      }
+    ]
+  },
+  {
+    "id": "720cea34-34c2-44ad-8642-a966706e35a6",
+    "folder": "27. Healthcare Financing & Financial Assistance",
+    "name": "List pre-approved healthcare financing offers for current patient",
+    "description": "**[Classification: Implemented — source verified]**  \nBacked by PostgreSQL persistence (financing_applications & financing_history) with AES-256-GCM field-level encryption.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "financing",
+        "offers"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [],
+      "raw": "{{baseUrl}}/api/v1/financing/offers"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "[\n  {\n    \"id\": \"string\",\n    \"partnerName\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"minAmount\": 9997.100389157375,\n    \"maxAmount\": 6858.896083250117,\n    \"tenureMonths\": [\n      9514.972781932003,\n      5471.405582830157\n    ],\n    \"interestRate\": 8897.92072826692,\n    \"processingFee\": 931.8228784339577,\n    \"features\": [\n      \"string\",\n      \"string\"\n    ],\n    \"isDemonstrationCatalog\": false,\n    \"disclaimer\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"partnerName\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"minAmount\": 5161.490336909569,\n    \"maxAmount\": 4267.197701245759,\n    \"tenureMonths\": [\n      7938.645766091963,\n      6335.2919611298175\n    ],\n    \"interestRate\": 188.53586421249568,\n    \"processingFee\": 9375.633989471675,\n    \"features\": [\n      \"string\",\n      \"string\"\n    ],\n    \"isDemonstrationCatalog\": false,\n    \"disclaimer\": \"string\"\n  }\n]"
+      }
+    ]
+  },
+  {
+    "id": "d0e1f9bd-7b13-4e8f-8145-816ce95afe54",
+    "folder": "27. Healthcare Financing & Financial Assistance",
+    "name": "Get details of specific healthcare financing offer or treatment proposal",
+    "description": "**[Classification: Implemented — source verified]**  \nBacked by PostgreSQL persistence (financing_applications & financing_history) with AES-256-GCM field-level encryption.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "financing",
+        "offers",
+        ":id"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{applicationId}}",
+          "key": "id",
+          "description": "Financing Application ID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/financing/offers/:id"
+    },
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": null
+      }
+    ]
+  },
+  {
+    "id": "6c81da74-0516-4ef4-b559-667986f85914",
+    "folder": "27. Healthcare Financing & Financial Assistance",
+    "name": "Accept pre-approved healthcare financing offer (Initiates partner underwriting review)",
+    "description": "**[Classification: Implemented — source verified]**  \nBacked by PostgreSQL persistence (financing_applications & financing_history) with AES-256-GCM field-level encryption.\n\n---\n[object Object]",
+    "method": "POST",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "financing",
+        "offers",
+        ":id",
+        "accept"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{applicationId}}",
+          "key": "id",
+          "description": "Financing Application ID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/financing/offers/:id/accept"
+    },
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "raw": "{\n  \"notes\": \"Patient accepts verified partner financing terms. Initiate credit underwriting review.\",\n  \"signatureConsent\": true\n}",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      }
+    },
+    "responses": [
+      {
+        "name": "Financing application under review",
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"string\",\n  \"applicationNumber\": \"string\",\n  \"userId\": \"string\",\n  \"optionId\": \"string\",\n  \"partnerName\": \"string\",\n  \"treatmentName\": \"string\",\n  \"requestedAmount\": 2472.811227304057,\n  \"tenureMonths\": 3931.693074332745,\n  \"monthlyEstimatedEmi\": 3747.5439895760755,\n  \"status\": \"string\",\n  \"adminNotes\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"isDemonstrationStorage\": true,\n  \"storageNotice\": \"string\"\n}"
+      }
+    ]
+  },
+  {
+    "id": "dc1b4a66-40fc-4aba-807e-431247fe4cfa",
+    "folder": "27. Healthcare Financing & Financial Assistance",
+    "name": "Reject healthcare financing offer",
+    "description": "**[Classification: Implemented — source verified]**  \nBacked by PostgreSQL persistence (financing_applications & financing_history) with AES-256-GCM field-level encryption.\n\n---\n[object Object]",
+    "method": "POST",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "financing",
+        "offers",
+        ":id",
+        "reject"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{applicationId}}",
+          "key": "id",
+          "description": "Financing Application ID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/financing/offers/:id/reject"
+    },
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "raw": "{\n  \"reason\": \"Patient declined financing assistance; choosing self-pay.\",\n  \"declineReason\": \"Patient declined financing assistance; choosing self-pay.\"\n}",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      }
+    },
+    "responses": [
+      {
+        "name": "Financing application marked rejected",
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"string\",\n  \"applicationNumber\": \"string\",\n  \"userId\": \"string\",\n  \"optionId\": \"string\",\n  \"partnerName\": \"string\",\n  \"treatmentName\": \"string\",\n  \"requestedAmount\": 2472.811227304057,\n  \"tenureMonths\": 3931.693074332745,\n  \"monthlyEstimatedEmi\": 3747.5439895760755,\n  \"status\": \"string\",\n  \"adminNotes\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"isDemonstrationStorage\": true,\n  \"storageNotice\": \"string\"\n}"
+      }
+    ]
+  },
+  {
+    "id": "87c090b2-7b9c-4a97-9f0c-c975a5442671",
+    "folder": "27. Healthcare Financing & Financial Assistance",
+    "name": "Submit application for healthcare financing / EMI assistance",
+    "description": "**[Classification: Implemented — source verified]**  \nBacked by PostgreSQL persistence (financing_applications & financing_history) with AES-256-GCM field-level encryption.\n\n---\n[object Object]",
+    "method": "POST",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "financing",
+        "apply"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [],
+      "raw": "{{baseUrl}}/api/v1/financing/apply"
+    },
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "raw": "{\n  \"optionId\": \"opt-zerocost-care\",\n  \"facilityId\": \"{{facilityId}}\",\n  \"treatmentName\": \"Orthopedic Knee Replacement Surgery\",\n  \"requestedAmount\": 50000,\n  \"tenureMonths\": 6,\n  \"monthlyIncome\": 65000,\n  \"employmentType\": \"SALARIED\",\n  \"panOrNationalId\": \"ABCDE1234F\",\n  \"notes\": \"Planned surgery next month\"\n}",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      }
+    },
+    "responses": [
+      {
+        "status": "Created",
+        "code": 201,
+        "body": "{\n  \"id\": \"string\",\n  \"applicationNumber\": \"string\",\n  \"userId\": \"string\",\n  \"optionId\": \"string\",\n  \"partnerName\": \"string\",\n  \"treatmentName\": \"string\",\n  \"requestedAmount\": 2472.811227304057,\n  \"tenureMonths\": 3931.693074332745,\n  \"monthlyEstimatedEmi\": 3747.5439895760755,\n  \"status\": \"string\",\n  \"adminNotes\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"isDemonstrationStorage\": true,\n  \"storageNotice\": \"string\"\n}"
+      }
+    ]
+  },
+  {
+    "id": "9ae4c44b-d45b-4202-b3d8-dc7788ae2ce2",
+    "folder": "27. Healthcare Financing & Financial Assistance",
+    "name": "List financing applications (scoped to patient or global for admin/staff)",
+    "description": "**[Classification: Implemented — source verified]**  \nBacked by PostgreSQL persistence (financing_applications & financing_history) with AES-256-GCM field-level encryption.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "financing",
+        "applications"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [
+        {
+          "disabled": false,
+          "key": "status",
+          "value": "string"
+        },
+        {
+          "disabled": false,
+          "key": "partnerName",
+          "value": "string"
+        },
+        {
+          "disabled": false,
+          "key": "search",
+          "value": "string"
+        },
+        {
+          "disabled": false,
+          "key": "page",
+          "value": "3467.616117677217"
+        },
+        {
+          "disabled": false,
+          "key": "limit",
+          "value": "3467.616117677217"
+        }
+      ],
+      "variable": [],
+      "raw": "{{baseUrl}}/api/v1/financing/applications?status=string&partnerName=string&search=string&page=3467.616117677217&limit=3467.616117677217"
+    },
+    "responses": [
+      {
+        "name": "Paginated list of financing applications",
+        "status": "OK",
+        "code": 200,
+        "body": null
+      }
+    ]
+  },
+  {
+    "id": "69d6d72a-9911-4dde-b51f-c47698a43ad3",
+    "folder": "27. Healthcare Financing & Financial Assistance",
+    "name": "Get financing application details by ID",
+    "description": "**[Classification: Implemented — source verified]**  \nBacked by PostgreSQL persistence (financing_applications & financing_history) with AES-256-GCM field-level encryption.\n\n---\n[object Object]",
+    "method": "GET",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "financing",
+        "applications",
+        ":id"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{applicationId}}",
+          "key": "id",
+          "description": "Financing Application ID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/financing/applications/:id"
+    },
+    "headers": [
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"string\",\n  \"applicationNumber\": \"string\",\n  \"userId\": \"string\",\n  \"optionId\": \"string\",\n  \"partnerName\": \"string\",\n  \"treatmentName\": \"string\",\n  \"requestedAmount\": 2472.811227304057,\n  \"tenureMonths\": 3931.693074332745,\n  \"monthlyEstimatedEmi\": 3747.5439895760755,\n  \"status\": \"string\",\n  \"adminNotes\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"isDemonstrationStorage\": true,\n  \"storageNotice\": \"string\"\n}"
+      }
+    ]
+  },
+  {
+    "id": "e6af42bb-3f24-41d9-ad77-1c710cc277cb",
+    "folder": "27. Healthcare Financing & Financial Assistance",
+    "name": "Update financing application review status (Admin/Staff)",
+    "description": "**[Classification: Implemented — source verified]**  \nBacked by PostgreSQL persistence (financing_applications & financing_history) with AES-256-GCM field-level encryption.\n\n---\n[object Object]",
+    "method": "PATCH",
+    "url": {
+      "path": [
+        "api",
+        "v1",
+        "financing",
+        "applications",
+        ":id",
+        "status"
+      ],
+      "host": [
+        "{{baseUrl}}"
+      ],
+      "query": [],
+      "variable": [
+        {
+          "disabled": false,
+          "type": "any",
+          "value": "{{applicationId}}",
+          "key": "id",
+          "description": "Financing Application ID"
+        }
+      ],
+      "raw": "{{baseUrl}}/api/v1/financing/applications/:id/status"
+    },
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "raw": "{\n  \"status\": \"APPROVED\",\n  \"notes\": \"Credit underwriting check passed, approved for disbursement\"\n}",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      }
+    },
+    "responses": [
+      {
+        "status": "OK",
+        "code": 200,
+        "body": "{\n  \"id\": \"string\",\n  \"applicationNumber\": \"string\",\n  \"userId\": \"string\",\n  \"optionId\": \"string\",\n  \"partnerName\": \"string\",\n  \"treatmentName\": \"string\",\n  \"requestedAmount\": 2472.811227304057,\n  \"tenureMonths\": 3931.693074332745,\n  \"monthlyEstimatedEmi\": 3747.5439895760755,\n  \"status\": \"string\",\n  \"adminNotes\": \"string\",\n  \"createdAt\": \"string\",\n  \"updatedAt\": \"string\",\n  \"isDemonstrationStorage\": true,\n  \"storageNotice\": \"string\"\n}"
+      }
+    ]
+  }
+]

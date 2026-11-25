@@ -1,0 +1,1436 @@
+[
+  {
+    "file": "src/services/auditLogService.ts",
+    "line": 153,
+    "endpoint": "/api/v1/admin/audit-logs${queryString}",
+    "fullLine": "const response = await apiClient.get<any>(`/api/v1/admin/audit-logs${queryString}`);"
+  },
+  {
+    "file": "src/services/auditLogService.ts",
+    "line": 191,
+    "endpoint": "/api/v1/admin/audit-logs/${cleanId}",
+    "fullLine": "const res = await apiClient.get<any>(`/api/v1/admin/audit-logs/${cleanId}`);"
+  },
+  {
+    "file": "src/services/auditLogService.ts",
+    "line": 216,
+    "endpoint": "/api/v1/admin/audit-logs/export",
+    "fullLine": "const res = await apiClient.get<any>(`/api/v1/admin/audit-logs/export?${query.toString()}`);"
+  },
+  {
+    "file": "src/services/authService.ts",
+    "line": 231,
+    "endpoint": "/api/v1/auth/me",
+    "fullLine": "const res = await apiClient.get('/api/v1/auth/me');"
+  },
+  {
+    "file": "src/services/authService.ts",
+    "line": 260,
+    "endpoint": "/api/v1/auth/me",
+    "fullLine": "const retry = await apiClient.get('/api/v1/auth/me');"
+  },
+  {
+    "file": "src/services/authService.ts",
+    "line": 300,
+    "endpoint": "/api/v1/auth/logout",
+    "fullLine": "await apiClient.post('/api/v1/auth/logout', { refreshToken }, { requiresAuth: false });"
+  },
+  {
+    "file": "src/services/dashboardService.ts",
+    "line": 204,
+    "endpoint": "/api/v1/admin/dashboard/stats",
+    "fullLine": "const response = await apiClient.get<DashboardStatsData>('/api/v1/admin/dashboard/stats');"
+  },
+  {
+    "file": "src/services/dashboardService.ts",
+    "line": 216,
+    "endpoint": "/api/v1/admin/dashboard/summary",
+    "fullLine": "const response = await apiClient.get<DashboardSummaryData>('/api/v1/admin/dashboard/summary');"
+  },
+  {
+    "file": "src/services/dashboardService.ts",
+    "line": 228,
+    "endpoint": "/api/v1/doctors/statistics",
+    "fullLine": "const response = await apiClient.get<DoctorStatsData>('/api/v1/doctors/statistics');"
+  },
+  {
+    "file": "src/services/dashboardService.ts",
+    "line": 240,
+    "endpoint": "/api/v1/referrals/dashboard/stats",
+    "fullLine": "const response = await apiClient.get<ReferralStatsData>('/api/v1/referrals/dashboard/stats');"
+  },
+  {
+    "file": "src/services/dashboardService.ts",
+    "line": 252,
+    "endpoint": "/api/v1/ocr/dashboard",
+    "fullLine": "const response = await apiClient.get<OcrStatsData>('/api/v1/ocr/dashboard');"
+  },
+  {
+    "file": "src/services/dashboardService.ts",
+    "line": 264,
+    "endpoint": "/api/v1/observability/dashboard",
+    "fullLine": "const response = await apiClient.get<ObservabilityDashboardData>('/api/v1/observability/dashboard');"
+  },
+  {
+    "file": "src/services/dashboardService.ts",
+    "line": 278,
+    "endpoint": "/api/v1/health",
+    "fullLine": "apiClient.get<any>('/api/v1/health', { requiresAuth: false }),"
+  },
+  {
+    "file": "src/services/dashboardService.ts",
+    "line": 279,
+    "endpoint": "/api/v1/observability/health",
+    "fullLine": "apiClient.get<ObservabilityHealthData>('/api/v1/observability/health'),"
+  },
+  {
+    "file": "src/services/dashboardService.ts",
+    "line": 280,
+    "endpoint": "/api/v1/observability/health/live",
+    "fullLine": "apiClient.get<any>('/api/v1/observability/health/live', { requiresAuth: false }),"
+  },
+  {
+    "file": "src/services/dashboardService.ts",
+    "line": 313,
+    "endpoint": "/api/v1/auth/sessions",
+    "fullLine": "const response = await apiClient.get<ActiveSessionItem[]>('/api/v1/auth/sessions');"
+  },
+  {
+    "file": "src/services/dashboardService.ts",
+    "line": 325,
+    "endpoint": "/api/v1/admin/audit-logs",
+    "fullLine": "const response = await apiClient.get<any>('/api/v1/admin/audit-logs');"
+  },
+  {
+    "file": "src/services/dashboardService.ts",
+    "line": 353,
+    "endpoint": "/api/v1/ocr/review",
+    "fullLine": "apiClient.get<any[]>('/api/v1/ocr/review'),"
+  },
+  {
+    "file": "src/services/dashboardService.ts",
+    "line": 354,
+    "endpoint": "/api/v1/referrals",
+    "fullLine": "apiClient.get<any>('/api/v1/referrals?limit=100'),"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 369,
+    "endpoint": "/api/v1/admin/users",
+    "fullLine": "const usersPromise = apiClient.get<any[]>('/api/v1/admin/users').catch(() => ({ success: false, data: [] }));"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 374,
+    "endpoint": "/api/v1/admin/doctors",
+    "fullLine": "apiClient.get<any>(`/api/v1/admin/doctors?search=${encodeURIComponent(search.trim())}`).catch(() =>"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 375,
+    "endpoint": "/api/v1/doctors/search",
+    "fullLine": "apiClient.get<BackendDoctor[]>(`/api/v1/doctors/search?q=${encodeURIComponent(search.trim())}`)"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 389,
+    "endpoint": "/api/v1/doctors/verification/pending",
+    "fullLine": "apiClient.get<BackendDoctor[]>('/api/v1/doctors/verification/pending'),"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 399,
+    "endpoint": "/api/v1/admin/doctors",
+    "fullLine": "apiClient.get<any>('/api/v1/admin/doctors?limit=100').catch(() =>"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 400,
+    "endpoint": "/api/v1/doctors",
+    "fullLine": "apiClient.get<BackendDoctor[]>('/api/v1/doctors')"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 424,
+    "endpoint": "/api/v1/doctors/statistics",
+    "fullLine": "statsRes = await apiClient.get<BackendDoctorStats>('/api/v1/doctors/statistics');"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 509,
+    "endpoint": "/api/v1/doctors/${id}",
+    "fullLine": "const res = await apiClient.get<BackendDoctor>(`/api/v1/doctors/${id}`);"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 518,
+    "endpoint": "/api/v1/admin/users/${res.data.userId}",
+    "fullLine": "res.data.userId ? apiClient.get<any>(`/api/v1/admin/users/${res.data.userId}`) : Promise.reject(),"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 519,
+    "endpoint": "/api/v1/doctors/${id}/history",
+    "fullLine": "apiClient.get<any[]>(`/api/v1/doctors/${id}/history`),"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 521,
+    "endpoint": "/api/v1/admin/doctors",
+    "fullLine": "apiClient.get<any>(`/api/v1/admin/doctors?search=${encodeURIComponent(cleanSearchName)}`),"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 542,
+    "endpoint": "/api/v1/admin/doctors",
+    "fullLine": "const fallbackRes = await apiClient.get<any>('/api/v1/admin/doctors?limit=100');"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 643,
+    "endpoint": "/api/v1/doctors/statistics",
+    "fullLine": "const res = await apiClient.get<BackendDoctorStats>('/api/v1/doctors/statistics');"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 675,
+    "endpoint": "/api/v1/doctors/${doctorId}/suspend",
+    "fullLine": "? `/api/v1/doctors/${doctorId}/suspend`"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 676,
+    "endpoint": "/api/v1/doctors/${doctorId}/restore",
+    "fullLine": ": `/api/v1/doctors/${doctorId}/restore`;"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 699,
+    "endpoint": "/api/v1/doctors/${doctorId}/verify",
+    "fullLine": "const res = await apiClient.post(`/api/v1/doctors/${doctorId}/verify`, {"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 721,
+    "endpoint": "/api/v1/doctors/${doctorId}/reject",
+    "fullLine": "const res = await apiClient.post(`/api/v1/doctors/${doctorId}/reject`, {"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 753,
+    "endpoint": "/api/v1/doctors/${updated.id}",
+    "fullLine": "const res = await apiClient.put(`/api/v1/doctors/${updated.id}`, backendPayload);"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 779,
+    "endpoint": "/api/v1/doctors/${doctorId}/suspend",
+    "fullLine": "? `/api/v1/doctors/${doctorId}/suspend`"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 781,
+    "endpoint": "/api/v1/doctors/${doctorId}/verify",
+    "fullLine": "? `/api/v1/doctors/${doctorId}/verify`"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 782,
+    "endpoint": "/api/v1/doctors/${doctorId}/restore",
+    "fullLine": ": `/api/v1/doctors/${doctorId}/restore`;"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 815,
+    "endpoint": "/api/v1/admin/doctors",
+    "fullLine": "const res = await apiClient.post<BackendDoctor>('/api/v1/admin/doctors', payload);"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 882,
+    "endpoint": "/api/v1/admin/users",
+    "fullLine": "const res = await apiClient.post<any>('/api/v1/admin/users', adminUserDto);"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 902,
+    "endpoint": "/api/v1/facilities/${targetFacilityId}/assign-doctor",
+    "fullLine": "const assignRes = await apiClient.post(`/api/v1/facilities/${targetFacilityId}/assign-doctor`, {"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 959,
+    "endpoint": "/api/v1/doctors/${doctorId}/history",
+    "fullLine": "const res = await apiClient.get<any[]>(`/api/v1/doctors/${doctorId}/history`);"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 976,
+    "endpoint": "/api/v1/doctors/${doctorId}/documents",
+    "fullLine": "const res = await apiClient.get<any[]>(`/api/v1/doctors/${doctorId}/documents`);"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 1001,
+    "endpoint": "/api/v1/doctors/${doctorId}/renew-license",
+    "fullLine": "const res = await apiClient.post(`/api/v1/doctors/${doctorId}/renew-license`, {"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 1022,
+    "endpoint": "/api/v1/doctors/${doctorId}/generate-qr",
+    "fullLine": "const res = await apiClient.post(`/api/v1/doctors/${doctorId}/generate-qr`, {});"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 1037,
+    "endpoint": "/api/v1/doctors/${doctorId}",
+    "fullLine": "const res = await apiClient.del(`/api/v1/doctors/${doctorId}`);"
+  },
+  {
+    "file": "src/services/doctorService.ts",
+    "line": 1074,
+    "endpoint": "/api/v1/facilities/${facilityId}/assign-doctor",
+    "fullLine": "const res = await apiClient.post(`/api/v1/facilities/${facilityId}/assign-doctor`, payload);"
+  },
+  {
+    "file": "src/services/facilityService.ts",
+    "line": 410,
+    "endpoint": "/api/v1/facilities",
+    "fullLine": "let endpoint = '/api/v1/facilities';"
+  },
+  {
+    "file": "src/services/facilityService.ts",
+    "line": 413,
+    "endpoint": "/api/v1/facilities/search",
+    "fullLine": "endpoint = `/api/v1/facilities/search?q=${encodeURIComponent(search.trim())}`;"
+  },
+  {
+    "file": "src/services/facilityService.ts",
+    "line": 424,
+    "endpoint": "/api/v1/facilities/statistics",
+    "fullLine": "const res = await apiClient.get<BackendFacilityStats>('/api/v1/facilities/statistics');"
+  },
+  {
+    "file": "src/services/facilityService.ts",
+    "line": 442,
+    "endpoint": "/api/v1/facilities/${id}",
+    "fullLine": "const detailRes = await apiClient.get<BackendFacility>(`/api/v1/facilities/${id}`);"
+  },
+  {
+    "file": "src/services/facilityService.ts",
+    "line": 447,
+    "endpoint": "/api/v1/facilities/${id}/doctors",
+    "fullLine": "const docRes = await apiClient.get<BackendFacilityDoctor[]>(`/api/v1/facilities/${id}/doctors`);"
+  },
+  {
+    "file": "src/services/facilityService.ts",
+    "line": 489,
+    "endpoint": "/api/v1/facilities",
+    "fullLine": "const res = await apiClient.post<BackendFacility>('/api/v1/facilities', backendPayload);"
+  },
+  {
+    "file": "src/services/facilityService.ts",
+    "line": 512,
+    "endpoint": "/api/v1/facilities/${id}",
+    "fullLine": "const res = await apiClient.put<BackendFacility>(`/api/v1/facilities/${id}`, backendPayload);"
+  },
+  {
+    "file": "src/services/facilityService.ts",
+    "line": 520,
+    "endpoint": "/api/v1/facilities/${facilityId}/verify",
+    "fullLine": "return apiClient.post(`/api/v1/facilities/${facilityId}/verify`, { reason });"
+  },
+  {
+    "file": "src/services/facilityService.ts",
+    "line": 524,
+    "endpoint": "/api/v1/facilities/${facilityId}/suspend",
+    "fullLine": "return apiClient.post(`/api/v1/facilities/${facilityId}/suspend`, { reason });"
+  },
+  {
+    "file": "src/services/facilityService.ts",
+    "line": 528,
+    "endpoint": "/api/v1/facilities/${facilityId}/restore",
+    "fullLine": "return apiClient.post(`/api/v1/facilities/${facilityId}/restore`, { reason });"
+  },
+  {
+    "file": "src/services/facilityService.ts",
+    "line": 532,
+    "endpoint": "/api/v1/facilities/${facilityId}",
+    "fullLine": "return apiClient.del(`/api/v1/facilities/${facilityId}`);"
+  },
+  {
+    "file": "src/services/facilityService.ts",
+    "line": 536,
+    "endpoint": "/api/v1/facilities/${facilityId}/assign-doctor",
+    "fullLine": "const res = await apiClient.post(`/api/v1/facilities/${facilityId}/assign-doctor`, {"
+  },
+  {
+    "file": "src/services/facilityService.ts",
+    "line": 578,
+    "endpoint": "/api/v1/facilities/${facilityId}/rooms",
+    "fullLine": "const res = await apiClient.get<FacilityRoom[]>(`/api/v1/facilities/${facilityId}/rooms`);"
+  },
+  {
+    "file": "src/services/facilityService.ts",
+    "line": 591,
+    "endpoint": "/api/v1/facilities/${facilityId}/departments",
+    "fullLine": "const res = await apiClient.get<BackendFacilityDepartment[]>(`/api/v1/facilities/${facilityId}/departments`);"
+  },
+  {
+    "file": "src/services/facilityService.ts",
+    "line": 603,
+    "endpoint": "/api/v1/facilities/${facilityId}/rooms",
+    "fullLine": "const res = await apiClient.post<FacilityRoom>(`/api/v1/facilities/${facilityId}/rooms`, payload);"
+  },
+  {
+    "file": "src/services/facilityService.ts",
+    "line": 654,
+    "endpoint": "/api/v1/facilities/${facilityId}/doctors",
+    "fullLine": "const res = await apiClient.get<BackendFacilityDoctor[]>(`/api/v1/facilities/${facilityId}/doctors`);"
+  },
+  {
+    "file": "src/services/facilityService.ts",
+    "line": 667,
+    "endpoint": "/api/v1/facilities/${f.id}/doctors",
+    "fullLine": "facilities.map((f) => apiClient.get<BackendFacilityDoctor[]>(`/api/v1/facilities/${f.id}/doctors`))"
+  },
+  {
+    "file": "src/services/healthRecordService.ts",
+    "line": 562,
+    "endpoint": "/api/v1/admin/medical-records",
+    "fullLine": "const firstRes = await apiClient.get<any>('/api/v1/admin/medical-records?page=1&limit=100');"
+  },
+  {
+    "file": "src/services/healthRecordService.ts",
+    "line": 576,
+    "endpoint": "/api/v1/admin/medical-records",
+    "fullLine": "pagePromises.push(apiClient.get<any>(`/api/v1/admin/medical-records?page=${p}&limit=100`));"
+  },
+  {
+    "file": "src/services/healthRecordService.ts",
+    "line": 632,
+    "endpoint": "/api/v1/attachments/file/att-787e5187-7859-4320-bb1a-465a57dd086a-1794598883093-vision_fundus_retinal.pdf",
+    "fullLine": "downloadUrl: '/api/v1/attachments/file/att-787e5187-7859-4320-bb1a-465a57dd086a-1794598883093-vision_fundus_retinal.pdf',"
+  },
+  {
+    "file": "src/services/healthRecordService.ts",
+    "line": 668,
+    "endpoint": "/api/v1/attachments/file/att-787e5187-7859-4320-bb1a-465a57dd086a-1794598881909-dental_panoramic_opg.pdf",
+    "fullLine": "downloadUrl: '/api/v1/attachments/file/att-787e5187-7859-4320-bb1a-465a57dd086a-1794598881909-dental_panoramic_opg.pdf',"
+  },
+  {
+    "file": "src/services/healthRecordService.ts",
+    "line": 704,
+    "endpoint": "/api/v1/attachments/file/att-787e5187-7859-4320-bb1a-465a57dd086a-1794598880381-medical_blood_panel.pdf",
+    "fullLine": "downloadUrl: '/api/v1/attachments/file/att-787e5187-7859-4320-bb1a-465a57dd086a-1794598880381-medical_blood_panel.pdf',"
+  },
+  {
+    "file": "src/services/healthRecordService.ts",
+    "line": 873,
+    "endpoint": "/api/v1/attachments/file/${encodeURIComponent(fileName)}",
+    "fullLine": "const localUrl = `/api/v1/attachments/file/${encodeURIComponent(fileName)}`;"
+  },
+  {
+    "file": "src/services/healthRecordService.ts",
+    "line": 1126,
+    "endpoint": "/api/v1/admin/medical-records/${cleanId}",
+    "fullLine": "const res = await apiClient.get<any>(`/api/v1/admin/medical-records/${cleanId}`);"
+  },
+  {
+    "file": "src/services/healthRecordService.ts",
+    "line": 1311,
+    "endpoint": "/api/v1/medical-records/${cleanId}",
+    "fullLine": "const res = await apiClient.put(`/api/v1/medical-records/${cleanId}`, {"
+  },
+  {
+    "file": "src/services/healthRecordService.ts",
+    "line": 1348,
+    "endpoint": "/api/v1/admin/medical-records",
+    "fullLine": "const res = await apiClient.get<any>('/api/v1/admin/medical-records?status=ARCHIVED');"
+  },
+  {
+    "file": "src/services/healthRecordService.ts",
+    "line": 1443,
+    "endpoint": "/api/v1/attachments/file/${targetFileName}",
+    "fullLine": "const storageUrl = `/api/v1/attachments/file/${targetFileName}`;"
+  },
+  {
+    "file": "src/services/healthRecordService.ts",
+    "line": 1453,
+    "endpoint": "/api/v1/attachments",
+    "fullLine": "const res = await apiClient.post<any>('/api/v1/attachments', {"
+  },
+  {
+    "file": "src/services/healthRecordService.ts",
+    "line": 1551,
+    "endpoint": "/api/v1/medical-records/${cleanId}/archive",
+    "fullLine": "const res = await apiClient.post(`/api/v1/medical-records/${cleanId}/archive`);"
+  },
+  {
+    "file": "src/services/healthRecordService.ts",
+    "line": 1573,
+    "endpoint": "/api/v1/medical-records/${cleanId}/restore",
+    "fullLine": "const res = await apiClient.post(`/api/v1/medical-records/${cleanId}/restore`);"
+  },
+  {
+    "file": "src/services/healthRecordService.ts",
+    "line": 1595,
+    "endpoint": "/api/v1/ocr/reprocess/${cleanId}",
+    "fullLine": "const res = await apiClient.post(`/api/v1/ocr/reprocess/${cleanId}`);"
+  },
+  {
+    "file": "src/services/healthRecordService.ts",
+    "line": 1615,
+    "endpoint": "/api/v1/medical-records/${cleanId}",
+    "fullLine": "const res = await apiClient.put(`/api/v1/medical-records/${cleanId}`, {"
+  },
+  {
+    "file": "src/services/notificationService.ts",
+    "line": 114,
+    "endpoint": "/api/v1/notifications/dashboard/stats",
+    "fullLine": "return apiClient.get<NotificationPlatformStats>('/api/v1/notifications/dashboard/stats');"
+  },
+  {
+    "file": "src/services/notificationService.ts",
+    "line": 122,
+    "endpoint": "/api/v1/notifications/unread-count",
+    "fullLine": "return apiClient.get<{ unreadCount: number }>('/api/v1/notifications/unread-count');"
+  },
+  {
+    "file": "src/services/notificationService.ts",
+    "line": 130,
+    "endpoint": "/api/v1/notifications/read-all",
+    "fullLine": "return apiClient.put<{ success: boolean; markedCount: number }>('/api/v1/notifications/read-all');"
+  },
+  {
+    "file": "src/services/notificationService.ts",
+    "line": 150,
+    "endpoint": "/api/v1/notifications${qs",
+    "fullLine": "const url = `/api/v1/notifications${qs ? `?${qs}` : ''}`;"
+  },
+  {
+    "file": "src/services/notificationService.ts",
+    "line": 159,
+    "endpoint": "/api/v1/notifications/${id}",
+    "fullLine": "return apiClient.get<BackendNotification>(`/api/v1/notifications/${id}`);"
+  },
+  {
+    "file": "src/services/notificationService.ts",
+    "line": 167,
+    "endpoint": "/api/v1/notifications/${id}/read",
+    "fullLine": "return apiClient.put<BackendNotification>(`/api/v1/notifications/${id}/read`);"
+  },
+  {
+    "file": "src/services/notificationService.ts",
+    "line": 175,
+    "endpoint": "/api/v1/notifications/${id}",
+    "fullLine": "return apiClient.delete<{ message: string }>(`/api/v1/notifications/${id}`);"
+  },
+  {
+    "file": "src/services/notificationService.ts",
+    "line": 194,
+    "endpoint": "/api/v1/notifications",
+    "fullLine": "return apiClient.post<BackendNotification>('/api/v1/notifications', {"
+  },
+  {
+    "file": "src/services/notificationService.ts",
+    "line": 211,
+    "endpoint": "/api/v1/cms/announcements${qs",
+    "fullLine": "const url = `/api/v1/cms/announcements${qs ? `?${qs}` : ''}`;"
+  },
+  {
+    "file": "src/services/notificationService.ts",
+    "line": 227,
+    "endpoint": "/api/v1/cms/announcements",
+    "fullLine": "return apiClient.post<BackendAnnouncement>('/api/v1/cms/announcements', {"
+  },
+  {
+    "file": "src/services/notificationService.ts",
+    "line": 242,
+    "endpoint": "/api/v1/cms/announcements/${id}",
+    "fullLine": "return apiClient.put<BackendAnnouncement>(`/api/v1/cms/announcements/${id}`, payload);"
+  },
+  {
+    "file": "src/services/notificationService.ts",
+    "line": 250,
+    "endpoint": "/api/v1/cms/announcements/${id}",
+    "fullLine": "return apiClient.delete<void>(`/api/v1/cms/announcements/${id}`);"
+  },
+  {
+    "file": "src/services/notificationService.ts",
+    "line": 278,
+    "endpoint": "/api/v1/support/tickets${qs",
+    "fullLine": "return apiClient.get<SupportTicketsResponse>(`/api/v1/support/tickets${qs ? `?${qs}` : ''}`);"
+  },
+  {
+    "file": "src/services/notificationService.ts",
+    "line": 286,
+    "endpoint": "/api/v1/support/tickets/${id}",
+    "fullLine": "return apiClient.get<SupportTicket>(`/api/v1/support/tickets/${id}`);"
+  },
+  {
+    "file": "src/services/notificationService.ts",
+    "line": 299,
+    "endpoint": "/api/v1/support/tickets",
+    "fullLine": "return apiClient.post<SupportTicket>('/api/v1/support/tickets', payload);"
+  },
+  {
+    "file": "src/services/notificationService.ts",
+    "line": 314,
+    "endpoint": "/api/v1/support/tickets/${id}",
+    "fullLine": "return apiClient.put<SupportTicket>(`/api/v1/support/tickets/${id}`, payload);"
+  },
+  {
+    "file": "src/services/notificationService.ts",
+    "line": 325,
+    "endpoint": "/api/v1/support/tickets/${id}/reply",
+    "fullLine": "return apiClient.post<SupportReply>(`/api/v1/support/tickets/${id}/reply`, { message });"
+  },
+  {
+    "file": "src/services/notificationService.ts",
+    "line": 333,
+    "endpoint": "/api/v1/support/tickets/${id}/replies",
+    "fullLine": "return apiClient.get<SupportReply[]>(`/api/v1/support/tickets/${id}/replies`);"
+  },
+  {
+    "file": "src/services/ocrReportService.ts",
+    "line": 67,
+    "endpoint": "/api/v1/ocr/dashboard",
+    "fullLine": "apiClient.get<any>('/api/v1/ocr/dashboard'),"
+  },
+  {
+    "file": "src/services/ocrReportService.ts",
+    "line": 68,
+    "endpoint": "/api/v1/ocr/statistics",
+    "fullLine": "apiClient.get<any>('/api/v1/ocr/statistics'),"
+  },
+  {
+    "file": "src/services/ocrReportService.ts",
+    "line": 69,
+    "endpoint": "/api/v1/admin/medical-records",
+    "fullLine": "apiClient.get<any[]>('/api/v1/admin/medical-records'),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 347,
+    "endpoint": "/api/v1/ocr/jobs",
+    "fullLine": "apiClient.get<any[]>('/api/v1/ocr/jobs?limit=100&page=1'),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 348,
+    "endpoint": "/api/v1/ocr/jobs",
+    "fullLine": "apiClient.get<any[]>('/api/v1/ocr/jobs?limit=100&page=2'),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 349,
+    "endpoint": "/api/v1/ocr/review",
+    "fullLine": "apiClient.get<any[]>('/api/v1/ocr/review'),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 350,
+    "endpoint": "/api/v1/ocr/reviews/history",
+    "fullLine": "apiClient.get<any[]>('/api/v1/ocr/reviews/history?limit=100'),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 351,
+    "endpoint": "/api/v1/admin/medical-records",
+    "fullLine": "apiClient.get<any[]>('/api/v1/admin/medical-records?limit=50'),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 466,
+    "endpoint": "/api/v1/ocr/dashboard",
+    "fullLine": "apiClient.get<any>('/api/v1/ocr/dashboard'),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 467,
+    "endpoint": "/api/v1/ocr/statistics",
+    "fullLine": "apiClient.get<any>('/api/v1/ocr/statistics'),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 468,
+    "endpoint": "/api/v1/ocr/review",
+    "fullLine": "apiClient.get<any[]>('/api/v1/ocr/review'),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 469,
+    "endpoint": "/api/v1/ocr/jobs",
+    "fullLine": "apiClient.get<any[]>('/api/v1/ocr/jobs'),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 568,
+    "endpoint": "/api/v1/ocr/dashboard",
+    "fullLine": "apiClient.get<any>('/api/v1/ocr/dashboard'),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 569,
+    "endpoint": "/api/v1/ocr/statistics",
+    "fullLine": "apiClient.get<any>('/api/v1/ocr/statistics'),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 570,
+    "endpoint": "/api/v1/ocr/jobs",
+    "fullLine": "apiClient.get<any>('/api/v1/ocr/jobs?limit=100&page=1'),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 571,
+    "endpoint": "/api/v1/ocr/jobs",
+    "fullLine": "apiClient.get<any>('/api/v1/ocr/jobs?limit=100&page=2'),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 572,
+    "endpoint": "/api/v1/ocr/reviews/history",
+    "fullLine": "apiClient.get<any>('/api/v1/ocr/reviews/history?limit=100'),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 791,
+    "endpoint": "/api/v1/ocr/jobs/${cleanId}",
+    "fullLine": "apiClient.get<any>(`/api/v1/ocr/jobs/${cleanId}`),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 792,
+    "endpoint": "/api/v1/ocr/jobs/${cleanId}/text",
+    "fullLine": "apiClient.get<any>(`/api/v1/ocr/jobs/${cleanId}/text`).catch(() => null),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 793,
+    "endpoint": "/api/v1/ocr/jobs/${cleanId}/fields",
+    "fullLine": "apiClient.get<any>(`/api/v1/ocr/jobs/${cleanId}/fields`).catch(() => null),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 794,
+    "endpoint": "/api/v1/admin/medical-records",
+    "fullLine": "apiClient.get<any[]>('/api/v1/admin/medical-records?limit=50').catch(() => null),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 795,
+    "endpoint": "/api/v1/ocr/reviews/history",
+    "fullLine": "apiClient.get<any[]>('/api/v1/ocr/reviews/history?limit=100').catch(() => null),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 831,
+    "endpoint": "/api/v1/attachments/${jobRes.data.medicalAttachmentId}/download-url",
+    "fullLine": "const dlRes = await apiClient.get<any>(`/api/v1/attachments/${jobRes.data.medicalAttachmentId}/download-url`);"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 932,
+    "endpoint": "/api/v1/ocr/review/${cleanId}",
+    "fullLine": "const res = await apiClient.post(`/api/v1/ocr/review/${cleanId}`, {"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 971,
+    "endpoint": "/api/v1/ocr/review/${cleanId}",
+    "fullLine": "const res = await apiClient.post(`/api/v1/ocr/review/${cleanId}`, {"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 1003,
+    "endpoint": "/api/v1/ocr/reprocess/${cleanId}",
+    "fullLine": "const res = await apiClient.post(`/api/v1/ocr/reprocess/${cleanId}`, {});"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 1069,
+    "endpoint": "/api/v1/ocr/jobs",
+    "fullLine": "apiClient.get<any[]>('/api/v1/ocr/jobs?limit=100&page=1'),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 1070,
+    "endpoint": "/api/v1/ocr/jobs",
+    "fullLine": "apiClient.get<any[]>('/api/v1/ocr/jobs?limit=100&page=2'),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 1071,
+    "endpoint": "/api/v1/ocr/reviews/history",
+    "fullLine": "apiClient.get<any[]>('/api/v1/ocr/reviews/history?limit=100'),"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 1161,
+    "endpoint": "/api/v1/ocr/reprocess/${cleanId}",
+    "fullLine": "const res = await apiClient.post(`/api/v1/ocr/reprocess/${cleanId}`, {});"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 1197,
+    "endpoint": "/api/v1/ocr/reprocess/${cleanId}",
+    "fullLine": "const res = await apiClient.post(`/api/v1/ocr/reprocess/${cleanId}`, {});"
+  },
+  {
+    "file": "src/services/ocrService.ts",
+    "line": 1248,
+    "endpoint": "/api/v1/ocr/reviews/history${queryString}",
+    "fullLine": "const res = await apiClient.get<any>(`/api/v1/ocr/reviews/history${queryString}`);"
+  },
+  {
+    "file": "src/services/patientService.ts",
+    "line": 349,
+    "endpoint": "/api/v1/admin/users",
+    "fullLine": "apiClient.get<any>('/api/v1/admin/users?limit=100'),"
+  },
+  {
+    "file": "src/services/patientService.ts",
+    "line": 350,
+    "endpoint": "/api/v1/admin/dashboard/summary",
+    "fullLine": "apiClient.get<any>('/api/v1/admin/dashboard/summary').catch(() => null),"
+  },
+  {
+    "file": "src/services/patientService.ts",
+    "line": 380,
+    "endpoint": "/api/v1/admin/patients/${encodeURIComponent(id)}",
+    "fullLine": "apiClient.get<any>(`/api/v1/admin/patients/${encodeURIComponent(id)}`)"
+  },
+  {
+    "file": "src/services/patientService.ts",
+    "line": 521,
+    "endpoint": "/api/v1/admin/patients/${encodeURIComponent(id)}",
+    "fullLine": "const profRes = await apiClient.get<any>(`/api/v1/admin/patients/${encodeURIComponent(id)}`);"
+  },
+  {
+    "file": "src/services/patientService.ts",
+    "line": 541,
+    "endpoint": "/api/v1/admin/users",
+    "fullLine": "const usersRes = await apiClient.get<any>('/api/v1/admin/users?limit=100');"
+  },
+  {
+    "file": "src/services/patientService.ts",
+    "line": 560,
+    "endpoint": "/api/v1/admin/users/${encodeURIComponent(id)}",
+    "fullLine": "const singleUserRes = await apiClient.get<any>(`/api/v1/admin/users/${encodeURIComponent(id)}`);"
+  },
+  {
+    "file": "src/services/patientService.ts",
+    "line": 584,
+    "endpoint": "/api/v1/admin/medical-records",
+    "fullLine": "`/api/v1/admin/medical-records?patientProfileId=${encodeURIComponent(targetProfileId)}`"
+  },
+  {
+    "file": "src/services/patientService.ts",
+    "line": 647,
+    "endpoint": "/api/v1/admin/users",
+    "fullLine": "cleanQ.length >= 2 ? `/api/v1/admin/users?q=${encodeURIComponent(query.trim())}&limit=100` : '/api/v1/admin/users?limit=100'"
+  },
+  {
+    "file": "src/services/patientService.ts",
+    "line": 787,
+    "endpoint": "/api/v1/admin/patients/${encodeURIComponent(patientId)}",
+    "fullLine": "const patRes = await apiClient.get<any>(`/api/v1/admin/patients/${encodeURIComponent(patientId)}`).catch(() => null);"
+  },
+  {
+    "file": "src/services/patientService.ts",
+    "line": 791,
+    "endpoint": "/api/v1/admin/users",
+    "fullLine": "const usersRes = await apiClient.get<any>('/api/v1/admin/users?limit=100').catch(() => null);"
+  },
+  {
+    "file": "src/services/patientService.ts",
+    "line": 800,
+    "endpoint": "/api/v1/admin/users/${encodeURIComponent(resolvedUserId)}/status",
+    "fullLine": "const res = await apiClient.put(`/api/v1/admin/users/${encodeURIComponent(resolvedUserId)}/status`, {"
+  },
+  {
+    "file": "src/services/patientService.ts",
+    "line": 819,
+    "endpoint": "/api/v1/admin/patients/${payload.id}",
+    "fullLine": "const patRes = await apiClient.get<any>(`/api/v1/admin/patients/${payload.id}`);"
+  },
+  {
+    "file": "src/services/patientService.ts",
+    "line": 844,
+    "endpoint": "/api/v1/admin/patients/${payload.id}",
+    "fullLine": "const res = await apiClient.put<any>(`/api/v1/admin/patients/${payload.id}`, updateBody);"
+  },
+  {
+    "file": "src/services/patientService.ts",
+    "line": 944,
+    "endpoint": "/api/v1/admin/users",
+    "fullLine": "const res = await apiClient.post<any>('/api/v1/admin/users', reqBody);"
+  },
+  {
+    "file": "src/services/referralReportService.ts",
+    "line": 71,
+    "endpoint": "/api/v1/referrals/dashboard/stats",
+    "fullLine": "apiClient.get<any>(`/api/v1/referrals/dashboard/stats`),"
+  },
+  {
+    "file": "src/services/referralReportService.ts",
+    "line": 72,
+    "endpoint": "/api/v1/facilities",
+    "fullLine": "apiClient.get<any>(`/api/v1/facilities`),"
+  },
+  {
+    "file": "src/services/referralReportService.ts",
+    "line": 73,
+    "endpoint": "/api/v1/doctors",
+    "fullLine": "apiClient.get<any>(`/api/v1/doctors`),"
+  },
+  {
+    "file": "src/services/referralService.ts",
+    "line": 390,
+    "endpoint": "/api/v1/referrals",
+    "fullLine": "const res = await apiClient.post<any>('/api/v1/referrals', payload);"
+  },
+  {
+    "file": "src/services/referralService.ts",
+    "line": 403,
+    "endpoint": "/api/v1/referrals/dashboard/stats${qs}",
+    "fullLine": "const res = await apiClient.get<any>(`/api/v1/referrals/dashboard/stats${qs}`);"
+  },
+  {
+    "file": "src/services/referralService.ts",
+    "line": 526,
+    "endpoint": "/api/v1/referrals",
+    "fullLine": "const endpoint = `/api/v1/referrals?${queryParams.toString()}`;"
+  },
+  {
+    "file": "src/services/referralService.ts",
+    "line": 603,
+    "endpoint": "/api/v1/referrals",
+    "fullLine": "const endpoint = `/api/v1/referrals?${queryParams.toString()}`;"
+  },
+  {
+    "file": "src/services/referralService.ts",
+    "line": 656,
+    "endpoint": "/api/v1/referrals",
+    "fullLine": "const searchRes = await apiClient.get<any>(`/api/v1/referrals?q=${encodeURIComponent(clean)}`);"
+  },
+  {
+    "file": "src/services/referralService.ts",
+    "line": 674,
+    "endpoint": "/api/v1/referrals",
+    "fullLine": "const listRes = await apiClient.get<any>('/api/v1/referrals?limit=100');"
+  },
+  {
+    "file": "src/services/referralService.ts",
+    "line": 711,
+    "endpoint": "/api/v1/referrals/${resolvedId}",
+    "fullLine": "const res = await apiClient.get<any>(`/api/v1/referrals/${resolvedId}`);"
+  },
+  {
+    "file": "src/services/referralService.ts",
+    "line": 743,
+    "endpoint": "/api/v1/referrals/my-incoming",
+    "fullLine": "const res = await apiClient.get<any>('/api/v1/referrals/my-incoming');"
+  },
+  {
+    "file": "src/services/referralService.ts",
+    "line": 761,
+    "endpoint": "/api/v1/referrals/my-outgoing",
+    "fullLine": "const res = await apiClient.get<any>('/api/v1/referrals/my-outgoing');"
+  },
+  {
+    "file": "src/services/referralService.ts",
+    "line": 780,
+    "endpoint": "/api/v1/referrals/${cleanId}/notes",
+    "fullLine": "const res = await apiClient.get<any>(`/api/v1/referrals/${cleanId}/notes`);"
+  },
+  {
+    "file": "src/services/referralService.ts",
+    "line": 801,
+    "endpoint": "/api/v1/referrals/${cleanId}/history",
+    "fullLine": "const res = await apiClient.get<any>(`/api/v1/referrals/${cleanId}/history`);"
+  },
+  {
+    "file": "src/services/referralService.ts",
+    "line": 823,
+    "endpoint": "/api/v1/referrals/${cleanId}/attachments",
+    "fullLine": "const res = await apiClient.get<any>(`/api/v1/referrals/${cleanId}/attachments`);"
+  },
+  {
+    "file": "src/services/referralService.ts",
+    "line": 849,
+    "endpoint": "/api/v1/referrals/${cleanId}/triage",
+    "fullLine": "return apiClient.put(`/api/v1/referrals/${cleanId}/triage`, payload);"
+  },
+  {
+    "file": "src/services/referralService.ts",
+    "line": 860,
+    "endpoint": "/api/v1/referrals/${cleanId}/status",
+    "fullLine": "return apiClient.put(`/api/v1/referrals/${cleanId}/status`, payload);"
+  },
+  {
+    "file": "src/services/referralService.ts",
+    "line": 871,
+    "endpoint": "/api/v1/referrals/${cleanId}/notes",
+    "fullLine": "return apiClient.post(`/api/v1/referrals/${cleanId}/notes`, payload);"
+  },
+  {
+    "file": "src/services/referralService.ts",
+    "line": 882,
+    "endpoint": "/api/v1/referrals/${cleanId}/attachments",
+    "fullLine": "return apiClient.post(`/api/v1/referrals/${cleanId}/attachments`, { attachmentId });"
+  },
+  {
+    "file": "src/services/referralService.ts",
+    "line": 890,
+    "endpoint": "/api/v1/referrals/${cleanId}",
+    "fullLine": "return apiClient.del(`/api/v1/referrals/${cleanId}`);"
+  },
+  {
+    "file": "src/services/referralService.ts",
+    "line": 916,
+    "endpoint": "/api/v1/admin/audit-logs",
+    "fullLine": "const res = await apiClient.get<any[]>('/api/v1/admin/audit-logs');"
+  },
+  {
+    "file": "src/services/reportService.ts",
+    "line": 154,
+    "endpoint": "/api/v1/admin/users",
+    "fullLine": "const res = await apiClient.get<any>('/api/v1/admin/users');"
+  },
+  {
+    "file": "src/services/reportService.ts",
+    "line": 234,
+    "endpoint": "/api/v1/reports/dashboard/executive${execQueryString}",
+    "fullLine": "apiClient.get<any>(`/api/v1/reports/dashboard/executive${execQueryString}`).catch(() => null),"
+  },
+  {
+    "file": "src/services/reportService.ts",
+    "line": 235,
+    "endpoint": "/api/v1/admin/dashboard/stats",
+    "fullLine": "apiClient.get<any>('/api/v1/admin/dashboard/stats').catch(() => null),"
+  },
+  {
+    "file": "src/services/reportService.ts",
+    "line": 236,
+    "endpoint": "/api/v1/live",
+    "fullLine": "apiClient.get<any>('/api/v1/live', { requiresAuth: false }).catch(() => null),"
+  },
+  {
+    "file": "src/services/reportService.ts",
+    "line": 237,
+    "endpoint": "/api/v1/admin/medical-records${recordsAllQueryString}",
+    "fullLine": "apiClient.get<any>(`/api/v1/admin/medical-records${recordsAllQueryString}`).catch(() => null),"
+  },
+  {
+    "file": "src/services/reportService.ts",
+    "line": 238,
+    "endpoint": "/api/v1/admin/medical-records${recordsTimeQueryString}",
+    "fullLine": "apiClient.get<any>(`/api/v1/admin/medical-records${recordsTimeQueryString}`).catch(() => null),"
+  },
+  {
+    "file": "src/services/reportService.ts",
+    "line": 239,
+    "endpoint": "/api/v1/doctors",
+    "fullLine": "apiClient.get<any>('/api/v1/doctors?limit=50').catch(() => null),"
+  },
+  {
+    "file": "src/services/reportService.ts",
+    "line": 241,
+    "endpoint": "/api/v1/facilities/${matchedFacility.id}/doctors",
+    "fullLine": "? apiClient.get<any>(`/api/v1/facilities/${matchedFacility.id}/doctors`).catch(() => null)"
+  },
+  {
+    "file": "src/services/reportService.ts",
+    "line": 426,
+    "endpoint": "/api/v1/facilities",
+    "fullLine": "const res = await apiClient.get<any>('/api/v1/facilities');"
+  },
+  {
+    "file": "src/services/reportService.ts",
+    "line": 451,
+    "endpoint": "/api/v1/reports/analytics/modules/${moduleName}",
+    "fullLine": "const res = await apiClient.get<any>(`/api/v1/reports/analytics/modules/${moduleName}`);"
+  },
+  {
+    "file": "src/services/securityService.ts",
+    "line": 109,
+    "endpoint": "/api/v1/auth/me",
+    "fullLine": "const meRes = await apiClient.get<any>('/api/v1/auth/me');"
+  },
+  {
+    "file": "src/services/securityService.ts",
+    "line": 124,
+    "endpoint": "/api/v1/admin/users/${me.id}",
+    "fullLine": "const userRes = await apiClient.get<any>(`/api/v1/admin/users/${me.id}`);"
+  },
+  {
+    "file": "src/services/securityService.ts",
+    "line": 131,
+    "endpoint": "/api/v1/doctors/${doctorProfileId}",
+    "fullLine": "const docRes = await apiClient.get<any>(`/api/v1/doctors/${doctorProfileId}`);"
+  },
+  {
+    "file": "src/services/securityService.ts",
+    "line": 173,
+    "endpoint": "/api/v1/security/dashboard",
+    "fullLine": "return apiClient.get<SecurityDashboardData>('/api/v1/security/dashboard');"
+  },
+  {
+    "file": "src/services/securityService.ts",
+    "line": 188,
+    "endpoint": "/api/v1/security/incidents${qs",
+    "fullLine": "const url = `/api/v1/security/incidents${qs ? `?${qs}` : ''}`;"
+  },
+  {
+    "file": "src/services/securityService.ts",
+    "line": 200,
+    "endpoint": "/api/v1/security/incidents",
+    "fullLine": "return apiClient.post<SecurityIncident>('/api/v1/security/incidents', payload);"
+  },
+  {
+    "file": "src/services/securityService.ts",
+    "line": 210,
+    "endpoint": "/api/v1/security/incidents/${id}/resolve",
+    "fullLine": "return apiClient.put<SecurityIncident>(`/api/v1/security/incidents/${id}/resolve`, payload);"
+  },
+  {
+    "file": "src/services/securityService.ts",
+    "line": 217,
+    "endpoint": "/api/v1/security/keys/active",
+    "fullLine": "return apiClient.get<KmsKeyMetadata>('/api/v1/security/keys/active');"
+  },
+  {
+    "file": "src/services/securityService.ts",
+    "line": 224,
+    "endpoint": "/api/v1/security/keys/rotate",
+    "fullLine": "return apiClient.post<KmsKeyMetadata>('/api/v1/security/keys/rotate', payload || {});"
+  },
+  {
+    "file": "src/services/securityService.ts",
+    "line": 235,
+    "endpoint": "/api/v1/security/compliance/report",
+    "fullLine": "return apiClient.post<ComplianceReport>('/api/v1/security/compliance/report', payload);"
+  },
+  {
+    "file": "src/services/securityService.ts",
+    "line": 242,
+    "endpoint": "/api/v1/security/compliance/reports",
+    "fullLine": "return apiClient.get<ComplianceReport[]>('/api/v1/security/compliance/reports');"
+  },
+  {
+    "file": "src/services/securityService.ts",
+    "line": 249,
+    "endpoint": "/api/v1/auth/sessions",
+    "fullLine": "return apiClient.get<UserSessionData[]>('/api/v1/auth/sessions');"
+  },
+  {
+    "file": "src/services/securityService.ts",
+    "line": 256,
+    "endpoint": "/api/v1/auth/sessions/${sessionId}",
+    "fullLine": "return apiClient.delete<void>(`/api/v1/auth/sessions/${sessionId}`);"
+  },
+  {
+    "file": "src/services/securityService.ts",
+    "line": 263,
+    "endpoint": "/api/v1/auth/sessions",
+    "fullLine": "return apiClient.delete<void>('/api/v1/auth/sessions');"
+  },
+  {
+    "file": "src/services/securityService.ts",
+    "line": 278,
+    "endpoint": "/api/v1/security/audit${qs",
+    "fullLine": "const url = `/api/v1/security/audit${qs ? `?${qs}` : ''}`;"
+  },
+  {
+    "file": "src/services/securityService.ts",
+    "line": 291,
+    "endpoint": "/api/v1/admin/audit-logs${qs",
+    "fullLine": "const url = `/api/v1/admin/audit-logs${qs ? `?${qs}` : ''}`;"
+  },
+  {
+    "file": "src/services/systemHealthService.ts",
+    "line": 87,
+    "endpoint": "/api/v1/observability/health",
+    "fullLine": "apiClient.get<any>('/api/v1/observability/health'),"
+  },
+  {
+    "file": "src/services/systemHealthService.ts",
+    "line": 88,
+    "endpoint": "/api/v1/observability/performance",
+    "fullLine": "apiClient.get<any>('/api/v1/observability/performance'),"
+  },
+  {
+    "file": "src/services/systemHealthService.ts",
+    "line": 89,
+    "endpoint": "/api/v1/observability/statistics",
+    "fullLine": "apiClient.get<any>('/api/v1/observability/statistics'),"
+  },
+  {
+    "file": "src/services/systemHealthService.ts",
+    "line": 90,
+    "endpoint": "/api/v1/live",
+    "fullLine": "apiClient.get<any>('/api/v1/live', { requiresAuth: false }),"
+  },
+  {
+    "file": "src/services/systemHealthService.ts",
+    "line": 91,
+    "endpoint": "/api/v1/ocr/dashboard",
+    "fullLine": "apiClient.get<any>('/api/v1/ocr/dashboard'),"
+  },
+  {
+    "file": "src/services/systemHealthService.ts",
+    "line": 166,
+    "endpoint": "/api/v1/reports/generated",
+    "fullLine": "const res = await apiClient.get<any>('/api/v1/reports/generated');"
+  },
+  {
+    "file": "src/services/systemHealthService.ts",
+    "line": 194,
+    "endpoint": "/api/v1/reports/generate",
+    "fullLine": "const genRes = await apiClient.post<any>('/api/v1/reports/generate', {"
+  },
+  {
+    "file": "src/services/systemHealthService.ts",
+    "line": 211,
+    "endpoint": "/api/v1/reports/generated/${reportId}/export",
+    "fullLine": "`/api/v1/reports/generated/${reportId}/export?format=${apiFormat}`"
+  },
+  {
+    "file": "src/services/systemSettingsService.ts",
+    "line": 138,
+    "endpoint": "/api/v1/admin/settings${query}",
+    "fullLine": "const response = await apiClient.get<SystemSettingItem[]>(`/api/v1/admin/settings${query}`);"
+  },
+  {
+    "file": "src/services/systemSettingsService.ts",
+    "line": 159,
+    "endpoint": "/api/v1/admin/settings",
+    "fullLine": "return apiClient.put<SystemSettingItem>('/api/v1/admin/settings', body);"
+  },
+  {
+    "file": "src/services/systemSettingsService.ts",
+    "line": 196,
+    "endpoint": "/api/v1/admin/organizations",
+    "fullLine": "const response = await apiClient.get<OrganizationProfile[]>('/api/v1/admin/organizations');"
+  },
+  {
+    "file": "src/services/systemSettingsService.ts",
+    "line": 229,
+    "endpoint": "/api/v1/admin/organizations",
+    "fullLine": "const createRes = await apiClient.post<OrganizationProfile>('/api/v1/admin/organizations', defaultOrg);"
+  },
+  {
+    "file": "src/services/systemSettingsService.ts",
+    "line": 244,
+    "endpoint": "/api/v1/admin/organizations/${orgId}",
+    "fullLine": "return apiClient.put<OrganizationProfile>(`/api/v1/admin/organizations/${orgId}`, payload);"
+  },
+  {
+    "file": "src/services/systemSettingsService.ts",
+    "line": 252,
+    "endpoint": "/api/v1/admin/roles",
+    "fullLine": "const response = await apiClient.get<RbacRole[]>('/api/v1/admin/roles');"
+  },
+  {
+    "file": "src/services/systemSettingsService.ts",
+    "line": 264,
+    "endpoint": "/api/v1/admin/permission-matrix",
+    "fullLine": "const response = await apiClient.get<PermissionMatrixData>('/api/v1/admin/permission-matrix');"
+  },
+  {
+    "file": "src/services/systemSettingsService.ts",
+    "line": 279,
+    "endpoint": "/api/v1/admin/roles/${roleId}/permissions",
+    "fullLine": "return apiClient.put(`/api/v1/admin/roles/${roleId}/permissions`, {"
+  },
+  {
+    "file": "src/services/systemSettingsService.ts",
+    "line": 289,
+    "endpoint": "/api/v1/security/dashboard",
+    "fullLine": "const response = await apiClient.get<SecurityDashboardData>('/api/v1/security/dashboard');"
+  },
+  {
+    "file": "src/services/systemSettingsService.ts",
+    "line": 301,
+    "endpoint": "/api/v1/governance/maintenance",
+    "fullLine": "const response = await apiClient.get<MaintenanceStatusData>('/api/v1/governance/maintenance');"
+  },
+  {
+    "file": "src/services/systemSettingsService.ts",
+    "line": 313,
+    "endpoint": "/api/v1/notifications",
+    "fullLine": "const response = await apiClient.get<any[]>('/api/v1/notifications');"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 380,
+    "endpoint": "/api/v1/admin/users",
+    "fullLine": "apiClient.get<any>(`/api/v1/admin/users?${queryParams.toString()}`),"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 381,
+    "endpoint": "/api/v1/admin/patients",
+    "fullLine": "apiClient.get<any[]>('/api/v1/admin/patients?limit=100').catch(() => ({ success: false, data: [] })),"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 382,
+    "endpoint": "/api/v1/doctors",
+    "fullLine": "apiClient.get<any[]>('/api/v1/doctors?limit=100').catch(() => ({ success: false, data: [] })),"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 383,
+    "endpoint": "/api/v1/staff",
+    "fullLine": "apiClient.get<any[]>('/api/v1/staff?limit=100').catch(() => ({ success: false, data: [] })),"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 524,
+    "endpoint": "/api/v1/admin/users/${id}",
+    "fullLine": "const response = await apiClient.get<BackendUser>(`/api/v1/admin/users/${id}`);"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 532,
+    "endpoint": "/api/v1/admin/users",
+    "fullLine": "const listRes = await apiClient.get<BackendUser[]>('/api/v1/admin/users');"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 547,
+    "endpoint": "/api/v1/admin/patients/${backendUser.patientProfileId}",
+    "fullLine": ".get(`/api/v1/admin/patients/${backendUser.patientProfileId}`)"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 553,
+    "endpoint": "/api/v1/admin/patients",
+    "fullLine": "const pList = await apiClient.get<any[]>('/api/v1/admin/patients?limit=100').catch(() => null);"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 567,
+    "endpoint": "/api/v1/doctors/${backendUser.doctorProfileId}",
+    "fullLine": ".get(`/api/v1/doctors/${backendUser.doctorProfileId}`)"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 572,
+    "endpoint": "/api/v1/doctors",
+    "fullLine": "const dList = await apiClient.get<any[]>('/api/v1/doctors?limit=100').catch(() => null);"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 586,
+    "endpoint": "/api/v1/staff/${backendUser.staffMemberId}",
+    "fullLine": ".get(`/api/v1/staff/${backendUser.staffMemberId}`)"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 591,
+    "endpoint": "/api/v1/staff",
+    "fullLine": "const sList = await apiClient.get<any[]>('/api/v1/staff?limit=100').catch(() => null);"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 610,
+    "endpoint": "/api/v1/admin/roles",
+    "fullLine": "const response = await apiClient.get<BackendRoleItem[]>('/api/v1/admin/roles');"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 624,
+    "endpoint": "/api/v1/admin/users/${id}/status",
+    "fullLine": "const response = await apiClient.put<BackendUser>(`/api/v1/admin/users/${id}/status`, {"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 651,
+    "endpoint": "/api/v1/admin/users/${id}/roles",
+    "fullLine": "const response = await apiClient.put<BackendUser>(`/api/v1/admin/users/${id}/roles`, {"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 666,
+    "endpoint": "/api/v1/admin/users/${id}",
+    "fullLine": "const response = await apiClient.del(`/api/v1/admin/users/${id}`);"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 676,
+    "endpoint": "/api/v1/admin/users/${id}/restore",
+    "fullLine": "const response = await apiClient.post<BackendUser>(`/api/v1/admin/users/${id}/restore`);"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 727,
+    "endpoint": "/api/v1/admin/users",
+    "fullLine": "const response = await apiClient.post<BackendUser>('/api/v1/admin/users', backendBody);"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 740,
+    "endpoint": "/api/v1/facilities",
+    "fullLine": "const facRes = await apiClient.get<any[]>('/api/v1/facilities?limit=5');"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 756,
+    "endpoint": "/api/v1/staff",
+    "fullLine": "await apiClient.post('/api/v1/staff', {"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 786,
+    "endpoint": "/api/v1/admin/users/${userId}/reset-password",
+    "fullLine": "`/api/v1/admin/users/${userId}/reset-password`,"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 808,
+    "endpoint": "/api/v1/auth/sessions",
+    "fullLine": "const res = await apiClient.get<UserSessionItem[]>('/api/v1/auth/sessions');"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 816,
+    "endpoint": "/api/v1/auth/sessions/${sessionId}",
+    "fullLine": "const res = await apiClient.del(`/api/v1/auth/sessions/${sessionId}`);"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 823,
+    "endpoint": "/api/v1/auth/sessions",
+    "fullLine": "const res = await apiClient.del('/api/v1/auth/sessions');"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 843,
+    "endpoint": "/api/v1/admin/audit-logs",
+    "fullLine": "? `/api/v1/admin/audit-logs?userId=${encodeURIComponent(userId)}&limit=20`"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 844,
+    "endpoint": "/api/v1/admin/audit-logs",
+    "fullLine": ": '/api/v1/admin/audit-logs?limit=20';"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 857,
+    "endpoint": "/api/v1/admin/users",
+    "fullLine": "const usersRes = await apiClient.get<any>('/api/v1/admin/users?limit=100');"
+  },
+  {
+    "file": "src/services/userService.ts",
+    "line": 892,
+    "endpoint": "/api/v1/admin/users/${data.id}",
+    "fullLine": "const res = await apiClient.put<BackendUser>(`/api/v1/admin/users/${data.id}`, payload);"
+  }
+]

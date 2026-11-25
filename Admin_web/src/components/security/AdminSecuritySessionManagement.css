@@ -1,0 +1,996 @@
+/* ==========================================================================
+   CareID Admin Portal — Security & Session Management (Figma Node ID: 20:9632)
+   ========================================================================== */
+
+.sec-session-page-wrapper {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  background-color: #f8f9fb;
+  color: #191c1e;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Offset for fixed 280px sidebar on Desktop */
+.sec-session-page-main {
+  flex: 1 1 0%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #f8f9fb;
+  transition: margin-left 0.2s ease-in-out;
+}
+
+@media (min-width: 1024px) {
+  .sec-session-page-main {
+    margin-left: 280px;
+  }
+}
+
+/* 1. Header - TopNavBar (64px, Node 20:9856) */
+.sec-session-navbar {
+  height: 64px;
+  background-color: #f8f9fb;
+  border-bottom: 1px solid #cbc4d4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(8px);
+}
+
+.sec-session-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  max-width: 680px;
+}
+
+.sec-session-mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #191c1e;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.sec-session-mobile-menu-btn:hover {
+  background-color: #edeef0;
+}
+
+@media (max-width: 1023px) {
+  .sec-session-mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.sec-session-page-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #28006d;
+  line-height: 1.2;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+.sec-session-search-wrapper {
+  position: relative;
+  flex: 1;
+  max-width: 440px;
+}
+
+.sec-session-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  pointer-events: none;
+}
+
+.sec-session-search-input {
+  width: 100%;
+  height: 38px;
+  background-color: #f2f4f6;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  padding: 0 16px 0 38px;
+  font-size: 13px;
+  color: #191c1e;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.sec-session-search-input:focus {
+  background-color: #ffffff;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
+}
+
+.sec-session-search-input::placeholder {
+  color: #6b7280;
+}
+
+/* Nav Right Actions */
+.sec-session-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sec-session-status-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #85f6e5;
+  color: #007166;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.sec-session-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: #494552;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.sec-session-icon-btn:hover {
+  background-color: #edeef0;
+  color: #191c1e;
+}
+
+.sec-session-avatar-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  border: 2px solid #e2e8f0;
+  background: #ffffff;
+  cursor: pointer;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.sec-session-avatar-btn:hover {
+  border-color: #7c3aed;
+  transform: scale(1.05);
+}
+
+.sec-session-avatar-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+/* 2. Main Content Canvas (Node 20:9634) */
+.sec-session-content-canvas {
+  flex: 1;
+  padding: 32px;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (max-width: 768px) {
+  .sec-session-content-canvas {
+    padding: 20px 16px;
+    gap: 24px;
+  }
+}
+
+/* Breadcrumb Navigation */
+.sec-session-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #7a7583;
+}
+
+.sec-session-breadcrumb-link {
+  color: #7a7583;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.sec-session-breadcrumb-link:hover {
+  color: #28006d;
+}
+
+.sec-session-breadcrumb-current {
+  color: #28006d;
+  font-weight: 600;
+}
+
+/* Bento Grid Section: Security Controls & Permission Matrix (Node 20:9635) */
+.sec-session-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .sec-session-bento-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.sec-session-col-controls {
+  grid-column: span 5 / span 5;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .sec-session-col-controls {
+    grid-column: span 1 / span 1;
+  }
+}
+
+.sec-session-col-permissions {
+  grid-column: span 7 / span 7;
+}
+
+@media (max-width: 1024px) {
+  .sec-session-col-permissions {
+    grid-column: span 1 / span 1;
+  }
+}
+
+/* White Card Style with Node Tokens */
+.sec-session-card {
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 20px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  position: relative;
+}
+
+.sec-session-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.sec-session-card-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sec-session-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #191c1e;
+  line-height: 24px;
+}
+
+/* Security Controls Form */
+.sec-session-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sec-session-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sec-session-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #494552;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.sec-session-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sec-session-input {
+  width: 100%;
+  height: 46px;
+  background-color: #ffffff;
+  border: 1px solid #7a7583;
+  border-radius: 8px;
+  padding: 0 40px 0 16px;
+  font-size: 14px;
+  color: #191c1e;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.sec-session-input:focus {
+  border-color: #3f1d8b;
+  box-shadow: 0 0 0 3px rgba(63, 29, 139, 0.12);
+}
+
+.sec-session-input::placeholder {
+  color: #6b7280;
+}
+
+.sec-session-input-toggle {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.sec-session-input-toggle:hover {
+  color: #191c1e;
+}
+
+.sec-session-passwords-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 480px) {
+  .sec-session-passwords-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sec-session-btn-update {
+  width: 100%;
+  background-color: #3f1d8b;
+  color: #ab8efd;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  padding: 12px 20px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.sec-session-btn-update:hover {
+  background-color: #311570;
+  color: #cbb4ff;
+}
+
+.sec-session-btn-update:active {
+  transform: scale(0.99);
+}
+
+/* 2FA Section */
+.sec-session-2fa-section {
+  border-top: 1px solid #cbc4d4;
+  padding-top: 24px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sec-session-2fa-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sec-session-2fa-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #191c1e;
+  line-height: 24px;
+}
+
+.sec-session-2fa-desc {
+  font-size: 12px;
+  font-weight: 400;
+  color: #494552;
+  line-height: 16px;
+}
+
+.sec-session-badge-enabled {
+  background-color: #85f6e5;
+  color: #007166;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.sec-session-btn-configure-2fa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: #28006d;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: color 0.15s ease;
+}
+
+.sec-session-btn-configure-2fa:hover {
+  color: #5b14b8;
+  text-decoration: underline;
+}
+
+/* Informational Box: Vault Compliance (Node 20:9674) */
+.sec-session-compliance-box {
+  background-color: rgba(40, 0, 109, 0.05);
+  border: 1px solid rgba(40, 0, 109, 0.1);
+  border-radius: 20px;
+  padding: 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sec-session-compliance-watermark {
+  position: absolute;
+  right: -10px;
+  bottom: -16px;
+  width: 80px;
+  height: 100px;
+  color: rgba(40, 0, 109, 0.08);
+  pointer-events: none;
+}
+
+.sec-session-compliance-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #28006d;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+
+.sec-session-compliance-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #494552;
+  line-height: 20px;
+  max-width: 90%;
+}
+
+/* Permission Matrix Table (Node 20:9683) */
+.sec-session-role-pill {
+  background-color: #4f319c;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  padding: 4px 16px;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.sec-session-table-container {
+  overflow-x: auto;
+  margin-bottom: 24px;
+  border-radius: 8px;
+}
+
+.sec-session-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+}
+
+.sec-session-th {
+  background-color: #f2f4f6;
+  padding: 12px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #494552;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+}
+
+.sec-session-th:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.sec-session-th:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.sec-session-th.center,
+.sec-session-td.center {
+  text-align: center;
+}
+
+.sec-session-tr {
+  border-top: 1px solid #cbc4d4;
+  transition: background-color 0.15s ease;
+}
+
+.sec-session-tr:hover {
+  background-color: rgba(40, 0, 109, 0.02);
+}
+
+.sec-session-td {
+  padding: 16px;
+  border-top: 1px solid #cbc4d4;
+  vertical-align: middle;
+}
+
+.sec-session-module-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #191c1e;
+  line-height: 20px;
+}
+
+.sec-session-check-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #007166;
+}
+
+.sec-session-dash-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #7a7583;
+  opacity: 0.35;
+}
+
+.sec-session-action-tag {
+  font-size: 12px;
+  font-weight: 400;
+  color: #494552;
+  white-space: nowrap;
+}
+
+/* Enterprise Security Notice Box (Node 20:9773) */
+.sec-session-notice-box {
+  background-color: rgba(72, 52, 0, 0.08);
+  border: 1px solid rgba(72, 52, 0, 0.2);
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sec-session-notice-icon {
+  color: #cb9900;
+  flex-shrink: 0;
+}
+
+.sec-session-notice-text {
+  font-size: 12px;
+  font-weight: 400;
+  color: #8c6b00;
+  line-height: 16px;
+}
+
+/* Section 3: Active Sessions (Node 20:9778) */
+.sec-session-sessions-card {
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+  border-radius: 20px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+}
+
+.sec-session-btn-logout-all {
+  background-color: #ba1a1a;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  padding: 8px 24px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.15s ease, transform 0.1s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sec-session-btn-logout-all:hover {
+  background-color: #961212;
+}
+
+.sec-session-btn-logout-all:active {
+  transform: scale(0.98);
+}
+
+.sec-session-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Session Item */
+.sec-session-item {
+  border-radius: 12px;
+  padding: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  transition: all 0.15s ease;
+}
+
+@media (max-width: 640px) {
+  .sec-session-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.sec-session-item.current {
+  background-color: rgba(40, 0, 109, 0.05);
+  border: 1px solid rgba(40, 0, 109, 0.2);
+}
+
+.sec-session-item.other {
+  background-color: #ffffff;
+  border: 1px solid #cbc4d4;
+}
+
+.sec-session-item.other:hover {
+  border-color: #a44cff;
+}
+
+.sec-session-item-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.sec-session-device-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sec-session-item.current .sec-session-device-icon-wrap {
+  background-color: #ffffff;
+  border: 1px solid rgba(40, 0, 109, 0.2);
+  color: #28006d;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.sec-session-item.other .sec-session-device-icon-wrap {
+  background-color: #edeef0;
+  border: 1px solid #cbc4d4;
+  color: #494552;
+}
+
+.sec-session-device-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sec-session-device-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sec-session-device-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #191c1e;
+  line-height: 24px;
+}
+
+.sec-session-badge-active {
+  background-color: #85f6e5;
+  color: #007166;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 15px;
+}
+
+.sec-session-details-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.sec-session-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #494552;
+  line-height: 16px;
+}
+
+/* End Session Button */
+.sec-session-btn-end {
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.sec-session-btn-end.danger {
+  border: 1px solid rgba(186, 26, 26, 0.3);
+  color: #ba1a1a;
+}
+
+.sec-session-btn-end.danger:hover {
+  background-color: #ba1a1a;
+  color: #ffffff;
+}
+
+.sec-session-btn-end.neutral {
+  border: 1px solid #cbc4d4;
+  color: #494552;
+}
+
+.sec-session-btn-end.neutral:hover {
+  background-color: #edeef0;
+  color: #191c1e;
+}
+
+/* 4. Footer / Branding (Node 20:9846) */
+.sec-session-footer {
+  background-color: #f8f9fb;
+  border-top: 1px solid #cbc4d4;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 12px;
+  color: #494552;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .sec-session-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 16px;
+  }
+}
+
+.sec-session-footer-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.sec-session-footer-link {
+  color: #494552;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.sec-session-footer-link:hover {
+  color: #28006d;
+}
+
+.sec-session-footer-version {
+  color: #7a7583;
+}
+
+/* Interactive Modal Dialogs */
+.sec-session-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.sec-session-modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #cbc4d4;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  max-width: 520px;
+  width: 100%;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: secSessionModalFadeIn 0.2s ease-out;
+}
+
+@keyframes secSessionModalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.sec-session-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sec-session-modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #191c1e;
+}
+
+.sec-session-modal-close {
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+}
+
+.sec-session-modal-close:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.sec-session-modal-body {
+  font-size: 14px;
+  color: #494552;
+  line-height: 22px;
+}
+
+.sec-session-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.sec-session-modal-btn-cancel {
+  padding: 10px 20px;
+  border-radius: 9999px;
+  border: 1px solid #cbc4d4;
+  background-color: #ffffff;
+  color: #494552;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sec-session-modal-btn-cancel:hover {
+  background-color: #f8f9fb;
+}
+
+.sec-session-modal-btn-confirm {
+  padding: 10px 20px;
+  border-radius: 9999px;
+  border: none;
+  background-color: #ba1a1a;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sec-session-modal-btn-confirm:hover {
+  background-color: #961212;
+}
+
+/* Toast Notification */
+.sec-session-toast {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background-color: #191c1e;
+  color: #ffffff;
+  padding: 14px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  z-index: 150;
+  animation: secSessionToastSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes secSessionToastSlideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+

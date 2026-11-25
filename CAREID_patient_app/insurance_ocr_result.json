@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "statusCode": 200,
+  "message": "Operation executed successfully",
+  "data": {
+    "ocrId": "5b16e7a5-448c-4f8f-86f4-79acff8f7eb6",
+    "extractedData": {
+      "providerName": "Blue Shield Premier Health",
+      "policyNumber": "BS-88492019",
+      "coverageDetails": "Office $20, Specialist $40, ER $150"
+    },
+    "confidence": 0.9801,
+    "isSimulated": false,
+    "engine": "PP-OCRv4-Mobile-CPU"
+  },
+  "meta": {
+    "timestamp": "2026-11-17T04:56:26.512Z"
+  }
+}

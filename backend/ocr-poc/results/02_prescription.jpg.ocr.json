@@ -1,0 +1,454 @@
+{
+  "filePath": "C:\\Users\\PABANI\\Downloads\\hvapi-main\\hvapi-main\\ocr-poc\\sample_docs\\02_prescription.jpg",
+  "pageCount": 1,
+  "overallConfidence": 0.9937,
+  "pages": [
+    {
+      "pageNumber": 1,
+      "lines": [
+        {
+          "text": "METROPOLITAN CARDIOLOGY CLINIC",
+          "confidence": 0.9999,
+          "box": [
+            [
+              57,
+              50
+            ],
+            [
+              509,
+              50
+            ],
+            [
+              509,
+              73
+            ],
+            [
+              57,
+              73
+            ]
+          ]
+        },
+        {
+          "text": "Dr. Marcus Vance, MD, FACC | Cardiology Specialist",
+          "confidence": 0.9953,
+          "box": [
+            [
+              58,
+              85
+            ],
+            [
+              439,
+              85
+            ],
+            [
+              439,
+              102
+            ],
+            [
+              58,
+              102
+            ]
+          ]
+        },
+        {
+          "text": "Licence: DOC-LIC-99381 |Phone: +1-555-019-2834",
+          "confidence": 0.9801,
+          "box": [
+            [
+              57,
+              105
+            ],
+            [
+              431,
+              105
+            ],
+            [
+              431,
+              121
+            ],
+            [
+              57,
+              121
+            ]
+          ]
+        },
+        {
+          "text": "Patient: Robert Chen",
+          "confidence": 0.9849,
+          "box": [
+            [
+              46,
+              149
+            ],
+            [
+              230,
+              150
+            ],
+            [
+              230,
+              170
+            ],
+            [
+              46,
+              169
+            ]
+          ]
+        },
+        {
+          "text": "Date: 2026-11-03",
+          "confidence": 0.9716,
+          "box": [
+            [
+              449,
+              150
+            ],
+            [
+              575,
+              150
+            ],
+            [
+              575,
+              167
+            ],
+            [
+              449,
+              167
+            ]
+          ]
+        },
+        {
+          "text": "Age/Gender: 58Y / Male",
+          "confidence": 0.9893,
+          "box": [
+            [
+              48,
+              181
+            ],
+            [
+              220,
+              181
+            ],
+            [
+              220,
+              197
+            ],
+            [
+              48,
+              197
+            ]
+          ]
+        },
+        {
+          "text": "Rx Number: RX-2026-88192",
+          "confidence": 0.9994,
+          "box": [
+            [
+              449,
+              182
+            ],
+            [
+              684,
+              182
+            ],
+            [
+              684,
+              198
+            ],
+            [
+              449,
+              198
+            ]
+          ]
+        },
+        {
+          "text": "Rx (Prescribed Medications):",
+          "confidence": 0.9999,
+          "box": [
+            [
+              48,
+              232
+            ],
+            [
+              379,
+              232
+            ],
+            [
+              379,
+              256
+            ],
+            [
+              48,
+              256
+            ]
+          ]
+        },
+        {
+          "text": "1. Atorvastatin 20mg Tablets",
+          "confidence": 0.992,
+          "box": [
+            [
+              57,
+              280
+            ],
+            [
+              305,
+              280
+            ],
+            [
+              305,
+              300
+            ],
+            [
+              57,
+              300
+            ]
+          ]
+        },
+        {
+          "text": "Sig: 1 tablet orally once daily at bedtime",
+          "confidence": 0.9993,
+          "box": [
+            [
+              78,
+              306
+            ],
+            [
+              363,
+              306
+            ],
+            [
+              363,
+              323
+            ],
+            [
+              78,
+              323
+            ]
+          ]
+        },
+        {
+          "text": "Qty: 30 tablets (1 month)",
+          "confidence": 1.0,
+          "box": [
+            [
+              78,
+              329
+            ],
+            [
+              252,
+              329
+            ],
+            [
+              252,
+              345
+            ],
+            [
+              78,
+              345
+            ]
+          ]
+        },
+        {
+          "text": "2. Metoprolol Tartrate 25mg",
+          "confidence": 0.9826,
+          "box": [
+            [
+              55,
+              364
+            ],
+            [
+              296,
+              366
+            ],
+            [
+              296,
+              387
+            ],
+            [
+              55,
+              385
+            ]
+          ]
+        },
+        {
+          "text": "Sig: 1 tablet orally twice daily with meals",
+          "confidence": 0.9979,
+          "box": [
+            [
+              78,
+              391
+            ],
+            [
+              367,
+              391
+            ],
+            [
+              367,
+              408
+            ],
+            [
+              78,
+              408
+            ]
+          ]
+        },
+        {
+          "text": "Qty: 60 tablets (1 month)",
+          "confidence": 0.9998,
+          "box": [
+            [
+              78,
+              413
+            ],
+            [
+              252,
+              413
+            ],
+            [
+              252,
+              430
+            ],
+            [
+              78,
+              430
+            ]
+          ]
+        },
+        {
+          "text": "3. Aspirin 81mg (Enteric Coated)",
+          "confidence": 0.9998,
+          "box": [
+            [
+              57,
+              451
+            ],
+            [
+              339,
+              451
+            ],
+            [
+              339,
+              471
+            ],
+            [
+              57,
+              471
+            ]
+          ]
+        },
+        {
+          "text": "Sig: 1 tablet orally once daily with breakfast",
+          "confidence": 0.9999,
+          "box": [
+            [
+              78,
+              476
+            ],
+            [
+              388,
+              476
+            ],
+            [
+              388,
+              492
+            ],
+            [
+              78,
+              492
+            ]
+          ]
+        },
+        {
+          "text": "Qty: 30 tablets (1 month)",
+          "confidence": 0.9996,
+          "box": [
+            [
+              78,
+              498
+            ],
+            [
+              252,
+              498
+            ],
+            [
+              252,
+              515
+            ],
+            [
+              78,
+              515
+            ]
+          ]
+        },
+        {
+          "text": "Instructions: Check blood pressure twice weekly. Refills: 2",
+          "confidence": 0.9992,
+          "box": [
+            [
+              58,
+              564
+            ],
+            [
+              469,
+              564
+            ],
+            [
+              469,
+              581
+            ],
+            [
+              58,
+              581
+            ]
+          ]
+        },
+        {
+          "text": "Dr. Marcus Vance, MD",
+          "confidence": 0.9843,
+          "box": [
+            [
+              547,
+              666
+            ],
+            [
+              737,
+              666
+            ],
+            [
+              737,
+              683
+            ],
+            [
+              547,
+              683
+            ]
+          ]
+        },
+        {
+          "text": "[Signature Verified Digitally]",
+          "confidence": 1.0,
+          "box": [
+            [
+              548,
+              690
+            ],
+            [
+              747,
+              690
+            ],
+            [
+              747,
+              707
+            ],
+            [
+              548,
+              707
+            ]
+          ]
+        }
+      ],
+      "rawText": "METROPOLITAN CARDIOLOGY CLINIC\nDr. Marcus Vance, MD, FACC | Cardiology Specialist\nLicence: DOC-LIC-99381 |Phone: +1-555-019-2834\nPatient: Robert Chen\nDate: 2026-11-03\nAge/Gender: 58Y / Male\nRx Number: RX-2026-88192\nRx (Prescribed Medications):\n1. Atorvastatin 20mg Tablets\nSig: 1 tablet orally once daily at bedtime\nQty: 30 tablets (1 month)\n2. Metoprolol Tartrate 25mg\nSig: 1 tablet orally twice daily with meals\nQty: 60 tablets (1 month)\n3. Aspirin 81mg (Enteric Coated)\nSig: 1 tablet orally once daily with breakfast\nQty: 30 tablets (1 month)\nInstructions: Check blood pressure twice weekly. Refills: 2\nDr. Marcus Vance, MD\n[Signature Verified Digitally]"
+    }
+  ],
+  "combinedText": "METROPOLITAN CARDIOLOGY CLINIC\nDr. Marcus Vance, MD, FACC | Cardiology Specialist\nLicence: DOC-LIC-99381 |Phone: +1-555-019-2834\nPatient: Robert Chen\nDate: 2026-11-03\nAge/Gender: 58Y / Male\nRx Number: RX-2026-88192\nRx (Prescribed Medications):\n1. Atorvastatin 20mg Tablets\nSig: 1 tablet orally once daily at bedtime\nQty: 30 tablets (1 month)\n2. Metoprolol Tartrate 25mg\nSig: 1 tablet orally twice daily with meals\nQty: 60 tablets (1 month)\n3. Aspirin 81mg (Enteric Coated)\nSig: 1 tablet orally once daily with breakfast\nQty: 30 tablets (1 month)\nInstructions: Check blood pressure twice weekly. Refills: 2\nDr. Marcus Vance, MD\n[Signature Verified Digitally]"
+}

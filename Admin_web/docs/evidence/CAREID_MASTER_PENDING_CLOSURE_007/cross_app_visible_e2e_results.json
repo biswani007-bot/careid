@@ -1,0 +1,96 @@
+[
+  {
+    "id": "E01",
+    "name": "Doctor Profile Sync",
+    "status": "PASS",
+    "details": "Profile biography synchronized"
+  },
+  {
+    "id": "E02",
+    "name": "Doctor Slot Creation & Admin Capacity",
+    "status": "PASS",
+    "details": "Slot reflected in Admin"
+  },
+  {
+    "id": "E03",
+    "name": "Slot Booking/Cancellation Update",
+    "status": "PASS",
+    "details": "Capacity updated"
+  },
+  {
+    "id": "E04",
+    "name": "Appointment State Sync",
+    "status": "PASS",
+    "details": {
+      "apptId": "1544bfcd-e975-46ab-b0ad-5910c57f301c"
+    }
+  },
+  {
+    "id": "E05",
+    "name": "Referral Monitoring Sync",
+    "status": "PASS",
+    "details": "Referrals visible"
+  },
+  {
+    "id": "E06",
+    "name": "Prescription Directory Visibility",
+    "status": "PASS",
+    "details": "Dashboard active"
+  },
+  {
+    "id": "E07",
+    "name": "Pickup Reminder Schedule Persistence",
+    "status": "PASS",
+    "details": {
+      "schedCount": "21"
+    }
+  },
+  {
+    "id": "E08",
+    "name": "Reminder Notification Persistence",
+    "status": "PASS",
+    "details": {
+      "notifCount": "106"
+    }
+  },
+  {
+    "id": "E09",
+    "name": "Doctor Collection & Admin Status Sync",
+    "status": "PASS",
+    "details": {
+      "collectedCount": "20"
+    }
+  },
+  {
+    "id": "E10",
+    "name": "Admin Collection & Doctor View Sync",
+    "status": "PASS",
+    "details": "Status consistent"
+  },
+  {
+    "id": "E11",
+    "name": "Healthcare Financing Synchronization",
+    "status": "PASS",
+    "details": "Applications active"
+  },
+  {
+    "id": "E12",
+    "name": "Human Doctor Veterinary Isolation",
+    "status": "PASS",
+    "details": "HTTP 403"
+  },
+  {
+    "id": "E13",
+    "name": "Vet Doctor Human Record Isolation",
+    "status": "PASS",
+    "details": "HTTP 403"
+  },
+  {
+    "id": "E14",
+    "name": "Cross-App Audit Logging",
+    "status": "PASS",
+    "details": {
+      "auditCount": "1387"
+    }
+  }
+]

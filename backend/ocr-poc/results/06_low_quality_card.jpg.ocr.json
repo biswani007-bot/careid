@@ -1,0 +1,344 @@
+{
+  "filePath": "C:\\Users\\PABANI\\Downloads\\hvapi-main\\hvapi-main\\ocr-poc\\sample_docs\\06_low_quality_card.jpg",
+  "pageCount": 1,
+  "overallConfidence": 0.9768,
+  "pages": [
+    {
+      "pageNumber": 1,
+      "lines": [
+        {
+          "text": "BLUE SHIELD NATIONAL HEALTHCARE",
+          "confidence": 0.9991,
+          "box": [
+            [
+              36,
+              24
+            ],
+            [
+              544,
+              24
+            ],
+            [
+              544,
+              51
+            ],
+            [
+              36,
+              51
+            ]
+          ]
+        },
+        {
+          "text": "Preferred Platinum Comprehensive Network",
+          "confidence": 0.9915,
+          "box": [
+            [
+              34,
+              60
+            ],
+            [
+              356,
+              61
+            ],
+            [
+              356,
+              84
+            ],
+            [
+              34,
+              83
+            ]
+          ]
+        },
+        {
+          "text": "Member Name: Sarah Miller",
+          "confidence": 0.9868,
+          "box": [
+            [
+              36,
+              118
+            ],
+            [
+              279,
+              118
+            ],
+            [
+              279,
+              140
+            ],
+            [
+              36,
+              140
+            ]
+          ]
+        },
+        {
+          "text": "Member ID: BSN-99887711",
+          "confidence": 0.997,
+          "box": [
+            [
+              515,
+              116
+            ],
+            [
+              748,
+              116
+            ],
+            [
+              748,
+              140
+            ],
+            [
+              515,
+              140
+            ]
+          ]
+        },
+        {
+          "text": "Policy Number: POL987654321",
+          "confidence": 0.9976,
+          "box": [
+            [
+              34,
+              162
+            ],
+            [
+              304,
+              162
+            ],
+            [
+              304,
+              186
+            ],
+            [
+              34,
+              186
+            ]
+          ]
+        },
+        {
+          "text": "Group Number: GRP-44550",
+          "confidence": 0.9997,
+          "box": [
+            [
+              516,
+              162
+            ],
+            [
+              755,
+              162
+            ],
+            [
+              755,
+              186
+            ],
+            [
+              516,
+              186
+            ]
+          ]
+        },
+        {
+          "text": "Issuer (80840) 911-38294",
+          "confidence": 0.9481,
+          "box": [
+            [
+              34,
+              205
+            ],
+            [
+              229,
+              205
+            ],
+            [
+              229,
+              229
+            ],
+            [
+              34,
+              229
+            ]
+          ]
+        },
+        {
+          "text": "Effective Date: 2026-01-01",
+          "confidence": 0.9791,
+          "box": [
+            [
+              516,
+              206
+            ],
+            [
+              709,
+              206
+            ],
+            [
+              709,
+              227
+            ],
+            [
+              516,
+              227
+            ]
+          ]
+        },
+        {
+          "text": "COPAY SCHEDULE:",
+          "confidence": 0.9929,
+          "box": [
+            [
+              50,
+              270
+            ],
+            [
+              228,
+              270
+            ],
+            [
+              228,
+              294
+            ],
+            [
+              50,
+              294
+            ]
+          ]
+        },
+        {
+          "text": "Primary Care Physician: $20.00",
+          "confidence": 0.9894,
+          "box": [
+            [
+              50,
+              301
+            ],
+            [
+              284,
+              301
+            ],
+            [
+              284,
+              325
+            ],
+            [
+              50,
+              325
+            ]
+          ]
+        },
+        {
+          "text": "Emergency Room: $150.00",
+          "confidence": 0.9391,
+          "box": [
+            [
+              453,
+              302
+            ],
+            [
+              656,
+              300
+            ],
+            [
+              656,
+              324
+            ],
+            [
+              454,
+              326
+            ]
+          ]
+        },
+        {
+          "text": "Specialist Visit: $40.00",
+          "confidence": 0.9274,
+          "box": [
+            [
+              50,
+              331
+            ],
+            [
+              220,
+              331
+            ],
+            [
+              220,
+              354
+            ],
+            [
+              50,
+              354
+            ]
+          ]
+        },
+        {
+          "text": "Urgent Care Clinic: $35.00",
+          "confidence": 0.9826,
+          "box": [
+            [
+              455,
+              330
+            ],
+            [
+              654,
+              330
+            ],
+            [
+              654,
+              353
+            ],
+            [
+              455,
+              353
+            ]
+          ]
+        },
+        {
+          "text": "Pharmacy Benefit: RxBIN 610014 | RxPCN MEDD | RxGRP BLUE01",
+          "confidence": 0.9576,
+          "box": [
+            [
+              35,
+              390
+            ],
+            [
+              530,
+              390
+            ],
+            [
+              530,
+              413
+            ],
+            [
+              35,
+              413
+            ]
+          ]
+        },
+        {
+          "text": "Customer Service: 1-800-555-BLUE | Claims: PO Box 2048, Omaha, NE",
+          "confidence": 0.9643,
+          "box": [
+            [
+              36,
+              418
+            ],
+            [
+              552,
+              418
+            ],
+            [
+              552,
+              438
+            ],
+            [
+              36,
+              438
+            ]
+          ]
+        }
+      ],
+      "rawText": "BLUE SHIELD NATIONAL HEALTHCARE\nPreferred Platinum Comprehensive Network\nMember Name: Sarah Miller\nMember ID: BSN-99887711\nPolicy Number: POL987654321\nGroup Number: GRP-44550\nIssuer (80840) 911-38294\nEffective Date: 2026-01-01\nCOPAY SCHEDULE:\nPrimary Care Physician: $20.00\nEmergency Room: $150.00\nSpecialist Visit: $40.00\nUrgent Care Clinic: $35.00\nPharmacy Benefit: RxBIN 610014 | RxPCN MEDD | RxGRP BLUE01\nCustomer Service: 1-800-555-BLUE | Claims: PO Box 2048, Omaha, NE"
+    }
+  ],
+  "combinedText": "BLUE SHIELD NATIONAL HEALTHCARE\nPreferred Platinum Comprehensive Network\nMember Name: Sarah Miller\nMember ID: BSN-99887711\nPolicy Number: POL987654321\nGroup Number: GRP-44550\nIssuer (80840) 911-38294\nEffective Date: 2026-01-01\nCOPAY SCHEDULE:\nPrimary Care Physician: $20.00\nEmergency Room: $150.00\nSpecialist Visit: $40.00\nUrgent Care Clinic: $35.00\nPharmacy Benefit: RxBIN 610014 | RxPCN MEDD | RxGRP BLUE01\nCustomer Service: 1-800-555-BLUE | Claims: PO Box 2048, Omaha, NE"
+}

@@ -1,24 +1,49 @@
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+
 # Logs
-logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Runtime and Dependency Directories
+node_modules/
+ocr-env/
+venv/
+env/
+.venv/
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Build artifacts & packages
+dist/
+build/
+**/build/
+**/.dart_tool/
+**/.gradle/
+**/android/.gradle/
+**/ios/Pods/
+package.zip
+*.zip
+*.tar
+*.tar.gz
+*.apk
+*.aab
+
+# OS & Editor files
 .DS_Store
+Thumbs.db
+.idea/
+.vscode/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Backups
+_git_backups/
+
+**/.git_sub/
+

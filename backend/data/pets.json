@@ -1,0 +1,191 @@
+[
+  {
+    "ownerUserId": "dev-user-1",
+    "name": "Sandbox Dog",
+    "species": "CANINE",
+    "id": "555ae03c-f4f6-44ed-a563-128c37ebbc46",
+    "vaccinations": [],
+    "createdAt": "2026-11-19T12:26:27.917Z",
+    "updatedAt": "2026-11-19T12:26:27.917Z",
+    "clinicalRecords": []
+  },
+  {
+    "ownerUserId": "dev-user-1",
+    "name": "Sandbox Dog",
+    "species": "CANINE",
+    "id": "140b64ea-cba2-43fc-8fc3-92aeda813f82",
+    "vaccinations": [],
+    "createdAt": "2026-11-19T12:27:28.665Z",
+    "updatedAt": "2026-11-19T12:27:28.665Z",
+    "clinicalRecords": []
+  },
+  {
+    "ownerUserId": "dev-user-1",
+    "name": "Sandbox Dog",
+    "species": "CANINE",
+    "id": "f42f8737-3dd2-4bc7-a71d-51edadb367cc",
+    "vaccinations": [],
+    "createdAt": "2026-11-19T12:28:20.140Z",
+    "updatedAt": "2026-11-19T12:28:20.140Z",
+    "clinicalRecords": []
+  },
+  {
+    "ownerUserId": "dev-user-1",
+    "name": "Sandbox Dog",
+    "species": "CANINE",
+    "id": "0c54f42e-af1f-4b73-9625-2e180699b793",
+    "vaccinations": [],
+    "createdAt": "2026-11-19T12:29:58.832Z",
+    "updatedAt": "2026-11-19T12:29:58.832Z",
+    "clinicalRecords": []
+  },
+  {
+    "ownerUserId": "dev-user-1",
+    "name": "Sandbox Dog",
+    "species": "CANINE",
+    "id": "f2d87baf-3eb9-44d0-b1cc-1547cfad311d",
+    "vaccinations": [],
+    "createdAt": "2026-11-19T12:33:24.552Z",
+    "updatedAt": "2026-11-19T12:33:24.552Z",
+    "clinicalRecords": []
+  },
+  {
+    "ownerUserId": "dev-user-1",
+    "name": "Sandbox Dog",
+    "species": "CANINE",
+    "id": "1205982a-55e4-4626-88bd-f4204bb99f15",
+    "vaccinations": [],
+    "createdAt": "2026-11-19T12:49:41.424Z",
+    "updatedAt": "2026-11-19T12:49:41.424Z",
+    "clinicalRecords": []
+  },
+  {
+    "ownerUserId": "dev-user-1",
+    "name": "Sandbox Dog",
+    "species": "CANINE",
+    "id": "fdfed5b6-e742-421a-8698-3bac2a7072db",
+    "vaccinations": [],
+    "createdAt": "2026-11-19T12:50:23.360Z",
+    "updatedAt": "2026-11-19T12:50:23.360Z",
+    "clinicalRecords": []
+  },
+  {
+    "ownerUserId": "dev-user-1",
+    "name": "Sandbox Dog",
+    "species": "CANINE",
+    "id": "d57ba981-900a-4cf0-be24-66b54a363118",
+    "vaccinations": [],
+    "createdAt": "2026-11-19T12:51:12.824Z",
+    "updatedAt": "2026-11-19T12:51:12.824Z",
+    "clinicalRecords": []
+  },
+  {
+    "ownerUserId": "dev-user-1",
+    "name": "Sandbox Dog",
+    "species": "CANINE",
+    "id": "fc168345-ec43-40f4-8f68-64f18580e810",
+    "vaccinations": [],
+    "createdAt": "2026-11-19T12:51:38.044Z",
+    "updatedAt": "2026-11-19T12:51:38.044Z",
+    "clinicalRecords": []
+  },
+  {
+    "ownerUserId": "dev-user-1",
+    "name": "Sandbox Dog",
+    "species": "CANINE",
+    "id": "f0d3a3be-d609-4df6-8a6f-7cb4602324df",
+    "vaccinations": [],
+    "createdAt": "2026-11-20T10:24:30.622Z",
+    "updatedAt": "2026-11-20T10:24:30.622Z",
+    "clinicalRecords": []
+  },
+  {
+    "ownerUserId": "dev-user-1",
+    "name": "Sandbox Dog",
+    "species": "CANINE",
+    "id": "7c4c4a29-be1e-48c7-98f1-ad1bc4872dc4",
+    "vaccinations": [],
+    "createdAt": "2026-11-20T13:06:20.025Z",
+    "updatedAt": "2026-11-20T13:06:20.025Z",
+    "clinicalRecords": []
+  },
+  {
+    "ownerUserId": "dev-user-1",
+    "name": "Sandbox Dog",
+    "species": "CANINE",
+    "id": "c17f8f43-a188-445e-8a30-16f075ef7dde",
+    "vaccinations": [],
+    "createdAt": "2026-11-20T13:15:52.433Z",
+    "updatedAt": "2026-11-20T13:15:52.433Z",
+    "clinicalRecords": []
+  },
+  {
+    "ownerUserId": "dev-user-1",
+    "name": "Sandbox Dog",
+    "species": "CANINE",
+    "id": "3798cf62-6b48-4857-a6a9-9c37a840ff89",
+    "vaccinations": [],
+    "createdAt": "2026-11-20T13:16:47.267Z",
+    "updatedAt": "2026-11-20T13:16:47.267Z",
+    "clinicalRecords": []
+  },
+  {
+    "ownerUserId": "dev-user-1",
+    "name": "Sandbox Dog",
+    "species": "CANINE",
+    "id": "38aa4b02-752b-4439-8115-b9b438b62e15",
+    "vaccinations": [],
+    "createdAt": "2026-11-20T13:23:38.681Z",
+    "updatedAt": "2026-11-20T13:23:38.681Z",
+    "clinicalRecords": []
+  },
+  {
+    "ownerUserId": "dev-user-1",
+    "name": "Sandbox Dog",
+    "species": "CANINE",
+    "id": "5ba10ee7-22be-4a34-8136-a9b133558225",
+    "vaccinations": [],
+    "createdAt": "2026-11-20T13:30:42.138Z",
+    "updatedAt": "2026-11-20T13:30:42.138Z",
+    "clinicalRecords": []
+  },
+  {
+    "ownerUserId": "dev-user-1",
+    "name": "Sandbox Dog",
+    "species": "CANINE",
+    "id": "5c39ab6e-b080-45fa-b49d-962efcc42063",
+    "vaccinations": [],
+    "createdAt": "2026-11-20T13:38:53.472Z",
+    "updatedAt": "2026-11-20T13:38:53.472Z",
+    "clinicalRecords": []
+  },
+  {
+    "ownerUserId": "dev-user-1",
+    "name": "Sandbox Dog",
+    "species": "CANINE",
+    "id": "fc7cec35-61ae-4df8-80ad-2fd5906a6f24",
+    "vaccinations": [],
+    "createdAt": "2026-11-20T13:43:39.999Z",
+    "updatedAt": "2026-11-20T13:43:39.999Z",
+    "clinicalRecords": []
+  },
+  {
+    "ownerUserId": "dev-user-1",
+    "name": "Sandbox Dog",
+    "species": "CANINE",
+    "id": "30583a6c-9d96-468c-a500-6f28d556e26f",
+    "vaccinations": [],
+    "createdAt": "2026-11-20T13:44:40.115Z",
+    "updatedAt": "2026-11-20T13:44:40.115Z",
+    "clinicalRecords": []
+  },
+  {
+    "ownerUserId": "dev-user-1",
+    "name": "Sandbox Dog",
+    "species": "CANINE",
+    "id": "1b4d934d-5146-4431-9c80-5d9037c3320a",
+    "vaccinations": [],
+    "createdAt": "2026-11-20T13:45:11.507Z",
+    "updatedAt": "2026-11-20T13:45:11.507Z"
+  }
+]

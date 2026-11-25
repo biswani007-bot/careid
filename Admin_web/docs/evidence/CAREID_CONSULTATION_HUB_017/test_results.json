@@ -1,0 +1,127 @@
+{
+  "total": 15,
+  "passed": 15,
+  "failed": 0,
+  "results": [
+    {
+      "testNumber": 1,
+      "name": "Sidebar Navigation to Consultation Management Hub",
+      "status": "PASS",
+      "details": "Successfully loaded route: http://localhost:5174/admin/consultation-management",
+      "evidence": "D:\\careid\\Admin_web\\docs\\evidence\\CAREID_CONSULTATION_HUB_017\\01_consultation_hub_sidebar_navigation_1920.png",
+      "timestamp": "2026-11-25T05:12:26.417Z"
+    },
+    {
+      "testNumber": 2,
+      "name": "Procedure Catalogue shows exactly 10 records on Page 1",
+      "status": "PASS",
+      "details": "Rendered exactly 10 rows. Summary: \"Showing 1–10 of 22 records\"",
+      "evidence": "",
+      "timestamp": "2026-11-25T05:12:26.446Z"
+    },
+    {
+      "testNumber": 3,
+      "name": "Navigate to Page 2 and display distinct next 10 records",
+      "status": "PASS",
+      "details": "Rendered 10 rows on Page 2. Summary: \"Showing 11–20 of 22 records\"",
+      "evidence": "D:\\careid\\Admin_web\\docs\\evidence\\CAREID_CONSULTATION_HUB_017\\02_procedure_catalogue_page2.png",
+      "timestamp": "2026-11-25T05:12:29.446Z"
+    },
+    {
+      "testNumber": 4,
+      "name": "Navigate to last Page and verify Next button disabled",
+      "status": "PASS",
+      "details": "Rendered 2 rows on Page 3. Next disabled=true. Summary: \"Showing 21–22 of 22 records\"",
+      "evidence": "D:\\careid\\Admin_web\\docs\\evidence\\CAREID_CONSULTATION_HUB_017\\03_procedure_catalogue_page3_last.png",
+      "timestamp": "2026-11-25T05:12:32.471Z"
+    },
+    {
+      "testNumber": 5,
+      "name": "Previous button navigates back to Page 1 and disables at boundary",
+      "status": "PASS",
+      "details": "Back on Page 1 with Previous button disabled as expected",
+      "evidence": "",
+      "timestamp": "2026-11-25T05:12:33.995Z"
+    },
+    {
+      "testNumber": 6,
+      "name": "Search input queries across catalogue and resets to Page 1",
+      "status": "PASS",
+      "details": "Found 10 matches for \"Catheter\". Summary: \"Showing 1–10 of 11 records\"",
+      "evidence": "D:\\careid\\Admin_web\\docs\\evidence\\CAREID_CONSULTATION_HUB_017\\04_procedure_search_results.png",
+      "timestamp": "2026-11-25T05:12:35.726Z"
+    },
+    {
+      "testNumber": 7,
+      "name": "Facility Chargemaster displays exactly 10 records per page",
+      "status": "PASS",
+      "details": "Rendered 10 rows. Summary: \"Showing 1–10 of 22 records\"",
+      "evidence": "D:\\careid\\Admin_web\\docs\\evidence\\CAREID_CONSULTATION_HUB_017\\05_facility_chargemaster_tab.png",
+      "timestamp": "2026-11-25T05:12:39.986Z"
+    },
+    {
+      "testNumber": 8,
+      "name": "Financing Packages displays 10 records per page and controls",
+      "status": "PASS",
+      "details": "Rendered 7 rows. Summary: \"Showing 1–7 of 7 records\"",
+      "evidence": "D:\\careid\\Admin_web\\docs\\evidence\\CAREID_CONSULTATION_HUB_017\\06_financing_packages_tab.png",
+      "timestamp": "2026-11-25T05:12:42.946Z"
+    },
+    {
+      "testNumber": 9,
+      "name": "Scheduling Policies preserves configuration form with reachable controls",
+      "status": "PASS",
+      "details": "Policy form grid and Save Policies button rendered and reachable",
+      "evidence": "D:\\careid\\Admin_web\\docs\\evidence\\CAREID_CONSULTATION_HUB_017\\07_scheduling_policies_tab.png",
+      "timestamp": "2026-11-25T05:12:45.619Z"
+    },
+    {
+      "testNumber": 10,
+      "name": "Master Data & Remarks displays 10 records per page and category selection",
+      "status": "PASS",
+      "details": "Rendered 10 rows. Summary: \"Showing 1–10 of 33 records\"",
+      "evidence": "D:\\careid\\Admin_web\\docs\\evidence\\CAREID_CONSULTATION_HUB_017\\08_master_data_tab.png",
+      "timestamp": "2026-11-25T05:12:48.533Z"
+    },
+    {
+      "testNumber": 11,
+      "name": "Tab selection persists across page refresh via URL parameter",
+      "status": "PASS",
+      "details": "Active tab preserved as \"Master Data & Remarks\" from URL http://localhost:5174/admin/consultation-management?tab=master-data",
+      "evidence": "",
+      "timestamp": "2026-11-25T05:12:51.568Z"
+    },
+    {
+      "testNumber": 12,
+      "name": "Responsive layout & scroll verification at 1920px (Desktop Full HD)",
+      "status": "PASS",
+      "details": "Vertical scroll functional (canvas 1016px >= 1016px). Table container client width: 1388px.",
+      "evidence": "D:\\careid\\Admin_web\\docs\\evidence\\CAREID_CONSULTATION_HUB_017\\09_responsive_1920_desktop.png",
+      "timestamp": "2026-11-25T05:12:53.687Z"
+    },
+    {
+      "testNumber": 13,
+      "name": "Responsive layout & scroll verification at 1366px (Laptop Standard)",
+      "status": "PASS",
+      "details": "Vertical scroll functional (canvas 1100px >= 704px). Table container client width: 970px.",
+      "evidence": "D:\\careid\\Admin_web\\docs\\evidence\\CAREID_CONSULTATION_HUB_017\\10_responsive_1366_laptop.png",
+      "timestamp": "2026-11-25T05:12:55.844Z"
+    },
+    {
+      "testNumber": 14,
+      "name": "Responsive layout & scroll verification at 1024px (Tablet Landscape)",
+      "status": "PASS",
+      "details": "Vertical scroll functional (canvas 1060px >= 704px). Table container client width: 664px.",
+      "evidence": "D:\\careid\\Admin_web\\docs\\evidence\\CAREID_CONSULTATION_HUB_017\\11_responsive_1024_tablet_landscape.png",
+      "timestamp": "2026-11-25T05:12:57.951Z"
+    },
+    {
+      "testNumber": 15,
+      "name": "Responsive layout & scroll verification at 768px (Tablet Portrait)",
+      "status": "PASS",
+      "details": "Vertical scroll functional (canvas 0px >= 0px). Table container client width: 0px.",
+      "evidence": "D:\\careid\\Admin_web\\docs\\evidence\\CAREID_CONSULTATION_HUB_017\\12_responsive_768_tablet_portrait.png",
+      "timestamp": "2026-11-25T05:13:00.061Z"
+    }
+  ]
+}

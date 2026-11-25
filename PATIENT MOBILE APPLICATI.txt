@@ -1,0 +1,1321 @@
+# CAREID — PATIENT MOBILE APPLICATION
+## Product Requirements Document (PRD) & Functional Specification (FSD)
+
+**Document ID:** CAREID-PATIENT-APP-PRD-FSD-001  
+**Version:** 1.0 — Proposed Baseline  
+**Status:** Ready for stakeholder review; source-verification items remain open  
+**Platform:** Flutter — Android and iOS  
+**Application:** CAREID_patient_app  
+**Product:** CareID / HEALTH VAULT 360  
+**Development Owner:** Developer 2  
+**Related Systems:** CareID Backend, Doctor App, Doctor Web, Admin Web  
+**Last Updated:** 25 November 2026
+
+---
+
+# 1. DOCUMENT PURPOSE
+
+This document defines the proposed functional, technical and operational requirements of the **CareID Patient Mobile Application**.
+
+The Patient App is the patient-facing application of the CareID healthcare ecosystem.
+
+It enables patients to manage their healthcare identity, interact with authorized healthcare providers, access medical information, manage appointments, review treatment offers, participate in documented financing workflows, track prescriptions and referrals, and complete the QR-based interactions required by the original HEALTH VAULT 360 documentation.
+
+The application must use the shared CareID Backend and authoritative database.
+
+It must not introduce independent or hardcoded clinical, financial or administrative business rules.
+
+## 1.1 Document Authority
+
+The governing requirement sources are:
+
+1. Original HEALTH VAULT 360 PRD/FSD.
+2. Approved CareID change requests CR-02 through CR-08.
+3. Approved CareID architecture and security decisions.
+4. This Patient App specification after stakeholder approval.
+
+**Conflict rule:** Where this document conflicts with an explicit approved requirement, the original approved requirement takes precedence until a formal change is authorized.
+
+**Source-verification limitation:** The original PRD/FSD and change-request workbook were not available for direct inspection when this version was prepared. This document therefore distinguishes confirmed project decisions, proposed mobile design and requirements needing verification.
+
+No unverified proposal is automatically an approved development requirement.
+
+---
+
+# 2. PRODUCT VISION
+
+## 2.1 Product Definition
+
+CareID Patient App is a secure mobile healthcare application that allows patients to interact with their healthcare providers and manage supported healthcare activities through a single digital platform.
+
+The app should provide a simple, accessible interface while maintaining accurate integration with the Doctor App, Doctor Web, Admin Web and Backend.
+
+## 2.2 Core Principles
+
+1. **Patient-centered experience:** Prioritize frequently used patient services.
+2. **Secure digital identity:** Protect patient identity and healthcare information.
+3. **Documented QR integration:** Implement the required QR workflow exactly as approved.
+4. **Shared clinical information:** Retrieve records from the authoritative Backend.
+5. **Dynamic configuration:** Use Admin-managed healthcare configuration.
+6. **Transparent financial information:** Display actual treatment and financing information.
+7. **Reliable appointments:** Use genuine doctor and facility availability.
+8. **Privacy and consent:** Enforce applicable access and consent requirements.
+9. **No false confirmations:** Never show success before the Backend confirms an action.
+10. **Scope control:** Do not add unsupported healthcare services.
+
+---
+
+# 3. APPLICATION SCOPE
+
+## 3.1 Proposed Functional Modules
+
+| ID | Module | Proposed Scope |
+|---|---|---|
+| PA-01 | Registration & Authentication | Account registration, login and recovery |
+| PA-02 | Patient Identity & CareID | Profile and healthcare identity |
+| PA-03 | QR Scanning & QR Interaction | Mandatory documented QR workflow |
+| PA-04 | Patient Dashboard | Appointments, alerts and pending actions |
+| PA-05 | Doctor & Facility Discovery | Search and view eligible providers |
+| PA-06 | Appointment Booking | Schedule, view, reschedule and cancel |
+| PA-07 | Medical Records | View authorized clinical information |
+| PA-08 | Consultations | View consultation history and status |
+| PA-09 | Treatment Offers | Review and respond to treatment offers |
+| PA-10 | Financing Information | View eligible financing options and status |
+| PA-11 | Consent & Authorization | Complete documented patient authorization actions |
+| PA-12 | Prescriptions | View prescriptions and pickup information |
+| PA-13 | Medication & Pickup Reminders | Supported reminders and status |
+| PA-14 | Referrals | View referral information and status |
+| PA-15 | Notifications | In-app healthcare updates |
+| PA-16 | Family & Dependent Access | Only as authorized by source requirements |
+| PA-17 | Veterinary / Pet Access | Only as authorized by source requirements |
+| PA-18 | Profile & Settings | Patient information and preferences |
+
+**Scope note:** This is a proposed feature inventory, not a statement that every feature has been verified against the original PRD/FSD.
+
+## 3.2 Scope Exclusions
+
+The Patient App must not become an administrative or clinical decision-making application.
+
+Unless explicitly approved, it must not provide:
+
+- Doctor-only clinical approval.
+- Clinical clearance authorization.
+- Facility chargemaster editing.
+- Procedure catalogue administration.
+- Financing package administration.
+- Clinical policy configuration.
+- Doctor registration or credential management.
+- Advanced clinical reporting.
+- Independent medical diagnosis or treatment recommendations.
+- Unauthorized access to other patients' records.
+
+---
+
+# 4. USER ROLES AND ACCESS
+
+## 4.1 Primary Patient
+
+An authenticated individual accessing their own authorized healthcare information.
+
+## 4.2 Family Member or Authorized Representative
+
+Where supported by the original requirements, a person who has an authorized relationship to another patient's records.
+
+The system must define and enforce the permitted actions for each relationship.
+
+## 4.3 Guardian or Pet Owner
+
+Where veterinary patient access is supported, an authorized guardian may view applicable animal records and veterinary services.
+
+The exact veterinary Patient App scope requires documentation verification.
+
+## 4.4 Access Control
+
+The Backend must validate:
+
+- Authenticated user identity.
+- Patient-record ownership or authorized relationship.
+- Facility or provider access rules.
+- Applicable consent requirements.
+- Allowed workflow actions.
+- Relevant account restrictions.
+
+The mobile application must never rely solely on hidden UI elements to enforce access.
+
+---
+
+# 5. APPLICATION NAVIGATION
+
+## 5.1 Recommended Bottom Navigation
+
+**Home | Appointments | Records | Notifications | Profile**
+
+Additional features should be accessible through relevant cards and clearly organized sections rather than an overcrowded bottom navigation bar.
+
+## 5.2 Home
+
+The home dashboard should provide access to:
+
+- Patient identity / QR functionality.
+- Upcoming appointments.
+- Treatment offers requiring a response.
+- Prescription and pickup reminders.
+- Referral updates.
+- Recent notifications.
+- Medical records.
+- Relevant healthcare actions.
+
+## 5.3 Navigation Requirements
+
+- Clearly identify the current patient context.
+- Preserve context when navigating between related screens.
+- Support accessible loading, error and empty states.
+- Prevent unauthorized deep-link access.
+- Provide clear confirmation for important actions.
+- Avoid exposing technical identifiers or raw JSON.
+
+---
+
+# 6. FUNCTIONAL REQUIREMENTS
+
+## PA-01 — REGISTRATION AND AUTHENTICATION
+
+### Proposed Features
+
+- Patient account registration.
+- Secure login.
+- Logout.
+- Password recovery.
+- Session management.
+- Account status verification.
+- Supported identity verification.
+- Retrieval of the authenticated patient profile.
+
+### Requirements
+
+Registration must follow approved Backend validation rules.
+
+The application must not independently invent identity-verification requirements.
+
+### Acceptance Criteria
+
+- Valid users can authenticate.
+- Invalid credentials are rejected.
+- Restricted accounts cannot access protected records.
+- Session expiration is handled securely.
+- Logout removes access to protected local information.
+- Sensitive credentials are never logged or displayed unnecessarily.
+
+---
+
+## PA-02 — PATIENT IDENTITY AND CAREID PROFILE
+
+### Purpose
+
+Provide patients with access to their authoritative healthcare identity.
+
+### Proposed Information
+
+- Patient name.
+- CareID or approved patient identifier.
+- Date of birth.
+- Contact details.
+- Relevant profile information.
+- Linked healthcare providers where supported.
+- Authorized family or dependent relationships.
+- Relevant identity verification status.
+
+### Requirements
+
+Patient identity must be obtained from the Backend.
+
+The app must not generate an independent patient identity that conflicts with the CareID database.
+
+### Acceptance Criteria
+
+- Correct patient identity is displayed.
+- Profile changes persist where editing is permitted.
+- Unauthorized profile changes are rejected.
+- Linked patient identities remain correctly separated.
+
+---
+
+# 7. PA-03 — MANDATORY QR SCANNING AND QR INTERACTION
+
+## 7.1 Requirement Classification
+
+**Mandatory source-verification requirement.**
+
+The product owner has confirmed that Patient App QR scanning is required by the original documentation.
+
+The exact sequence, actors, permissions and resulting workflow must be verified against the original HEALTH VAULT 360 PRD/FSD.
+
+QR scanning must not be removed from scope merely because the Doctor App is being developed as a mobile companion.
+
+## 7.2 Required QR Workflow Analysis
+
+The implementation specification must identify:
+
+1. Who generates or displays the QR code.
+2. Which application scans the QR code.
+3. What the QR code represents.
+4. At which healthcare workflow stage scanning occurs.
+5. Which Backend endpoint processes the scan.
+6. What patient, doctor, facility or appointment context is established.
+7. Whether the QR interaction requires consent or additional confirmation.
+8. What successful scanning permits.
+9. What happens when scanning fails.
+10. How the result is synchronized across applications.
+
+## 7.3 QR Interface Requirements
+
+The Patient App must implement the documented QR capability, which may involve a scanner, QR display or both, depending on the approved source.
+
+Where scanning is required, the application must support:
+
+- Camera permission handling.
+- QR scanning interface.
+- Scan result validation.
+- Loading and confirmation states.
+- Invalid QR handling.
+- Expired QR handling.
+- Unauthorized QR handling.
+- Clear success or failure feedback.
+
+Where displaying a QR is required, the app must follow the approved identity and security rules.
+
+**Do not assume that the Patient App must both generate and scan QR codes unless the source requires both.**
+
+## 7.4 QR Security Requirements
+
+- QR data must not automatically grant unrestricted clinical access.
+- The Backend must validate the relevant patient or appointment context.
+- Sensitive medical information should not be unnecessarily embedded in QR content.
+- Expired or revoked QR interactions must be rejected where applicable.
+- QR replay or reuse must follow the documented security model.
+- Relevant scan events must be auditable where required.
+- QR scanning must not bypass consent or authorization.
+
+## 7.5 Cross-Application Integration
+
+The documented QR interaction must be mapped across:
+
+**Patient App ↔ CareID Backend ↔ Doctor App / Doctor Web**
+
+Admin Web may participate where the original workflow requires administrative oversight.
+
+## 7.6 QR Acceptance Criteria
+
+**QR-001:** The correct documented QR workflow is implemented.
+
+**QR-002:** Valid authorized QR interactions succeed.
+
+**QR-003:** Invalid or unauthorized QR interactions fail safely.
+
+**QR-004:** Scanning does not expose unrelated patient records.
+
+**QR-005:** The Backend persists or processes the correct resulting state.
+
+**QR-006:** Relevant Doctor App or Doctor Web state is synchronized.
+
+**QR-007:** QR behavior is tested on actual supported mobile devices.
+
+**QR-008:** The implementation is traceable to the original PRD/FSD section.
+
+**Approval gate:** No final QR implementation contract may be approved without source verification.
+
+---
+
+# 8. PA-04 — PATIENT DASHBOARD
+
+## 8.1 Dashboard Information
+
+- Upcoming appointment.
+- Recent appointment status.
+- Treatment offers requiring action.
+- Prescription reminders.
+- Referral updates.
+- Clinical notifications.
+- Relevant healthcare tasks.
+- Quick access to QR interaction.
+
+## 8.2 Data Requirements
+
+All operational counts and statuses must come from the Backend.
+
+Do not display fabricated appointment counts, placeholder patient information or hardcoded clinical states in production workflows.
+
+## 8.3 Acceptance Criteria
+
+- Dashboard matches authoritative patient records.
+- Updates appear after successful actions.
+- Unavailable information is not fabricated.
+- Each card navigates to the correct authorized feature.
+
+---
+
+# 9. PA-05 — DOCTOR AND FACILITY DISCOVERY
+
+## 9.1 Proposed Features
+
+- Search doctors.
+- Search supported facilities.
+- Filter by approved specialties.
+- View doctor profiles.
+- View facility information.
+- View supported appointment availability.
+- Select an eligible provider for booking.
+
+## 9.2 Dynamic Data Requirements
+
+Doctor and facility discovery must use:
+
+- Active doctor records.
+- Approved specialty catalogue.
+- Facility affiliations.
+- Supported service availability.
+- Actual scheduling configuration.
+
+No hardcoded doctor or specialty list is permitted.
+
+## 9.3 Acceptance Criteria
+
+- Search results match authorized Backend records.
+- Inactive or unavailable providers are handled correctly.
+- Available appointment times are not fabricated.
+- Patient selection leads to the correct booking workflow.
+
+---
+
+# 10. PA-06 — APPOINTMENT BOOKING AND MANAGEMENT
+
+## 10.1 Features
+
+- View available appointments.
+- Select doctor or facility.
+- Select available date and time.
+- Submit appointment booking.
+- View booking confirmation.
+- View upcoming and previous appointments.
+- Reschedule where permitted.
+- Cancel where permitted.
+- View appointment status.
+
+## 10.2 Scheduling Rules
+
+The Backend must enforce:
+
+- Doctor availability.
+- Facility operating hours.
+- Facility timezone.
+- Appointment duration.
+- Existing reservations.
+- Applicable cancellation policies.
+- Applicable scheduling restrictions.
+
+## 10.3 Acceptance Criteria
+
+- Only valid available slots are displayed.
+- Successful booking creates a real appointment record.
+- Conflicting bookings are rejected.
+- Rescheduling updates the existing booking correctly.
+- Appointment changes appear in Doctor App and Doctor Web.
+- Confirmation is displayed only after Backend success.
+
+---
+
+# 11. PA-07 — MEDICAL RECORDS
+
+## 11.1 Proposed Features
+
+- View medical history.
+- View consultation records.
+- View vital signs.
+- View prescriptions.
+- View laboratory results.
+- View diagnostic reports.
+- View authorized medical documents.
+- View relevant clinical summaries.
+
+## 11.2 Requirements
+
+Records must be retrieved from authoritative Backend sources.
+
+The Patient App must not:
+
+- Invent missing clinical values.
+- Display raw JSON as clinical notes.
+- Permit unauthorized editing of clinician-authored records.
+- Expose other patients' medical information.
+
+## 11.3 Acceptance Criteria
+
+- Correct patient records are displayed.
+- Clinical information is readable.
+- Documents open only when authorized.
+- Missing or unavailable records show accurate states.
+- Sensitive information is handled securely.
+
+---
+
+# 12. PA-08 — CONSULTATIONS
+
+## 12.1 Purpose
+
+Allow patients to review consultation information and follow the status of their care.
+
+## 12.2 Proposed Features
+
+- View consultation history.
+- View scheduled consultation details.
+- View treating doctor.
+- View facility.
+- View consultation status.
+- View patient-accessible clinical summaries.
+- View related treatment offers.
+- View relevant follow-up instructions.
+
+## 12.3 Scope Boundary
+
+The Patient App must not perform doctor-only clinical documentation, diagnosis, approval or clearance decisions.
+
+The exact clinical information visible to patients must follow approved access and disclosure rules.
+
+---
+
+# 13. PA-09 — TREATMENT OFFER MANAGEMENT
+
+## 13.1 Purpose
+
+Support the patient-facing portion of the approved treatment-offer lifecycle.
+
+## 13.2 Proposed Features
+
+- View received treatment offers.
+- View procedure and facility.
+- View proposed treatment details.
+- View authorized clinical remarks.
+- View financial summary.
+- View applicable discounts.
+- View financing options.
+- View offer validity and expiration.
+- Accept or decline an offer where supported.
+- View offer status and history.
+
+## 13.3 Lifecycle Requirements
+
+The Patient App must distinguish actual Backend states, including where applicable:
+
+- Draft or not yet delivered.
+- Dispatched.
+- Awaiting patient response.
+- Accepted.
+- Declined.
+- Expired.
+- Cancelled.
+
+These are illustrative states; final machine-readable states must follow the approved Backend contract.
+
+## 13.4 Critical Requirements
+
+- An offer being dispatched does not mean it has been accepted.
+- Viewing an offer does not imply consent.
+- Accepting an offer does not automatically establish financing authorization.
+- An expired offer cannot be accepted unless an approved workflow explicitly permits renewal or reissue.
+- Financial totals must come from the Backend.
+
+## 13.5 Acceptance Criteria
+
+- Offer details match Doctor Web and Backend.
+- Patient response persists.
+- Doctor-facing status updates correctly.
+- Expired or unauthorized actions are rejected.
+- No duplicate acceptance events are created.
+
+---
+
+# 14. PA-10 — FINANCING INFORMATION
+
+## 14.1 Scope
+
+The Patient App must support the patient-facing elements of approved CR-02 financing and treatment-offer workflows.
+
+## 14.2 Proposed Capabilities
+
+- View eligible financing packages.
+- View financing information attached to a treatment offer.
+- View payment or installment terms where supported.
+- View applicable discounts.
+- View financing application or approval status.
+- Complete explicitly approved patient-side actions.
+
+## 14.3 Financial Data Requirements
+
+All amounts must use:
+
+- Authoritative treatment-offer calculations.
+- Facility-specific pricing.
+- Applicable facility currency.
+- Approved financing package configuration.
+- Backend-validated totals.
+
+## 14.4 Restrictions
+
+Do not introduce:
+
+- A new financing clearinghouse.
+- A new lending platform.
+- An unapproved payment gateway.
+- Independent loan underwriting.
+- Unapproved credit checks.
+- Hardcoded interest rates.
+- Hardcoded financing package lists.
+
+Any third-party financial integration must be explicitly approved and documented.
+
+## 14.5 Acceptance Criteria
+
+- Financing information matches the Backend.
+- Correct facility currency is displayed.
+- Patient actions follow the approved lifecycle.
+- Financial status is not misrepresented.
+- Missing financing configuration produces a clear, safe state.
+
+---
+
+# 15. PA-11 — PATIENT CONSENT AND AUTHORIZATION
+
+## 15.1 Purpose
+
+Support patient-side consent and authorization actions explicitly required by the approved CareID workflow.
+
+## 15.2 Proposed Features
+
+- View applicable consent information.
+- Review treatment-related authorizations.
+- Record consent where supported.
+- View consent status.
+- View relevant consent history.
+
+## 15.3 Requirements
+
+Consent must be:
+
+- Linked to the correct patient.
+- Linked to the correct clinical context.
+- Captured through an approved mechanism.
+- Stored with appropriate audit evidence.
+- Distinguished from offer acceptance and financial authorization.
+
+The app must not automatically infer consent from a treatment offer being dispatched or viewed.
+
+## 15.4 Acceptance Criteria
+
+- Required consent is displayed accurately.
+- Authorized patient decisions persist.
+- Consent history remains traceable.
+- Missing consent blocks dependent actions where the approved policy requires it.
+- No fabricated digital signature or authorization event is created.
+
+---
+
+# 16. PA-12 — PRESCRIPTION MANAGEMENT
+
+## 16.1 Features
+
+- View active prescriptions.
+- View prescribed medicines.
+- View dosage and instructions.
+- View prescribing clinician.
+- View prescription date.
+- View pharmacy or pickup information where supported.
+- View pickup status.
+- View prescription history.
+
+## 16.2 Requirements
+
+Prescription information must come from clinician-authorized Backend records.
+
+Patients must not be permitted to alter prescribed medication orders through ordinary profile editing.
+
+## 16.3 Acceptance Criteria
+
+- Prescription details match authoritative records.
+- Pickup status is accurate.
+- Historical prescriptions remain accessible where authorized.
+- Missing or discontinued prescriptions are represented correctly.
+
+---
+
+# 17. PA-13 — MEDICATION AND PICKUP REMINDERS
+
+## 17.1 CR-08 Scope
+
+CareID's approved prescription pickup reminder workflow requires recurring reminders until the prescription is collected, subject to the approved configuration.
+
+## 17.2 Proposed Patient App Capabilities
+
+- View prescription pickup reminders.
+- View relevant pickup status.
+- Open the associated prescription.
+- View reminder history where supported.
+
+## 17.3 Delivery Boundary
+
+The approved initial CR-08 implementation uses Backend internal notifications.
+
+The Patient App must distinguish:
+
+1. Backend notification creation.
+2. Notification visibility inside the app.
+3. Operating-system push delivery.
+4. External SMS or messaging delivery.
+
+These must not be treated as equivalent.
+
+## 17.4 Acceptance Criteria
+
+- Applicable internal reminders are displayed.
+- Reminder records match Backend state.
+- Collection stops future recurring reminders.
+- The app does not falsely claim SMS, WhatsApp or push delivery.
+- Duplicate or stale reminders are handled consistently.
+
+---
+
+# 18. PA-14 — REFERRALS
+
+## 18.1 Proposed Features
+
+- View referral information.
+- View referring doctor.
+- View receiving provider or facility where authorized.
+- View referral status.
+- View relevant appointment or follow-up information.
+
+## 18.2 Requirements
+
+The Patient App must follow the approved referral workflow.
+
+Patient-side referral creation or modification must not be assumed unless explicitly required.
+
+## 18.3 Acceptance Criteria
+
+- Referral details match Backend records.
+- Status changes are reflected correctly.
+- Unauthorized referral information is inaccessible.
+- No unsupported patient referral actions are introduced.
+
+---
+
+# 19. PA-15 — NOTIFICATIONS
+
+## 19.1 Proposed Notification Categories
+
+- Appointment confirmation.
+- Appointment changes.
+- Treatment offer received.
+- Treatment offer status updates.
+- Prescription pickup reminders.
+- Referral updates.
+- Relevant consultation updates.
+- Other approved patient notifications.
+
+## 19.2 Notification Requirements
+
+- Notification content must be accurate.
+- Sensitive information must be appropriately protected.
+- Notifications must link to authorized records.
+- Read/unread state must persist.
+- Delivery status must reflect actual implementation.
+
+## 19.3 Acceptance Criteria
+
+- Notifications correspond to real Backend events.
+- Read/unread status is consistent.
+- Unauthorized notification links are rejected.
+- Missing external delivery integrations are not represented as working.
+
+---
+
+# 20. PA-16 — FAMILY AND DEPENDENT ACCESS
+
+## 20.1 Requirement Status
+
+**Source verification required.**
+
+The existing CareID role model includes family-member concepts, but the precise Patient App family-management capabilities must be confirmed against the original documentation.
+
+## 20.2 Potential Capabilities Subject to Approval
+
+- View authorized dependent profiles.
+- Switch between permitted patient contexts.
+- View authorized appointments.
+- View permitted medical records.
+- Manage approved dependent healthcare actions.
+
+## 20.3 Safety Requirements
+
+- Family relationships must be verified by the Backend.
+- A relationship alone must not automatically grant unrestricted clinical access.
+- Consent, age and legal authorization rules must be respected.
+- Patient context must be clearly displayed.
+- Actions must be recorded against the correct patient.
+
+---
+
+# 21. PA-17 — VETERINARY AND PET ACCESS
+
+## 21.1 Requirement Status
+
+**Source verification required.**
+
+CareID supports veterinary clinical workflows, but the exact Patient App responsibilities for pet owners or guardians must be verified.
+
+## 21.2 Potential Capabilities Subject to Approval
+
+- View authorized pet profiles.
+- View veterinary appointments.
+- View vaccination records.
+- View veterinary prescriptions.
+- View veterinary consultation history.
+- View relevant veterinary notifications.
+
+## 21.3 Isolation Requirements
+
+- Human patient records and animal records must remain separate.
+- Guardian access must be verified.
+- Veterinary workflows must not reuse human clinical permissions incorrectly.
+- The app must clearly identify the current human or animal patient context.
+
+---
+
+# 22. PA-18 — PROFILE AND SETTINGS
+
+## 22.1 Proposed Features
+
+- View personal profile.
+- Edit permitted contact information.
+- Manage supported account preferences.
+- View linked patient relationships.
+- Manage supported notification preferences.
+- Change password using approved flows.
+- Logout.
+
+## 22.2 Restrictions
+
+Patients must not be able to modify protected clinical data, provider credentials or administrative settings through profile APIs.
+
+---
+
+# 23. ADMIN WEB RESPONSIBILITIES
+
+Admin Web remains responsible for managing approved operational configuration.
+
+| Domain | Admin Web Responsibility | Patient App Responsibility |
+|---|---|---|
+| Doctor catalogue | Manage doctors and assignments | Search and view eligible doctors |
+| Specialties | Manage approved catalogue | Use dynamic specialty filters |
+| Facilities | Manage facility details | Display relevant facility information |
+| Facility timezone | Configure authoritative timezone | Show correct appointment times |
+| Facility currency | Configure authoritative currency | Show correct financial amounts |
+| Procedure catalogue | Manage procedures | View applicable procedure information |
+| Chargemaster | Manage facility pricing | Display authoritative treatment pricing |
+| Financing packages | Manage approved packages | View applicable patient options |
+| Scheduling policies | Manage booking rules | Follow booking rules |
+| Clinical policies | Manage approved requirements | Display relevant patient-facing status |
+| Consent configuration | Manage approved forms and rules | Complete permitted consent actions |
+| Notification configuration | Manage supported settings | Display applicable notifications |
+
+The Patient App must not maintain its own independent administrative configuration.
+
+---
+
+# 24. SHARED SYSTEM ARCHITECTURE
+
+## 24.1 Application Responsibilities
+
+### Patient App
+
+Patient-facing healthcare interactions.
+
+### Doctor App
+
+Mobile clinical review, communication and approved clinical actions.
+
+### Doctor Web
+
+Detailed clinical workstation and advanced consultation workflows.
+
+### Admin Web
+
+Administrative configuration, oversight and management.
+
+### Backend
+
+Authentication, authorization, business logic, scheduling, financial calculations and persistent data access.
+
+### Database
+
+Authoritative source of clinical, administrative and workflow records.
+
+## 24.2 Cross-Platform Consistency
+
+An action performed in one application must be reflected appropriately in other applications.
+
+Examples:
+
+- Patient books an appointment → Doctor schedule updates.
+- Doctor reschedules an appointment → Patient App reflects the change.
+- Doctor dispatches an offer → Patient App shows the offer.
+- Patient accepts an offer → Doctor Web and Doctor App show the actual response.
+- Doctor records a valid clearance → Patient App shows the authorized readiness status.
+- Prescription is collected → Future pickup reminders stop.
+
+All synchronization must use actual Backend state.
+
+---
+
+# 25. DYNAMIC DATA POLICY
+
+## 25.1 No Hardcoded Operational Configuration
+
+The Patient App must not hardcode:
+
+- Doctors.
+- Facilities.
+- Specialties.
+- Procedure catalogues.
+- Treatment prices.
+- Financing packages.
+- Interest rates or discounts.
+- Facility currencies.
+- Facility timezones.
+- Appointment durations.
+- Booking policies.
+- Clinical readiness requirements.
+- Offer validity periods.
+- Configurable consent content.
+- Notification policies.
+
+These values must come from authoritative Backend services.
+
+## 25.2 Acceptable Static Elements
+
+Technical and presentation elements may remain in application code, including:
+
+- Navigation structure.
+- Icons.
+- Basic layout.
+- Error-handling logic.
+- Accessibility behavior.
+- API integration.
+- Security protections.
+
+## 25.3 Missing Configuration
+
+When required configuration is unavailable:
+
+- Display an accurate message.
+- Prevent invalid submissions.
+- Avoid invented defaults.
+- Preserve entered information where safe.
+- Allow retry after the issue is resolved.
+
+---
+
+# 26. PATIENT CONSULTATION AND TREATMENT LIFECYCLE
+
+The proposed Patient App must participate in the approved CareID consultation lifecycle.
+
+## Stage 1 — Patient Identification
+
+Establish the correct patient context using the approved identity workflow, including documented QR interaction where required.
+
+## Stage 2 — Appointment
+
+Search for an eligible doctor or facility and book a genuine available appointment.
+
+## Stage 3 — Consultation
+
+Attend the appointment through the documented process and access permitted consultation information.
+
+## Stage 4 — Treatment Offer
+
+Receive and review an authorized treatment offer.
+
+## Stage 5 — Patient Decision
+
+Accept or decline the offer through the approved workflow.
+
+## Stage 6 — Financing
+
+Review or complete the applicable patient-side financing actions where supported.
+
+## Stage 7 — Consent
+
+Complete any required patient authorization independently of offer acceptance.
+
+## Stage 8 — Clinical Readiness
+
+View patient-accessible readiness information and outstanding requirements.
+
+Clinical approval remains the responsibility of authorized clinicians.
+
+## Stage 9 — Procedure or Follow-Up Booking
+
+Participate in the documented booking process using actual available resources.
+
+## Stage 10 — Follow-Up
+
+Track appointments, prescriptions, referrals and relevant notifications.
+
+**Important:** This is a proposed lifecycle map. The exact order, mandatory stages and QR integration points must be verified against the original PRD/FSD.
+
+---
+
+# 27. NON-FUNCTIONAL REQUIREMENTS
+
+## 27.1 Security
+
+- Encrypted network communication.
+- Secure authentication.
+- Protected session storage.
+- Backend-enforced permissions.
+- Appropriate local data protection.
+- No sensitive credentials in logs.
+- No unauthorized access to patient records.
+- Secure logout and session expiration.
+
+## 27.2 Privacy
+
+- Access only authorized healthcare information.
+- Protect clinical details in notifications.
+- Avoid unnecessary sensitive data in QR payloads.
+- Enforce applicable consent and representative-access rules.
+- Preserve audit records where required.
+
+## 27.3 Reliability
+
+- No false booking confirmation.
+- No false treatment-offer acceptance.
+- No false financing authorization.
+- No false clinical clearance status.
+- No silent loss of patient actions.
+- Correct behavior after app restart.
+- Clear network and Backend error handling.
+
+## 27.4 Performance
+
+- Responsive navigation.
+- Efficient data loading.
+- Paginated large record lists.
+- Appropriate caching without stale clinical decisions.
+- Clear loading indicators.
+
+Specific performance thresholds require separate approval.
+
+## 27.5 Accessibility
+
+- Readable text.
+- Adequate touch targets.
+- Accessible contrast.
+- Clear error messages.
+- Understandable healthcare terminology.
+- Consistent navigation.
+
+---
+
+# 28. ERROR AND EDGE-CASE HANDLING
+
+The Patient App must handle:
+
+1. Invalid login.
+2. Restricted patient account.
+3. Missing patient identity.
+4. Unauthorized dependent access.
+5. Invalid QR code.
+6. Expired QR code.
+7. QR permission denied.
+8. Doctor unavailable.
+9. Appointment slot conflict.
+10. Facility configuration missing.
+11. Expired treatment offer.
+12. Offer already accepted or declined.
+13. Financing option unavailable.
+14. Consent incomplete.
+15. Backend unavailable.
+16. Network disconnected.
+17. Session expired.
+18. Duplicate submission.
+19. Prescription status changed externally.
+20. Notification referencing an inaccessible record.
+
+Every case must fail safely and provide accurate user feedback.
+
+---
+
+# 29. DEVELOPMENT PHASES
+
+## Phase 1 — Patient Foundation
+
+- Authentication.
+- Patient profile.
+- Dashboard.
+- Doctor and facility discovery.
+- Appointment viewing.
+- Medical record viewing.
+- Basic in-app notifications.
+
+## Phase 2 — Patient Healthcare Operations
+
+- Appointment booking and management.
+- Consultation history.
+- Prescriptions.
+- Referrals.
+- Supported family or dependent access.
+- Supported veterinary access.
+
+## Phase 3 — Treatment and Financing
+
+- Treatment-offer review.
+- Patient offer responses.
+- Approved financing interactions.
+- Consent and authorization.
+- Patient-accessible clinical readiness.
+- Relevant booking and follow-up workflows.
+
+## Phase 4 — QR Integration and End-to-End Validation
+
+- Documented QR scanning/display behavior.
+- Backend QR processing.
+- Doctor App and Doctor Web integration.
+- Security and negative testing.
+- Real-device testing.
+- Cross-platform workflow verification.
+
+**Release sequencing rule:** The phase numbers are a proposed development order. If the original PRD makes QR functionality essential to initial registration, check-in or consultations, it must be implemented in the corresponding earlier phase rather than deferred to Phase 4.
+
+---
+
+# 30. ACCEPTANCE TEST MATRIX
+
+| Test ID | Scenario | Expected Result |
+|---|---|---|
+| PAT-001 | Patient registration | Valid authorized account created |
+| PAT-002 | Patient login | Correct patient session |
+| PAT-003 | Invalid login | Secure rejection |
+| PAT-004 | Patient profile | Correct authoritative identity |
+| PAT-005 | Valid QR interaction | Documented workflow succeeds |
+| PAT-006 | Invalid QR interaction | Safe rejection |
+| PAT-007 | Unauthorized QR | No patient data exposure |
+| PAT-008 | Doctor search | Correct Backend results |
+| PAT-009 | Appointment booking | Real booking persisted |
+| PAT-010 | Slot conflict | Duplicate booking prevented |
+| PAT-011 | Appointment rescheduling | Correct updated appointment |
+| PAT-012 | Medical records | Authorized records only |
+| PAT-013 | Consultation history | Correct patient information |
+| PAT-014 | Treatment offer received | Correct offer displayed |
+| PAT-015 | Treatment offer accepted | Backend state updated |
+| PAT-016 | Expired offer | Invalid response blocked |
+| PAT-017 | Financing information | Correct package and currency |
+| PAT-018 | Consent action | Authorized and auditable |
+| PAT-019 | Prescription viewing | Correct medication information |
+| PAT-020 | Prescription collected | Pickup status and reminders updated |
+| PAT-021 | Referral viewing | Correct referral status |
+| PAT-022 | Notification | Correct Backend event displayed |
+| PAT-023 | Family/dependent access | Only authorized records visible |
+| PAT-024 | Veterinary access | Correct guardian/animal isolation |
+| PAT-025 | Facility timezone | Correct local appointment time |
+| PAT-026 | Backend unavailable | No false success |
+| PAT-027 | App restart | Persisted state remains correct |
+| PAT-028 | Doctor App synchronization | Shared workflow state consistent |
+| PAT-029 | Doctor Web synchronization | Shared workflow state consistent |
+| PAT-030 | Admin configuration update | Patient App reflects authorized changes |
+
+Tests involving unapproved or source-unverified features must remain pending rather than being reported as completed requirements.
+
+---
+
+# 31. DEFINITION OF DONE
+
+A Patient App feature is complete only when:
+
+- The requirement is approved and traceable.
+- The Flutter interface is implemented.
+- Backend integration works.
+- Authentication and authorization are enforced.
+- Required data is dynamically loaded.
+- Actions persist correctly.
+- Relevant Doctor App and Doctor Web states synchronize.
+- Error, loading and empty states are handled.
+- Sensitive data is protected.
+- Relevant negative tests pass.
+- No hardcoded operational configuration is introduced.
+- Actual mobile behavior is verified.
+- Evidence is documented.
+- Unrelated systems remain unchanged.
+
+A successful Flutter build alone does not prove functional completion.
+
+---
+
+# 32. OUT-OF-SCOPE ITEMS
+
+Unless explicitly required and approved:
+
+- Doctor-only clinical decisions.
+- Clinical clearance approvals.
+- Advanced clinical documentation.
+- Independent diagnosis or treatment recommendations.
+- Admin configuration screens.
+- Independent treatment pricing engines.
+- Independent financing engines.
+- New lending infrastructure.
+- Unapproved payment gateways.
+- Unapproved external EHR integrations.
+- New AI functionality.
+- Unapproved SMS or WhatsApp integrations.
+- Unsupported mobile push delivery claims.
+- New clinical or financial business rules.
+
+---
+
+# 33. OPEN REQUIREMENT DECISIONS
+
+| ID | Decision / Verification Required | Status |
+|---|---|---|
+| OPEN-PA-01 | Verify exact Patient App QR workflow | Open |
+| OPEN-PA-02 | Confirm QR generation versus scanning responsibilities | Open |
+| OPEN-PA-03 | Confirm QR use during patient registration or check-in | Open |
+| OPEN-PA-04 | Confirm patient identity verification requirements | Open |
+| OPEN-PA-05 | Confirm patient-side treatment offer actions | Open |
+| OPEN-PA-06 | Confirm financing application and payment scope | Open |
+| OPEN-PA-07 | Confirm consent and digital authorization requirements | Open |
+| OPEN-PA-08 | Confirm family/dependent management scope | Open |
+| OPEN-PA-09 | Confirm veterinary guardian/pet scope | Open |
+| OPEN-PA-10 | Confirm patient communication features | Open |
+| OPEN-PA-11 | Confirm push notification requirements | Open |
+| OPEN-PA-12 | Confirm patient-facing clinical readiness information | Open |
+| OPEN-PA-13 | Confirm prescription reminder presentation | Open |
+| OPEN-PA-14 | Map each requirement to original PRD/FSD or approved CR | Open |
+
+**No open item should be silently treated as approved.**
+
+---
+
+# 34. REQUIREMENTS TRACEABILITY
+
+Maintain a requirements register containing:
+
+| Field | Description |
+|---|---|
+| Requirement ID | Unique Patient App requirement |
+| Feature | Functional capability |
+| Source Document | PRD/FSD, approved CR or approved decision |
+| Source Section | Exact page or section |
+| Patient App Responsibility | Required patient-facing behavior |
+| Doctor App Dependency | Relevant doctor-side interaction |
+| Doctor Web Dependency | Relevant clinical workflow |
+| Admin Dependency | Relevant configuration |
+| Backend Dependency | Required API or service |
+| Acceptance Test | Verification scenario |
+| Status | Proposed, Approved, Implemented, Verified or Deferred |
+
+Every requirement must have a traceable source or explicit approval before it becomes mandatory development scope.
+
+---
+
+# 35. CROSS-APPLICATION INTEGRATION MATRIX
+
+| Workflow | Patient App | Doctor App / Web | Backend |
+|---|---|---|---|
+| Patient identity | View/use authorized identity | Verify authorized patient context | Validate identity and access |
+| QR interaction | Perform documented role | Perform documented counterpart role | Validate and process QR |
+| Appointment booking | Request and view booking | View and manage schedule | Validate and persist |
+| Consultation | View permitted information | Record clinical information | Enforce permissions |
+| Treatment offer | Review and respond | Create/review/dispatch | Persist lifecycle |
+| Financing | View and perform approved actions | View relevant offer financing | Calculate and validate |
+| Consent | Complete approved patient action | View authorized consent status | Persist consent evidence |
+| Clinical clearance | View permitted readiness state | Review and approve when authorized | Enforce clinical policy |
+| Slot booking | Participate where approved | Schedule/confirm where approved | Reserve real availability |
+| Prescription | View prescription and pickup | Prescribe/manage status | Persist prescription state |
+| Referrals | View authorized referral | Create/manage referral | Persist referral lifecycle |
+| Notifications | View patient notifications | View clinician notifications | Create and track events |
+
+The final QR row and any source-dependent workflow responsibilities must be updated after reviewing the original documentation.
+
+---
+
+# 36. VERSION CONTROL AND APPROVAL
+
+**Current Version:** 1.0 — Proposed Baseline
+
+### Required Approvals
+
+- Product Owner.
+- Patient Workflow Owner.
+- Clinical Workflow Owner.
+- Backend / Integration Owner.
+- Patient App Development Owner.
+- Doctor App Development Owner for cross-app workflows.
+
+### Approval Conditions
+
+Before promotion to an approved implementation baseline:
+
+1. Review the original HEALTH VAULT 360 PRD/FSD.
+2. Reconcile approved change requests.
+3. Confirm the exact QR workflow.
+4. Resolve or formally defer open scope decisions.
+5. Confirm Patient App and Doctor App responsibilities.
+6. Approve the final acceptance matrix.
+7. Record the approved document version.
+
+### Change Control
+
+Any later change must record:
+
+- Change identifier.
+- Requirement affected.
+- Reason for change.
+- Impacted application.
+- Backend dependency.
+- Security or clinical impact.
+- Approval status.
+- Document version.
+
+---
+
+# 37. FINAL PRODUCT BOUNDARY
+
+**CareID Patient App is the patient-facing healthcare companion within the CareID ecosystem.**
+
+Its proposed scope includes:
+
+- Patient registration and identity.
+- Mandatory documented QR interaction.
+- Patient dashboard.
+- Doctor and facility discovery.
+- Appointment booking.
+- Medical records.
+- Consultation information.
+- Treatment-offer review and response.
+- Approved financing information.
+- Patient consent and authorization.
+- Prescriptions and pickup reminders.
+- Referrals.
+- Notifications.
+- Authorized family or dependent access.
+- Authorized veterinary or pet-related access.
+- Profile and settings.
+
+The application must use the same authoritative Backend and approved Admin-managed configuration as Doctor App and Doctor Web.
+
+**No new clinical, financial, identity or interoperability workflow may be introduced solely on developer assumption.**
+
+The final approved scope must remain aligned with the original HEALTH VAULT 360 PRD/FSD and approved CareID change requests.
+
+---
+
+**END OF DOCUMENT — CAREID-PATIENT-APP-PRD-FSD-001**

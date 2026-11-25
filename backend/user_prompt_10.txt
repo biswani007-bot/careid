@@ -1,0 +1,382 @@
+<USER_REQUEST>
+# CAREID — CONSOLIDATED BACKEND API AUDIT & IMPLEMENTATION PLAN
+
+## 1. Objective
+
+Conduct a complete backend audit and prepare one consolidated implementation plan to resolve the reported API issues affecting:
+
+- Admin Web
+- Staff Module
+- Patient App
+- Doctor Web
+- Doctor App, wherever applicable
+
+The goal is to make all four modules work reliably with the existing backend APIs, database and business workflows.
+
+**IMPORTANT: This is an audit and planning task only. Do not implement any code changes yet.**
+
+At the end, provide a detailed walkthrough of the findings, proposed implementation order, dependencies and required database changes. Wait for my approval before proceeding with implementation.
+
+## 2. Source of Truth
+
+Before starting:
+
+1. Inspect the complete existing NestJS backend architecture.
+2. Read the latest CareID-Staging Postman collection from the project.
+3. Inspect all existing controllers, routes, services, DTOs, repositories and Prisma models.
+4. Inspect existing frontend API integration references where available in the current project.
+5. Review the previously reported API issues included in this task.
+6. Check existing authentication, JWT, RBAC, doctor-patient access and facility-level permissions.
+7. Inspect existing notification, audit-log, referral, appointment, financing, insurance, medical-record and family/dependent workflows.
+
+Do not assume that an API is missing just because its expected URL is not found. Search for equivalent functionality under different endpoint names and document the existing contract.
+
+Use the actual project files and current schema as the source of truth. Do not invent endpoints, database fields or business rules.
+
+## 3. Reported API Issues — Patient App
+
+Audit these seven areas:
+
+| No. | Requirement | Expected Endpoint | Priority |
+|---|---|---|---|
+| 1 | Insurance Card OCR Extraction | POST /api/v1/insurance/ocr/extract | P0 |
+| 2 | Accept Financing Offer | POST /api/v1/financing/offers/:id/accept | P0 |
+| 3 | Reject Financing Offer | POST /api/v1/financing/offers/:id/reject | P1 |
+| 4 | Cash Discount Options | GET /api/v1/financing/discounts | P1 |
+| 5 | Insurance Card Manual Review | POST /api/v1/insurance/manual-review | P0 |
+| 6 | Aggregated Health Records Timeline | GET /api/v1/records/timeline | P2 |
+| 7 | Dependent Health Card Binding | /api/v1/family/dependents/:id/card | P2 |
+
+For every requirement, establish:
+
+- Whether an equivalent API already exists.
+- Existing endpoint and HTTP method, if available.
+- Existing request and response structure.
+- Authentication and role requirements.
+- Ownership and permission checks.
+- Validation and error handling.
+- Whether frontend fallback/mock data is currently being used.
+- Whether the existing database supports the operation.
+- Whether new schema changes are necessary.
+
+Do not implement OCR using an LLM or chatbot. CareID's AI scope is OCR only. Identify whether an existing OCR provider or document-processing service is already integrated.
+
+For financing acceptance/rejection, inspect the existing offer lifecycle and status transition rules. Do not create a separate lifecycle if one already exists.
+
+## 4. Reported API Issues — Doctor Web Consultation & Treatment Offer Lifecycle
+
+Audit the following endpoints and business workflows.
+
+### P0 — Treatment Offers
+
+1. POST /api/v1/doctors/treatment-offers
+2. GET /api/v1/doctors/treatment-offers
+3. GET /api/v1/doctors/treatment-offers/:offerId
+4. PUT /api/v1/doctors/treatment-offers/:offerId
+5. POST /api/v1/doctors/treatment-offers/:offerId/dispatch
+6. GET /api/v1/doctors/treatment-offers/:offerId/status
+
+Inspect existing treatment-offer, consultation, referral, financing and notification implementations before proposing new functionality.
+
+Verify:
+
+- Doctor identity and patient access.
+- Facility authorization.
+- Backend-side financial calculations.
+- Financing option validation.
+- Offer status transitions.
+- Unique offer identifiers.
+- Offer persistence.
+- Dispatch notification integration.
+- Duplicate dispatch prevention.
+- Modification history and audit logs.
+- Patient-side acceptance/rejection integration.
+
+Required lifecycle to review:
+
+DRAFT → DISPATCHED → PATIENT_REVIEWING → RATIFIED_ACCEPTED / DECLINED / EXPIRED / CANCELLED.
+
+Do not assume all transitions are valid. Document the existing rules and any proposed gaps.
+
+### P1 — Cancellation, Cath Lab and Safety Checklist
+
+7. POST /api/v1/doctors/treatment-offers/:offerId/cancel
+
+8. GET /api/v1/facilities/cath-lab-suites/availability
+
+9. POST /api/v1/facilities/cath-lab-suites/book
+
+10. POST /api/v1/encounters/:encounterId/safety-timeout
+
+11. PUT /api/v1/encounters/:encounterId/safety-timeout
+
+Inspect existing facility, Cath Lab, suite, equipment, staff scheduling, encounter, clinical checklist, consent and audit implementations.
+
+Identify whether actual booking availability can be calculated from existing data. Do not propose fabricated availability or a booking implementation that cannot prevent overlapping reservations.
+
+For safety checklists, inspect whether existing clinical records can store the individual checklist items, doctor sign-off, verification timestamps and historical versions.
+
+### P2 — Intra-Procedure Telemetry
+
+12. POST /api/v1/encounters/:encounterId/telemetry
+
+13. PUT /api/v1/encounters/:encounterId/telemetry
+
+Inspect existing encounter and clinical measurement models.
+
+Determine whether the existing schema can persist telemetry readings, units, measurement timestamps, submitting clinician and historical values.
+
+Do not introduce WebSocket infrastructure unless the existing clinical workflow demonstrably requires real-time device streaming. If it does, describe the proposed event contract separately for approval.
+
+## 5. Previously Reported Backend Issues
+
+Investigate each item against the current source code, database schema and Postman collection.
+
+| Priority | Module | Reported Issue | Required Investigation |
+|---|---|---|---|
+| P0 | Referrals | Earlier GET /referrals/my-incoming and /my-outgoing returned 500 | Verify routes, service logic, role scoping and database queries |
+| P0 | Appointments | Earlier /appointments/doctor/my-appointments returned 500 | Verify listing, doctor-specific filtering and appointment schema |
+| P1 | QR Verification | Different endpoint paths appeared in earlier investigations | Establish the canonical route and response contract |
+| P1 | Doctor Profile | /doctors/me and statistics endpoint naming needs verification | Identify correct routes and existing response structures |
+| P1 | Patient Details | GET /doctors/patients/:id was previously reported unavailable | Verify the Doctor Patient Module APIs and access controls |
+| P2 | Prescriptions | No prescription API was identified in the earlier audit | Inspect existing MedicalReport and prescription functionality |
+| P2 | Conversations | No conversations API was identified in the earlier audit | Determine whether the module is in the approved product scope |
+
+Also review the recently implemented Doctor Patient Module APIs:
+
+- GET /api/v1/doctors/patients
+- GET /api/v1/doctors/patients/:patientProfileId
+- GET /api/v1/doctors/patients/:patientProfileId/prescriptions
+- POST /api/v1/doctors/patients/:patientProfileId/prescriptions
+- GET /api/v1/doctors/patients/:patientProfileId/vitals
+- POST /api/v1/doctors/patients/:patientProfileId/vitals
+
+Do not assume these APIs are production-verified just because local tests passed. Separate source-code inspection, unit-test evidence, database integration evidence and authenticated staging HTTP verification.
+
+## 6. Cross-Module API and Business Workflow Audit
+
+Review the complete API coverage for Admin, Staff, Patient and Doctor modules.
+
+Identify shared workflows and dependencies, including:
+
+- Authentication, roles and permissions.
+- User, staff, doctor and patient profiles.
+- Patient registration and dependent management.
+- Doctor-facility mapping.
+- Appointments and scheduling.
+- Referrals and referral lifecycle.
+- QR code generation and verification.
+- Medical, Dental and Vision records.
+- Prescriptions and vitals.
+- Insurance card OCR and manual verification.
+- Treatment offers and financing.
+- Cath Lab availability and booking.
+- Clinical encounters and safety checklists.
+- Notifications and communication.
+- Audit logs and access history.
+- Reports and dashboard statistics.
+
+For each module, identify:
+
+1. Existing working APIs.
+2. Existing APIs with incorrect or incomplete functionality.
+3. Missing APIs.
+4. Frontend fallback/mock implementations.
+5. Authorization or data ownership problems.
+6. Shared dependencies that could break other modules.
+
+Do not add new product features simply because they are technically possible. Follow the approved CareID scope and existing frontend workflows.
+
+## 7. Database Schema Assessment
+
+This is a critical part of the audit.
+
+Inspect the existing Prisma schema and actual database model definitions.
+
+For every missing functionality, determine whether existing tables, relations, enums and columns can support it.
+
+Prepare a proposed schema addition only when genuinely required.
+
+For every proposed addition, include:
+
+- Module and feature.
+- Proposed table/model name.
+- Column name.
+- Data type.
+- Nullable or required.
+- Primary key and foreign keys.
+- Unique constraints.
+- Indexes.
+- Relationships with existing models.
+- Purpose of the field.
+- Whether existing models can be reused instead.
+
+Include proposed Prisma model definitions or migration SQL only as a design reference in the same final document.
+
+Clearly distinguish:
+
+A. Existing schema — no change required.
+
+B. Existing schema — requires application-level changes only.
+
+C. Proposed schema addition — requires approval.
+
+D. Requires further investigation — insufficient evidence to recommend a schema change.
+
+Do not execute migrations, alter tables, run Prisma db push, reset the database, seed data or modify existing records.
+
+Do not modify the live staging or production database.
+
+Preserve compatibility with existing Patient App, Doctor App, Doctor Web and Admin Web integrations.
+
+## 8. Security and Authorization Assessment
+
+Review all proposed and existing APIs for:
+
+- JWT authentication.
+- Role-based access control.
+- Admin and Staff permissions.
+- Doctor-only operations.
+- Patient self-access.
+- Parent/dependent ownership.
+- Doctor-patient relationship validation.
+- Facility-level access.
+- Consent and clinical-record access.
+- Audit logging.
+- Sensitive data exposure.
+- Duplicate requests.
+- Invalid lifecycle transitions.
+
+Identify any endpoint where a user could access another patient's data by changing an ID in the URL or request body.
+
+Do not assume that authentication alone provides authorization.
+
+## 9. Testing and Verification Plan
+
+Prepare a test plan for every API requiring implementation or correction.
+
+Include:
+
+- Valid authenticated request.
+- Missing JWT.
+- Wrong role.
+- Invalid or unauthorized patient ID.
+- Invalid facility or encounter ID.
+- Invalid request payload.
+- Missing required fields.
+- Duplicate submission.
+- Invalid lifecycle transition.
+- Database persistence.
+- Pagination and filtering.
+- Concurrent booking attempts where relevant.
+- Existing frontend response compatibility.
+
+Separate the following verification levels:
+
+1. Static source-code inspection.
+2. Unit tests.
+3. Integration tests against a real local database.
+4. Authenticated Postman HTTP tests against staging.
+
+Do not label an API fully verified unless the corresponding verification evidence exists.
+
+## 10. Implementation Prioritization
+
+Create a consolidated implementation plan using:
+
+- P0 — Critical: security, broken core workflows, essential patient/doctor operations.
+- P1 — High: important operational workflows and incomplete business functionality.
+- P2 — Medium/Low: secondary features and enhancements.
+
+For every task, provide:
+
+| Field | Description |
+|---|---|
+| Module | Admin / Staff / Patient / Doctor / Shared |
+| Feature | API or business workflow |
+| Current Status | Working / Incomplete / Missing / Failing / Unverified |
+| Existing Endpoint | Actual route, if available |
+| Proposed Endpoint | Only if genuinely required |
+| Backend Work | Controller, service, repository, DTO, etc. |
+| Schema Change | None / Proposed / Investigation required |
+| Dependencies | Existing modules or APIs required first |
+| Priority | P0 / P1 / P2 |
+| Verification | Unit / Integration / Postman staging |
+| Risk | Low / Medium / High |
+
+Group tasks by dependencies and recommend an implementation sequence that avoids breaking existing integrations.
+
+## 11. Required Single Deliverable
+
+Create exactly ONE consolidated Markdown document in the project documentation directory:
+
+CAREID_BACKEND_API_AUDIT_AND_IMPLEMENTATION_PLAN.md
+
+Do not create separate reports, spreadsheets, JSON files, SQL files, migration files, temporary documentation or duplicate copies.
+
+The single document must contain:
+
+1. Executive summary.
+2. Overall module-wise API status.
+3. Existing API endpoint inventory.
+4. Missing and incomplete API inventory.
+5. Correct HTTP methods and endpoint URLs.
+6. Request and response JSON examples wherever supported by actual contracts.
+7. Authentication and permission requirements.
+8. Error responses and validation requirements.
+9. P0/P1/P2 implementation roadmap.
+10. Dependencies and implementation sequence.
+11. Database schema assessment.
+12. Proposed schema additions, if required.
+13. Security and data integrity findings.
+14. Testing and verification plan.
+15. Existing frontend mock/fallback areas.
+16. Unresolved questions and decisions requiring approval.
+17. Files and modules likely to require modification.
+
+Do not invent response structures when existing contracts are unavailable. Clearly mark proposed contracts as PROPOSED and list the decisions that require approval.
+
+## 12. Strict Execution Restrictions
+
+This task is READ-ONLY except for creating the single requested Markdown document.
+
+Do not:
+
+- Implement controllers or services.
+- Modify existing source code.
+- Modify frontend code.
+- Change Prisma schema.
+- Generate or execute migrations.
+- Modify the database.
+- Modify Postman collections.
+- Change environment variables.
+- Install or upgrade packages.
+- Restart backend services.
+- Deploy anything.
+- Modify staging or production.
+
+If a test or inspection would modify data or state, do not run it without approval. Use existing logs, test evidence and read-only inspection instead.
+
+## 13. Final Walkthrough — Mandatory
+
+After creating the single document, do not start implementation.
+
+Give me a step-by-step walkthrough covering:
+
+1. What currently works.
+2. What is broken or incomplete.
+3. Which APIs already exist under different names.
+4. Which APIs genuinely need development.
+5. Which database changes are required, if any.
+6. Which security or authorization issues need attention.
+7. Which tasks should be implemented first and why.
+8. Dependencies and risks.
+9. What decisions or approvals are required from me.
+
+Show the document contents or its project file reference.
+
+**Stop after the walkthrough and wait for my approval. Do not proceed with implementation automatically.**
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-11-05T12:52:20+05:30.
+</ADDITIONAL_METADATA>
